@@ -80,6 +80,9 @@ scratch.md
 
 # environment variables
 .env*
+!.env.example
+!.env.dev.example
+!packages/server/api/.env.tests
 
 # chat-eval CLI cache + decision log
 .chat-eval/
@@ -114,3 +117,6 @@ deploy/terraform/**/terraform-*.tfvars
 
 packages/**/bun.lock
 packages/**/package-lock.json
+
+# deno module cache written by engine tests
+.deno-cache/
