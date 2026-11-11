@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import {
   AIProviderModelType,
   AIProviderWithoutSensitiveData,
@@ -12,7 +13,6 @@ import {
   UpdateAIProviderRequest,
   VertexProviderConfig,
 } from '@united/shared';
-import { useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { KeyRound, RefreshCw, Trash2 } from 'lucide-react';
 import { ReactNode, useRef, useState } from 'react';

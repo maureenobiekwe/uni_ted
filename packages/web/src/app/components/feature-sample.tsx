@@ -1,8 +1,4 @@
-import {
-  ApEdition,
-  ApFlagId,
-  PlatformAdminSurface,
-} from '@united/shared';
+import { ApEdition, ApFlagId, PlatformAdminSurface } from '@united/shared';
 import { t } from 'i18next';
 import { ExternalLink, Lock } from 'lucide-react';
 import { createContext, ReactNode, useContext } from 'react';

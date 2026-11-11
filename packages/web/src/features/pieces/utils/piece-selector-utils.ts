@@ -393,8 +393,7 @@ const isMcpToolTrigger = (pieceName: string, triggerName: string) => {
 
 const isChatTrigger = (pieceName: string, triggerName: string) => {
   return (
-    pieceName === '@united/piece-forms' &&
-    triggerName === 'chat_submission'
+    pieceName === '@united/piece-forms' && triggerName === 'chat_submission'
   );
 };
 

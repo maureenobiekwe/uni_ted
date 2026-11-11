@@ -1,5 +1,5 @@
-import { isNil } from '@united/core-utils';
 import { useSuspenseQuery } from '@tanstack/react-query';
+import { isNil } from '@united/core-utils';
 
 import { useEmbedding } from '@/components/providers/embed-provider';
 import { api } from '@/lib/api';

@@ -1,4 +1,4 @@
-import { unitedError, AIProviderName, ErrorCode, isNil, tryCatch } from '@united/core-utils'
+import { AIProviderName, ErrorCode, isNil, tryCatch, unitedError } from '@united/core-utils'
 import { AgentConversation, AI_PROVIDER_ENTITY_TYPES, aiProviderUtils, GetProviderConfigResponse } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { IsNull } from 'typeorm'

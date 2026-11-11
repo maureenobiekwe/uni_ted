@@ -1,4 +1,4 @@
-import { unitedError, AIProviderName, apId, chunk, ErrorCode, isEmpty, isNil, spreadIfNotUndefined, tryCatch } from '@united/core-utils'
+import { AIProviderName, apId, chunk, ErrorCode, isEmpty, isNil, spreadIfNotUndefined, tryCatch, unitedError } from '@united/core-utils'
 import { ApEdition, maxBarrierSignalsBounds, ModelChoice, PlatformConfiguration, UpdatePlatformConfigurationRequestBody } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { EntityManager, In } from 'typeorm'

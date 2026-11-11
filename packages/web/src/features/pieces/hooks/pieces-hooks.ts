@@ -1,3 +1,12 @@
+import {
+  QueryClient,
+  QueryKey,
+  useMutation,
+  usePrefetchQuery,
+  useQueries,
+  useQuery,
+  UseQueryResult,
+} from '@tanstack/react-query';
 import { LocalesEnum } from '@united/core-utils';
 import {
   PieceMetadataModel,
@@ -19,15 +28,6 @@ import {
   SuggestionType,
   TelemetryEventName,
 } from '@united/shared';
-import {
-  QueryClient,
-  QueryKey,
-  useMutation,
-  usePrefetchQuery,
-  useQueries,
-  useQuery,
-  UseQueryResult,
-} from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';

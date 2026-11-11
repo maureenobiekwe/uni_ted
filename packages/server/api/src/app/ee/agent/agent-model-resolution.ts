@@ -1,6 +1,6 @@
-import { unitedError, AIProviderName, ErrorCode, isNil, tryCatchSync, unique } from '@united/core-utils'
+import { AIProviderName, ErrorCode, isNil, tryCatchSync, unique, unitedError } from '@united/core-utils'
 import { ModelTier, modelTierCatalog, ModelTierSurface } from '@united/server-utils'
-import { united_CHAT_TIERS, AgentRunSource, AI_PROVIDER_ENTITY_TYPES, AiProviderCredentials, AiProviderModelScope, AIProviderModelType, aiProviderUtils } from '@united/shared'
+import { AgentRunSource, AI_PROVIDER_ENTITY_TYPES, AiProviderCredentials, AiProviderModelScope, AIProviderModelType, aiProviderUtils, united_CHAT_TIERS } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'
 
 function surfaceOf({ source }: { source: AgentRunSource | undefined }): ModelTierSurface {

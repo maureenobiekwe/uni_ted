@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto'
 import { AgentToolType, McpAuthType } from '@united/core-piece-types'
-import { unitedError, AIProviderName, apId, ApId, connectionTemplate, Cursor, ErrorCode, isNil, omit, Permission, PlatformId, ProjectId, sanitizeObjectForPostgresql, SeekPage, tryCatch, unique, UserId } from '@united/core-utils'
+import { AIProviderName, ApId, apId, connectionTemplate, Cursor, ErrorCode, isNil, omit, Permission, PlatformId, ProjectId, sanitizeObjectForPostgresql, SeekPage, tryCatch, unique, unitedError, UserId } from '@united/core-utils'
 import { Agent, AgentConfig, AgentFlowTool, AgentKnowledgeBaseTool, AgentListSort, AgentMoveLoss, AgentMoveLossKind, AgentMovePreview, AgentRunSource, AgentSummary, agentUtils, AgentVisibility, aiProviderUtils, CreateAgentRequest, DefaultProjectRole, Project, ProjectType, UpdateAgentRequest } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { Brackets, EntityManager, In, SelectQueryBuilder } from 'typeorm'

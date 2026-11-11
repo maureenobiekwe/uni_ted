@@ -1,9 +1,4 @@
-import {
-  AgentSummary,
-  FolderDto,
-  PopulatedFlow,
-  Table,
-} from '@united/shared';
+import { AgentSummary, FolderDto, PopulatedFlow, Table } from '@united/shared';
 
 export type TreeItemType =
   | 'folder'

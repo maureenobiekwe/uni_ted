@@ -1,8 +1,8 @@
-import { ApFunction } from '@united/core-formula';
-import { isNil } from '@united/core-utils';
 import { Editor, Extension } from '@tiptap/core';
 import { Node as ProseMirrorNode } from '@tiptap/pm/model';
 import { JSONContent } from '@tiptap/react';
+import { ApFunction } from '@united/core-formula';
+import { isNil } from '@united/core-utils';
 
 import {
   FUNCTION_END_NODE_TYPE,

@@ -1,6 +1,6 @@
-import { unitedError, AiProviderKeyStatus, AIProviderName, apId, classifyProviderOutcome, ErrorCode, isNil, PlatformId, ProviderOutcomeSignal, spreadIfDefined, spreadIfNotUndefined, toProviderOutcomeSignal, tryCatch, unique } from '@united/core-utils'
+import { AiProviderKeyStatus, AIProviderName, apId, classifyProviderOutcome, ErrorCode, isNil, PlatformId, ProviderOutcomeSignal, spreadIfDefined, spreadIfNotUndefined, toProviderOutcomeSignal, tryCatch, unique, unitedError } from '@united/core-utils'
 import { modelCatalog, modelTierCatalog } from '@united/server-utils'
-import { unitedProviderAuthConfig, AI_PROVIDER_ENTITY_TYPES, AIProviderAuthConfig, AIProviderConfig, aiProviderCredentials, AIProviderModel, AIProviderModelType, AiProviderProjectScope, AiProviderToolConfig, aiProviderUtils, AIProviderWithoutSensitiveData, AiToolCapability, AiToolProvider, CreateAIProviderRequest, GetProviderConfigResponse, ProjectAIProvider, UpdateAIProviderRequest } from '@united/shared'
+import { AI_PROVIDER_ENTITY_TYPES, AIProviderAuthConfig, AIProviderConfig, aiProviderCredentials, AIProviderModel, AIProviderModelType, AiProviderProjectScope, AiProviderToolConfig, aiProviderUtils, AIProviderWithoutSensitiveData, AiToolCapability, AiToolProvider, CreateAIProviderRequest, GetProviderConfigResponse, ProjectAIProvider, unitedProviderAuthConfig, UpdateAIProviderRequest } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'
 import cron from 'node-cron'
 import { EntityManager, FindOptionsWhere, Not } from 'typeorm'

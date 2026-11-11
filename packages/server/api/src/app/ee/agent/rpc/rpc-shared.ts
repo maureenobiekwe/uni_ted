@@ -1,4 +1,4 @@
-import { unitedError, connectionTemplate, ErrorCode, isNil, Permission, spreadIfDefined } from '@united/core-utils'
+import { connectionTemplate, ErrorCode, isNil, Permission, spreadIfDefined, unitedError } from '@united/core-utils'
 import { ActionClassification, isReadOnlyClassification } from '@united/pieces-framework'
 import { AgentActionKind, AgentActionOutcome, AgentActionRef, AgentConversation, AgentConversationStatus, AgentPieceToolMetadata, AgentRunSource, agentToolClassification, ApplicationEventName } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'

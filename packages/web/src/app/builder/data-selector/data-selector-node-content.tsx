@@ -1,8 +1,4 @@
-import {
-  FlowAction,
-  FlowTrigger,
-  flowStructureUtil,
-} from '@united/shared';
+import { FlowAction, FlowTrigger, flowStructureUtil } from '@united/shared';
 import { t } from 'i18next';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 

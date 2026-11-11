@@ -1,5 +1,5 @@
-import { AP_FUNCTIONS } from '@united/core-formula';
 import { Node, mergeAttributes } from '@tiptap/core';
+import { AP_FUNCTIONS } from '@united/core-formula';
 
 export const FUNCTION_START_NODE_TYPE = 'function_start';
 export const FUNCTION_END_NODE_TYPE = 'function_end';

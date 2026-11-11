@@ -1,10 +1,10 @@
+import { useDraggable } from '@dnd-kit/core';
 import {
   FlowOperationType,
   FlowTriggerType,
   Step,
   flowStructureUtil,
 } from '@united/shared';
-import { useDraggable } from '@dnd-kit/core';
 import { Handle, NodeProps, Position } from '@xyflow/react';
 import React, { useMemo } from 'react';
 

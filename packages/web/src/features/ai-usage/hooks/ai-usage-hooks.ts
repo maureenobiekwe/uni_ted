@@ -1,10 +1,6 @@
-import { isNil } from '@united/core-utils';
-import {
-  AiUsageDimension,
-  AiUsagePeriod,
-  AiUsageScope,
-} from '@united/shared';
 import { useQuery } from '@tanstack/react-query';
+import { isNil } from '@united/core-utils';
+import { AiUsageDimension, AiUsagePeriod, AiUsageScope } from '@united/shared';
 
 import { platformHooks } from '@/hooks/platform-hooks';
 

@@ -1,6 +1,6 @@
+import { ColumnDef } from '@tanstack/react-table';
 import { PieceMetadataModelSummary } from '@united/pieces-framework';
 import { isPieceVisible, PieceSet } from '@united/shared';
-import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {
   CheckIcon,

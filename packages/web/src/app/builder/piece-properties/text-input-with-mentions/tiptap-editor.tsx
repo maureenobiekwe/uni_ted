@@ -1,10 +1,3 @@
-import {
-  ApFunction,
-  formulaEvaluator,
-  typeCheckTiptapDoc,
-} from '@united/core-formula';
-import { isNil, spreadIfDefined } from '@united/core-utils';
-import { flowStructureUtil } from '@united/shared';
 import { Extensions } from '@tiptap/core';
 import { Document } from '@tiptap/extension-document';
 import { HardBreak } from '@tiptap/extension-hard-break';
@@ -17,6 +10,13 @@ import { Fragment } from '@tiptap/pm/model';
 import { TextSelection } from '@tiptap/pm/state';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import {
+  ApFunction,
+  formulaEvaluator,
+  typeCheckTiptapDoc,
+} from '@united/core-formula';
+import { isNil, spreadIfDefined } from '@united/core-utils';
+import { flowStructureUtil } from '@united/shared';
 import { t } from 'i18next';
 import {
   Bold,

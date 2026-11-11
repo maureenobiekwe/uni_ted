@@ -1,9 +1,9 @@
+import { useMutation } from '@tanstack/react-query';
 import {
   AppConnectionWithoutSensitiveData,
   ConnectionReplaceSource,
   TelemetryEventName,
 } from '@united/shared';
-import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useForm } from 'react-hook-form';
 

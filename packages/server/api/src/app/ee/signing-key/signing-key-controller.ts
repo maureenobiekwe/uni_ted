@@ -1,4 +1,4 @@
-import { unitedError, ApId, assertNotNullOrUndefined, ErrorCode, isNil } from '@united/core-utils'
+import { ApId, assertNotNullOrUndefined, ErrorCode, isNil, unitedError } from '@united/core-utils'
 import { AddSigningKeyRequestBody, ApplicationEventName, PrincipalType } from '@united/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'

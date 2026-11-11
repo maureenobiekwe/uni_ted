@@ -1,5 +1,5 @@
-import { ModelOptionsSurface } from '@united/shared';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
+import { ModelOptionsSurface } from '@united/shared';
 
 import { aiProviderApi } from '@/features/platform-admin/api/ai-provider-api';
 

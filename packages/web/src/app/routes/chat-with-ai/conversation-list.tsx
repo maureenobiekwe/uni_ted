@@ -1,4 +1,3 @@
-import { AgentConversation, SeekPage } from '@united/shared';
 import {
   InfiniteData,
   QueryKey,
@@ -6,6 +5,7 @@ import {
   useMutation,
   useQueryClient,
 } from '@tanstack/react-query';
+import { AgentConversation, SeekPage } from '@united/shared';
 import { t } from 'i18next';
 import {
   ArrowUpRight,

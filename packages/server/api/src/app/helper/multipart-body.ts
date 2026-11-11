@@ -1,5 +1,5 @@
-import { ApMultipartFile } from '@united/core-utils'
 import { Multipart } from '@fastify/multipart'
+import { ApMultipartFile } from '@united/core-utils'
 
 /**
  * Rebuilds the body shape that `@fastify/multipart`'s `attachFieldsToBody: 'keyValues'` used to

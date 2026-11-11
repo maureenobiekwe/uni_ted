@@ -1,10 +1,10 @@
-import { ListMcpOAuthGrantsRequestQuery } from '@united/shared';
 import {
   keepPreviousData,
   useMutation,
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query';
+import { ListMcpOAuthGrantsRequestQuery } from '@united/shared';
 import { t } from 'i18next';
 import { toast } from 'sonner';
 

@@ -11,9 +11,7 @@ import { parentWindow } from '@/lib/dom-utils';
 import { McpServerSettings } from '../../components/project-settings/mcp-server';
 
 const postMessageToParent = (
-  event:
-    | unitedClientShowMcpIframe
-    | unitedClientMcpSettingsDialogClosed,
+  event: unitedClientShowMcpIframe | unitedClientMcpSettingsDialogClosed,
 ) => {
   parentWindow.postMessage(event, '*');
 };

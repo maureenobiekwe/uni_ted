@@ -1,5 +1,5 @@
-import { TelemetryEventName } from '@united/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { TelemetryEventName } from '@united/shared';
 import { t } from 'i18next';
 import { Brain } from 'lucide-react';
 import { useEffect, useState } from 'react';

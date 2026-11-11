@@ -1,6 +1,6 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { isNil } from '@united/core-utils';
 import { EventDestination } from '@united/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { Check } from 'lucide-react';
 import { Fragment, useRef, useState } from 'react';

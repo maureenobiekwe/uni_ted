@@ -1,7 +1,4 @@
-import {
-  UpdateMeResponse,
-  UserWithMetaInformation,
-} from '@united/shared';
+import { UpdateMeResponse, UserWithMetaInformation } from '@united/shared';
 
 import { api } from '@/lib/api';
 

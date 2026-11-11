@@ -1,5 +1,5 @@
-import { TriggerStatusReport } from '@united/shared';
 import { useQuery } from '@tanstack/react-query';
+import { TriggerStatusReport } from '@united/shared';
 
 import { api } from '@/lib/api';
 

@@ -1,4 +1,4 @@
-import { unitedError, AIProviderModel, aiProviderUtils, ErrorCode, isNil, OpenAICompatibleProviderAuthConfig, OpenAICompatibleProviderConfig, tryCatchSync } from '@united/shared'
+import { AIProviderModel, aiProviderUtils, ErrorCode, isNil, OpenAICompatibleProviderAuthConfig, OpenAICompatibleProviderConfig, tryCatchSync, unitedError } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { AIProviderStrategy } from './ai-provider'
 import { fetchOpenAiModelIds } from './openai-compatible-vendor'

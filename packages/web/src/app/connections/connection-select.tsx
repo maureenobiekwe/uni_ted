@@ -1,8 +1,4 @@
-import {
-  Permission,
-  connectionTemplate,
-  isNil,
-} from '@united/core-utils';
+import { Permission, connectionTemplate, isNil } from '@united/core-utils';
 import {
   PieceMetadataModel,
   PieceMetadataModelSummary,

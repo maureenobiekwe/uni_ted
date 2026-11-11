@@ -1,6 +1,6 @@
 import { randomBytes } from 'crypto'
 import { promisify } from 'util'
-import { unitedError, ErrorCode, isNil, spreadIfDefined } from '@united/core-utils'
+import { ErrorCode, isNil, spreadIfDefined, unitedError } from '@united/core-utils'
 import { Mutex } from 'async-mutex'
 import jwtLibrary, {
     DecodeOptions,

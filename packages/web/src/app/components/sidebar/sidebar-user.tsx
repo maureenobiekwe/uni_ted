@@ -1,6 +1,6 @@
+import { useQueryClient } from '@tanstack/react-query';
 import { isNil } from '@united/core-utils';
 import { PlatformRole } from '@united/shared';
-import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { ChevronsUpDown, LogOut, UserCogIcon } from 'lucide-react';
 import { useState } from 'react';

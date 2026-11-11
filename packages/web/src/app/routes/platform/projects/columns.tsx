@@ -1,10 +1,10 @@
+import { ColumnDef } from '@tanstack/react-table';
 import { isNil } from '@united/core-utils';
 import {
   PlatformResponse,
   ProjectWithLimits,
   ProjectType,
 } from '@united/shared';
-import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {
   Lock,

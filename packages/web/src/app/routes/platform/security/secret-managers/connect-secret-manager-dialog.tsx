@@ -1,3 +1,4 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { ApErrorParams, ErrorCode } from '@united/core-utils';
 import {
   ConnectSecretManagerRequest,
@@ -7,7 +8,6 @@ import {
   SecretManagerConnectionWithStatus,
   SecretManagerProviderMetaData,
 } from '@united/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';

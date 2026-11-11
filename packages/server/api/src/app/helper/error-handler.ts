@@ -1,4 +1,4 @@
-import { unitedError, ErrorCode } from '@united/core-utils'
+import { ErrorCode, unitedError } from '@united/core-utils'
 import { parseError, wideEvent } from '@united/server-utils'
 import { FastifyError, FastifyReply, FastifyRequest } from 'fastify'
 import { StatusCodes } from 'http-status-codes'

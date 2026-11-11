@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import {
   AgentKnowledgeBaseTool,
   AgentTool,
@@ -5,7 +6,6 @@ import {
   KnowledgeBaseSourceType,
   mcpToolNameUtils,
 } from '@united/shared';
-import { useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Upload } from 'lucide-react';
 import { useRef, useState } from 'react';

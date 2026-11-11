@@ -1,5 +1,5 @@
 import { resolveTxt } from 'dns/promises'
-import { unitedError, apId, assertNotNullOrUndefined, ErrorCode, isNil, PlatformId, spreadIfDefined, tryCatch, UserId } from '@united/core-utils'
+import { apId, assertNotNullOrUndefined, ErrorCode, isNil, PlatformId, spreadIfDefined, tryCatch, unitedError, UserId } from '@united/core-utils'
 import { ApEdition, SAMLAuthnProviderConfig, SsoDomainVerification, SsoDomainVerificationRecordType, SsoDomainVerificationStatus, UserIdentityProvider } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { z } from 'zod'

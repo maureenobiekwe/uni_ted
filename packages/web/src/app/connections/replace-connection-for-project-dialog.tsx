@@ -1,7 +1,4 @@
-import {
-  ConnectionReplaceSource,
-  TelemetryEventName,
-} from '@united/shared';
+import { ConnectionReplaceSource, TelemetryEventName } from '@united/shared';
 import { t } from 'i18next';
 import { ChevronDown, WorkflowIcon } from 'lucide-react';
 import React, { useState } from 'react';
@@ -343,10 +340,7 @@ export { ReplaceConnectionForProjectDialog };
 
 const MAX_FLOWS_PER_REPLACE = 200;
 
-const PIECES_WITHOUT_REPLACE = [
-  '@united/piece-mcp',
-  '@united/piece-webhook',
-];
+const PIECES_WITHOUT_REPLACE = ['@united/piece-mcp', '@united/piece-webhook'];
 
 type ReplaceConnectionForProjectDialogProps = {
   onConnectionMerged: () => void;

@@ -1,8 +1,4 @@
-import {
-  FlowRun,
-  RunEnvironment,
-  WebsocketClientEvent,
-} from '@united/shared';
+import { FlowRun, RunEnvironment, WebsocketClientEvent } from '@united/shared';
 import { ArrowRight } from 'lucide-react';
 import { useRef } from 'react';
 

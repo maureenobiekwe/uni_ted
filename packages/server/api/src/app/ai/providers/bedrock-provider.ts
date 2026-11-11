@@ -1,12 +1,12 @@
-import { isNil } from '@united/core-utils'
-import { AIProviderModel, AIProviderModelType, BedrockProviderAuthConfig, BedrockProviderConfig } from '@united/shared'
-
 import {
     BedrockClient,
     ListFoundationModelsCommand,
     ListInferenceProfilesCommand,
     ModelModality,
 } from '@aws-sdk/client-bedrock'
+import { isNil } from '@united/core-utils'
+import { AIProviderModel, AIProviderModelType, BedrockProviderAuthConfig, BedrockProviderConfig } from '@united/shared'
+
 
 import { FastifyBaseLogger } from 'fastify'
 import { AIProviderStrategy } from './ai-provider'

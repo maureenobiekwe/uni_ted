@@ -190,10 +190,7 @@ function templates(): Template[] {
     {
       name: 'Weekly revenue digest',
       summary: 'Post a Monday summary of closed deals to Slack.',
-      pieces: [
-        '@united/piece-slack',
-        '@united/piece-google-sheets',
-      ],
+      pieces: ['@united/piece-slack', '@united/piece-google-sheets'],
     },
     {
       name: 'Onboard a new hire',

@@ -1,5 +1,5 @@
-import { WorkerMachineWithStatus } from '@united/shared';
 import { useQuery } from '@tanstack/react-query';
+import { WorkerMachineWithStatus } from '@united/shared';
 
 import { workersApi } from '../api/workers-api';
 

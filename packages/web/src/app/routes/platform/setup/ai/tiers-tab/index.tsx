@@ -1,7 +1,4 @@
-import {
-  PlatformModelTier,
-  PlatformModelTierEntry,
-} from '@united/shared';
+import { PlatformModelTier, PlatformModelTierEntry } from '@united/shared';
 import { t } from 'i18next';
 import { Layers, Plus } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';

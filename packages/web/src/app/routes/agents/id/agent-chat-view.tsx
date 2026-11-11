@@ -1,5 +1,5 @@
-import { Agent } from '@united/shared';
 import { useQueryClient } from '@tanstack/react-query';
+import { Agent } from '@united/shared';
 import { t } from 'i18next';
 
 import { AIChatBox } from '@/app/routes/chat-with-ai/ai-chat-box';

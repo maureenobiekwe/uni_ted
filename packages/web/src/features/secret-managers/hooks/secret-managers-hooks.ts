@@ -1,8 +1,8 @@
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   ConnectSecretManagerRequest,
   SecretManagerConnectionWithStatus,
 } from '@united/shared';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { toast } from 'sonner';
 

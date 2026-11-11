@@ -1,5 +1,5 @@
-import { PlatformRole, UserStatus } from '@united/shared';
 import { ColumnDef } from '@tanstack/react-table';
+import { PlatformRole, UserStatus } from '@united/shared';
 import { t } from 'i18next';
 import {
   Tag,

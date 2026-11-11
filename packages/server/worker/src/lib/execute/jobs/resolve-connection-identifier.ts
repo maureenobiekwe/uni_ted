@@ -1,4 +1,4 @@
-import { unitedError, ErrorCode } from '@united/core-utils'
+import { ErrorCode, unitedError } from '@united/core-utils'
 import { EngineOperationType, EngineResponseStatus, ExecuteResolveConnectionIdentifierJobData, WorkerJobType } from '@united/shared'
 import { workerSettings } from '../../config/worker-settings'
 import { JobContext, JobHandler, JobResultKind, SynchronousJobResult } from '../types'

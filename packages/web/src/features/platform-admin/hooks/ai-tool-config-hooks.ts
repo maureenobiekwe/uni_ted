@@ -1,10 +1,10 @@
+import { useMutation, useQuery } from '@tanstack/react-query';
 import {
   ApEdition,
   ApFlagId,
   CreateAiToolConfigRequest,
   UpdateAiToolConfigRequest,
 } from '@united/shared';
-import { useMutation, useQuery } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 
 import { flagsHooks } from '@/hooks/flags-hooks';

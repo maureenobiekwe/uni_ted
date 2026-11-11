@@ -1,9 +1,6 @@
 import { isNil } from '@united/core-utils';
 import { PiecePropertyMap, PropertyType } from '@united/pieces-framework';
-import {
-  AUTHENTICATION_PROPERTY_NAME,
-  PropertySettings,
-} from '@united/shared';
+import { AUTHENTICATION_PROPERTY_NAME, PropertySettings } from '@united/shared';
 import deepEqual from 'deep-equal';
 import React, { useState, useRef, useContext } from 'react';
 import { useFormContext, UseFormReturn, useWatch } from 'react-hook-form';

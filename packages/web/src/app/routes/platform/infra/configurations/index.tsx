@@ -1,3 +1,5 @@
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { isNil } from '@united/core-utils';
 import {
   ApEdition,
@@ -5,8 +7,6 @@ import {
   PlatformConfiguration,
   PlatformConfigurationSettings,
 } from '@united/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useForm } from 'react-hook-form';
 import { Navigate } from 'react-router-dom';

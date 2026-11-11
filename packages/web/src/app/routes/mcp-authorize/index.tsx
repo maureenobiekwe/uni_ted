@@ -1,6 +1,6 @@
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { SeekPage } from '@united/core-utils';
 import { ProjectType, ProjectWithLimits } from '@united/shared';
-import { useMutation, useQuery } from '@tanstack/react-query';
 import { StatusCodes } from 'http-status-codes';
 import { t } from 'i18next';
 import { jwtDecode } from 'jwt-decode';

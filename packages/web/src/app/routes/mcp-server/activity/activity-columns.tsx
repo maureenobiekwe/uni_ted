@@ -1,5 +1,5 @@
-import { PopulatedMcpActivity, ProjectType } from '@united/shared';
 import { ColumnDef } from '@tanstack/react-table';
+import { PopulatedMcpActivity, ProjectType } from '@united/shared';
 import { t } from 'i18next';
 import { Check, Clock, FolderOpen, Plug, User, Wrench, X } from 'lucide-react';
 

@@ -1,7 +1,7 @@
-import { unitedError, ErrorCode, tryCatch } from '@united/core-utils'
+import * as validator from '@authenio/samlify-node-xmllint'
+import { ErrorCode, tryCatch, unitedError } from '@united/core-utils'
 import { safeHttp } from '@united/server-utils'
 import { SAMLAttributeMapping, SAMLAuthnProviderConfig } from '@united/shared'
-import * as validator from '@authenio/samlify-node-xmllint'
 import * as saml from 'samlify'
 import { resolveSamlAttributes, SamlAttributes } from './saml-attributes'
 

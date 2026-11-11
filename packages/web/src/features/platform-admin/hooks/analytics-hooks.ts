@@ -1,8 +1,5 @@
-import {
-  AnalyticsTimePeriod,
-  PlatformAnalyticsReport,
-} from '@united/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { AnalyticsTimePeriod, PlatformAnalyticsReport } from '@united/shared';
 import { useCallback, useContext } from 'react';
 
 import { analyticsApi } from '@/features/platform-admin/api/analytics-api';

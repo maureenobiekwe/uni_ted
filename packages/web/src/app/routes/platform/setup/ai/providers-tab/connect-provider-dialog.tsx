@@ -1,10 +1,10 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { AIProviderName } from '@united/core-utils';
 import {
   AIProviderWithoutSensitiveData,
   formErrors,
   MarkdownVariant,
 } from '@united/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { AxiosError } from 'axios';
 import { t } from 'i18next';
 import { ChevronDown, Eye, EyeOff } from 'lucide-react';

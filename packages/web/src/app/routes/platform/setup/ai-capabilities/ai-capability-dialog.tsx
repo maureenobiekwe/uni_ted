@@ -1,3 +1,4 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { isNil } from '@united/core-utils';
 import {
   AI_PROVIDER_CAPABILITIES,
@@ -10,7 +11,6 @@ import {
   CreateAiToolConfigRequest,
   formErrors,
 } from '@united/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { ExternalLink } from 'lucide-react';
 import { useState } from 'react';

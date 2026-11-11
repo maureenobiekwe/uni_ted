@@ -1,8 +1,4 @@
-import {
-  AIProviderName,
-  isNil,
-  spreadIfDefined,
-} from '@united/core-utils';
+import { AIProviderName, isNil, spreadIfDefined } from '@united/core-utils';
 import {
   AgentConfig,
   AgentPieceProps,

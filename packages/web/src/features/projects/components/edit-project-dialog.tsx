@@ -1,10 +1,10 @@
+import { useQueryClient } from '@tanstack/react-query';
 import { Permission } from '@united/core-utils';
 import {
   AppConnectionWithoutSensitiveData,
   UpdateProjectPlatformRequest,
   PlatformRole,
 } from '@united/shared';
-import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';

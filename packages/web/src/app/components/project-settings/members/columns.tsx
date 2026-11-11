@@ -1,3 +1,4 @@
+import { ColumnDef } from '@tanstack/react-table';
 import { ErrorCode, Permission } from '@united/core-utils';
 import {
   InvitationType,
@@ -6,7 +7,6 @@ import {
   UserInvitation,
   UserWithMetaInformation,
 } from '@united/shared';
-import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { Info, Trash2, User, Shield, ChevronDown } from 'lucide-react';
 import { useState } from 'react';

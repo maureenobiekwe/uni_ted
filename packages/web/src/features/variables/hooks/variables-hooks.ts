@@ -1,5 +1,5 @@
-import { ListVariablesRequestQuery } from '@united/shared';
 import { useMutation, useQuery } from '@tanstack/react-query';
+import { ListVariablesRequestQuery } from '@united/shared';
 import { t } from 'i18next';
 import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';

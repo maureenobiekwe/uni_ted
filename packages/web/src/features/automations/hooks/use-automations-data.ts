@@ -1,3 +1,4 @@
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { SeekPage } from '@united/core-utils';
 import {
   AgentSummary,
@@ -8,7 +9,6 @@ import {
   MAX_AGENT_PAGE_SIZE,
   UncategorizedFolderId,
 } from '@united/shared';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 

@@ -1,9 +1,9 @@
-import { FileResponseInterface } from '@united/shared';
 import { javascript } from '@codemirror/lang-javascript';
 import ReactCodeMirror, {
   EditorState,
   EditorView,
 } from '@uiw/react-codemirror';
+import { FileResponseInterface } from '@united/shared';
 import { CodeIcon, Copy } from 'lucide-react';
 import React from 'react';
 import Markdown from 'react-markdown';

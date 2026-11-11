@@ -1,6 +1,6 @@
-import { DiffReleaseRequest, ProjectReleaseType } from '@united/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
+import { DiffReleaseRequest, ProjectReleaseType } from '@united/shared';
 import { t } from 'i18next';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';

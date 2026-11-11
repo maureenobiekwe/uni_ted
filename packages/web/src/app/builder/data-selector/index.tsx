@@ -1,3 +1,4 @@
+import { useQueries } from '@tanstack/react-query';
 import { LocalesEnum, isNil } from '@united/core-utils';
 import { PieceMetadataModel } from '@united/pieces-framework';
 import {
@@ -8,7 +9,6 @@ import {
   flowStructureUtil,
   PieceAudienceFilter,
 } from '@united/shared';
-import { useQueries } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Database, SearchXIcon, Variable } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';

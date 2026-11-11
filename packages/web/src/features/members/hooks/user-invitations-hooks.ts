@@ -1,6 +1,6 @@
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { isNil } from '@united/core-utils';
 import { InvitationType, UserInvitation } from '@united/shared';
-import { useMutation, useQuery } from '@tanstack/react-query';
 
 import { userInvitationApi } from '../api/user-invitation';
 

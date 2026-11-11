@@ -1,3 +1,10 @@
+import {
+  InfiniteData,
+  useInfiniteQuery,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from '@tanstack/react-query';
 import { isNil } from '@united/core-utils';
 import {
   Agent,
@@ -10,13 +17,6 @@ import {
   SeekPage,
   UpdateAgentRequest,
 } from '@united/shared';
-import {
-  InfiniteData,
-  useInfiniteQuery,
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from '@tanstack/react-query';
 
 import { internalErrorToast } from '@/components/ui/sonner';
 import { useAuthorization } from '@/hooks/authorization-hooks';

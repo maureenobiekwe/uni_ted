@@ -1,3 +1,4 @@
+import { ColumnDef } from '@tanstack/react-table';
 import { Permission } from '@united/core-utils';
 import {
   AppConnectionScope,
@@ -5,7 +6,6 @@ import {
   AppConnectionWithoutSensitiveData,
   PlatformRole,
 } from '@united/shared';
-import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {
   CheckIcon,

@@ -1,10 +1,10 @@
+import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import {
   FolderDto,
   PopulatedFlow,
   ProjectMemberWithUser,
   Table,
 } from '@united/shared';
-import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { t } from 'i18next';
 import {
   Activity,

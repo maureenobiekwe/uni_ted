@@ -1,9 +1,5 @@
-import {
-  PROJECT_COLOR_PALETTE,
-  Project,
-  ProjectType,
-} from '@united/shared';
 import { ColumnDef } from '@tanstack/react-table';
+import { PROJECT_COLOR_PALETTE, Project, ProjectType } from '@united/shared';
 import { t } from 'i18next';
 import { FolderOpen, Search } from 'lucide-react';
 import { useState } from 'react';

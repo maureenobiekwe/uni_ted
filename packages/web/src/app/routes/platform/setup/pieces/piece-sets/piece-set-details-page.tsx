@@ -1,8 +1,4 @@
-import {
-  PieceSelection,
-  PieceSelectionMode,
-  PieceSet,
-} from '@united/shared';
+import { PieceSelection, PieceSelectionMode, PieceSet } from '@united/shared';
 import { t } from 'i18next';
 import { Loader2 } from 'lucide-react';
 import { Navigate, useParams } from 'react-router-dom';
