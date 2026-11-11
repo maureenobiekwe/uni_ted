@@ -1,9 +1,8 @@
 import { createAction } from '@united/pieces-framework';
 import { quickbaseAuth } from '../auth';
-import { appIdProp, tableIdProp, fieldsMapperProp, dynamicFieldsMapperProp } from '../common/props';
+import { appIdProp, tableIdProp, dynamicFieldsMapperProp } from '../common/props';
 import { QuickbaseClient } from '../common/client';
 import { QuickbaseCreateRecordResponse, QuickbaseField } from '../common/types';
-import { mapFieldsToRecord, validateRequiredFields } from '../common/utils';
 
 export const createRecord = createAction({
   name: 'create_record',

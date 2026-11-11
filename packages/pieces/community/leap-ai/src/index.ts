@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { leapAiAuth } from './lib/common/auth';
 import { getAWorkflowRun } from './lib/actions/get-a-workflow-run';
 import { runAWorkflow } from './lib/actions/run-a-workflow';

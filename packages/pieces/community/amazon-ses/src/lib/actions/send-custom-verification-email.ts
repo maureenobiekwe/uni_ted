@@ -1,6 +1,5 @@
 import { createAction, Property } from '@united/pieces-framework';
 import {
-  SESClient,
   SendCustomVerificationEmailCommand,
 } from '@aws-sdk/client-ses';
 import { amazonSesAuth } from '../auth';
@@ -12,7 +11,6 @@ import {
   getCustomVerificationErrorMessage,
   getSESErrorMessage,
   createConfigSetDropdownOptions,
-  isValidEmail,
 } from '../common/ses-utils';
 
 export const sendCustomVerificationEmail = createAction({

@@ -3,7 +3,6 @@ import { phantombusterAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 import { HttpMethod } from '@united/pieces-common';
 import { agentIdDropdown } from '../common/props';
-import { outside } from 'semver';
 
 export const launchPhantom = createAction({
   auth: phantombusterAuth,

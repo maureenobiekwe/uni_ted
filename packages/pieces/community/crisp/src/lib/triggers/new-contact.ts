@@ -1,8 +1,6 @@
 import {
 	createTrigger,
 	TriggerStrategy,
-	Property,
-	PiecePropValueSchema,
 	AppConnectionValueForAuthProperty,
 } from '@united/pieces-framework';
 import { crispAuth } from '../common/auth';

@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient, HttpRequest, AuthenticationType } from '@united/pieces-common';
+import { HttpMethod, httpClient, HttpRequest } from '@united/pieces-common';
 import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { fireberryAuth } from '../auth';
 

@@ -2,7 +2,6 @@ import { microsoftSharePointAuth } from '../auth';
 import {
 	createTrigger,
 	TriggerStrategy,
-	PiecePropValueSchema,
 	AppConnectionValueForAuthProperty,
 } from '@united/pieces-framework';
 import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';

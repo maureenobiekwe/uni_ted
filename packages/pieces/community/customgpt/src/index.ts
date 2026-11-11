@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { createAgent } from './lib/actions/create-agent';
 import { createConversation } from './lib/actions/create-conversation';
 import { updateSettings } from './lib/actions/update-settings';

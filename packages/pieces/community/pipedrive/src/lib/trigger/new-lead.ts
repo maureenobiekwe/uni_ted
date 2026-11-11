@@ -4,7 +4,6 @@ import { AuthenticationType, httpClient, HttpMethod } from '@united/pieces-commo
 import {
 	pipedriveApiCall,
 	pipedrivePaginatedV1ApiCall,
-	pipedriveTransformCustomFields,
     pipedriveTransformV1CustomFields,
 } from '../common';
 import { GetField } from '../common/types';

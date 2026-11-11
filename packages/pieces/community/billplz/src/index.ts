@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@united/pieces-framework";
+    import { createPiece } from "@united/pieces-framework";
 import { billplzAuth } from "./lib/common/auth";
 import { createBill } from "./lib/actions/create-bill";
 import { getBill } from "./lib/actions/get-bill";

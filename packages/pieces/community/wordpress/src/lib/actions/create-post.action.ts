@@ -1,9 +1,8 @@
 import {
   createAction,
-  PiecePropValueSchema,
   Property,
 } from '@united/pieces-framework';
-import { wordpressCommon, WordPressMedia } from '../common';
+import { wordpressCommon } from '../common';
 import {
   httpClient,
   HttpMethod,

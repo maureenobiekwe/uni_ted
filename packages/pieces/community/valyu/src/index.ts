@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { searchAction } from './lib/actions/search';
 import { extractContentAction } from './lib/actions/extract-content';
@@ -6,8 +6,7 @@ import { answerAction } from './lib/actions/answer';
 import { createDeepResearchTaskAction } from './lib/actions/create-deep-research-task';
 import { createBatchAction } from './lib/actions/create-batch';
 import { listDatasourcesAction } from './lib/actions/list-datasources';
-import { createCustomApiCallAction, HttpMethod } from '@united/pieces-common';
-import { makeRequest } from './lib/common';
+import { createCustomApiCallAction } from '@united/pieces-common';
 import { valyuAuth } from './lib/auth';
 
 export const valyu = createPiece({

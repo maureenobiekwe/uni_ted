@@ -1,6 +1,6 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { calendar as googleCalendar } from '@googleapis/calendar';
-import { googleCalendarCommon, googleCalendarAuth, createGoogleClient } from '../common';
+import { googleCalendarAuth, createGoogleClient } from '../common';
 import { calendarListEntryOutputSchema } from '../output-schemas';
 
 export const addCalendarToCalendarlist = createAction({

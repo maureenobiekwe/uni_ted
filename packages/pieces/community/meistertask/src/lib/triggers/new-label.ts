@@ -1,7 +1,6 @@
 import {
   createTrigger,
   TriggerStrategy,
-  PiecePropValueSchema,
   AppConnectionValueForAuthProperty,
 } from '@united/pieces-framework';
 import {
@@ -10,7 +9,6 @@ import {
   pollingHelper,
   HttpMethod,
 } from '@united/pieces-common';
-import dayjs from 'dayjs';
 import { meistertaskAuth } from '../auth';
 import { meisterTaskCommon, makeRequest } from '../common/common';
 

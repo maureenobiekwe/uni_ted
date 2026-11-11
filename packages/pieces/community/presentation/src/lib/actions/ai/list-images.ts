@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { HttpMethod } from '@united/pieces-common';
 import { presentonAuth } from '../../common/auth';
 import { presentonClient } from '../../common/client';

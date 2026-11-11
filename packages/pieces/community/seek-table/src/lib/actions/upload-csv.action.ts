@@ -1,6 +1,5 @@
 import {
   createAction,
-  Property,
 } from '@united/pieces-framework';
 import {
   httpClient,

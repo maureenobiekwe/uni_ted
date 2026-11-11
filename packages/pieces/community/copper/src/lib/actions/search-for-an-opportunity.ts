@@ -7,7 +7,6 @@ import {
   multiPipelinesDropdown,
   multiPrimaryContactsDropdown,
   multiUsersDropdown,
-  pipelinesDropdown,
 } from '../common/props';
 import { CopperApiService } from '../common/requests';
 

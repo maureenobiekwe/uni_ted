@@ -1,5 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
-import { httpClient, HttpMethod } from '@united/pieces-common';
+import { createPiece } from '@united/pieces-framework';
 import { addContact } from './lib/actions/add-contact';
 import { deleteContacts } from './lib/actions/delete-contacts';
 import { sendSms } from './lib/actions/send-sms';

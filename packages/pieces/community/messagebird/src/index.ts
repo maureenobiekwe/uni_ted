@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { sendSMSAction } from './lib/actions/send-sms.action';
 import { PieceCategory } from '@united/pieces-framework';
 import { listMessages } from './lib/actions/list-messages';

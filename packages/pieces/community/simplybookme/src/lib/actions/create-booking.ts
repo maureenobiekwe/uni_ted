@@ -2,7 +2,6 @@ import { createAction, Property } from '@united/pieces-framework';
 import {
   simplybookAuth,
   makeJsonRpcCall,
-  SimplybookAuth,
   serviceDropdown,
   providerDropdown,
   clientDropdown

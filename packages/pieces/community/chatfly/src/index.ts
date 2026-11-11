@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@united/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { sendMessageAction } from "./lib/actions/send-message";
 import { PieceCategory } from '@united/pieces-framework';
 import { chatflyAuth } from './lib/auth';

@@ -1,5 +1,5 @@
-import { HttpMethod, createCustomApiCallAction, httpClient } from '@united/pieces-common';
-import { PieceAuth, createPiece } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece } from '@united/pieces-framework';
 import { getFliqrAccountDetails } from './lib/actions/get-account-details';
 import { fliqrConfig } from './lib/common/models';
 import { getFliqrAccountFlows } from './lib/actions/get-account-flows';

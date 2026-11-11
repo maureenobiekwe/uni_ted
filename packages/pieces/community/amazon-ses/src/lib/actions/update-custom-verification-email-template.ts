@@ -1,6 +1,5 @@
 import { createAction, Property } from '@united/pieces-framework';
 import {
-  SESClient,
   UpdateCustomVerificationEmailTemplateCommand,
 } from '@aws-sdk/client-ses';
 import { amazonSesAuth } from '../auth';

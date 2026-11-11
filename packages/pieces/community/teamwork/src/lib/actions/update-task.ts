@@ -1,7 +1,6 @@
 import {
 	createAction,
 	Property,
-	PiecePropValueSchema,
 	AppConnectionValueForAuthProperty,
 } from '@united/pieces-framework';
 import { teamworkAuth } from '../common/auth';

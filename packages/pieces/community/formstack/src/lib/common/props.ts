@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, Property } from '@united/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { makeRequest } from './client';
 import { HttpMethod } from '@united/pieces-common';
 import { formStackAuth } from './auth';

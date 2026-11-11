@@ -2,7 +2,6 @@ import { createAction, Property } from '@united/pieces-framework';
 import { bokioAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 import { HttpMethod } from '@united/pieces-common';
-import { t } from 'i18next';
 
 export const createCustomer = createAction({
   auth: bokioAuth,

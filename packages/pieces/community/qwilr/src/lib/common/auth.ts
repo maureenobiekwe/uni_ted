@@ -1,5 +1,4 @@
 import { PieceAuth } from "@united/pieces-framework";
-import { httpClient, HttpMethod } from "@united/pieces-common";
 
 export const qwilrAuth = PieceAuth.SecretText({
     displayName: 'API Key',

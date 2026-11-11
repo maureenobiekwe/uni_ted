@@ -1,6 +1,5 @@
 import {
   Property,
-  PiecePropValueSchema,
   DropdownOption,
 } from '@united/pieces-framework';
 import {

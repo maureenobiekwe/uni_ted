@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { sendMessage } from './lib/actions/send-message';
 import { createContact } from './lib/actions/create-contact';
 import { updateContact } from './lib/actions/update-contact';

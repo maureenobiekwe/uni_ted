@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, Property } from '@united/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { smartsheetAuth } from '../auth';
 import {
 	smartsheetCommon,

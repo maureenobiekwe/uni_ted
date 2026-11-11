@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { mollieCreateOrder } from './lib/actions/create-order';
 import { mollieCreatePaymentLink } from './lib/actions/create-payment-link';
 import { mollieCreatePayment } from './lib/actions/create-payment';

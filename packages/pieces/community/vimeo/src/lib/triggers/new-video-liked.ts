@@ -1,4 +1,4 @@
-import { PiecePropValueSchema, createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
+import { createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { vimeoAuth } from '../auth';
 import { apiRequest } from '../common';
 import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@united/pieces-common';

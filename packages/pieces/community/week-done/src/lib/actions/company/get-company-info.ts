@@ -1,7 +1,6 @@
 import { HttpMethod } from '@united/pieces-common';
 import {
   OAuth2PropertyValue,
-  Property,
   createAction,
 } from '@united/pieces-framework';
 import { weekdoneAuth } from '../../auth';

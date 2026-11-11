@@ -2,7 +2,7 @@ import { HttpMethod } from '@united/pieces-common';
 import { createAction, Property } from '@united/pieces-framework';
 import { cloudinaryAuth } from '../../common/auth';
 import { makeRequest } from '../../common/client';
-import { aiProps, aiResults } from '../../common/ai-props';
+import { aiResults } from '../../common/ai-props';
 import { cloudinaryUpdateResourceOutputSchema } from '../../output-schemas';
 
 export const cloudinaryUpdateResourceByAssetId = createAction({

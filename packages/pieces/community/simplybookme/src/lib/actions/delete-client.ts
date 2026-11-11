@@ -3,7 +3,6 @@ import { httpClient, HttpMethod } from '@united/pieces-common';
 import {
   simplybookAuth,
   getAccessToken,
-  SimplybookAuth,
   clientDropdown
 } from '../common';
 

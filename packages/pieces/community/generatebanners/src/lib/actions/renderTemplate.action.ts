@@ -1,7 +1,6 @@
 import {
   createAction,
   Property,
-  BasicAuthPropertyValue,
 } from '@united/pieces-framework';
 import {
   AuthenticationType,

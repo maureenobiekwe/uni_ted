@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { createRecordAction } from './lib/actions/create-record';
 import { deleteRecordAction } from './lib/actions/delete-record';
 import { updateRecordAction } from './lib/actions/update-record';

@@ -1,8 +1,4 @@
-import {
-  createPiece,
-  PieceAuth,
-  Property,
-} from '@united/pieces-framework';
+import { createPiece, PieceAuth, Property } from '@united/pieces-framework';
 import { createCustomApiCallAction } from '@united/pieces-common';
 import { launchWorkflow } from './lib/actions/launch-workflow';
 import { getJobResults } from './lib/actions/get-job-results';

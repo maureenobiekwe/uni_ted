@@ -4,7 +4,7 @@ import {
   HttpMethod,
   HttpRequest,
 } from '@united/pieces-common';
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@united/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { CalendarObject, WeblingCalendarEvent, WeblingChanges } from './types';
 
 export async function callApi<Type>(

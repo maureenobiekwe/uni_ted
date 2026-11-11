@@ -5,11 +5,7 @@ import {
   HttpRequest,
   QueryParams,
 } from '@united/pieces-common';
-import {
-  AppConnectionValueForAuthProperty,
-  CustomAuthProps,
-  StaticPropsValue,
-} from '@united/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { metabaseAuth } from '..';
 
 export async function queryMetabaseApi(

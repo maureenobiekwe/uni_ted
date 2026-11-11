@@ -1,5 +1,5 @@
 import { HttpMethod } from '@united/pieces-common';
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { bitlyApiCall } from '../common/client';
 import { bitlyAuth } from '../common/auth';
 import { bitlinkDropdown, groupGuid } from '../common/props';

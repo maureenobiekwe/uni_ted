@@ -4,7 +4,7 @@ import {
   Property,
 } from '@united/pieces-framework';
 import { CopperAuth, isNonEmptyStr } from '../common/constants';
-import { leadDropdown, peopleDropdown } from '../common/props';
+import { leadDropdown } from '../common/props';
 import { CopperApiService } from '../common/requests';
 
 export const updateLead = createAction({

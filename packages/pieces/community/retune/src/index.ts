@@ -1,12 +1,8 @@
 import {
   createCustomApiCallAction,
-  httpClient,
-  HttpMethod,
 } from '@united/pieces-common';
 import {
   createPiece,
-  PieceAuth,
-  Property,
 } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { askChatbot } from './lib/actions/ask-chatbot';

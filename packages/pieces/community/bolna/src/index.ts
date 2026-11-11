@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { bolnaaiAuth } from './lib/common/auth';
 import { makePhoneCall } from './lib/actions/make-phone-call';
 import { callCompletionReport } from './lib/triggers/call-completion-report';

@@ -1,5 +1,5 @@
 import { meistertaskAuth } from '../auth';
-import { meisterTaskCommon, makeRequest } from '../common/common';
+import { makeRequest } from '../common/common';
 import { createAction, Property } from '@united/pieces-framework';
 import { HttpMethod } from '@united/pieces-common';
 

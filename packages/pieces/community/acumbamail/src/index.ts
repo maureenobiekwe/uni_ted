@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { addUpdateSubscriberAction } from './lib/actions/add-subscriber';
 import { createSubscriberListAction } from './lib/actions/create-subscriber-list';
 import { unsubscribeAction } from './lib/actions/unsubscribe-subscriber';

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { HttpMethod } from '@united/pieces-common';
 import { flipandoAuth } from '../common/auth';
 import { makeRequest } from '../common/client';

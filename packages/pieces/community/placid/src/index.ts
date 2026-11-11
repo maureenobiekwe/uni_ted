@@ -1,10 +1,7 @@
 import {
-	AuthenticationType,
-	HttpMethod,
 	createCustomApiCallAction,
-	httpClient,
 } from '@united/pieces-common';
-import { PieceAuth, createPiece } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { createImage } from './lib/actions/create-image';
 import { createPdf } from './lib/actions/create-pdf';

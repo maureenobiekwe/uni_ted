@@ -34,7 +34,6 @@ import { updateTeam } from './lib/actions/update-team';
 import { updateWorker } from './lib/actions/update-worker';
 
 import { createCustomApiCallAction } from '@united/pieces-common';
-import { PieceCategory } from '@united/pieces-framework';
 import { autoDispatchCompleted } from './lib/triggers/auto-dispatch-completed';
 import { smsRecipientOptOut } from './lib/triggers/sms-recipient-opt-out';
 import { smsRecipientResponseMissed } from './lib/triggers/sms-recipient-response-missed';

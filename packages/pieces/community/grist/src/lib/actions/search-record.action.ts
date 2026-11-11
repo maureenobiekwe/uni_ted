@@ -2,7 +2,6 @@ import { gristAuth } from '../..';
 import {
   createAction,
   DropdownOption,
-  PiecePropValueSchema,
   Property,
 } from '@united/pieces-framework';
 import { commonProps } from '../common/props';

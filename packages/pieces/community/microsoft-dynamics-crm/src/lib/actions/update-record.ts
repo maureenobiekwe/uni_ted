@@ -1,5 +1,4 @@
 import {
-  PiecePropValueSchema,
   createAction,
 } from '@united/pieces-framework';
 import { dynamicsCRMAuth } from '../auth';

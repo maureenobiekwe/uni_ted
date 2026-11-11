@@ -1,4 +1,4 @@
-import { TriggerStrategy, createTrigger, PieceAuth, Property } from '@united/pieces-framework';
+import { TriggerStrategy, createTrigger, Property } from '@united/pieces-framework';
 import { createWebsocketSubscription, deleteWebsocketSubscription } from './helpers';
 import { websocketCommon } from '../common/common';
 

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { sendAPrompt } from './lib/actions/send-a-prompt';
 import { newLeadSubmission } from './lib/triggers/new-lead-submission';
 import { createCustomApiCallAction } from '@united/pieces-common';

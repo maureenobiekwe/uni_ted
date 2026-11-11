@@ -1,5 +1,5 @@
 import { createAction, Property } from '@united/pieces-framework';
-import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
+import { SendEmailCommand } from '@aws-sdk/client-ses';
 import { amazonSesAuth } from '../auth';
 import {
   getVerifiedIdentities,

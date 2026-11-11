@@ -1,6 +1,6 @@
 import { Property } from '@united/pieces-framework';
 import { httpClient, HttpMethod } from '@united/pieces-common';
-import { getAuthToken, CyberArkAuth } from './auth-helper';
+import { getAuthToken } from './auth-helper';
 import { cyberarkAuth } from '../auth';
 
 export const userIdDropdown = Property.Dropdown({

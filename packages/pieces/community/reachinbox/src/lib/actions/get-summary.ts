@@ -1,7 +1,6 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { ReachinboxAuth } from '../..';
 import { HttpMethod, httpClient } from '@united/pieces-common';
-import { reachinboxCommon } from '../common/index';
 
 // Define the structure of the summary response
 interface SummaryAnalyticsResponse {

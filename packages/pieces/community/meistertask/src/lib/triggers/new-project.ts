@@ -1,7 +1,6 @@
 import {
   createTrigger,
   TriggerStrategy,
-  PiecePropValueSchema,
   AppConnectionValueForAuthProperty,
 } from '@united/pieces-framework';
 import {
@@ -12,7 +11,7 @@ import {
 } from '@united/pieces-common';
 import dayjs from 'dayjs';
 import { meistertaskAuth } from '../auth';
-import { makeRequest, meisterTaskCommon } from '../common/common';
+import { makeRequest } from '../common/common';
 
 const getToken = (auth: any): string => {
   return typeof auth === 'string' ? auth : (auth as any).access_token;

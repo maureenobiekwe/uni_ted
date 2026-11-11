@@ -1,6 +1,6 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { postgresAuth } from '../../../auth';
-import { postgresAi, postgresAiProps } from '../../../ai-common';
+import { postgresAi } from '../../../ai-common';
 import { postgresCallRoutineOutputSchema } from '../../../output-schemas';
 
 export const callRoutine = createAction({

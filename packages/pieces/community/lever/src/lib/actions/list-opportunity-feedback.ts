@@ -1,5 +1,5 @@
 import { createAction, Property } from '@united/pieces-framework';
-import { LeverAuth, leverAuth } from '../..';
+import { leverAuth } from '../..';
 import { LEVER_BASE_URL } from '../..';
 import {
   AuthenticationType,

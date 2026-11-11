@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { HttpMethod } from '@united/pieces-common';
 import { podioClient } from '../common/client';
 import { podioProps } from '../common/props';

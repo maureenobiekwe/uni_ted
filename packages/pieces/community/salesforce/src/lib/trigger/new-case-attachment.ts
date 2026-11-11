@@ -6,7 +6,6 @@ import {
 } from '@united/pieces-common';
 import {
     AppConnectionValueForAuthProperty,
-    OAuth2PropertyValue,
     TriggerStrategy,
     createTrigger,
 } from '@united/pieces-framework';

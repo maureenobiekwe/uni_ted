@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@united/pieces-framework";
+    import { createPiece } from "@united/pieces-framework";
 import { justInvoiceAuth } from "./lib/common/auth";
 import * as actions from "./lib/actions/index";
 

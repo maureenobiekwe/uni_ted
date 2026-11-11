@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { timelinesAiAuth, timelinesAiCommon } from '../common';
 import { chatDropdown, fileDropdown } from '../common/properties';
 

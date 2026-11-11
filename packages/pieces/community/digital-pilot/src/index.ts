@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { addTargetAccountAction } from './lib/actions/add-target-account';
 import { removeTargetAccountAction } from './lib/actions/remove-target-account';
 import { newHighIntentVisitTrigger } from './lib/triggers/new-high-intent-visit';

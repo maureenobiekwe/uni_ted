@@ -1,6 +1,5 @@
 import {
   createAction,
-  DynamicPropsValue,
   Property,
 } from '@united/pieces-framework';
 import { HttpMethod, httpClient } from '@united/pieces-common';

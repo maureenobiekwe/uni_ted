@@ -1,7 +1,7 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { cyberarkAuth } from '../auth';
 import { httpClient, HttpMethod } from '@united/pieces-common';
-import { getAuthToken, CyberArkAuth } from '../common/auth-helper';
+import { getAuthToken } from '../common/auth-helper';
 
 export const findUser = createAction({
   auth: cyberarkAuth,

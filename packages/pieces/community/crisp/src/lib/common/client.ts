@@ -1,13 +1,12 @@
 import {
     AuthenticationType,
 	httpClient,
-	HttpHeaders,
 	HttpMessageBody,
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
 } from '@united/pieces-common';
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@united/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { crispAuth } from './auth';
 
 

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { klaviyoAuth, KlaviyoAuthValue } from '../common/auth';
 import { listIdDropdown, profileIdsMultiSelectDropdown } from '../common/props';
 import { HttpMethod } from '@united/pieces-common';

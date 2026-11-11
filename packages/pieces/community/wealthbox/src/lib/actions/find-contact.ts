@@ -1,6 +1,6 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { httpClient, HttpMethod } from '@united/pieces-common';
-import { fetchContacts, fetchTags, WEALTHBOX_API_BASE, handleApiError } from '../common';
+import { fetchTags, WEALTHBOX_API_BASE, handleApiError } from '../common';
 import { wealthboxAuth } from '../..';
 
 export const findContact = createAction({

@@ -1,6 +1,6 @@
     import { createCustomApiCallAction } from "@united/pieces-common";
     import { createPiece, PieceAuth, Property } from "@united/pieces-framework";
-    import { generateRazorpayAuthHeader, RazorpayCredentials, razorpayURL } from "./lib/common/utils";
+    import { generateRazorpayAuthHeader, razorpayURL } from "./lib/common/utils";
     import { createPaymentlink } from "./lib/actions/create-payment-link";
 
     export const razorpayAuth = PieceAuth.CustomAuth({

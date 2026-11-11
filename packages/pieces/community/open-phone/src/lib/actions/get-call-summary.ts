@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { HttpMethod } from '@united/pieces-common';
 import { openPhoneAuth } from '../auth';
 import { openPhoneCommon, OpenPhoneCallSummaryResponse } from '../common';

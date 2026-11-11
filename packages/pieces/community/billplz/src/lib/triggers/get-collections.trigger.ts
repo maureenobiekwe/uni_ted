@@ -1,7 +1,6 @@
 import { 
   createTrigger, 
-  TriggerStrategy, 
-  Property,
+  TriggerStrategy,
   AppConnectionValueForAuthProperty,
   StaticPropsValue
 } from '@united/pieces-framework';

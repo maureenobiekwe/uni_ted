@@ -2,7 +2,6 @@ import { createAction, OAuth2PropertyValue, Property } from '@united/pieces-fram
 import { excelAuth } from '../auth';
 import { commonProps } from '../common/props';
 import { getDrivePath, createMSGraphClient } from '../common/helpers';
-import { excelCommon } from '../common/common';
 
 export const lookupTableColumnAction = createAction({
   auth: excelAuth,

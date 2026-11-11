@@ -1,6 +1,5 @@
 import { DropdownOption, Property } from '@united/pieces-framework';
 import { ContentfulAuth, makeClient } from '../common';
-import { isEmpty } from '@united/pieces-framework';
 
 const ContentModel = Property.Dropdown({
   auth: ContentfulAuth,

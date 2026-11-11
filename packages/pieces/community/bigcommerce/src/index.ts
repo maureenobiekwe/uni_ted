@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { abandonedCart } from './lib/triggers/abandoned-cart';
 import { cartCreated } from './lib/triggers/cart-created';
 import { customerAddressCreated } from './lib/triggers/customer-address-created';
@@ -21,7 +21,7 @@ import { listCategories } from './lib/actions/list-categories';
 import { createBlogPost } from './lib/actions/create-blog-post';
 import { createCustomerAddress } from './lib/actions/create-customer-address';
 import { createCustomApiCallAction } from '@united/pieces-common';
-import { bigCommerceAuth, GET_BASE_URL } from './lib/common/constants';
+import { GET_BASE_URL } from './lib/common/constants';
 import { searchCustomer } from './lib/actions/search-customer';
 import { searchProduct } from './lib/actions/search-product';
 import { searchCustomerAddress } from './lib/actions/search-customer-address';

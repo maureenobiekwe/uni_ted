@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import {
 	webSearch,
 	searchNews,
@@ -9,10 +9,7 @@ import {
 } from './lib/actions';
 import { PieceCategory } from '@united/pieces-framework';
 import {
-	AuthenticationType,
 	createCustomApiCallAction,
-	httpClient,
-	HttpMethod,
 } from '@united/pieces-common';
 import { dumplingAuth } from './lib/auth';
 

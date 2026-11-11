@@ -1,8 +1,6 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import {
-  HttpMethod,
   createCustomApiCallAction,
-  httpClient,
 } from '@united/pieces-common';
 import { BASE_URL } from './lib/common/constants';
 import { uploadDocumentAction } from './lib/actions/upload-document';

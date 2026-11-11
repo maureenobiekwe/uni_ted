@@ -4,7 +4,6 @@ import { biginAuth } from '../auth';
 import { createAction, Property } from '@united/pieces-framework';
 import { companyDropdown, tagsDropdown, usersDropdown } from '../common/props';
 import { biginApiService } from '../common/request';
-import { handleDropdownError } from '../common/helpers';
 
 export const createContact = createAction({
   auth: biginAuth,

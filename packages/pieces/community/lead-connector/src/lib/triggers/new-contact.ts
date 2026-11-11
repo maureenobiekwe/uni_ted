@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, OAuth2PropertyValue, createTrigger } from '@united/pieces-framework';
+import { AppConnectionValueForAuthProperty, createTrigger } from '@united/pieces-framework';
 import { TriggerStrategy } from '@united/pieces-framework';
 import {
   DedupeStrategy,

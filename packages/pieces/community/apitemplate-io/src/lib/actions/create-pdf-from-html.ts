@@ -1,6 +1,6 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { ApitemplateAuth } from '../common/auth';
-import { ApitemplateAuthConfig, ApitemplateRegion, makeRequest } from '../common/client';
+import { ApitemplateRegion, makeRequest } from '../common/client';
 import { HttpMethod } from '@united/pieces-common';
 import { createPdfFromHtmlOutputSchema } from '../output-schemas';
 

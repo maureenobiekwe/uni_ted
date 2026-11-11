@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import {
 	addBlockedTimeAction,
 	createAppointmentAction,

@@ -13,7 +13,6 @@ import {
   makeXaiRequest,
   validateResponse,
   parseJsonResponse,
-  XaiResponse,
   CategorizationResult
 } from '../common/utils';
 import { categorizeTextActionOutputSchema } from '../output-schemas';

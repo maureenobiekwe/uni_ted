@@ -1,7 +1,6 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { roeAiAuth } from '../common/auth';
 import {
-  AuthenticationType,
   httpClient,
   HttpMethod,
 } from '@united/pieces-common';

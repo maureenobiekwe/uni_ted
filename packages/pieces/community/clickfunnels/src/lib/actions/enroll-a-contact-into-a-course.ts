@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { contactsDropdown, coursesDropdown, teamsDropdown, workspacesDropdown } from '../common/props';
 import { clickfunnelsApiService } from '../common/requests';
 import { clickfunnelsAuth } from '../common/constants';

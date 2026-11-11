@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth, Property } from "@united/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { createOrder } from "./lib/actions/create-order"
 import { createPaymentLink } from "./lib/actions/create-payment-link"
 import { createRefund } from "./lib/actions/create-refund"

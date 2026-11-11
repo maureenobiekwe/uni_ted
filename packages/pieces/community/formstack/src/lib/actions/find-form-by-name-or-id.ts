@@ -1,6 +1,5 @@
 import {
   createAction,
-  OAuth2PropertyValue,
   Property,
 } from '@united/pieces-framework';
 import { formStackAuth } from '../common/auth';

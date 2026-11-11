@@ -3,7 +3,7 @@ import {
   Property,
   DynamicPropsValue,
 } from '@united/pieces-framework';
-import { capsuleCrmAuth, CapsuleCrmAuthType } from '../common/auth';
+import { capsuleCrmAuth } from '../common/auth';
 import { capsuleCrmClient } from '../common/client';
 import {
   CreateProjectParams,

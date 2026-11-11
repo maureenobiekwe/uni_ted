@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth, OAuth2PropertyValue } from "@united/pieces-framework";
+    import { createPiece, PieceAuth } from "@united/pieces-framework";
     import { OAuth2GrantType, PieceCategory } from '@united/pieces-framework';
     import { getInvoices } from './lib/actions/get-invoices';
     import { getProjects } from './lib/actions/get-projects';

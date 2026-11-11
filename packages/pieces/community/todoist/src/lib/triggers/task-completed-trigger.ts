@@ -1,7 +1,6 @@
 import {
 	AppConnectionValueForAuthProperty,
 	createTrigger,
-	PiecePropValueSchema,
 	TriggerStrategy,
 } from '@united/pieces-framework';
 import dayjs from 'dayjs';

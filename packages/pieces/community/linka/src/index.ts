@@ -1,7 +1,5 @@
 import {
   createPiece,
-  PieceAuth,
-  Property,
 } from '@united/pieces-framework';
 import { addOrUpdateContactExtended } from './lib/actions/add-or-update-contact-extended';
 import { addOrUpdateContact } from './lib/actions/add-or-update-contact';

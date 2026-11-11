@@ -142,7 +142,7 @@ describe('pieceInstaller', () => {
 
         const expectedInit = { headers: { Authorization: 'Bearer test-token' } }
         expect(vi.mocked(fetch)).toHaveBeenCalledTimes(2)
-        expect(vi.mocked(fetch)).toHaveBeenCalledWith('http://localhost:3000/api/v1/engine/pieces/bundle?name=%40united%2Fpiece-cold&version=1.0.0', expectedInit)
+        expect(vi.mocked(fetch)).toHaveBeenCalledWith('http://localhost:3000/api/v1/engine/pieces/bundle?name=%40activepieces%2Fpiece-cold&version=1.0.0', expectedInit)
         expect(vi.mocked(fetch)).toHaveBeenCalledWith(`http://localhost:3000/api/v1/engine/pieces/bundle?archiveId=${archivePiece.archiveId}`, expectedInit)
     })
 

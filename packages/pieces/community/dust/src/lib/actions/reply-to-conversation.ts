@@ -1,9 +1,5 @@
 import { createAction, Property } from '@united/pieces-framework';
-import {
-  httpClient,
-  HttpMethod,
-  HttpRequest,
-} from '@united/pieces-common';
+import { httpClient, HttpMethod, HttpRequest } from '@united/pieces-common';
 import { dustAuth } from '../..';
 import {
   assistantProp,

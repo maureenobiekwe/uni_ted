@@ -13,7 +13,6 @@ import {
   makeXaiRequest,
   validateResponse,
   parseJsonResponse,
-  XaiResponse,
   ExtractionResult
 } from '../common/utils';
 import { extractDataFromTextActionOutputSchema } from '../output-schemas';

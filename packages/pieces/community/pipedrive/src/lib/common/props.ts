@@ -9,7 +9,6 @@ import {
 } from '@united/pieces-framework';
 import { GetField, StageWithPipelineInfo } from './types';
 import { isNil } from '@united/pieces-framework';
-import { context } from '@opentelemetry/api';
 
 /**
  * Fetches options for Pipedrive filters.

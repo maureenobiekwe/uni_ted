@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { createJob } from './lib/actions/create-job';
 import { workflowEvent } from './lib/triggers/workflow-event';

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { generateVideo } from './lib/actions/generate-video';
 import { generatePodcast } from './lib/actions/generate-podcast';
 import { generateAiImage } from './lib/actions/generate-ai-image';

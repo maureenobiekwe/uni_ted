@@ -1,4 +1,4 @@
-import { createAction, Property, PiecePropValueSchema } from '@united/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { teamworkAuth } from '../common/auth';
 import { HttpMethod } from '@united/pieces-common';
 import { teamworkRequest } from '../common/client';

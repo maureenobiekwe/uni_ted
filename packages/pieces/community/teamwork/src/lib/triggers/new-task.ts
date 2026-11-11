@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, Property, PiecePropValueSchema } from '@united/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@united/pieces-framework';
 import { teamworkAuth } from '../common/auth';
 import { teamworkRequest } from '../common/client';
 import { HttpMethod } from '@united/pieces-common';

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { createPptFromTopic } from './lib/actions/create-ppt-from-topic';
 import { createPptFromSummary } from './lib/actions/create-ppt-from-summary';
 import { createPptFromYoutubeVideo } from './lib/actions/create-ppt-from-youtube-video';

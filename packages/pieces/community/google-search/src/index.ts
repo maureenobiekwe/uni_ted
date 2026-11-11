@@ -1,5 +1,4 @@
-import { createPiece, PieceAuth, Property } from '@united/pieces-framework';
-import { httpClient, HttpMethod } from '@united/pieces-common';
+import { createPiece } from '@united/pieces-framework';
 import { searchAction } from './lib/actions/search';
 import { googleSearchAuth } from './lib/auth';
 

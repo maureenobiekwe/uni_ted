@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@united/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 
 import { HttpMethod } from '@united/pieces-common';
 import { makeRequest } from './client';

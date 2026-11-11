@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { createCustomApiCallAction } from '@united/pieces-common';
 import { PieceCategory } from '@united/pieces-framework';
 

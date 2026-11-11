@@ -2,7 +2,6 @@ import { AppConnectionValueForAuthProperty, createAction, Property } from '@unit
 import { httpClient, HttpMethod } from '@united/pieces-common';
 import { fountainAuth } from '../auth';
 import { getAuthHeaders, getApiUrl } from '../common/auth';
-import { PiecePropValueSchema } from '@united/pieces-framework';
 
 async function getApplicantsDropdown(auth: AppConnectionValueForAuthProperty<typeof fountainAuth>): Promise<{ label: string; value: string }[]> {
   try {

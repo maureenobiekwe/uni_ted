@@ -1,11 +1,7 @@
 import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
-import {
-  DedupeStrategy,
-  Polling,
-  pollingHelper,
-} from '@united/pieces-common';
+
+
 import { uscreenAuth } from '../common/auth';
-import { UscreenClient, UscreenInvoice } from '../common/client';
 
 const sampleData = {
   id: '789012',

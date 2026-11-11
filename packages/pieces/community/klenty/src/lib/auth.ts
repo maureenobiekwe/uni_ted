@@ -1,7 +1,7 @@
 import { httpClient, HttpMethod } from '@united/pieces-common';
 import { PieceAuth, Property } from '@united/pieces-framework';
 
-import { KLENTY_API_BASE, KLENTY_DOCS_API_BASE } from './common/constants';
+import { KLENTY_API_BASE } from './common/constants';
 
 async function validateHost(
   baseUrl: string,

@@ -1,5 +1,5 @@
 import { createCustomApiCallAction } from '@united/pieces-common';
-import { createPiece, OAuth2PropertyValue, PieceAuth } from '@united/pieces-framework';
+import { createPiece, OAuth2PropertyValue } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { createItemAction } from './lib/actions/items/create-item';
 import { deleteItemAction } from './lib/actions/items/delete-item';

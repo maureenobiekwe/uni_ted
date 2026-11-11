@@ -1,6 +1,6 @@
 import { Property } from '@united/pieces-framework';
 import { httpClient, HttpMethod } from '@united/pieces-common';
-import { SimplybookAuth, makeJsonRpcCall, getAccessToken, simplybookAuth } from './auth';
+import { makeJsonRpcCall, getAccessToken, simplybookAuth } from './auth';
 
 interface Client {
   id: number;

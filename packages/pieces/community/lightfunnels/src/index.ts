@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
-import { OAuth2GrantType, PieceCategory } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { newOrderTrigger } from './lib/triggers/new-order';
 import { newLeadTrigger } from './lib/triggers/new-lead';
 import { listProducts } from './lib/actions/list-products';

@@ -4,7 +4,6 @@ import {
   createTrigger
 } from '@united/pieces-framework';
 import { TriggerStrategy } from '@united/pieces-framework';
-import { excelCommon } from '../common/common';
 import { commonProps } from '../common/props';
 import { getDrivePath, createMSGraphClient } from '../common/helpers';
 import { excelAuth } from '../auth';

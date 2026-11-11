@@ -1,4 +1,4 @@
-import { TriggerStrategy, createTrigger, PieceAuth, Property } from '@united/pieces-framework';
+import { TriggerStrategy, createTrigger, Property } from '@united/pieces-framework';
 import { createGraphQLSubscription, deleteGraphQLSubscription } from './helpers';
 import { graphqlCommon } from '../common/common';
 

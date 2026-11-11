@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from "@united/pieces-framework";
-import { httpClient, HttpMethod, createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece } from "@united/pieces-framework";
+import { createCustomApiCallAction } from '@united/pieces-common';
 import { BASE_URL, extractApiKey } from './lib/common/props';
 import { getLeads } from "./lib/actions/get-leads";
 import { createLead } from "./lib/actions/create-lead";

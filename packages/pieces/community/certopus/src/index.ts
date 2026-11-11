@@ -1,5 +1,5 @@
 import { createCustomApiCallAction } from '@united/pieces-common';
-import { PieceAuth, createPiece } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { createCredential } from './lib/actions/create-credential';
 import { certopusCommon } from './lib/common';
 import { certopusAuth } from './lib/auth';

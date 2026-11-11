@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema, Property } from '@united/pieces-framework';
+import { AppConnectionValueForAuthProperty, Property } from '@united/pieces-framework';
 import { PredictLeadsAuth } from '../auth';
 import { PredictLeadsClient } from './client';
 

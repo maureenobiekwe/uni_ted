@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { flipandoAuth } from './lib/common/auth';
 import { runApp } from './lib/actions/run-app';
 import { getTask } from './lib/actions/get-task';

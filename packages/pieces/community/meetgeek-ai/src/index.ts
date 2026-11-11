@@ -1,4 +1,4 @@
-import { createPiece, Piece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { getHighlights } from './lib/actions/get-highlights';
 import { getMeetingDetails } from './lib/actions/get-meeting-details';
 import { getMeetingsSummaryInsights } from './lib/actions/get-meetings-summary-insights';

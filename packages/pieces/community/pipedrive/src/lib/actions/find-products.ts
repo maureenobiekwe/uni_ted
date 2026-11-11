@@ -2,13 +2,9 @@ import { pipedriveAuth } from '../auth';
 import { createAction, Property } from '@united/pieces-framework';
 import {
 	pipedriveApiCall,
-	pipedrivePaginatedV1ApiCall,
-	pipedrivePaginatedV2ApiCall,
-	pipedriveTransformCustomFields,
 } from '../common';
 import { HttpMethod, QueryParams } from '@united/pieces-common';
 import { isNil } from '@united/pieces-framework';
-import { GetField } from '../common/types';
 import { findProductsActionOutputSchema } from '../output-schemas';
 
 export const findProductsAction = createAction({

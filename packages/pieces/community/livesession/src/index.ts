@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { livesessionAuth } from './lib/common/auth';
 import { sessionEvent } from './lib/triggers/session-event';
 import { createCustomApiCallAction } from '@united/pieces-common';

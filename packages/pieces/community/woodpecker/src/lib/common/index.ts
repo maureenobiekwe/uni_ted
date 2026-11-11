@@ -1,6 +1,5 @@
 import { HttpMethod, httpClient, HttpRequest } from '@united/pieces-common';
-import { Property, TriggerStrategy } from '@united/pieces-framework';
-import { TriggerHookContext } from '@united/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { woodpeckerAuth } from '../..';
 
 export const API_BASE_URL = 'https://api.woodpecker.co/rest';

@@ -2,7 +2,6 @@ import { businessCentralAuth } from '../auth';
 import {
   DropdownOption,
   DynamicPropsValue,
-  PiecePropValueSchema,
   Property,
 } from '@united/pieces-framework';
 import { makeClient } from './client';

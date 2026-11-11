@@ -1,7 +1,6 @@
 import {
   createTrigger,
   TriggerStrategy,
-  WebhookResponse,
 } from '@united/pieces-framework';
 import { sendpulseAuth } from '../common/auth';
 import { sendpulseApiCall } from '../common/client';

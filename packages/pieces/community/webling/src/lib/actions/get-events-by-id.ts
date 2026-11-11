@@ -1,5 +1,5 @@
 import { weblingAuth } from '../auth';
-import { createAction, PiecePropValueSchema, Property } from '@united/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { getCalendars, getEventsById } from '../common/helpers';
 import * as z from 'zod/mini'
 import { propsValidation } from '@united/pieces-common';

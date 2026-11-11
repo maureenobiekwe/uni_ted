@@ -1,6 +1,6 @@
 
 import { createCustomApiCallAction } from '@united/pieces-common';
-import { createPiece, PieceAuth } from "@united/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { PieceCategory } from '@united/pieces-framework';
 import { wrikeAuth } from './lib/common/auth';
 import { createTask } from './lib/actions/create-task';

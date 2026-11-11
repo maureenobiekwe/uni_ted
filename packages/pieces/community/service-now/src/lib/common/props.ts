@@ -1,4 +1,4 @@
-import { Property, DynamicPropsValue, PieceAuth, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
+import { Property, PieceAuth, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { ServiceNowClient } from './client';
 
 export const servicenowAuth = PieceAuth.CustomAuth({

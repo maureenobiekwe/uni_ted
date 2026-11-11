@@ -1,9 +1,5 @@
 import { Property } from '@united/pieces-framework';
-import {
-  httpClient,
-  HttpMessageBody,
-  HttpMethod,
-} from '@united/pieces-common';
+import { httpClient, HttpMessageBody, HttpMethod } from '@united/pieces-common';
 import { dustAuth, DustAuthType } from '..';
 import { DustAPI } from '@dust-tt/client';
 

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { createChatbot } from './lib/actions/createChatbot';
 import { deleteChatbot } from './lib/actions/deleteChatbot';
 import { sendMessage } from './lib/actions/sendMessage';

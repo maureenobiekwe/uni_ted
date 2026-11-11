@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { ML_ACTIONS } from './lib/actions';
 import { API_CALLS_ACTIONS } from './lib/actions/api-calls';

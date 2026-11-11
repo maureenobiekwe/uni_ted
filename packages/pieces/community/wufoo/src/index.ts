@@ -1,16 +1,13 @@
 import {
   createCustomApiCallAction,
-  HttpMethod,
 } from '@united/pieces-common';
-import { AppConnectionValueForAuthProperty, createPiece, PieceAuth } from '@united/pieces-framework';
-import { wufooApiCall } from './lib/common/client';
+import { createPiece } from '@united/pieces-framework';
 import { createFormEntryAction } from './lib/actions/create-form-entry';
 import { findFormAction } from './lib/actions/find-form';
 import { findSubmissionByFieldAction } from './lib/actions/find-submission-by-field';
 import { getEntryDetailsAction } from './lib/actions/get-entry-details';
 import { newFormEntryTrigger } from './lib/triggers/new-form-entry';
 import { newFormTrigger } from './lib/triggers/new-form';
-import { AppConnectionType } from '@united/pieces-framework';
 import { wufooAuth } from './lib/auth';
 
 export const wufoo = createPiece({

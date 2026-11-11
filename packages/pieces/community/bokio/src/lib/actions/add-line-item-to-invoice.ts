@@ -2,7 +2,7 @@ import { createAction, Property } from '@united/pieces-framework';
 import { bokioAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 import { HttpMethod } from '@united/pieces-common';
-import { invoiceIdDropdown, lineItemsProps, unitTypeDropdown } from '../common/props';
+import { invoiceIdDropdown, lineItemsProps } from '../common/props';
 
 export const addLineItemToInvoice = createAction({
   auth: bokioAuth,

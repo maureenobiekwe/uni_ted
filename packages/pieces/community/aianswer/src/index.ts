@@ -1,9 +1,7 @@
 import {
-  httpClient,
   createCustomApiCallAction,
-  HttpMethod,
 } from '@united/pieces-common';
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { aiAnswerConfig } from './lib/common/models';
 import { gmailGetListOfAgents } from './lib/actions/gmail-get-list-of-agents';
 import { createPhoneCall } from './lib/actions/create-phone-call';

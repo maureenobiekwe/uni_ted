@@ -1,7 +1,7 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { propsValidation } from '@united/pieces-common';
 import { googleChatApiAuth, googleChatCommon } from '../common';
-import { directMessagesDropdown, spacesDropdown } from '../common/props';
+import { directMessagesDropdown } from '../common/props';
 import { googleChatAPIService } from '../common/requests';
 
 export const getDirectMessageDetails = createAction({

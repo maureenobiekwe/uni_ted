@@ -1,5 +1,5 @@
 import { createAction, Property } from '@united/pieces-framework';
-import { SESClient, CreateTemplateCommand } from '@aws-sdk/client-ses';
+import { CreateTemplateCommand } from '@aws-sdk/client-ses';
 import { amazonSesAuth } from '../auth';
 import {
   createSESClient,
@@ -7,7 +7,6 @@ import {
   validateTemplateContent,
   validateTemplateVariables,
   getTemplateErrorMessage,
-  extractTemplateVariables,
   createTemplatePreview,
   getEmailTemplates,
 } from '../common/ses-utils';

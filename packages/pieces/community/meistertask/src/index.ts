@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { newAttachment } from './lib/triggers/new-attachment';
 import { newPerson } from './lib/triggers/new-person';
@@ -22,7 +22,7 @@ import { findOrCreateAttachment } from './lib/actions/find-or-create-attachment'
 import { findOrCreateTask } from './lib/actions/find-or-create-task';
 import { findOrCreateLabel } from './lib/actions/find-or-create-label';
 import { OAuth2PropertyValue } from '@united/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType, createCustomApiCallAction } from '@united/pieces-common';
+import { createCustomApiCallAction } from '@united/pieces-common';
 import { MEISTERTASK_API_URL } from './lib/common/common';
 import { meistertaskAuth } from './lib/auth';
 

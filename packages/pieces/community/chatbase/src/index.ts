@@ -1,5 +1,5 @@
 import { createCustomApiCallAction } from '@united/pieces-common';
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { createChatbotAction } from './lib/actions/create-chatbot';
 import { listChatbotsAction } from './lib/actions/list-all-chatbots';

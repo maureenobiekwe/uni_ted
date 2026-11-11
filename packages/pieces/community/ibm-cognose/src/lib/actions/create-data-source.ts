@@ -1,4 +1,4 @@
-import { createAction, Property, PieceAuth } from '@united/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { HttpMethod } from '@united/pieces-common';
 import { ibmCognoseAuth } from '../auth';
 import { CognosClient } from '../common/cognos-client';

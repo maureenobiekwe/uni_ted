@@ -5,7 +5,6 @@ import {
   StoreScope,
   createAction,
 } from '@united/pieces-framework';
-import mime from 'mime-types';
 import * as z from 'zod/mini'
 import { googleGeminiAuth } from '../auth';
 import { defaultLLM, getGeminiModelOptions } from '../common/common';

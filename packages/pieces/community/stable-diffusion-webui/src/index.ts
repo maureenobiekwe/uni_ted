@@ -1,8 +1,4 @@
-import {
-  createPiece,
-  PieceAuth,
-  Property,
-} from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { textToImage } from './lib/actions/text-to-image';
 import { stableDiffusionAuth } from './lib/auth';
 

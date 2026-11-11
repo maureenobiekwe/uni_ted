@@ -4,7 +4,7 @@ import { createCustomApiCallAction } from "@united/pieces-common";
 import { Buffer } from 'buffer'; 
 
 // Auth
-import { zendeskSellAuth, ZendeskSellAuth } from "./lib/common/auth";
+import { zendeskSellAuth } from "./lib/common/auth";
 import { ZENDESK_SELL_API_URL } from "./lib/common/client";
 
 // Actions

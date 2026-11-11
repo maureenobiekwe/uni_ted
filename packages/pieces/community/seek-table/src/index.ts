@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@united/pieces-framework";
+    import { createPiece } from "@united/pieces-framework";
 import { seekTableAuth } from "./lib/common/auth";
 import { newCsvCubeTrigger } from "./lib/triggers/new-csv-cube.trigger";
 import { newReportTrigger } from "./lib/triggers/new-report.trigger";

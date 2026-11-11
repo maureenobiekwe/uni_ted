@@ -1,5 +1,5 @@
 import { HttpMethod, httpClient, HttpMessageBody, QueryParams } from '@united/pieces-common';
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@united/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { greipAuth } from './auth';
 
 const BASE_URL = 'https://greipapi.com';

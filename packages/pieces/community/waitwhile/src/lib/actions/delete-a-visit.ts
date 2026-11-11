@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { waitwhileAuth } from '../common/auth';
 import { visitIdDropdown } from '../common/props';
 import { makeRequest } from '../common/client';

@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@united/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { sendQuery } from "./lib/actions/send-query";
 import { createFinetune } from "./lib/actions/create-finetune";
 import { deleteFinetune } from "./lib/actions/delete-finetune";

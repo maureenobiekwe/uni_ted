@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@united/pieces-framework";
+    import { createPiece } from "@united/pieces-framework";
 import { createExpenseAction } from './lib/actions/create-expense';
 import { newExpenseTrigger } from './lib/triggers/new-expense';
 import { PieceCategory } from '@united/pieces-framework';

@@ -1,6 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
-import { HttpMethod } from '@united/pieces-common';
-import { makeRequest } from './lib/common';
+import { createPiece } from '@united/pieces-framework';
 import { newAlertTrigger } from './lib/triggers';
 import { PieceCategory } from '@united/pieces-framework';
 import { lucidyaAuth } from './lib/auth';

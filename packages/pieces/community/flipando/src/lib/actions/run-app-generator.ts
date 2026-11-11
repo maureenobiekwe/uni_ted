@@ -1,7 +1,7 @@
 import { createAction, Property } from '@united/pieces-framework';
-import { httpClient, HttpMethod } from '@united/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { flipandoAuth } from '../common/auth';
-import { BASE_URL, makeRequest } from '../common/client';
+import { makeRequest } from '../common/client';
 
 export const runAppGenerator = createAction({
   auth: flipandoAuth,

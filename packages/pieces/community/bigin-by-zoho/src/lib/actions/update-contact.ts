@@ -5,9 +5,8 @@ import {
   createAction,
   Property,
   InputPropertyMap,
-  PropertyContext,
 } from '@united/pieces-framework';
-import { companyDropdown, tagsDropdown, usersDropdown } from '../common/props';
+import { companyDropdown, tagsDropdown } from '../common/props';
 import { biginApiService } from '../common/request';
 import { handleDropdownError } from '../common/helpers';
 

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { paywhirlAuth } from './lib/common/auth';
 import { cancelSubscription } from './lib/actions/cancel-subscription';
 import { createCustomer } from './lib/actions/create-customer';

@@ -1,5 +1,4 @@
 import {
-  PiecePropValueSchema,
   Property,
   createAction,
 } from '@united/pieces-framework';

@@ -1,7 +1,6 @@
 import { HttpMethod, propsValidation } from '@united/pieces-common';
 import {
 	createAction,
-	DynamicPropsValue,
 	InputPropertyMap,
 	Property,
 	PropertyContext,

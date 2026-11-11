@@ -1,5 +1,4 @@
 import { Property, createAction } from '@united/pieces-framework';
-import { salesforcesCommon } from '../common';
 import { HttpMethod } from '@united/pieces-common';
 import { querySalesforceApi } from '../common';
 import { salesforceAuth } from '../..';

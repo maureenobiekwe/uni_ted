@@ -1,7 +1,5 @@
 import {
   createPiece,
-  PieceAuth,
-  Property,
 } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { newDealAddedOrUpdatedTrigger } from './lib/triggers/new-deal-added-or-updated';
@@ -12,7 +10,6 @@ import { createContactAction } from './lib/actions/contacts/create-contact';
 import { updateContactAction } from './lib/actions/contacts/update-contact';
 import { addContactToAccountAction } from './lib/actions/contacts/add-contact-to-account';
 import { addTagToContactAction } from './lib/actions/contacts/add-tag-to-contact';
-import { makeClient } from './lib/common';
 import { newDealNoteTrigger } from './lib/triggers/new-deal-note';
 import { newDealTaskTrigger } from './lib/triggers/new-deal-task';
 import { dealTaskCompletedTrigger } from './lib/triggers/deal-task-completed';

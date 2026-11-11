@@ -3,7 +3,6 @@ import {
   AiMetadata,
   createTrigger,
   Property,
-  Trigger,
   TriggerStrategy,
 } from '@united/pieces-framework';
 import { sessionAuth } from '../..';

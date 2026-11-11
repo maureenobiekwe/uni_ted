@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { findUserByCustomFieldAction } from './lib/actions/find-user-by-custom-field';
 import { createSubscriberAction } from './lib/actions/create-subscriber';
 import { sendContentToUserAction } from './lib/actions/send-content-to-user';
@@ -7,8 +7,6 @@ import { removeTagFromUserAction } from './lib/actions/remove-tag-from-user';
 import { addTagToUserAction } from './lib/actions/add-tag-to-user';
 import { findUserByNameAction } from './lib/actions/find-user-by-name';
 import { PieceCategory } from '@united/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@united/pieces-common';
-import { BASE_URL } from './lib/common/props';
 import { manychatAuth } from './lib/auth';
 
 export const manychat = createPiece({

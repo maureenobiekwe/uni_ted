@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { veroAuth } from './lib/common/auth';
 import { aliasAUser } from './lib/actions/alias-a-user';
