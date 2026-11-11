@@ -10,6 +10,7 @@ on:
 
 jobs:
   validate-publishable-packages:
+    if: vars.PUBLISHABLE_CHECK_ENABLED == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code

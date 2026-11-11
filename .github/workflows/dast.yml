@@ -23,6 +23,7 @@ env:
 
 jobs:
   zap-dast:
+    if: vars.DAST_ENABLED == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 180
     steps:

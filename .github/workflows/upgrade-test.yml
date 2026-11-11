@@ -43,6 +43,7 @@ permissions:
 
 jobs:
   upgrade:
+    if: vars.UPGRADE_TEST_ENABLED == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     outputs:
