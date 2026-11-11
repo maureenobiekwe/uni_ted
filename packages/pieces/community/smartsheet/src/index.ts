@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { HttpMethod, HttpRequest, httpClient } from '@activepieces/pieces-common';
+import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
+import { HttpMethod, HttpRequest, httpClient } from '@united/pieces-common';
 
 // Actions
 import { addRowToSheet } from './lib/actions/add-row-to-sheet';

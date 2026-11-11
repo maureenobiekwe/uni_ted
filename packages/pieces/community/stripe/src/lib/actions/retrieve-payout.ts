@@ -1,9 +1,9 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { stripeAuth } from '../..';
 import { stripeCommon } from '../common';
 

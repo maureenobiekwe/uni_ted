@@ -1,4 +1,4 @@
-import { HttpError } from '@activepieces/pieces-common';
+import { HttpError } from '@united/pieces-common';
 
 import { pastebinClient } from './client';
 

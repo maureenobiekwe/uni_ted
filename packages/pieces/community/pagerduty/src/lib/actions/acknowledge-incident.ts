@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { createAction } from '@united/pieces-framework';
 import { pagerDutyAuth } from '../auth';
 import { pagerDutyApiCall } from '../common/client';
 import { fromEmailProp, incidentIdProp } from '../common/props';

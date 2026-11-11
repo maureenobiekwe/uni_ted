@@ -5,8 +5,8 @@ import {
   HttpMethod,
   HttpResponse,
   QueryParams,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { Property } from '@united/pieces-framework';
 import { wistiaAuth } from '../../';
 
 const BASE_URL = 'https://api.wistia.com/v1';

@@ -4,7 +4,7 @@ import {
   HttpRequest,
   HttpMessageBody,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 
 export type SendPulseAuthProps = {
   clientId: string;

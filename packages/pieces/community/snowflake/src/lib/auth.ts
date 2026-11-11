@@ -3,7 +3,7 @@ import {
   Property,
   OAuth2AuthorizationMethod,
   AppConnectionType,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   buildConnectionOptions,
   buildCustomAuthOptions,

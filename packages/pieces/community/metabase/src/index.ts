@@ -1,11 +1,11 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { getQuestion } from './lib/actions/get-question';
 import { getQuestionPngPreview } from './lib/actions/get-png-rendering';
 import { getDashboardQuestions } from './lib/actions/get-dashboard';
 import {
   createCustomApiCallAction,
   is_chromium_installed,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { getGraphQuestion } from './lib/actions/get-graph-question';
 import { embedQuestion } from './lib/actions/embed-question';
 import { metabaseAuth } from './lib/auth';

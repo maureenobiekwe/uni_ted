@@ -1,5 +1,5 @@
-import { createAction, Property, DynamicPropsValue } from '@activepieces/pieces-framework';
-import { propsValidation } from '@activepieces/pieces-common';
+import { createAction, Property, DynamicPropsValue } from '@united/pieces-framework';
+import { propsValidation } from '@united/pieces-common';
 import { runwayAuth } from '../common';
 import RunwayML from '@runwayml/sdk';
 import * as z from 'zod/mini'

@@ -1,4 +1,4 @@
-import { AuthenticationType, httpClient, HttpMessageBody, HttpMethod } from '@activepieces/pieces-common';
+import { AuthenticationType, httpClient, HttpMessageBody, HttpMethod } from '@united/pieces-common';
 
 const QUICKBOOKS_API_URL_PRODUCTION = 'https://quickbooks.api.intuit.com/v3/company';
 

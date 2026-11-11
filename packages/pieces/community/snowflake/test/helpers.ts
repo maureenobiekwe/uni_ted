@@ -1,6 +1,6 @@
 import { Readable } from 'stream';
 import { vi } from 'vitest';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 
 export type Call = { sql: string; binds: unknown[] | undefined };
 type Responder = { match: RegExp; rows: Record<string, unknown>[] | Error };

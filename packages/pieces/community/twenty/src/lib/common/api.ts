@@ -1,4 +1,4 @@
-import { HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { HttpMethod, QueryParams } from '@united/pieces-common';
 
 import { twentyClient } from './client';
 

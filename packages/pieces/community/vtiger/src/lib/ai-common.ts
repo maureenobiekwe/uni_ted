@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { isRecord } from './rest-client';
 
 export function moduleProp({ description }: { description?: string } = {}) {

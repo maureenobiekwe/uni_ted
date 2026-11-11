@@ -1,5 +1,5 @@
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
 import { millionVerifierAuth } from './lib/auth';
 import { millionVerifierClient } from './lib/common/client';
 import { verifyEmail } from './lib/actions/verify-email';

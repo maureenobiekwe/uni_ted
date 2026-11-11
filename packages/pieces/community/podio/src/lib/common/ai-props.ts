@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 
 function id<R extends boolean>({ required, displayName, description }: AiPropParams<R>) {
   return Property.ShortText({ displayName, description, required });

@@ -1,6 +1,6 @@
 import { createHash, createHmac, randomUUID, timingSafeEqual } from 'crypto';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { Store, WebhookResponse } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { Store, WebhookResponse } from '@united/pieces-framework';
 import { XERO_URLS, XeroApiError, xeroApi, xeroValue } from './client';
 
 function mergeIds({ previous, ids, limit }: { previous: unknown; ids: string[]; limit: number }) {

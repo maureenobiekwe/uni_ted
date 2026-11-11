@@ -1,6 +1,6 @@
 import { createHmac } from 'node:crypto';
 import { afterEach, describe, expect, test, vi } from 'vitest';
-import { DEDUPE_KEY_PROPERTY } from '@activepieces/pieces-framework';
+import { DEDUPE_KEY_PROPERTY } from '@united/pieces-framework';
 import { sendItWebhook } from '../src/lib/common/webhook-trigger';
 import { triggerMappers } from '../src/lib/common/trigger-mappers';
 import { API_KEY, memoryStore, replies, stubFetch } from './helpers';

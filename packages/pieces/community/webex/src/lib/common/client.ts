@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@united/pieces-common';
 
 export const BASE_URL = `https://webexapis.com/v1`;
 

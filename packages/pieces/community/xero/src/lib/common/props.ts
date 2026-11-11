@@ -1,11 +1,11 @@
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+import { OAuth2PropertyValue, Property } from '@united/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   HttpError,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { xeroAuth } from '../..';
 
 export function buildTenantOptions({

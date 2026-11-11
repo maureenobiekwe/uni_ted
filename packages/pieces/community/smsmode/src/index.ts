@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@united/pieces-framework';
 import { smsmodeAuth } from './lib/common/auth';
 import { sendMessage } from './lib/actions/send-message';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { PieceCategory } from '@united/pieces-framework';
 
 export const smsmode = createPiece({
   displayName: 'smsmode',

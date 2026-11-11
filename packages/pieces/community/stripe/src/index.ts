@@ -2,9 +2,9 @@ import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { PieceAuth, createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { stripeCreateCustomer } from './lib/actions/create-customer';
 import { stripeCreateInvoice } from './lib/actions/create-invoice';
 import { stripeRetrieveCustomer } from './lib/actions/retrieve-customer';

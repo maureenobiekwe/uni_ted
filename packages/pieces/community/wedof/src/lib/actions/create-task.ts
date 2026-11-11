@@ -1,6 +1,6 @@
 import { wedofAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { HttpMethod, httpClient } from '@united/pieces-common';
 import { wedofCommon } from '../common/wedof';
 import dayjs from 'dayjs';
 

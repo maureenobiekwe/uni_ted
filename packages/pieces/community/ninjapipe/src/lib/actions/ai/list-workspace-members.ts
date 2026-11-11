@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { ninjapipeAuth } from '../../auth';
 import { ninjapipeClient } from '../../common/client';
 import { ninjapipeRecords } from '../../common/records';

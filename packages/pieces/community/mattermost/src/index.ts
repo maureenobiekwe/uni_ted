@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { mattermostAiActions } from './lib/actions/ai';
 import { sendMessageAction } from './lib/actions/send-message';
 import { mattermostAuth } from './lib/auth';

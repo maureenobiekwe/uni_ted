@@ -2,10 +2,10 @@ import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { getGraphBaseUrl } from './microsoft-cloud';
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+import { OAuth2PropertyValue, Property } from '@united/pieces-framework';
+import { MarkdownVariant } from '@united/pieces-framework';
 import dayjs from 'dayjs';
 import { oneDriveAuth } from '../auth';
 

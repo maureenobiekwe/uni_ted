@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { Property } from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { getMicrosoftCloudFromAuth, getPowerBiBaseUrl } from './microsoft-cloud';
 import { microsoftPowerBiAuth } from '../auth';
 

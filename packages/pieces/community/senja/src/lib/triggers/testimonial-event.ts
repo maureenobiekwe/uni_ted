@@ -2,9 +2,9 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { MarkdownVariant } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { MarkdownVariant } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { senjaAuth } from '../../';
 import { senjaApiCall, mapTestimonial } from '../common';
 import { testimonialEventTriggerOutputSchema } from '../output-schemas';

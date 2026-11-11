@@ -1,10 +1,10 @@
-import { createTrigger, TriggerStrategy, StaticPropsValue, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy, StaticPropsValue, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { quickbaseAuth } from '../auth';
 import { appIdProp, tableIdProp } from '../common/props';
 import { QuickbaseClient } from '../common/client';
 import { QuickbaseRecordResponse, QuickbaseField } from '../common/types';
 import { generateDeduplicationKey, extractRecordValues } from '../common/utils';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 
 const props = {
   appId: appIdProp,

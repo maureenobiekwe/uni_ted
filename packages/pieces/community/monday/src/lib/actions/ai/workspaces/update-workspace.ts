@@ -1,4 +1,4 @@
-import { createAction, isNil, Property } from '@activepieces/pieces-framework';
+import { createAction, isNil, Property } from '@united/pieces-framework';
 import { mondayAuth } from '../../../auth';
 import { updateWorkspaceActionOutputSchema } from '../../../output-schemas';
 import { mondayAiProps } from '../../../common/ai-props';

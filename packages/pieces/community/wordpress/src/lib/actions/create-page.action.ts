@@ -1,11 +1,11 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { wordpressCommon } from '../common';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { wordpressAuth } from '../..';
 import { createPageActionOutputSchema } from '../output-schemas';
 

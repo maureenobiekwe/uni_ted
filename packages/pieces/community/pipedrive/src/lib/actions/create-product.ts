@@ -1,5 +1,5 @@
 import { pipedriveAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { customFieldsProp, ownerIdProp, visibleToProp } from '../common/props';
 import {
 	pipedriveApiCall,
@@ -8,8 +8,8 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField, GetProductResponse } from '../common/types';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isEmpty } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { isEmpty } from '@united/pieces-framework';
 import { createProductActionOutputSchema } from '../output-schemas';
 
 export const createProductAction = createAction({

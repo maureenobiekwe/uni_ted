@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { nifty } from '../src/index';
 import { createTask } from '../src/lib/actions/create-task';
@@ -19,8 +19,8 @@ import { created, httpError, ok, runAction, task } from './helpers';
 
 const sendRequest = vi.fn();
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@united/pieces-common')>();
   return { ...actual, httpClient: { sendRequest: (...args: unknown[]) => sendRequest(...args) } };
 });
 

@@ -1,6 +1,6 @@
 import { pipedriveAuth } from '../auth';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import {
 	pipedriveApiCall,
 	pipedriveCommon,
@@ -8,7 +8,7 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField } from '../common/types';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@united/pieces-framework';
 import { ORGANIZATION_OPTIONAL_FIELDS } from '../common/constants';
 import { newOrganizationTriggerOutputSchema } from '../output-schemas';
 

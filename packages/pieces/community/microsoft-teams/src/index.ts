@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { createChannelAction } from './lib/actions/create-channel';
 import { createChatAndSendMessageAction } from './lib/actions/create-chat-and-send-message';
 import { microsoftTeamsAiActions } from './lib/actions/ai';

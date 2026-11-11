@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { tldvAuth } from '../..';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { tldvCommon } from '../common/client';
 
 export const listMeetings = createAction({

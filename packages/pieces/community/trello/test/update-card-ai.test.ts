@@ -1,11 +1,11 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { httpClient } from '@activepieces/pieces-common';
+import { httpClient } from '@united/pieces-common';
 import { updateCardAi } from '../src/lib/actions/ai/update-card-ai';
-import { PropertyType } from '@activepieces/pieces-framework';
+import { PropertyType } from '@united/pieces-framework';
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
+vi.mock('@united/pieces-common', async (importOriginal) => {
   const actual = await importOriginal<
-    typeof import('@activepieces/pieces-common')
+    typeof import('@united/pieces-common')
   >();
   return {
     ...actual,
@@ -14,7 +14,7 @@ vi.mock('@activepieces/pieces-common', async (importOriginal) => {
 });
 
 vi.mock('../src/index', async () => {
-  const { PieceAuth } = await import('@activepieces/pieces-framework');
+  const { PieceAuth } = await import('@united/pieces-framework');
   return {
     trelloAuth: PieceAuth.BasicAuth({
       displayName: 'Trello',

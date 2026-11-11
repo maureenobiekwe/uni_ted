@@ -1,5 +1,5 @@
-import { HttpRequest, HttpResponse, httpClient } from '@activepieces/pieces-common';
-import { AppConnectionType, createMockActionContext } from '@activepieces/pieces-framework';
+import { HttpRequest, HttpResponse, httpClient } from '@united/pieces-common';
+import { AppConnectionType, createMockActionContext } from '@united/pieces-framework';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import '../src';
 import { updateWordPressPost } from '../src/lib/actions/update-post.action';

@@ -1,4 +1,4 @@
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@united/pieces-framework';
 import { cmsAuth } from '../auth';
 import { totalcmsPolling } from '../common/polling';
 import { totalcmsProps } from '../common/props';

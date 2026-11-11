@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpResponse, QueryParams } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, HttpResponse, QueryParams } from '@united/pieces-common';
 
 const REQUEST_TIMEOUT_MS = 30_000;
 const LOCAL_HOSTS = ['localhost', '127.0.0.1', '[::1]'];

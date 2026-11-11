@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { HttpError, httpClient } from '@activepieces/pieces-common';
+import { HttpError, httpClient } from '@united/pieces-common';
 import { aiCreateProductDiscountAction } from '../src/lib/actions/discounts/ai-create-product-discount';
 import { aiCreatePromoCodeAction } from '../src/lib/actions/discounts/ai-create-promo-code';
 import { orderCreatedTrigger } from '../src/lib/triggers/order-created';

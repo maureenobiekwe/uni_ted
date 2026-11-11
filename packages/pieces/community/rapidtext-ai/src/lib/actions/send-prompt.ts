@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { rapidTextAiAuth } from '../common/auth';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { modelDropdown } from '../common/props';
 
 export const sendPromptAction = createAction({

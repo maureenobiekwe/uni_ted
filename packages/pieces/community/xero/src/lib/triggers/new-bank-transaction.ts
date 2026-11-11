@@ -4,8 +4,8 @@ import {
   StaticPropsValue,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import { xeroAuth } from '../..';
 import { props } from '../common/props';
 import { XERO_URLS, xeroInput, xeroValue } from '../common/client';

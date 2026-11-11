@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@united/pieces-framework';
 import { rabbitmqAuth } from '../auth';
 import { RabbitmqAuthProps, rabbitmqCommon } from '../common';
 

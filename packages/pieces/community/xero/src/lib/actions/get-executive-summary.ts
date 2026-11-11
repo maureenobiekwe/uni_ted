@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { xeroAuth } from '../..';
 import { props } from '../common/props';
 import { xeroInput } from '../common/client';

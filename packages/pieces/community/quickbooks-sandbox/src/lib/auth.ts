@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { PieceAuth, Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { quickbooksClient } from './common/client';
 import type { QuickbooksCompanyInfo } from './common/types';
 

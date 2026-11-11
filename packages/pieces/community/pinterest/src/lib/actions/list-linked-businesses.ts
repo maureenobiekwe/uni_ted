@@ -1,7 +1,7 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { makeRequest } from '../common';
 import { pinterestAuth } from '../common/auth';
-import { HttpMethod, getAccessTokenOrThrow } from '@activepieces/pieces-common';
+import { HttpMethod, getAccessTokenOrThrow } from '@united/pieces-common';
 import { listLinkedBusinessesActionOutputSchema } from '../output-schemas';
 
 export const listLinkedBusinesses = createAction({

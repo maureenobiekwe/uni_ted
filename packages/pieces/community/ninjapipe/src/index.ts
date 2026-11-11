@@ -1,4 +1,4 @@
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { ninjapipeAuth } from './lib/auth';
 import { addContactNote } from './lib/actions/add-contact-note';
 import { addToList } from './lib/actions/add-to-list';

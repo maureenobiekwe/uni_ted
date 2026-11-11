@@ -1,7 +1,7 @@
 import { Readable } from 'node:stream';
 import { buffer as readableToBuffer } from 'node:stream/consumers';
-import { createAction, OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, streamUtils } from '@activepieces/pieces-common';
+import { createAction, OAuth2PropertyValue, Property } from '@united/pieces-framework';
+import { httpClient, HttpMethod, streamUtils } from '@united/pieces-common';
 import mime from 'mime-types';
 import { oneDriveAuth } from '../auth';
 import { GraphDriveItem, oneDriveApi } from '../common/graph-api';

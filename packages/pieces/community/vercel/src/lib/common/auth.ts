@@ -1,9 +1,9 @@
-import { AuthenticationType, HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { AuthenticationType, HttpMethod, httpClient } from '@united/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 
 export const vercelAuth = PieceAuth.CustomAuth({
   description:

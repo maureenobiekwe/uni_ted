@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { systemeIoAuth } from './auth';
 import { apiErrorStatus, SystemeContact, systemeIoCommon } from './client';
 

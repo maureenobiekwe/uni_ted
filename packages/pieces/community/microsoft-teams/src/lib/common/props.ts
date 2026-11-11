@@ -1,4 +1,4 @@
-import { DropdownOption, DropdownState, Property } from '@activepieces/pieces-framework';
+import { DropdownOption, DropdownState, Property } from '@united/pieces-framework';
 
 import { microsoftTeamsAuth } from '../auth';
 import { microsoftTeamsApi } from './api';

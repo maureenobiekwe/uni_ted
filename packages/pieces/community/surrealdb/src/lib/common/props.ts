@@ -1,4 +1,4 @@
-import { DropdownState, Property } from '@activepieces/pieces-framework';
+import { DropdownState, Property } from '@united/pieces-framework';
 import { surrealdbAuth } from '../auth';
 import { surrealdbApi } from './api';
 import type { SurrealdbDbInfo } from './types';

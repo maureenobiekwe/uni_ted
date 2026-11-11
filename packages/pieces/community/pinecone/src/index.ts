@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { createIndexAction } from './lib/actions/create-index';
 import { upsertVectorAction } from './lib/actions/upsert-vector';
 import { updateVectorAction } from './lib/actions/update-vector';

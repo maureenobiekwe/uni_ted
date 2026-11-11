@@ -2,8 +2,8 @@ import {
   OAuth2AuthorizationMethod,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { ringcentralCommon } from './client';
 
 export const ringcentralAuth = PieceAuth.OAuth2({

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { ntfyAuth } from '../auth';
 import { ntfyClient } from '../common/client';
 import { ntfyProps, PRIORITY_OPTIONS } from '../common/props';

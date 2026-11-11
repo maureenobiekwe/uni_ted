@@ -1,4 +1,4 @@
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+import { OutputSchema, OutputSchemaField } from '@united/pieces-framework';
 
 const personFields: OutputSchemaField[] = [
   { key: 'id', label: 'Person ID', description: 'PostHog person UUID. Use it with Delete Person.' },

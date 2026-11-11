@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@united/pieces-framework';
 import { launchPhantom } from './lib/actions/launch-phantom';
 import { phantombusterAuth } from './lib/common/auth';
 import { newOutput } from './lib/triggers/new-output';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@united/pieces-common';
 import { BASE_URL } from './lib/common/client';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 
 export const phantombuster = createPiece({
   displayName: 'PhantomBuster',

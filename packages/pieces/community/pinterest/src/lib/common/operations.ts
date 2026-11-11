@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { buildPath, isRecord, makeRequest } from '.';
 
 type CreatePinParams = {

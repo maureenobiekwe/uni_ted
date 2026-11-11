@@ -1,5 +1,5 @@
 {
-  "name": "@activepieces/piece-microsoft-outlook-calendar",
+  "name": "@united/piece-microsoft-outlook-calendar",
   "version": "0.4.1",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
@@ -9,13 +9,13 @@
     "lint": "eslint 'src/**/*.ts'"
   },
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@united/pieces-common": "workspace:*",
+    "@united/pieces-framework": "workspace:*",
     "@microsoft/microsoft-graph-client": "3.0.7",
     "@microsoft/microsoft-graph-types": "2.40.0",
     "dayjs": "1.11.9",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@united/core-piece-types": "workspace:*",
+    "@united/core-utils": "workspace:*"
   },
   "devDependencies": {
     "tslib": "2.6.2"

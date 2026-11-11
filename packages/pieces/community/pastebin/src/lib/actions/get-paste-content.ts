@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@united/pieces-framework';
 import { pastebinAuth } from '../auth';
 import { pastebinApi } from '../common/api';
 import { getPasteContentOutputSchema } from '../output-schemas';

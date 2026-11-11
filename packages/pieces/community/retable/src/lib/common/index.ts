@@ -1,5 +1,5 @@
-import { Property, DynamicPropsValue } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { Property, DynamicPropsValue } from '@united/pieces-framework';
+import { HttpMethod, httpClient } from '@united/pieces-common';
 
 import {
   RetableFieldMapping,
@@ -9,7 +9,7 @@ import {
   RetableProject,
   RetableTable,
 } from './models';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@united/pieces-framework';
 import { retableAuth } from '../..';
 
 export const retableCommon = {

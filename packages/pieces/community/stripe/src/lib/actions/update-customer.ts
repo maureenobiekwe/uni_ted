@@ -2,12 +2,12 @@ import {
   createAction,
   MarkdownVariant,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { stripeAuth } from '../..';
 import { stripeCommon } from '../common';
 

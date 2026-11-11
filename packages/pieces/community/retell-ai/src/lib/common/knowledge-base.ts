@@ -1,5 +1,5 @@
 import { randomBytes } from 'crypto';
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { isRecord } from './client';
 import { retellInput } from './input';
 

@@ -1,4 +1,4 @@
-import { AuthenticationType, httpClient, HttpMessageBody, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+import { AuthenticationType, httpClient, HttpMessageBody, HttpMethod, HttpRequest } from '@united/pieces-common';
 import type { QuickbooksAuthValue } from './types';
 
 function baseUrl({ auth }: { auth: QuickbooksAuthValue }): string {

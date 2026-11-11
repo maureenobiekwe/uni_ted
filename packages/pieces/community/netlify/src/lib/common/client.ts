@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, QueryParams } from '@united/pieces-common';
 
 export const NETLIFY_API_BASE = 'https://api.netlify.com/api/v1';
 const REQUEST_TIMEOUT_MS = 30_000;

@@ -1,11 +1,11 @@
-import { HttpRequest, HttpResponse, httpClient } from '@activepieces/pieces-common';
+import { HttpRequest, HttpResponse, httpClient } from '@united/pieces-common';
 import {
     ActionContext,
     AppConnectionType,
     createMockActionContext,
     InputPropertyMap,
     StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { vi } from 'vitest';
 import { ShopifyAuth, shopifyAuth } from '../src/lib/common/auth';
 

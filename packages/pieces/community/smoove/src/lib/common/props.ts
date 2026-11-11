@@ -1,6 +1,6 @@
-import { Property } from "@activepieces/pieces-framework";
+import { Property } from "@united/pieces-framework";
 import { makeRequest } from "./client";
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@united/pieces-common";
 import { smooveAuth } from "./auth";
 
 export const contactIdDropdown = Property.Dropdown({

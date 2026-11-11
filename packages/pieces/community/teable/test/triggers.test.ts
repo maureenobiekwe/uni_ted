@@ -3,7 +3,7 @@ import {
 	createMockPollingTriggerContext,
 	InputPropertyMap,
 	Store,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { teableClient, TeableRecord } from '../src/lib/common/client';
 import { newRecordTrigger } from '../src/lib/triggers/new-record';
 import { updatedRecordTrigger } from '../src/lib/triggers/updated-record';

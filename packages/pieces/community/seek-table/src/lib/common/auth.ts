@@ -2,8 +2,8 @@ import {
 	httpClient,
 	HttpMethod,
 	AuthenticationType,
-} from '@activepieces/pieces-common';
-import { PieceAuth } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { PieceAuth } from '@united/pieces-framework';
 import { BASE_URL } from './client';
 
 async function testEndpoint(auth: string): Promise<boolean> {

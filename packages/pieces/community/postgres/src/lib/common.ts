@@ -1,4 +1,4 @@
-import { MarkdownVariant, Property } from "@activepieces/pieces-framework";
+import { MarkdownVariant, Property } from "@united/pieces-framework";
 import { postgresAuth } from "./auth";
 import { Client } from "pg";
 import { pgClient } from "./client";

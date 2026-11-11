@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 
 export const moxieInput = {
   text({ value }: { value: unknown }): string | undefined {

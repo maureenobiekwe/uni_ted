@@ -5,7 +5,7 @@ import {
 	PiecePropValueSchema,
 	Property,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
 	pipedriveApiCall,
 	pipedrivePaginatedV1ApiCall,
@@ -13,8 +13,8 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField, RequestParams, WebhookCreateResponse } from '../common/types';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { isNil } from '@united/pieces-framework';
 import { DEAL_OPTIONAL_FIELDS } from '../common/constants';
 import { updatedDealStageTriggerOutputSchema } from '../output-schemas';
 

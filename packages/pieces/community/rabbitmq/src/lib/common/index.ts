@@ -1,5 +1,5 @@
-import { OutputSchema, PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { OutputSchema, PiecePropValueSchema, Property } from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import amqp, { Channel, ChannelModel, ConfirmChannel, GetMessage } from 'amqplib';
 import type { rabbitmqAuth } from '../auth';
 

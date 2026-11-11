@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 
 import { microsoftSharePointAuth } from '../../../auth';
 import { microsoftSharePointClient } from '../../../common/client';

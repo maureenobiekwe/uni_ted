@@ -1,10 +1,10 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { WafeqAuth, wafeqAuth } from '../common/auth';
 import { wafeqApiCall, WafeqPaginatedResponse } from '../common/client';
 

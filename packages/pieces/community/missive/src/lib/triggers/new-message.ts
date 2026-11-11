@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { missiveAuth } from '../common/auth';
 
 export const newMessage = createTrigger({

@@ -5,7 +5,7 @@ import {
   StaticPropsValue,
   TriggerHookContext,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { createMockActionContext, createMockPollingTriggerContext } from '../../../framework/src/lib/test';
 import { ntfyAuth } from '../src/lib/auth';
 

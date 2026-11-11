@@ -1,5 +1,5 @@
-import { createTrigger, MarkdownVariant, TriggerStrategy, Property } from '@activepieces/pieces-framework';
-import { HttpError, HttpMethod } from '@activepieces/pieces-common';
+import { createTrigger, MarkdownVariant, TriggerStrategy, Property } from '@united/pieces-framework';
+import { HttpError, HttpMethod } from '@united/pieces-common';
 import crypto from 'crypto';
 import { resendAuth } from '../..';
 import { resendClient } from '../common/client';

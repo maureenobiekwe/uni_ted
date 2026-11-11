@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { pineconeClient } from '../common/client';
 import { pineconeAuth } from '../auth';
 import { getVectorOutputSchema } from '../output-schemas';

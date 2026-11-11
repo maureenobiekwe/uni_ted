@@ -1,4 +1,4 @@
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { sendMessage } from './lib/actions/send-message';
 import { sendMedia } from './lib/actions/send-media';
 import { sendTemplateMessageAction } from './lib/actions/send-from-template';

@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty } from "@activepieces/pieces-framework";
+import { AppConnectionValueForAuthProperty } from "@united/pieces-framework";
 import { Client } from "pg";
 import type { postgresAuth } from "./auth";
 

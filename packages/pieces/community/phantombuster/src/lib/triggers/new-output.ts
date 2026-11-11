@@ -2,10 +2,10 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { phantombusterAuth } from '../common/auth';
 import { agentIdDropdown } from '../common/props';
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+import { MarkdownVariant } from '@united/pieces-framework';
 
 export const newOutput = createTrigger({
   auth: phantombusterAuth,

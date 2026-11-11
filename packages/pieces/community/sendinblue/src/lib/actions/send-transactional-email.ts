@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction, MarkdownVariant, Property, isNil } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { createAction, MarkdownVariant, Property, isNil } from '@united/pieces-framework';
 import { sendinblueAuth } from '../auth';
 import { brevoCommon } from '../common';
 import { brevoProps } from '../common/props';

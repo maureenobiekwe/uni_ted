@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { simplePDFNewSubmission } from './lib/triggers/new-submission';
 
 export const simplepdf = createPiece({

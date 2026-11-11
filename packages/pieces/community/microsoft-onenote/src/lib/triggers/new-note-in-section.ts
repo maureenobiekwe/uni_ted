@@ -1,6 +1,6 @@
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import { Client, ResponseType } from '@microsoft/microsoft-graph-client';
 import dayjs from 'dayjs';
 import { microsoftOneNoteAuth } from '../auth';

@@ -1,11 +1,11 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@united/pieces-framework';
 import {
   AuthenticationType,
   HttpError,
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { xeroAuth } from '../..';
 import { props } from '../common/props';
 import { xeroAttachments } from '../common/attachments';

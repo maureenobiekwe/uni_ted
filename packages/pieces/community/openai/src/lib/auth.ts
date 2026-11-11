@@ -1,5 +1,5 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
+import { PieceAuth } from '@united/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@united/pieces-common';
 import { baseUrl } from './common/common';
 
 export const openaiAuth = PieceAuth.SecretText({

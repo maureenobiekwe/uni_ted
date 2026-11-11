@@ -2,15 +2,15 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { onEventChanged } from './lib/triggers/calendar-event';
 import { onChangedData } from './lib/triggers/on-changed-data';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { eventsById } from './lib/actions/get-events-by-id';
 import { weblingAuth } from './lib/auth';
 

@@ -5,7 +5,7 @@ import {
 	createMockActionContext,
 	InputPropertyMap,
 	StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { TeableAuth } from '../src/lib/auth';
 
 export const PAT_AUTH: TeableConnectionValue = {

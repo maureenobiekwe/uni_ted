@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@united/pieces-framework';
 import { vtigerAuth } from '../auth';
 import { queryRecordsSchema } from '../output-schemas';
 import { vtwsLogin, vtwsQuery } from '../vtws';

@@ -1,6 +1,6 @@
 import { ResponseType } from '@microsoft/microsoft-graph-client';
 
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 
 import { microsoftOneNoteAuth } from '../../auth';
 import { microsoftOneNoteAiProps } from '../../common/ai-props';

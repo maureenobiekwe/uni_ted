@@ -1,17 +1,17 @@
 {
-  "name": "@activepieces/piece-microsoft-onedrive",
+  "name": "@united/piece-microsoft-onedrive",
   "version": "0.6.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@united/pieces-common": "workspace:*",
+    "@united/pieces-framework": "workspace:*",
     "@microsoft/microsoft-graph-client": "3.0.7",
     "@microsoft/microsoft-graph-types": "2.40.0",
     "dayjs": "1.11.9",
     "mime-types": "2.1.35",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@united/core-piece-types": "workspace:*",
+    "@united/core-utils": "workspace:*"
   },
   "scripts": {
     "build": "tsc -p tsconfig.lib.json && cp package.json dist/",

@@ -3,7 +3,7 @@ import {
   HttpMethod,
   httpClient,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import type { ParseurAuthValue } from './types';
 
 function baseUrl(): string {

@@ -2,7 +2,7 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   createTrigger,
@@ -11,7 +11,7 @@ import {
   InputPropertyMap,
   StaticPropsValue,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { ninetyAuth } from '../auth';
 
 function createdEpoch(record: NinetyCreatedRecord): number {

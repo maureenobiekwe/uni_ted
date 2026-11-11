@@ -2,7 +2,7 @@ import { afterEach, describe, expect, test, vi } from 'vitest';
 import { shortIoAuth } from '../src/lib/common/auth';
 import { shortIoClient, ShortIoApiError } from '../src/lib/common/client';
 import { API_KEY, replies, stubFetch } from './helpers';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 
 const auth = { props: { apiKey: `  ${API_KEY} ` } };
 

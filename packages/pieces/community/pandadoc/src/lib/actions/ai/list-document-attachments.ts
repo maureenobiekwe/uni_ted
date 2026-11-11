@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { pandadocAuth } from '../../common/auth';
 import { pandadocApi } from '../../common/api';
 import { pandadocAiProps } from '../../common/ai-props';

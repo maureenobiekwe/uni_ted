@@ -1,4 +1,4 @@
-import { HttpMethod, HttpResponse } from '@activepieces/pieces-common';
+import { HttpMethod, HttpResponse } from '@united/pieces-common';
 
 import { webscrapingAiClient } from './client';
 

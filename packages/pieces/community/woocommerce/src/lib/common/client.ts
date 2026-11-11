@@ -4,8 +4,8 @@ import {
   HttpMethod,
   httpClient,
   QueryParams,
-} from '@activepieces/pieces-common';
-import { tryCatch } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { tryCatch } from '@united/pieces-framework';
 
 async function request<T>({
   auth,

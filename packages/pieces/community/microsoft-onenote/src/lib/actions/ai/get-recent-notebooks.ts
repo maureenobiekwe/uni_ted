@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 
 import { microsoftOneNoteAuth } from '../../auth';
 import { microsoftOneNoteClient } from '../../common/client';

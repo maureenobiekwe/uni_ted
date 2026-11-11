@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, WebhookHandshakeStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy, WebhookHandshakeStrategy } from '@united/pieces-framework';
 import { podioAuth } from '../auth';
 import { podioApi } from '../common/api';
 import { podioProps } from '../common/props';

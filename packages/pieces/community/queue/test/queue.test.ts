@@ -9,7 +9,7 @@ import {
   StaticPropsValue,
   Store,
   StoreScope,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { queue } from '../src';
 import { clearQueue } from '../src/lib/actions/clear-queue';
 import { getQueueSize } from '../src/lib/actions/get-queue-size';

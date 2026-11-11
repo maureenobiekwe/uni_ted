@@ -1,6 +1,6 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { slackAuth } from '../auth';
-import { assertNotNullOrUndefined } from '@activepieces/pieces-framework';
+import { assertNotNullOrUndefined } from '@united/pieces-framework';
 import { profilePicture, text, slackChannel, onlyBotChannels, username, actions, singleSelectChannelInfo, threadTs, mentionOriginFlow, replyBroadcast, customBlocks } from '../common/props';
 import { requestAction } from '../common/request-action';
 import { requestActionActionOutputSchema } from '../output-schemas';

@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { parseurAuth } from '../auth';
 import { parseurApi } from '../common/api';
 import { parseurProps } from '../common/props';

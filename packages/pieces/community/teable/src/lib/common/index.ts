@@ -1,4 +1,4 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+import { DynamicPropsValue, Property } from '@united/pieces-framework';
 import { TeableAuth } from '../auth';
 import { teableClient, TeableField } from './client';
 import { TeableComputedFieldTypes, TeableFieldType, TEABLE_MAX_PAGE_SIZE } from './constants';

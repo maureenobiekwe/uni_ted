@@ -1,6 +1,6 @@
 import { Client, GraphRequest } from '@microsoft/microsoft-graph-client';
 
-import { QueryParams } from '@activepieces/pieces-common';
+import { QueryParams } from '@united/pieces-common';
 
 import type { OutlookCalendarAuthValue } from './types';
 

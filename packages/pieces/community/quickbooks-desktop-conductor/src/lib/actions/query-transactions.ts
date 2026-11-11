@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { spreadIfDefined } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { spreadIfDefined } from '@united/pieces-framework';
 import { quickbooksDesktopConductorAuth } from '../auth';
 import { conductorClient, ConductorAuth } from '../common/client';
 import { queryTransactionsActionOutputSchema } from '../output-schemas';

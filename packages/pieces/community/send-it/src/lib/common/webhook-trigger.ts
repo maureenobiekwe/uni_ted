@@ -1,6 +1,6 @@
 import { createHmac, timingSafeEqual } from 'node:crypto';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { DEDUPE_KEY_PROPERTY, Store, TriggerStrategy } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { DEDUPE_KEY_PROPERTY, Store, TriggerStrategy } from '@united/pieces-framework';
 import { SendItRecord, apiKeyOf, isNotFound, isRecord, optionalText, sendItApi } from './client';
 
 export const sendItWebhook = { enable, disable, handle, verifySignature };

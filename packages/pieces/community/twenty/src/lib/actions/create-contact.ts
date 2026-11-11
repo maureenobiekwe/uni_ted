@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { twentyAuth } from '../auth';
 import { twentyApi } from '../common/api';
 import { createContactOutputSchema } from '../output-schemas';

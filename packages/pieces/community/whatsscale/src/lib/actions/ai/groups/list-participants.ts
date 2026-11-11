@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { listGroupParticipantsOutputSchema } from '../../../output-schemas';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { whatsscaleAuth } from '../../../auth';
 import { whatsscaleClient } from '../../../common/client';
 import { whatsscaleProps } from '../../../common/props';

@@ -1,4 +1,4 @@
-import { createAction, MarkdownVariant, Property } from '@activepieces/pieces-framework';
+import { createAction, MarkdownVariant, Property } from '@united/pieces-framework';
 import { postgresAuth } from '../auth';
 import { pgClient, postgresCommon, postgresUtils } from '../common';
 import { updateRowOutputSchema } from '../output-schemas';

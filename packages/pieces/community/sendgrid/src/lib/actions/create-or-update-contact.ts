@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import {
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { fetchAllLists, getApiKey, getBaseUrl, sendgridAuth } from '../common';
 
 export const createOrUpdateContact = createAction({

@@ -1,6 +1,6 @@
 /// <reference types="vitest/globals" />
-import { HttpRequest, HttpResponse, httpClient } from '@activepieces/pieces-common';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { HttpRequest, HttpResponse, httpClient } from '@united/pieces-common';
+import { AppConnectionType } from '@united/pieces-framework';
 import { createMockActionContext } from '../../../framework/src/lib/test';
 
 export const TOKEN = 'test-token-123';

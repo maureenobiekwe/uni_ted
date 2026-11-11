@@ -1,4 +1,4 @@
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import actions from './lib/actions';
 import { pastefyAuth } from './lib/common/auth';
 import { pastefyCustomApiCallAction } from './lib/actions/custom-api-call';

@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { PromptHubClient } from '../common/client';
 import { getCurrentAccountActionOutputSchema } from '../output-schemas';
 import { prompthubAuth } from '../..';

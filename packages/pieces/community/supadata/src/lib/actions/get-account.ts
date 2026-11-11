@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { supadataAuth } from '../auth';
 import { supadataClient } from '../common/client';
 import { supadataGetAccountOutputSchema } from '../output-schemas';

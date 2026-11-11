@@ -1,5 +1,5 @@
-import { HttpError, httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { tryCatch } from '@activepieces/pieces-framework';
+import { HttpError, httpClient, HttpMethod } from '@united/pieces-common';
+import { tryCatch } from '@united/pieces-framework';
 import { getAppOnlyToken } from './graph';
 import { microsoftCloud } from './microsoft-cloud';
 

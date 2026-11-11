@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { photoroomAuth } from '../auth';
 import { photoroomClient } from '../common/client';
 import { getAccountDetailsOutputSchema } from '../output-schemas';

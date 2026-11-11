@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@united/pieces-framework';
 import { moxieCRMAuth } from '../../auth';
 import { credentialsOf } from '../../common';
 import { PAYMENT_TYPE_OPTIONS } from '../../common/fields';

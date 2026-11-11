@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { supadataAuth } from '../auth';
 import { supadataClient } from '../common/client';
 import { supadataListYoutubeChannelVideosOutputSchema } from '../output-schemas';

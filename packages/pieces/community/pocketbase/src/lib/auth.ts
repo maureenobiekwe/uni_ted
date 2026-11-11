@@ -1,5 +1,5 @@
-import { HttpError } from '@activepieces/pieces-common';
-import { AppConnectionType, PieceAuth, Property, tryCatch } from '@activepieces/pieces-framework';
+import { HttpError } from '@united/pieces-common';
+import { AppConnectionType, PieceAuth, Property, tryCatch } from '@united/pieces-framework';
 import { pocketbaseClient } from './common/client';
 import type { PocketbaseAuthValue } from './common/types';
 

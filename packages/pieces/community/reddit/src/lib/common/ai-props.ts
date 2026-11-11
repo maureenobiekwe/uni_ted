@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 
 function subreddit<R extends boolean>({ required, description }: { required: R; description?: string }) {
   return Property.ShortText({

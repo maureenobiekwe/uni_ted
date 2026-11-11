@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece } from '@united/pieces-framework';
 import { parseurAiActions } from './lib/actions/ai';
 import { createDocumentAction } from './lib/actions/create-document';
 import { createDocumentFromFileAction } from './lib/actions/create-document-from-file';

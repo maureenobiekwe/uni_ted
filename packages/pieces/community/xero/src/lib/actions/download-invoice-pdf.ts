@@ -1,6 +1,6 @@
 import { Readable } from 'stream';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { xeroAuth } from '../..';
 import { props } from '../common/props';
 import { XERO_URLS, xeroApi, xeroInput } from '../common/client';

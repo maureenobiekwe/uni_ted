@@ -1,5 +1,5 @@
-import { DropdownOption, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { DropdownOption, Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { squareAuth } from '../auth';
 import { squareClient, SquareAuth } from './client';
 import { squareShape } from './shape';

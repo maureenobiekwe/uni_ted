@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { smartlead } from '../src';
 import { smartleadAuth } from '../src/lib/auth';

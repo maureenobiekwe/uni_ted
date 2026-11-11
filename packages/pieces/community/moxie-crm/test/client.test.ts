@@ -1,11 +1,11 @@
 import { beforeEach, describe, expect, test, vi } from 'vitest';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { API_KEY, BASE, fail, lastRequest, ok, sendRequest } from './helpers';
 import { MoxieApiError, MoxieCRMClient, assertMoxieRequestUrl, looksLikeWebPage, normalizeBaseUrl } from '../src/lib/common/client';
 import { moxieCRMAuth } from '../src/lib/auth';
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@united/pieces-common')>();
   return { ...actual, httpClient: { sendRequest: (...args: unknown[]) => sendRequest(...args) } };
 });
 

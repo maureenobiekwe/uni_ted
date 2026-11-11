@@ -1,4 +1,4 @@
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+import { OutputSchema, OutputSchemaField } from '@united/pieces-framework';
 
 const pushFields: OutputSchemaField[] = [
   { key: 'iden', label: 'Push ID', description: 'Use this to dismiss or delete the push in a later step.' },

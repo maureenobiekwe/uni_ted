@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 import { ScrapelessValidator } from './utils/validator';
 
 export const scrapelessApiAuth = PieceAuth.SecretText({

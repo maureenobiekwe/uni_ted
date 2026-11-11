@@ -1,9 +1,9 @@
 import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@united/pieces-common';
 import { deleteSubscriber } from '../api';
 import { buildListDropdown } from '../props';
 import { sendyAuth, SendyAuthType } from '../auth';

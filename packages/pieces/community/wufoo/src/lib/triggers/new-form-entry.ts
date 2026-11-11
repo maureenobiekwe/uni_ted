@@ -1,6 +1,6 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { createTrigger, TriggerStrategy, Property } from '@united/pieces-framework';
+import { isNil } from '@united/pieces-framework';
 import { wufooAuth } from '../auth';
 import { wufooApiCall } from '../common/client';
 import { formIdentifier } from '../common/props';

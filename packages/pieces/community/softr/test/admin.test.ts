@@ -13,8 +13,8 @@ import { runAction } from './helpers';
 
 const sendRequest = vi.fn();
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-	const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+	const actual = await importOriginal<typeof import('@united/pieces-common')>();
 	return {
 		...actual,
 		httpClient: {

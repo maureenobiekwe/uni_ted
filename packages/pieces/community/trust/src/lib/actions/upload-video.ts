@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, AuthenticationType, httpClient } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { HttpMethod, AuthenticationType, httpClient } from '@united/pieces-common';
 import FormData from 'form-data';
 import { trustAuth } from '../auth';
 

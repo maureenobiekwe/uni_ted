@@ -4,13 +4,13 @@ import {
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { splitwiseAuth } from '../auth';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { splitwiseApi } from '../common/api';
 
 const props = {

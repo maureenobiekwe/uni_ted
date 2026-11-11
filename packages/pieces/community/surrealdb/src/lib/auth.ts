@@ -1,5 +1,5 @@
-import { HttpError } from '@activepieces/pieces-common';
-import { AppConnectionType, PieceAuth, Property } from '@activepieces/pieces-framework';
+import { HttpError } from '@united/pieces-common';
+import { AppConnectionType, PieceAuth, Property } from '@united/pieces-framework';
 import { surrealdbApi } from './common/api';
 import { surrealdbUtils } from './common/utils';
 

@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 
 import { paddleAuth } from '../auth';
 import { paddleClient } from '../common/client';

@@ -3,9 +3,9 @@ import {
     createPiece,
     PieceAuth,
     Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
 
 const authDesc = `
 Connect to your Oracle Fusion Cloud ERP instance using Basic Authentication.

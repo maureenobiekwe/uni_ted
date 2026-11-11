@@ -1,4 +1,4 @@
-import { AppConnectionType, InputPropertyMap, StaticPropsValue } from '@activepieces/pieces-framework';
+import { AppConnectionType, InputPropertyMap, StaticPropsValue } from '@united/pieces-framework';
 import { createMockActionContext, createMockPollingTriggerContext } from '../../../framework/src/lib/test';
 
 export function testAuth() {

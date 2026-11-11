@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { pineconeClient } from '../common/client';
 import type { QueryOptions, RecordSparseValues } from '../common/types';
 import { pineconeAuth } from '../auth';

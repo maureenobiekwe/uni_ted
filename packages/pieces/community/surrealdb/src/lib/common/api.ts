@@ -1,4 +1,4 @@
-import { HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { HttpMethod, QueryParams } from '@united/pieces-common';
 import { surrealdbClient } from './client';
 import { surrealdbUtils } from './utils';
 import type { SurrealdbAuthValue, SurrealdbRpcResponse, SurrealdbStatementResult } from './types';

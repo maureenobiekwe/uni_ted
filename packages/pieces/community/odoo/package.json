@@ -1,16 +1,16 @@
 {
-  "name": "@activepieces/piece-odoo",
+  "name": "@united/piece-odoo",
   "version": "0.3.4",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@united/pieces-common": "workspace:*",
+    "@united/pieces-framework": "workspace:*",
     "url": "^0.11.3",
     "xmlrpc": "^1.3.2",
     "zod": "4.3.6",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@united/core-piece-types": "workspace:*",
+    "@united/core-utils": "workspace:*"
   },
   "devDependencies": {
     "@types/xmlrpc": "^1.3.10",

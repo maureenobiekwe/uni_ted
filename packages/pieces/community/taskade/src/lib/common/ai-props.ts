@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 
 function projectId({ displayName = 'Project ID', description }: { displayName?: string; description?: string } = {}) {
 	return Property.ShortText({

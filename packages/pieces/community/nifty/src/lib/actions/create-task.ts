@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { niftyProps } from '../common';
 import { niftyOps } from '../common/operations';
 import { niftyAuth } from '../auth';

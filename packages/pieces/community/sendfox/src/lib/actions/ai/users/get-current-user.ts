@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { sendfoxAuth } from '../../../auth';
 import { sendfoxClient } from '../../../common/client';
 import { sendfoxGetCurrentUserOutputSchema } from '../../../output-schemas';

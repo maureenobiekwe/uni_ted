@@ -1,4 +1,4 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+import { PieceAuth, createPiece } from '@united/pieces-framework';
 
 import { rssAiActions } from './lib/actions/ai';
 import { rssNewItemListTrigger } from './lib/triggers/new-item-list-triggers';

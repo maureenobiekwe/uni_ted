@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { editImage } from './lib/actions/edit-image';
 import { generateImage } from './lib/actions/generate-image';
 import { getAccountDetails } from './lib/actions/get-account-details';

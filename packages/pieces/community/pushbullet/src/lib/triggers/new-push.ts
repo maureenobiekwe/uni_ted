@@ -2,8 +2,8 @@ import {
   AppConnectionValueForAuthProperty,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
-import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@united/pieces-common';
 import { bushbulletAuth } from '../common/auth';
 import { PushbulletPush, pushbulletApi } from '../common/client';
 import { pushbulletOutputSchemas } from '../common/output-schemas';

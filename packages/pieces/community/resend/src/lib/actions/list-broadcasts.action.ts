@@ -1,6 +1,6 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { listBroadcastsOutputSchema } from '../output-schemas';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { resendAuth } from '../..';
 
 import { resendClient } from '../common/client';

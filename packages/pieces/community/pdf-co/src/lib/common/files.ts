@@ -1,5 +1,5 @@
 import { Readable } from 'node:stream';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { pdfCoClient } from './client';
 
 const UPLOAD_TIMEOUT_MS = 60_000;

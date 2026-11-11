@@ -1,4 +1,4 @@
-import { PropertyType } from '@activepieces/pieces-framework';
+import { PropertyType } from '@united/pieces-framework';
 import { afterEach, describe, expect, test, vi } from 'vitest';
 import { adjustNumberByIdAction } from '../src/lib/actions/ai/adjust-number-by-id';
 import { findObjectsByIdAction } from '../src/lib/actions/ai/find-objects-by-id';

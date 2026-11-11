@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { systemeIoAuth } from "./lib/common/auth"
 
 import { newContact } from "./lib/triggers/new-contact";
@@ -24,7 +24,7 @@ import { addContactToCommunity } from "./lib/actions/add-contact-to-community";
 import { removeContactFromCommunity } from "./lib/actions/remove-contact-from-community";
 import { cancelSubscription } from "./lib/actions/cancel-subscription";
 import { systemeAiActions } from "./lib/actions/ai";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 
 export const systemeIo = createPiece({
   displayName: "Systeme.io",

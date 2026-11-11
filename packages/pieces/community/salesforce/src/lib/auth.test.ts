@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { httpClient } from '@activepieces/pieces-common';
+import { httpClient } from '@united/pieces-common';
 import { salesforceAuth } from '../index';
 
 const server = { apiUrl: 'http://127.0.0.1:4200/api/', publicUrl: 'http://127.0.0.1:4200/api/' };

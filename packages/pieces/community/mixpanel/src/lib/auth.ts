@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 
 export const mixpanelAuth = PieceAuth.SecretText({
   displayName: 'Mixpanel token',

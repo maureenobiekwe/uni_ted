@@ -1,4 +1,4 @@
-import { AuthenticationType, HttpMethod, httpClient, QueryParams } from '@activepieces/pieces-common';
+import { AuthenticationType, HttpMethod, httpClient, QueryParams } from '@united/pieces-common';
 
 async function sendRequest<T>({
   auth,

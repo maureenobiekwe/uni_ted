@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { messageReceived } from './lib/triggers/message-received';
 import { sendMessageToExchange } from './lib/actions/send-message-to-exchange';
 import { sendMessageToQueue } from './lib/actions/send-message-to-queue';

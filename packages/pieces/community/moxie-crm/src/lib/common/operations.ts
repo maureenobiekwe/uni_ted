@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { moxieRequest } from './client';
 import { PAYMENT_TYPE_OPTIONS, moxieFields } from './fields';
 import { isRecord } from '.';

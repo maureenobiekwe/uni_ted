@@ -2,7 +2,7 @@ import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { appWebhookSetupInfo, onlyBotChannels, slackChannels, multiSelectChannelInfo, userIds, usergroupIds } from '../common/props';
 import { slackAuth } from '../auth';
 import { getTeamId, SlackAuthValue } from '../common/auth-helpers';

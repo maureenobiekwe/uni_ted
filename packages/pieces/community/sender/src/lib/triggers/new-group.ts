@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { senderAuth } from '../auth';
 import { senderApi } from '../common/api';
 

@@ -2,7 +2,7 @@ import {
   MarkdownVariant,
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   createBulkJob,
   getBulkJobInfo,
@@ -11,7 +11,7 @@ import {
   uploadToBulkJob,
 } from '../common';
 
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { salesforceAuth } from '../..';
 import { upsertByExternalIdBulkOutputSchema } from '../output-schemas';
 

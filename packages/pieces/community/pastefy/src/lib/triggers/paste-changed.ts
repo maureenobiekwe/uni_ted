@@ -1,4 +1,4 @@
-import { createTrigger, isNil, Property, StoreScope, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, isNil, Property, StoreScope, TriggerStrategy } from '@united/pieces-framework';
 import { createHash } from 'crypto';
 import { pastefyAuth } from '../common/auth';
 import { pastefyOutputSchemas } from '../common/output-schemas';

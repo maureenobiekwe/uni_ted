@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { NinjaPipeRecord } from './client';
 import { ninjapipeFields } from './fields';
 import { ninjapipeProps } from './props';

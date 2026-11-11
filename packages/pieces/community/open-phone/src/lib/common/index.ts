@@ -2,8 +2,8 @@ import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { openPhoneAuth } from '../auth';
 
 export interface OpenPhoneMessage {

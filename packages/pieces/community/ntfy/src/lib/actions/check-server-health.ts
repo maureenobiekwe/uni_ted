@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { ntfyAuth } from '../auth';
 import { ntfyClient } from '../common/client';
 import { serverHealthOutputSchema } from '../output-schemas';

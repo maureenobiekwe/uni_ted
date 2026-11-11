@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { PieceAuth, Property } from '@united/pieces-framework';
+import { HttpMethod, httpClient } from '@united/pieces-common';
 
 export const postizAuth = PieceAuth.CustomAuth({
   displayName: 'Postiz Connection',

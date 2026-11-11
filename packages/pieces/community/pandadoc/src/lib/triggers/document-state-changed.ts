@@ -1,4 +1,4 @@
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@united/pieces-framework';
 import { pandadocAuth } from '../common/auth';
 import { pandadocSchemas } from '../common/schemas';
 import { pandadocWebhook } from '../common/webhook';

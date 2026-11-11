@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import {
 	InputPropertyMap,
 	MarkdownVariant,
@@ -7,7 +7,7 @@ import {
 	TriggerStrategy,
 	createTrigger,
 	isNil,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { sendinblueAuth } from '../auth';
 import { brevoCommon } from '../common';
 

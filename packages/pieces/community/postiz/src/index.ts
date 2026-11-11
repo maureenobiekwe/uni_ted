@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { PieceCategory } from '@united/pieces-framework';
 import { createPost } from './lib/actions/create-post';
 import { listPosts } from './lib/actions/list-posts';
 import { deletePost } from './lib/actions/delete-post';

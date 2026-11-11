@@ -1,6 +1,6 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { AppConnectionType } from '@united/pieces-framework';
 import { calltidycalapi } from './common';
 
 const markdown = `To create a personal access token:

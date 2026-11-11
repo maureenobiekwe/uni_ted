@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 // Most actions return response.body, so their paths are bare. send_email is the one
 // exception: it returns the whole HttpResponse, so every path there is body.*.

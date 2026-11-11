@@ -1,5 +1,5 @@
 import { slackAuth } from '../auth';
-import { createAction, MarkdownVariant, Property } from '@activepieces/pieces-framework';
+import { createAction, MarkdownVariant, Property } from '@united/pieces-framework';
 import { WebClient } from '@slack/web-api';
 import { requireUserToken, SlackAuthValue } from '../common/auth-helpers';
 import { updateProfileActionOutputSchema } from '../output-schemas';

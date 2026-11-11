@@ -1,6 +1,6 @@
 
-import { createTrigger, TriggerStrategy, Property, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy, Property, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@united/pieces-common';
 import { smooveAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 

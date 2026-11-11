@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 
 function parseJsonValue({ value, label }: { value: unknown; label: string }): unknown {
 	if (typeof value !== 'string') {

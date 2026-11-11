@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { productboardAuth } from '../common/auth';
 import { productboardCommon } from '../common/client';
 import { productboardProps } from '../common/props';

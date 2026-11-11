@@ -1,11 +1,11 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { wrikeAuth } from '../common/auth';
 import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { TriggerStrategy, createTrigger } from '@united/pieces-framework';
 import { wrikeCommon } from '../common/client';
 
 export const newTask = createTrigger({

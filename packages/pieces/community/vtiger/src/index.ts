@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { createRecord } from './lib/actions/create-record';
 import { deleteRecord } from './lib/actions/delete-record';
 import { getRecord } from './lib/actions/get-record';

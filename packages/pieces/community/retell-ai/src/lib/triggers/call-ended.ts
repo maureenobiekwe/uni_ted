@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { retellAiAuth } from '../common/auth';
 import { apiKeyOf } from '../common/client';
 import { SAMPLE_CALL_ENDED } from '../common/sample';

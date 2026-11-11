@@ -1,6 +1,6 @@
 import { createHmac } from 'node:crypto';
 
-import { HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { HttpMethod, QueryParams } from '@united/pieces-common';
 
 import { robollyClient } from './client';
 

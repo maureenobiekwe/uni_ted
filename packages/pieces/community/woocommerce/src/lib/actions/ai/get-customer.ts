@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { wooAuth } from '../../auth';
 import { getCustomerOutputSchema } from '../../output-schemas';
 import { wooGetCustomer } from '../get-customer';

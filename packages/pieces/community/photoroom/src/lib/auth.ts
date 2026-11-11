@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 import { photoroomClient, PhotoroomApiError } from './common/client';
 
 export const photoroomAuth = PieceAuth.CustomAuth({

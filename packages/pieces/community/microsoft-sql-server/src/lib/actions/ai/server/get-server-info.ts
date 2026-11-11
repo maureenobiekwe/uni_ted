@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { mssqlAuth } from '../../../auth';
 import { mssqlAi } from '../../../common/ai';
 import { microsoftSqlServerGetServerInfoOutputSchema } from '../../../output-schemas';

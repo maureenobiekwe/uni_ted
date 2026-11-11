@@ -4,13 +4,13 @@ import {
   DynamicPropsValue,
   MarkdownVariant,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   HttpMessageBody,
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { telegramCommons } from '../common';
 import { telegramBotAuth } from '../..';
 import FormData from 'form-data';

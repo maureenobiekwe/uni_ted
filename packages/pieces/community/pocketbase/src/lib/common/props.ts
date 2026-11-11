@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 
 function collection<R extends boolean>({ required, displayName = 'Collection Name', description = 'The name of the PocketBase collection' }: PropParams<R>) {
   return Property.ShortText({ displayName, description, required });

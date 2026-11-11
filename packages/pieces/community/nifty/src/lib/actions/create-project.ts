@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { niftyAuth } from '../auth';
 import { niftyProps } from '../common';
 import { NIFTY_ACCESS_TYPE_OPTIONS, NIFTY_TASK_VIEW_OPTIONS, niftyOps } from '../common/operations';

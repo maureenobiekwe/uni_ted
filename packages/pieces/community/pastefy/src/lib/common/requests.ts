@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import CryptoJS from 'crypto-js';
 import { PastefyAuthValue, pastefyClient } from './client';
 

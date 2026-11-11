@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@united/pieces-framework';
 import { TeableAuth } from '../auth';
 import { teableAgent } from '../common/agent';
 import { TeableAgentProps } from '../common';

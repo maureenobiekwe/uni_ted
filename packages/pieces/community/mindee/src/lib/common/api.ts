@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { encodeId, isRecord, mindeeV2Request } from './client';
 import { mindeeFiles, MindeeUpload } from './file';
 import { mindeeInference, MindeeProduct } from './inference';

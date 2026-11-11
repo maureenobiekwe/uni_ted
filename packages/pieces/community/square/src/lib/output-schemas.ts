@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const addressFields: OutputSchema['fields'] = [
   { key: 'address_line_1', label: 'Address Line 1' },

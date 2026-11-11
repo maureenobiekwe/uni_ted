@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@united/pieces-framework';
 
 const markdown = `
 You need the WhatsApp Business Account ID and a permanent System User access token from Meta.

@@ -3,7 +3,7 @@ import {
   DynamicPropsValue,
   AppConnectionValueForAuthProperty,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { NocoDBClient } from './client';
 import {
   ColumnResponse,

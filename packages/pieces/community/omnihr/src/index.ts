@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { PieceCategory } from '@united/pieces-framework';
 import { getEmployeeSystemId } from './lib/actions/get-employee-system-id';
 import { getEmployeeInfo } from './lib/actions/get-employee-info';
 import { getEmployeeOrganizationalChart } from './lib/actions/get-employee-organizational-chart';

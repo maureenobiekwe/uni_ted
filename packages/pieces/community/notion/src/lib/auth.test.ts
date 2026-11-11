@@ -1,4 +1,4 @@
-import { PropertyType } from '@activepieces/pieces-framework';
+import { PropertyType } from '@united/pieces-framework';
 import { afterEach, expect, test, vi } from 'vitest';
 import { notionAuth, notionOAuth2Auth } from './auth';
 

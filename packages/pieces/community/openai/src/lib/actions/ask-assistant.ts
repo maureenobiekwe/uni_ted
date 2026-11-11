@@ -3,12 +3,12 @@ import {
   MarkdownVariant,
   Property,
   StoreScope,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import OpenAI from 'openai';
 import { openaiAuth } from '../auth';
 import { sleep } from '../common/common';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@united/pieces-common';
 import { askAssistantActionOutputSchema } from '../output-schemas';
 
 export const askAssistant = createAction({

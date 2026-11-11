@@ -2,7 +2,7 @@ import {
   createTrigger,
   TriggerStrategy,
   tryCatch,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { parseurAuth } from '../auth';
 import { parseurApi } from '../common/api';
 import { parseurProps } from '../common/props';

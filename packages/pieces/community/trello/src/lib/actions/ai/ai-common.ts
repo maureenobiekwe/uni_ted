@@ -1,4 +1,4 @@
-import { QueryParams } from '@activepieces/pieces-common';
+import { QueryParams } from '@united/pieces-common';
 
 /**
  * Shared helpers for the audience:'ai' Trello atomics. Trello auth is the

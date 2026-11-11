@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { pdfmonkeyClient, PdfmonkeyApiError } from './client';
 
 const MAX_LIST_PAGES = 20;

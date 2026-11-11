@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { makeRequest } from '../common/client';
 import { tidelyAuth } from '../common/auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 
 export const createAPlan = createAction({
   auth: tidelyAuth,

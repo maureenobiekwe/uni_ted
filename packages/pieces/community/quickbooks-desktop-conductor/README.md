@@ -12,7 +12,7 @@ tenant's machine is off, syncs simply don't happen until it's back.
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-quickbooks-desktop-conductor` to build the piece.
+Run `turbo run build --filter=@united/piece-quickbooks-desktop-conductor` to build the piece.
 
 ## Tenant onboarding — do this once per QuickBooks Desktop company file
 

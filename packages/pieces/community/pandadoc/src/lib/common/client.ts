@@ -1,5 +1,5 @@
 import { Readable } from 'stream';
-import { httpClient, HttpMessageBody, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+import { httpClient, HttpMessageBody, HttpMethod, HttpRequest } from '@united/pieces-common';
 
 export const PANDADOC_API_BASE = 'https://api.pandadoc.com/public/v1';
 

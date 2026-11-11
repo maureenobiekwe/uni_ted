@@ -1,4 +1,4 @@
-import { HttpMethod, QueryParams, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, QueryParams, httpClient } from '@united/pieces-common';
 import { SoftrRecord, SoftrSingleResponse, SoftrTable, TableField } from './types';
 
 const BASE_URL = 'https://tables-api.softr.io/api/v1';

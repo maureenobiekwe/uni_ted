@@ -1,4 +1,4 @@
-import { DropdownState, Property } from '@activepieces/pieces-framework';
+import { DropdownState, Property } from '@united/pieces-framework';
 import { quickbooksAuth } from '../auth';
 import { quickbooksApi } from './api';
 import type {

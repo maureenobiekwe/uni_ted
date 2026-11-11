@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { webscrapingAiAuth } from '../auth';
 import { webscrapingAiApi } from '../common/api';
 import { humanAccountOutputSchema } from '../output-schemas';

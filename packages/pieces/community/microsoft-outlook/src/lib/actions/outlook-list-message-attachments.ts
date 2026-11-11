@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { PageCollection } from '@microsoft/microsoft-graph-client';
 import { microsoftOutlookAuth } from '../common/auth';
 import { outlookAtomicCommon } from '../common/atomic-common';

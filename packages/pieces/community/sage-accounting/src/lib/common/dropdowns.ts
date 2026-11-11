@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { sageAccountingAuth } from '../auth';
 import { sageAccountingClient, SageAccountingRef } from '../client';
 

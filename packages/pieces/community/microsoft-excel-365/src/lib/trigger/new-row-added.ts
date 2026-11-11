@@ -2,8 +2,8 @@ import {
   AppConnectionValueForAuthProperty,
   Property,
   createTrigger,
-} from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
+import { TriggerStrategy } from '@united/pieces-framework';
 import { excelCommon } from '../common/common';
 import { commonProps } from '../common/props';
 import { getDrivePath } from '../common/helpers';
@@ -11,8 +11,8 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { isNil } from '@united/pieces-framework';
 import { excelAuth } from '../auth';
 
 const polling: Polling<

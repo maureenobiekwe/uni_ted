@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { shortIoClient, ShortIoAuthValue } from './client';
 
 const MAX_DOMAIN_PAGES = 20;

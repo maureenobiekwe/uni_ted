@@ -1,11 +1,11 @@
 import { microsoftTeamsAuth } from '../auth';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import {
 	createTrigger,
 	AppConnectionValueForAuthProperty,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
+import { isNil } from '@united/pieces-framework';
 import { microsoftTeamsClient } from '../common/client';
 import type { Chat, MicrosoftTeamsPage } from '../common/types';
 import dayjs from 'dayjs';

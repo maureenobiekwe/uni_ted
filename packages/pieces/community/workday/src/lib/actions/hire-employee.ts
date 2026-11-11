@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@united/pieces-framework';
 
 import { workdayAuth } from '../auth';
 import { workdayApi } from '../common/api';

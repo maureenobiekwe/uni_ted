@@ -1,5 +1,5 @@
-import { DropdownOption, Property } from '@activepieces/pieces-framework';
-import { tryCatch } from '@activepieces/pieces-framework';
+import { DropdownOption, Property } from '@united/pieces-framework';
+import { tryCatch } from '@united/pieces-framework';
 
 import { tallyAuth } from '../auth';
 import { tallyApiClient } from './client';

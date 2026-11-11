@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { Property } from '@united/pieces-framework';
 import { wafeqApiCall, WafeqPaginatedResponse } from './client';
 import { wafeqAuth } from './auth';
 

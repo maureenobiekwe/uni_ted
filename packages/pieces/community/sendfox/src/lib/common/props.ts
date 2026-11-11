@@ -1,4 +1,4 @@
-import { DropdownState, Property } from '@activepieces/pieces-framework';
+import { DropdownState, Property } from '@united/pieces-framework';
 import { sendfoxAuth } from '../auth';
 import { sendfoxClient } from './client';
 import type { SendfoxList } from './types';

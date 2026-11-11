@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { createCompany } from './lib/actions/create-company';
 import { createContactList } from './lib/actions/create-contact-list';
 import { createEmailCampaign } from './lib/actions/create-email-campaign';

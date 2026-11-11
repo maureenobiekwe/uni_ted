@@ -1,16 +1,16 @@
 {
-  "name": "@activepieces/piece-runware",
+  "name": "@united/piece-runware",
   "version": "0.1.8",
   "type": "commonjs",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@united/pieces-common": "workspace:*",
+    "@united/pieces-framework": "workspace:*",
     "@runware/sdk-js": "1.1.44",
     "zod": "4.3.6",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@united/core-piece-types": "workspace:*",
+    "@united/core-utils": "workspace:*"
   },
   "devDependencies": {
     "tslib": "^2.3.0"

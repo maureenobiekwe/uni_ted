@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework"
+import { createPiece } from "@united/pieces-framework"
 import { paperformAuth } from "./lib/common/auth"
 
 import { newPartialFormSubmission } from './lib/triggers/new-partial-form-submission';
@@ -18,9 +18,9 @@ import { updateSpace } from './lib/actions/update-space';
 import { findFormProduct } from './lib/actions/find-form-product';
 import { findForm } from './lib/actions/find-form';
 import { findSpace } from './lib/actions/find-space';
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@united/pieces-common";
 import { paperformCommon } from "./lib/common/client";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 
 export const paperform = createPiece({
   displayName: "Paperform",

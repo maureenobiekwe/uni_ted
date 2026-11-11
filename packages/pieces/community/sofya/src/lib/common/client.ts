@@ -1,4 +1,4 @@
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod } from '@united/pieces-common';
 
 export const BASE_URL = 'https://sofya.co/v1';
 

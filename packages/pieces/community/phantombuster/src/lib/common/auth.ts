@@ -1,7 +1,7 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { PieceAuth } from '@united/pieces-framework';
 import { makeRequest } from './client';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 
 const authHelpDescription = `
 1. Login to your Pushbullet Dashboard.

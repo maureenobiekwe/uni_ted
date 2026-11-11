@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { encodeId, isPandaDocStatus, pandadocDownload, pandadocRequest, PandaDocQuery, sanitizeFileName } from './client';
 import { pandadocNormalize } from './normalize';
 

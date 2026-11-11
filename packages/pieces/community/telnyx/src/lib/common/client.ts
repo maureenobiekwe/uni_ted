@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 
 const TELNYX_API_BASE_URL = 'https://api.telnyx.com/v2';
 

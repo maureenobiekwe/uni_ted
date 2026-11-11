@@ -1,4 +1,4 @@
-import { httpClient } from '@activepieces/pieces-common';
+import { httpClient } from '@united/pieces-common';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { captureEventsBatch } from '../src/lib/actions/ai/capture-events-batch';
 import { deletePersonProperty } from '../src/lib/actions/ai/delete-person-property';

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { mindeeAuth } from '../auth';
 import { mindeeInference } from '../common/inference';
 import { mindeeProps } from '../common/props';

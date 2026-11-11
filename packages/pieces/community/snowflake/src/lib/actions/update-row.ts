@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { snowflakeAuth } from '../auth';
 import { snowflakeCommonProps, toAuthValue, withSnowflake } from '../common';
 import { buildSetClause, dmlCount } from '../common/operations';

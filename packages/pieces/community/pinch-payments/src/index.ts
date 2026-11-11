@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { pinchPaymentsAuth } from "./lib/common/auth";
 import { createOrUpdatePayerAction } from "./lib/actions/create-or-update-payer";
 import { createRealtimePaymentAction } from "./lib/actions/create-realtime-payment";
@@ -22,7 +22,7 @@ import { scheduledProcessTrigger } from "./lib/triggers/scheduled-process";
 import { transferTrigger } from "./lib/triggers/transfer";
 import { disputeCreatedTrigger } from "./lib/triggers/dispute-created";
 import { disputeUpdatedTrigger } from "./lib/triggers/dispute-updated";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 
 export const pinchPayments = createPiece({
   displayName: "Pinch Payments",

@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+import { HttpMethod, httpClient } from '@united/pieces-common';
+import { Property } from '@united/pieces-framework';
 
 const BASE_URL = 'https://api.sardis.sh';
 

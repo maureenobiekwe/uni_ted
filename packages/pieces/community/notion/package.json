@@ -1,17 +1,17 @@
 {
-  "name": "@activepieces/piece-notion",
+  "name": "@united/piece-notion",
   "version": "0.8.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@united/pieces-common": "workspace:*",
+    "@united/pieces-framework": "workspace:*",
     "@notionhq/client": "2.2.14",
     "@tryfabric/martian": "1.2.4",
     "dayjs": "1.11.9",
     "notion-to-md": "3.1.1",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@united/core-piece-types": "workspace:*",
+    "@united/core-utils": "workspace:*"
   },
   "devDependencies": {
     "tslib": "2.6.2",

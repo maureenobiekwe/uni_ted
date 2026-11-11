@@ -1,5 +1,5 @@
 import { randomUUID } from 'crypto';
-import { createAction, OutputSchema, Property } from '@activepieces/pieces-framework';
+import { createAction, OutputSchema, Property } from '@united/pieces-framework';
 import { posthogAuth } from '../../auth';
 import { posthogClient } from '../../common/client';
 

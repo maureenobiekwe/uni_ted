@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, PieceAuth } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty, PieceAuth } from '@united/pieces-framework';
 import { nuelinkClient } from './common/client';
 
 export const nuelinkAuth = PieceAuth.SecretText({

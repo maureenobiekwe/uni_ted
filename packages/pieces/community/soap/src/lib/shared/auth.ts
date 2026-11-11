@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@united/pieces-framework';
 
 export function soapAuth() {
   return PieceAuth.CustomAuth({

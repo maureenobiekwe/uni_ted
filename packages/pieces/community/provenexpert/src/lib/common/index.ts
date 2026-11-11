@@ -4,8 +4,8 @@ import {
   AuthenticationType,
   HttpMessageBody,
   HttpResponse,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { Property } from '@united/pieces-framework';
 import { provenExpertAuth } from './auth';
 
 const BASE_URL = 'https://www.provenexpert.com/api/v1';

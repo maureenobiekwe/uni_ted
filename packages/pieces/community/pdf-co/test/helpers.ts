@@ -1,4 +1,4 @@
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 import { vi } from 'vitest';
 import { createMockActionContext } from '../../../framework/src/lib/test';
 

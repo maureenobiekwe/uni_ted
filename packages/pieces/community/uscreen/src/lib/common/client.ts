@@ -1,6 +1,6 @@
 
 
-import { httpClient, HttpMethod, HttpRequest, QueryParams } from "@activepieces/pieces-common";
+import { httpClient, HttpMethod, HttpRequest, QueryParams } from "@united/pieces-common";
 
 export const uscreenApiUrl = 'https://api.uscreen.io/v1';
 

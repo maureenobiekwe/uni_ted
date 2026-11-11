@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 
 import { microsoftSharePointUtils } from '../../../common/utils';
 import { microsoftSharePointAiProps } from '../../../common/ai-props';

@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { mysqlAuth } from '../../../..';
 import { mysqlAi, mysqlAiProps } from '../../../common/ai';
 import { mysqlListIndexesOutputSchema } from '../../../output-schemas';

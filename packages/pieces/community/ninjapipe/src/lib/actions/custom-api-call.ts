@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createAction } from '@united/pieces-framework';
 import { ninjapipeAuth } from '../auth';
 import { ninjapipeClient } from '../common/client';
 

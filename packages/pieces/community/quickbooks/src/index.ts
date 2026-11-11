@@ -1,4 +1,4 @@
-import { createPiece, OAuth2PropertyValue, PieceAuth, PiecePropValueSchema, Property } from "@activepieces/pieces-framework";
+import { createPiece, OAuth2PropertyValue, PieceAuth, PiecePropValueSchema, Property } from "@united/pieces-framework";
 import { findInvoiceAction } from "./actions/find-invoice";
 import { findCustomerAction } from "./actions/find-customer";
 import { findPaymentAction } from "./actions/find-payment";
@@ -19,7 +19,7 @@ import { newTransfer } from "./triggers/new-transfer";
 import { newOrUpdatedInvoice } from "./triggers/new-or-updated-invoice";
 import { paymentReceived } from "./triggers/payment-received";
 import { newBill } from "./triggers/new-bill";
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@united/pieces-common";
 import { quickbooksCommon } from "./lib/common";
 import { quickbooksAuth } from './lib/auth';
 

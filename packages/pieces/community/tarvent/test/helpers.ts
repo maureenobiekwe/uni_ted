@@ -1,5 +1,5 @@
-import { HttpError } from '@activepieces/pieces-common';
-import { AppConnectionType, createMockActionContext, InputPropertyMap, Store } from '@activepieces/pieces-framework';
+import { HttpError } from '@united/pieces-common';
+import { AppConnectionType, createMockActionContext, InputPropertyMap, Store } from '@united/pieces-framework';
 
 export const TEST_AUTH = { type: AppConnectionType.CUSTOM_AUTH, props: { accountId: ' acc_1 ', apiKey: ' key_1 ' } } as const;
 

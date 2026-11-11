@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { Property } from '@united/pieces-framework';
 import { sliteAuth } from '../auth';
 import { sliteApi } from './client';
 import { SliteSearchResponse } from './types';

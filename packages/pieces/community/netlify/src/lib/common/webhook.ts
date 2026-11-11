@@ -1,6 +1,6 @@
 import { createHash, createHmac, randomBytes, timingSafeEqual } from 'crypto';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { DEDUPE_KEY_PROPERTY } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { DEDUPE_KEY_PROPERTY } from '@united/pieces-framework';
 import { netlifyClient, NetlifyApiError, NetlifyAuthValue } from './client';
 
 const STORE_KEY = 'webhook_id';

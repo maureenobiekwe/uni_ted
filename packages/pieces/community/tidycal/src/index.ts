@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { TIDYCAL_API_BASE_URL } from './lib/common';
 import { tidycalbookingcancelled } from './lib/trigger/cancelled-booking';
 import { tidycalnewbooking } from './lib/trigger/new-booking';

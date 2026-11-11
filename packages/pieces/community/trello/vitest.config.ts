@@ -10,10 +10,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@activepieces/pieces-framework': path.resolve(repoRoot, 'packages/pieces/framework/src/index.ts'),
-      '@activepieces/pieces-common': path.resolve(repoRoot, 'packages/pieces/common/src/index.ts'),
-      '@activepieces/core-piece-types': path.resolve(repoRoot, 'packages/core/piece-types/src/index.ts'),
-      '@activepieces/core-utils': path.resolve(repoRoot, 'packages/core/utils/src/index.ts'),
+      '@united/pieces-framework': path.resolve(repoRoot, 'packages/pieces/framework/src/index.ts'),
+      '@united/pieces-common': path.resolve(repoRoot, 'packages/pieces/common/src/index.ts'),
+      '@united/core-piece-types': path.resolve(repoRoot, 'packages/core/piece-types/src/index.ts'),
+      '@united/core-utils': path.resolve(repoRoot, 'packages/core/utils/src/index.ts'),
     },
   },
 })

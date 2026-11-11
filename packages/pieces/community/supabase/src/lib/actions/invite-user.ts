@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { createClient } from '@supabase/supabase-js';
 import { supabaseAuth } from '../auth';
 import { inviteUserActionOutputSchema } from '../output-schemas';

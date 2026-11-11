@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { rabbitmqAuth } from '../../auth';
 import { publishOutputSchema, rabbitmqCommon } from '../../common';
 

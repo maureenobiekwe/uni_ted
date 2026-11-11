@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { Property } from '@united/pieces-framework';
 import { workableAuth } from '../auth';
 import { createWorkableClient, cursorFromPaging, encodeId, WorkableClient } from './client';
 import { workableValues } from './values';

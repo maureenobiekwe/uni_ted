@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { ApFile } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { ApFile } from '@united/pieces-framework';
 import { parseurClient } from './client';
 import { parseurUtils } from './utils';
 import type {

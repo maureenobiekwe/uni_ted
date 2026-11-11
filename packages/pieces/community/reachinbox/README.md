@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-reachinbox` to build the library.
+Run `turbo run build --filter=@united/piece-reachinbox` to build the library.

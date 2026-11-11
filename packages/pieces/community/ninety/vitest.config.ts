@@ -10,11 +10,11 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@activepieces/pieces-framework': path.resolve(
+      '@united/pieces-framework': path.resolve(
         repoRoot,
         'packages/pieces/framework/src/index.ts'
       ),
-      '@activepieces/pieces-common': path.resolve(
+      '@united/pieces-common': path.resolve(
         repoRoot,
         'packages/pieces/common/src/index.ts'
       ),

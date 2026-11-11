@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { buildPath, makeRequest } from '../common';
 import { pinterestAuth } from '../common/auth';
-import { HttpMethod, getAccessTokenOrThrow } from '@activepieces/pieces-common';
+import { HttpMethod, getAccessTokenOrThrow } from '@united/pieces-common';
 import { pinAnalyticsActionOutputSchema } from '../output-schemas';
 
 const PIN_METRIC_OPTIONS = [

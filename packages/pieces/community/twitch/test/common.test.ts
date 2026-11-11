@@ -1,4 +1,4 @@
-import { httpClient, HttpError, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpError, HttpMethod } from '@united/pieces-common';
 import { banUser } from '../src/lib/actions/ban-user';
 import { updateChatSettings } from '../src/lib/actions/update-chat-settings';
 import { getChannelSchedule } from '../src/lib/actions/get-channel-schedule';
@@ -9,7 +9,7 @@ import { getPolls } from '../src/lib/actions/get-polls';
 import { sendShoutout } from '../src/lib/actions/send-shoutout';
 import { getStreamMarkers } from '../src/lib/actions/get-stream-markers';
 import { streamStarted } from '../src/lib/triggers/stream-started';
-import { createMockPollingTriggerContext } from '@activepieces/pieces-framework';
+import { createMockPollingTriggerContext } from '@united/pieces-framework';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { twitchCommon } from '../src/lib/common';
 describe('twitchCommon.normalizeLogin', () => {

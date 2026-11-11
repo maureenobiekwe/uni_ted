@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test, vi } from 'vitest';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { BASE, fail, lastRequest, loadOptions, ok, request, runAction, sendRequest } from './helpers';
 import { moxieCrm } from '../src';
 import { moxieClientCreateAction } from '../src/lib/actions/ai/client-create';
@@ -55,8 +55,8 @@ import { moxieUpdateTaskAction } from '../src/lib/actions/update-task';
 import { moxieUpdateTicketStatusAction } from '../src/lib/actions/update-ticket-status';
 import { moxieUploadAttachmentAction } from '../src/lib/actions/upload-attachment';
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@united/pieces-common')>();
   return { ...actual, httpClient: { sendRequest: (...args: unknown[]) => sendRequest(...args) } };
 });
 

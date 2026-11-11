@@ -1,4 +1,4 @@
-import { AppConnectionType, PieceAuth, Property, tryCatch } from '@activepieces/pieces-framework';
+import { AppConnectionType, PieceAuth, Property, tryCatch } from '@united/pieces-framework';
 import { pineconeClient } from './common/client';
 
 export const pineconeAuth = PieceAuth.CustomAuth({

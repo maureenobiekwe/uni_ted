@@ -1,5 +1,5 @@
-import { createAction, MarkdownVariant, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, MarkdownVariant, Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { sendfoxAuth } from '../auth';
 import { sendfoxClient } from '../common/client';
 import { unsubscribeContactOutputSchema } from '../output-schemas';

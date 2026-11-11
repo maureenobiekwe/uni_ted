@@ -1,8 +1,8 @@
 import {
   PieceAuth,
   OAuth2AuthorizationMethod,
-} from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 
 const authGuide = `
 Connect a Pinterest **business** account.

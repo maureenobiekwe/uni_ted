@@ -1,11 +1,11 @@
 
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@united/pieces-framework";
 import { sendQuery } from "./lib/actions/send-query";
 import { createFinetune } from "./lib/actions/create-finetune";
 import { deleteFinetune } from "./lib/actions/delete-finetune";
 import { newLead } from "./lib/triggers/new-lead";
 import { SiteSpeakAuth } from "./lib/common/auth";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 
 export const sitespeakai = createPiece({
   displayName: "SiteSpeakAI",

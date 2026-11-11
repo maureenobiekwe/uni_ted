@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 
 import { twentyAuth } from '../../auth';
 import { twentyAiProps } from '../../common/ai-props';

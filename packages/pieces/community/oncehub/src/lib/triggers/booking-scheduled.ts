@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { oncehubAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 export const bookingScheduled = createTrigger({
   auth: oncehubAuth,
   name: 'bookingScheduled',

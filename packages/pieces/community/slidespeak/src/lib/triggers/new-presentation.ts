@@ -1,7 +1,7 @@
 import { slidespeakAuth } from '../auth';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
+import { isNil } from '@united/pieces-framework';
 import { BASE_URL } from '../common/constants';
 
 export const newPresentationTrigger = createTrigger({

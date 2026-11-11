@@ -1,4 +1,4 @@
-import { createPiece, OAuth2PropertyValue } from "@activepieces/pieces-framework";
+import { createPiece, OAuth2PropertyValue } from "@united/pieces-framework";
 import { vimeoAuth } from "./lib/auth";
 import { uploadVideo } from './lib/actions/upload-video';
 import { deleteVideo } from './lib/actions/delete-video';
@@ -8,8 +8,8 @@ import { newVideoLiked } from './lib/triggers/new-video-liked';
 import { newVideoBySearch } from './lib/triggers/new-video-by-search';
 import { newVideoOfMine } from './lib/triggers/new-video-of-mine';
 import { newVideoByUser } from './lib/triggers/new-video-by-user';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { PieceCategory } from '@united/pieces-framework';
+import { createCustomApiCallAction } from "@united/pieces-common";
 
 export const vimeo = createPiece({
   displayName: "Vimeo",

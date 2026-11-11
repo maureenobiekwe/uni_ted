@@ -2,7 +2,7 @@ import {
   DynamicPropsValue,
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { quickzuAuth } from '../../auth';
 import { quickzuOutputSchemas } from '../../common/output-schemas';
 import { makeClient, toQuickzuDate } from '../../common';

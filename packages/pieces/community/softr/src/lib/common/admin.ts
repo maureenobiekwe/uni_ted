@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 
 const FIELD_TYPES = [
 	'SINGLE_LINE_TEXT',

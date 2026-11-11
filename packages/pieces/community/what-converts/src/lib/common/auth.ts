@@ -3,12 +3,12 @@ import {
   PieceAuth,
   Property,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 
 const WHATCONVERTS_API_URL = 'https://app.whatconverts.com/api/v1';
 

@@ -1,4 +1,4 @@
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@united/pieces-framework';
 import { ntfyAuth } from '../auth';
 import { ntfyClient, NtfyAuthValue, NtfyCursor, PollFilters } from '../common/client';
 import { ntfyProps, PRIORITY_OPTIONS } from '../common/props';

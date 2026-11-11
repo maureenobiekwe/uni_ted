@@ -1,12 +1,12 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { vadooAiAuth } from '../auth';
 import {
   httpClient,
   HttpMethod,
   propsValidation,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { generateVideoSchema } from '../schemas';
-import { isEmpty } from '@activepieces/pieces-framework';
+import { isEmpty } from '@united/pieces-framework';
 
 export const generateVideo = createAction({
   auth: vadooAiAuth,

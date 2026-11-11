@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { smartSuiteClient, SmartSuiteCredentials, SmartSuiteQueryValue } from './client';
 
 const PAGE_SIZE = 100;

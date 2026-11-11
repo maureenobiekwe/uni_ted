@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { ninjapipeAuth } from '../../auth';
 import { ninjapipeAiProps } from '../../common/ai-props';
 import { ninjapipeClient } from '../../common/client';

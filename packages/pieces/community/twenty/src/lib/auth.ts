@@ -1,4 +1,4 @@
-import { AppConnectionType, PieceAuth, Property, tryCatch } from '@activepieces/pieces-framework';
+import { AppConnectionType, PieceAuth, Property, tryCatch } from '@united/pieces-framework';
 import { twentyApi } from './common/api';
 
 export const twentyAuth = PieceAuth.CustomAuth({

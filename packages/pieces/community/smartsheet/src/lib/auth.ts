@@ -1,5 +1,5 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+import { PieceAuth } from '@united/pieces-framework';
+import { httpClient, HttpMethod, HttpRequest } from '@united/pieces-common';
 
 const markdownDescription = `
 To obtain your Smartsheet access token:

@@ -1,6 +1,6 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { synthesiaAuth } from './auth';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 
 export const templateIdDropdown = Property.Dropdown({
   auth: synthesiaAuth,

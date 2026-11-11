@@ -1,4 +1,4 @@
-import { createAction, PieceAuth } from '@activepieces/pieces-framework';
+import { createAction, PieceAuth } from '@united/pieces-framework';
 
 import { rssFeedClient } from '../../common/feed-client';
 import { feedItemFilters, rssFeedUrl } from '../../common/props';

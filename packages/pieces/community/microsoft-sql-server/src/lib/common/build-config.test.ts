@@ -1,4 +1,4 @@
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 import { describe, expect, it } from 'vitest';
 import { mssqlCommon, MssqlAuth } from '.';
 

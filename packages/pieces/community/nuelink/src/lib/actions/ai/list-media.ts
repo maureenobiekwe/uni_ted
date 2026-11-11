@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { nuelinkAuths } from '../../auth';
 import { nuelinkAiProps } from '../../common/ai-props';
 import { nuelinkOutputSchemas } from '../../output-schemas';

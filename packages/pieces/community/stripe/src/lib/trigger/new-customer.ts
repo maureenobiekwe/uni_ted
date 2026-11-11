@@ -1,9 +1,9 @@
-import { createTrigger } from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger } from '@united/pieces-framework';
+import { TriggerStrategy } from '@united/pieces-framework';
 import { stripeCommon } from '../common';
 import { stripeAuth } from '../..';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { isEmpty } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
+import { isEmpty } from '@united/pieces-framework';
 
 import { customerOutputSchema } from '../output-schemas';
 export const stripeNewCustomer = createTrigger({

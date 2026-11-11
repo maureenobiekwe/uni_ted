@@ -11,9 +11,9 @@ import { clayWebhook } from '../src/lib/common/webhook';
 const FIXTURE_SECRET =
     'whsec_testonlyfixture000000000000000000000000000000000000000000000';
 const FIXTURE_BODY =
-    '{"webhookId":"wh_fixture","createdAt":"2026-09-02T13:25:15.924Z","data":{"Domain":"united.com"}}';
+    '{"webhookId":"wh_fixture","createdAt":"2026-09-02T13:25:15.924Z","data":{"Domain":"example.com"}}';
 const FIXTURE_SIGNATURE =
-    'sha256=f787d8f6ca1d5ea61ac6ae74dceb201cafc5b41ccd1593522c1344837d102c19';
+    'sha256=38284cf3b93d2960795fcb89fe389f88ce923667fe21f69753c1525320c258f2';
 
 let sendRequest: ReturnType<typeof vi.spyOn>;
 let lastRequest: HttpRequest | undefined;
@@ -65,10 +65,12 @@ describe('signature verification', () => {
     });
 
     test('a tampered body is rejected', () => {
+        const tamperedBody = FIXTURE_BODY.replace('example.com', 'evil.com');
+        expect(tamperedBody).not.toBe(FIXTURE_BODY);
         expect(
             clayWebhook.verifySignature({
                 signingSecret: FIXTURE_SECRET,
-                rawBody: FIXTURE_BODY.replace('united.com', 'evil.com'),
+                rawBody: tamperedBody,
                 signatureHeader: FIXTURE_SIGNATURE,
             }),
         ).toBe(false);

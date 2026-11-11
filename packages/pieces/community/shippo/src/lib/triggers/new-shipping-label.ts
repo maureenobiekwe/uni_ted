@@ -4,12 +4,12 @@ import {
   PiecePropValueSchema,
   Property,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import dayjs from 'dayjs';
 import { shippoAuth } from '../auth';
 import { ShippoClient } from '../client';

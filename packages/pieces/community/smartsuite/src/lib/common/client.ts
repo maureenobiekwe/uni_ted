@@ -1,4 +1,4 @@
-import { HttpMethod, HttpRequest, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, HttpRequest, httpClient } from '@united/pieces-common';
 import { SMARTSUITE_API_URL, SMARTSUITE_WEBHOOKS_API_URL } from './constants';
 
 const REQUEST_TIMEOUT_MS = 60_000;

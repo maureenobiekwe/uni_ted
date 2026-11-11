@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-import { HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { HttpMethod, QueryParams } from '@united/pieces-common';
 
 import { workdayClient } from './client';
 import { workdayUtils } from './utils';

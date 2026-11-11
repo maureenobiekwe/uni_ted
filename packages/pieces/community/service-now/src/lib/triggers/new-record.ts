@@ -4,12 +4,12 @@ import {
   Property,
   PiecePropValueSchema,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import dayjs from 'dayjs';
 import { servicenowAuth } from '../common/props';
 import { tableDropdown, createServiceNowClient } from '../common/props';

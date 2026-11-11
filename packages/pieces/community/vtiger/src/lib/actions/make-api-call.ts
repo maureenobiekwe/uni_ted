@@ -1,11 +1,11 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@united/pieces-framework';
 import {
   HttpHeaders,
   HttpMessageBody,
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { vtigerAuth } from '../auth';
 import {
   basicAuthorization,

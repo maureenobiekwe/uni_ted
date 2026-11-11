@@ -1,4 +1,4 @@
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@united/pieces-framework';
 import { NuelinkAuthValue, nuelinkAuths } from '../auth';
 import { nuelinkClient } from '../common/client';
 import { nuelinkInputs } from '../common/inputs';

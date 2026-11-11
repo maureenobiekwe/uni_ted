@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { veroAuth } from '../common/auth';
 export const emailBounced = createTrigger({
   auth: veroAuth,

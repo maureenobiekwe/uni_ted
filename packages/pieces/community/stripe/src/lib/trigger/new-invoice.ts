@@ -2,12 +2,12 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { stripeCommon } from '../common';
 import { StripeWebhookInformation } from '../common/types';
 import { stripeAuth } from '../..';
-import { isEmpty } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { isEmpty } from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 
 type StripeWebhookPayload = {
   data: {

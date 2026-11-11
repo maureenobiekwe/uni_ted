@@ -2,9 +2,9 @@
 
 const { sendRequest } = vi.hoisted(() => ({ sendRequest: vi.fn() }));
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
+vi.mock('@united/pieces-common', async (importOriginal) => {
   const actual = await importOriginal<
-    typeof import('@activepieces/pieces-common')
+    typeof import('@united/pieces-common')
   >();
   return {
     ...actual,

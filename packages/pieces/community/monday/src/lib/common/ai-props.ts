@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 
 function boardId<R extends boolean = true>(required?: R) {
   return Property.ShortText({

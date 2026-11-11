@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, PieceAuth } from '@activepieces/pieces-framework';
+import { OAuth2PropertyValue, PieceAuth } from '@united/pieces-framework';
 import { podioApi } from './common/api';
 
 export const podioAuth = PieceAuth.OAuth2({

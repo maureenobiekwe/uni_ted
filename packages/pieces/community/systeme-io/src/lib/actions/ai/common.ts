@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { systemeIoCommon, systemeIoInput } from '../../common/client';
 
 async function list<T extends { id?: unknown }, R>({

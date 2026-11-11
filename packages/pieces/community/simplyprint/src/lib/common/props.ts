@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { OAuth2PropertyValue, Property } from '@united/pieces-framework';
 
 import { simplyprintAuth } from '../auth';
 import { simplyprintClient } from './client';

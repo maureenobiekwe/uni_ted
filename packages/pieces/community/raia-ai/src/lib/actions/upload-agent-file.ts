@@ -1,6 +1,6 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+import { createAction, Property } from "@united/pieces-framework";
 import { raiaAiAuth } from "../common/auth";
-import { httpClient, HttpMethod } from "@activepieces/pieces-common";
+import { httpClient, HttpMethod } from "@united/pieces-common";
 import { BASE_URL } from "../common/constants";
 import FormData from 'form-data';
 

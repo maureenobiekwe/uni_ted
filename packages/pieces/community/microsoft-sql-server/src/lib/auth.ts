@@ -2,7 +2,7 @@ import {
   AppConnectionType,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { mssqlCommon } from './common';
 
 export const mssqlAuth = PieceAuth.CustomAuth({

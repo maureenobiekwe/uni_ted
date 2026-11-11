@@ -1,4 +1,4 @@
-import { Store } from '@activepieces/pieces-framework';
+import { Store } from '@united/pieces-framework';
 import { describe, expect, test } from 'vitest';
 import { newPinOnBoard } from '../src/lib/triggers/new-pin-on-board';
 

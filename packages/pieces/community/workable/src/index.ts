@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createAction, createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createAction, createPiece, PieceCategory } from '@united/pieces-framework';
 import { addCandidateTags } from './lib/actions/add-candidate-tags';
 import { addComment } from './lib/actions/add-comment';
 import { createCandidateAi } from './lib/actions/ai/create-candidate-ai';

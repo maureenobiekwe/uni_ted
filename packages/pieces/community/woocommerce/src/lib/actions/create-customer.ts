@@ -2,13 +2,13 @@ import {
   createAction,
   MarkdownVariant,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 
 import { wooAuth } from '../auth';
 import { createCustomerOutputSchema } from '../output-schemas';

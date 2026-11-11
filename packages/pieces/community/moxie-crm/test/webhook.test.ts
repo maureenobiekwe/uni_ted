@@ -1,11 +1,11 @@
 import { beforeEach, describe, expect, test, vi } from 'vitest';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { BASE, WEBHOOK_URL, fail, memoryStore, ok, request, runHook, sendRequest } from './helpers';
 import { MOXIE_HOOK_STORE_KEY, MOXIE_STALE_HOOKS_STORE_KEY, moxieWebhook } from '../src/lib/common/webhook';
 import { moxieCRMTriggers } from '../src/lib/triggers';
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@united/pieces-common')>();
   return { ...actual, httpClient: { sendRequest: (...args: unknown[]) => sendRequest(...args) } };
 });
 

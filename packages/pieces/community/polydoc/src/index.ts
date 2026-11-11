@@ -1,10 +1,10 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { captureScreenshot } from './lib/actions/capture-screenshot';
 import { convertToPdf } from './lib/actions/convert-pdf';
 import { generateEinvoice } from './lib/actions/generate-einvoice';
 import { polydocAuth } from './lib/common/auth';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@united/pieces-common';
 
 export const polydoc = createPiece({
   displayName: 'PolyDoc',

@@ -1,10 +1,10 @@
-import { getAccessTokenOrThrow } from '@activepieces/pieces-common';
+import { getAccessTokenOrThrow } from '@united/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   Property,
   DynamicPropsValue,
-} from '@activepieces/pieces-framework';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 import { Client } from '@notionhq/client';
 import { NotionFieldMapping } from './models';
 import { notionAuth } from '../auth';

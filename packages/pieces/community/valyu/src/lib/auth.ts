@@ -1,5 +1,5 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { PieceAuth } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { makeRequest } from './common';
 
 const markdownDescription = `Obtain your API key from [Valyu Platform](https://platform.valyu.ai/user/account/apikeys).`;

@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient, HttpRequest } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { HttpMethod, httpClient, HttpRequest } from '@united/pieces-common';
 import { mindStudioAuth } from '../..';
 
 export const runWorkflowAction = createAction({

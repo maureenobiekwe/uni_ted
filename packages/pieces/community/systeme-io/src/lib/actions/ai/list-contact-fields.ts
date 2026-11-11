@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { systemeIoAuth } from '../../common/auth';
 import { systemeIoCommon } from '../../common/client';
 import { aiListContactFieldsOutputSchema } from '../../output-schemas-ai';

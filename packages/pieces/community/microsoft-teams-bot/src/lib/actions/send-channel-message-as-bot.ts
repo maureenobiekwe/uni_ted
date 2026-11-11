@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { microsoftTeamsBotAuth } from '../auth';
 import { microsoftTeamsBotCommon } from '../common';
 import { botConnector } from '../common/bot-connector';

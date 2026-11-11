@@ -1,4 +1,4 @@
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 type RepliesArgs = { channel: string; ts: string; limit?: number; cursor?: string };

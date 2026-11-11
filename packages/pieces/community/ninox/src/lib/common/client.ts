@@ -1,4 +1,4 @@
-import { HttpMethod, QueryParams, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, QueryParams, httpClient } from '@united/pieces-common';
 
 
 export const BASE_URL = `https://api.ninox.com/v1`;

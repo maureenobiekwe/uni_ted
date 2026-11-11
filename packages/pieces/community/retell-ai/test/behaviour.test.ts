@@ -1,7 +1,7 @@
-import { DEDUPE_KEY_PROPERTY } from '@activepieces/pieces-framework';
+import { DEDUPE_KEY_PROPERTY } from '@united/pieces-framework';
 import { createHmac } from 'crypto';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { createBatchCallAction } from '../src/lib/actions/create-batch-call';
 import { createPhoneNumber } from '../src/lib/actions/create-phone-number';
 import { getCall } from '../src/lib/actions/get-call';

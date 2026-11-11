@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { odooAuth } from '../../auth';
 import { odooApps } from '../../common/app-fields';
 import { OdooClient } from '../../common/client';

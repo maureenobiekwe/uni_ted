@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 
 import { tallyAuth } from '../auth';
 import { tallyApiClient, TallyAnalyticsPeriod } from '../common/client';

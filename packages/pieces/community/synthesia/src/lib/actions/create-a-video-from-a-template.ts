@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { HttpMethod, httpClient } from '@united/pieces-common';
 import { synthesiaAuth } from '../common/auth';
 import { templateIdDropdown } from '../common/props';
 

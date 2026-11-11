@@ -1,8 +1,8 @@
-import { createPiece } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from "@united/pieces-framework";
+import { PieceCategory } from '@united/pieces-framework';
 import { qwilrAuth } from "./lib/common/auth";
 import { createPageAction } from "./lib/actions/create-page";
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@united/pieces-common";
 import { pageAcceptedTrigger } from "./lib/triggers/page-accepted";
 import { pagePartiallyAcceptedTrigger } from "./lib/triggers/page-partially-accepted";
 import { pagePreviewAcceptedTrigger } from "./lib/triggers/page-preview-accepted";

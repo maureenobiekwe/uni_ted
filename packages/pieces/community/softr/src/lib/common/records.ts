@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { softrClient } from './client';
 import { SoftrListResponse, SoftrRecord, SoftrSingleResponse, TableField } from './types';
 

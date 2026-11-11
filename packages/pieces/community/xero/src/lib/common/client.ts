@@ -5,7 +5,7 @@ import {
   HttpRequest,
   QueryParams,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 
 export class XeroApiError extends Error {
   readonly status: number;

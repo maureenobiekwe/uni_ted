@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { smartsuiteAuth } from '../auth';
 import { smartSuiteApi } from '../common';
 import { smartSuiteClient, SmartSuiteCredentials } from '../common/client';

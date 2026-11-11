@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
+import { createAction } from '@united/pieces-framework';
 import { trueLayerCommon } from '../../common';
 
 export const searchPaymentProviders = createAction({

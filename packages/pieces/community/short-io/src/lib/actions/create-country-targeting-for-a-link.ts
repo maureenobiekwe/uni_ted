@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { shortIoAuth } from '../common/auth';
 import { shortIoLinks } from '../common/links';
 import { shortIoSchemas } from '../common/output-schemas';

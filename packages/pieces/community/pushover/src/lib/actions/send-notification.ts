@@ -2,8 +2,8 @@ import {
   createAction,
   MarkdownVariant,
   Property,
-} from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { pushoverAuth } from '../..';
 import { buildMessageBody } from '../common';
 import { sendNotificationActionOutputSchema } from '../output-schemas';

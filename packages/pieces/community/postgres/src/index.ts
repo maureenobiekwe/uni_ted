@@ -1,4 +1,4 @@
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { runQuery } from './lib/actions/run-query';
 import { findRows } from './lib/actions/find-rows';
 import { insertRow } from './lib/actions/insert-row';

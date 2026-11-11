@@ -1,4 +1,4 @@
-import { DEDUPE_KEY_PROPERTY, TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+import { DEDUPE_KEY_PROPERTY, TriggerStrategy, createTrigger } from '@united/pieces-framework';
 import { smartsuiteAuth } from '../auth';
 import { smartsuiteCommon, transformRecordFields } from '../common/props';
 import { WEBHOOK_EVENTS } from '../common/constants';

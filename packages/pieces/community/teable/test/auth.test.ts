@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 import { teableAuthUtil, TeableAuthValue } from '../src/lib/auth';
 
 describe('normalizeBaseUrl', () => {

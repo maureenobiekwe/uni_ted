@@ -1,5 +1,5 @@
-import { Property, DropdownState } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property, DropdownState } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { whatsscaleAuth } from '../auth';
 import { whatsscaleClient } from './client';
 

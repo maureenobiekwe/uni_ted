@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { AppConnectionValueForAuthProperty, createTrigger, TriggerStrategy } from '@united/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import dayjs from 'dayjs';
 import { SoftrAuth } from '../common/auth';
 import { softrClient } from '../common/client';

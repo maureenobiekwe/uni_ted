@@ -3,14 +3,14 @@ import {
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { weekdoneAuth } from '../auth';
 import { weekdoneCommon } from '../common';
 

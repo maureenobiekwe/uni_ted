@@ -1,8 +1,8 @@
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { createPiece } from '@united/pieces-framework';
 import { sendpulseAuth } from './lib/common/auth';
 import { sendpulseApiCall } from './lib/common/client';
 import { newSubscriberTrigger } from './lib/triggers/new-subscriber';

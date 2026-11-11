@@ -1,10 +1,10 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 
 import { wooAuth } from '../auth';
 import { findCustomerOutputSchema } from '../output-schemas';

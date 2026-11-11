@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { whatsappAuth } from '../auth';
 import { commonProps } from '../common/utils';
 import { whatsappProps } from '../common/props';

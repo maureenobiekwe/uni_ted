@@ -2,13 +2,13 @@ import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { telegramBotAuth } from '../..';
 import {
   AppConnectionValueForAuthProperty,
   MarkdownVariant,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 
 const chatIdInstructions = `
 **How to obtain Chat ID:**

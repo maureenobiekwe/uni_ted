@@ -1,4 +1,4 @@
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+import { OutputSchema, OutputSchemaField } from '@united/pieces-framework';
 
 const campaignSummaryFields: OutputSchemaField[] = [
   { key: 'id', label: 'Campaign ID', format: 'number' },

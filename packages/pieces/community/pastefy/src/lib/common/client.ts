@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpResponse, QueryParams } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, HttpResponse, QueryParams } from '@united/pieces-common';
 
 export const pastefyClient = { request, send, seg, isRecord, statusOf, instanceUrl, apiBase, tokenOf, requireToken, wholeNumber, toApiError, verifiedTls };
 

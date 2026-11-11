@@ -1,5 +1,5 @@
-import { httpClient, HttpError, HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/pieces-framework';
+import { httpClient, HttpError, HttpMethod } from '@united/pieces-common';
+import { isNil } from '@united/pieces-framework';
 import FormData from 'form-data';
 import { MONDAY_AI_API_VERSION } from './client';
 

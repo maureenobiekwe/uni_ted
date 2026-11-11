@@ -1,4 +1,4 @@
-import type { AppConnectionType } from '@activepieces/pieces-framework';
+import type { AppConnectionType } from '@united/pieces-framework';
 
 export type RobollyAuthValue = { type: AppConnectionType.SECRET_TEXT; secret_text: string };
 

@@ -1,6 +1,6 @@
 import { createHmac, timingSafeEqual } from 'crypto';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { DEDUPE_KEY_PROPERTY } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { DEDUPE_KEY_PROPERTY } from '@united/pieces-framework';
 import { encodeId, isPandaDocStatus, isRecord, pandadocRequest } from './client';
 import { pandadocApi } from './api';
 import { pandadocNormalize, WebhookDocumentEvent } from './normalize';

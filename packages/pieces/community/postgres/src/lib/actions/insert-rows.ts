@@ -1,4 +1,4 @@
-import { createAction, InputPropertyMap, Property } from '@activepieces/pieces-framework';
+import { createAction, InputPropertyMap, Property } from '@united/pieces-framework';
 import { QueryResult } from 'pg';
 import { postgresAuth } from '../auth';
 import { pgClient, PostgresColumn, postgresCommon, postgresUtils } from '../common';

@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { HttpMethod, QueryParams } from '@united/pieces-common';
 import { whatsappAuth } from '../auth';
 import { whatsappClient } from '../common/client';
 import { listMessageTemplatesOutputSchema } from '../output-schemas';

@@ -1,4 +1,4 @@
-import { ApFile, createAction, Property } from '@activepieces/pieces-framework';
+import { ApFile, createAction, Property } from '@united/pieces-framework';
 import { microsoftOutlookAuth } from '../common/auth';
 import { outlookCommon } from '../common/client';
 import { messageIdDropdown } from '../common/props';

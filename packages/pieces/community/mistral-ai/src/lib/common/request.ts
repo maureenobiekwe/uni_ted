@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 import type { mistralAuth } from './auth';
 
 export type MistralAuthValue = AppConnectionValueForAuthProperty<typeof mistralAuth>;

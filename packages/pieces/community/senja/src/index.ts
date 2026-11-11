@@ -3,9 +3,9 @@ import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 
 import { listTestimonialsAction } from './lib/actions/list-testimonials';
 import { getTestimonialAction } from './lib/actions/get-testimonial';

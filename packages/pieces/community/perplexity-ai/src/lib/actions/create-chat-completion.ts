@@ -3,9 +3,9 @@ import {
   createAction,
   isNil,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 
-import { HttpMethod, propsValidation } from '@activepieces/pieces-common';
+import { HttpMethod, propsValidation } from '@united/pieces-common';
 
 import * as z from 'zod/mini'
 import { perplexityAiClient } from '../common/client';

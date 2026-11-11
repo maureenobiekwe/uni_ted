@@ -1,5 +1,5 @@
 import { microsoftTeamsAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { microsoftTeamsProps } from '../common/props';
 import { microsoftTeamsClient } from '../common/client';
 import { microsoftTeamsCreateChannelOutputSchema } from '../output-schemas';

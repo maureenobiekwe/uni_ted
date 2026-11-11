@@ -2,16 +2,16 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   httpClient,
   HttpMethod
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import {
   pollingHelper,
   DedupeStrategy,
   Polling
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import dayjs from 'dayjs';
 import { fetchUsers, fetchContacts, fetchProjects, fetchOpportunities, fetchOpportunityStages, WEALTHBOX_API_BASE, handleApiError } from '../common';
 import { wealthboxAuth } from '../..';

@@ -1,4 +1,4 @@
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 import { vi } from 'vitest';
 import { VTigerAuthValue } from '../src/lib/common';
 

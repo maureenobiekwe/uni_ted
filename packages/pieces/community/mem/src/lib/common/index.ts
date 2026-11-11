@@ -3,8 +3,8 @@ import {
   HttpMethod,
   httpClient,
   QueryParams,
-} from '@activepieces/pieces-common';
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { OutputSchema, OutputSchemaField } from '@united/pieces-framework';
 
 const BASE_URL = 'https://api.mem.ai/v2';
 

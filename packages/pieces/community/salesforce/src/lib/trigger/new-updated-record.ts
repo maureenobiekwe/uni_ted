@@ -3,13 +3,13 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { querySalesforceApi, salesforcesCommon } from '../common';
 import { salesforceUtils } from '../common/utils';
 

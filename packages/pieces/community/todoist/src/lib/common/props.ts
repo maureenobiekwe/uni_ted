@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { todoistRestClient } from './client/rest-client';
 import { todoistAuth } from '../..';
 

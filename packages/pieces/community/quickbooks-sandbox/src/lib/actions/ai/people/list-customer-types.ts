@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { quickbooksAuth } from '../../../auth';
 import { quickbooksAiProps } from '../../../common/ai-props';
 import { quickbooksApi } from '../../../common/api';

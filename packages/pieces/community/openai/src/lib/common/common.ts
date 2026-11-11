@@ -1,4 +1,4 @@
-import { aiProviderUtils } from '@activepieces/pieces-framework';
+import { aiProviderUtils } from '@united/pieces-framework';
 import { encoding_for_model } from 'tiktoken';
 
 export const baseUrl = 'https://api.openai.com/v1';

@@ -5,7 +5,7 @@ import {
   HttpResponse,
   QueryParams,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { ShopifyAuth, getBaseUrl, shopifyAuthHelpers } from './auth';
 import {
   ShopifyCheckout,

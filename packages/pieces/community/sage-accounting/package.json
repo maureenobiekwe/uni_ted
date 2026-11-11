@@ -1,5 +1,5 @@
 {
-    "name": "@activepieces/piece-sage-accounting",
+    "name": "@united/piece-sage-accounting",
     "version": "0.0.1",
     "main": "./dist/src/index.js",
     "types": "./dist/src/index.d.ts",
@@ -8,9 +8,9 @@
         "lint": "eslint 'src/**/*.ts'"
     },
     "dependencies": {
-        "@activepieces/pieces-common": "workspace:*",
-        "@activepieces/pieces-framework": "workspace:*",
-        "@activepieces/shared": "workspace:*",
+        "@united/pieces-common": "workspace:*",
+        "@united/pieces-framework": "workspace:*",
+        "@united/shared": "workspace:*",
         "tslib": "2.6.2"
     }
 }

@@ -1,11 +1,11 @@
 import dayjs from 'dayjs';
 
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import {
 	AppConnectionValueForAuthProperty,
 	TriggerStrategy,
 	createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 
 import { workdayAuth } from '../auth';
 import { workdayApi } from '../common/api';

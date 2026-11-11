@@ -1,4 +1,4 @@
-import { httpClient, HttpError, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpError, HttpMethod } from '@united/pieces-common';
 
 async function request<T>({ auth, method, path, query, form, allowJsonErrors = false }: RequestParams): Promise<T> {
   const isForm = form !== undefined;

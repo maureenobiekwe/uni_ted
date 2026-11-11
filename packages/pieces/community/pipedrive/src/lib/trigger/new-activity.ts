@@ -1,10 +1,10 @@
-import { createTrigger } from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger } from '@united/pieces-framework';
+import { TriggerStrategy } from '@united/pieces-framework';
 import { pipedriveApiCall, pipedriveCommon } from '../common';
 import { pipedriveAuth } from '../auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { LeadListResponse } from '../common/types';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@united/pieces-framework';
 import { newActivityTriggerOutputSchema } from '../output-schemas';
 
 interface PipedriveActivityV2 {

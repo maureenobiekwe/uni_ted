@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import type { ItemRetentionLabel } from '@microsoft/microsoft-graph-types';
 
 import { microsoftSharePointAuth } from '../../../auth';

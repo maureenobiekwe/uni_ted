@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, QueryParams } from '@united/pieces-common';
 
 const BASE_URL = 'https://connect.squareup.com';
 const SQUARE_VERSION = '2026-09-16';

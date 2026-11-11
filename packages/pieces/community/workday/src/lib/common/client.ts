@@ -6,8 +6,8 @@ import {
 	HttpRequest,
 	QueryParams,
 	httpClient,
-} from '@activepieces/pieces-common';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { AppConnectionType } from '@united/pieces-framework';
 
 import { workdayUtils } from './utils';
 

@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { surrealdbAuth } from '../../auth';
 import { surrealdbApi } from '../../common/api';
 import type { SurrealdbNamespaceStructure } from '../../common/types';

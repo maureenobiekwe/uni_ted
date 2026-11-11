@@ -1,4 +1,4 @@
-import { AppConnectionType, Property } from '@activepieces/pieces-framework';
+import { AppConnectionType, Property } from '@united/pieces-framework';
 import { NuelinkAuthValue, nuelinkAuths } from '../auth';
 import { NuelinkApiError, nuelinkClient } from './client';
 

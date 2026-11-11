@@ -3,14 +3,14 @@ import {
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import {
   boardIdDropdown,
   teamhoodApiCall,

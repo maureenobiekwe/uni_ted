@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { NUELINK_LIMITS, nuelinkClient } from './client';
 import { nuelinkInputs } from './inputs';
 import { nuelinkTime } from './time';

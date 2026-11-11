@@ -1,5 +1,5 @@
-import { Property, createAction, OAuth2PropertyValue } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property, createAction, OAuth2PropertyValue } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { quickbooksAuth } from '../lib/auth';
 import { quickbooksApiCall, quickbooksQuery, QuickbooksEntityResponse } from '../lib/common';
 import { QuickbooksBill, QuickbooksVendor, QuickbooksRef, QuickbooksPreferences } from '../lib/types';

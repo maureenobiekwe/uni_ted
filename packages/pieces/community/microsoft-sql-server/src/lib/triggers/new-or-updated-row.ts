@@ -3,7 +3,7 @@ import {
   TriggerStrategy,
   createTrigger,
   isNil,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import sql from 'mssql';
 import { mssqlAuth } from '../auth';
 import { MssqlTable, mssqlCommon } from '../common';

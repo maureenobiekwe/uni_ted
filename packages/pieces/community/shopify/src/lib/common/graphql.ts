@@ -3,8 +3,8 @@ import {
   HttpError,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
-import { Property, tryCatch } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { Property, tryCatch } from '@united/pieces-framework';
 import {
   SHOPIFY_API_VERSION,
   ShopifyAuth,

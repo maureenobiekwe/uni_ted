@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@united/pieces-framework';
 import { smartsuiteAuth } from '../auth';
 import { smartsuiteCommon } from '../common/props';
 import { smartSuiteClient } from '../common/client';

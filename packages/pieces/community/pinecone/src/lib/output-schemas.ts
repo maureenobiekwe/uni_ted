@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const statusFields: OutputSchema['fields'] = [
 	{ key: 'ready', label: 'Ready', format: 'boolean' },

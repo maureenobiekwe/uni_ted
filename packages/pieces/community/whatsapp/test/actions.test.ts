@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 
-import { httpClient, HttpMethod, HttpRequest, HttpResponse } from '@activepieces/pieces-common';
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod, HttpRequest, HttpResponse } from '@united/pieces-common';
+import { createMockActionContext } from '@united/pieces-framework';
 import { sendInteractiveButtons } from '../src/lib/actions/send-interactive-buttons';
 import { sendInteractiveList } from '../src/lib/actions/send-interactive-list';
 import { sendInteractiveCtaUrl } from '../src/lib/actions/send-interactive-cta-url';

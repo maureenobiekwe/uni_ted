@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const tokenUsageFields: OutputSchema['fields'] = [
 	{ key: 'prompt_tokens', label: 'Prompt Tokens', format: 'number' },

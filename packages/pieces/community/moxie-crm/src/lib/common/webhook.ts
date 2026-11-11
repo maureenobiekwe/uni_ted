@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { Store } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { Store } from '@united/pieces-framework';
 import { moxieRequest, responseStatusOf } from './client';
 import { MoxieCredentials, MoxieStoredHook } from './models';
 

@@ -1,4 +1,4 @@
-import { isNil, PieceAuth, tryCatch } from '@activepieces/pieces-framework';
+import { isNil, PieceAuth, tryCatch } from '@united/pieces-framework';
 import { ninetyCommon } from './common/client';
 
 export const ninetyAuth = PieceAuth.SecretText({

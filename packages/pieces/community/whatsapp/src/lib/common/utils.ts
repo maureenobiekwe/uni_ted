@@ -3,14 +3,14 @@ import {
 	httpClient,
 	HttpMethod,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { whatsappAuth } from '../auth';
 import {
 	Property,
 	DynamicPropsValue,
 	DropdownOption,
 	MarkdownVariant,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 
 export const supportedMediaTypes = ['image', 'audio', 'document', 'sticker', 'video'];
 export const capitalizeFirstLetter = (word: string) => word.charAt(0).toUpperCase() + word.slice(1);

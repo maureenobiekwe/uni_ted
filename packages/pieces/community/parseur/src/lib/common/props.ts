@@ -1,4 +1,4 @@
-import { DropdownState, Property } from '@activepieces/pieces-framework';
+import { DropdownState, Property } from '@united/pieces-framework';
 import { parseurAuth } from '../auth';
 import { parseurApi } from './api';
 

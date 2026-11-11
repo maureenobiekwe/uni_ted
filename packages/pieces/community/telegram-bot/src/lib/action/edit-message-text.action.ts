@@ -2,8 +2,8 @@ import {
   createAction,
   MarkdownVariant,
   Property,
-} from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { HttpMethod, httpClient } from '@united/pieces-common';
 import { telegramCommons } from '../common';
 import { telegramBotAuth } from '../..';
 import { editMessageTextActionOutputSchema } from '../output-schemas';

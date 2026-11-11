@@ -5,8 +5,8 @@ import {
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@activepieces/pieces-common';
-import { OAuth2PropertyValue } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { OAuth2PropertyValue } from '@united/pieces-framework';
 import { getGraphBaseUrl } from './microsoft-cloud';
 
 export const oneDriveApi = {

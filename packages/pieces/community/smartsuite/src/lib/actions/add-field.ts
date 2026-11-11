@@ -1,5 +1,5 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property, createAction } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { randomBytes } from 'crypto';
 import { smartsuiteAuth } from '../auth';
 import { smartSuiteApi } from '../common';

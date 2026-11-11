@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const WS_ID = 'Vtiger webservice ID, for example 12x345.';
 const RECORD_FIELDS = 'All fields of the record, keyed by field API name.';

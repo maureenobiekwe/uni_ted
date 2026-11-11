@@ -1,10 +1,10 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 
 const selfHostedAuth = PieceAuth.CustomAuth({
   displayName: 'Self-hosted (Username & Password)',

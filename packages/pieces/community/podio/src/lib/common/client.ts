@@ -1,5 +1,5 @@
-import { HttpError, HttpMethod, httpClient, QueryParams } from '@activepieces/pieces-common';
-import type { ApFile } from '@activepieces/pieces-framework';
+import { HttpError, HttpMethod, httpClient, QueryParams } from '@united/pieces-common';
+import type { ApFile } from '@united/pieces-framework';
 import type { PodioAuthValue, PodioErrorBody } from './types';
 
 function baseUrl(): string {

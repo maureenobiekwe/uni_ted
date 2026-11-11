@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
 import { smartsuiteAuth } from './lib/auth';
 import { SMARTSUITE_API_URL } from './lib/common/constants';
 import { smartSuiteClient } from './lib/common/client';

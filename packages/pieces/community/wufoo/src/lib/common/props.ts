@@ -1,5 +1,5 @@
-import { Property, DynamicPropsValue } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property, DynamicPropsValue } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { wufooApiCall } from './client';
 import { wufooAuth } from '../auth';
 

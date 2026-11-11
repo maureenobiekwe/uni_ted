@@ -1,5 +1,5 @@
-import { propsValidation } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { propsValidation } from '@united/pieces-common';
+import { createAction } from '@united/pieces-framework';
 import { runwareAuth, runwareCommon } from '../common';
 
 export const generateVideoFromText = createAction({

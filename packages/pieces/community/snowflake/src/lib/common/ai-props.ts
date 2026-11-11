@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { FILTER_OPERATORS } from './sql';
 
 export const aiProps = {

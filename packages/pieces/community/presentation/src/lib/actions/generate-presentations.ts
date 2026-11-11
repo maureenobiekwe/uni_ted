@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { presentonAuth } from '../common/auth';
 import { presentonClient } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 
 export const generatePresentations = createAction({
   auth: presentonAuth,

@@ -1,4 +1,4 @@
-import { DropdownState, Property, tryCatch } from '@activepieces/pieces-framework';
+import { DropdownState, Property, tryCatch } from '@united/pieces-framework';
 
 import { microsoftOneNoteAuth } from '../auth';
 import { microsoftOneNoteClient } from './client';

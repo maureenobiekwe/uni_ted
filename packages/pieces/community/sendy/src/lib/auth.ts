@@ -2,11 +2,11 @@ import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { getLists } from './api';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { propsValidation } from '@united/pieces-common';
+import { AppConnectionType } from '@united/pieces-framework';
 
 export type SendyAuthType = AppConnectionValueForAuthProperty<typeof sendyAuth>;
 

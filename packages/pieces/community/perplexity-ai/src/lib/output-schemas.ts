@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const tokenUsageFields: OutputSchema['fields'] = [
   { key: 'input_tokens', label: 'Input Tokens', format: 'number' },

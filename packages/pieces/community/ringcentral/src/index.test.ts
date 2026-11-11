@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { OAuth2AuthorizationMethod } from '@activepieces/pieces-framework';
+import { OAuth2AuthorizationMethod } from '@united/pieces-framework';
 
 import { ringcentral } from './index';
 

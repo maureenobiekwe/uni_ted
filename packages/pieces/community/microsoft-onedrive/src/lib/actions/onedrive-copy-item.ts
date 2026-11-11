@@ -1,5 +1,5 @@
-import { createAction, OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction, OAuth2PropertyValue, Property } from '@united/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@united/pieces-common';
 import { oneDriveAuth } from '../auth';
 import { oneDriveApi } from '../common/graph-api';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';

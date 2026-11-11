@@ -5,14 +5,14 @@ import {
   OAuth2PropertyValue,
   AppConnectionValueForAuthProperty,
   isNil,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
   getAccessTokenOrThrow,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { makeRequest } from '../common';
 import { pinterestAuth } from '../common/auth';
 import { newFollowerTriggerOutputSchema } from '../output-schemas';

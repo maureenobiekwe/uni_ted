@@ -1,4 +1,4 @@
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { nuelinkAuths } from './lib/auth';
 import { createPost } from './lib/actions/create-post';
 import { createCollectionPost } from './lib/actions/create-collection-post';

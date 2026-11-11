@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const nocodbPageInfoFields: OutputSchema['fields'] = [
   { key: 'totalRows', label: 'Total Rows', format: 'number' },

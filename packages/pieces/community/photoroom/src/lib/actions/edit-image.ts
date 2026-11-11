@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { photoroomAuth } from '../auth';
 import { photoroomClient } from '../common/client';
 import { photoroomProps } from '../common/props';

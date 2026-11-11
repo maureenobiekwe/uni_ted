@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { systemeIoAuth } from '../common/auth';
 import { systemeWebhook } from '../common/webhook';
 import { saleSample } from '../common/samples';

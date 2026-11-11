@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import type { PropParams } from './props';
 
 function collection<R extends boolean>({ required, displayName = 'Collection', description = 'Collection name or ID, e.g. "posts". Use List Collections to find it.' }: PropParams<R>) {

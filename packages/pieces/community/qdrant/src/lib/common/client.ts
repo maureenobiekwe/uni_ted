@@ -1,6 +1,6 @@
 import { QdrantClient } from '@qdrant/js-client-rest';
 
-import { HttpMethod, httpClient, QueryParams } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient, QueryParams } from '@united/pieces-common';
 
 import type { QdrantAuthValue, QdrantEnvelope } from './types';
 

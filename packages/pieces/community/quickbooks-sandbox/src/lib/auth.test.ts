@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { AuthenticationType, httpClient } from '@activepieces/pieces-common';
+import { AuthenticationType, httpClient } from '@united/pieces-common';
 import { quickbooksAuth } from './auth';
 
 const server = { apiUrl: 'http://127.0.0.1:4200/api/', publicUrl: 'http://127.0.0.1:4200/api/' };

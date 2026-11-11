@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 
 const authGuide = `
 ### To obtain your Vimeo API access token, follow these steps:

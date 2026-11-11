@@ -1,8 +1,8 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+import { createAction, Property } from "@united/pieces-framework";
 import { uscreenAuth } from "../common/auth";
 import { uscreenProps } from "../common/props";
 import { UscreenClient } from "../common/client";
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@united/pieces-common";
 
 export const assignUserAccess = createAction({
     auth: uscreenAuth,

@@ -1,4 +1,4 @@
-import { ApFile } from '@activepieces/pieces-framework';
+import { ApFile } from '@united/pieces-framework';
 import { Block, ConversationsRepliesResponse, KnownBlock, WebClient, WebClientOptions } from '@slack/web-api';
 
 const SLACK_SECTION_TEXT_MAX_LENGTH = 3000;

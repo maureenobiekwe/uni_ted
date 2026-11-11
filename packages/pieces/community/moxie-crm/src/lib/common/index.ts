@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, DropdownOption, DropdownState } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty, DropdownOption, DropdownState } from '@united/pieces-framework';
 import { moxieCRMAuth } from '../auth';
 import { MoxieCRMClient, responseStatusOf } from './client';
 import { MoxieCredentials } from './models';

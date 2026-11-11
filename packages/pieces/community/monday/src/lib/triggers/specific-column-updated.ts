@@ -2,7 +2,7 @@ import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { mondayAuth } from '../auth';
 import { makeClient, mondayCommon } from '../common';
 import {
@@ -10,7 +10,7 @@ import {
   MondayWebhookEventType,
 } from '../common/constants';
 import { WebhookInformation } from '../common/models';
-import { WebhookHandshakeStrategy } from '@activepieces/pieces-framework';
+import { WebhookHandshakeStrategy } from '@united/pieces-framework';
 import { specificColumnUpdatedTriggerOutputSchema } from '../output-schemas';
 export const specificColumnValueUpdatedTrigger = createTrigger({
   auth: mondayAuth,

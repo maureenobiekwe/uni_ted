@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient, QueryParams } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient, QueryParams } from '@united/pieces-common';
 
 export const BASE_URL = `https://www.mooninvoice.com/api_mi/public`;
 

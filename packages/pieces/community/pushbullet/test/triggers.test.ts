@@ -1,4 +1,4 @@
-import { httpClient } from '@activepieces/pieces-common';
+import { httpClient } from '@united/pieces-common';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { pushbullet } from '../src/index';
 import { newPushTrigger } from '../src/lib/triggers/new-push';

@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { whatsscaleClient } from './client';
 
 export function flattenCrmContact(contact: ConductorCrmContact) {

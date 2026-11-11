@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { stripeAuth } from '../..';
 import { stripeCommon } from '../common';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 
 import { customerSearchOutputSchema } from '../output-schemas';
 export const stripeSearchCustomer = createAction({

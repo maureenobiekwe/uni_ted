@@ -1,5 +1,5 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+import { PieceAuth } from '@united/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod, HttpRequest } from '@united/pieces-common';
 
 const markdownDescription = `
 1. Open [openrouter.ai/keys](https://openrouter.ai/keys) and sign in.

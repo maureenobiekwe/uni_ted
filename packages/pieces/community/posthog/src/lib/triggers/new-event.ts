@@ -4,8 +4,8 @@ import {
   Property,
   AppConnectionValueForAuthProperty,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
-import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@united/pieces-common';
 import { posthogAuth } from '../auth';
 import { posthogClient } from '../common/client';
 import { posthogOutputSchemas } from '../common/output-schemas';

@@ -1,5 +1,5 @@
-import { createCustomApiCallAction, HttpMethod, HttpRequest, httpClient, toFailsafeOutput } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction, HttpMethod, HttpRequest, httpClient, toFailsafeOutput } from '@united/pieces-common';
+import { createAction } from '@united/pieces-framework';
 import { mindeeAuth } from '../auth';
 import { MINDEE_V2_BASE_URL, isRecord, normalizeApiKey, verifiedTls } from '../common/client';
 

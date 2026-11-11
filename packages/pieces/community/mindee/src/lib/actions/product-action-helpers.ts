@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { mindeeFiles } from '../common/file';
 import { InferenceOptions, mindeeInference, MindeeProduct } from '../common/inference';
 import { mindeeProps } from '../common/props';

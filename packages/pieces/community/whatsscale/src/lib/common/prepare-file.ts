@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { ApFile, FilesService } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { ApFile, FilesService } from '@united/pieces-framework';
 import { whatsscaleClient } from './client';
 
 export async function prepareMediaFile({

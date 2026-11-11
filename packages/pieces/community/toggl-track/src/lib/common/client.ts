@@ -1,9 +1,9 @@
-import { AppConnectionType, isNil } from '@activepieces/pieces-framework';
+import { AppConnectionType, isNil } from '@united/pieces-framework';
 import {
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 
 async function request<T>({
   auth,

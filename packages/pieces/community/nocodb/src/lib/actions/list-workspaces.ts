@@ -1,6 +1,6 @@
 import { nocodbAuth } from '../auth';
-import { createAction } from '@activepieces/pieces-framework';
-import { HttpError } from '@activepieces/pieces-common';
+import { createAction } from '@united/pieces-framework';
+import { HttpError } from '@united/pieces-common';
 import { makeClient } from '../common';
 import { ListAPIResponse, WorkspaceResponse } from '../common/types';
 import { nocodbListWorkspacesOutputSchema } from '../output-schemas';

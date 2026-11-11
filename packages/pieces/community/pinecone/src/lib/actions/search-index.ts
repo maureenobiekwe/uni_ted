@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { pineconeApi } from '../common/api';
 import { pineconeAuth } from '../auth';
 import { searchIndexOutputSchema } from '../output-schemas';

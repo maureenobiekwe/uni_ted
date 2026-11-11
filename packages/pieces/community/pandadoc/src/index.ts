@@ -1,5 +1,5 @@
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
 import { pandadocAuth } from './lib/common/auth';
 import { createDocumentFromTemplate } from './lib/actions/create-document-from-template';
 import { createAttachment } from './lib/actions/create-attachment';

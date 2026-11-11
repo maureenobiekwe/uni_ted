@@ -1,4 +1,4 @@
-# @activepieces/piece-validatedmails
+# @united/piece-validatedmails
 
 ValidatedMails is an email validation API integration for Activepieces that validates a single email address and returns a consistent, flat response contract suitable for routing, scoring, and downstream decision steps.
 

@@ -1,15 +1,15 @@
 {
-  "name": "@activepieces/piece-vtiger",
+  "name": "@united/piece-vtiger",
   "version": "1.5.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@united/pieces-common": "workspace:*",
+    "@united/pieces-framework": "workspace:*",
     "crypto-js": "4.2.0",
     "dayjs": "1.11.9",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*",
+    "@united/core-piece-types": "workspace:*",
+    "@united/core-utils": "workspace:*",
     "undici": "7.30.1"
   },
   "scripts": {

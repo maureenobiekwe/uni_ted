@@ -1,4 +1,4 @@
-import { AppConnectionType, PieceAuth, tryCatch } from '@activepieces/pieces-framework';
+import { AppConnectionType, PieceAuth, tryCatch } from '@united/pieces-framework';
 
 import { senderApi } from './common/api';
 

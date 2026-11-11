@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { ninetyAuth } from '../auth';
 import { ninetyCommon } from '../common/client';
 import { ninetyProps } from '../common/props';

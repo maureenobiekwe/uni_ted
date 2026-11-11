@@ -1,4 +1,4 @@
-# RingCentral piece (`@activepieces/piece-ringcentral`)
+# RingCentral piece (`@united/piece-ringcentral`)
 
 SMS, RingOut calls, call logs and Team Messaging.
 

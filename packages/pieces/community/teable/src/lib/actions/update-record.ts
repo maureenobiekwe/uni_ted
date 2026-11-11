@@ -1,4 +1,4 @@
-import { DynamicPropsValue, createAction } from '@activepieces/pieces-framework';
+import { DynamicPropsValue, createAction } from '@united/pieces-framework';
 import { TeableCommon } from '../common';
 import { teableClient } from '../common/client';
 import { TeableAuth } from '../auth';

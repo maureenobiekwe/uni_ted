@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 
 function modelProp({ description }: { description?: string } = {}) {
   return Property.ShortText({

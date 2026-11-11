@@ -1,4 +1,4 @@
-import { MarkdownVariant, Property } from '@activepieces/pieces-framework';
+import { MarkdownVariant, Property } from '@united/pieces-framework';
 import { ConversationsListResponse, UsersConversationsResponse, UsersListResponse, WebClient } from '@slack/web-api';
 import { slackAuth } from '../auth';
 import { getBotToken, SlackAuthValue } from '../common/auth-helpers';

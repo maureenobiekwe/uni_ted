@@ -1,13 +1,13 @@
 import {
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { tenzoAuth, TenzoAuthValue } from '../common/auth';
 import { tenzoApiCall } from '../common/client';
 import { tenzoCommon } from '../common/props';

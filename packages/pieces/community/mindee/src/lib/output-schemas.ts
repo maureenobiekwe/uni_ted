@@ -1,4 +1,4 @@
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+import { OutputSchema, OutputSchemaField } from '@united/pieces-framework';
 import { MindeeProduct } from './common/inference';
 
 const envelopeFields: OutputSchemaField[] = [

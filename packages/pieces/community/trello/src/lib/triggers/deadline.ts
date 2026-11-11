@@ -1,6 +1,6 @@
 import { trelloAuth } from '../..';
-import { TriggerStrategy, createTrigger, PiecePropValueSchema, Property, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { TriggerStrategy, createTrigger, PiecePropValueSchema, Property, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import dayjs from 'dayjs';
 import { trelloCommon, getCardsInBoard, getCardsInList } from '../common';
 import { deadlineTriggerOutputSchema } from '../output-schemas';

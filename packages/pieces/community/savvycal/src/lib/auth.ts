@@ -1,6 +1,6 @@
-import { AppConnectionValueForAuthProperty, PieceAuth } from '@activepieces/pieces-framework';
-import { AppConnectionType } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
+import { AppConnectionValueForAuthProperty, PieceAuth } from '@united/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@united/pieces-common';
 import { SAVVYCAL_BASE_URL } from './common';
 
 export const savvyCalAuth = [

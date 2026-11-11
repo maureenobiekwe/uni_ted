@@ -1,6 +1,6 @@
 import { Readable } from 'stream';
-import { createAction, OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { createAction, OAuth2PropertyValue, Property } from '@united/pieces-framework';
+import { HttpMethod, httpClient } from '@united/pieces-common';
 import { oneDriveAuth } from '../auth';
 import { GraphDriveItem, oneDriveApi } from '../common/graph-api';
 import { onedriveDownloadItemVersionOutputSchema } from '../output-schemas';

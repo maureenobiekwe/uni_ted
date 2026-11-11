@@ -1,5 +1,5 @@
 import { randomUUID } from 'crypto';
-import { AppConnectionValueForAuthProperty, Property } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty, Property } from '@united/pieces-framework';
 import { Client, QueryConfig, QueryResultRow } from 'pg';
 import format from 'pg-format';
 import { postgresAuth } from './auth';

@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { addPersonsToStaticCohort } from '../src/lib/actions/ai/add-persons-to-static-cohort';
 import { createCohort } from '../src/lib/actions/ai/create-cohort';

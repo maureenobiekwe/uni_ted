@@ -1,7 +1,7 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@united/pieces-framework';
 import { tr } from 'zod/v4/locales';
 import { makeRequest } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 
 export const paywhirlAuth = PieceAuth.CustomAuth({
   displayName: 'API Key',

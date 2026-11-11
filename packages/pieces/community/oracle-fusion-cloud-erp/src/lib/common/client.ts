@@ -5,8 +5,8 @@ import {
     httpClient,
     HttpRequest,
     HttpHeaders,
-} from '@activepieces/pieces-common';
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { PiecePropValueSchema } from '@united/pieces-framework';
 import { oracleFusionCloudErpAuth } from '../auth';
 
 type OracleAuthValue = PiecePropValueSchema<typeof oracleFusionCloudErpAuth>;

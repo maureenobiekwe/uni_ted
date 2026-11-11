@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { HttpRequest, httpClient } from '@activepieces/pieces-common';
+import { HttpRequest, httpClient } from '@united/pieces-common';
 import {
 	Action,
 	AppConnectionType,
@@ -8,7 +8,7 @@ import {
 	InputPropertyMap,
 	PropertyType,
 	StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { sendinblueAuth } from '../src/lib/auth';
 import { brevoCommon } from '../src/lib/common';
 import { createOrUpdateEmailTemplate } from '../src/lib/actions/create-or-update-email-template';

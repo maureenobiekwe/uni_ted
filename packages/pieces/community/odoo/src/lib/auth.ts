@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@united/pieces-framework';
 import { OdooClient, OdooRequestError } from './common/client';
 
 function urlPort(value: unknown): string | null {

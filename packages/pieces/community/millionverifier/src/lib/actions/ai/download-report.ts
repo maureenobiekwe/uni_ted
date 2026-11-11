@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { parse } from 'csv-parse/sync';
 import { millionVerifierAuth } from '../../auth';
 import { millionVerifierAiProps } from '../../common/ai-props';

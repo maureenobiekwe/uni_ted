@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { z } from 'zod';
 import { KnowledgeSearchResultSchema } from '../common/types';
 import { createServiceNowClient, servicenowAuth } from '../common/props';

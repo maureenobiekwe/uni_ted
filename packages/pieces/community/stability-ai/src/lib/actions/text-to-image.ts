@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { stabilityAiAuth } from '../..';
 
 export const textToImage = createAction({

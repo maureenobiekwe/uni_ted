@@ -1,4 +1,4 @@
-import { createTrigger } from '@activepieces/pieces-framework';
+import { createTrigger } from '@united/pieces-framework';
 import { sendItAuth } from '../common/auth';
 import { sendItWebhookHooks } from '../common/webhook-trigger';
 import { sendItOutputSchemas } from '../common/output-schemas';

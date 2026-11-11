@@ -1,5 +1,5 @@
-import { httpClient, HttpError, HttpMethod } from '@activepieces/pieces-common';
-import { createMockActionContext, InputPropertyMap } from '@activepieces/pieces-framework';
+import { httpClient, HttpError, HttpMethod } from '@united/pieces-common';
+import { createMockActionContext, InputPropertyMap } from '@united/pieces-framework';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { pushbullet } from '../src/index';
 import { bushbulletAuth } from '../src/lib/common/auth';

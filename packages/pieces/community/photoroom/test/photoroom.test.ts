@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { HttpError, HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { ApFile } from '@activepieces/pieces-framework';
+import { HttpError, HttpMethod, httpClient } from '@united/pieces-common';
+import { ApFile } from '@united/pieces-framework';
 import {
   PHOTOROOM_IMAGE_API_BASE_URL,
   PHOTOROOM_SEGMENT_URL,

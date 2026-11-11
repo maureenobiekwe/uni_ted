@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, test, vi } from 'vitest';
 import { newLinkCreatedTrigger } from '../src/lib/triggers/new-link-created';
 import { DOMAIN_PROP, link, memoryStore, stubFetch } from './helpers';
-import { AppConnectionType, Store } from '@activepieces/pieces-framework';
+import { AppConnectionType, Store } from '@united/pieces-framework';
 
 const OLD = '2026-09-01T00:00:00.000Z';
 

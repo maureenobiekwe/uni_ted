@@ -1,6 +1,6 @@
 import { Pinecone } from '@pinecone-database/pinecone';
 
-import { httpClient, HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, QueryParams } from '@united/pieces-common';
 
 import type { PineconeAuthValue } from './types';
 

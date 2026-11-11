@@ -2,7 +2,7 @@ import { t } from 'i18next';
 
 import { cn } from '@/lib/utils';
 
-const unitedWordmark = ({ className }: { className?: string }) => (
+const UnitedWordmark = ({ className }: { className?: string }) => (
   <svg
     className={cn('h-full w-auto text-gray-11', className)}
     viewBox="0 -7.557 162 40.114"
@@ -65,5 +65,5 @@ const unitedWordmark = ({ className }: { className?: string }) => (
     />
   </svg>
 );
-unitedWordmark.displayName = 'unitedWordmark';
-export { unitedWordmark };
+UnitedWordmark.displayName = 'UnitedWordmark';
+export { UnitedWordmark };

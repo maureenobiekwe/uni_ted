@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { redditAuth } from '../auth';
 import { redditApi, RedditListing, RedditThing } from '../common/client';
 import { fetchPostCommentsOutputSchema } from '../output-schemas';

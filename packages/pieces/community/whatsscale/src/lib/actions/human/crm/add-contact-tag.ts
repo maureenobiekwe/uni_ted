@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { crmContactOutputSchema } from '../../../output-schemas';
 import { whatsscaleAuth } from '../../../auth';
 import { whatsscaleProps } from '../../../common/props';

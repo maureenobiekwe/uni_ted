@@ -2,13 +2,13 @@ import {
   createTrigger,
   TriggerStrategy,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { umamiAuth, UmamiAuthValue } from '../auth';
 import { umamiApiCall, umamiCommon } from '../common';
 

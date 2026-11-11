@@ -1,7 +1,7 @@
-import { PiecePropValueSchema, createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+import { PiecePropValueSchema, createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { vimeoAuth } from '../auth';
 import { apiRequest } from '../common';
-import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@activepieces/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@united/pieces-common';
 import dayjs from 'dayjs';
 
 const polling: Polling<AppConnectionValueForAuthProperty<typeof vimeoAuth>, object> = {

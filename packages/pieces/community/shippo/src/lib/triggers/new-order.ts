@@ -3,12 +3,12 @@ import {
   TriggerStrategy,
   StaticPropsValue,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import dayjs from 'dayjs';
 import { ShippoClient } from '../client';
 import { shippoAuth } from '../auth';

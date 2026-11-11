@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { postgresAuth } from '../../../auth';
 import { postgresAi, postgresAiProps } from '../../../ai-common';
 import { postgresListViewsOutputSchema } from '../../../output-schemas';

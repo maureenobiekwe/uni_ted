@@ -1,6 +1,6 @@
-import { AppConnectionValueForAuthProperty, OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { AppConnectionValueForAuthProperty, OAuth2PropertyValue, Property } from '@united/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import { getTaskListsDropdown, createTodoClient } from '../common';
 import { microsoftToDoAuth } from '../auth';
 import { PageCollection } from '@microsoft/microsoft-graph-client';

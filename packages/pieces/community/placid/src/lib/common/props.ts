@@ -1,4 +1,4 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+import { DynamicPropsValue, Property } from '@united/pieces-framework';
 import { PlacidClient } from './client';
 import { placidAuth } from '../auth';
 

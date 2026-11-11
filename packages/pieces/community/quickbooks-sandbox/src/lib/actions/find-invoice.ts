@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { quickbooksAuth } from '../auth';
 import { quickbooksApi } from '../common/api';
 import type { QuickbooksEntityResponse, QuickbooksInvoice } from '../common/types';

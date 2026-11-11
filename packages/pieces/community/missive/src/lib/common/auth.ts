@@ -1,5 +1,5 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
+import { PieceAuth } from '@united/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@united/pieces-common';
 
 export const missiveAuth = PieceAuth.SecretText({
     displayName: 'API Token',

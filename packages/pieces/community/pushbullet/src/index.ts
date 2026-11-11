@@ -1,5 +1,5 @@
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
 import { bushbulletAuth } from './lib/common/auth';
 import { pushbulletApi } from './lib/common/client';
 import { sendALink } from './lib/actions/send-a-link';

@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction, isNil, Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { createAction, isNil, Property } from '@united/pieces-framework';
 import { pipedriveAuth } from '../auth';
 import { PipedriveEnvelope, pipedriveAtomic } from '../common/atomic-helpers';
 import { updateNoteActionOutputSchema } from '../output-schemas';

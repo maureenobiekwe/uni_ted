@@ -1,9 +1,9 @@
 import { trelloAuth } from '../..';
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+import { TriggerStrategy, createTrigger } from '@united/pieces-framework';
 import { getCardDetail, getCardsInList, trelloCommon } from '../common';
 import { TrelloCardMoved } from '../common/props/card';
-import { isNil } from '@activepieces/pieces-framework';
-import { WebhookHandshakeStrategy } from '@activepieces/pieces-framework';
+import { isNil } from '@united/pieces-framework';
+import { WebhookHandshakeStrategy } from '@united/pieces-framework';
 import { cardMovedTriggerOutputSchema } from '../output-schemas';
 
 export const cardMovedTrigger = createTrigger({

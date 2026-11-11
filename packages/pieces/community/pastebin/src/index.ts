@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { pastebinAiActions } from './lib/actions/ai';
 import { createPasteAction } from './lib/actions/create-paste';
 import { getPasteContentAction } from './lib/actions/get-paste-content';

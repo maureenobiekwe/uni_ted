@@ -1,5 +1,5 @@
-import { AuthenticationType, httpClient, HttpMethod } from "@activepieces/pieces-common";
-import { PieceAuth, Property } from "@activepieces/pieces-framework";
+import { AuthenticationType, httpClient, HttpMethod } from "@united/pieces-common";
+import { PieceAuth, Property } from "@united/pieces-framework";
 
 export const PLUNK_BASE_URL = 'https://next-api.useplunk.com';
 

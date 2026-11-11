@@ -1,7 +1,7 @@
 import {
   OutputSchema,
   OutputSchemaField,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 
 const rowColumnsField: OutputSchemaField = {
   key: 'columns',

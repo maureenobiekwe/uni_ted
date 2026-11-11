@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const paginationFields: OutputSchema['fields'] = [
   { key: 'current_page', label: 'Current Page', format: 'number' },

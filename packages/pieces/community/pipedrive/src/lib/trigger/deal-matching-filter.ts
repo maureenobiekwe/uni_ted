@@ -1,6 +1,6 @@
 import { pipedriveAuth } from '../auth';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { createTrigger, Property, TriggerStrategy } from '@united/pieces-framework';
 import { filterIdProp } from '../common/props';
 import {
 	pipedriveApiCall,
@@ -9,7 +9,7 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField, LeadListResponse } from '../common/types';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@united/pieces-framework';
 import { DEAL_OPTIONAL_FIELDS } from '../common/constants';
 import { dealMatchingFilterTriggerOutputSchema } from '../output-schemas';
 

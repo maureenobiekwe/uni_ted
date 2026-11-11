@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { PieceAuth } from '@united/pieces-framework';
 import { shortIoClient } from './client';
 
 export const shortIoAuth = PieceAuth.CustomAuth({

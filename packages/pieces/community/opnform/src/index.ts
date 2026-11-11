@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { opnformAiActions } from './lib/actions/ai';
 import { opnformAuth } from './lib/auth';
 import { opnformClient } from './lib/common/client';

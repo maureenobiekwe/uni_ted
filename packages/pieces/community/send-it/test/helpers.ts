@@ -1,4 +1,4 @@
-import { Store } from '@activepieces/pieces-framework';
+import { Store } from '@united/pieces-framework';
 import { vi } from 'vitest';
 
 export function stubFetch(respond: (request: SeenRequest, index: number) => FakeReply): SeenRequest[] {

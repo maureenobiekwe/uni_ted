@@ -1,4 +1,4 @@
-import { createTrigger, MarkdownVariant, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, MarkdownVariant, Property, TriggerStrategy } from '@united/pieces-framework';
 import { supabaseAuth } from '../auth';
 import { supabaseCommon } from '../common/props';
 import { newRowTriggerOutputSchema } from '../output-schemas';

@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { NinjaPipeAuth, NinjaPipeRecord, ninjapipeClient } from './client';
 
 async function findContactByEmail({ auth, email }: { auth: NinjaPipeAuth; email: string }): Promise<NinjaPipeRecord | undefined> {

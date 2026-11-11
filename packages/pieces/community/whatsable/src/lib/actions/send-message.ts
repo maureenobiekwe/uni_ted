@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import {
   httpClient, HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { whatsableAuth } from '../..';
 
 export const sendMessage = createAction({

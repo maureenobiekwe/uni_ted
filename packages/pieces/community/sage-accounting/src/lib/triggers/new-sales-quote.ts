@@ -2,8 +2,8 @@ import {
   createTrigger,
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import { sageAccountingAuth } from '../auth';
 import { sageAccountingClient } from '../client';
 import { newSalesQuoteTriggerOutputSchema } from '../output-schemas';

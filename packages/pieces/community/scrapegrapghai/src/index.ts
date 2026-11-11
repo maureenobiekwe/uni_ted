@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { scrapegraphaiAuth } from './lib/auth';
 import { scrapegraphaiClient } from './lib/common/client';
 import { smartScraperAction } from './lib/actions/smart-scraper';

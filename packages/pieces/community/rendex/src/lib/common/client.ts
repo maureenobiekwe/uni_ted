@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, QueryParams } from '@united/pieces-common';
 import { RENDEX_BASE_URL, RENDEX_LIMITS, rendexInput } from './common';
 
 let verifiedTlsAgent: Promise<unknown> | undefined;
