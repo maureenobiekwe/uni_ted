@@ -18,7 +18,7 @@ env:
 jobs:
   changes:
     runs-on: ubuntu-latest
-    if: github.repository == 'united/united'
+    if: github.repository == 'maureenobiekwe/uni_ted'
     outputs:
       packages: ${{ steps.affected.outputs.packages }}
       all: ${{ steps.affected.outputs.all }}
