@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-hedy",
+  "name": "@activepieces/piece-hedy",
   "version": "0.2.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

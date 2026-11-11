@@ -205,7 +205,7 @@ const ValueBridge = ({
         form.setValue(`settings.input.${propertyName}`, newValue)
       }
       actionOrTriggerName="test_action"
-      pieceName="@united/piece-test"
+      pieceName="@activepieces/piece-test"
       pieceVersion="0.0.1"
       form={form}
       placedInside="stepSettings"

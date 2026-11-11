@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-microsoft-todo",
+  "name": "@activepieces/piece-microsoft-todo",
   "version": "0.5.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

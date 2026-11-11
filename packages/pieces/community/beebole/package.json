@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-beebole",
+  "name": "@activepieces/piece-beebole",
   "version": "0.2.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-image-router",
+  "name": "@activepieces/piece-image-router",
   "version": "0.2.0",
   "type": "commonjs",
   "main": "./dist/src/index.js",

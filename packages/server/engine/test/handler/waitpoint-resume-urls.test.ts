@@ -87,7 +87,7 @@ function pieceThatReportsItsLinks() {
 
 async function runStep(): Promise<unknown> {
     const result = await flowExecutor.execute({
-        action: buildPieceAction({ name: 'reporter', pieceName: '@united/piece-under-test', actionName: 'report_links', input: {} }),
+        action: buildPieceAction({ name: 'reporter', pieceName: '@activepieces/piece-under-test', actionName: 'report_links', input: {} }),
         executionState: FlowExecutorContext.empty(),
         constants: generateMockEngineConstants({ streamStepProgress: StreamStepProgress.NONE, internalApiUrl: 'http://127.0.0.1:1/' }),
     })

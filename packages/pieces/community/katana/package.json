@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-katana",
+  "name": "@activepieces/piece-katana",
   "version": "0.2.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-wayfront",
+  "name": "@activepieces/piece-wayfront",
   "version": "0.0.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -56,7 +56,7 @@ function buildPiece({ name, displayName, description, actions, triggers = [] }: 
 }
 
 const slack = buildPiece({
-    name: '@united/piece-slack',
+    name: '@activepieces/piece-slack',
     displayName: 'Slack',
     description: 'Channel-based messaging platform',
     actions: [
@@ -69,7 +69,7 @@ const slack = buildPiece({
 })
 
 const gmail = buildPiece({
-    name: '@united/piece-gmail',
+    name: '@activepieces/piece-gmail',
     displayName: 'Gmail',
     description: 'Email service by Google',
     actions: [
@@ -78,7 +78,7 @@ const gmail = buildPiece({
 })
 
 const formstack = buildPiece({
-    name: '@united/piece-formstack',
+    name: '@activepieces/piece-formstack',
     displayName: 'Formstack',
     description: 'Online form builder',
     actions: [
@@ -92,7 +92,7 @@ const formstack = buildPiece({
 })
 
 const googleSheets = buildPiece({
-    name: '@united/piece-google-sheets',
+    name: '@activepieces/piece-google-sheets',
     displayName: 'Google Sheets',
     description: 'Spreadsheets by Google',
     actions: [
@@ -239,7 +239,7 @@ describe('pieceSearching.search', () => {
 const nullDescription = null as unknown as string
 
 const legacyPiece = buildPiece({
-    name: '@united/piece-legacy',
+    name: '@activepieces/piece-legacy',
     displayName: 'Legacy',
     description: nullDescription,
     actions: [

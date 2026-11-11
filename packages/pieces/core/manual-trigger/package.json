@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-manual-trigger",
+  "name": "@activepieces/piece-manual-trigger",
   "version": "0.0.8",
   "type": "commonjs",
   "main": "./dist/src/index.js",

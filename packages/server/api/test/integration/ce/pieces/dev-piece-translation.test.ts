@@ -24,7 +24,7 @@ const devPiece: PieceMetadataSchema = {
 
 const coreDevPiece: PieceMetadataSchema = {
     ...createMockPieceMetadata({
-        name: '@united/piece-forms',
+        name: '@activepieces/piece-forms',
         displayName: 'Human Input',
         version: '0.1.0',
         pieceType: PieceType.OFFICIAL,
@@ -91,6 +91,6 @@ describe('dev pieces carrying their own translations', () => {
         })
 
         expect(response?.statusCode).toBe(StatusCodes.OK)
-        expect(response?.json()[0]).toMatchObject({ name: '@united/piece-forms', displayName: 'Menschliche Eingabe' })
+        expect(response?.json()[0]).toMatchObject({ name: '@activepieces/piece-forms', displayName: 'Menschliche Eingabe' })
     })
 })

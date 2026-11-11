@@ -94,7 +94,7 @@ describe('MCP activity recording', () => {
             projectId: ctx.project.id,
             userId: ctx.user.id,
             toolName: 'ap_run_action',
-            pieceName: '@united/piece-doesnotexist',
+            pieceName: '@activepieces/piece-doesnotexist',
             actionName: 'do_nothing',
             connectionExternalId: 'conn-external-1',
         })
@@ -219,7 +219,7 @@ describe('MCP activity recording', () => {
     // errorMessage — a rejected call showing green in the feed.
     it('records a validation failure as FAILED', async () => {
         await db.save('piece_metadata', createMockPieceMetadata({
-            name: '@united/piece-activity-probe',
+            name: '@activepieces/piece-activity-probe',
             displayName: 'Activity Probe',
             version: '0.1.0',
             pieceType: PieceType.OFFICIAL,
@@ -237,7 +237,7 @@ describe('MCP activity recording', () => {
             triggers: {},
         }))
 
-        await callProjectTool({ name: 'ap_run_action', args: { pieceName: '@united/piece-activity-probe', actionName: 'send' } })
+        await callProjectTool({ name: 'ap_run_action', args: { pieceName: '@activepieces/piece-activity-probe', actionName: 'send' } })
 
         const rows = await findActivityRows()
         expect(rows).toHaveLength(1)
@@ -285,7 +285,7 @@ describe('MCP activity recording', () => {
         expect(rows[0]).toMatchObject({
             status: 'FAILED',
             toolName: 'ap_run_action',
-            pieceName: '@united/piece-slack',
+            pieceName: '@activepieces/piece-slack',
             actionName: 'send_channel_message',
         })
         expect(rows[0].errorMessage).toContain('project selection is unavailable')

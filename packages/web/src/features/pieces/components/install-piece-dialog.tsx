@@ -260,7 +260,7 @@ const InstallPieceDialog = ({
                         value={field.value || ''}
                         id="pieceName"
                         type="text"
-                        placeholder="@united/piece-name"
+                        placeholder="@activepieces/piece-name"
                       />
                       <FormMessage />
                     </FormItem>

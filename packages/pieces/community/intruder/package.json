@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-intruder",
+  "name": "@activepieces/piece-intruder",
   "version": "0.1.1",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

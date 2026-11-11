@@ -14,8 +14,8 @@ Use `community/` for almost all work.
 
 | Location | Format | Example |
 |---|---|---|
-| `community/` | `@united/piece-<name>` | `@united/piece-slack` |
-| `core/` | `@united/piece-<name>` | `@united/piece-http` |
+| `community/` | `@activepieces/piece-<name>` | `@activepieces/piece-slack` |
+| `core/` | `@activepieces/piece-<name>` | `@activepieces/piece-http` |
 | `custom/` | Any npm-valid name | `@mycompany/piece-crm` |
 
 ## PieceCategory Values

@@ -85,7 +85,7 @@ function buildFlow(name: string): PopulatedFlow {
         displayName: 'Trigger',
         type: FlowTriggerType.PIECE,
         settings: {
-          pieceName: '@united/piece-mcp',
+          pieceName: '@activepieces/piece-mcp',
           pieceVersion: '0.0.1',
           triggerName: 'mcp_tool',
           input: {},

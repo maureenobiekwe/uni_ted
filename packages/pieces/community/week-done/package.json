@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-week-done",
+  "name": "@activepieces/piece-week-done",
   "version": "0.1.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

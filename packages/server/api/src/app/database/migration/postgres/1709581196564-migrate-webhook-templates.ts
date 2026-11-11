@@ -26,7 +26,7 @@ export class MigrateWebhookTemplate1709581196564 implements MigrationInterface {
                     input: {},
                     'inputUiInfo': step.settings.inputUiInfo,
                     triggerName: 'catch_request',
-                    pieceName: '@united/piece-webhook',
+                    pieceName: '@activepieces/piece-webhook',
                     pieceVersion: '~0.0.1',
                     'pieceType': 'OFFICIAL',
                     'packageType': 'REGISTRY',
@@ -59,7 +59,7 @@ export class MigrateWebhookTemplate1709581196564 implements MigrationInterface {
 
             const step = flowVersion.template.trigger
             if (step.type === 'PIECE_TRIGGER') {
-                if (step.settings.pieceName === '@united/piece-webhook') {
+                if (step.settings.pieceName === '@activepieces/piece-webhook') {
                     step.type = 'WEBHOOK'
                     step.settings = {
                         'inputUiInfo': step.settings.inputUiInfo,

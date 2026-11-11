@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@united/piece-microsoft-todo` to build the library.
+Run `turbo run build --filter=@activepieces/piece-microsoft-todo` to build the library.

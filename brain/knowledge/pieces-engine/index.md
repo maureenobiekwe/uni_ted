@@ -8,7 +8,7 @@ How the piece catalog, visibility, formulas, workers, and AI agents fit together
 
 ### Pieces
 
-Metadata catalog of integrations (`@united/piece-*`), served from an in-memory `pieceCache` rebuilt from the `piece_metadata` table and refreshed via pub/sub.
+Metadata catalog of integrations (`@activepieces/piece-*`), served from an in-memory `pieceCache` rebuilt from the `piece_metadata` table and refreshed via pub/sub.
 
 - **Entities/services**: `piece_metadata` (unique on name+version+platformId; `null` platformId = official, set = custom); `pieceMetadataService` (list/get/create/delete + cache), `pieceInstallService` (upload/NPM install → `EXECUTE_METADATA` engine job), `pieceSyncService` (bundled registry → DB).
 - **Gotchas**: routes under `/v1/pieces`; install/delete are `platformAdminOnly`; `options` runs dynamic prop eval on a worker. Per-piece/action visibility (EE/Cloud) resolved at read time by `resolveVisibility` → returns `null` on CE. Optional per-action `outputSchema` drives the builder's Smart Output Viewer (opt-in, non-breaking).
@@ -66,7 +66,7 @@ Node processes that poll the app over Socket.IO and execute flows. The worker *i
 
 ### AI Agents (gated by `agentsEnabled`)
 
-A flow step type (the `run_agent` action of `@united/piece-ai`) running a ReAct-style LLM loop (up to `maxSteps`) that can call tools before producing a final answer. Config lives in the flow version's step settings, or on the saved Agent the step names by `externalId`, resolved at run start.
+A flow step type (the `run_agent` action of `@activepieces/piece-ai`) running a ReAct-style LLM loop (up to `maxSteps`) that can call tools before producing a final answer. Config lives in the flow version's step settings, or on the saved Agent the step names by `externalId`, resolved at run start.
 
 - **Tools** (`AgentTool` union): PIECE action, FLOW (child run), MCP server, KNOWLEDGE_BASE (semantic search on 768-dim embeddings). Config: `agentTools`, `structuredOutput`, `prompt`, `maxSteps`, `aiProviderModel`, optional web search.
 - **Gotchas**: external MCP tools validated server-side via `POST /v1/projects/:projectId/agent-tools/mcp/validate` (initialize→initialized→tools/list handshake) through SSRF-filtered `apAxios`; errors collapse to one generic message. Lives under `agents/` (agent connecting *out*), distinct from `mcp/` (exposing AP *as* an MCP server). `AgentTimeline` renders step blocks in the builder.

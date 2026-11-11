@@ -140,13 +140,13 @@ describe('stepResultFrom — a configured action keeps its identity in the run v
     const tools = [{
         type: 'PIECE' as const,
         toolName: 'send_email',
-        pieceMetadata: { pieceName: '@united/piece-gmail', pieceVersion: '0.1.0', actionName: 'send_email' },
+        pieceMetadata: { pieceName: '@activepieces/piece-gmail', pieceVersion: '0.1.0', actionName: 'send_email' },
     }]
 
     it('projects a configured call as a piece, so the timeline shows the action not a bare name', () => {
         const result = stepResultFrom({ prompt: 'send it', uiParts: [call], timestamp: at, tools })
 
-        expect(result.steps[0]).toMatchObject({ toolCallType: 'PIECE', pieceName: '@united/piece-gmail', actionName: 'send_email' })
+        expect(result.steps[0]).toMatchObject({ toolCallType: 'PIECE', pieceName: '@activepieces/piece-gmail', actionName: 'send_email' })
     })
 
     it('falls back to unknown for a call that was not one of the configured tools', () => {

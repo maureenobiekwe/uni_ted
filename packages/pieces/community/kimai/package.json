@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-kimai",
+  "name": "@activepieces/piece-kimai",
   "version": "0.3.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-folk",
+  "name": "@activepieces/piece-folk",
   "version": "0.2.0",
   "type": "commonjs",
   "main": "./dist/src/index.js",

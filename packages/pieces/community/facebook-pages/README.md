@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@united/piece-facebook-pages` to build the library.
+Run `turbo run build --filter=@activepieces/piece-facebook-pages` to build the library.

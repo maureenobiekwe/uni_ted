@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-letmepost",
+  "name": "@activepieces/piece-letmepost",
   "version": "0.2.0",
   "type": "commonjs",
   "main": "./dist/src/index.js",

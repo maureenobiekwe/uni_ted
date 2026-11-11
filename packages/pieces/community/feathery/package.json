@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-feathery",
+  "name": "@activepieces/piece-feathery",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

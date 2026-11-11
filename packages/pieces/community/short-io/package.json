@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-short-io",
+  "name": "@activepieces/piece-short-io",
   "version": "0.3.3",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -66,7 +66,7 @@ async function runWaitingStep({ maxTestWaitMs, streamStepProgress }: { maxTestWa
     mockGetPieceAndAction.mockResolvedValue(pieceThatWaits({ maxTestWaitMs }))
     const action = buildPieceAction({
         name: 'waiter',
-        pieceName: '@united/piece-under-test',
+        pieceName: '@activepieces/piece-under-test',
         actionName: 'wait_for_something',
         input: {},
     })

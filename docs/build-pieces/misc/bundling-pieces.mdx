@@ -23,7 +23,7 @@ After bundling, the piece's `dist/package.json` is rewritten:
 
 ```jsonc
 {
-  "name": "@united/piece-json",
+  "name": "@activepieces/piece-json",
   "version": "0.1.7",
   "main": "./src/index.js",      // the self-contained bundle
   "dependencies": {
@@ -41,7 +41,7 @@ If a dependency must not be inlined (for example a native module), add it to a `
 
 ```jsonc
 {
-  "name": "@united/piece-example",
+  "name": "@activepieces/piece-example",
   "bundleDeps": ["some-native-addon"]
 }
 ```
@@ -52,7 +52,7 @@ A file your piece loads by path at runtime (for example `child_process.fork(path
 
 ```jsonc
 {
-  "name": "@united/piece-oracle-database",
+  "name": "@activepieces/piece-oracle-database",
   "bundleForkedEntries": ["src/lib/common/oracle-runner.ts"]
 }
 ```

@@ -93,7 +93,7 @@ export const AgentLink = ({ disabled, pieceVersion }: AgentLinkProps) => {
   });
   const toolPieces = new Set(
     (linked?.toolPieceNames ?? []).map((pieceName) =>
-      pieceName.replace('@united/piece-', ''),
+      pieceName.replace('@activepieces/piece-', ''),
     ),
   );
   const toolChips = [...toolPieces].slice(0, MAX_TOOL_CHIPS);

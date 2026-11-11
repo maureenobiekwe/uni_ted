@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@united/piece-pipedrive` to build the library.
+Run `turbo run build --filter=@activepieces/piece-pipedrive` to build the library.

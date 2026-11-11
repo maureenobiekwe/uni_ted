@@ -61,7 +61,7 @@ Source and destination are **separate united deployments**, each with its own DB
   "flows":   [ /* full flow states with externalId */ ],
   "tables":  [ /* schema only — name, externalId, fields[], status, trigger */ ],
   "folders": [ /* externalId, displayName, displayOrder */ ],
-  "requiredPieces": [ { "name": "@united/piece-slack", "version": "1.2.3" } ]
+  "requiredPieces": [ { "name": "@activepieces/piece-slack", "version": "1.2.3" } ]
 }
 ```
 

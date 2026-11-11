@@ -27,7 +27,7 @@ function makeFlowVersion(): FlowVersion {
             lastUpdatedDate: '2024-01-01T00:00:00Z',
             type: FlowTriggerType.PIECE,
             settings: {
-                pieceName: '@united/piece-webhook',
+                pieceName: '@activepieces/piece-webhook',
                 pieceVersion: '~0.1.0',
                 triggerName: 'catch_webhook',
                 input: {},

@@ -62,13 +62,13 @@ function auditEvents(): ApplicationEvent[] {
 
 function globalConnections(): AppConnectionWithoutSensitiveData[] {
   return [
-    { displayName: 'Slack', pieceName: '@united/piece-slack' },
+    { displayName: 'Slack', pieceName: '@activepieces/piece-slack' },
     {
       displayName: 'Google Sheets',
-      pieceName: '@united/piece-google-sheets',
+      pieceName: '@activepieces/piece-google-sheets',
     },
-    { displayName: 'Salesforce', pieceName: '@united/piece-salesforce' },
-    { displayName: 'HubSpot', pieceName: '@united/piece-hubspot' },
+    { displayName: 'Salesforce', pieceName: '@activepieces/piece-salesforce' },
+    { displayName: 'HubSpot', pieceName: '@activepieces/piece-hubspot' },
   ].map((entry, index) => ({
     id: `sample-connection-${index}`,
     ...agedTimestamps((index + 2) * 26 * 60),
@@ -185,17 +185,20 @@ function templates(): Template[] {
     {
       name: 'New lead to Salesforce',
       summary: 'Push every qualified form submission into Salesforce.',
-      pieces: ['@united/piece-forms', '@united/piece-salesforce'],
+      pieces: ['@activepieces/piece-forms', '@activepieces/piece-salesforce'],
     },
     {
       name: 'Weekly revenue digest',
       summary: 'Post a Monday summary of closed deals to Slack.',
-      pieces: ['@united/piece-slack', '@united/piece-google-sheets'],
+      pieces: [
+        '@activepieces/piece-slack',
+        '@activepieces/piece-google-sheets',
+      ],
     },
     {
       name: 'Onboard a new hire',
       summary: 'Create accounts and send the welcome pack on day one.',
-      pieces: ['@united/piece-gmail', '@united/piece-hubspot'],
+      pieces: ['@activepieces/piece-gmail', '@activepieces/piece-hubspot'],
     },
   ].map((entry, index) => ({
     id: `sample-template-${index}`,

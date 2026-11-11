@@ -356,12 +356,12 @@ describe('Platform API', () => {
                         title: 'Internal Tools',
                         icon: 'Star',
                         hidden: false,
-                        pieceNames: ['@united/piece-internal-a', '@united/piece-internal-b'],
+                        pieceNames: ['@activepieces/piece-internal-a', '@activepieces/piece-internal-b'],
                         sections: [
                             {
                                 id: apId(),
                                 title: 'CRM',
-                                pieceNames: ['@united/piece-internal-crm'],
+                                pieceNames: ['@activepieces/piece-internal-crm'],
                             },
                         ],
                     },

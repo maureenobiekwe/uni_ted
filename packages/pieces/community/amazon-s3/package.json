@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-amazon-s3",
+  "name": "@activepieces/piece-amazon-s3",
   "version": "0.8.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

@@ -8,7 +8,7 @@ npm run create-action    # Add action
 npm run create-trigger   # Add trigger
 ```
 
-After creating: add path to `tsconfig.base.json`: `"@united/piece-{name}": ["packages/pieces/community/{name}/src/index.ts"]`
+After creating: add path to `tsconfig.base.json`: `"@activepieces/piece-{name}": ["packages/pieces/community/{name}/src/index.ts"]`
 
 ## Structure
 

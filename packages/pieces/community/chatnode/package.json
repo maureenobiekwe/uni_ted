@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-chatnode",
+  "name": "@activepieces/piece-chatnode",
   "version": "0.2.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

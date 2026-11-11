@@ -25,7 +25,7 @@ import {
 } from './chat-types';
 
 function stripPiecePrefix(name: string): string {
-  return name.replace(/^@united\/piece-/, '');
+  return name.replace(/^@activepieces\/piece-/, '');
 }
 
 function humanizePieceName(raw: string): string {

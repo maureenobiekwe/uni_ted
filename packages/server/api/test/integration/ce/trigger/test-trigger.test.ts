@@ -220,5 +220,5 @@ type SaveTriggerSourceParams = {
     type?: TriggerStrategy
 }
 
-const PIECE_NAME_PREFIX = '@united/piece-test-trigger'
+const PIECE_NAME_PREFIX = '@activepieces/piece-test-trigger'
 const PIECE_VERSION = '0.0.1'

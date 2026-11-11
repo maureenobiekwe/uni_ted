@@ -96,7 +96,7 @@ Replace finished in 1240ms
   - united-onlinepay@0.0.7 (CUSTOM)
 
 1 connection(s) need authorization on destination before flows can run:
-  - Slack Main (@united/piece-slack) [externalId=slack_main]
+  - Slack Main (@activepieces/piece-slack) [externalId=slack_main]
 ```
 
 ### `--json`
@@ -116,7 +116,7 @@ Replace finished in 1240ms
     { "name": "united-onlinepay", "version": "0.0.7", "pieceType": "CUSTOM" }
   ],
   "connectionsAwaitingAuthorization": [
-    { "externalId": "slack_main", "pieceName": "@united/piece-slack", "displayName": "Slack Main" }
+    { "externalId": "slack_main", "pieceName": "@activepieces/piece-slack", "displayName": "Slack Main" }
   ],
   "durationMs": 1240
 }
@@ -128,7 +128,7 @@ Replace finished in 1240ms
 {
   "errors": [
     { "kind": "AP_VERSION_MISMATCH", "sourceVersion": "1.2.0", "destVersion": "1.1.5", "message": "..." },
-    { "kind": "CONNECTION_PIECE_MISMATCH", "externalId": "slack_main", "expectedPieceName": "@united/piece-slack", "foundPieceName": "@united/piece-discord" }
+    { "kind": "CONNECTION_PIECE_MISMATCH", "externalId": "slack_main", "expectedPieceName": "@activepieces/piece-slack", "foundPieceName": "@activepieces/piece-discord" }
   ]
 }
 ```
@@ -140,7 +140,7 @@ The full set of preflight error kinds: `AP_VERSION_MISMATCH`, `PIECE_VERSION_MIS
 ```jsonc
 {
   "failures": [
-    { "pieceName": "@united/piece-slack", "version": "1.2.3", "pieceType": "OFFICIAL", "message": "ENGINE_OPERATION_FAILURE: ..." },
+    { "pieceName": "@activepieces/piece-slack", "version": "1.2.3", "pieceType": "OFFICIAL", "message": "ENGINE_OPERATION_FAILURE: ..." },
     { "pieceName": "pdfcrowd-piece-united", "version": "0.0.5", "pieceType": "CUSTOM", "message": "..." }
   ]
 }
@@ -168,7 +168,7 @@ After a replace, the CLI prints any connections that still need authorization on
 
 ```text
 1 connection(s) need authorization on destination before flows can run:
-  - Slack Main (@united/piece-slack) [externalId=slack_main]
+  - Slack Main (@activepieces/piece-slack) [externalId=slack_main]
 ```
 
 The operator opens the destination UI → **Connections** → reconnects each placeholder using the destination's credentials (a different Slack workspace, prod-grade API key, etc.). Until that's done, any flow run that uses the connection will fail at execution time. Re-running the CLI after authorization is a no-op for connections that are already `ACTIVE`.

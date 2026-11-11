@@ -51,7 +51,7 @@ function withConnectionById(tool: unknown): unknown {
     }
 }
 
-const AGENT_PIECE_NAME = '@united/piece-ai'
+const AGENT_PIECE_NAME = '@activepieces/piece-ai'
 const AGENT_ACTION_NAME = 'run_agent'
 const THIN_CLIENT_PIECE_VERSION = '0.6.0'
 const DEFAULT_MAX_STEPS = 20

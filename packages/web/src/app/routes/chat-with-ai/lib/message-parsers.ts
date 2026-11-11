@@ -4,7 +4,9 @@ import { ChatUIMessage } from '@/features/chat/lib/chat-types';
 
 export function normalizePieceName(piece: string): string {
   const shortName = piece.replace(/[^a-z0-9-]/gi, '');
-  return piece.startsWith('@united/') ? piece : `@united/piece-${shortName}`;
+  return piece.startsWith('@activepieces/')
+    ? piece
+    : `@activepieces/piece-${shortName}`;
 }
 
 export function isConnectionPickerData(

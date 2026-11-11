@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-leexi",
+  "name": "@activepieces/piece-leexi",
   "version": "0.3.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

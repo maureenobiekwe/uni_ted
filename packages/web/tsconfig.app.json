@@ -21,7 +21,7 @@
       "ee-embed-sdk": [
         "../../packages/ee/embed-sdk/src"
       ],
-      "@united/piece-ai": [
+      "@activepieces/piece-ai": [
         "../../packages/pieces/community/ai/src"
       ]
     }

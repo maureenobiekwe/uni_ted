@@ -119,7 +119,7 @@ RUN rm -rf packages/pieces/core packages/pieces/custom \
       ! -name microsoft-teams-bot \
       -exec rm -rf {} + && \
     node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json','utf8'));p.workspaces=p.workspaces.filter(w=>fs.existsSync(w.replace('/*','')));fs.writeFileSync('package.json',JSON.stringify(p,null,2))" && \
-    node -e "const fs=require('fs');const f='packages/server/engine/package.json';const p=JSON.parse(fs.readFileSync(f,'utf8'));p.devDependencies=Object.fromEntries(Object.entries(p.devDependencies).filter(([n])=>!n.startsWith('@united/piece-')));fs.writeFileSync(f,JSON.stringify(p,null,2))" && \
+    node -e "const fs=require('fs');const f='packages/server/engine/package.json';const p=JSON.parse(fs.readFileSync(f,'utf8'));p.devDependencies=Object.fromEntries(Object.entries(p.devDependencies).filter(([n])=>!n.startsWith('@activepieces/piece-')));fs.writeFileSync(f,JSON.stringify(p,null,2))" && \
     rm -f bun.lock && bun install
 
 ### STAGE 2: Run ###

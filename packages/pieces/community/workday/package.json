@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-workday",
+  "name": "@activepieces/piece-workday",
   "version": "0.3.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

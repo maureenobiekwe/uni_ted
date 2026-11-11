@@ -13,7 +13,7 @@ export const migrateV10AiPiecesProviderId: Migration = {
             if (step.type !== FlowActionType.PIECE) {
                 return step
             }
-            if (step.settings.pieceName !== '@united/piece-ai' || !['0.0.1', '0.0.2'].includes(step.settings.pieceVersion)) {
+            if (step.settings.pieceName !== '@activepieces/piece-ai' || !['0.0.1', '0.0.2'].includes(step.settings.pieceVersion)) {
                 return step
             }
 
@@ -23,7 +23,7 @@ export const migrateV10AiPiecesProviderId: Migration = {
                 ...step,
                 settings: {
                     ...step.settings,
-                    pieceName: '@united/piece-ai',
+                    pieceName: '@activepieces/piece-ai',
                     pieceVersion: '0.0.4',
                     input,
                 },

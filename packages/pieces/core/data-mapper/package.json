@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-data-mapper",
+  "name": "@activepieces/piece-data-mapper",
   "version": "0.3.23",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

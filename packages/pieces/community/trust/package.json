@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-trust",
+  "name": "@activepieces/piece-trust",
   "version": "0.1.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

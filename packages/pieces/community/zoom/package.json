@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-zoom",
+  "name": "@activepieces/piece-zoom",
   "version": "0.9.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

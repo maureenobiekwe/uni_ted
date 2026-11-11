@@ -82,7 +82,7 @@ describe('Test step with narrowed sample data', () => {
         })
 
         const mockPiece = createMockPieceMetadata({
-            name: '@united/piece-webhook',
+            name: '@activepieces/piece-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
@@ -119,7 +119,7 @@ describe('Test step with narrowed sample data', () => {
                 valid: true,
                 lastUpdatedDate: apDayjs().toISOString(),
                 settings: {
-                    pieceName: '@united/piece-webhook',
+                    pieceName: '@activepieces/piece-webhook',
                     pieceVersion: '~0.1.29',
                     triggerName: 'catch_webhook',
                     input: {},

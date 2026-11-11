@@ -9,7 +9,7 @@ const tool = (auth?: string, actionName = 'send') =>
     type: 'PIECE',
     toolName: `gmail-${actionName}`,
     pieceMetadata: {
-      pieceName: '@united/piece-gmail',
+      pieceName: '@activepieces/piece-gmail',
       pieceVersion: '1.0.0',
       actionName,
       ...(auth === undefined ? {} : { predefinedInput: { auth, fields: {} } }),

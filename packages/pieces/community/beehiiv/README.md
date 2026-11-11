@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@united/piece-beehiiv` to build the library.
+Run `turbo run build --filter=@activepieces/piece-beehiiv` to build the library.

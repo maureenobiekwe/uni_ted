@@ -11,13 +11,13 @@ export const migrateV9AiPieces: Migration = {
             if (step.type !== FlowActionType.PIECE) {
                 return step
             }
-            if (step.settings.pieceName === '@united/piece-text-ai') {
+            if (step.settings.pieceName === '@activepieces/piece-text-ai') {
                 return migrateTextai(step)
             }
-            if (step.settings.pieceName === '@united/piece-utility-ai') {
+            if (step.settings.pieceName === '@activepieces/piece-utility-ai') {
                 return migrateUtilityAction(step)
             }
-            if (step.settings.pieceName === '@united/piece-image-ai') {
+            if (step.settings.pieceName === '@activepieces/piece-image-ai') {
                 return migrateImageai(step)
             }
             return step
@@ -36,7 +36,7 @@ function migrateUtilityAction(step: PieceAction): FlowAction {
         ...step,
         settings: {
             ...step.settings,
-            pieceName: '@united/piece-ai',
+            pieceName: '@activepieces/piece-ai',
             pieceVersion: '0.0.2',
             input: {
                 ...input,
@@ -63,7 +63,7 @@ function migrateTextai(step: PieceAction): FlowAction {
             ...step,
             settings: {
                 ...step.settings,
-                pieceName: '@united/piece-ai',
+                pieceName: '@activepieces/piece-ai',
                 actionName: 'askAi',
                 pieceVersion: '0.0.2',
                 input: {
@@ -84,7 +84,7 @@ function migrateTextai(step: PieceAction): FlowAction {
         ...step,
         settings: {
             ...step.settings,
-            pieceName: '@united/piece-ai',
+            pieceName: '@activepieces/piece-ai',
             pieceVersion: '0.0.2',
             input: {
                 ...step.settings.input,
@@ -103,7 +103,7 @@ function migrateImageai(step: PieceAction): FlowAction {
         ...step,
         settings: {
             ...step.settings,
-            pieceName: '@united/piece-ai',
+            pieceName: '@activepieces/piece-ai',
             pieceVersion: '0.0.2',
             input: {
                 ...input,

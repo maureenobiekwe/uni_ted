@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-logrocket",
+  "name": "@activepieces/piece-logrocket",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -23,7 +23,7 @@ export const cardTitleFields = {
 }
 export const richOptionSchema = z.object({
     label: z.string().describe('The choice label'),
-    piece: z.string().optional().describe('When this option IS an app/integration, set its piece name (e.g. "google-sheets", "hubspot", "@united/piece-airtable") to show the real app logo. Prefer this over icon whenever the option is an app — use the exact piece names returned by ap_research_pieces.'),
+    piece: z.string().optional().describe('When this option IS an app/integration, set its piece name (e.g. "google-sheets", "hubspot", "@activepieces/piece-airtable") to show the real app logo. Prefer this over icon whenever the option is an app — use the exact piece names returned by ap_research_pieces.'),
     icon: z.string().optional().describe(`Optional Lucide icon name (kebab-case) for short (1-2 word) non-app labels (ignored if piece is set). Allowed names: ${QUESTION_ICON_NAMES}`),
     description: z.string().optional().describe('Optional one-line subtitle under the label'),
 })
@@ -86,7 +86,7 @@ export function plainJsonSchema<T = JSONSchema7>(schema: JSONSchema7): T {
 export function normalizePieceName(piece: string): string {
     if (piece.startsWith('@')) return piece
     const stripped = piece.startsWith('piece-') ? piece.slice('piece-'.length) : piece
-    return `@united/piece-${stripped.replace(/_/g, '-')}`
+    return `@activepieces/piece-${stripped.replace(/_/g, '-')}`
 }
 
 export function gateNoResponseMessage(step: string): string {

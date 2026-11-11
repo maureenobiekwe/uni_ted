@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-llmrails",
+  "name": "@activepieces/piece-llmrails",
   "version": "0.2.1",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

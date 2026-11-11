@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-woocommerce",
+  "name": "@activepieces/piece-woocommerce",
   "version": "0.5.1",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

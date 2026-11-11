@@ -7,7 +7,7 @@ import { Migration } from '.'
 
 const fieldRepo = repoFactory<Field>(FieldEntity)
 
-const TABLES_PIECE_NAME = '@united/piece-tables'
+const TABLES_PIECE_NAME = '@activepieces/piece-tables'
 const TARGET_ACTIONS = ['tables-create-records', 'tables-update-record']
 
 function collectFieldIdsFromFlow(flowVersion: FlowVersion) {

@@ -2,8 +2,8 @@ import { FlowActionType, flowStructureUtil, FlowVersion, PropertyExecutionType }
 import semver from 'semver'
 import { Migration } from '.'
 
-const HTTP_PIECE_NAME = '@united/piece-http'
-const WEBHOOK_PIECE_NAME = '@united/piece-webhook'
+const HTTP_PIECE_NAME = '@activepieces/piece-http'
+const WEBHOOK_PIECE_NAME = '@activepieces/piece-webhook'
 const HTTP_RETURN_RESPONSE_ACTION = 'return_response'
 const WEBHOOK_RETURN_RESPONSE_ACTION = 'return_response'
 

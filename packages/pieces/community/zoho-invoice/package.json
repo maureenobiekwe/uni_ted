@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-zoho-invoice",
+  "name": "@activepieces/piece-zoho-invoice",
   "version": "0.3.1",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

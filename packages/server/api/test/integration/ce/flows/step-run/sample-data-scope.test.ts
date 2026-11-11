@@ -48,7 +48,7 @@ function pieceStep({ name, sampleDataFileId, nextAction }: PieceStepParams): Flo
         name,
         displayName: name,
         settings: {
-            pieceName: '@united/piece-webhook',
+            pieceName: '@activepieces/piece-webhook',
             pieceVersion: '~0.1.29',
             actionName: 'return_response',
             input: {},
@@ -85,7 +85,7 @@ async function buildFlowVersion({ projectId, platformId }: BuildFlowVersionParam
         name: 'trigger',
         displayName: 'trigger',
         settings: {
-            pieceName: '@united/piece-webhook',
+            pieceName: '@activepieces/piece-webhook',
             pieceVersion: '~0.1.29',
             triggerName: 'catch_webhook',
             input: {},

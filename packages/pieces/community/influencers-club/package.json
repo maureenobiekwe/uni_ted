@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-influencers-club",
+  "name": "@activepieces/piece-influencers-club",
   "version": "0.1.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

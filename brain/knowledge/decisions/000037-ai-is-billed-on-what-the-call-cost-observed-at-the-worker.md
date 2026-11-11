@@ -60,6 +60,6 @@ for it (`usage: { include: true }` on OpenRouter); a test pins that, since witho
 scheme bills nothing and raises no error.
 
 Every AI step must run on a piece version that routes through the worker, so the release that ships
-this also migrates every `@united/piece-ai` step to `0.11.0`. The old trackers must be deleted
+this also migrates every `@activepieces/piece-ai` step to `0.11.0`. The old trackers must be deleted
 in that same release: `flowRunAiUsageExtractor` detected AI steps by piece name rather than version,
 so while both paths live every managed AI step is charged twice.

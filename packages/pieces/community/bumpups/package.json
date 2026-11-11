@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-bumpups",
+  "name": "@activepieces/piece-bumpups",
   "version": "0.2.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

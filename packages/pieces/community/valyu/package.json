@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-valyu",
+  "name": "@activepieces/piece-valyu",
   "version": "0.1.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

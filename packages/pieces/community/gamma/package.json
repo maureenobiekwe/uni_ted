@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-gamma",
+  "name": "@activepieces/piece-gamma",
   "version": "0.1.9",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -80,7 +80,7 @@ function catchWebhookTrigger(input: Record<string, unknown>): FlowTrigger {
     lastUpdatedDate: '2026-10-07T00:00:00.000Z',
     type: FlowTriggerType.PIECE,
     settings: {
-      pieceName: '@united/piece-webhook',
+      pieceName: '@activepieces/piece-webhook',
       pieceVersion: '0.1.42',
       triggerName: 'catch_webhook',
       propertySettings: {},

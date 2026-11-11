@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-gptzero-detect-ai",
+  "name": "@activepieces/piece-gptzero-detect-ai",
   "version": "0.1.8",
   "type": "commonjs",
   "main": "./dist/src/index.js",

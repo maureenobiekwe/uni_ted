@@ -215,15 +215,15 @@ describe('Piece Component Filtering (EE)', () => {
         }
 
         it('direct fetch returns 404 for a hidden piece when projectId is passed', async () => {
-            const { mockProject, token } = await setupPieceSetScenario(['@united/piece-ai'])
+            const { mockProject, token } = await setupPieceSetScenario(['@activepieces/piece-ai'])
 
-            const piece = createMockPieceMetadata({ name: '@united/piece-ai', pieceType: PieceType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
+            const piece = createMockPieceMetadata({ name: '@activepieces/piece-ai', pieceType: PieceType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
             await db.save('piece_metadata', piece)
             await pieceCache(mockLog).setup()
 
             const response = await app!.inject({
                 method: 'GET',
-                url: `/api/v1/pieces/${encodeURIComponent('@united/piece-ai')}?projectId=${mockProject.id}`,
+                url: `/api/v1/pieces/${encodeURIComponent('@activepieces/piece-ai')}?projectId=${mockProject.id}`,
                 headers: { authorization: `Bearer ${token}` },
             })
 
@@ -233,18 +233,18 @@ describe('Piece Component Filtering (EE)', () => {
         it('direct fetch returns 200 for a visible piece when projectId is passed', async () => {
             const { mockProject, token } = await setupPieceSetScenario([])
 
-            const piece = createMockPieceMetadata({ name: '@united/piece-ai', pieceType: PieceType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
+            const piece = createMockPieceMetadata({ name: '@activepieces/piece-ai', pieceType: PieceType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
             await db.save('piece_metadata', piece)
             await pieceCache(mockLog).setup()
 
             const response = await app!.inject({
                 method: 'GET',
-                url: `/api/v1/pieces/${encodeURIComponent('@united/piece-ai')}?projectId=${mockProject.id}`,
+                url: `/api/v1/pieces/${encodeURIComponent('@activepieces/piece-ai')}?projectId=${mockProject.id}`,
                 headers: { authorization: `Bearer ${token}` },
             })
 
             expect(response.statusCode).toBe(200)
-            expect(response.json().name).toBe('@united/piece-ai')
+            expect(response.json().name).toBe('@activepieces/piece-ai')
         })
 
         it('direct fetch without projectId returns 200 even for a hidden piece (existing-step lookup path)', async () => {
@@ -261,19 +261,19 @@ describe('Piece Component Filtering (EE)', () => {
                 externalId: null,
                 isDefault: false,
                 generatedForProjectId: null,
-                config: { pieces: { mode: PieceSelectionMode.INCLUDE_ALL, exceptions: ['@united/piece-ai'] }, selectedActions: {}, selectedTriggers: {} },
+                config: { pieces: { mode: PieceSelectionMode.INCLUDE_ALL, exceptions: ['@activepieces/piece-ai'] }, selectedActions: {}, selectedTriggers: {} },
             }
             await databaseConnection().getRepository('piece_set').save(pieceSet)
             await databaseConnection().getRepository('project').update({ id: mockProject.id }, { pieceSetId: pieceSet.id })
 
-            const piece = createMockPieceMetadata({ name: '@united/piece-ai', pieceType: PieceType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
+            const piece = createMockPieceMetadata({ name: '@activepieces/piece-ai', pieceType: PieceType.OFFICIAL, packageType: PackageType.REGISTRY, actions: {}, triggers: {} })
             await db.save('piece_metadata', piece)
             await pieceCache(mockLog).setup()
 
             const token = await generateMockToken({ type: PrincipalType.USER, id: mockOwner.id, platform: { id: mockPlatform.id } })
             const response = await app!.inject({
                 method: 'GET',
-                url: `/api/v1/pieces/${encodeURIComponent('@united/piece-ai')}`,
+                url: `/api/v1/pieces/${encodeURIComponent('@activepieces/piece-ai')}`,
                 headers: { authorization: `Bearer ${token}` },
             })
 

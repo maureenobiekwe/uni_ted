@@ -919,8 +919,8 @@ function log(config: BenchmarkConfig, message: string): void {
     if (!config.json) console.error(chalk.gray(message));
 }
 
-const WEBHOOK_PIECE = '@united/piece-webhook';
-const DATA_MAPPER_PIECE = '@united/piece-data-mapper';
+const WEBHOOK_PIECE = '@activepieces/piece-webhook';
+const DATA_MAPPER_PIECE = '@activepieces/piece-data-mapper';
 const DEFAULT_CONCURRENCY = 10;
 const EPHEMERAL_PROJECT_MAX_CONCURRENCY = 1000;
 const NETWORK_PROBES = 20;

@@ -21,7 +21,7 @@ beforeAll(async () => {
     app = await setupTestEnvironment()
     log = app.log
     await db.save('piece_metadata', createMockPieceMetadata({
-        name: '@united/piece-subflows',
+        name: '@activepieces/piece-subflows',
         displayName: 'Sub Flows',
         version: '0.1.0',
         pieceType: PieceType.OFFICIAL,
@@ -65,7 +65,7 @@ beforeAll(async () => {
         },
     }))
     await db.save('piece_metadata', createMockPieceMetadata({
-        name: '@united/piece-tables',
+        name: '@activepieces/piece-tables',
         displayName: 'Tables',
         version: '0.1.0',
         pieceType: PieceType.OFFICIAL,
@@ -149,7 +149,7 @@ describe('ap_validate_flow with folderName', () => {
         const { mcp, table } = await createSolutionBase()
         const subflow = await buildSubflow({ mcp, withResponse: false, writeField: table.fieldExternalId, tableExternalId: table.externalId })
         await buildFlow({ mcp, flowName: 'Receive order', steps: [
-            { type: FlowActionType.PIECE, displayName: 'Enrich', pieceName: '@united/piece-subflows', actionName: 'callFlow', input: { flowId: subflow.externalId, mode: 'advanced', flowProps: { payload: '{"orderId": "{{trigger.data.id}}"}' }, waitForResponse: false } },
+            { type: FlowActionType.PIECE, displayName: 'Enrich', pieceName: '@activepieces/piece-subflows', actionName: 'callFlow', input: { flowId: subflow.externalId, mode: 'advanced', flowProps: { payload: '{"orderId": "{{trigger.data.id}}"}' }, waitForResponse: false } },
         ] })
 
         const messages = await issueMessages(mcp)
@@ -162,7 +162,7 @@ describe('ap_validate_flow with folderName', () => {
         const { mcp, table } = await createSolutionBase()
         const subflow = await buildSubflow({ mcp, withResponse: false, writeField: table.fieldExternalId, tableExternalId: table.externalId, inputRef: '{{trigger.data}}' })
         await buildFlow({ mcp, flowName: 'Receive order', steps: [
-            { type: FlowActionType.PIECE, displayName: 'Enrich', pieceName: '@united/piece-subflows', actionName: 'callFlow', input: { flowId: subflow.externalId, mode: 'advanced', flowProps: { payload: '{"orderId": "{{trigger.data.id}}"}' }, waitForResponse: false } },
+            { type: FlowActionType.PIECE, displayName: 'Enrich', pieceName: '@activepieces/piece-subflows', actionName: 'callFlow', input: { flowId: subflow.externalId, mode: 'advanced', flowProps: { payload: '{"orderId": "{{trigger.data.id}}"}' }, waitForResponse: false } },
         ] })
 
         const messages = await issueMessages(mcp)
@@ -191,7 +191,7 @@ describe('ap_validate_flow with folderName', () => {
         await apBuildFlowTool({ mcp }, log).execute({
             flowName: 'Watch orders',
             folderName: SOLUTION_FOLDER,
-            trigger: { pieceName: '@united/piece-tables', triggerName: 'newRecord', input: { table_id: 'missing-table' } },
+            trigger: { pieceName: '@activepieces/piece-tables', triggerName: 'newRecord', input: { table_id: 'missing-table' } },
             steps: [],
         })
 
@@ -208,7 +208,7 @@ describe('ap_validate_flow with folderName', () => {
         await apBuildFlowTool({ mcp }, log).execute({
             flowName: 'Watch orders',
             folderName: SOLUTION_FOLDER,
-            trigger: { pieceName: '@united/piece-tables', triggerName: 'newRecord', input: {} },
+            trigger: { pieceName: '@activepieces/piece-tables', triggerName: 'newRecord', input: {} },
             steps: [],
         })
 
@@ -229,7 +229,7 @@ describe('ap_validate_flow with folderName', () => {
     it('reports a call with no payload and a string "true" wait, as the action treats them', async () => {
         const { mcp, table } = await createSolutionBase()
         const subflow = await buildSubflow({ mcp, withResponse: false, writeField: table.fieldExternalId, tableExternalId: table.externalId })
-        await buildFlow({ mcp, flowName: 'Receive order', steps: [{ type: FlowActionType.PIECE, displayName: 'Enrich', pieceName: '@united/piece-subflows', actionName: 'callFlow', input: { flowId: subflow.externalId, mode: 'simple', flowProps: {}, waitForResponse: 'true' } }] })
+        await buildFlow({ mcp, flowName: 'Receive order', steps: [{ type: FlowActionType.PIECE, displayName: 'Enrich', pieceName: '@activepieces/piece-subflows', actionName: 'callFlow', input: { flowId: subflow.externalId, mode: 'simple', flowProps: {}, waitForResponse: 'true' } }] })
 
         const messages = await issueMessages(mcp)
 
@@ -240,8 +240,8 @@ describe('ap_validate_flow with folderName', () => {
     it('checks a single raw record object and skips a table chosen by expression', async () => {
         const { mcp, table } = await createSolutionBase()
         await buildFlow({ mcp, flowName: 'Store orders', steps: [
-            { type: FlowActionType.PIECE, displayName: 'Save raw', pieceName: '@united/piece-tables', actionName: 'tables-create-records', input: { table_id: table.externalId, records: '{"Order id": "1", "Customer": "x"}' } },
-            { type: FlowActionType.PIECE, displayName: 'Save dynamic', pieceName: '@united/piece-tables', actionName: 'tables-create-records', input: { table_id: '{{trigger.data.tableId}}', values: { values: [] } } },
+            { type: FlowActionType.PIECE, displayName: 'Save raw', pieceName: '@activepieces/piece-tables', actionName: 'tables-create-records', input: { table_id: table.externalId, records: '{"Order id": "1", "Customer": "x"}' } },
+            { type: FlowActionType.PIECE, displayName: 'Save dynamic', pieceName: '@activepieces/piece-tables', actionName: 'tables-create-records', input: { table_id: '{{trigger.data.tableId}}', values: { values: [] } } },
         ] })
 
         const report = structured(await apValidateFlowTool({ mcp }, log).execute({ folderName: SOLUTION_FOLDER }))
@@ -305,10 +305,10 @@ async function buildSubflow({ mcp, withResponse, writeField, tableExternalId, in
     const result = await apBuildFlowTool({ mcp }, log).execute({
         flowName: 'Enrich order',
         folderName: SOLUTION_FOLDER,
-        trigger: { pieceName: '@united/piece-subflows', triggerName: 'callableFlow', input: { mode: 'simple', exampleData: { sampleData: { orderId: '123' } } } },
+        trigger: { pieceName: '@activepieces/piece-subflows', triggerName: 'callableFlow', input: { mode: 'simple', exampleData: { sampleData: { orderId: '123' } } } },
         steps: [
-            { type: FlowActionType.PIECE, displayName: 'Save order', pieceName: '@united/piece-tables', actionName: 'tables-create-records', input: { table_id: tableExternalId, values: { values: [{ [writeField]: inputRef }] } } },
-            ...(withResponse ? [{ type: FlowActionType.PIECE, displayName: 'Respond', pieceName: '@united/piece-subflows', actionName: 'returnResponse', input: { mode: 'simple', response: { response: { saved: true } } } }] : []),
+            { type: FlowActionType.PIECE, displayName: 'Save order', pieceName: '@activepieces/piece-tables', actionName: 'tables-create-records', input: { table_id: tableExternalId, values: { values: [{ [writeField]: inputRef }] } } },
+            ...(withResponse ? [{ type: FlowActionType.PIECE, displayName: 'Respond', pieceName: '@activepieces/piece-subflows', actionName: 'returnResponse', input: { mode: 'simple', response: { response: { saved: true } } } }] : []),
         ],
     })
     return z.object({ externalId: z.string() }).parse(result.structuredContent)
@@ -316,7 +316,7 @@ async function buildSubflow({ mcp, withResponse, writeField, tableExternalId, in
 
 async function buildCaller({ mcp, subflowExternalId, payload, waitForResponse }: { mcp: ProjectScopedMcpServer, subflowExternalId: string, payload: Record<string, string>, waitForResponse: boolean }): Promise<void> {
     await buildFlow({ mcp, flowName: 'Receive order', steps: [
-        { type: FlowActionType.PIECE, displayName: 'Enrich', pieceName: '@united/piece-subflows', actionName: 'callFlow', input: { flowId: subflowExternalId, mode: 'simple', flowProps: { payload }, waitForResponse } },
+        { type: FlowActionType.PIECE, displayName: 'Enrich', pieceName: '@activepieces/piece-subflows', actionName: 'callFlow', input: { flowId: subflowExternalId, mode: 'simple', flowProps: { payload }, waitForResponse } },
     ] })
 }
 
@@ -324,7 +324,7 @@ async function buildFlow({ mcp, flowName, steps }: { mcp: ProjectScopedMcpServer
     await apBuildFlowTool({ mcp }, log).execute({
         flowName,
         folderName: SOLUTION_FOLDER,
-        trigger: { pieceName: '@united/piece-subflows', triggerName: 'callableFlow', input: { mode: 'simple', exampleData: { sampleData: {} } } },
+        trigger: { pieceName: '@activepieces/piece-subflows', triggerName: 'callableFlow', input: { mode: 'simple', exampleData: { sampleData: {} } } },
         steps,
     })
 }

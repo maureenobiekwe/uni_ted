@@ -82,8 +82,8 @@ The skill picks a workflow based on what you ask for.
 
     ```bash
     bun install   # new pieces only, creates workspace symlinks
-    npx turbo run build --filter=@united/piece-<name>
-    npx turbo run lint --filter=@united/piece-<name>
+    npx turbo run build --filter=@activepieces/piece-<name>
+    npx turbo run lint --filter=@activepieces/piece-<name>
     ```
 
     Both must pass. Lint failures block CI even when the build is green.

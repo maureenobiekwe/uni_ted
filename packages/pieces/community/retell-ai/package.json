@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-retell-ai",
+  "name": "@activepieces/piece-retell-ai",
   "version": "0.3.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

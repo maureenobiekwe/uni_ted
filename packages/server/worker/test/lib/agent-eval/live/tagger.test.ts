@@ -119,7 +119,7 @@ describe('liveTagger.tag', () => {
 
         const http = liveTagger.tag({
             scenario: scenario({ shape: 'native-http', native: 'http' }),
-            uiMessages: [assistant([toolCall({ toolName: 'ap_execute_action', pieceName: '@united/piece-http', outputText: '✅ ok' })])],
+            uiMessages: [assistant([toolCall({ toolName: 'ap_execute_action', pieceName: '@activepieces/piece-http', outputText: '✅ ok' })])],
         })
         expect(http.nativeHandled).toBe(true)
 

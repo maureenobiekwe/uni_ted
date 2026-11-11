@@ -26,7 +26,7 @@ function makeFlowVersion(): FlowVersion {
             lastUpdatedDate: '2024-01-01T00:00:00Z',
             type: FlowTriggerType.PIECE,
             settings: {
-                pieceName: '@united/piece-google-sheets',
+                pieceName: '@activepieces/piece-google-sheets',
                 pieceVersion: '~0.1.0',
                 triggerName: 'new_row',
                 input: {},

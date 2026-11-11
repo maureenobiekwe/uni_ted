@@ -158,7 +158,7 @@ const StepSettingsContainer = () => {
   const [isEditingStepOrBranchName, setIsEditingStepOrBranchName] =
     useState(false);
   const runAgentStep =
-    modifiedStep.settings.pieceName === '@united/piece-ai' &&
+    modifiedStep.settings.pieceName === '@activepieces/piece-ai' &&
     modifiedStep.settings.actionName === 'run_agent';
 
   const showActionErrorHandlingForm =

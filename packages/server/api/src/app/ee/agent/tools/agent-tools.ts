@@ -52,7 +52,7 @@ function toFlowRunStatus(value?: string): FlowRunStatus | undefined {
 }
 
 function pieceShortName(fullName: string): string {
-    return fullName.replace('@united/piece-', '')
+    return fullName.replace('@activepieces/piece-', '')
 }
 
 function pieceDisplayLabel(shortName: string): string {
@@ -686,7 +686,7 @@ function buildActionRunOffload({ projectId, platformId, conversationId, pieceNam
         thresholdBytes: LARGE_RESULT_OFFLOAD_BYTES,
         handle: async ({ payload, byteSize, label, statusNote }) => {
             const json = JSON.stringify(payload, null, 2)
-            const fileName = `${pieceName.replace('@united/piece-', '')}-${actionName}.json`
+            const fileName = `${pieceName.replace('@activepieces/piece-', '')}-${actionName}.json`
             const { data: saved, error } = await tryCatch(() => fileService(log).save({
                 projectId,
                 platformId,

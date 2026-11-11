@@ -24,7 +24,7 @@ export const tableRepo = repoFactory(TableEntity)
 export const recordRepo = repoFactory(RecordEntity)
 const cellRepo = repoFactory(CellEntity)
 const tableWebhookRepo = repoFactory(TableWebhookEntity)
-const tablePieceName = '@united/piece-tables'
+const tablePieceName = '@activepieces/piece-tables'
 
 export const tableService = {
     async create({

@@ -33,7 +33,7 @@ export const apRunActionTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLog
 }
 
 export const runActionInput = z.object({
-    pieceName: z.string().describe('Piece name, e.g. "slack" or "@united/piece-slack". Use ap_research_pieces to discover.'),
+    pieceName: z.string().describe('Piece name, e.g. "slack" or "@activepieces/piece-slack". Use ap_research_pieces to discover.'),
     actionName: z.string().describe('Action to run, e.g. "send_channel_message". Use ap_get_piece_props for the input shape.'),
     input: z.preprocess((value) => {
         if (typeof value !== 'string') {

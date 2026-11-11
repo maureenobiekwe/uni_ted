@@ -95,7 +95,7 @@ describe('otlpLogs.buildExportRequest', () => {
                     id: 'connection-1',
                     displayName: 'Sample connection',
                     externalId: 'sample-connection',
-                    pieceName: '@united/piece-sample',
+                    pieceName: '@activepieces/piece-sample',
                     status: 'ACTIVE',
                     type: 'CUSTOM_AUTH',
                     created: new Date('2026-09-23T10:15:42.318Z'),

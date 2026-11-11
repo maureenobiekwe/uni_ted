@@ -34,7 +34,7 @@ function piece(
 }
 
 const slack = piece({
-  name: '@united/piece-slack',
+  name: '@activepieces/piece-slack',
   displayName: 'Slack',
   description: 'Send messages, read channels',
   suggestedActions: [
@@ -46,7 +46,7 @@ const slack = piece({
 });
 
 const gmail = piece({
-  name: '@united/piece-gmail',
+  name: '@activepieces/piece-gmail',
   displayName: 'Gmail',
   description: 'Read the inbox',
   suggestedActions: [action('Send Email', 'WRITE')],
@@ -93,7 +93,7 @@ describe('piecesUtils.toReachablePieces', () => {
 
   it('treats an unclassified action as WRITE, never as read-only', () => {
     const unknown = piece({
-      name: '@united/piece-unknown',
+      name: '@activepieces/piece-unknown',
       displayName: 'Unknown',
       suggestedActions: [action('Do Something', undefined)],
     });
@@ -136,7 +136,7 @@ describe('piecesUtils.toReachablePieces', () => {
 
   it('reports what the server returned for a piece, not its whole catalogue', () => {
     const narrowedSlack = piece({
-      name: '@united/piece-slack',
+      name: '@activepieces/piece-slack',
       displayName: 'Slack',
       suggestedActions: [action('Archive Channel', 'DESTRUCTIVE')],
     });
@@ -155,7 +155,7 @@ describe('piecesUtils.toReachablePieces', () => {
 
   it('drops pieces that expose no actions at all', () => {
     const actionless = piece({
-      name: '@united/piece-actionless',
+      name: '@activepieces/piece-actionless',
       displayName: 'Actionless',
       suggestedActions: [],
     });

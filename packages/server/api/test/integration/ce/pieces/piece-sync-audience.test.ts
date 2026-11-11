@@ -17,7 +17,7 @@ const originalSyncMode = vi.hoisted(() => {
 })
 
 const CLOUD_PIECES_URL = 'https://cloud.united.com/api/v1/pieces'
-const PIECE_NAME = '@united/piece-audience-sync-probe'
+const PIECE_NAME = '@activepieces/piece-audience-sync-probe'
 const PIECE_VERSION = '1.0.0'
 
 let app: FastifyInstance

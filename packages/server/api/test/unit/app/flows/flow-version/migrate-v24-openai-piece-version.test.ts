@@ -27,7 +27,7 @@ function makeFlowVersion(): FlowVersion {
                 displayName: 'Extract Structured Data',
                 type: FlowActionType.PIECE,
                 settings: {
-                    pieceName: '@united/piece-openai',
+                    pieceName: '@activepieces/piece-openai',
                     pieceVersion: '0.10.0',
                     actionName: 'extract-structured-data',
                     input: {},
@@ -39,7 +39,7 @@ function makeFlowVersion(): FlowVersion {
                     displayName: 'Ask ChatGPT',
                     type: FlowActionType.PIECE,
                     settings: {
-                        pieceName: '@united/piece-openai',
+                        pieceName: '@activepieces/piece-openai',
                         pieceVersion: '0.10.5',
                         actionName: 'ask_chatgpt',
                         input: {},
@@ -51,7 +51,7 @@ function makeFlowVersion(): FlowVersion {
                         displayName: 'Send Message',
                         type: FlowActionType.PIECE,
                         settings: {
-                            pieceName: '@united/piece-slack',
+                            pieceName: '@activepieces/piece-slack',
                             pieceVersion: '0.10.0',
                             actionName: 'send_channel_message',
                             input: {},

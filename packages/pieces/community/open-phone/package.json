@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-open-phone",
+  "name": "@activepieces/piece-open-phone",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-microsoft-sharepoint",
+  "name": "@activepieces/piece-microsoft-sharepoint",
   "version": "0.5.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

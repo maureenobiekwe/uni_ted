@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-housecall-pro",
+  "name": "@activepieces/piece-housecall-pro",
   "version": "0.2.3",
   "type": "commonjs",
   "main": "./dist/src/index.js",

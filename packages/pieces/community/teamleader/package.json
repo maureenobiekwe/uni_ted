@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-teamleader",
+  "name": "@activepieces/piece-teamleader",
   "version": "0.2.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

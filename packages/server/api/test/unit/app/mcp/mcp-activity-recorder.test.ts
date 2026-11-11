@@ -159,12 +159,12 @@ describe('MCP activity recording around the tool call', () => {
 describe('MCP activity run-action fields', () => {
     it('takes the connection from connectionExternalId', () => {
         expect(runActionFieldsFrom({ pieceName: 'slack', actionName: 'send_channel_message', connectionExternalId: 'conn-1' }))
-            .toEqual({ pieceName: '@united/piece-slack', actionName: 'send_channel_message', connectionExternalId: 'conn-1' })
+            .toEqual({ pieceName: '@activepieces/piece-slack', actionName: 'send_channel_message', connectionExternalId: 'conn-1' })
     })
 
     it('falls back to the legacy string input.auth', () => {
         expect(runActionFieldsFrom({ pieceName: 'slack', input: { auth: 'conn-legacy' } }))
-            .toEqual({ pieceName: '@united/piece-slack', connectionExternalId: 'conn-legacy' })
+            .toEqual({ pieceName: '@activepieces/piece-slack', connectionExternalId: 'conn-legacy' })
     })
 
     it('prefers connectionExternalId oversizedPayload input.auth', () => {
@@ -174,16 +174,16 @@ describe('MCP activity run-action fields', () => {
 
     it('records no connection when the call carried none', () => {
         expect(runActionFieldsFrom({ pieceName: 'slack', actionName: 'send_channel_message' }))
-            .toEqual({ pieceName: '@united/piece-slack', actionName: 'send_channel_message' })
+            .toEqual({ pieceName: '@activepieces/piece-slack', actionName: 'send_channel_message' })
     })
 
     it('records the canonical piece name so the UI can resolve its icon', () => {
         expect(runActionFieldsFrom({ pieceName: 'math-helper', actionName: 'addition' }))
-            .toEqual({ pieceName: '@united/piece-math-helper', actionName: 'addition' })
+            .toEqual({ pieceName: '@activepieces/piece-math-helper', actionName: 'addition' })
         expect(runActionFieldsFrom({ pieceName: 'piece-math_helper', actionName: 'addition' }))
-            .toEqual({ pieceName: '@united/piece-math-helper', actionName: 'addition' })
-        expect(runActionFieldsFrom({ pieceName: '@united/piece-math-helper', actionName: 'addition' }))
-            .toEqual({ pieceName: '@united/piece-math-helper', actionName: 'addition' })
+            .toEqual({ pieceName: '@activepieces/piece-math-helper', actionName: 'addition' })
+        expect(runActionFieldsFrom({ pieceName: '@activepieces/piece-math-helper', actionName: 'addition' }))
+            .toEqual({ pieceName: '@activepieces/piece-math-helper', actionName: 'addition' })
     })
 
     it('ignores a non-string input.auth', () => {

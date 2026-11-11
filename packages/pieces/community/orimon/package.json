@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-orimon",
+  "name": "@activepieces/piece-orimon",
   "version": "0.2.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

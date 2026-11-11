@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-teable",
+  "name": "@activepieces/piece-teable",
   "version": "0.3.2",
   "type": "commonjs",
   "main": "./dist/src/index.js",

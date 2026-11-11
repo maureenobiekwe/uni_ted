@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-zoho-books",
+  "name": "@activepieces/piece-zoho-books",
   "version": "0.3.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

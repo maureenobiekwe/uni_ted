@@ -22,13 +22,13 @@ Map generic words straight to these; registry search often misses them.
 
 | User says | Piece |
 |---|---|
-| "a form" | `@united/piece-forms` (Human Input) |
-| "every day/hour" | `@united/piece-schedule` |
-| "fetch a URL / call an API" | `@united/piece-http` (`http_fallback` skill) |
-| "webhook" | `@united/piece-webhook` |
-| "save/track data here" | `@united/piece-tables` (`tables` skill) |
-| "remember/count/dedup" | `@united/piece-store` (`state` skill) |
-| "ask AI/classify/extract" | `@united/piece-ai`, never a vendor AI piece (`ai` skill) |
+| "a form" | `@activepieces/piece-forms` (Human Input) |
+| "every day/hour" | `@activepieces/piece-schedule` |
+| "fetch a URL / call an API" | `@activepieces/piece-http` (`http_fallback` skill) |
+| "webhook" | `@activepieces/piece-webhook` |
+| "save/track data here" | `@activepieces/piece-tables` (`tables` skill) |
+| "remember/count/dedup" | `@activepieces/piece-store` (`state` skill) |
+| "ask AI/classify/extract" | `@activepieces/piece-ai`, never a vendor AI piece (`ai` skill) |
 | "human sign-off" / "wait" / "split work" | `piece-approval` / `piece-delay` / `piece-subflows` |
 
 ## Order of work
@@ -66,7 +66,7 @@ How to build one:
 1. **Folder:** `ap_create_folder` with a name for the whole solution; pass that `folderName` to every `ap_build_flow` and `ap_create_table` in it.
 2. **Names:** each flow named for its one job in plain words ("Save order", never "Flow 2").
 3. **Order:** tables, then every flow that needs nothing else built first (a shared subflow, a digest that only reads a table) in one step with parallel `ap_build_flow` calls, then the flows that call them, given the ids the first ones returned. Build the flows yourself, not through tasks: a task repeats your setup for each flow and costs about twice as much.
-4. **Subflow:** trigger `@united/piece-subflows` `callableFlow` with `exampleData.sampleData` listing every input, e.g. `{"orderId": "123", "email": "a@b.co"}`. Its steps read inputs as `{{trigger['output'].data.<key>}}`, never `{{trigger['output'].<key>}}` (empty at run time). Add `returnResponse` only if a caller needs data back.
+4. **Subflow:** trigger `@activepieces/piece-subflows` `callableFlow` with `exampleData.sampleData` listing every input, e.g. `{"orderId": "123", "email": "a@b.co"}`. Its steps read inputs as `{{trigger['output'].data.<key>}}`, never `{{trigger['output'].<key>}}` (empty at run time). Add `returnResponse` only if a caller needs data back.
 5. **Caller:** a `callFlow` step with `flowId` = the subflow's **externalId** (from `ap_build_flow`, not its flow id), `mode: "simple"`, every sample-data key in `flowProps.payload` as an object, and `waitForResponse` only when the subflow returns a response.
 6. **Tables steps:** `table_id` is the table's **externalId**; form `values` are keyed by field externalId.
 7. **Check the whole solution:** once every flow passes its own checks, run `ap_validate_flow({folderName})` and fix what it lists until it returns ✅. Use it too to check an existing solution.

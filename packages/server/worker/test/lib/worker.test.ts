@@ -84,7 +84,7 @@ function buildExtractPieceJob(): ExecuteExtractPieceMetadataJobData {
         projectId: undefined,
         platformId: 'plat-1',
         piece: {
-            pieceName: '@united/piece-test',
+            pieceName: '@activepieces/piece-test',
             pieceVersion: '0.1.0',
             packageType: PackageType.REGISTRY,
             pieceType: PieceType.OFFICIAL,

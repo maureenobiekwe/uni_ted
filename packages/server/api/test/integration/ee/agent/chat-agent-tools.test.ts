@@ -12,9 +12,9 @@ import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/
 
 let app: FastifyInstance
 
-const TOOL_PIECE = '@united/piece-test-notes'
+const TOOL_PIECE = '@activepieces/piece-test-notes'
 const TOOL_PIECE_VERSION = '0.4.2'
-const RIVAL_PIECE = '@united/piece-test-memos'
+const RIVAL_PIECE = '@activepieces/piece-test-memos'
 
 beforeAll(async () => {
     app = await setupTestEnvironment()

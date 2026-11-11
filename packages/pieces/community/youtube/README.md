@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@united/piece-youtube` to build the library.
+Run `turbo run build --filter=@activepieces/piece-youtube` to build the library.

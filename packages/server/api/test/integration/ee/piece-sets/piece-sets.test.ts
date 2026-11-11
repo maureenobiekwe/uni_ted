@@ -288,14 +288,14 @@ describe('Piece Sets API', () => {
                 url: `/api/v1/piece-sets/${id}`,
                 headers: { authorization: `Bearer ${token}` },
                 body: {
-                    pieces: { mode: PieceSelectionMode.INCLUDE_ALL, exceptions: ['@united/piece-gmail'] },
+                    pieces: { mode: PieceSelectionMode.INCLUDE_ALL, exceptions: ['@activepieces/piece-gmail'] },
                 },
             })
             expect(response.statusCode).toBe(StatusCodes.OK)
             const body = response.json<PieceSet>()
             expect(body.config.pieces.mode).toBe(PieceSelectionMode.INCLUDE_ALL)
-            expect(body.config.pieces.exceptions).toContain('@united/piece-gmail')
-            expect(body.config.pieces.exceptions).not.toContain('@united/piece-slack')
+            expect(body.config.pieces.exceptions).toContain('@activepieces/piece-gmail')
+            expect(body.config.pieces.exceptions).not.toContain('@activepieces/piece-slack')
 
             const reenabledResponse = await app!.inject({
                 method: 'POST',
@@ -306,7 +306,7 @@ describe('Piece Sets API', () => {
                 },
             })
             expect(reenabledResponse.statusCode).toBe(StatusCodes.OK)
-            expect(reenabledResponse.json<PieceSet>().config.pieces.exceptions).not.toContain('@united/piece-gmail')
+            expect(reenabledResponse.json<PieceSet>().config.pieces.exceptions).not.toContain('@activepieces/piece-gmail')
         })
 
         it('switching to exclude_all preserves the exceptions list', async () => {
@@ -323,11 +323,11 @@ describe('Piece Sets API', () => {
                 method: 'POST',
                 url: `/api/v1/piece-sets/${id}`,
                 headers: { authorization: `Bearer ${token}` },
-                body: { pieces: { mode: PieceSelectionMode.EXCLUDE_ALL, exceptions: ['@united/piece-slack'] } },
+                body: { pieces: { mode: PieceSelectionMode.EXCLUDE_ALL, exceptions: ['@activepieces/piece-slack'] } },
             })
             expect(response.statusCode).toBe(StatusCodes.OK)
             const body = response.json<PieceSet>()
-            expect(body.config.pieces).toEqual({ mode: PieceSelectionMode.EXCLUDE_ALL, exceptions: ['@united/piece-slack'] })
+            expect(body.config.pieces).toEqual({ mode: PieceSelectionMode.EXCLUDE_ALL, exceptions: ['@activepieces/piece-slack'] })
         })
 
         it('selecting actions on a piece stores the allow-list; other component maps stay empty', async () => {
@@ -345,12 +345,12 @@ describe('Piece Sets API', () => {
                 url: `/api/v1/piece-sets/${id}`,
                 headers: { authorization: `Bearer ${token}` },
                 body: {
-                    actions: { '@united/piece-slack': { mode: 'selected', selected: ['send-message'] } },
+                    actions: { '@activepieces/piece-slack': { mode: 'selected', selected: ['send-message'] } },
                 },
             })
             expect(response.statusCode).toBe(StatusCodes.OK)
             const body = response.json<PieceSet>()
-            expect(body.config.selectedActions['@united/piece-slack']).toEqual(['send-message'])
+            expect(body.config.selectedActions['@activepieces/piece-slack']).toEqual(['send-message'])
             expect(body.config.selectedTriggers).toEqual({})
         })
 
@@ -421,7 +421,7 @@ describe('Piece Sets API', () => {
                 url: `/api/v1/piece-sets/${id}`,
                 headers: { authorization: `Bearer ${token}` },
                 body: {
-                    actions: { '@united/piece-slack': { mode: 'selected', selected: ['send-message'] } },
+                    actions: { '@activepieces/piece-slack': { mode: 'selected', selected: ['send-message'] } },
                 },
             })
 
@@ -429,7 +429,7 @@ describe('Piece Sets API', () => {
                 method: 'POST',
                 url: `/api/v1/piece-sets/${id}`,
                 headers: { authorization: `Bearer ${token}` },
-                body: { actions: { '@united/piece-slack': { mode: 'all' } } },
+                body: { actions: { '@activepieces/piece-slack': { mode: 'all' } } },
             })
             expect(response.statusCode).toBe(StatusCodes.OK)
             const body = response.json<PieceSet>()
@@ -511,7 +511,7 @@ describe('Piece Sets API', () => {
                 method: 'POST',
                 url: `/api/v1/piece-sets/${original.id}`,
                 headers: { authorization: `Bearer ${token}` },
-                body: { pieces: { mode: PieceSelectionMode.EXCLUDE_ALL, exceptions: ['@united/piece-slack'] } },
+                body: { pieces: { mode: PieceSelectionMode.EXCLUDE_ALL, exceptions: ['@activepieces/piece-slack'] } },
             })
 
             const response = await app!.inject({
@@ -530,7 +530,7 @@ describe('Piece Sets API', () => {
             expect(clone.generatedForProjectId).toBeNull()
             expect(clone.id).not.toBe(original.id)
             expect(clone.config.pieces.mode).toBe(PieceSelectionMode.EXCLUDE_ALL)
-            expect(clone.config.pieces.exceptions).toContain('@united/piece-slack')
+            expect(clone.config.pieces.exceptions).toContain('@activepieces/piece-slack')
         })
     })
 

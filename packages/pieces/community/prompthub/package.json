@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-prompthub",
+  "name": "@activepieces/piece-prompthub",
   "version": "0.2.3",
   "type": "commonjs",
   "main": "./dist/src/index.js",

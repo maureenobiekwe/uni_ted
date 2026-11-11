@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-bannerbear",
+  "name": "@activepieces/piece-bannerbear",
   "version": "0.6.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

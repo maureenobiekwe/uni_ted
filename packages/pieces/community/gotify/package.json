@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-gotify",
+  "name": "@activepieces/piece-gotify",
   "version": "0.5.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

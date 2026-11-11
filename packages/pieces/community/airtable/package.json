@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-airtable",
+  "name": "@activepieces/piece-airtable",
   "version": "0.9.4",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

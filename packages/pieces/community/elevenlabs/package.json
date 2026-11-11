@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-elevenlabs",
+  "name": "@activepieces/piece-elevenlabs",
   "version": "0.4.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

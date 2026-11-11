@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-mistral-ai",
+  "name": "@activepieces/piece-mistral-ai",
   "version": "0.5.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

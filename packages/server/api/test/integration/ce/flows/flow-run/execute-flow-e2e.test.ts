@@ -72,14 +72,14 @@ async function setupSubflowFixtures({ childAlwaysFails = false, retryOnFailure =
     const { mockPlatform, mockProject } = await mockAndSaveBasicSetup()
 
     const webhookPiece = createMockPieceMetadata({
-        name: '@united/piece-webhook',
+        name: '@activepieces/piece-webhook',
         version: '0.1.29',
         platformId: undefined,
         packageType: PackageType.REGISTRY,
         pieceType: PieceType.OFFICIAL,
     })
     const subflowsPiece = createMockPieceMetadata({
-        name: '@united/piece-subflows',
+        name: '@activepieces/piece-subflows',
         version: '0.4.11',
         platformId: undefined,
         packageType: PackageType.REGISTRY,
@@ -94,7 +94,7 @@ async function setupSubflowFixtures({ childAlwaysFails = false, retryOnFailure =
         displayName: 'Return Response',
         valid: true,
         settings: {
-            pieceName: '@united/piece-subflows',
+            pieceName: '@activepieces/piece-subflows',
             pieceVersion: '0.4.11',
             actionName: 'returnResponse',
             input: {
@@ -151,7 +151,7 @@ async function setupSubflowFixtures({ childAlwaysFails = false, retryOnFailure =
             valid: true,
             lastUpdatedDate: new Date().toISOString(),
             settings: {
-                pieceName: '@united/piece-subflows',
+                pieceName: '@activepieces/piece-subflows',
                 pieceVersion: '0.4.11',
                 triggerName: 'callableFlow',
                 input: {
@@ -180,7 +180,7 @@ async function setupSubflowFixtures({ childAlwaysFails = false, retryOnFailure =
         displayName: 'Call Flow',
         valid: true,
         settings: {
-            pieceName: '@united/piece-subflows',
+            pieceName: '@activepieces/piece-subflows',
             pieceVersion: '0.4.11',
             actionName: 'callFlow',
             input: {
@@ -223,7 +223,7 @@ async function setupSubflowFixtures({ childAlwaysFails = false, retryOnFailure =
             valid: true,
             lastUpdatedDate: new Date().toISOString(),
             settings: {
-                pieceName: '@united/piece-webhook',
+                pieceName: '@activepieces/piece-webhook',
                 pieceVersion: '0.1.29',
                 triggerName: 'catch_webhook',
                 input: { authType: 'none' },
@@ -241,14 +241,14 @@ async function setupSubflowWithWebhookResponseFixtures() {
     const { mockPlatform, mockProject } = await mockAndSaveBasicSetup()
 
     const webhookPiece = createMockPieceMetadata({
-        name: '@united/piece-webhook',
+        name: '@activepieces/piece-webhook',
         version: '0.1.29',
         platformId: undefined,
         packageType: PackageType.REGISTRY,
         pieceType: PieceType.OFFICIAL,
     })
     const subflowsPiece = createMockPieceMetadata({
-        name: '@united/piece-subflows',
+        name: '@activepieces/piece-subflows',
         version: '0.4.11',
         platformId: undefined,
         packageType: PackageType.REGISTRY,
@@ -263,7 +263,7 @@ async function setupSubflowWithWebhookResponseFixtures() {
         displayName: 'Return Response',
         valid: true,
         settings: {
-            pieceName: '@united/piece-subflows',
+            pieceName: '@activepieces/piece-subflows',
             pieceVersion: '0.4.11',
             actionName: 'returnResponse',
             input: {
@@ -294,7 +294,7 @@ async function setupSubflowWithWebhookResponseFixtures() {
             displayName: 'Callable Flow',
             valid: true,
             settings: {
-                pieceName: '@united/piece-subflows',
+                pieceName: '@activepieces/piece-subflows',
                 pieceVersion: '0.4.11',
                 triggerName: 'callableFlow',
                 input: {
@@ -323,7 +323,7 @@ async function setupSubflowWithWebhookResponseFixtures() {
         displayName: 'Return Response',
         valid: true,
         settings: {
-            pieceName: '@united/piece-webhook',
+            pieceName: '@activepieces/piece-webhook',
             pieceVersion: '0.1.29',
             actionName: 'return_response',
             input: {
@@ -346,7 +346,7 @@ async function setupSubflowWithWebhookResponseFixtures() {
         displayName: 'Call Flow',
         valid: true,
         settings: {
-            pieceName: '@united/piece-subflows',
+            pieceName: '@activepieces/piece-subflows',
             pieceVersion: '0.4.11',
             actionName: 'callFlow',
             input: {
@@ -388,7 +388,7 @@ async function setupSubflowWithWebhookResponseFixtures() {
             valid: true,
             lastUpdatedDate: new Date().toISOString(),
             settings: {
-                pieceName: '@united/piece-webhook',
+                pieceName: '@activepieces/piece-webhook',
                 pieceVersion: '0.1.29',
                 triggerName: 'catch_webhook',
                 input: { authType: 'none' },
@@ -409,9 +409,9 @@ const WEBHOOK_PIECE_VERSION = '0.1.29'
 
 async function saveWaitpointPieces(): Promise<void> {
     const pieces = [
-        { name: '@united/piece-webhook', version: WEBHOOK_PIECE_VERSION },
-        { name: '@united/piece-approval', version: APPROVAL_PIECE_VERSION },
-        { name: '@united/piece-delay', version: DELAY_PIECE_VERSION },
+        { name: '@activepieces/piece-webhook', version: WEBHOOK_PIECE_VERSION },
+        { name: '@activepieces/piece-approval', version: APPROVAL_PIECE_VERSION },
+        { name: '@activepieces/piece-delay', version: DELAY_PIECE_VERSION },
     ].map(({ name, version }) => createMockPieceMetadata({
         name,
         version,
@@ -429,7 +429,7 @@ function approvalAction({ name, displayName, nextAction }: { name: string, displ
         displayName,
         valid: true,
         settings: {
-            pieceName: '@united/piece-approval',
+            pieceName: '@activepieces/piece-approval',
             pieceVersion: APPROVAL_PIECE_VERSION,
             actionName: 'wait_for_approval',
             input: {},
@@ -458,7 +458,7 @@ async function startWaitpointRun({ mockPlatform, mockProject, firstAction, paylo
             valid: true,
             lastUpdatedDate: new Date().toISOString(),
             settings: {
-                pieceName: '@united/piece-webhook',
+                pieceName: '@activepieces/piece-webhook',
                 pieceVersion: WEBHOOK_PIECE_VERSION,
                 triggerName: 'catch_webhook',
                 input: { authType: 'none' },
@@ -543,7 +543,7 @@ async function setupSyncWebhookFlow({ code, withReturnResponse }: { code: string
     const { mockProject } = await mockAndSaveBasicSetup()
 
     const webhookPiece = createMockPieceMetadata({
-        name: '@united/piece-webhook',
+        name: '@activepieces/piece-webhook',
         version: '0.1.29',
         platformId: undefined,
         packageType: PackageType.REGISTRY,
@@ -557,7 +557,7 @@ async function setupSyncWebhookFlow({ code, withReturnResponse }: { code: string
         displayName: 'Return Response',
         valid: true,
         settings: {
-            pieceName: '@united/piece-webhook',
+            pieceName: '@activepieces/piece-webhook',
             pieceVersion: '0.1.29',
             actionName: 'return_response',
             input: {
@@ -600,7 +600,7 @@ async function setupSyncWebhookFlow({ code, withReturnResponse }: { code: string
             valid: true,
             lastUpdatedDate: new Date().toISOString(),
             settings: {
-                pieceName: '@united/piece-webhook',
+                pieceName: '@activepieces/piece-webhook',
                 pieceVersion: '0.1.29',
                 triggerName: 'catch_webhook',
                 input: { authType: 'none' },
@@ -646,14 +646,14 @@ describe('Execute Flow E2E', () => {
 
         // Save piece metadata records
         const webhookPiece = createMockPieceMetadata({
-            name: '@united/piece-webhook',
+            name: '@activepieces/piece-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
             pieceType: PieceType.OFFICIAL,
         })
         const dataMapperPiece = createMockPieceMetadata({
-            name: '@united/piece-data-mapper',
+            name: '@activepieces/piece-data-mapper',
             version: '0.3.15',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
@@ -691,7 +691,7 @@ describe('Execute Flow E2E', () => {
             displayName: 'Map Data',
             valid: true,
             settings: {
-                pieceName: '@united/piece-data-mapper',
+                pieceName: '@activepieces/piece-data-mapper',
                 pieceVersion: '0.3.15',
                 actionName: 'advanced_mapping',
                 input: {
@@ -721,7 +721,7 @@ describe('Execute Flow E2E', () => {
                 valid: true,
                 lastUpdatedDate: new Date().toISOString(),
                 settings: {
-                    pieceName: '@united/piece-webhook',
+                    pieceName: '@activepieces/piece-webhook',
                     pieceVersion: '0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'none' },
@@ -812,7 +812,7 @@ describe('Execute Flow E2E', () => {
         expect(installResponse.statusCode, installResponse.body).toBe(StatusCodes.CREATED)
 
         const webhookPiece = createMockPieceMetadata({
-            name: '@united/piece-webhook',
+            name: '@activepieces/piece-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
@@ -848,7 +848,7 @@ describe('Execute Flow E2E', () => {
                 valid: true,
                 lastUpdatedDate: new Date().toISOString(),
                 settings: {
-                    pieceName: '@united/piece-webhook',
+                    pieceName: '@activepieces/piece-webhook',
                     pieceVersion: '0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'none' },
@@ -886,7 +886,7 @@ describe('Execute Flow E2E', () => {
         const { mockPlatform, mockProject } = await mockAndSaveBasicSetup()
 
         const webhookPiece = createMockPieceMetadata({
-            name: '@united/piece-webhook',
+            name: '@activepieces/piece-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
@@ -926,7 +926,7 @@ describe('Execute Flow E2E', () => {
                 valid: true,
                 lastUpdatedDate: new Date().toISOString(),
                 settings: {
-                    pieceName: '@united/piece-webhook',
+                    pieceName: '@activepieces/piece-webhook',
                     pieceVersion: '0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'none' },
@@ -1062,14 +1062,14 @@ describe('Execute Flow E2E', () => {
         const { mockPlatform, mockProject } = await mockAndSaveBasicSetup()
 
         const webhookPiece = createMockPieceMetadata({
-            name: '@united/piece-webhook',
+            name: '@activepieces/piece-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
             pieceType: PieceType.OFFICIAL,
         })
         const delayPiece = createMockPieceMetadata({
-            name: '@united/piece-delay',
+            name: '@activepieces/piece-delay',
             version: '0.3.26',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
@@ -1100,7 +1100,7 @@ describe('Execute Flow E2E', () => {
             displayName: 'Delay For',
             valid: true,
             settings: {
-                pieceName: '@united/piece-delay',
+                pieceName: '@activepieces/piece-delay',
                 pieceVersion: '0.3.26',
                 actionName: 'delayFor',
                 input: {
@@ -1128,7 +1128,7 @@ describe('Execute Flow E2E', () => {
                 valid: true,
                 lastUpdatedDate: new Date().toISOString(),
                 settings: {
-                    pieceName: '@united/piece-webhook',
+                    pieceName: '@activepieces/piece-webhook',
                     pieceVersion: '0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'none' },
@@ -1165,14 +1165,14 @@ describe('Execute Flow E2E', () => {
         const { mockPlatform, mockProject } = await mockAndSaveBasicSetup()
 
         const webhookPiece = createMockPieceMetadata({
-            name: '@united/piece-webhook',
+            name: '@activepieces/piece-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
             pieceType: PieceType.OFFICIAL,
         })
         const delayPiece = createMockPieceMetadata({
-            name: '@united/piece-delay',
+            name: '@activepieces/piece-delay',
             version: '0.3.26',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
@@ -1206,7 +1206,7 @@ describe('Execute Flow E2E', () => {
             displayName: 'Delay For',
             valid: true,
             settings: {
-                pieceName: '@united/piece-delay',
+                pieceName: '@activepieces/piece-delay',
                 pieceVersion: '0.3.26',
                 actionName: 'delayFor',
                 input: {
@@ -1250,7 +1250,7 @@ describe('Execute Flow E2E', () => {
                 valid: true,
                 lastUpdatedDate: new Date().toISOString(),
                 settings: {
-                    pieceName: '@united/piece-webhook',
+                    pieceName: '@activepieces/piece-webhook',
                     pieceVersion: '0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'none' },
@@ -1483,7 +1483,7 @@ describe('Execute Flow E2E', () => {
             displayName: 'Delay For',
             valid: true,
             settings: {
-                pieceName: '@united/piece-delay',
+                pieceName: '@activepieces/piece-delay',
                 pieceVersion: DELAY_PIECE_VERSION,
                 actionName: 'delayFor',
                 input: { unit: 'seconds', delayFor: 11 },

@@ -153,7 +153,7 @@ function normalizePieceName(name: string): string {
   const stripped = name.startsWith('piece-')
     ? name.slice('piece-'.length)
     : name;
-  return `@united/piece-${stripped.replace(/_/g, '-')}`;
+  return `@activepieces/piece-${stripped.replace(/_/g, '-')}`;
 }
 
 function extractPieceNames(

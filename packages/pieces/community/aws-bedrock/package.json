@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-aws-bedrock",
+  "name": "@activepieces/piece-aws-bedrock",
   "version": "0.3.3",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-luxury-presence",
+  "name": "@activepieces/piece-luxury-presence",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -132,7 +132,7 @@ describe('MCP Tool RBAC', () => {
             const mcp = makeMcp(ctx.project.id)
             await apCreateFolderTool(mcp, mockLog).execute({ folderName: 'Checked solution' })
             await db.save('piece_metadata', createMockPieceMetadata({
-                name: '@united/piece-tables',
+                name: '@activepieces/piece-tables',
                 version: '0.1.0',
                 pieceType: PieceType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
@@ -140,7 +140,7 @@ describe('MCP Tool RBAC', () => {
                 actions: {},
                 triggers: { newRecord: { name: 'newRecord', displayName: 'New Record', description: 'A record was created', requireAuth: false, props: { table_id: { type: 'SHORT_TEXT', displayName: 'Table', required: false } } } },
             }))
-            await apBuildFlowTool({ mcp }, mockLog).execute({ flowName: 'Watch orders', folderName: 'Checked solution', trigger: { pieceName: '@united/piece-tables', triggerName: 'newRecord', input: { table_id: 'any-table' } }, steps: [] })
+            await apBuildFlowTool({ mcp }, mockLog).execute({ flowName: 'Watch orders', folderName: 'Checked solution', trigger: { pieceName: '@activepieces/piece-tables', triggerName: 'newRecord', input: { table_id: 'any-table' } }, steps: [] })
 
             const result = await apValidateFlowTool({ mcp, userId: member.user.id }, mockLog).execute({ folderName: 'Checked solution' })
 
@@ -164,7 +164,7 @@ describe('MCP Tool RBAC', () => {
             const mcp = makeMcp(ctx.project.id)
             await apCreateFolderTool(mcp, mockLog).execute({ folderName: 'Create table solution' })
             await db.save('piece_metadata', createMockPieceMetadata({
-                name: '@united/piece-tables',
+                name: '@activepieces/piece-tables',
                 version: '0.1.0',
                 pieceType: PieceType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
@@ -172,7 +172,7 @@ describe('MCP Tool RBAC', () => {
                 actions: {},
                 triggers: { newRecord: { name: 'newRecord', displayName: 'New Record', description: 'A record was created', requireAuth: false, props: { table_id: { type: 'SHORT_TEXT', displayName: 'Table', required: false } } } },
             }))
-            await apBuildFlowTool({ mcp }, mockLog).execute({ flowName: 'No table yet', folderName: 'Create table solution', trigger: { pieceName: '@united/piece-tables', triggerName: 'newRecord', input: {} }, steps: [] })
+            await apBuildFlowTool({ mcp }, mockLog).execute({ flowName: 'No table yet', folderName: 'Create table solution', trigger: { pieceName: '@activepieces/piece-tables', triggerName: 'newRecord', input: {} }, steps: [] })
 
             const result = await apValidateFlowTool({ mcp, userId: member.user.id }, mockLog).execute({ folderName: 'Create table solution' })
 

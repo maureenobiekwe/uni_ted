@@ -66,7 +66,7 @@ function FlowToolDialogContent({
     return data?.data.filter(
       (flow) =>
         flow.version.trigger.type === FlowTriggerType.PIECE &&
-        flow.version.trigger.settings.pieceName === '@united/piece-mcp',
+        flow.version.trigger.settings.pieceName === '@activepieces/piece-mcp',
     );
   }, [data]);
 

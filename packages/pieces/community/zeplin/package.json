@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-zeplin",
+  "name": "@activepieces/piece-zeplin",
   "version": "0.1.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

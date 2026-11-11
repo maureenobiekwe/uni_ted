@@ -584,7 +584,7 @@ describe('agentWorkerTools', () => {
             const executeTool = vi.fn().mockResolvedValue(mcpFailure('The request body contains invalid JSON. (400)'))
             const tools = agentWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
 
-            const input = { pieceName: '@united/piece-http', actionName: 'send_request', input: { url: 'https://x', body: { type: 'json_raw' } } }
+            const input = { pieceName: '@activepieces/piece-http', actionName: 'send_request', input: { url: 'https://x', body: { type: 'json_raw' } } }
             await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 'g1' })
             await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 'g2' })
             const third = await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 'g3' })
@@ -600,7 +600,7 @@ describe('agentWorkerTools', () => {
             const executeTool = vi.fn().mockResolvedValue(mcpSuccess('Sent (204)'))
             const tools = agentWorkerTools.createCrossProjectTools({ executeTool, eventEmitter, waitForApproval: vi.fn().mockResolvedValue({ outcome: 'approved' }), guides: {}, taintState: { tainted: false } })
 
-            const input = { pieceName: '@united/piece-http', actionName: 'send_request', input: { url: 'https://x', body_type: 'json', body: { data: { content: 'hi' } } } }
+            const input = { pieceName: '@activepieces/piece-http', actionName: 'send_request', input: { url: 'https://x', body_type: 'json', body: { data: { content: 'hi' } } } }
             await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 's1' })
             const second = await tools.ap_execute_action.execute(input, { ...callOptions, toolCallId: 's2' })
 
@@ -656,7 +656,7 @@ describe('agentWorkerTools', () => {
         })
 
         it('preserves a top-level _meta after truncation', () => {
-            const input = { _meta: { pieceName: '@united/piece-attio', connectionLabel: 'Attio0' }, content: [{ type: 'text', text: 'x'.repeat(1200 * 1024) }] }
+            const input = { _meta: { pieceName: '@activepieces/piece-attio', connectionLabel: 'Attio0' }, content: [{ type: 'text', text: 'x'.repeat(1200 * 1024) }] }
             const out = agentWorkerTools.truncateLargeResult(input)
             expect(serializedBytes(out)).toBeLessThanOrEqual(MAX_RESULT_SIZE_BYTES)
             expect(out).toHaveProperty('_meta', input._meta)
@@ -761,7 +761,7 @@ describe('an agent does not offer to connect an account its author already chose
     }
 
     it.each(['ap_show_connection_picker', 'ap_show_connection_required'])('refuses %s for a piece the author gave an account, without blocking the turn', async (toolName) => {
-        const { result, gatesOpened } = await showPicker({ toolName, accountAlreadyChosenFor: (pieceName) => pieceName === '@united/piece-google-sheets' })
+        const { result, gatesOpened } = await showPicker({ toolName, accountAlreadyChosenFor: (pieceName) => pieceName === '@activepieces/piece-google-sheets' })
 
         expect(JSON.stringify(result)).toContain('nothing to connect or reconnect')
         expect(gatesOpened).toEqual([])
@@ -784,7 +784,7 @@ describe('an agent does not offer to connect an account its author already chose
         const tools = agentWorkerTools.createDisplayTools({ waitForApproval, displayToolTimeoutMs: 1000 })
 
         await tools['ap_show_connection_picker'].execute({ piece: 'gmail', displayName: 'Gmail' }, { toolCallId: 'call-1' })
-        const again = await tools['ap_show_connection_picker'].execute({ piece: '@united/piece-gmail', displayName: 'My Gmail' }, { toolCallId: 'call-2' })
+        const again = await tools['ap_show_connection_picker'].execute({ piece: '@activepieces/piece-gmail', displayName: 'My Gmail' }, { toolCallId: 'call-2' })
 
         expect(waitForApproval).toHaveBeenCalledTimes(1)
         expect(again).toMatchObject({ notShown: true })
@@ -835,7 +835,7 @@ describe('the connection card does the auth check itself', () => {
         expect(result).toMatchObject({ notShown: true })
         expect(JSON.stringify(result)).toContain('needs no connection')
         expect(gatesOpened).toEqual([])
-        expect(checkedPieces).toEqual(['@united/piece-webhook'])
+        expect(checkedPieces).toEqual(['@activepieces/piece-webhook'])
     })
 
     it('asks the agent to try again when the auth check fails, instead of waiting on a card', async () => {
@@ -875,7 +875,7 @@ describe('a discovery-only run approves the connection card with the account it 
 
         await tools[toolName].execute({ piece: 'google-calendar', displayName: 'Google Calendar' }, { toolCallId: 'call-1' })
 
-        expect(selected).toEqual([{ pieceName: '@united/piece-google-calendar', connectionExternalId: 'conn-1', label: 'Sales Inbox', projectId: 'proj-1' }])
+        expect(selected).toEqual([{ pieceName: '@activepieces/piece-google-calendar', connectionExternalId: 'conn-1', label: 'Sales Inbox', projectId: 'proj-1' }])
     })
 
     it('returns the pre-selected account to the agent', async () => {

@@ -42,7 +42,7 @@ const withAiStep = ({ pieceVersion = '0.11.0', actionName = 'askAi', pieceName =
     valid: true,
     lastUpdatedDate: new Date().toISOString(),
     settings: {
-        pieceName: '@united/piece-webhook',
+        pieceName: '@activepieces/piece-webhook',
         pieceVersion: '0.0.1',
         triggerName: 'catch_request',
         input: {},
@@ -181,7 +181,7 @@ describe('migrateV28AiPieceModelPicker', () => {
 
     it('leaves other pieces alone', async () => {
         const input = { provider: { provider: 'united' }, model: 'anthropic/claude-haiku-4.5' }
-        const step = await migratedStep(withAiStep({ pieceName: '@united/piece-openai', input }))
+        const step = await migratedStep(withAiStep({ pieceName: '@activepieces/piece-openai', input }))
 
         expect(step.input).toEqual(input)
     })

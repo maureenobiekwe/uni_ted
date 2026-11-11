@@ -357,7 +357,7 @@ describe('Piece Metadata CE API', () => {
     describe('release-compatibility fallback', () => {
         it('GET /v1/pieces/:scope/:name falls back to the newest compatible version when latest requires a newer release', async () => {
             const compatible = createMockPieceMetadata({
-                name: '@united/piece-release-test',
+                name: '@activepieces/piece-release-test',
                 pieceType: PieceType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 version: '0.1.32',
@@ -365,7 +365,7 @@ describe('Piece Metadata CE API', () => {
                 maximumSupportedRelease: '99999.99999.9999',
             })
             const incompatible = createMockPieceMetadata({
-                name: '@united/piece-release-test',
+                name: '@activepieces/piece-release-test',
                 pieceType: PieceType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 version: '0.1.33',
@@ -376,7 +376,7 @@ describe('Piece Metadata CE API', () => {
             await pieceCache(mockLog).setup()
 
             const ctx = await createTestContext(app!)
-            const response = await ctx.get('/v1/pieces/@united/piece-release-test')
+            const response = await ctx.get('/v1/pieces/@activepieces/piece-release-test')
 
             expect(response?.statusCode).toBe(StatusCodes.OK)
             expect(response?.json().version).toBe('0.1.32')
@@ -420,7 +420,7 @@ describe('Piece Metadata CE API', () => {
 
         it('GET /v1/pieces/:scope/:name returns 404 when all versions are incompatible', async () => {
             const incompatible = createMockPieceMetadata({
-                name: '@united/piece-all-incompatible',
+                name: '@activepieces/piece-all-incompatible',
                 pieceType: PieceType.OFFICIAL,
                 packageType: PackageType.REGISTRY,
                 version: '0.1.33',
@@ -431,7 +431,7 @@ describe('Piece Metadata CE API', () => {
             await pieceCache(mockLog).setup()
 
             const ctx = await createTestContext(app!)
-            const response = await ctx.get('/v1/pieces/@united/piece-all-incompatible')
+            const response = await ctx.get('/v1/pieces/@activepieces/piece-all-incompatible')
 
             expect(response?.statusCode).toBe(StatusCodes.NOT_FOUND)
         })

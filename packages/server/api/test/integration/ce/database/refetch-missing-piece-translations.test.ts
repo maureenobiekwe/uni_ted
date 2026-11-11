@@ -25,15 +25,15 @@ const REGISTRY_I18N = {
     [LocalesEnum.JAPANESE]: { 'Send a message': 'メッセージを送信' },
 }
 
-const lastGoodSync = officialPiece({ name: '@united/piece-refetch-slack', version: '0.23.0', i18n: REGISTRY_I18N })
-const brokenAfterLastGoodSync = officialPiece({ name: '@united/piece-refetch-slack', version: '0.23.1', created: '2023-06-05T00:00:00.000Z' })
-const untranslatedBeforeLastGoodSync = officialPiece({ name: '@united/piece-refetch-slack', version: '0.1.0' })
-const brokenGoneFromCloud = officialPiece({ name: '@united/piece-refetch-gone', version: '0.1.0' })
-const brokenMismatched = officialPiece({ name: '@united/piece-refetch-mismatched', version: '5.0.0' })
-const brokenFetchFails = officialPiece({ name: '@united/piece-refetch-unreachable', version: '1.0.0' })
-const untranslatedUpstream = officialPiece({ name: '@united/piece-refetch-untranslated', version: '2.0.0' })
-const canary = officialPiece({ name: '@united/piece-refetch-canary', version: '9.0.0', i18n: REGISTRY_I18N })
-const customPiece = createMockPieceMetadata({ name: '@united/piece-refetch-custom', version: '4.0.0', pieceType: PieceType.CUSTOM, packageType: PackageType.REGISTRY, platformId: apId(), i18n: undefined })
+const lastGoodSync = officialPiece({ name: '@activepieces/piece-refetch-slack', version: '0.23.0', i18n: REGISTRY_I18N })
+const brokenAfterLastGoodSync = officialPiece({ name: '@activepieces/piece-refetch-slack', version: '0.23.1', created: '2023-06-05T00:00:00.000Z' })
+const untranslatedBeforeLastGoodSync = officialPiece({ name: '@activepieces/piece-refetch-slack', version: '0.1.0' })
+const brokenGoneFromCloud = officialPiece({ name: '@activepieces/piece-refetch-gone', version: '0.1.0' })
+const brokenMismatched = officialPiece({ name: '@activepieces/piece-refetch-mismatched', version: '5.0.0' })
+const brokenFetchFails = officialPiece({ name: '@activepieces/piece-refetch-unreachable', version: '1.0.0' })
+const untranslatedUpstream = officialPiece({ name: '@activepieces/piece-refetch-untranslated', version: '2.0.0' })
+const canary = officialPiece({ name: '@activepieces/piece-refetch-canary', version: '9.0.0', i18n: REGISTRY_I18N })
+const customPiece = createMockPieceMetadata({ name: '@activepieces/piece-refetch-custom', version: '4.0.0', pieceType: PieceType.CUSTOM, packageType: PackageType.REGISTRY, platformId: apId(), i18n: undefined })
 const seeded = [lastGoodSync, brokenAfterLastGoodSync, untranslatedBeforeLastGoodSync, brokenGoneFromCloud, brokenMismatched, brokenFetchFails, untranslatedUpstream, canary, customPiece]
 
 let app: FastifyInstance | null = null
@@ -76,7 +76,7 @@ describe('RefetchMissingPieceTranslations', () => {
     })
 
     it('does not fetch versions that are already translated, except as a canary', async () => {
-        const translatedOlder = officialPiece({ name: '@united/piece-refetch-slack', version: '0.20.0', i18n: REGISTRY_I18N })
+        const translatedOlder = officialPiece({ name: '@activepieces/piece-refetch-slack', version: '0.20.0', i18n: REGISTRY_I18N })
         await seed({ pieces: [translatedOlder] })
 
         await runThroughRunner()
@@ -86,7 +86,7 @@ describe('RefetchMissingPieceTranslations', () => {
     })
 
     it('repairs a broken version even after sync installed a newer translated version once the cloud fix was live', async () => {
-        const syncedAfterFix = officialPiece({ name: '@united/piece-refetch-slack', version: '0.24.0', i18n: REGISTRY_I18N })
+        const syncedAfterFix = officialPiece({ name: '@activepieces/piece-refetch-slack', version: '0.24.0', i18n: REGISTRY_I18N })
         await seed({ pieces: [syncedAfterFix] })
 
         await runThroughRunner()
@@ -95,10 +95,10 @@ describe('RefetchMissingPieceTranslations', () => {
     })
 
     it('repairs on the retry a broken version that failed while a newer one was restored', async () => {
-        const firstGood = officialPiece({ name: '@united/piece-refetch-retry', version: '1.0.0', i18n: REGISTRY_I18N })
-        const brokenFailsFirst = officialPiece({ name: '@united/piece-refetch-retry', version: '1.0.1' })
-        const brokenRestoredFirst = officialPiece({ name: '@united/piece-refetch-retry', version: '1.0.2' })
-        const outage = Array.from({ length: 6 }, (_, index) => officialPiece({ name: `@united/piece-refetch-retry-outage-${index}`, version: '1.0.0' }))
+        const firstGood = officialPiece({ name: '@activepieces/piece-refetch-retry', version: '1.0.0', i18n: REGISTRY_I18N })
+        const brokenFailsFirst = officialPiece({ name: '@activepieces/piece-refetch-retry', version: '1.0.1' })
+        const brokenRestoredFirst = officialPiece({ name: '@activepieces/piece-refetch-retry', version: '1.0.2' })
+        const outage = Array.from({ length: 6 }, (_, index) => officialPiece({ name: `@activepieces/piece-refetch-retry-outage-${index}`, version: '1.0.0' }))
         await seed({ pieces: [firstGood, brokenFailsFirst, brokenRestoredFirst, ...outage] })
         const serve = ({ url }: { url: string }): { data: unknown } => {
             const version = new URL(url).searchParams.get('version')
@@ -154,7 +154,7 @@ describe('RefetchMissingPieceTranslations', () => {
     })
 
     it('fails the run when many requests fail transiently, and restores them on the retry', async () => {
-        const outage = Array.from({ length: 6 }, (_, index) => officialPiece({ name: `@united/piece-refetch-outage-${index}`, version: '1.0.0' }))
+        const outage = Array.from({ length: 6 }, (_, index) => officialPiece({ name: `@activepieces/piece-refetch-outage-${index}`, version: '1.0.0' }))
         await seed({ pieces: outage })
         getMock.mockImplementation(async (url: string) => {
             if (outage.some((piece) => url.includes(piece.name))) {
@@ -178,7 +178,7 @@ describe('RefetchMissingPieceTranslations', () => {
     })
 
     it('completes when many versions are gone from cloud, since a 404 is not worth retrying', async () => {
-        const removed = Array.from({ length: 6 }, (_, index) => officialPiece({ name: `@united/piece-refetch-removed-${index}`, version: '1.0.0' }))
+        const removed = Array.from({ length: 6 }, (_, index) => officialPiece({ name: `@activepieces/piece-refetch-removed-${index}`, version: '1.0.0' }))
         await seed({ pieces: removed })
         getMock.mockImplementation(async (url: string) => removed.some((piece) => url.includes(piece.name))
             ? Promise.reject(httpError({ status: 404 }))
@@ -191,7 +191,7 @@ describe('RefetchMissingPieceTranslations', () => {
     })
 
     it('completes when cloud rejects many versions with a 4xx, since its validation will not change on retry', async () => {
-        const invalid = Array.from({ length: 6 }, (_, index) => officialPiece({ name: `@united/piece-refetch-invalid-${index}`, version: '1.0.0-beta.1' }))
+        const invalid = Array.from({ length: 6 }, (_, index) => officialPiece({ name: `@activepieces/piece-refetch-invalid-${index}`, version: '1.0.0-beta.1' }))
         await seed({ pieces: invalid })
         getMock.mockImplementation(async (url: string) => invalid.some((piece) => url.includes(piece.name))
             ? Promise.reject(httpError({ status: 400 }))
@@ -204,8 +204,8 @@ describe('RefetchMissingPieceTranslations', () => {
     })
 
     it('treats rate limiting and timeouts as transient, so the run retries', async () => {
-        const throttled = Array.from({ length: 3 }, (_, index) => officialPiece({ name: `@united/piece-refetch-throttled-${index}`, version: '1.0.0' }))
-        const timedOut = Array.from({ length: 3 }, (_, index) => officialPiece({ name: `@united/piece-refetch-timedout-${index}`, version: '1.0.0' }))
+        const throttled = Array.from({ length: 3 }, (_, index) => officialPiece({ name: `@activepieces/piece-refetch-throttled-${index}`, version: '1.0.0' }))
+        const timedOut = Array.from({ length: 3 }, (_, index) => officialPiece({ name: `@activepieces/piece-refetch-timedout-${index}`, version: '1.0.0' }))
         await seed({ pieces: [...throttled, ...timedOut] })
         getMock.mockImplementation(async (url: string) => {
             if (throttled.some((piece) => url.includes(piece.name))) {
@@ -293,14 +293,14 @@ describe('RefetchMissingPieceTranslations', () => {
     })
 
     it('fetches untranslated versions that are not valid semver but never translated ones', async () => {
-        const translatedSemver = officialPiece({ name: '@united/piece-refetch-nonsemver', version: '1.0.0', i18n: REGISTRY_I18N })
-        const translatedNonSemver = officialPiece({ name: '@united/piece-refetch-nonsemver', version: 'nightly', i18n: REGISTRY_I18N })
-        const untranslatedNonSemver = officialPiece({ name: '@united/piece-refetch-nonsemver', version: 'nightly-2' })
+        const translatedSemver = officialPiece({ name: '@activepieces/piece-refetch-nonsemver', version: '1.0.0', i18n: REGISTRY_I18N })
+        const translatedNonSemver = officialPiece({ name: '@activepieces/piece-refetch-nonsemver', version: 'nightly', i18n: REGISTRY_I18N })
+        const untranslatedNonSemver = officialPiece({ name: '@activepieces/piece-refetch-nonsemver', version: 'nightly-2' })
         await seed({ pieces: [translatedSemver, translatedNonSemver, untranslatedNonSemver] })
         getMock.mockImplementation(async (url: string) => {
             const version = new URL(url).searchParams.get('version')
             return url.includes('piece-refetch-nonsemver')
-                ? { data: { name: '@united/piece-refetch-nonsemver', version, i18n: REGISTRY_I18N } }
+                ? { data: { name: '@activepieces/piece-refetch-nonsemver', version, i18n: REGISTRY_I18N } }
                 : stubRegistry({ url })
         })
 

@@ -32,7 +32,7 @@ const trigger = (): FlowVersion['trigger'] => ({
     valid: true,
     lastUpdatedDate: new Date().toISOString(),
     settings: {
-        pieceName: '@united/piece-webhook',
+        pieceName: '@activepieces/piece-webhook',
         pieceVersion: '0.0.1',
         triggerName: 'catch_request',
         input: {},
@@ -101,7 +101,7 @@ describe('migrateV26AiPieceCostBilling', () => {
     })
 
     it('leaves every other piece untouched', async () => {
-        expect(await migratedVersionOf(withAiStep({ pieceVersion: '0.1.0', pieceName: '@united/piece-openai' }))).toBe('0.1.0')
+        expect(await migratedVersionOf(withAiStep({ pieceVersion: '0.1.0', pieceName: '@activepieces/piece-openai' }))).toBe('0.1.0')
     })
 
     it('fills in the max steps an agent step needs, since the new version requires it and the engine applies no default', async () => {

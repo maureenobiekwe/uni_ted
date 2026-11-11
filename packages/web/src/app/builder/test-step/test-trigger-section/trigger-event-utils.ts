@@ -27,7 +27,7 @@ export const triggerEventUtils = {
       return 'chat-trigger';
     }
     if (
-      pieceName === '@united/piece-webhook' &&
+      pieceName === '@activepieces/piece-webhook' &&
       triggerName === 'catch_webhook'
     ) {
       return 'webhook';

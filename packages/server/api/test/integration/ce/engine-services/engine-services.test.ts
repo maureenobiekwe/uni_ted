@@ -258,7 +258,7 @@ describe('Engine Services Integration', () => {
         })
 
         describe('AP_ENFORCE_CONNECTION_PIECE_BINDING', () => {
-            const pieceName = '@united/piece-slack'
+            const pieceName = '@activepieces/piece-slack'
 
             afterEach(() => {
                 delete process.env.AP_ENFORCE_CONNECTION_PIECE_BINDING
@@ -284,7 +284,7 @@ describe('Engine Services Integration', () => {
 
             it('should reject a connection belonging to another piece when enabled', async () => {
                 process.env.AP_ENFORCE_CONNECTION_PIECE_BINDING = 'true'
-                const externalId = await saveConnection('@united/piece-google-sheets')
+                const externalId = await saveConnection('@activepieces/piece-google-sheets')
 
                 const connectionService = createConnectionResolver({
                     projectId,
@@ -316,7 +316,7 @@ describe('Engine Services Integration', () => {
             })
 
             it('should allow a connection belonging to another piece when disabled', async () => {
-                const externalId = await saveConnection('@united/piece-google-sheets')
+                const externalId = await saveConnection('@activepieces/piece-google-sheets')
 
                 const connectionService = createConnectionResolver({
                     projectId,

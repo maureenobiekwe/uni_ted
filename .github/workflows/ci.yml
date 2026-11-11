@@ -49,7 +49,7 @@ jobs:
           else
             PACKAGES=$(jq -cn --argjson direct "$DIRECT" --argjson affected "$AFFECTED" '
               ($direct | any(. == "@united/pieces-framework" or . == "@united/pieces-common")) as $allPieces
-              | [$affected[] | select((startswith("@united/piece-") | not) or $allPieces or IN($direct[]))]')
+              | [$affected[] | select((startswith("@activepieces/piece-") | not) or $allPieces or IN($direct[]))]')
           fi
           echo "all=$ALL" >> "$GITHUB_OUTPUT"
           echo "packages=$PACKAGES" >> "$GITHUB_OUTPUT"

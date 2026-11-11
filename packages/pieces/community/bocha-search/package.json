@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-bocha-search",
+  "name": "@activepieces/piece-bocha-search",
   "version": "0.1.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

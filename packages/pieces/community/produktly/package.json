@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-produktly",
+  "name": "@activepieces/piece-produktly",
   "version": "0.1.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

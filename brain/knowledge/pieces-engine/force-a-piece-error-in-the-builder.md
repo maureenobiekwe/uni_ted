@@ -37,7 +37,7 @@ the connection while the mock still answers 200, then switch it to the failure s
    `/__mode/<shape>` route so you can switch shape without a restart. Cover at least: 401 with an
    empty body, 401 with no body, a body keyed `msg`, a body keyed `Message`, an array with no
    message, and one body that *does* carry `{message}` as the control.
-2. `npx turbo run build --filter=@united/piece-<name>` — **`AP_DEV_PIECES` loads from `dist`,
+2. `npx turbo run build --filter=@activepieces/piece-<name>` — **`AP_DEV_PIECES` loads from `dist`,
    not from source**, so an unbuilt piece silently does not appear.
 3. Add `AP_DEV_PIECES=<name>` to `.env.dev`, then `npm run dev`.
 4. Build the flow, create the connection against `http://127.0.0.1:<port>`, set the mock shape,

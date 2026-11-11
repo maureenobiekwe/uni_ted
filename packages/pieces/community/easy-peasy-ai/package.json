@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-easy-peasy-ai",
+  "name": "@activepieces/piece-easy-peasy-ai",
   "version": "0.2.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

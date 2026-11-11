@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-data-summarizer",
+  "name": "@activepieces/piece-data-summarizer",
   "version": "0.0.18",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

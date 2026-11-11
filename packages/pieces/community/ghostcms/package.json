@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-ghostcms",
+  "name": "@activepieces/piece-ghostcms",
   "version": "0.3.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

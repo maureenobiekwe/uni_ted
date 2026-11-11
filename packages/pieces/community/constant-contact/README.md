@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@united/piece-constant-contact` to build the library.
+Run `turbo run build --filter=@activepieces/piece-constant-contact` to build the library.

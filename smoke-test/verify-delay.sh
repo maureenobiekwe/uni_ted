@@ -75,8 +75,8 @@ fi
 echo "--- Waiting for delay and webhook pieces ---"
 for i in $(seq 1 300); do
   PIECES=$(curl -sf "$API_URL/pieces" -H "$AUTH" 2>/dev/null || echo "[]")
-  DELAY_VERSION=$(echo "$PIECES" | jq -r '[.[] | select(.name == "@united/piece-delay") | .version][0] // empty' 2>/dev/null || true)
-  WEBHOOK_VERSION=$(echo "$PIECES" | jq -r '[.[] | select(.name == "@united/piece-webhook") | .version][0] // empty' 2>/dev/null || true)
+  DELAY_VERSION=$(echo "$PIECES" | jq -r '[.[] | select(.name == "@activepieces/piece-delay") | .version][0] // empty' 2>/dev/null || true)
+  WEBHOOK_VERSION=$(echo "$PIECES" | jq -r '[.[] | select(.name == "@activepieces/piece-webhook") | .version][0] // empty' 2>/dev/null || true)
   if [ -n "$DELAY_VERSION" ] && [ -n "$WEBHOOK_VERSION" ]; then
     echo "Pieces are available (took ${i}s): delay@$DELAY_VERSION, webhook@$WEBHOOK_VERSION"
     break
@@ -115,7 +115,7 @@ curl -s --fail-with-body "$API_URL/flows/$FLOW_ID" \
         "displayName": "Catch Webhook",
         "type": "PIECE_TRIGGER",
         "settings": {
-          "pieceName": "@united/piece-webhook",
+          "pieceName": "@activepieces/piece-webhook",
           "pieceVersion": "'"$WEBHOOK_VERSION"'",
           "triggerName": "catch_webhook",
           "input": { "authType": "none", "authFields": {} },
@@ -132,7 +132,7 @@ curl -s --fail-with-body "$API_URL/flows/$FLOW_ID" \
           "valid": true,
           "displayName": "Delay For",
           "settings": {
-            "pieceName": "@united/piece-delay",
+            "pieceName": "@activepieces/piece-delay",
             "pieceVersion": "'"$DELAY_VERSION"'",
             "actionName": "delayFor",
             "input": {

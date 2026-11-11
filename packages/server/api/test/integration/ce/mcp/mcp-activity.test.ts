@@ -32,7 +32,7 @@ async function insertActivityRow({ userId, projectId, platformId, status = 'SUCC
         clientKey,
         toolName: 'ap_run_action',
         status,
-        pieceName: '@united/piece-slack',
+        pieceName: '@activepieces/piece-slack',
         actionName: 'send_channel_message',
         connectionExternalId: 'conn-external-1',
         errorMessage: status === 'FAILED' ? 'Something broke' : null,
@@ -283,14 +283,14 @@ describe('MCP activity', () => {
             const id = await insertActivityRow({
                 userId: ctx.user.id,
                 projectId: ctx.project.id,
-                payload: { input: { pieceName: '@united/piece-slack' }, output: { ok: true } },
+                payload: { input: { pieceName: '@activepieces/piece-slack' }, output: { ok: true } },
             })
 
             const response = await ctx.get(`/v1/mcp-activity/${id}/payload`)
 
             expect(response.statusCode).toBe(200)
             expect(response.json()).toEqual({
-                input: { pieceName: '@united/piece-slack' },
+                input: { pieceName: '@activepieces/piece-slack' },
                 output: { ok: true },
                 truncated: false,
             })

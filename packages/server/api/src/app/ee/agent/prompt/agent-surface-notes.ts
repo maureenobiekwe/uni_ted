@@ -125,7 +125,7 @@ function buildConnectionInventoryNote({ connections, truncated }: ConnectionInve
     }
 
     for (const c of connections) {
-        lines.push(`- ${c.displayName} — ${c.pieceName.replace('@united/piece-', '')} (${c.status})`)
+        lines.push(`- ${c.displayName} — ${c.pieceName.replace('@activepieces/piece-', '')} (${c.status})`)
     }
     lines.push('A connection shown as ERROR or MISSING is connected but broken — offer to reconnect it inline (`ap_show_connection_required` / `ap_show_mcp_reconnect`); do not treat it as absent.')
     if (truncated) {

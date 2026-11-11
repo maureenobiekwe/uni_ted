@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-vidlab7",
+  "name": "@activepieces/piece-vidlab7",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

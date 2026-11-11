@@ -32,7 +32,7 @@ describe('flow with response', () => {
         const result = await flowExecutor.execute({
             action: buildPieceAction({
                 name: 'http',
-                pieceName: '@united/piece-webhook',
+                pieceName: '@activepieces/piece-webhook',
                 actionName: 'return_response',
                 input,
             }), executionState: FlowExecutorContext.empty(), constants: generateMockEngineConstants(),

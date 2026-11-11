@@ -8,7 +8,7 @@ function pieceStep({ name, auth, nextAction }: { name: string, auth?: string, ne
         displayName: name,
         lastUpdatedDate: '2026-10-20T00:00:00.000Z',
         settings: {
-            pieceName: '@united/piece-slack',
+            pieceName: '@activepieces/piece-slack',
             pieceVersion: '0.0.1',
             actionName: 'send_message',
             input: { auth, channel: 'general' },
@@ -82,7 +82,7 @@ describe('flowStructureUtil.replaceConnection', () => {
         const agentStep: PieceAction = {
             ...pieceStep({ name: 'step_1' }),
             settings: {
-                pieceName: '@united/piece-ai',
+                pieceName: '@activepieces/piece-ai',
                 pieceVersion: '0.6.0',
                 actionName: 'run_agent',
                 input: {
@@ -131,7 +131,7 @@ describe('flowStructureUtil.extractStepConnectionIds', () => {
         const agentStep: PieceAction = {
             ...pieceStep({ name: 'step_2' }),
             settings: {
-                pieceName: '@united/piece-ai',
+                pieceName: '@activepieces/piece-ai',
                 pieceVersion: '0.6.0',
                 actionName: 'run_agent',
                 input: {
@@ -175,7 +175,7 @@ function slackTool({ toolName, auth }: { toolName: string, auth: string }): Agen
         type: AgentToolType.PIECE,
         toolName,
         pieceMetadata: {
-            pieceName: '@united/piece-slack',
+            pieceName: '@activepieces/piece-slack',
             pieceVersion: '0.0.1',
             actionName: 'send_message',
             predefinedInput: { auth, fields: {} },

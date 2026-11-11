@@ -51,7 +51,7 @@ function makeFlowVersion({ triggerVersion }: { triggerVersion: string }): FlowVe
         { name: 'oracle_before_broken', pieceName: ORACLE_PIECE_NAME, pieceVersion: '0.1.10' },
         { name: 'oracle_fixed', pieceName: ORACLE_PIECE_NAME, pieceVersion: '0.1.13' },
         { name: 'oracle_latest', pieceName: ORACLE_PIECE_NAME, pieceVersion: '0.1.15' },
-        { name: 'other_piece', pieceName: '@united/piece-slack', pieceVersion: '0.1.11' },
+        { name: 'other_piece', pieceName: '@activepieces/piece-slack', pieceVersion: '0.1.11' },
     ]
     const chain = steps.reduceRight<FlowAction | undefined>((nextAction, step) => makeActionStep({ ...step, nextAction }), undefined)
     return {
@@ -121,4 +121,4 @@ describe('migrateV27OracleDatabasePieceVersion', () => {
     })
 })
 
-const ORACLE_PIECE_NAME = '@united/piece-oracle-database'
+const ORACLE_PIECE_NAME = '@activepieces/piece-oracle-database'

@@ -76,7 +76,7 @@ export function createAgentSurfaceTools({ executeTool, taintState, eventEmitter,
             description: 'Give a saved agent piece actions it can call, so it can do the work rather than only reason about it. Look them up first (ap_research_pieces for the piece and action names, ap_list_connections for the connection). Pass every action for one piece in a single call — one call per piece, never several at once for the same agent.',
             inputSchema: z.object({
                 agentId: z.string().optional().describe('The id returned by ap_list_agents, ap_create_agent or ap_update_agent. Leave it out when you are changing the agent this conversation belongs to'),
-                pieceName: z.string().describe('Full piece name, e.g. "@united/piece-gmail"'),
+                pieceName: z.string().describe('Full piece name, e.g. "@activepieces/piece-gmail"'),
                 actionNames: z.array(z.string()).describe('Action names within that piece, e.g. ["gmail_search_mail"]'),
                 connectionExternalId: z.string().optional().describe('externalId from ap_list_connections, for a piece that needs an account'),
                 publish: z.boolean().optional().describe('Make the agent live with these tools in the same step'),

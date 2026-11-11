@@ -94,7 +94,7 @@ function scheduleTrigger(): FlowTrigger {
     }
 }
 
-const SCHEDULE_PIECE_NAME = '@united/piece-schedule'
+const SCHEDULE_PIECE_NAME = '@activepieces/piece-schedule'
 const SCHEDULE_PIECE_VERSION = '0.1.5'
 
 type SeedPublishableFlowParams = {

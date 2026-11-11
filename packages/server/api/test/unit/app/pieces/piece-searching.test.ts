@@ -4,9 +4,9 @@ import { pieceSearching } from '../../../../src/app/pieces/metadata/utils/piece-
 import { createMockPieceMetadata } from '../../../helpers/mocks'
 
 const pieces = [
-    createMockPieceMetadata({ name: '@united/piece-discord', displayName: 'Discord', description: 'Send messages to Discord channels' }),
-    createMockPieceMetadata({ name: '@united/piece-slack', displayName: 'Slack', description: 'Send messages to Slack channels' }),
-    createMockPieceMetadata({ name: '@united/piece-gmail', displayName: 'Gmail', description: 'Send and read emails' }),
+    createMockPieceMetadata({ name: '@activepieces/piece-discord', displayName: 'Discord', description: 'Send messages to Discord channels' }),
+    createMockPieceMetadata({ name: '@activepieces/piece-slack', displayName: 'Slack', description: 'Send messages to Slack channels' }),
+    createMockPieceMetadata({ name: '@activepieces/piece-gmail', displayName: 'Gmail', description: 'Send and read emails' }),
 ]
 
 describe('pieceSearching.search — robustness to extra query words', () => {
@@ -46,21 +46,21 @@ describe('pieceSearching.search — robustness to extra query words', () => {
 
 describe('pieceSearching.search — translated display names', () => {
     it('finds a translated piece by its English name', () => {
-        const textAi = createMockPieceMetadata({ name: '@united/piece-text-ai', displayName: 'Text AI', description: 'Generate text with AI' })
-        const textHelper = createMockPieceMetadata({ name: '@united/piece-text-helper', displayName: 'テキストヘルパー', description: 'テキスト処理のためのツール' })
+        const textAi = createMockPieceMetadata({ name: '@activepieces/piece-text-ai', displayName: 'Text AI', description: 'Generate text with AI' })
+        const textHelper = createMockPieceMetadata({ name: '@activepieces/piece-text-helper', displayName: 'テキストヘルパー', description: 'テキスト処理のためのツール' })
         const results = pieceSearching.search({
             categories: undefined,
             searchQuery: 'Text Helper',
             pieces: [...pieces, textAi, textHelper],
-            untranslatedNames: new Map([['@united/piece-text-helper', 'Text Helper']]),
+            untranslatedNames: new Map([['@activepieces/piece-text-helper', 'Text Helper']]),
             suggestionType: SuggestionType.ACTION,
         })
-        expect(results[0]?.name).toBe('@united/piece-text-helper')
+        expect(results[0]?.name).toBe('@activepieces/piece-text-helper')
     })
 
     it('suggests the triggers of a translated core piece searched by its English name', () => {
         const manualTrigger = createMockPieceMetadata({
-            name: '@united/piece-manual-trigger',
+            name: '@activepieces/piece-manual-trigger',
             displayName: '手動トリガー',
             triggers: {
                 manual_trigger: {
@@ -79,10 +79,10 @@ describe('pieceSearching.search — translated display names', () => {
             categories: undefined,
             searchQuery: 'manual',
             pieces: [...pieces, manualTrigger],
-            untranslatedNames: new Map([['@united/piece-manual-trigger', 'Manual Trigger']]),
+            untranslatedNames: new Map([['@activepieces/piece-manual-trigger', 'Manual Trigger']]),
             suggestionType: SuggestionType.TRIGGER,
         })
-        expect(result?.name).toBe('@united/piece-manual-trigger')
+        expect(result?.name).toBe('@activepieces/piece-manual-trigger')
         expect(Object.keys(result?.triggers ?? {})).toEqual(['manual_trigger'])
     })
 })

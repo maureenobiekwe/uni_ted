@@ -172,7 +172,7 @@ export const apResolvePropertyChainTool = (mcp: ProjectScopedMcpServer, log: Fas
 }
 
 const resolvePropertyChainInput = z.object({
-    pieceName: z.string().describe('The piece name (e.g. "@united/piece-google-sheets").'),
+    pieceName: z.string().describe('The piece name (e.g. "@activepieces/piece-google-sheets").'),
     actionOrTriggerName: z.string().describe('The action or trigger name (e.g. "insert_row").'),
     type: z.enum(['action', 'trigger']).describe('Whether this is an action or trigger.'),
     propertyChain: z.array(z.object({

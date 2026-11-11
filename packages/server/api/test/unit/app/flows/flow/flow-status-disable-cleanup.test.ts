@@ -121,7 +121,7 @@ const PUBLISHED_FLOW_VERSION = {
     flowId: 'flow-1',
     trigger: {
         settings: {
-            pieceName: '@united/piece-linear',
+            pieceName: '@activepieces/piece-linear',
             pieceVersion: '0.5.1',
         },
     },
@@ -156,7 +156,7 @@ describe('flowSideEffects.preUpdateStatus disabling a flow whose trigger cleanup
             flowId: 'flow-1',
             flowVersionId: 'fv-1',
             projectId: 'proj-1',
-            pieceName: '@united/piece-linear',
+            pieceName: '@activepieces/piece-linear',
             simulate: false,
         })
         mockGetFlowVersionOrThrow.mockResolvedValue(PUBLISHED_FLOW_VERSION)

@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-cloudconvert",
+  "name": "@activepieces/piece-cloudconvert",
   "version": "0.3.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

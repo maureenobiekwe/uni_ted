@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-linkupapi",
+  "name": "@activepieces/piece-linkupapi",
   "version": "0.1.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

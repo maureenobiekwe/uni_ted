@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@united/piece-documentpro` to build the library.
+Run `turbo run build --filter=@activepieces/piece-documentpro` to build the library.

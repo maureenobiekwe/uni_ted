@@ -388,12 +388,13 @@ export const PIECE_SELECTOR_ELEMENTS_HEIGHTS = {
 };
 
 const isMcpToolTrigger = (pieceName: string, triggerName: string) => {
-  return pieceName === '@united/piece-mcp' && triggerName === 'mcp_tool';
+  return pieceName === '@activepieces/piece-mcp' && triggerName === 'mcp_tool';
 };
 
 const isChatTrigger = (pieceName: string, triggerName: string) => {
   return (
-    pieceName === '@united/piece-forms' && triggerName === 'chat_submission'
+    pieceName === '@activepieces/piece-forms' &&
+    triggerName === 'chat_submission'
   );
 };
 

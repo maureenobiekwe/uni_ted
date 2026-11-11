@@ -291,7 +291,7 @@ export const flowHooks = {
           displayName: t('Untitled'),
         });
         const mcpPiece = await piecesApi.get({
-          name: '@united/piece-mcp',
+          name: '@activepieces/piece-mcp',
         });
         const trigger = mcpPiece.triggers['mcp_tool'];
         if (!trigger) {

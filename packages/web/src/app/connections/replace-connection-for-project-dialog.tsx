@@ -340,7 +340,10 @@ export { ReplaceConnectionForProjectDialog };
 
 const MAX_FLOWS_PER_REPLACE = 200;
 
-const PIECES_WITHOUT_REPLACE = ['@united/piece-mcp', '@united/piece-webhook'];
+const PIECES_WITHOUT_REPLACE = [
+  '@activepieces/piece-mcp',
+  '@activepieces/piece-webhook',
+];
 
 type ReplaceConnectionForProjectDialogProps = {
   onConnectionMerged: () => void;

@@ -118,7 +118,7 @@ function makeFlowVersionWithTwoApprovals(): FlowVersion {
         valid: true,
         settings: {
             input: {},
-            pieceName: '@united/piece-approval',
+            pieceName: '@activepieces/piece-approval',
             pieceVersion: '1.0.0',
             actionName: 'wait_for_approval',
             propertySettings: {},
@@ -132,7 +132,7 @@ function makeFlowVersionWithTwoApprovals(): FlowVersion {
         valid: true,
         settings: {
             input: {},
-            pieceName: '@united/piece-approval',
+            pieceName: '@activepieces/piece-approval',
             pieceVersion: '1.0.0',
             actionName: 'wait_for_approval',
             propertySettings: {},

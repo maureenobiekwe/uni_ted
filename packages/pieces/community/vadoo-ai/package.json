@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-vadoo-ai",
+  "name": "@activepieces/piece-vadoo-ai",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

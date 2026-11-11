@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-gitlab",
+  "name": "@activepieces/piece-gitlab",
   "version": "0.4.4",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

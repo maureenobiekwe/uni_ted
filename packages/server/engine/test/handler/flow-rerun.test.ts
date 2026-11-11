@@ -11,7 +11,7 @@ let baseUrl: string
 function httpAction(path: string): PieceAction {
     return buildPieceAction({
         name: 'send_http',
-        pieceName: '@united/piece-http',
+        pieceName: '@activepieces/piece-http',
         actionName: 'send_request',
         input: {
             'url': `${baseUrl}${path}`,

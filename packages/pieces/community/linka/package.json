@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-linka",
+  "name": "@activepieces/piece-linka",
   "version": "0.1.6",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

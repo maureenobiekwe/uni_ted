@@ -222,7 +222,7 @@ describe('ap_lazy_tool', () => {
     }
 
     it('drops a top-level key a strict MCP tool does not declare instead of failing the call', async () => {
-        const checked = await validateWrapped({ surface: surfaceWithMcpTool({ additionalProperties: false }), value: { tool: 'ap_rename_flow', input: { flowId: 'f1', pieceName: '@united/piece-tables' } } })
+        const checked = await validateWrapped({ surface: surfaceWithMcpTool({ additionalProperties: false }), value: { tool: 'ap_rename_flow', input: { flowId: 'f1', pieceName: '@activepieces/piece-tables' } } })
 
         expect(checked).toMatchObject({ success: true, value: { input: { flowId: 'f1' } } })
         expect(checked).not.toMatchObject({ value: { input: { pieceName: expect.anything() } } })
