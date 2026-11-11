@@ -1,4 +1,4 @@
-import { unitedError, assertNotNullOrUndefined, ErrorCode } from '@united/core-utils'
+import { assertNotNullOrUndefined, ErrorCode, unitedError } from '@united/core-utils'
 
 /**
  * @param {string} pieceName - starts with `@united/piece-`

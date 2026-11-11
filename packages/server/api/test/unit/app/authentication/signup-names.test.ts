@@ -113,12 +113,12 @@ describe('signupNames', () => {
 
     describe('companyNameFromWorkEmail', () => {
         it.each([
-            ['ahmad@united.com', 'united'],
+            ['ahmad@united.com', 'United'],
             ['ahmad@acme-widgets.com', 'Acme Widgets'],
-            ['ahmad@mail.united.com', 'united'],
-            ['ahmad@united.co.uk', 'united'],
-            ['ahmad@eu.united.co.uk', 'united'],
-            ['ahmad@united.io', 'united'],
+            ['ahmad@mail.united.com', 'United'],
+            ['ahmad@united.co.uk', 'United'],
+            ['ahmad@eu.united.co.uk', 'United'],
+            ['ahmad@united.io', 'United'],
         ])('reads the company out of %s -> %s', (email, expected) => {
             expect(signupNames.companyNameFromWorkEmail(email)).toBe(expected)
         })
@@ -158,7 +158,7 @@ describe('signupNames', () => {
         it('prefers the company over the person on a work address', () => {
             expect(
                 signupNames.platformNameFromSignup({ firstName: 'Ahmad', email: 'ahmad@united.com' }),
-            ).toBe('united')
+            ).toBe('United')
         })
 
         it.each([
