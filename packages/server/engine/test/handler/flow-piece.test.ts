@@ -3,7 +3,18 @@ import { FlowAction, FlowRunStatus } from '@united/shared'
 import { FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
 import { flowExecutor } from '../../src/lib/handler/flow-executor'
 import { pieceExecutor } from '../../src/lib/handler/piece-executor'
+import { FakeHttpServer, fakeHttpServer } from '../fake-http-server'
 import { buildPieceAction, generateMockEngineConstants } from './test-helper'
+
+let server: FakeHttpServer
+
+beforeAll(async () => {
+    server = await fakeHttpServer.start()
+})
+
+afterAll(async () => {
+    await server.close()
+})
 
 describe('pieceExecutor', () => {
 
@@ -11,7 +22,7 @@ describe('pieceExecutor', () => {
         const result = await pieceExecutor.handle({
             action: buildPieceAction({
                 name: 'data_mapper',
-                pieceName: '@united/piece-data-mapper',
+                pieceName: '@activepieces/piece-data-mapper',
                 actionName: 'advanced_mapping',
                 input: {
                     mapping: {
@@ -30,10 +41,10 @@ describe('pieceExecutor', () => {
         const result = await pieceExecutor.handle({
             action: buildPieceAction({
                 name: 'send_http',
-                pieceName: '@united/piece-http',
+                pieceName: '@activepieces/piece-http',
                 actionName: 'send_request',
                 input: {
-                    'url': 'https://cloud.united.com/api/v1/asd',
+                    'url': server.url('/api/v1/asd'),
                     'method': 'GET',
                     'headers': {},
                     'body_type': 'none',
@@ -73,7 +84,7 @@ describe('pieceExecutor', () => {
                 name: 'data_mapper',
                 input: {},
                 skip: true,
-                pieceName: '@united/piece-data-mapper',
+                pieceName: '@activepieces/piece-data-mapper',
                 actionName: 'advanced_mapping',
             }), executionState: FlowExecutorContext.empty(), constants: generateMockEngineConstants(),
         })
@@ -92,13 +103,13 @@ describe('pieceExecutor', () => {
                     },
                 },
                 skip: false,
-                pieceName: '@united/piece-data-mapper',
+                pieceName: '@activepieces/piece-data-mapper',
                 actionName: 'advanced_mapping',
             }),
             nextAction: {
                 ...buildPieceAction({
                     name: 'send_http',
-                    pieceName: '@united/piece-http',
+                    pieceName: '@activepieces/piece-http',
                     actionName: 'send_request',
                     input: {},
                     skip: true,

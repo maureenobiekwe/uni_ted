@@ -6,7 +6,18 @@ import { FlowExecutorContext } from '../../src/lib/handler/context/flow-executio
 import { loopExecutor } from '../../src/lib/handler/loop-executor'
 import { pieceExecutor } from '../../src/lib/handler/piece-executor'
 import { routerExecuter } from '../../src/lib/handler/router-executor'
+import { FakeHttpServer, fakeHttpServer } from '../fake-http-server'
 import { buildCodeAction, buildPieceAction, buildRouterWithOneCondition, buildSimpleLoopAction, generateMockEngineConstants } from './test-helper'
+
+let server: FakeHttpServer
+
+beforeAll(async () => {
+    server = await fakeHttpServer.start()
+})
+
+afterAll(async () => {
+    await server.close()
+})
 
 describe('code piece with error handling', () => {
 
@@ -40,11 +51,11 @@ describe('piece with error handling', () => {
         const result = await pieceExecutor.handle({
             action: buildPieceAction({
                 name: 'send_http',
-                pieceName: '@united/piece-http',
+                pieceName: '@activepieces/piece-http',
                 actionName: 'send_request',
                 input: {
                     'method': 'POST',
-                    'url': 'https://cloud.united.com/api/v1/flags',
+                    'url': server.url('/api/v1/flags'),
                     'headers': {},
                     'queryParams': {},
                     'body_type': 'none',
