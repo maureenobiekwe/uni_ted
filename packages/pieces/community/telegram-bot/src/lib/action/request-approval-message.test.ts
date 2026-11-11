@@ -1,11 +1,11 @@
 /// <reference types="vitest/globals" />
 
-import { createMockActionContext } from '@activepieces/pieces-framework';
+import { createMockActionContext } from '@united/pieces-framework';
 
 const { sendRequestMock } = vi.hoisted(() => ({ sendRequestMock: vi.fn().mockResolvedValue({ status: 200, body: { ok: true, result: { message_id: 7 } } }) }));
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@united/pieces-common')>();
   return { ...actual, httpClient: { sendRequest: sendRequestMock } };
 });
 

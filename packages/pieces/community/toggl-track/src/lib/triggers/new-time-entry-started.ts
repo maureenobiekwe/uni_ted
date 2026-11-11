@@ -3,12 +3,12 @@ import {
   createTrigger,
   isNil,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { togglTrackAuth } from '../auth';
 import { togglCommon } from '../common';
 import { togglApi } from '../common/client';

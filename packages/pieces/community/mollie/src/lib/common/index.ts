@@ -3,8 +3,8 @@ import {
   HttpMethod,
   HttpRequest,
   AuthenticationType,
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { mollieAuth } from '../auth';
 
 export const mollieCommon = {

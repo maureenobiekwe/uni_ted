@@ -1,6 +1,6 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { seekTableApiCall } from './client';
-import { HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
+import { HttpMethod, AuthenticationType } from '@united/pieces-common';
 import { seekTableAuth } from './auth';
 
 interface Cube {

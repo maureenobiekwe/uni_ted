@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { surrealdbAuth } from '../../auth';
 import { surrealdbAiProps } from '../../common/ai-props';
 import { surrealdbApi } from '../../common/api';

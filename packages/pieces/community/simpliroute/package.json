@@ -1,15 +1,15 @@
 {
-  "name": "@activepieces/piece-simpliroute",
+  "name": "@united/piece-simpliroute",
   "version": "0.2.2",
   "description": "SimpliRoute piece for Activepieces - Last mile delivery optimization platform integration",
   "type": "commonjs",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@united/pieces-common": "workspace:*",
+    "@united/pieces-framework": "workspace:*",
+    "@united/core-piece-types": "workspace:*",
+    "@united/core-utils": "workspace:*"
   },
   "devDependencies": {
     "tslib": "^2.3.0"

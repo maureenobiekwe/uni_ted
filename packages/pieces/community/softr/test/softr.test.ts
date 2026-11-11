@@ -1,5 +1,5 @@
-import { HttpError } from '@activepieces/pieces-common';
-import { createMockPollingTriggerContext, InputPropertyMap } from '@activepieces/pieces-framework';
+import { HttpError } from '@united/pieces-common';
+import { createMockPollingTriggerContext, InputPropertyMap } from '@united/pieces-framework';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { SoftrAuth } from '../src/lib/common/auth';
 import { softrSearch } from '../src/lib/common/search';
@@ -16,8 +16,8 @@ import { authValidationServerContext, runAction, TEST_AUTH } from './helpers';
 
 const sendRequest = vi.fn();
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-	const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+	const actual = await importOriginal<typeof import('@united/pieces-common')>();
 	return {
 		...actual,
 		httpClient: {

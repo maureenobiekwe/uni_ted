@@ -1,4 +1,4 @@
-import { Property, Store, StoreScope } from '@activepieces/pieces-framework';
+import { Property, Store, StoreScope } from '@united/pieces-framework';
 
 const QUEUE_KEY_PREFIX = '_queue_rmAPlFmX0s_';
 const TESTING_KEY_PREFIX = 'testing_';

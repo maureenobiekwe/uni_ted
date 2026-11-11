@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { ninetyAuth } from '../auth';
 import { ninetyCommon } from '../common/client';
 import { teamListOutputSchema } from '../common/output-schemas';

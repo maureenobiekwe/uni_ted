@@ -1,7 +1,7 @@
 
 
-import { createAction, Property, DynamicPropsValue, PieceAuth } from "@activepieces/pieces-framework";
-import { httpClient, HttpMethod } from "@activepieces/pieces-common";
+import { createAction, Property, DynamicPropsValue, PieceAuth } from "@united/pieces-framework";
+import { httpClient, HttpMethod } from "@united/pieces-common";
 import { uscreenAuth } from "../common/auth";
 import { uscreenApiUrl, UscreenClient } from "../common/client"; 
 

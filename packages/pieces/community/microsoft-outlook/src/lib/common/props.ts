@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, Property, tryCatch } from '@activepieces/pieces-framework';
+import { OAuth2PropertyValue, Property, tryCatch } from '@united/pieces-framework';
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';
 import { MailFolder, Message } from '@microsoft/microsoft-graph-types';
 import { microsoftOutlookAuth } from './auth';

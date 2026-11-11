@@ -1,7 +1,7 @@
 import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { odooAuth } from '../auth';
 import Odoo from '../../commom/index';
 import { odooRpc } from '../common/client';

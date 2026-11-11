@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 
 export function favoriteTriStateProp(entity: 'label' | 'project') {
   return Property.StaticDropdown<string>({

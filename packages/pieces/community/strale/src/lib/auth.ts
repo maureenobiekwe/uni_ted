@@ -1,9 +1,9 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 
 export const straleAuth = PieceAuth.SecretText({
   displayName: 'API Key',

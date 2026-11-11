@@ -1,4 +1,4 @@
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+import { OutputSchema, OutputSchemaField } from '@united/pieces-framework';
 
 const boxFields: OutputSchemaField[] = [
   { key: 'box_key', label: 'Box Key' },

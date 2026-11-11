@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { typefullyApiCall } from './client';
 import { typefullyAuth } from '../auth';
 import {
@@ -7,7 +7,7 @@ import {
   TypefullySocialSet,
   TypefullyTag,
 } from './types';
-import { MarkdownVariant } from '@activepieces/pieces-framework';
+import { MarkdownVariant } from '@united/pieces-framework';
 
 async function fetchAllPages<T>(
   apiKey: string,

@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, HttpRequest } from '@united/pieces-common';
 import {
   GoogleSearchConfig,
   RequestOptions,

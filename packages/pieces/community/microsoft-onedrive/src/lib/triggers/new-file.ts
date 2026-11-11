@@ -1,6 +1,6 @@
-import { AppConnectionValueForAuthProperty, createTrigger } from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { AppConnectionValueForAuthProperty, createTrigger } from '@united/pieces-framework';
+import { TriggerStrategy } from '@united/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import { getCloudProp, getGraphBaseUrl } from '../common/microsoft-cloud';
 import dayjs from 'dayjs';
 import { oneDriveAuth } from '../auth';

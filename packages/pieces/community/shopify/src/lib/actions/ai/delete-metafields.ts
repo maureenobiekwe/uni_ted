@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { shopifyAuth } from '../../..';
 import { shopifyFields, shopifyGraphqlClient, shopifyValues } from '../../common/graphql';
 import { deleteMetafieldsOutputSchema } from '../../output-schemas/content';

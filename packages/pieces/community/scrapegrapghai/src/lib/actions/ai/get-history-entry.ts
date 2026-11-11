@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 
 import { scrapegraphaiAuth } from '../../auth';
 import { scrapegraphaiApi } from '../../common/api';

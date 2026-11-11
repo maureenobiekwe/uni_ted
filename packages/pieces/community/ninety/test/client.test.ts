@@ -15,7 +15,7 @@ const { sendRequest, FakeHttpError } = vi.hoisted(() => {
   return { sendRequest: vi.fn(), FakeHttpError: HoistedHttpError };
 });
 
-vi.mock('@activepieces/pieces-common', () => ({
+vi.mock('@united/pieces-common', () => ({
   HttpMethod: {
     GET: 'GET',
     POST: 'POST',

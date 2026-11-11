@@ -2,7 +2,7 @@ import {
   createTrigger,
   OutputSchema,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { streakAuth } from './auth';
 import { pipelineDropdown, teamDropdown } from './props';
 import {

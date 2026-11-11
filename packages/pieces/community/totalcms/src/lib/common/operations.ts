@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { totalcmsApi, totalcmsHelpers, TotalCmsConnection } from './client';
 import { totalcmsShape } from './shape';
 import { totalcmsUpdate } from './update';

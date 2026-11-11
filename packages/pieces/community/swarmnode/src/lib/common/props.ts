@@ -1,6 +1,6 @@
-import { Property } from "@activepieces/pieces-framework";
+import { Property } from "@united/pieces-framework";
 import { swarmnodeAuth } from "./auth";
-import { AuthenticationType, httpClient, HttpMethod } from "@activepieces/pieces-common";
+import { AuthenticationType, httpClient, HttpMethod } from "@united/pieces-common";
 import { BASE_URL } from "./constants";
 import { ListAgentResponse } from "./types";
 

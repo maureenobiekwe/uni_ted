@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { cmsAuth } from '../../auth';
 import { totalcmsOperations } from '../../common/operations';
 import { totalcmsProps } from '../../common/props';

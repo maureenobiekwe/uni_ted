@@ -1,4 +1,4 @@
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+import { OutputSchema, OutputSchemaField } from '@united/pieces-framework';
 import { contactOutputFields, enrollmentOutputFields, tagOutputFields } from './output-schemas';
 
 const listMeta: OutputSchemaField[] = [

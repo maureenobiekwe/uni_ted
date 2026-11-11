@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const recordFields: OutputSchema['fields'] = [{ key: 'id', label: 'Record ID', description: 'Full record id in "table:id" form; the other fields are the record\'s own data.' }];
 

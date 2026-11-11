@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 import { listAccounts, tokenOf, WorkableApiError } from './common/client';
 
 export const workableAuth = PieceAuth.SecretText({

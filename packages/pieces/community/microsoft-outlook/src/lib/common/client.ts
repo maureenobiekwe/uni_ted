@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { OAuth2PropertyValue } from '@united/pieces-framework';
 import { Client } from '@microsoft/microsoft-graph-client';
 import { Recipient } from '@microsoft/microsoft-graph-types';
 import { getGraphBaseUrl, getMicrosoftCloudFromAuth } from './microsoft-cloud';

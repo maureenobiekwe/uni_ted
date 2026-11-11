@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { mondayAuth } from '../../../auth';
 import { listBoardsActionOutputSchema } from '../../../output-schemas';
 import { mondayApi } from '../../../common/monday-api';

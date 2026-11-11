@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty, PieceAuth } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { AppConnectionValueForAuthProperty, PieceAuth } from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 
 const markdownDescription = `
 **How to get your Wafeq API Key:**

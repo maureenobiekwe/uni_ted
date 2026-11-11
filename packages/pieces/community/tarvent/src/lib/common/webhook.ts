@@ -1,4 +1,4 @@
-import { DEDUPE_KEY_PROPERTY } from '@activepieces/pieces-framework';
+import { DEDUPE_KEY_PROPERTY } from '@united/pieces-framework';
 import { tarventClient, TarventWebhookEvent } from './client';
 import { TarventCredentials } from './transport';
 

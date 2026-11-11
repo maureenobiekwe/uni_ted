@@ -3,7 +3,7 @@ import {
   HttpMethod,
   httpClient,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import FormData from 'form-data';
 import type { PerplexityAiAuthValue } from './types';
 

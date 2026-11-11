@@ -1,4 +1,4 @@
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+import { OutputSchema, OutputSchemaField } from '@united/pieces-framework';
 
 const collectionFields: OutputSchemaField[] = [
   { key: 'id', label: 'Collection ID' },

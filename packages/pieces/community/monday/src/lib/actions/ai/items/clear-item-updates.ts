@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { mondayAuth } from '../../../auth';
 import { mondayAiProps } from '../../../common/ai-props';
 import { ITEM_SUMMARY_FIELDS, itemCommon, MondayItemSummary } from './item-common';

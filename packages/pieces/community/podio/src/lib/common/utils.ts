@@ -1,5 +1,5 @@
-import type { QueryParams } from '@activepieces/pieces-common';
-import type { DynamicPropsValue } from '@activepieces/pieces-framework';
+import type { QueryParams } from '@united/pieces-common';
+import type { DynamicPropsValue } from '@united/pieces-framework';
 import type { PodioAppField } from './types';
 
 function formatFieldValues({ appFields, formData }: { appFields: PodioAppField[]; formData: DynamicPropsValue }): Record<string, unknown> {

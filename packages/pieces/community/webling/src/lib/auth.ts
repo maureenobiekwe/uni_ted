@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+import { PieceAuth, Property } from '@united/pieces-framework';
+import { httpClient, HttpMethod, HttpRequest } from '@united/pieces-common';
 
 export const weblingAuth = PieceAuth.CustomAuth({
   required: true,

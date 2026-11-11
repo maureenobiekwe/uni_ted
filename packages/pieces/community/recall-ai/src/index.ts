@@ -1,10 +1,10 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { recallAiAuth } from './lib/common/auth';
 import { createBot } from './lib/actions/create-bot';
 import { retrieveBot } from './lib/actions/retrieve-bot';
 import { sendChatMessage } from './lib/actions/send-chat-message';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@united/pieces-common';
 
 export const recallAi = createPiece({
   displayName: 'Recall.ai',

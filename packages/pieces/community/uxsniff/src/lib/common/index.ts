@@ -4,8 +4,8 @@ import {
   HttpMessageBody,
   HttpResponse,
   QueryParams,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { Property } from '@united/pieces-framework';
 import { uxsniffAuth } from '../../';
 
 const BASE_URL = 'https://api.uxsniff.com/v1';

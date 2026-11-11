@@ -5,8 +5,8 @@ import {
   MarkdownVariant,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { getAccessTokenOrThrow, HttpError } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { getAccessTokenOrThrow, HttpError } from '@united/pieces-common';
 import { typeformAuth } from '../auth';
 import { newSubmissionOutputSchema } from '../output-schemas';
 

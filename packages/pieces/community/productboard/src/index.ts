@@ -1,5 +1,5 @@
 
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { productboardAuth } from "./lib/common/auth";
 import { createFeature } from "./lib/actions/create-feature";
 import { createNote } from "./lib/actions/create-note";
@@ -8,7 +8,7 @@ import { getFeature } from "./lib/actions/get-feature";
 import { newFeature } from "./lib/triggers/new-feature";
 import { newNote } from "./lib/triggers/new-note";
 import { updatedFeature } from "./lib/triggers/updated-feature";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 
 export const productboard = createPiece({
     displayName: "Productboard",

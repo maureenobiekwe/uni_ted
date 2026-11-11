@@ -6,7 +6,7 @@ export default defineConfig({
     globals: true,
     environment: 'node',
     pool: 'forks',
-    include: [path.resolve(__dirname, 'test/**/*.test.ts')],
+    include: [path.resolve(__dirname, 'test/**/*.test.ts').replaceAll(path.sep, '/')],
   },
   resolve: {
     alias: {

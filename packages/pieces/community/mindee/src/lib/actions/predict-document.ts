@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { mindeeAuth } from '../auth';
 import { MINDEE_V1_BASE_URL, normalizeApiKey, toMindeeError, verifiedTls } from '../common/client';
 import { mindeeFiles, MindeeUpload } from '../common/file';

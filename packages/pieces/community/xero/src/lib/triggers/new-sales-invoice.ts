@@ -1,4 +1,4 @@
-import { Property, TriggerStrategy, WebhookHandshakeStrategy, createTrigger } from '@activepieces/pieces-framework';
+import { Property, TriggerStrategy, WebhookHandshakeStrategy, createTrigger } from '@united/pieces-framework';
 import { xeroAuth } from '../..';
 import { props } from '../common/props';
 import { xeroSamples } from '../common/samples';

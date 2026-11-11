@@ -2,7 +2,7 @@ import {
     Property,
     StoreScope,
     createAction,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { constructQueueName, queueNameProp, sharedNotes } from '../common';
 import { clearQueueOutputSchema } from '../output-schemas';
 

@@ -1,4 +1,4 @@
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const SIMULATED_SLACK_LATENCY_MS = 120;

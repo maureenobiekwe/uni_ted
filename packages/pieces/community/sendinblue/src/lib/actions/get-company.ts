@@ -1,5 +1,5 @@
-import { HttpError, HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { HttpError, HttpMethod } from '@united/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
 import { sendinblueAuth } from '../auth';
 import { brevoCommon } from '../common';
 import { getCompanyActionOutputSchema } from '../output-schemas';

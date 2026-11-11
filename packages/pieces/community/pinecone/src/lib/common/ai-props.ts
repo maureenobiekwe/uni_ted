@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 
 import type { PineconeCloud, PineconeDeletionProtection, PineconeMetric } from './types';
 

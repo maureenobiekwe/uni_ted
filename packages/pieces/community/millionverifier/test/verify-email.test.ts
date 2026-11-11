@@ -1,5 +1,5 @@
-import { httpClient } from '@activepieces/pieces-common';
-import { AppConnectionType, createMockActionContext } from '@activepieces/pieces-framework';
+import { httpClient } from '@united/pieces-common';
+import { AppConnectionType, createMockActionContext } from '@united/pieces-framework';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { verifyEmail } from '../src/lib/actions/verify-email';
 

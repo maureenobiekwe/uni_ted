@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty } from "@activepieces/pieces-framework";
+import { AppConnectionValueForAuthProperty } from "@united/pieces-framework";
 import { timelinesAiAuth } from ".";
 
 // Base Interfaces

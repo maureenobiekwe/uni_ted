@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createTrigger, isNil, Property, Store, TriggerStrategy } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { createTrigger, isNil, Property, Store, TriggerStrategy } from '@united/pieces-framework';
 import dayjs from 'dayjs';
 import { twitchAuth } from '../auth';
 import { HelixPage, twitchCommon, TwitchAuthValue, TwitchStream } from '../common';

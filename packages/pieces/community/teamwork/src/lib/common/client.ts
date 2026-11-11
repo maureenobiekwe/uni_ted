@@ -3,8 +3,8 @@ import {
 	httpClient,
 	HttpMethod,
 	QueryParams,
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { teamworkAuth } from './auth';
 
 const MAX_RETRIES = 5;

@@ -1,5 +1,5 @@
-import { AuthenticationType, httpClient, HttpError, HttpMethod } from '@activepieces/pieces-common';
-import { isNil, Property } from '@activepieces/pieces-framework';
+import { AuthenticationType, httpClient, HttpError, HttpMethod } from '@united/pieces-common';
+import { isNil, Property } from '@united/pieces-framework';
 import { GetField } from './types';
 
 function readVendorMessage(body: unknown): string {

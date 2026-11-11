@@ -1,5 +1,5 @@
-import { AuthenticationType, httpClient, HttpMethod } from "@activepieces/pieces-common";
-import { Property } from "@activepieces/pieces-framework";
+import { AuthenticationType, httpClient, HttpMethod } from "@united/pieces-common";
+import { Property } from "@united/pieces-framework";
 import { baseUrlv0 } from "./common";
 import { straicoAuth } from '../auth';
 

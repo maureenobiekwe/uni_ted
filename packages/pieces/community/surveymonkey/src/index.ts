@@ -2,10 +2,10 @@ import {
   createPiece,
   OAuth2PropertyValue,
   PieceAuth,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 
-import { createCustomApiCallAction, httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction, httpClient, HttpMethod } from '@united/pieces-common';
+import { PieceCategory } from '@united/pieces-framework';
 import { newResponse } from './lib/triggers/new-response';
 
 const smAuthDescription = `

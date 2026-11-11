@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { oracleDbAuth } from './lib/common/auth';
 import { insertRowAction } from './lib/actions/insert-row';
 import { insertRowsAction } from './lib/actions/insert-rows';

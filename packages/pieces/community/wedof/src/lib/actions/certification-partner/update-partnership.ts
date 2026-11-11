@@ -1,10 +1,10 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@united/pieces-common';
 import { wedofAuth } from '../../auth';
 import {
   createAction,
   Property,
   DynamicPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const updatePartnership = createAction({

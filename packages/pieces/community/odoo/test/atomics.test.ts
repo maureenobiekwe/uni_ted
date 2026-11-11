@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { createMockActionContext, OutputSchema } from '@activepieces/pieces-framework';
+import { createMockActionContext, OutputSchema } from '@united/pieces-framework';
 import { asRecord, asRecords, auth, callsTo, evalDomain, fake, fault, fieldsOf, firstArgList, kwCalls, resetFake, route, userFault } from './fake-odoo';
 import { odoo } from '../src/index';
 import { odooAtomics } from '../src/lib/actions/atomics';

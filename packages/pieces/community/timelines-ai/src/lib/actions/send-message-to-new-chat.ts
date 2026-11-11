@@ -2,7 +2,7 @@ import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { timelinesAiAuth, timelinesAiCommon } from '../common';
 import { whatsappAccountDropdown } from '../common/properties';
 

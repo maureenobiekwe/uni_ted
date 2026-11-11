@@ -4,7 +4,7 @@ import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { moxieCRMAuth } from '../auth';
 import { credentialsOf } from '../common';
 import { moxieWebhook } from '../common/webhook';

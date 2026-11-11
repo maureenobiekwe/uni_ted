@@ -2,12 +2,12 @@ import {
   ApFile,
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   HttpMessageBody,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import FormData from 'form-data';
 import { telegramCommons } from '../common';
 import { telegramBotAuth } from '../..';

@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@united/pieces-common';
+import { Property } from '@united/pieces-framework';
 import { vimeoAuth } from './auth';
 
 export async function apiRequest({

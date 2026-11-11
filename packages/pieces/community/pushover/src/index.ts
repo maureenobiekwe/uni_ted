@@ -1,5 +1,5 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceAuth, createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { sendNotification } from './lib/actions/send-notification';
 import { sendPushMessage } from './lib/actions/send-push-message';
 import { getReceiptStatus } from './lib/actions/get-receipt-status';

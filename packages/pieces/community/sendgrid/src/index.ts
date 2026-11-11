@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { addToGlobalSuppression } from './lib/actions/add-to-global-suppression';
 import { checkGlobalSuppression } from './lib/actions/check-global-suppression';
 import { createOrUpdateContact } from './lib/actions/create-or-update-contact';

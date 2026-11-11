@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, HttpRequest } from '@united/pieces-common';
 
 export const MINDEE_V2_BASE_URL = 'https://api-v2.mindee.net';
 export const MINDEE_V1_BASE_URL = 'https://api.mindee.net/v1';

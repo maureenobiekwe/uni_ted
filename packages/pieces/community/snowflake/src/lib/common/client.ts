@@ -6,7 +6,7 @@ import type {
   FileAndStageBindStatement,
   SnowflakeError,
 } from 'snowflake-sdk';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 import { loadSnowflakeSdk } from './sdk';
 import { normalizePrivateKey } from './private-key';
 

@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { snowflakeAuth } from '../../auth';
 import { toAuthValue, withSnowflake } from '../../common';
 import { mapView } from '../../common/mappers';

@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { quickzuAuth } from '../../auth';
 import { quickzuOutputSchemas } from '../../common/output-schemas';
 import { makeClient, quickzuCommon, requireValue } from '../../common';

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { postgresAuth } from '../../../auth';
 import { postgresAi } from '../../../ai-common';
 import { postgresGetViewDefinitionOutputSchema } from '../../../output-schemas';

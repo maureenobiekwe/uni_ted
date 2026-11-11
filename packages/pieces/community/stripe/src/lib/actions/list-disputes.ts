@@ -1,10 +1,10 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { stripeAuth } from '../..';
 import { stripeCommon } from '../common';
 

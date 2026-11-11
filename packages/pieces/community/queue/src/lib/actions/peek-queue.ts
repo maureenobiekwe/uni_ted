@@ -1,4 +1,4 @@
-import { Property, Store, createAction } from '@activepieces/pieces-framework';
+import { Property, Store, createAction } from '@united/pieces-framework';
 import { constructQueueName, queueNameProp, readQueue, sharedNotes, validateItemCount } from '../common';
 import { peekQueueOutputSchema } from '../output-schemas';
 

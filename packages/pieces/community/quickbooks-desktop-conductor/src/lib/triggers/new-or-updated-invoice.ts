@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import { quickbooksDesktopConductorAuth } from '../auth';
 import { ConductorAuth } from '../common/client';
 import { fetchAllUpdatedSince } from '../common/polling';

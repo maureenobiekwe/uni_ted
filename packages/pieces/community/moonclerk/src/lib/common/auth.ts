@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
+import { PieceAuth } from '@united/pieces-framework';
 
 export const moonclerkAuth = PieceAuth.SecretText({
   displayName: 'API Key',

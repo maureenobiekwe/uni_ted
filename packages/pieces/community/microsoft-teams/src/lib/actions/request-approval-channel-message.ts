@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { microsoftTeamsAuth } from '../auth';
 import { microsoftTeamsProps } from '../common/props';
 import { microsoftTeamsClient } from '../common/client';
-import { assertNotNullOrUndefined } from '@activepieces/pieces-framework';
-import { ExecutionType } from '@activepieces/pieces-framework';
+import { assertNotNullOrUndefined } from '@united/pieces-framework';
+import { ExecutionType } from '@united/pieces-framework';
 import type { ChatMessage } from '../common/types';
 import { requestApprovalDirectMessageOutputSchema } from '../output-schemas';
 

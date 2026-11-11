@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { createAction } from '@united/pieces-framework';
 import { parseurAuth } from '../../auth';
 import { parseurClient } from '../../common/client';
 import type { ParseurRecord } from '../../common/types';

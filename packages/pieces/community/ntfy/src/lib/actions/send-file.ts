@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { ntfyAuth } from '../auth';
 import { ntfyClient, NtfyMessage } from '../common/client';
 import { ntfyProps } from '../common/props';

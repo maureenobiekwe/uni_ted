@@ -1,5 +1,5 @@
 import { Readable } from 'node:stream';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { isRecord } from './client';
 import { mindeeNetwork } from './network-guard';
 

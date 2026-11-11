@@ -2,8 +2,8 @@ import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { makeRequest } from '../common/client';
 import { webexAuth } from '../common/auth';
 import { fetchRooms, roomIdDropdown } from '../common/props';

@@ -1,4 +1,4 @@
-import type { AppConnectionType } from '@activepieces/pieces-framework';
+import type { AppConnectionType } from '@united/pieces-framework';
 
 import type { Schemas } from '@qdrant/js-client-rest';
 

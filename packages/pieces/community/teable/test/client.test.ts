@@ -4,8 +4,8 @@ import { PAT_AUTH, patAuthWithBaseUrl } from './helpers';
 
 const sendRequest = vi.fn();
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-	const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+	const actual = await importOriginal<typeof import('@united/pieces-common')>();
 	return {
 		...actual,
 		httpClient: {
@@ -108,7 +108,7 @@ describe('listRecordsPaged', () => {
 
 describe('deleteRecord', () => {
 	it('maps a 404 to a clear error without leaking the token', async () => {
-		const { HttpError } = await import('@activepieces/pieces-common');
+		const { HttpError } = await import('@united/pieces-common');
 		sendRequest.mockRejectedValueOnce(
 			new HttpError({ secret: 'request' }, { status: 404, responseBody: { message: 'not found' } })
 		);
@@ -126,7 +126,7 @@ describe('deleteRecord', () => {
 	});
 
 	it('rethrows other errors untouched', async () => {
-		const { HttpError } = await import('@activepieces/pieces-common');
+		const { HttpError } = await import('@united/pieces-common');
 		sendRequest.mockRejectedValueOnce(new HttpError({}, { status: 500, responseBody: {} }));
 		await expect(
 			teableClient.deleteRecord({ auth: PAT_AUTH, tableId: 'tbl1', recordId: 'rec1' })

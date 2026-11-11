@@ -1,4 +1,4 @@
-import { httpClient, HttpError, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpError, HttpMethod } from '@united/pieces-common';
 import { supadataConfig } from '../config';
 
 async function request({ apiKey, method, path, query, body }: RequestParams): Promise<unknown> {

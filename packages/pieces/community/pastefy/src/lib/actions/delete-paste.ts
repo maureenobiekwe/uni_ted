@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { pastefyAiProps } from '../common/ai-props';
 import { pastefyAuth } from '../common/auth';
 import { pastefyOutputSchemas } from '../common/output-schemas';

@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { pollingHelper } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
+import { pollingHelper } from '@united/pieces-common';
 import { ninjapipeAuth } from '../auth';
 import { ninjapipeSchemas } from '../output-schemas';
 import { ninjapipePolling } from './common';

@@ -1,6 +1,6 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 import { sendpulseApiCall } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 
 export const sendpulseAuth = PieceAuth.CustomAuth({
   description: 'Enter your SendPulse client credentials',

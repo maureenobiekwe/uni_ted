@@ -1,4 +1,4 @@
-import { HttpHeaders, HttpMethod, httpClient, QueryParams } from '@activepieces/pieces-common';
+import { HttpHeaders, HttpMethod, httpClient, QueryParams } from '@united/pieces-common';
 
 import type { RaindropAuthValue } from './types';
 

@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { pinterestAuth } from '../common/auth';
-import { getAccessTokenOrThrow } from '@activepieces/pieces-common';
+import { getAccessTokenOrThrow } from '@united/pieces-common';
 import { pinterestOperations } from '../common/operations';
 import { adAccountIdDropdown } from '../common/props';
 import { findBoardByNameActionOutputSchema } from '../output-schemas';

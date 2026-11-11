@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 
 import { webscrapingAiAuth } from '../../auth';
 import { webscrapingAiAiProps } from '../../common/ai-props';

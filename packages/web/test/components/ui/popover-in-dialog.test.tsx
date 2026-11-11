@@ -82,9 +82,9 @@ describe('popovers inside dialogs', () => {
 describe('popover portals', () => {
   it('never render into a container that could clip them', () => {
     const offenders = sourceFiles(SRC)
-      .filter((file) => !CONTAINER_ALLOWED.has(path.relative(SRC, file)))
+      .filter((file) => !CONTAINER_ALLOWED.has(path.relative(SRC, file).replaceAll(path.sep, '/')))
       .filter((file) => PORTAL_INTO_CONTAINER.test(readFileSync(file, 'utf8')))
-      .map((file) => path.relative(SRC, file));
+      .map((file) => path.relative(SRC, file).replaceAll(path.sep, '/'));
     expect(offenders).toEqual([]);
   });
 });

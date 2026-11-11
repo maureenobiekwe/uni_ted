@@ -1,7 +1,7 @@
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework'
-import { httpClient, HttpRequest, HttpMethod } from '@activepieces/pieces-common'
+import { TriggerStrategy, createTrigger } from '@united/pieces-framework'
+import { httpClient, HttpRequest, HttpMethod } from '@united/pieces-common'
 import { SURVEYTALE_BASE_URL, surveyTaleAuth } from '../auth'
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@united/pieces-framework';
 import { surveyIdProp } from '../common/props'
 
 export const surveyTaleRegisterTrigger = ({

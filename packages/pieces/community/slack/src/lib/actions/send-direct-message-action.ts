@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { buildFlowOriginContextBlock, slackSendMessage, textToSectionBlocks } from '../common/utils';
 import { slackAuth } from '../auth';
-import { assertNotNullOrUndefined } from '@activepieces/pieces-framework';
+import { assertNotNullOrUndefined } from '@united/pieces-framework';
 import { profilePicture, userId, username, blocks, mentionOriginFlow, iconEmoji, unfurlLinks } from '../common/props';
 import { Block,KnownBlock } from '@slack/web-api';
 import { getBotToken, SlackAuthValue } from '../common/auth-helpers';

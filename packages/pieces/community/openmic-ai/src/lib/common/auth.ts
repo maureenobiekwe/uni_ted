@@ -1,7 +1,7 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 import { makeRequest } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { AppConnectionType } from '@united/pieces-framework';
 
 export const openmicAiAuth = PieceAuth.SecretText({
   displayName: 'Openmic AI API Key',

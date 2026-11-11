@@ -1,6 +1,6 @@
 export { mysqlAuth } from './lib/auth';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { mysqlAuth } from './lib/auth';
 import actions from './lib/actions';
 import { mysqlAiActions } from './lib/actions/ai';

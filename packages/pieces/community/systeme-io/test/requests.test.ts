@@ -28,8 +28,8 @@ import { newOptIn } from '../src/lib/triggers/new-opt-in';
 import { newTagAddedToContact } from '../src/lib/triggers/new-tag-added-to-contact';
 import { contactTagRemoved } from '../src/lib/triggers/contact-tag-removed';
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@united/pieces-common')>();
   return {
     ...actual,
     httpClient: { sendRequest: (...args: unknown[]) => sendRequest(...args) },

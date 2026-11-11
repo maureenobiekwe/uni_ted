@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { sendfoxAuth } from '../../../auth';
 import { sendfoxApi } from '../../../common/api';
 import { createContactOutputSchema } from '../../../output-schemas';

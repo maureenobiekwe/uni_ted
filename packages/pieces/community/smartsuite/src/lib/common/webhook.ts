@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@united/pieces-common';
 import { API_ENDPOINTS } from './constants';
 import { smartSuiteClient, SmartSuiteCredentials } from './client';
 

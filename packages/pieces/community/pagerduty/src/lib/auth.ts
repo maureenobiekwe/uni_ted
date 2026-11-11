@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { HttpMethod, httpClient } from '@united/pieces-common';
+import { PieceAuth } from '@united/pieces-framework';
 import { PAGERDUTY_API_BASE_URL, pagerDutyHeaders } from './common/client';
 
 export const pagerDutyAuth = PieceAuth.SecretText({

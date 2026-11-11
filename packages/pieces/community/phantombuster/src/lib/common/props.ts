@@ -1,6 +1,6 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { makeRequest } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { phantombusterAuth } from './auth';
 
 export const agentIdDropdown = Property.Dropdown({

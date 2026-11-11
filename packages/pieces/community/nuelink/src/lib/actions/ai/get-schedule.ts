@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { createAction } from '@united/pieces-framework';
 import { nuelinkAuths } from '../../auth';
 import { nuelinkAiProps } from '../../common/ai-props';
 import { nuelinkOutputSchemas } from '../../output-schemas';

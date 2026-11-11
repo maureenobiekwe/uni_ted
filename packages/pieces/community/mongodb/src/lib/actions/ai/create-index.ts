@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import type { Document } from 'mongodb';
 import { mongodbAuth } from '../../auth';
 import { mongodbAiProps } from '../../common/ai-props';

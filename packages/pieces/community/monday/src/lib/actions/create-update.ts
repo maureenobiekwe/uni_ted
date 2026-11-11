@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@united/pieces-framework';
 import { mondayAuth } from '../auth';
 import { makeClient } from '../common';
 import { createUpdateActionOutputSchema } from '../output-schemas';

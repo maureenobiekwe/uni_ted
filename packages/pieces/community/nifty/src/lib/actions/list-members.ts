@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { niftyAuth } from '../auth';
 import { listMembers as fetchMembers } from '../common';
 import { listMembersOutputSchema } from '../output-schemas';

@@ -1,4 +1,4 @@
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+import { OutputSchema, OutputSchemaField } from '@united/pieces-framework';
 
 const statusDescription = 'PandaDoc status, for example document.draft, document.sent, document.completed or document.voided.';
 

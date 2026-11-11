@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { Property, createAction } from '@united/pieces-framework';
 import { moxieCRMAuth } from '../auth';
 import { credentialsOf } from '../common';
 import { moxieRequest, multipartFileBody } from '../common/client';

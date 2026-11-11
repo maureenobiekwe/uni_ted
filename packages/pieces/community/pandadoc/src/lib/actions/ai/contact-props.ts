@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { pandadocInputs } from '../../common/inputs';
 
 export function contactBody(values: Record<string, unknown>): Record<string, string> {

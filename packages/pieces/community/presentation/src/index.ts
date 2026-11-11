@@ -13,13 +13,13 @@ import { listSmartDesigns } from './lib/actions/ai/list-smart-designs';
 import { listStandardTemplates } from './lib/actions/ai/list-standard-templates';
 import { uploadImage } from './lib/actions/ai/upload-image';
 import { uploadSourceFiles } from './lib/actions/ai/upload-source-files';
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { generatePresentations } from './lib/actions/generate-presentations';
 
 import { presentonAuth } from './lib/common/auth';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { newPresentation } from './lib/triggers/new-presentation';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@united/pieces-common';
 
 export const presentation = createPiece({
   displayName: 'Presenton',

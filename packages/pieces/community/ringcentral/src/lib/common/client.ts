@@ -5,8 +5,8 @@ import {
   HttpRequest,
   QueryParams,
   httpClient,
-} from '@activepieces/pieces-common';
-import { OAuth2PropertyValue } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { OAuth2PropertyValue } from '@united/pieces-framework';
 
 export const ringcentralCommon = {
   getServerUrl,

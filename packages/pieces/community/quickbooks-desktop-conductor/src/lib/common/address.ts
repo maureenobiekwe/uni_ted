@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { spreadIfDefined } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
+import { spreadIfDefined } from '@united/pieces-framework';
 
 export type ConductorAddress = {
   line1?: string;

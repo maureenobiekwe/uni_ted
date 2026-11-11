@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy, Property } from '@united/pieces-framework';
 import { promotekitAuth } from '../..';
 import { promotekitApiCall, promotekitCommon } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 
 export const newCommissionEvent = createTrigger({
   auth: promotekitAuth,

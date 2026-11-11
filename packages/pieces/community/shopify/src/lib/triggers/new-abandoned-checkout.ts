@@ -2,13 +2,13 @@ import {
   Polling,
   DedupeStrategy,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import {
   Store,
   TriggerStrategy,
   createTrigger,
   isNil,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { ABANDONED_CHECKOUTS_PAGE_LIMIT, getAbandonedCheckouts } from '../common';
 import { shopifyAuth } from '../..';
 import { ShopifyAuth, ShopifyCheckout } from '../common/types';

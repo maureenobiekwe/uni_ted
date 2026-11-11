@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { API_KEY, BASE, fail, memoryStore, ok, request, runAction, runHook, sendRequest, sign } from './helpers';
 import { systemeIoCommon, systemeIoInput } from '../src/lib/common/client';
 import { contactDropdownOptions } from '../src/lib/common/dropdowns';
@@ -19,8 +19,8 @@ import { newTagAddedToContact } from '../src/lib/triggers/new-tag-added-to-conta
 import { contactTagRemoved } from '../src/lib/triggers/contact-tag-removed';
 import { newOptIn } from '../src/lib/triggers/new-opt-in';
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@united/pieces-common')>();
   return {
     ...actual,
     httpClient: { sendRequest: (...args: unknown[]) => sendRequest(...args) },

@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, Property } from '@activepieces/pieces-framework';
+import { AppConnectionValueForAuthProperty, Property } from '@united/pieces-framework';
 import { quickzuAuth } from '../auth';
 import { QuickzuAPIClient } from './client';
 

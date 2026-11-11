@@ -1,4 +1,4 @@
-import type { QueryParams } from '@activepieces/pieces-common';
+import type { QueryParams } from '@united/pieces-common';
 
 import type {
 	WorkdayBusinessObject,

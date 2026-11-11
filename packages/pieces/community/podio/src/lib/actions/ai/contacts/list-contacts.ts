@@ -1,5 +1,5 @@
-import { HttpMethod, QueryParams } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { HttpMethod, QueryParams } from '@united/pieces-common';
+import { createAction } from '@united/pieces-framework';
 import { podioAuth } from '../../../auth';
 import { podioAiProps } from '../../../common/ai-props';
 import { podioClient } from '../../../common/client';

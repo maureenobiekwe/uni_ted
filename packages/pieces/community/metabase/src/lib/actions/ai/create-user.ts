@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { metabaseApi } from '../../api';
 import { metabaseAuth } from '../../auth';
 import { metabaseCreateUserOutputSchema } from '../../output-schemas';

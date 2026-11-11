@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { slackAuth } from '../auth';
 import { updateProfileAction } from './update-profile';
 import { updateProfileActionOutputSchema } from '../output-schemas';

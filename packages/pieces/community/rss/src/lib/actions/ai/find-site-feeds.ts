@@ -1,4 +1,4 @@
-import { createAction, PieceAuth, Property, tryCatch } from '@activepieces/pieces-framework';
+import { createAction, PieceAuth, Property, tryCatch } from '@united/pieces-framework';
 
 import { rssFeedClient } from '../../common/feed-client';
 import { rssFindSiteFeedsOutputSchema } from '../../output-schemas';

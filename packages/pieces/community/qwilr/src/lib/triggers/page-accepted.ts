@@ -1,5 +1,5 @@
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { TriggerStrategy, createTrigger } from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { qwilrAuth } from '../../lib/common/auth';
 
 const subscribeWebhook = async (auth: string, event: string, targetUrl: string) => {

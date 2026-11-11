@@ -4,8 +4,8 @@ import {
   HttpRequest,
   HttpMessageBody,
   QueryParams,
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { wufooAuth } from '../auth';
 
 export type WufooAuthProps = AppConnectionValueForAuthProperty<typeof wufooAuth>;

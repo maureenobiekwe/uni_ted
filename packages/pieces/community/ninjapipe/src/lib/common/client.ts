@@ -1,4 +1,4 @@
-import { AuthenticationType, HttpMethod, HttpRequest, httpClient } from '@activepieces/pieces-common';
+import { AuthenticationType, HttpMethod, HttpRequest, httpClient } from '@united/pieces-common';
 
 const MAX_PAGE_SIZE = 100;
 const RETURN_ALL_MAX_ITEMS = 5000;

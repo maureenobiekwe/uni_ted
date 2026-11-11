@@ -4,7 +4,7 @@ import {
   HttpMessageBody,
   HttpResponse,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { getQawafelBaseUrl, QawafelAuth } from './auth';
 
 export async function qawafelApiCall<T extends HttpMessageBody>({

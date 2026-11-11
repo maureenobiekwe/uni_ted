@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { makeRequest } from '../common/client';
 import { waitwhileAuth } from '../common/auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 export const newOrUpdatedVisit = createTrigger({
   auth: waitwhileAuth,
   name: 'newOrUpdatedVisit',

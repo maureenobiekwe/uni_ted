@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { OAuth2PropertyValue } from '@united/pieces-framework';
 import { getGraphBaseUrl, getMicrosoftCloudFromAuth } from './microsoft-cloud';
 
 const textBodyHeaders: Record<string, string> = {

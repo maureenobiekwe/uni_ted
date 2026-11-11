@@ -1,5 +1,5 @@
-import { propsValidation } from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+import { propsValidation } from '@united/pieces-common';
+import { Property } from '@united/pieces-framework';
 import * as z from 'zod/mini';
 
 function pageProp() {

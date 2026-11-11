@@ -1,4 +1,4 @@
-import { createAction, InputPropertyMap, Property } from '@activepieces/pieces-framework';
+import { createAction, InputPropertyMap, Property } from '@united/pieces-framework';
 import sql from 'mssql';
 import { mssqlAuth } from '../auth';
 import { mssqlCommon, MssqlColumnDetail } from '../common';

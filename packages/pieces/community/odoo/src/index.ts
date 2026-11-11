@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import actions from './lib/actions';
 import { odooAtomics } from './lib/actions/atomics';
 import { odooAuth } from './lib/auth';

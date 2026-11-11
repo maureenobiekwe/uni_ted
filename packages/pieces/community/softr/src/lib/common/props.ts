@@ -1,5 +1,5 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { DynamicPropsValue, Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { softrClient } from './client';
 import { SoftrAuth } from './auth';
 import { SoftrDatabase, SoftrListResponse, SoftrTable, TableField } from './types';

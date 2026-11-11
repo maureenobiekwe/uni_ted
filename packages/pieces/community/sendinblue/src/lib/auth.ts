@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 
 export const sendinblueAuth = PieceAuth.SecretText({
 	displayName: 'API Key',

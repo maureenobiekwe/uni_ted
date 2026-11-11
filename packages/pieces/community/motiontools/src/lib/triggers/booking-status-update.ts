@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { motiontoolsAuth } from '../common/auth';
 export const bookingStatusUpdate = createTrigger({
   auth: motiontoolsAuth,

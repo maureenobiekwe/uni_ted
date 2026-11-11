@@ -1,10 +1,10 @@
-import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@united/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import { vtigerAuth } from '../auth';

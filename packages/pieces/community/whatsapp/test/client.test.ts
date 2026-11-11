@@ -1,6 +1,6 @@
 /// <reference types="vitest/globals" />
 
-import { httpClient, HttpMethod, HttpRequest, HttpResponse } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, HttpRequest, HttpResponse } from '@united/pieces-common';
 import { whatsappClient } from '../src/lib/common/client';
 import { WHATSAPP_API_BASE } from '../src/lib/common/utils';
 

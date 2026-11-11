@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { Property, createAction } from '@united/pieces-framework';
 import { vtigerAuth } from '../../auth';
 import { recordIdProp, recordList, requiredText } from '../../ai-common';
 import { recordListSchema } from '../../output-schemas';

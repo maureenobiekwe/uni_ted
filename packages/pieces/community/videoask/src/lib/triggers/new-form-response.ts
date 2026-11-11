@@ -1,8 +1,8 @@
 
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@united/pieces-framework';
 import { organizationIdDropdown, videoaskIdDropdown } from '../common/props';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { videoaskAuth } from '../common/auth';
 export const newFormResponse = createTrigger({
     auth: videoaskAuth,

@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { tryCatch, spreadIfDefined } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { tryCatch, spreadIfDefined } from '@united/pieces-framework';
 import { quickbooksDesktopConductorAuth } from '../auth';
 import { conductorClient, withStaleRevisionRetry, withRecordLockRetry, ConductorAuth } from '../common/client';
 import { ConductorApiError } from '../common/errors';

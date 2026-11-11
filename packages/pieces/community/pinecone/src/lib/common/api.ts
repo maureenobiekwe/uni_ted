@@ -1,5 +1,5 @@
-import { HttpError, HttpMethod, QueryParams } from '@activepieces/pieces-common';
-import { tryCatch } from '@activepieces/pieces-framework';
+import { HttpError, HttpMethod, QueryParams } from '@united/pieces-common';
+import { tryCatch } from '@united/pieces-framework';
 
 import { pineconeClient } from './client';
 

@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { ninjapipe } from '../src';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { NinjaPipeApiError, ninjapipeClient, ninjapipeClock } from '../src/lib/common/client';
 import { page, request, runAction, stubFetch } from './helpers';
 

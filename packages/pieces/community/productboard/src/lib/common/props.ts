@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod, HttpResponse } from '@activepieces/pieces-common';
+import { Property } from '@united/pieces-framework';
+import { HttpMethod, HttpResponse } from '@united/pieces-common';
 import { productboardCommon } from './client';
 import { productboardAuth } from './auth';
 

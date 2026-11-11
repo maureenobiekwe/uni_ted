@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 
 export const PRIORITY_OPTIONS = [
   { label: '1 - Min', value: 1 },

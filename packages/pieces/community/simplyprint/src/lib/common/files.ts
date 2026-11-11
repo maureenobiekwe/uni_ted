@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue } from '@activepieces/pieces-framework';
+import { OAuth2PropertyValue } from '@united/pieces-framework';
 
 import { simplyprintSession } from '../auth';
 import { BASE_URL } from './base-url';

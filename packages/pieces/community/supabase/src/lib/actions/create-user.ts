@@ -1,4 +1,4 @@
-import { createAction, MarkdownVariant, Property } from '@activepieces/pieces-framework';
+import { createAction, MarkdownVariant, Property } from '@united/pieces-framework';
 import { createClient } from '@supabase/supabase-js';
 import { supabaseAuth } from '../auth';
 import { createUserActionOutputSchema } from '../output-schemas';

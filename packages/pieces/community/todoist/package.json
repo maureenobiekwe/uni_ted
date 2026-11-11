@@ -1,5 +1,5 @@
 {
-  "name": "@activepieces/piece-todoist",
+  "name": "@united/piece-todoist",
   "version": "0.6.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
@@ -10,11 +10,11 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@activepieces/pieces-common": "workspace:*",
-    "@activepieces/pieces-framework": "workspace:*",
+    "@united/pieces-common": "workspace:*",
+    "@united/pieces-framework": "workspace:*",
     "dayjs": "1.11.9",
-    "@activepieces/core-piece-types": "workspace:*",
-    "@activepieces/core-utils": "workspace:*"
+    "@united/core-piece-types": "workspace:*",
+    "@united/core-utils": "workspace:*"
   },
   "devDependencies": {
     "tslib": "2.6.2",

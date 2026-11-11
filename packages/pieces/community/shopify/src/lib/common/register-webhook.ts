@@ -1,9 +1,9 @@
-import { HttpError, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { HttpError, httpClient, HttpMethod } from '@united/pieces-common';
 import {
   createTrigger,
   isNil,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   SHOPIFY_API_VERSION,
   ShopifyAuth,

@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@united/pieces-framework';
 import { quickbooksAuth } from '../lib/auth'; // Correct path relative to actions/find-payment.ts
 import { quickbooksQuery, QuickbooksEntityResponse } from '../lib/common';
 

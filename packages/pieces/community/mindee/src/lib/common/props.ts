@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { mindeeAuth } from '../auth';
 import { mindeeApi } from './api';
 import { MindeeProduct } from './inference';

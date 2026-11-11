@@ -1,4 +1,4 @@
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+import { OutputSchema, OutputSchemaField } from '@united/pieces-framework';
 
 const usageFields: OutputSchemaField[] = [
   { key: 'credits', label: 'Credits Used', format: 'number', description: 'Credits this call spent.' },

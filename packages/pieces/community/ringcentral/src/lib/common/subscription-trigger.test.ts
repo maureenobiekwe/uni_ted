@@ -1,4 +1,4 @@
-import { DEDUPE_KEY_PROPERTY } from '@activepieces/pieces-framework';
+import { DEDUPE_KEY_PROPERTY } from '@united/pieces-framework';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { createSubscriptionTrigger } from './subscription-trigger';

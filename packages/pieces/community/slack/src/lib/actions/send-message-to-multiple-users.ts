@@ -1,4 +1,4 @@
-import { createAction, InputPropertyMap, Property } from '@activepieces/pieces-framework';
+import { createAction, InputPropertyMap, Property } from '@united/pieces-framework';
 import { Block, KnownBlock } from '@slack/web-api';
 import { slackAuth } from '../auth';
 import { getBotToken, SlackAuthValue } from '../common/auth-helpers';

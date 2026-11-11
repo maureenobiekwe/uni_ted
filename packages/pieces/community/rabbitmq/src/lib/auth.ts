@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+import { PieceAuth, Property } from '@united/pieces-framework';
 import { rabbitmqCommon } from './common';
 
 export const rabbitmqAuth = PieceAuth.CustomAuth({

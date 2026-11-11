@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { createAction, OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
+import { createAction, OAuth2PropertyValue, Property } from '@united/pieces-framework';
 import { trueLayerCommon } from '../../common';
 
 export const getPaymentLinkPayments = createAction({

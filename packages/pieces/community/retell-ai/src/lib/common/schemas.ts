@@ -1,4 +1,4 @@
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+import { OutputSchema, OutputSchemaField } from '@united/pieces-framework';
 
 function pageSchema({ label, labelKey, itemFields }: { label: string; labelKey: string; itemFields: OutputSchemaField[] }): OutputSchema {
   return {

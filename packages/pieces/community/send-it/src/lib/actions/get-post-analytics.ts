@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { sendItAuth } from '../common/auth';
 import { apiKeyOf } from '../common/client';
 import { sendItOutputSchemas } from '../common/output-schemas';

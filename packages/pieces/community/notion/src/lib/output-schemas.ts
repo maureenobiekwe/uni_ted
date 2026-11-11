@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 export const notionPageFields: OutputSchema['fields'] = [
   { key: 'title', label: 'Title', value: 'title' },

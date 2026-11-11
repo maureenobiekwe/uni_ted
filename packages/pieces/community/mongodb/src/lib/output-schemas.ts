@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const updateResultFields: OutputSchema['fields'] = [
   { key: 'matchedCount', label: 'Matched Count', format: 'number' },

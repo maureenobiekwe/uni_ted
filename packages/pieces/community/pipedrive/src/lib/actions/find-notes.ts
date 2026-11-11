@@ -1,8 +1,8 @@
 import { pipedriveAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import {  pipedrivePaginatedV1ApiCall } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { isNil } from '@united/pieces-framework';
 import { findNotesActionOutputSchema } from '../output-schemas';
 
 export const findNotesAction = createAction({

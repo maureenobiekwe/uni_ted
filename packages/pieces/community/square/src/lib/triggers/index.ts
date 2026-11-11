@@ -1,6 +1,6 @@
 import crypto from 'crypto';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { DEDUPE_KEY_PROPERTY, Property, TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { DEDUPE_KEY_PROPERTY, Property, TriggerStrategy, createTrigger } from '@united/pieces-framework';
 import { squareAuth } from '../auth';
 import { squareClient, SquareApiError, SquareAuth } from '../common/client';
 import { squareProps } from '../common/props';

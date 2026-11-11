@@ -1,6 +1,6 @@
-import { createAction, MarkdownVariant, Property } from '@activepieces/pieces-framework';
+import { createAction, MarkdownVariant, Property } from '@united/pieces-framework';
 import { sendBroadcastOutputSchema } from '../output-schemas';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { resendAuth } from '../..';
 import { resendClient } from '../common/client';
 import { resendProps } from '../common/props';

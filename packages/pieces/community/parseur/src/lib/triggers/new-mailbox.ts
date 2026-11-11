@@ -2,8 +2,8 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { parseurAuth } from '../auth';
 import { parseurApi } from '../common/api';
 import type { ParseurAuthValue } from '../common/types';

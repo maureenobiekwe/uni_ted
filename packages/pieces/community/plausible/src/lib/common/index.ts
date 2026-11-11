@@ -3,8 +3,8 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { Property } from '@united/pieces-framework';
 import { plausibleAuth } from '../..';
 
 export const plausibleCommon = {

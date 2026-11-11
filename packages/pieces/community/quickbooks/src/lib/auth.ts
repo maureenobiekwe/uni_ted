@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { PieceAuth, Property } from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { quickbooksCommon } from './common';
 
 export const quickbooksAuth = PieceAuth.OAuth2({

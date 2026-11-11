@@ -1,4 +1,4 @@
-import { createTrigger, isNil, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, isNil, Property, TriggerStrategy } from '@united/pieces-framework';
 import { smartleadAuth } from '../auth';
 import { smartleadOperations, SMARTLEAD_WEBHOOK_EVENTS } from '../common/operations';
 import { smartleadOutputSchemas } from '../common/output-schemas';

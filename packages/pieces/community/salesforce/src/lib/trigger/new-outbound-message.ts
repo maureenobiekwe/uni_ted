@@ -3,7 +3,7 @@ import {
     Property,
     TriggerStrategy,
     createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { XMLParser } from 'fast-xml-parser';
 import { salesforceAuth } from '../..';
 import { newOutboundMessageTriggerOutputSchema } from '../output-schemas';

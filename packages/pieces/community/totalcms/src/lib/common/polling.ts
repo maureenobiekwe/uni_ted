@@ -1,4 +1,4 @@
-import { Store } from '@activepieces/pieces-framework';
+import { Store } from '@united/pieces-framework';
 import { totalcmsApi, totalcmsHelpers, TotalCmsConnection } from './client';
 
 const PAGE_SIZE = 100;

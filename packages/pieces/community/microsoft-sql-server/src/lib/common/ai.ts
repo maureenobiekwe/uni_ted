@@ -1,4 +1,4 @@
-import { isNil, Property } from '@activepieces/pieces-framework';
+import { isNil, Property } from '@united/pieces-framework';
 import sql from 'mssql';
 import { MssqlAuth, MssqlColumn, MssqlTable, mssqlCommon } from '.';
 import { cursorUtils } from './cursor';

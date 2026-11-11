@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { XeroApiError, xeroApi, xeroInput } from '../src/lib/common/client';
 import { aiInput } from '../src/lib/common/ai-props';
 import { requestedHeaders, requestedUrl, stubFetch, stubFetchSequence } from './helpers';

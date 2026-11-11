@@ -2,10 +2,10 @@ import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { tenzoApiCall } from './client';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 
 const TENZO_SCOPES = [
   'tenzo/area:read',

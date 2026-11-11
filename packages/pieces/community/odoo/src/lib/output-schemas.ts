@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const m2o = ({ key, label }: { key: string; label: string }): OutputSchema['fields'] => [
   { key, label: `${label} ID`, format: 'number' },

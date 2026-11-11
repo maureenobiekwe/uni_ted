@@ -3,13 +3,13 @@ import {
   Polling,
   pollingHelper,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
   StaticPropsValue,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { produktlyApiCall } from '../common/client';
 import { produktlyAuth } from '../common/auth';
 import { produktlyProps } from '../common/props';

@@ -1,6 +1,6 @@
 
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 
 import { createMemory } from './lib/actions/memory/create-memory';
 import { createMessage } from './lib/actions/messaging/create-message';

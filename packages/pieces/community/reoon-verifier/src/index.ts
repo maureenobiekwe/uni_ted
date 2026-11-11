@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@united/pieces-framework';
 import { verifyEmail } from './lib/actions/verify-email';
 import { verifySingleEmail } from './lib/common/send-util';
-import { HttpError } from '@activepieces/pieces-common';
+import { HttpError } from '@united/pieces-common';
 import { bulkEmailVerification } from './lib/actions/bulk-email-verification';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { bulkVerificationResult } from './lib/actions/bulk-email-verification-status';
 import { verifyEmailAddress } from './lib/actions/verify-email-address';
 import { createBulkEmailVerification } from './lib/actions/create-bulk-email-verification';

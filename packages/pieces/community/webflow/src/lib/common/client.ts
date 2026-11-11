@@ -1,4 +1,4 @@
-import { AuthenticationType, httpClient, HttpHeaders, HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { AuthenticationType, httpClient, HttpHeaders, HttpMethod, QueryParams } from '@united/pieces-common';
 import type { WebflowAuthValue } from './types';
 
 function baseUrl(): string {

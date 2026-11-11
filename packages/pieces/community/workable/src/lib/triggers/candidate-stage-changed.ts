@@ -1,4 +1,4 @@
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@united/pieces-framework';
 import { workableAuth } from '../auth';
 import { accountSubdomainProp } from '../common/props';
 import { workableSchemas } from '../common/schemas';

@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { opnformAuth } from '../auth';
 import { opnformApi } from '../common/api';
 import { opnformProps } from '../common/props';

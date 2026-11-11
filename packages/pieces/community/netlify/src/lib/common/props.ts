@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { DropdownState, Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { DropdownState, Property } from '@united/pieces-framework';
 import { netlifyAuth } from './auth';
 import { netlifyClient, NetlifyAuthValue } from './client';
 

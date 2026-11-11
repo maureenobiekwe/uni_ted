@@ -5,7 +5,7 @@ import {
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { WHATSAPP_API_BASE } from './utils';
 
 async function request<T = Record<string, unknown>>({

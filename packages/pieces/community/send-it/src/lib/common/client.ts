@@ -1,4 +1,4 @@
-import { HttpMethod, HttpRequest, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, HttpRequest, httpClient } from '@united/pieces-common';
 
 export const SENDIT_ORIGIN = 'https://sendit.infiniteappsai.com';
 

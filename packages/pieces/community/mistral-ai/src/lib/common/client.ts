@@ -1,5 +1,5 @@
-import { HttpError, HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/pieces-framework';
+import { HttpError, HttpMethod, httpClient } from '@united/pieces-common';
+import { isNil } from '@united/pieces-framework';
 import { Stream } from 'stream';
 import { MistralAuthValue, mistralRequest } from './request';
 

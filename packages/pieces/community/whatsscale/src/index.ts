@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { whatsscaleAuth } from './lib/auth';
 
 // Human — messaging actions with a dropdown-picked recipient (covered by an ai/ atomic)
@@ -82,7 +82,7 @@ import { watchGroupMessagesTrigger } from './lib/triggers/watch-group-messages';
 import { watchChannelMessagesTrigger } from './lib/triggers/watch-channel-messages';
 import { watchSpecificGroupMessagesTrigger } from './lib/triggers/watch-specific-group-messages';
 import { watchSpecificChannelMessagesTrigger } from './lib/triggers/watch-specific-channel-messages';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@united/pieces-common';
 
 export const whatsscale = createPiece({
   displayName: 'WhatsScale',

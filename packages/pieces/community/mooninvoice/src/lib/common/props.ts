@@ -1,7 +1,7 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { getAccessToken, makeRequest } from './client';
 import { mooninvoiceAuth } from './auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 
 export const companyIdProp = Property.Dropdown({
   auth: mooninvoiceAuth,

@@ -3,7 +3,7 @@ import {
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 
 export const VISIBLE_BASE_URL = 'https://api.visible.vc';
 

@@ -4,8 +4,8 @@ import {
   HttpRequest,
   httpClient,
   toFailsafeOutput,
-} from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { createAction } from '@united/pieces-framework';
 import { posthogAuth } from '../auth';
 import { posthogClient, PostHogAuthValue } from '../common/client';
 

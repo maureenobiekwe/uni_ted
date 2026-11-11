@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { createAction } from '@united/pieces-framework';
 import { wooAuth } from '../../auth';
 import { wooClient } from '../../common/client';
 import { listPaymentGatewaysOutputSchema } from '../../output-schemas';

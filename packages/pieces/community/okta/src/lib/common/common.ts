@@ -1,6 +1,6 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
+import { Property } from '@united/pieces-framework';
 
 
 export const oktaAuth = PieceAuth.CustomAuth({

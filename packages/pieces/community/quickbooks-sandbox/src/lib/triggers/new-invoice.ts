@@ -2,13 +2,13 @@ import {
   TriggerStrategy,
   createTrigger,
   AppConnectionValueForAuthProperty,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { quickbooksAuth } from '../auth';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { quickbooksApi } from '../common/api';
 import dayjs from 'dayjs';
 import type { QuickbooksEntityResponse, QuickbooksInvoice } from '../common/types';

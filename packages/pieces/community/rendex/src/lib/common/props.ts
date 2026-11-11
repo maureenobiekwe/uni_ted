@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { rendexAuth } from './auth';
 import { rendexClient } from './client';
 import { RENDEX_LIMITS, rendexInput, Source } from './common';

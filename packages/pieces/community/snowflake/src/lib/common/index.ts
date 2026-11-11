@@ -2,7 +2,7 @@ import {
   DropdownState,
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { snowflakeAuth } from '../auth';
 import { SnowflakeAuthValue, withSnowflake } from './client';
 import { qualifiedName } from './sql';

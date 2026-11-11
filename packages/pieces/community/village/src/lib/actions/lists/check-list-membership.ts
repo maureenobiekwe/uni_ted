@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { villageAuth, VILLAGE_API_BASE_URL } from '../../common/auth';
 
 const MAX_ENTITY_IDS = 1000;

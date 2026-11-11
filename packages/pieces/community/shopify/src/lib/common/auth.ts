@@ -2,14 +2,14 @@ import {
   HttpError,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import {
   AppConnectionType,
   AppConnectionValueForAuthProperty,
   OAuth2GrantType,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 
 const adminTokenMarkdown = `
 Use this option for custom apps created in the Shopify admin **before January 1, 2026**. Shopify no longer lets you create these apps, but existing ones keep working and their Admin API access token does not expire. For a new app, choose the **Dev Dashboard app** option instead.

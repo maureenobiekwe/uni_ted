@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const serpApiWebOrganicResultFields: OutputSchema['fields'] = [
   { key: 'position', label: 'Position', format: 'number' },

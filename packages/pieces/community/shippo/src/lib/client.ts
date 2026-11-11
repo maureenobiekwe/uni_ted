@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@united/pieces-common';
 import { ShippoConfig, Order, ShippingLabel, ApiListResponse, CreateOrderRequest } from './common';
 
 export class ShippoClient {

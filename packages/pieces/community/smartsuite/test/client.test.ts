@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { afterEach, describe, expect, test, vi } from 'vitest';
 import { smartSuiteClient, SmartSuiteApiError } from '../src/lib/common/client';
 import { smartSuitePaginatedApiCall } from '../src/lib/common';

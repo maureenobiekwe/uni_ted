@@ -1,6 +1,6 @@
 import crypto from 'crypto';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { squareAuth } from './lib/auth';
 import { squareClient } from './lib/common/client';
 import { squareShape } from './lib/common/shape';

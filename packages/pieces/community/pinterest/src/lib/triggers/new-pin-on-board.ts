@@ -5,8 +5,8 @@ import {
   OAuth2PropertyValue,
   Store,
   isNil,
-} from '@activepieces/pieces-framework';
-import { HttpMethod, getAccessTokenOrThrow } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { HttpMethod, getAccessTokenOrThrow } from '@united/pieces-common';
 import dayjs from 'dayjs';
 import { makeRequest } from '../common';
 import { pinterestAuth } from '../common/auth';

@@ -1,5 +1,5 @@
-import { createAction, OutputSchema, OutputSchemaField, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, OutputSchema, OutputSchemaField, Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { posthogAuth } from '../../auth';
 import { PostHogAuthValue, posthogClient } from '../../common/client';
 import { posthogMappers } from '../../common/mappers';

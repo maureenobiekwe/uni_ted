@@ -1,5 +1,5 @@
-import { createPiece } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from "@united/pieces-framework";
+import { PieceCategory } from '@united/pieces-framework';
 import { createChatCompletion } from "./lib/actions/create-chat-completion";
 import { createEmbeddings } from "./lib/actions/create-embeddings";
 import { uploadFile } from "./lib/actions/upload-file";
@@ -49,7 +49,7 @@ import { getBatchJob } from "./lib/actions/get-batch-job";
 import { cancelBatchJob } from "./lib/actions/cancel-batch-job";
 import { mistralAuth } from "./lib/common/auth";
 import { mistralRequest, MISTRAL_API_BASE_URL } from "./lib/common/request";
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@united/pieces-common";
 
 export const mistralAi = createPiece({
   displayName: "Mistral AI",

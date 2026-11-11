@@ -1,5 +1,5 @@
 import crypto from 'crypto';
-import { DEDUPE_KEY_PROPERTY } from '@activepieces/pieces-framework';
+import { DEDUPE_KEY_PROPERTY } from '@united/pieces-framework';
 import { afterEach, describe, expect, test, vi } from 'vitest';
 import { square } from '../src';
 import { triggers } from '../src/lib/triggers';

@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const imageFields: OutputSchema['fields'] = [
   { key: 'name', label: 'File Name' },

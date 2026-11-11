@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { PieceCategory } from '@united/pieces-framework';
 import { trustAuth } from './lib/auth';
 import { createTestimonialAction } from './lib/actions/create-testimonial';
 import { updateTestimonialAction } from './lib/actions/update-testimonial';

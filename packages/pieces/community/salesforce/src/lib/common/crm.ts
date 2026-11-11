@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isNil, OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { isNil, OAuth2PropertyValue, Property } from '@united/pieces-framework';
 import { callSalesforceApi, querySalesforceApi } from '.';
 import { QueryResult, salesforceUtils } from './utils';
 

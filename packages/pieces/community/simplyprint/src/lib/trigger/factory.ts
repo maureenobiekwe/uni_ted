@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { TriggerStrategy, createTrigger } from '@united/pieces-framework';
 
 import { simplyprintAuth } from '../auth';
 import { simplyprintClient } from '../common/client';

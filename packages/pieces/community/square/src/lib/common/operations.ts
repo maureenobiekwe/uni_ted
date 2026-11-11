@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { squareClient, SquareAuth } from './client';
 import { squareInputs } from './inputs';
 import { squareMoney } from './money';

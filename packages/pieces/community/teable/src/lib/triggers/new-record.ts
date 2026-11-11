@@ -2,8 +2,8 @@ import {
   AppConnectionValueForAuthProperty,
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import { TeableAuth, TeableAuthValue } from '../auth';
 import { TeableCommon } from '../common';
 import { teableClient, TeableRecord } from '../common/client';

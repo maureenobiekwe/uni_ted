@@ -1,9 +1,9 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+import { createAction, Property } from "@united/pieces-framework";
 import Odoo from "../../commom/index";
 import { odooAuth } from '../auth';
 import { odooRpc } from '../common/client';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@united/pieces-common';
 
 export default createAction({
     name: 'get_records',

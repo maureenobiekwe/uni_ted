@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty, Store } from '@activepieces/pieces-framework';
-import { DedupeStrategy, HttpMethod, Polling } from '@activepieces/pieces-common';
+import { AppConnectionValueForAuthProperty, Store } from '@united/pieces-framework';
+import { DedupeStrategy, HttpMethod, Polling } from '@united/pieces-common';
 import { ninjapipeAuth } from '../auth';
 import { NinjaPipeRecord, ninjapipeClient } from '../common/client';
 

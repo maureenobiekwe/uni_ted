@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { QueryParams } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { QueryParams } from '@united/pieces-common';
 import { wordpressAuth } from '../..';
 import { wordpressApi, WordpressRecord } from '../common/client';
 import { wordpressContent } from '../common/content-body';

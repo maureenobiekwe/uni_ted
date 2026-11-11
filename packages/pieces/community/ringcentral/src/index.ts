@@ -1,5 +1,5 @@
-import { createPiece, OAuth2PropertyValue, PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece, OAuth2PropertyValue, PieceCategory } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
 
 import { ringcentralAuth } from './lib/common/auth';
 import { ringcentralCommon } from './lib/common/client';

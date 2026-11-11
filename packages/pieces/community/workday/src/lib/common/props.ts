@@ -3,7 +3,7 @@ import {
 	DropdownState,
 	DynamicPropsValue,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 
 import { workdayAuth } from '../auth';
 import { workdayApi } from './api';

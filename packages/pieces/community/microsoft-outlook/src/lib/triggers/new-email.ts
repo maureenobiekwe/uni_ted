@@ -1,10 +1,10 @@
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import {
 	AppConnectionValueForAuthProperty,
 	TriggerStrategy,
 	createTrigger,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { PageCollection } from '@microsoft/microsoft-graph-client';
 import { Message } from '@microsoft/microsoft-graph-types';
 import dayjs from 'dayjs';

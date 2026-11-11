@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient, AuthenticationType } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { HttpMethod, httpClient, AuthenticationType } from '@united/pieces-common';
 import { wrikeAuth } from '../common/auth';
 import { wrikeCommon } from '../common/client';
 

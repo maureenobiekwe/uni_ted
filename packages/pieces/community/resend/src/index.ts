@@ -1,12 +1,12 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@united/pieces-framework';
 import {
   AuthenticationType,
   createCustomApiCallAction,
   HttpError,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { PieceCategory } from '@united/pieces-framework';
 import { sendEmail } from './lib/actions/send-email';
 import { sendBatchEmails } from './lib/actions/send-batch-emails.action';
 import { createContact } from './lib/actions/create-contact.action';

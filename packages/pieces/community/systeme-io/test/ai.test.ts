@@ -8,8 +8,8 @@ import { systemeListTags } from '../src/lib/actions/ai/list-tags';
 import { systemeListSubscriptions } from '../src/lib/actions/ai/list-subscriptions';
 import { systemeRenameTag } from '../src/lib/actions/ai/rename-tag';
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@united/pieces-common')>();
   return {
     ...actual,
     httpClient: { sendRequest: (...args: unknown[]) => sendRequest(...args) },

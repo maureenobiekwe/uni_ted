@@ -1,4 +1,4 @@
-import { AppConnectionType, PieceAuth, Property } from '@activepieces/pieces-framework';
+import { AppConnectionType, PieceAuth, Property } from '@united/pieces-framework';
 
 import { workdayApi } from './common/api';
 

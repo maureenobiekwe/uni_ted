@@ -1,5 +1,5 @@
 import { createHmac, timingSafeEqual } from 'crypto';
-import { Property, WebhookHandshakeStrategy, WebhookResponse } from '@activepieces/pieces-framework';
+import { Property, WebhookHandshakeStrategy, WebhookResponse } from '@united/pieces-framework';
 import { inputUtils } from './inputs';
 
 const setupInstructions = Property.MarkDown({

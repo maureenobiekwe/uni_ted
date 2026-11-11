@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, QueryParams } from '@united/pieces-common';
 
 const REQUEST_TIMEOUT_MS = 60_000;
 const RATE_LIMIT_BACKOFF_MS = [5_000, 15_000];

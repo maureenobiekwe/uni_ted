@@ -1,5 +1,5 @@
-import { propsValidation } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { propsValidation } from '@united/pieces-common';
+import { createAction } from '@united/pieces-framework';
 import { vlmRunAuth, vlmRunCommon } from '../common';
 import { analyzeImageProperties } from '../common/properties';
 import { analyzeImageSchema } from '../common/schemas';

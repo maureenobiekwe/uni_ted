@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { mistralAuth } from '../common/auth';
 import { mistralApi } from '../common/client';
 import { generateSpeechOutputSchema } from '../output-schemas';

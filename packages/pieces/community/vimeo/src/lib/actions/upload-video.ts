@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { vimeoAuth } from '../auth';
 import { apiRequest, userFolderDropdown } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 
 export const uploadVideo = createAction({
   name: 'upload_video',

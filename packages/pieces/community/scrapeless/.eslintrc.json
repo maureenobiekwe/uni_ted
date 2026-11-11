@@ -29,10 +29,10 @@
             "patterns": [
               "lodash",
               "lodash/*",
-              "@activepieces/core-*",
-              "@activepieces/server*",
-              "@activepieces/engine",
-              "@activepieces/shared"
+              "@united/core-*",
+              "@united/server*",
+              "@united/engine",
+              "@united/shared"
             ]
           }
         ]

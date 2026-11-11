@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const renderedTextFields: OutputSchema['fields'] = [
   { key: 'rendered', label: 'Rendered', format: 'html' },

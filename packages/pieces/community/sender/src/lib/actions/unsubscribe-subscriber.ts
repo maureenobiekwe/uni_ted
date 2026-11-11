@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { senderAuth } from '../auth';
 import { senderApi } from '../common/api';
 import { senderProps } from '../common/props';

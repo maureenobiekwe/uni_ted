@@ -2,7 +2,7 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { respondIoAuth } from '../common/auth';
 
 export const newIncomingMessageTrigger = createTrigger({

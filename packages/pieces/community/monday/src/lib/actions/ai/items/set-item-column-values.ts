@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { mondayAuth } from '../../../auth';
 import { mondayApi } from '../../../common/monday-api';
 import { mondayAiProps } from '../../../common/ai-props';

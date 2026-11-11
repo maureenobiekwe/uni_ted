@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { createAction } from '@united/pieces-framework';
 import { streakAuth } from '../common/auth';
 import { streakApiCall } from '../common/client';
 import { pipelineListOutputSchema } from '../common/output-schemas';

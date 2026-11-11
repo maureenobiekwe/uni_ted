@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { HttpMethod, httpClient } from '@united/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
 import { ninjapipeAuth } from '../auth';
 import { ninjapipeClient } from '../common/client';
 import { ninjapipeSchemas } from '../output-schemas';

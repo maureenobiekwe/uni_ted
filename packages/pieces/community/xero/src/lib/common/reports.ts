@@ -1,4 +1,4 @@
-import { HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { HttpMethod, QueryParams } from '@united/pieces-common';
 import { XERO_URLS, xeroApi, xeroValue } from './client';
 
 function cellValue({ cell }: { cell: Record<string, unknown> }): string {

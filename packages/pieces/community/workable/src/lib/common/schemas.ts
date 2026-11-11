@@ -1,4 +1,4 @@
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+import { OutputSchema, OutputSchemaField } from '@united/pieces-framework';
 
 function f({ key, label, format }: { key: string; label: string; format?: OutputSchemaField['format'] }): OutputSchemaField {
   return format === undefined ? { key, label } : { key, label, format };

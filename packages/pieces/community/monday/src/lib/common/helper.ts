@@ -1,8 +1,8 @@
 import {
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
-import { isEmpty } from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
+import { isEmpty } from '@united/pieces-framework';
 import dayjs from 'dayjs';
 import { MondayColumnType } from './constants';
 import { ColumnValue, MondayColumn } from './models';

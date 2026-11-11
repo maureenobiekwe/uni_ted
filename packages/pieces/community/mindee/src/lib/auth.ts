@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 import { detectKeyType, vendorDetail, toMindeeError } from './common/client';
 
 export const mindeeAuth = PieceAuth.SecretText({

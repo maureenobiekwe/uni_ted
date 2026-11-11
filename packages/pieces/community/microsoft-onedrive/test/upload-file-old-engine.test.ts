@@ -2,15 +2,15 @@
 
 import { buffer as readableToBuffer } from 'node:stream/consumers';
 import { Readable } from 'node:stream';
-import { ApFile, createMockActionContext } from '@activepieces/pieces-framework';
+import { ApFile, createMockActionContext } from '@united/pieces-framework';
 import { uploadFile } from '../src/lib/actions/upload-file';
 
 const { sendRequest } = vi.hoisted(() => ({
   sendRequest: vi.fn(),
 }));
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@united/pieces-common')>();
   return {
     ...actual,
     httpClient: { sendRequest },

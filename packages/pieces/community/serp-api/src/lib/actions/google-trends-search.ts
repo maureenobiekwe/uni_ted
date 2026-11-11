@@ -1,4 +1,4 @@
-import { createAction, MarkdownVariant, Property } from '@activepieces/pieces-framework';
+import { createAction, MarkdownVariant, Property } from '@united/pieces-framework';
 import { serpApiAuth } from '../auth';
 import { SerpApiClient } from '../services/serp-api-client';
 import { GoogleTrendsSearchConfig, SerpApiEngine } from '../types';

@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { niftyAuth } from '../auth';
 import { niftyProps } from '../common';
 import { NiftyAuth, niftyClient, NiftyRecord } from '../common/client';

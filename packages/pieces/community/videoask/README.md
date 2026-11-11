@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@activepieces/piece-videoask` to build the library.
+Run `turbo run build --filter=@united/piece-videoask` to build the library.

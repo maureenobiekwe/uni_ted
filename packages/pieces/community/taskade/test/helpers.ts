@@ -1,4 +1,4 @@
-import { AppConnectionType, Store } from '@activepieces/pieces-framework';
+import { AppConnectionType, Store } from '@united/pieces-framework';
 import { vi } from 'vitest';
 
 export type SeenRequest = {

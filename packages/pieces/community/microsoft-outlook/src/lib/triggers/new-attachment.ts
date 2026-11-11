@@ -9,7 +9,7 @@ import {
 	isNil,
 	Property,
 	Store,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 
 import { outlookAtomicCommon } from '../common/atomic-common';
 import { microsoftOutlookAuth } from '../common/auth';

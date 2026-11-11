@@ -2,7 +2,7 @@ import {
   AppConnectionType,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { togglApi } from './common/client';
 
 const togglClassicAuth = PieceAuth.SecretText({

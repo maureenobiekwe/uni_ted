@@ -1,5 +1,5 @@
-import { HttpError } from '@activepieces/pieces-common';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { HttpError } from '@united/pieces-common';
+import { AppConnectionType } from '@united/pieces-framework';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { rendex } from '../src/index';
 import { rendexAuth } from '../src/lib/common/auth';
@@ -23,8 +23,8 @@ import { renderScreenshotOutputSchema } from '../src/lib/common/output-schemas';
 
 const sendRequest = vi.fn();
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@united/pieces-common')>();
   return {
     ...actual,
     httpClient: {

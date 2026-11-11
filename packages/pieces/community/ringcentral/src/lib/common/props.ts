@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { OAuth2PropertyValue, Property } from '@united/pieces-framework';
 
 import { ringcentralAuth } from './auth';
 import { ringcentralCommon } from './client';

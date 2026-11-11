@@ -1,4 +1,4 @@
-import type { AppConnectionType } from '@activepieces/pieces-framework';
+import type { AppConnectionType } from '@united/pieces-framework';
 
 export type TwentyAuthValue = {
 	type: AppConnectionType.CUSTOM_AUTH;

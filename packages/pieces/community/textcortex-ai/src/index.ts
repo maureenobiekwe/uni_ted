@@ -1,7 +1,7 @@
 
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
 import { textcortexAuth } from './lib/common/auth';
 import { baseUrl } from './lib/common/common';
 import { sendPrompt } from './lib/actions/send-prompt';

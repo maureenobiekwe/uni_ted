@@ -1,5 +1,5 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
+import { PieceAuth, Property } from '@united/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@united/pieces-common';
 
 export const trustAuth = PieceAuth.CustomAuth({
   displayName: 'Connection',

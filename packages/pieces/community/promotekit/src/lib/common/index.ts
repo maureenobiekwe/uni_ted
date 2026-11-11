@@ -4,8 +4,8 @@ import {
   AuthenticationType,
   HttpMessageBody,
   HttpResponse,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { Property } from '@united/pieces-framework';
 import { promotekitAuth } from '../..';
 
 const BASE_URL = 'https://www.promotekit.com/api/v1';

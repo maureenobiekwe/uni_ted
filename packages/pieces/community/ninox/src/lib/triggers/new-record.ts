@@ -6,13 +6,13 @@ import {
 	Polling,
 	pollingHelper,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import {
 	AppConnectionValueForAuthProperty,
 	StaticPropsValue,
 	TriggerStrategy,
 	createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { BASE_URL } from '../common/client';
 import { NinoxAuth } from '../common/auth';
 import { teamidDropdown, databaseIdDropdown, tableIdDropdown } from '../common/props';

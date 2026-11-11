@@ -1,5 +1,5 @@
-import { QueryParams } from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+import { QueryParams } from '@united/pieces-common';
+import { Property } from '@united/pieces-framework';
 
 function isFilledText(value: string | null | undefined): value is string {
   return typeof value === 'string' && value.trim() !== '';

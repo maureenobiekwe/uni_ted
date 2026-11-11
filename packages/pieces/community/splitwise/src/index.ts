@@ -1,8 +1,8 @@
 
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@united/pieces-framework";
 import { createExpenseAction } from './lib/actions/create-expense';
 import { newExpenseTrigger } from './lib/triggers/new-expense';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { splitwiseAuth } from './lib/auth';
 
 const markdownDescription = `

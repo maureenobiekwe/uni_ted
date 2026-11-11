@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, Property, isNil } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy, Property, isNil } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { wufooAuth } from '../auth';
 import { wufooApiCall } from '../common/client';
 

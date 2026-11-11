@@ -1,8 +1,8 @@
 import { Readable } from 'node:stream';
 import { buffer as readableToBuffer } from 'node:stream/consumers';
 import { microsoftSharePointAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType, HttpResponse, streamUtils } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType, HttpResponse, streamUtils } from '@united/pieces-common';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';
 import { microsoftSharePointCommon } from '../common';
 import { Client } from '@microsoft/microsoft-graph-client';

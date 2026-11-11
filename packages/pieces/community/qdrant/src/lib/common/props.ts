@@ -1,4 +1,4 @@
-import { InputPropertyMap, Property } from '@activepieces/pieces-framework';
+import { InputPropertyMap, Property } from '@united/pieces-framework';
 
 import { qdrantAuth } from '../auth';
 

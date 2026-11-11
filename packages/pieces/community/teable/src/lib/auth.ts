@@ -1,10 +1,10 @@
-import { AppConnectionType, PieceAuth, Property } from '@activepieces/pieces-framework';
+import { AppConnectionType, PieceAuth, Property } from '@united/pieces-framework';
 import {
   AuthenticationType,
   HttpError,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { TEABLE_CLOUD_URL } from './common/constants';
 
 const TEABLE_APP_PATH_SEGMENTS = ['base', 'space', 'dashboard', 'setting', 'developer', 'invite', 'auth'];

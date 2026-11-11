@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 import { QuickzuAPIClient } from './common/client';
 
 function authHelpDescription() {

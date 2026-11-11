@@ -2,8 +2,8 @@ import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { HttpMethod, httpClient } from '@united/pieces-common';
 import { togglTrackAuth } from '../auth';
 import { togglApi } from '../common/client';
 import { togglCommon } from '../common';

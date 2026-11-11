@@ -1,4 +1,4 @@
-import { HttpMethod, QueryParams, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, QueryParams, httpClient } from '@united/pieces-common';
 
 import type { ScrapegraphaiAuthValue } from './types';
 

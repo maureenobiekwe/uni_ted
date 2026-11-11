@@ -1,4 +1,4 @@
-import { AppConnectionType, PieceAuth, Property, tryCatch } from '@activepieces/pieces-framework';
+import { AppConnectionType, PieceAuth, Property, tryCatch } from '@united/pieces-framework';
 import { opnformApi } from './common/api';
 
 export const opnformAuth = PieceAuth.CustomAuth({

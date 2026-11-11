@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { shopifyAuth } from '../../..';
 import { GqlCount, shopifyGraphqlClient, shopifyProps, shopifyValues } from '../../common/graphql';
 import { storeCountOutputSchema } from '../../output-schemas/store';

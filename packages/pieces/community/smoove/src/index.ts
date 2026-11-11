@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+import { createPiece, PieceAuth } from "@united/pieces-framework";
 import { smooveAuth } from "./lib/common/auth";
 import { addOrUpdateSubscriber } from "./lib/actions/add-or-update-subscriber";
 import { createAList } from "./lib/actions/create-a-list";
@@ -9,7 +9,7 @@ import { newListCreated } from "./lib/triggers/new-list-created";
 import { newSubscriber } from "./lib/triggers/new-subscriber";
 import { newFormCreated } from "./lib/triggers/new-form-created";
 import { newLeadSubmitted } from "./lib/triggers/new-lead-submitted";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 
 export const smoove = createPiece({
   displayName: "Smoove",

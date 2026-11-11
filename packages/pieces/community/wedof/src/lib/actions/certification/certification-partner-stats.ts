@@ -2,12 +2,12 @@ import {
   httpClient,
   HttpMethod,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { wedofAuth } from '../../auth';
 import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const listPartnerStats = createAction({

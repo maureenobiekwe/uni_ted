@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@united/pieces-common';
 import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { textToImage } from './lib/actions/text-to-image';
 
 export const stabilityAiAuth = PieceAuth.CustomAuth({

@@ -1,5 +1,5 @@
-import { Property, DropdownOption } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { Property, DropdownOption } from '@united/pieces-framework';
+import { HttpMethod, httpClient } from '@united/pieces-common';
 import { mistralAuth } from './auth';
 import { mistralRequest } from './request';
 import { mistralApi } from './client';

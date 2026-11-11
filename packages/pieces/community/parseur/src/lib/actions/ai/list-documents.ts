@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { parseurAuth } from '../../auth';
 import { parseurAiProps } from '../../common/ai-props';
 import { parseurApi } from '../../common/api';

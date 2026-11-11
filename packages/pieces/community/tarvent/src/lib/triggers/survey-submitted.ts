@@ -1,5 +1,5 @@
 import { tarventAuth } from '../auth';
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+import { TriggerStrategy, createTrigger } from '@united/pieces-framework';
 import { tarventCommon } from '../common';
 import { tarventWebhook } from '../common/webhook';
 import { tarventOutputSchemas } from '../output-schemas';

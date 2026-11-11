@@ -3,7 +3,7 @@ import {
   DynamicPropsValue,
   MarkdownVariant,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { Client } from '@notionhq/client';
 import { NotionFieldMapping } from '../common/models';
 

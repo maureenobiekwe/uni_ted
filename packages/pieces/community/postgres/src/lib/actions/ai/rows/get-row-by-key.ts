@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { Client } from 'pg';
 import format from 'pg-format';
 import { postgresAuth } from '../../../auth';

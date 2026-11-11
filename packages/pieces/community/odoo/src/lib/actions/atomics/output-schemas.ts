@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 import { odooSchemaFields } from '../../output-schemas';
 
 const f = odooSchemaFields;

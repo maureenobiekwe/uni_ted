@@ -1,5 +1,5 @@
-import { AuthenticationType, HttpError, HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { spreadIfDefined, tryCatch } from '@activepieces/pieces-framework';
+import { AuthenticationType, HttpError, HttpMethod, httpClient } from '@united/pieces-common';
+import { spreadIfDefined, tryCatch } from '@united/pieces-framework';
 
 import type {
 	TallyFolder,

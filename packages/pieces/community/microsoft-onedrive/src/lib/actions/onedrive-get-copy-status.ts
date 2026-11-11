@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { oneDriveAuth } from '../auth';
 import { oneDriveApi } from '../common/graph-api';
 import { onedriveGetCopyStatusOutputSchema } from '../output-schemas';

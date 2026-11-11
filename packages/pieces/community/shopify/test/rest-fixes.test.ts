@@ -1,4 +1,4 @@
-import { HttpRequest, HttpResponse, httpClient } from '@activepieces/pieces-common';
+import { HttpRequest, HttpResponse, httpClient } from '@united/pieces-common';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import '../src';
 import { adjustInventoryLevelAction } from '../src/lib/actions/adjust-inventory-level';

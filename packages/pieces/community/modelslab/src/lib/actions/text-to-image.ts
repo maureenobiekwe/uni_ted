@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { modelsLabAuth } from '../common/auth';
 
 const FETCH_BASE = 'https://modelslab.com/api/v6/images/fetch';

@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
 import { redditAuth } from '../../auth';
 import { redditApi } from '../../common/client';
 import { redditReportContentOutputSchema } from '../../output-schemas';

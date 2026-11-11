@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { vimeoAuth } from '../auth';
 import { apiRequest, userVideoDropdown } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 
 export const deleteVideo = createAction({
   name: 'delete_video',

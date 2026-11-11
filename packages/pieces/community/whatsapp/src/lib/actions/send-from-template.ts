@@ -1,6 +1,6 @@
 import { whatsappAuth } from '../auth';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@united/pieces-common';
+import { createAction, Property } from '@united/pieces-framework';
 import { commonProps, WHATSAPP_API_BASE } from '../common/utils';
 import { messageSendOutputSchema } from '../output-schemas';
 

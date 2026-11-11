@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { validatedMailsAuth } from '../common/auth';
 import { executeValidateEmailRequest } from '../common/validate-email-helpers';
 

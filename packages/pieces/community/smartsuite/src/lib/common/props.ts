@@ -1,8 +1,8 @@
-import { Property, DynamicPropsValue, DropdownOption } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property, DynamicPropsValue, DropdownOption } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { smartSuiteApi, smartSuitePaginatedApiCall, TableStucture } from '.';
 import { smartsuiteAuth } from '../auth';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@united/pieces-framework';
 import { pagedList } from './paged-list';
 
 export const smartsuiteCommon = {

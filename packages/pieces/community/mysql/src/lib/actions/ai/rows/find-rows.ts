@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { mysqlAuth } from '../../../..';
 import { mysqlAi, mysqlAiProps } from '../../../common/ai';
 import { sanitizeColumnName } from '../../../common';

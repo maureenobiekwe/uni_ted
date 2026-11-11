@@ -1,5 +1,5 @@
-import { httpClient, HttpError, HttpMethod } from '@activepieces/pieces-common';
-import { OutputSchemaField, Property } from '@activepieces/pieces-framework';
+import { httpClient, HttpError, HttpMethod } from '@united/pieces-common';
+import { OutputSchemaField, Property } from '@united/pieces-framework';
 
 const BASE_URL = 'https://api.twitch.tv/helix';
 const PAGE_SIZE = 100;

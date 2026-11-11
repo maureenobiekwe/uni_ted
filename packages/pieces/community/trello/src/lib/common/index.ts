@@ -1,5 +1,5 @@
-import { BasicAuthPropertyValue, DropdownState, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpRequest, HttpMethod } from '@activepieces/pieces-common';
+import { BasicAuthPropertyValue, DropdownState, Property } from '@united/pieces-framework';
+import { httpClient, HttpRequest, HttpMethod } from '@united/pieces-common';
 import { trelloAuth } from '../..';
 
 export interface WebhookInformation {

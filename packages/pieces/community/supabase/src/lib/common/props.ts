@@ -1,4 +1,4 @@
-import { Property, DynamicPropsValue, MarkdownVariant } from "@activepieces/pieces-framework";
+import { Property, DynamicPropsValue, MarkdownVariant } from "@united/pieces-framework";
 import { createClient } from "@supabase/supabase-js";
 import { supabaseAuth } from '../auth';
 

@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { sendItAuth } from './auth';
 import { apiKeyOf } from './client';
 import { sendItRequests } from './requests';

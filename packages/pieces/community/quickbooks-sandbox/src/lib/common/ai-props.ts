@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import type { PropParams } from './props';
 
 function id<R extends boolean>({ required, displayName = 'ID', description }: PropParams<R>) {

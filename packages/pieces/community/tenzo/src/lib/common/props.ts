@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { tenzoApiCall } from './client';
 import { TenzoAuthValue } from './auth';
 import { tenzoAuth } from "../common/auth";

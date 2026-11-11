@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 
 const markdownDescription = `
 You can generate an API key from your app's details page on Splitwise.

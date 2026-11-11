@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty, OutputSchema } from '@activepieces/pieces-framework';
-import { httpClient, HttpError, HttpMethod } from '@activepieces/pieces-common';
+import { AppConnectionValueForAuthProperty, OutputSchema } from '@united/pieces-framework';
+import { httpClient, HttpError, HttpMethod } from '@united/pieces-common';
 import FormData from 'form-data';
 import { pdfcrowdAuth } from './auth';
 import { getAuthHeader, getConvertUrl } from './client';

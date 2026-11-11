@@ -2,7 +2,7 @@ import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { snowflakeAuth } from '../auth';
 import {
   getTableColumnOptions,

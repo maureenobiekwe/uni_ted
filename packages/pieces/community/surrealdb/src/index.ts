@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { surrealdbAiActions } from './lib/actions/ai';
 import { runQueryAction } from './lib/actions/run-query';
 import { surrealdbAuth } from './lib/auth';

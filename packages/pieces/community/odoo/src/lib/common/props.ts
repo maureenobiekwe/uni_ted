@@ -1,4 +1,4 @@
-import { DropdownState, Property } from '@activepieces/pieces-framework';
+import { DropdownState, Property } from '@united/pieces-framework';
 import { odooAuth } from '../auth';
 import { OdooAuthProps, OdooClient, odooRpc } from './client';
 import { Domain } from './values';

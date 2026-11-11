@@ -1,5 +1,5 @@
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { DedupeStrategy, HttpMethod, Polling } from '@activepieces/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
+import { DedupeStrategy, HttpMethod, Polling } from '@united/pieces-common';
 import dayjs from 'dayjs';
 import { quickbooksAuth } from './auth';
 import { quickbooksApiCall, quickbooksQuery, QuickbooksCdcResponse, QuickbooksEntityResponse } from './common';

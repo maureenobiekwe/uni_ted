@@ -1,8 +1,8 @@
 import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
-} from '@activepieces/pieces-framework';
-import { tryCatch } from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
+import { tryCatch } from '@united/pieces-framework';
 
 import { paddleClient } from './common/client';
 

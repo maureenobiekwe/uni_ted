@@ -1,5 +1,5 @@
 
-import { createPiece } from "@activepieces/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { teamworkAuth } from "./lib/common/auth";
 import { createProject } from "./lib/actions/create-project";
 import { createTaskList } from "./lib/actions/create-task-list";
@@ -26,7 +26,7 @@ import { newMessage } from "./lib/triggers/new-message";
 import { newFile } from "./lib/triggers/new-file";
 import { newExpense } from "./lib/triggers/new-expense";
 import { newInvoice } from "./lib/triggers/new-invoice";
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 
   export const teamwork = createPiece({
       displayName: "Teamwork",

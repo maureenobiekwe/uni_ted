@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { netlifyClient, NetlifyApiError, NetlifyAuthValue } from './client';
 
 const SITE_SECRET_KEYS = ['jwt_secret'];

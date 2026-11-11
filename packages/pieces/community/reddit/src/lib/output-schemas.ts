@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const pagingFields: OutputSchema['fields'] = [
   { key: 'count', label: 'Count', format: 'number' },

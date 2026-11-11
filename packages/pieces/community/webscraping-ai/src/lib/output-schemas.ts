@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const accountFields: OutputSchema['fields'] = [
 	{ key: 'email', label: 'Email', format: 'email' },

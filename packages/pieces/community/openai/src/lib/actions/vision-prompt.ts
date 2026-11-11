@@ -1,12 +1,12 @@
 import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import OpenAI from 'openai';
 import mime from 'mime-types';
 import { openaiAuth } from '../auth';
 import * as z from 'zod/mini'
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@united/pieces-common';
 
 export const visionPrompt = createAction({
   audience: 'both',

@@ -2,9 +2,9 @@
 
 const { sendRequest } = vi.hoisted(() => ({ sendRequest: vi.fn() }));
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
+vi.mock('@united/pieces-common', async (importOriginal) => {
   const actual = await importOriginal<
-    typeof import('@activepieces/pieces-common')
+    typeof import('@united/pieces-common')
   >();
   return {
     ...actual,
@@ -199,8 +199,8 @@ describe('validating the connection', () => {
 
   test('a rejected token surfaces Ninety’s own hint', async () => {
     const { HttpError } = await vi.importActual<
-      typeof import('@activepieces/pieces-common')
-    >('@activepieces/pieces-common');
+      typeof import('@united/pieces-common')
+    >('@united/pieces-common');
     sendRequest.mockRejectedValueOnce(
       new HttpError(undefined, { status: 401, responseBody: 'Unauthorized' })
     );

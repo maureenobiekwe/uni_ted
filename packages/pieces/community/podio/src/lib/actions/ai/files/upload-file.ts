@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { podioAuth } from '../../../auth';
 import { podioAiProps } from '../../../common/ai-props';
 import { podioClient } from '../../../common/client';

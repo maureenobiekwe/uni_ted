@@ -2,9 +2,9 @@ import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { smailyAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 
 export const createOrUpdateSubscriberAction = createAction({
   auth: smailyAuth,

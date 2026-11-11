@@ -1,4 +1,4 @@
-import { OutputSchema, OutputSchemaField } from '@activepieces/pieces-framework';
+import { OutputSchema, OutputSchemaField } from '@united/pieces-framework';
 
 const timestamps: OutputSchemaField[] = [
   { key: 'created_at', label: 'Created At', format: 'datetime' },

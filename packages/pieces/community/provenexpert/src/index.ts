@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { PieceCategory } from '@united/pieces-framework';
 import { provenExpertCommon } from './lib/common';
 import { getRatingSummaryAction } from './lib/actions/get-rating-summary';
 import { createSurveyInvitationUrlAction } from './lib/actions/create-survey-invitation-url';

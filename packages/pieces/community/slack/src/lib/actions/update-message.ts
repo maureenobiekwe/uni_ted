@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { slackAuth } from '../auth';
 import { blocks, singleSelectChannelInfo, slackChannel, onlyBotChannels, mentionOriginFlow, messageTs } from '../common/props';
 import { buildFlowOriginContextBlock, processMessageTimestamp, textToSectionBlocks } from '../common/utils';

@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { smartleadAuth } from '../auth';
 import { smartleadOperations } from '../common/operations';
 import { smartleadOutputSchemas } from '../common/output-schemas';

@@ -3,9 +3,9 @@ import {
   DropdownState,
   Property,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { fetchAllPages, isNonEmptyString, isRecord } from '.';
-import { getAccessTokenOrThrow } from '@activepieces/pieces-common';
+import { getAccessTokenOrThrow } from '@united/pieces-common';
 import { pinterestAuth } from './auth';
 
 export const boardIdDropdown = Property.Dropdown({

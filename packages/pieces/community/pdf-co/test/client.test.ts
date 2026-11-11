@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { pdfCoClient, PdfCoError } from '../src/lib/common/client';
 import { pdfCoAuth } from '../src/lib/auth';

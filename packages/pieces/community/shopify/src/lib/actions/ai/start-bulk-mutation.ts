@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
-import { HttpError, HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { createAction, Property, tryCatch } from '@activepieces/pieces-framework';
+import { HttpError, HttpMethod, httpClient } from '@united/pieces-common';
+import { createAction, Property, tryCatch } from '@united/pieces-framework';
 import { shopifyAuth } from '../../..';
 import {
   GqlBulkOperation,

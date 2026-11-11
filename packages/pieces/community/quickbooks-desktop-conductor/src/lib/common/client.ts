@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, HttpRequest } from '@united/pieces-common';
 import { ConductorApiError } from './errors';
 
 const CONDUCTOR_API_BASE_URL = 'https://api.conductor.is/v1';

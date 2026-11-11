@@ -1,12 +1,12 @@
 import { Readable } from 'node:stream';
 import { buffer as readableToBuffer } from 'node:stream/consumers';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
   streamUtils,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { oneDriveAuth } from '../auth';
 import mime from 'mime-types';
 import { oneDriveCommon } from '../common/common';

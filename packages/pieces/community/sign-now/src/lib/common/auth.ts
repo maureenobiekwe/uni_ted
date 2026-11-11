@@ -1,6 +1,6 @@
-import { PieceAuth, OAuth2AuthorizationMethod, AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
-import { AppConnectionType } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { PieceAuth, OAuth2AuthorizationMethod, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 
 export const signNowOAuth2Auth = PieceAuth.OAuth2({
   displayName: 'Sign in with SignNow',

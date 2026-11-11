@@ -1,6 +1,6 @@
 import { createHash } from 'crypto';
-import { HttpMethod, QueryParams } from '@activepieces/pieces-common';
-import { Store } from '@activepieces/pieces-framework';
+import { HttpMethod, QueryParams } from '@united/pieces-common';
+import { Store } from '@united/pieces-framework';
 import { XERO_URLS, xeroApi, xeroInput, xeroValue } from './client';
 
 async function fetchUpdated({

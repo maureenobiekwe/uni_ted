@@ -3,7 +3,7 @@ import {
   HttpMethod,
   httpClient,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import type { SendfoxAuthValue, SendfoxPage } from './types';
 
 function baseUrl(): string {

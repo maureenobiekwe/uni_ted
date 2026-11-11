@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 
 import { metabaseAiProps } from '../../ai-props';
 import { metabaseApi } from '../../api';

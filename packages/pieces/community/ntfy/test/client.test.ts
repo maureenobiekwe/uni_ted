@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { AppConnectionType } from '@united/pieces-framework';
 import { ntfyClient, NtfyAuthValue, NtfyMessage } from '../src/lib/common/client';
 
 const decode = (v: unknown) => {

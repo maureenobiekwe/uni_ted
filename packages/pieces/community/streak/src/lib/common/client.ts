@@ -5,7 +5,7 @@ import {
   HttpMethod,
   HttpResponse,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { StreakBox } from './types';
 
 export async function streakApiCall<T extends HttpMessageBody>({

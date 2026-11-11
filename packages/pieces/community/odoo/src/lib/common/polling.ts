@@ -1,4 +1,4 @@
-import { Store } from '@activepieces/pieces-framework';
+import { Store } from '@united/pieces-framework';
 import { OdooClient, OdooFieldMap } from './client';
 import { odooRecords } from './records';
 import { Domain, odooDates, odooDomain, odooInput, odooOutput } from './values';

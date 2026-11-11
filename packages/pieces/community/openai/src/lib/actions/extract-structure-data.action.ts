@@ -1,5 +1,5 @@
 import { openaiAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import OpenAI from 'openai';
 import { isLLM } from '../common/common';
 

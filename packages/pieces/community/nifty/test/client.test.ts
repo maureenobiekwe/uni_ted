@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { NiftyApiError, niftyClient } from '../src/lib/common/client';
 import { niftyProps } from '../src/lib/common';
@@ -6,8 +6,8 @@ import { httpError, ok, testAuth } from './helpers';
 
 const sendRequest = vi.fn();
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@activepieces/pieces-common')>();
+vi.mock('@united/pieces-common', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@united/pieces-common')>();
   return { ...actual, httpClient: { sendRequest: (...args: unknown[]) => sendRequest(...args) } };
 });
 

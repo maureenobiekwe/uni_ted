@@ -5,7 +5,7 @@ import {
 	PiecePropValueSchema,
 	Property,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
 	pipedriveApiCall,
 	pipedriveCommon,
@@ -13,9 +13,9 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { pipedriveAuth } from '../auth';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod } from '@united/pieces-common';
 import { FieldsResponse, GetField, RequestParams } from '../common/types';
-import { isNil } from '@activepieces/pieces-framework';
+import { isNil } from '@united/pieces-framework';
 import { DEAL_OPTIONAL_FIELDS } from '../common/constants';
 import { updatedDealTriggerOutputSchema } from '../output-schemas';
 

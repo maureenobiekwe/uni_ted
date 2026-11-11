@@ -5,8 +5,8 @@ import {
   HttpRequest,
   HttpResponse,
   QueryParams,
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { ntfyAuth } from '../auth';
 
 const NTFY_ID_PATTERN = /^[-_A-Za-z0-9]{1,64}$/;

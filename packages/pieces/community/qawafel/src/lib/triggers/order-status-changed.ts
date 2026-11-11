@@ -1,9 +1,9 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { qawafelAuth } from '../common/auth';
 import { qawafelApiCall } from '../common/client';
 

@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@united/pieces-framework";
     import { sendCards } from './lib/actions/send-cards';
 
     export const thanksterAuth = PieceAuth.SecretText({

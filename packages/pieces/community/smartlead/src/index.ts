@@ -1,5 +1,5 @@
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
 
 import { smartleadAuth } from './lib/auth';
 import { BASE_URL } from './lib/common/client';

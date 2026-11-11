@@ -1,4 +1,4 @@
-import { Property, TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+import { Property, TriggerStrategy, createTrigger } from '@united/pieces-framework';
 import { tarventAuth } from '../auth';
 import { tarventCommon } from '../common';
 import { tarventWebhook } from '../common/webhook';

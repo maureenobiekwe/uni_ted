@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { HttpMethod, HttpRequest, HttpResponse, httpClient } from '@activepieces/pieces-common';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { HttpMethod, HttpRequest, HttpResponse, httpClient } from '@united/pieces-common';
+import { AppConnectionType } from '@united/pieces-framework';
 
 import { workdayApi } from '../src/lib/common/api';
 import { workdayClient } from '../src/lib/common/client';

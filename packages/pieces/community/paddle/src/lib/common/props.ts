@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { tryCatch } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
+import { tryCatch } from '@united/pieces-framework';
 
 import { paddleAuth } from '../auth';
 import { paddleClient } from './client';

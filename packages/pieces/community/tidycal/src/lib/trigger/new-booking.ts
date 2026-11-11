@@ -5,13 +5,13 @@ import {
   Property,
   StaticPropsValue,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import { calltidycalapi } from '../common';
 import { tidyCalAuth } from '../auth';
 import dayjs from 'dayjs';

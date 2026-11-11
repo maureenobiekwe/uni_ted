@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const changeMultipleColumnValuesFields: OutputSchema['fields'] = [
   { key: 'id', label: 'Item ID', value: 'data.change_multiple_column_values.id' },

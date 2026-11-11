@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { mindeeAuth } from '../auth';
 import { mindeeProps } from '../common/props';
 import { mindeeSchemas } from '../output-schemas';

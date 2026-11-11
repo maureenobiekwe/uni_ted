@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const userPublicMetricsFields: OutputSchema['fields'] = [
   { key: 'followers_count', label: 'Followers', format: 'number' },

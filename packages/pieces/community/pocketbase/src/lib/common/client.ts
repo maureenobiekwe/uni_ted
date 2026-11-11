@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, QueryParams } from '@united/pieces-common';
 import type { PocketbaseAuthResponse, PocketbaseAuthValue, PocketbaseRecordPage } from './types';
 
 function baseUrl({ auth }: { auth: PocketbaseAuthValue }): string {

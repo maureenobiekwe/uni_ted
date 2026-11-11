@@ -1,5 +1,5 @@
-import { DropdownState, InputPropertyMap, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { DropdownState, InputPropertyMap, Property } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { podioAuth } from '../auth';
 import { podioApi } from './api';
 import { podioClient } from './client';

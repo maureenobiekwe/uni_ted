@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { outlookCalendarAuth } from '../auth';
 import { outlookCalendarClient } from '../common/client';
 import { outlookCalendarProps } from '../common/props';

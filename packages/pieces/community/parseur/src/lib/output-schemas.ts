@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 const pageFields: OutputSchema['fields'] = [
   { key: 'count', label: 'Items on This Page', format: 'number' },

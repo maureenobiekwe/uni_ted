@@ -1,5 +1,5 @@
 import { nocodbAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { makeClient } from '../common';
 import { nocodbListBasesOutputSchema } from '../output-schemas';
 

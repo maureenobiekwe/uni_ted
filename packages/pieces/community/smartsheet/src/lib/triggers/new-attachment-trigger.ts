@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { smartsheetAuth } from '../auth';
 import {
 	smartsheetCommon,
@@ -7,7 +7,7 @@ import {
 	verifyWebhookSignature,
 	getAttachmentFullDetails,
 } from '../common';
-import { WebhookHandshakeStrategy } from '@activepieces/pieces-framework';
+import { WebhookHandshakeStrategy } from '@united/pieces-framework';
 
 const TRIGGER_KEY = 'smartsheet_new_attachment_trigger';
 

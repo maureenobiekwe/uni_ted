@@ -1,5 +1,5 @@
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createTrigger, Property, TriggerStrategy } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { typefullyAuth } from '../auth';
 import { typefullyApiCall } from '../common/client';
 import { draftSampleData, instructionsMarkdown } from '../common/props';

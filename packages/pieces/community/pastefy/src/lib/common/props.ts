@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { pastefyAuth } from './auth';
 import { pastefyRequests } from './requests';
 

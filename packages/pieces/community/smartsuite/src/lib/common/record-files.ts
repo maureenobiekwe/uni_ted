@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import FormData from 'form-data';
 import { SmartSuiteRecord } from '.';
 import { smartSuiteClient, SmartSuiteCredentials } from './client';

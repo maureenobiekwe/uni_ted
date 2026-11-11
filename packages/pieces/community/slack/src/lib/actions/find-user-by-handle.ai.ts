@@ -1,4 +1,4 @@
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { slackAuth } from '../auth';
 import { findUserByHandleAction } from './find-user-by-handle';
 import { findUserByHandleActionOutputSchema } from '../output-schemas';

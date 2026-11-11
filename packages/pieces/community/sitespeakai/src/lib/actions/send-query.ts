@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { SiteSpeakAuth } from '../common/auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { makeRequest } from '../common/client';
 import { chatbotIdDropdown, conversationIdDropdown } from '../common/dropdown';
 

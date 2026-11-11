@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import { systemeIoAuth } from '../../common/auth';
 import { courseRow } from '../../common/mappers';
 import { aiListCoursesOutputSchema } from '../../output-schemas-ai';

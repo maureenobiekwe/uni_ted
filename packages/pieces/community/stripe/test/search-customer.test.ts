@@ -2,9 +2,9 @@
 
 const { sendRequest } = vi.hoisted(() => ({ sendRequest: vi.fn() }));
 
-vi.mock('@activepieces/pieces-common', async (importOriginal) => {
+vi.mock('@united/pieces-common', async (importOriginal) => {
   const actual = await importOriginal<
-    typeof import('@activepieces/pieces-common')
+    typeof import('@united/pieces-common')
   >();
   return {
     ...actual,
@@ -16,7 +16,7 @@ vi.mock('@activepieces/pieces-common', async (importOriginal) => {
 
 vi.mock('../src/index', () => ({ stripeAuth: { type: 'SECRET_TEXT' } }));
 
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { stripeSearchCustomer } from '../src/lib/actions/search-customer';
 
 const auth = { secret_text: 'sk_test_dummy' };

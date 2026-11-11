@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { netlifyAuth } from '../common/auth';
 import { netlifySchemas } from '../common/output-schemas';
 import { netlifyProps } from '../common/props';

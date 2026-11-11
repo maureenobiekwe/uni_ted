@@ -1,4 +1,4 @@
-import { DropdownOption, Property } from '@activepieces/pieces-framework';
+import { DropdownOption, Property } from '@united/pieces-framework';
 import { cmsAuth } from '../auth';
 import { totalcmsApi, totalcmsHelpers, TotalCmsConnection } from './client';
 

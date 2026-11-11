@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { HttpResponse, httpClient } from '@activepieces/pieces-common';
+import { HttpResponse, httpClient } from '@united/pieces-common';
 
 import { employeeTerminatedTrigger } from '../src/lib/triggers/employee-terminated';
 import { newHireCreatedTrigger } from '../src/lib/triggers/new-hire-created';

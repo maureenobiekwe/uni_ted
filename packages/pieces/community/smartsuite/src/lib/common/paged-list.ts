@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { smartSuiteClient, SmartSuiteCredentials } from './client';
 import { smartSuiteInputs } from './inputs';
 

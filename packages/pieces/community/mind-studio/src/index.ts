@@ -1,7 +1,7 @@
 
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from '@united/pieces-framework';
 import { runWorkflowAction } from './lib/actions/run-workflow';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 
 export const mindStudioAuth = PieceAuth.SecretText({
   displayName: 'API Key',

@@ -1,5 +1,5 @@
 import { Readable } from 'stream';
-import { httpClient, HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, QueryParams } from '@united/pieces-common';
 
 export const BASE_URL = 'https://api.pdfmonkey.io/api/v1';
 

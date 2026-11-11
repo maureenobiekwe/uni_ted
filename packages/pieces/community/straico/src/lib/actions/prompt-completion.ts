@@ -1,11 +1,11 @@
 import { straicoAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@united/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
   propsValidation,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import * as z from 'zod/mini'
 
 import { baseUrlv1 } from '../common/common';

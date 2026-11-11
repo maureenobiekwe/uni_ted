@@ -4,8 +4,8 @@ import {
   HttpMethod,
   HttpResponse,
   QueryParams,
-} from '@activepieces/pieces-common';
-import { AppConnectionValueForAuthProperty } from '@activepieces/pieces-framework';
+} from '@united/pieces-common';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { niftyAuth } from '../auth';
 
 const BASE_URL = 'https://openapi.niftypm.com/api/v1.0';

@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { createAction } from '@united/pieces-framework';
 import { pocketbaseAuth } from '../../../auth';
 import { pocketbaseAiProps } from '../../../common/ai-props';
 import { pocketbaseClient } from '../../../common/client';

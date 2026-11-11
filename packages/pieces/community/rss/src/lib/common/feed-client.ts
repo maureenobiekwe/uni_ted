@@ -1,7 +1,7 @@
 import FeedParser from 'feedparser';
 
-import { httpClient, HttpError, HttpMethod } from '@activepieces/pieces-common';
-import { tryCatch } from '@activepieces/pieces-framework';
+import { httpClient, HttpError, HttpMethod } from '@united/pieces-common';
+import { tryCatch } from '@united/pieces-framework';
 
 async function fetchFeed({ url }: { url: string }): Promise<ParsedFeed> {
 	const response = await sendGet<Buffer>({ url, responseType: 'arraybuffer' });

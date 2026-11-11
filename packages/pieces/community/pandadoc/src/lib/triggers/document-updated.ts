@@ -1,4 +1,4 @@
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, Property, TriggerStrategy } from '@united/pieces-framework';
 import { pandadocAuth } from '../common/auth';
 import { folderFilterDropdown, templateFilterDropdown } from '../common/dynamic-dropdowns';
 import { pandadocSchemas } from '../common/schemas';

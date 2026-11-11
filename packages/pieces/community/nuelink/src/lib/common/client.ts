@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod, HttpResponse } from '@activepieces/pieces-common';
-import { AppConnectionType } from '@activepieces/pieces-framework';
+import { httpClient, HttpMethod, HttpResponse } from '@united/pieces-common';
+import { AppConnectionType } from '@united/pieces-framework';
 import type { NuelinkAuthValue } from '../auth';
 
 export class NuelinkApiError extends Error {

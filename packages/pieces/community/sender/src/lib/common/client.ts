@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient, QueryParams } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient, QueryParams } from '@united/pieces-common';
 
 import type { SenderAuthValue } from './types';
 

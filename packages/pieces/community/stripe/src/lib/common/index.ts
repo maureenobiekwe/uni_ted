@@ -3,12 +3,12 @@ import {
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@united/pieces-common';
 import {
   Property,
   DropdownState,
   isNil,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 import { Stripe } from 'stripe';
 import { stripeAuth } from '../..';
 import {

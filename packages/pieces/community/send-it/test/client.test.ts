@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, test, vi } from 'vitest';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { SendItApiError, sendItApi } from '../src/lib/common/client';
 import { sendItAuth } from '../src/lib/common/auth';
 import { API_KEY, TEST_SERVER, replies, stubFetch } from './helpers';

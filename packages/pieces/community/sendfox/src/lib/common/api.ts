@@ -1,4 +1,4 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { sendfoxClient } from './client';
 import type { SendfoxAuthValue, SendfoxContact } from './types';
 

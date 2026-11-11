@@ -1,4 +1,4 @@
-import { httpClient } from '@activepieces/pieces-common';
+import { httpClient } from '@united/pieces-common';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { PostHogApiError } from '../src/lib/common/client';
 import { listSurveys } from '../src/lib/actions/ai/list-surveys';

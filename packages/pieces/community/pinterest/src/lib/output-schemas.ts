@@ -1,4 +1,4 @@
-import { OutputSchema } from '@activepieces/pieces-framework';
+import { OutputSchema } from '@united/pieces-framework';
 
 // Board shape is identical across POST /boards, PATCH /boards/{id},
 // GET /search/boards items and GET /boards.

@@ -2,8 +2,8 @@ import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { wafeqAuth } from '../common/auth';
 import { wafeqApiCall, WafeqPaginatedResponse } from '../common/client';
 import { wafeqProps } from '../common/props';

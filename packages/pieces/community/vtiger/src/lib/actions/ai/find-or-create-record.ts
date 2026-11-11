@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@united/pieces-framework';
 import { vtigerAuth } from '../../auth';
 import { fieldsJsonProp, moduleProp, recordOutput, requiredText } from '../../ai-common';
 import { recordFromJson } from '../../common';

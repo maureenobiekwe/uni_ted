@@ -1,4 +1,4 @@
-import { DropdownState, Property } from '@activepieces/pieces-framework';
+import { DropdownState, Property } from '@united/pieces-framework';
 import { niftyAuth } from '../auth';
 import { NiftyApiError, NiftyAuth, niftyClient, NiftyRecord } from './client';
 

@@ -1,5 +1,5 @@
-import { HttpError, HttpMessageBody, HttpMethod } from '@activepieces/pieces-common';
-import { tryCatch } from '@activepieces/pieces-framework';
+import { HttpError, HttpMessageBody, HttpMethod } from '@united/pieces-common';
+import { tryCatch } from '@united/pieces-framework';
 import dayjs from 'dayjs';
 import { quickbooksClient } from './client';
 import type {

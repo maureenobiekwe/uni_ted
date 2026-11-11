@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { isNil } from '@united/pieces-framework';
 import { smartleadRequest, SmartleadApiError } from './client';
 
 function isRecord(value: unknown): value is Record<string, unknown> {

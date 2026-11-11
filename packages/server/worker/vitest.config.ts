@@ -6,8 +6,8 @@ export default defineConfig({
     globals: true,
     environment: 'node',
     pool: 'forks',
-    include: [path.resolve(__dirname, 'test/**/*.test.ts')],
-    exclude: [path.resolve(__dirname, 'test/e2e/**')],
+    include: [path.resolve(__dirname, 'test/**/*.test.ts').replaceAll(path.sep, '/')],
+    exclude: [path.resolve(__dirname, 'test/e2e/**').replaceAll(path.sep, '/')],
     setupFiles: [path.resolve(__dirname, 'vitest.setup.ts')],
   },
   resolve: {

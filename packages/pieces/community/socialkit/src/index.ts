@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { httpClient, HttpMethod, createCustomApiCallAction, HttpHeaders } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createPiece, PieceAuth } from "@united/pieces-framework";
+import { httpClient, HttpMethod, createCustomApiCallAction, HttpHeaders } from '@united/pieces-common';
+import { PieceCategory } from '@united/pieces-framework';
 
 import { getYoutubeDetails } from './lib/actions/get-youtube-details';
 import { getYoutubeTranscript } from './lib/actions/get-youtube-transcript';

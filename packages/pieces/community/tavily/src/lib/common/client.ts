@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, AuthenticationType, HttpError } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, AuthenticationType, HttpError } from '@united/pieces-common';
 
 const BASE_URL = 'https://api.tavily.com';
 

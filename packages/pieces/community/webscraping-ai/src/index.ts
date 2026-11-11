@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece, PieceCategory } from '@united/pieces-framework';
 import { webscrapingAiAiActions } from './lib/actions/ai';
 import { askAQuestionAboutTheWebPageAction } from './lib/actions/ask-a-question-about-the-web-page';
 import { extractStructuredDataAction } from './lib/actions/extract-structured-data';

@@ -1,5 +1,5 @@
-import { HttpError, HttpRequest, HttpResponse, httpClient } from '@activepieces/pieces-common';
-import { createMockActionContext, createMockPollingTriggerContext, InputPropertyMap } from '@activepieces/pieces-framework';
+import { HttpError, HttpRequest, HttpResponse, httpClient } from '@united/pieces-common';
+import { createMockActionContext, createMockPollingTriggerContext, InputPropertyMap } from '@united/pieces-framework';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import '../src';
 import { createProductAction } from '../src/lib/actions/create-product';

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { retableCreateProjectAction } from './lib/actions/create-project';
 import { retableCreateWorkspaceAction } from './lib/actions/create-workspace';
 import { retableGetAllProjectsAction } from './lib/actions/get-all-projects';

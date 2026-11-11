@@ -7,7 +7,7 @@ import {
 	InputPropertyMap,
 	SecretTextProperty,
 	StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 
 export const TEST_AUTH: SecretTextConnection = { type: AppConnectionType.SECRET_TEXT, secret_text: 'softr_test_key' };
 

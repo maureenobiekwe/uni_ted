@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { whatsappAuth } from '../auth';
 import { phoneNumberDropdown } from '../common/utils';
 import { whatsappWebhook } from '../common/webhook';

@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 import { useinboxClient } from './client';
 
 export const useinboxAuth = PieceAuth.BasicAuth({

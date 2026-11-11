@@ -1,5 +1,5 @@
-import { createTrigger, Store, TriggerStrategy } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { createTrigger, Store, TriggerStrategy } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
 import { rendexAuth } from '../common/auth';
 import { rendexClient, RendexAuthValue } from '../common/client';
 import { rendexInput } from '../common/common';

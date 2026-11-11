@@ -1,5 +1,5 @@
-import { createAction, isNil, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { createAction, isNil, Property } from '@united/pieces-framework';
+import { HttpMethod, httpClient } from '@united/pieces-common';
 import { mistralAuth } from '../common/auth';
 import { parseMistralError } from '../common/props';
 import { mistralRequest } from '../common/request';

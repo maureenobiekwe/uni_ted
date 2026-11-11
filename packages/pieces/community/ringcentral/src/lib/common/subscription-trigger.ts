@@ -3,7 +3,7 @@ import {
   DEDUPE_KEY_PROPERTY,
   TriggerStrategy,
   WebhookHandshakeStrategy,
-} from '@activepieces/pieces-framework';
+} from '@united/pieces-framework';
 
 import { ringcentralAuth } from './auth';
 import { ringcentralCommon, RingCentralWebhookEvent } from './client';
