@@ -1,0 +1,148 @@
+name: Reusable - Finalize Translations PR
+
+on:
+  workflow_call:
+    inputs:
+      branch_name:
+        description: "Branch name to open PR from"
+        required: true
+        type: string
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Cache dependencies
+        uses: actions/cache@v5
+        with:
+          path: ~/.bun/install/cache
+          key: bun-${{ hashFiles('bun.lock', 'package.json') }}
+          restore-keys: bun-
+
+      - name: Setup nodejs
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Configure git
+        run: |
+          git config --local user.email "abdulyki+automatedcommits@united.com"
+          git config --local user.name "automated-commits-ap"
+          git checkout -- bun.lock
+
+      - name: Prepare branch
+        env:
+          BRANCH_NAME: ${{ inputs.branch_name }}
+        run: |
+          git fetch origin
+          if git rev-parse --verify origin/$BRANCH_NAME >/dev/null 2>&1; then
+            git checkout -b $BRANCH_NAME origin/$BRANCH_NAME || git checkout $BRANCH_NAME
+          else
+            git checkout -b $BRANCH_NAME origin/main
+          fi
+
+      - name: Merge latest main
+        run: |
+          git fetch origin main
+          if ! git merge --no-edit origin/main; then
+            CONFLICTS=$(git diff --name-only --diff-filter=U)
+            for FILE in $CONFLICTS; do
+              if git cat-file -e "origin/main:$FILE" 2>/dev/null; then
+                git checkout --theirs -- "$FILE"
+                git add -- "$FILE"
+              else
+                git rm -q -- "$FILE"
+              fi
+            done
+            git commit --no-edit
+            for FILE in $(echo "$CONFLICTS" | grep '/src/i18n/translation.json$'); do
+              if [ -f "$FILE" ]; then
+                npm run cli pieces generate-translation-file -- "$(basename "$(dirname "$(dirname "$(dirname "$FILE")")")")"
+              fi
+            done
+          fi
+
+      - name: Generate translation files for UI
+        run: npm run i18n:extract
+
+      - name: Commit UI changes (if any)
+        env:
+          BRANCH_NAME: ${{ inputs.branch_name }}
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "feat: update UI translations [skip-changelog]"
+          else
+            echo "No changes for UI translations in react app"
+          fi
+          git push origin $BRANCH_NAME
+
+      - name: Check branch ahead of main
+        id: ahead
+        env:
+          BRANCH_NAME: ${{ inputs.branch_name }}
+        run: |
+          git fetch origin
+          git checkout $BRANCH_NAME
+          if git diff --quiet origin/main HEAD; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Delete unchanged branch
+        if: steps.ahead.outputs.changes == 'false'
+        env:
+          BRANCH_NAME: ${{ inputs.branch_name }}
+        run: git push origin --delete $BRANCH_NAME
+
+      - name: Create Pull Request
+        if: steps.ahead.outputs.changes == 'true'
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.CROWDIN_PRS }}
+          script: |
+            const branchName = `${{ inputs.branch_name }}`;
+            const { data: pullRequest } = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'feat: New translation files',
+              body: 'Automatically generated translation files for all pieces',
+              head: branchName,
+              base: 'main',
+              draft: false
+            });
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pullRequest.number,
+              labels: ['skip-changelog', 'translations', 'auto-merge']
+            });
+            await github.rest.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pullRequest.number,
+              merge_method: 'squash'
+            });
+
+            await github.rest.git.deleteRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `heads/${branchName}`
+            });
+
+

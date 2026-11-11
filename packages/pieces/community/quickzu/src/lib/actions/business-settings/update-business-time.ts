@@ -1,0 +1,93 @@
+import { Property, createAction } from '@activepieces/pieces-framework';
+import { quickzuAuth } from '../../auth';
+import { quickzuOutputSchemas } from '../../common/output-schemas';
+import { makeClient } from '../../common';
+import { BusinessTimingInput } from '../../common/types';
+
+function toBusinessDayHour(item: unknown): BusinessDayHour {
+  if (typeof item !== 'object' || item === null) {
+    throw new Error('Each business hours entry must have a day, start time and end time.');
+  }
+  const weekday: unknown = Reflect.get(item, 'weekday');
+  const start: unknown = Reflect.get(item, 'start');
+  const end: unknown = Reflect.get(item, 'end');
+  const status: unknown = Reflect.get(item, 'status');
+  if (typeof weekday !== 'string' || typeof start !== 'string' || typeof end !== 'string') {
+    throw new Error('Each business hours entry must have a day, start time and end time.');
+  }
+  return { weekday, start: start.trim(), end: end.trim(), status: status !== false };
+}
+
+export const updateBusinessTimeAction = createAction({
+  auth: quickzuAuth,
+  name: 'quickzu_update_business_time',
+  outputSchema: quickzuOutputSchemas.statusMessage,
+  classification: 'WRITE',
+  displayName: 'Update Business Time',
+  description: 'Updates business hours.',
+  audience: 'both',
+  aiMetadata: {
+    description:
+      'Sets the weekly operating hours for a Quickzu store, supplying start/end times and an open/closed status per weekday. Use to configure when the store accepts orders. Idempotent: submitting the same schedule repeatedly leaves the store settings in the same state.',
+    idempotent: true,
+  },
+  props: {
+    items: Property.Array({
+      displayName: 'Business Hours',
+      required: true,
+      properties: {
+        weekday: Property.StaticDropdown({
+          displayName: 'Day',
+          required: true,
+          options: {
+            disabled: false,
+            options: [
+              { label: 'Sunday', value: '0' },
+              { label: 'Monday', value: '1' },
+              { label: 'Tuesday', value: '2' },
+              { label: 'Wednesday', value: '3' },
+              { label: 'Thursday', value: '4' },
+              { label: 'Friday', value: '5' },
+              { label: 'Saturday', value: '6' },
+            ],
+          },
+        }),
+        start: Property.ShortText({
+          displayName: 'Start Time',
+          description: 'Please use 24:00 hour format',
+          required: true,
+        }),
+        end: Property.ShortText({
+          displayName: 'End Time',
+          description: 'Please use 24:00 hour format',
+          required: true,
+        }),
+        status: Property.Checkbox({
+          displayName: 'Status',
+          required: true,
+          defaultValue: true,
+        }),
+      },
+    }),
+  },
+  async run(context) {
+    const input: BusinessTimingInput = {
+      timing: Object.fromEntries(
+        context.propsValue.items.map((item) => {
+          const day = toBusinessDayHour(item);
+          return [day.weekday, { start: day.start, end: day.end, status: day.status }];
+        })
+      ),
+    };
+
+    const client = makeClient(context.auth);
+    return await client.updateBusinessTime(input);
+  },
+});
+
+type BusinessDayHour = {
+  weekday: string;
+  start: string;
+  end: string;
+  status: boolean;
+};

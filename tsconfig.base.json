@@ -1,0 +1,2213 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2022", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@united/core-utils": ["packages/core/utils/src/index.ts"],
+      "@united/core-formula": ["packages/core/formula/src/index.ts"],
+      "@united/core-piece-types": ["packages/core/piece-types/src/index.ts"],
+      "@united/core-execution": ["packages/core/execution/src/index.ts"],
+      "@united/ee-auth": ["packages/ee/auth/src/index.ts"],
+      "@united/ee/billing/ui": ["packages/ee/billing/ui/src/index.ts"],
+      "@united/engine": ["packages/server/engine/src/main.ts"],
+      "@united/piece-0codekit": [
+        "packages/pieces/community/0codekit/src/index.ts"
+      ],
+      "@united/piece-activecampaign": [
+        "packages/pieces/community/activecampaign/src/index.ts"
+      ],
+      "@united/piece-united": [
+        "packages/pieces/community/united/src/index.ts"
+      ],
+      "@united/piece-actualbudget": [
+        "packages/pieces/community/actualbudget/src/index.ts"
+      ],
+      "@united/piece-acuity-scheduling": [
+        "packages/pieces/community/acuity-scheduling/src/index.ts"
+      ],
+      "@united/piece-acumbamail": [
+        "packages/pieces/community/acumbamail/src/index.ts"
+      ],
+      "@united/piece-add-event": [
+        "packages/pieces/community/add-event/src/index.ts"
+      ],
+      "@united/piece-afforai": [
+        "packages/pieces/community/afforai/src/index.ts"
+      ],
+      "@united/piece-agent": [
+        "packages/pieces/community/agent/src/index.ts"
+      ],
+      "@united/piece-agentx": [
+        "packages/pieces/community/agentx/src/index.ts"
+      ],
+      "@united/piece-aianswer": [
+        "packages/pieces/community/aianswer/src/index.ts"
+      ],
+      "@united/piece-aidbase": [
+        "packages/pieces/community/aidbase/src/index.ts"
+      ],
+      "@united/piece-aiprise": [
+        "packages/pieces/community/aiprise/src/index.ts"
+      ],
+      "@united/piece-aircall": [
+        "packages/pieces/community/aircall/src/index.ts"
+      ],
+      "@united/piece-airparser": [
+        "packages/pieces/community/airparser/src/index.ts"
+      ],
+      "@united/piece-airtable": [
+        "packages/pieces/community/airtable/src/index.ts"
+      ],
+      "@united/piece-airtop": [
+        "packages/pieces/community/airtop/src/index.ts"
+      ],
+      "@united/piece-amazon-lambda": [
+        "packages/pieces/community/amazon-lambda/src/index.ts"
+      ],
+      "@united/piece-amazon-redshift": [
+        "packages/pieces/community/amazon-redshift/src/index.ts"
+      ],
+      "@united/piece-amazon-s3": [
+        "packages/pieces/community/amazon-s3/src/index.ts"
+      ],
+      "@united/piece-amazon-sns": [
+        "packages/pieces/community/amazon-sns/src/index.ts"
+      ],
+      "@united/piece-amazon-sqs": [
+        "packages/pieces/community/amazon-sqs/src/index.ts"
+      ],
+      "@united/piece-amazon-textract": [
+        "packages/pieces/community/amazon-textract/src/index.ts"
+      ],
+      "@united/piece-aminos": [
+        "packages/pieces/community/aminos/src/index.ts"
+      ],
+      "@united/piece-anyhook-graphql": [
+        "packages/pieces/community/anyhook-graphql/src/index.ts"
+      ],
+      "@united/piece-anyhook-websocket": [
+        "packages/pieces/community/anyhook-websocket/src/index.ts"
+      ],
+      "@united/piece-apache-kafka": [
+        "packages/pieces/community/apache-kafka/src/index.ts"
+      ],
+      "@united/piece-apify": [
+        "packages/pieces/community/apify/src/index.ts"
+      ],
+      "@united/piece-apitable": [
+        "packages/pieces/community/apitable/src/index.ts"
+      ],
+      "@united/piece-apitemplate-io": [
+        "packages/pieces/community/apitemplate-io/src/index.ts"
+      ],
+      "@united/piece-apollo": [
+        "packages/pieces/community/apollo/src/index.ts"
+      ],
+      "@united/piece-approval": [
+        "packages/pieces/core/approval/src/index.ts"
+      ],
+      "@united/piece-asana": [
+        "packages/pieces/community/asana/src/index.ts"
+      ],
+      "@united/piece-ashby": [
+        "packages/pieces/community/ashby/src/index.ts"
+      ],
+      "@united/piece-assembled": [
+        "packages/pieces/community/assembled/src/index.ts"
+      ],
+      "@united/piece-assemblyai": [
+        "packages/pieces/community/assemblyai/src/index.ts"
+      ],
+      "@united/piece-attio": [
+        "packages/pieces/community/attio/src/index.ts"
+      ],
+      "@united/piece-autocalls": [
+        "packages/pieces/community/autocalls/src/index.ts"
+      ],
+      "@united/piece-avian": [
+        "packages/pieces/community/avian/src/index.ts"
+      ],
+      "@united/piece-avoma": [
+        "packages/pieces/community/avoma/src/index.ts"
+      ],
+      "@united/piece-azure-ad": [
+        "packages/pieces/community/azure-ad/src/index.ts"
+      ],
+      "@united/piece-azure-communication-services": [
+        "packages/pieces/community/azure-communication-services/src/index.ts"
+      ],
+      "@united/piece-azure-devops": [
+        "packages/pieces/community/azure-devops/src/index.ts"
+      ],
+      "@united/piece-azure-openai": [
+        "packages/pieces/community/azure-openai/src/index.ts"
+      ],
+      "@united/piece-backblaze": [
+        "packages/pieces/community/backblaze/src/index.ts"
+      ],
+      "@united/piece-bamboohr": [
+        "packages/pieces/community/bamboohr/src/index.ts"
+      ],
+      "@united/piece-bannerbear": [
+        "packages/pieces/community/bannerbear/src/index.ts"
+      ],
+      "@united/piece-baserow": [
+        "packages/pieces/community/baserow/src/index.ts"
+      ],
+      "@united/piece-beamer": [
+        "packages/pieces/community/beamer/src/index.ts"
+      ],
+      "@united/piece-beebole": [
+        "packages/pieces/community/beebole/src/index.ts"
+      ],
+      "@united/piece-beehiiv": [
+        "packages/pieces/community/beehiiv/src/index.ts"
+      ],
+      "@united/piece-bettermode": [
+        "packages/pieces/community/bettermode/src/index.ts"
+      ],
+      "@united/piece-bocha-search": [
+        "packages/pieces/community/bocha-search/src/index.ts"
+      ],
+      "@united/piece-bigcommerce": [
+        "packages/pieces/community/bigcommerce/src/index.ts"
+      ],
+      "@united/piece-bigin-by-zoho": [
+        "packages/pieces/community/bigin-by-zoho/src/index.ts"
+      ],
+      "@united/piece-bika": [
+        "packages/pieces/community/bika/src/index.ts"
+      ],
+      "@united/piece-binance": [
+        "packages/pieces/community/binance/src/index.ts"
+      ],
+      "@united/piece-bitly": [
+        "packages/pieces/community/bitly/src/index.ts"
+      ],
+      "@united/piece-blockscout": [
+        "packages/pieces/community/blockscout/src/index.ts"
+      ],
+      "@united/piece-bluesky": [
+        "packages/pieces/community/bluesky/src/index.ts"
+      ],
+      "@united/piece-bonjoro": [
+        "packages/pieces/community/bonjoro/src/index.ts"
+      ],
+      "@united/piece-box": ["packages/pieces/community/box/src/index.ts"],
+      "@united/piece-brilliant-directories": [
+        "packages/pieces/community/brilliant-directories/src/index.ts"
+      ],
+      "@united/piece-browse-ai": [
+        "packages/pieces/community/browse-ai/src/index.ts"
+      ],
+      "@united/piece-browserless": [
+        "packages/pieces/community/browserless/src/index.ts"
+      ],
+      "@united/piece-bubble": [
+        "packages/pieces/community/bubble/src/index.ts"
+      ],
+      "@united/piece-buffer": [
+        "packages/pieces/community/buffer/src/index.ts"
+      ],
+      "@united/piece-bumpups": [
+        "packages/pieces/community/bumpups/src/index.ts"
+      ],
+      "@united/piece-cal-com": [
+        "packages/pieces/community/cal-com/src/index.ts"
+      ],
+      "@united/piece-calendly": [
+        "packages/pieces/community/calendly/src/index.ts"
+      ],
+      "@united/piece-google-ads": [
+        "packages/pieces/community/google-ads/src/index.ts"
+      ],
+      "@united/piece-google-translate": [
+        "packages/pieces/community/google-translate/src/index.ts"
+      ],
+      "@united/piece-google-document-ai": [
+        "packages/pieces/community/google-document-ai/src/index.ts"
+      ],
+      "@united/piece-google-workspace": [
+        "packages/pieces/community/google-workspace/src/index.ts"
+      ],
+      "@united/piece-rounded-studio": [
+        "packages/pieces/community/rounded-studio/src/index.ts"
+      ],
+      "@united/piece-camb-ai": [
+        "packages/pieces/community/camb-ai/src/index.ts"
+      ],
+      "@united/piece-campaign-monitor": [
+        "packages/pieces/community/campaign-monitor/src/index.ts"
+      ],
+      "@united/piece-canva": [
+        "packages/pieces/community/canva/src/index.ts"
+      ],
+      "@united/piece-capsule-crm": [
+        "packages/pieces/community/capsule-crm/src/index.ts"
+      ],
+      "@united/piece-captain-data": [
+        "packages/pieces/community/captain-data/src/index.ts"
+      ],
+      "@united/piece-cartloom": [
+        "packages/pieces/community/cartloom/src/index.ts"
+      ],
+      "@united/piece-certopus": [
+        "packages/pieces/community/certopus/src/index.ts"
+      ],
+      "@united/piece-chainalysis-api": [
+        "packages/pieces/community/chainalysis-api/src/index.ts"
+      ],
+      "@united/piece-chargebee": [
+        "packages/pieces/community/chargebee/src/index.ts"
+      ],
+      "@united/piece-chargekeep": [
+        "packages/pieces/community/chargekeep/src/index.ts"
+      ],
+      "@united/piece-chat-data": [
+        "packages/pieces/community/chat-data/src/index.ts"
+      ],
+      "@united/piece-chatbase": [
+        "packages/pieces/community/chatbase/src/index.ts"
+      ],
+      "@united/piece-chatwoot": [
+        "packages/pieces/community/chatwoot/src/index.ts"
+      ],
+      "@united/piece-checkout": [
+        "packages/pieces/community/checkout/src/index.ts"
+      ],
+      "@united/piece-chess-com": [
+        "packages/pieces/community/chess-com/src/index.ts"
+      ],
+      "@united/piece-circle": [
+        "packages/pieces/community/circle/src/index.ts"
+      ],
+      "@united/piece-clarifai": [
+        "packages/pieces/community/clarifai/src/index.ts"
+      ],
+      "@united/piece-claude": [
+        "packages/pieces/community/claude/src/index.ts"
+      ],
+      "@united/piece-clay": [
+        "packages/pieces/community/clay/src/index.ts"
+      ],
+      "@united/piece-clearout": [
+        "packages/pieces/community/clearout/src/index.ts"
+      ],
+      "@united/piece-clickfunnels": [
+        "packages/pieces/community/clickfunnels/src/index.ts"
+      ],
+      "@united/piece-clicksend": [
+        "packages/pieces/community/clicksend/src/index.ts"
+      ],
+      "@united/piece-clickup": [
+        "packages/pieces/community/clickup/src/index.ts"
+      ],
+      "@united/piece-clockify": [
+        "packages/pieces/community/clockify/src/index.ts"
+      ],
+      "@united/piece-everhour": [
+        "packages/pieces/community/everhour/src/index.ts"
+      ],
+      "@united/piece-clockodo": [
+        "packages/pieces/community/clockodo/src/index.ts"
+      ],
+      "@united/piece-close": [
+        "packages/pieces/community/close/src/index.ts"
+      ],
+      "@united/piece-cohere": [
+        "packages/pieces/community/cohere/src/index.ts"
+      ],
+      "@united/piece-cloudconvert": [
+        "packages/pieces/community/cloudconvert/src/index.ts"
+      ],
+      "@united/piece-cloudinary": [
+        "packages/pieces/community/cloudinary/src/index.ts"
+      ],
+      "@united/piece-cloutly": [
+        "packages/pieces/community/cloutly/src/index.ts"
+      ],
+      "@united/piece-coda": [
+        "packages/pieces/community/coda/src/index.ts"
+      ],
+      "@united/piece-cody": [
+        "packages/pieces/community/cody/src/index.ts"
+      ],
+      "@united/piece-cognito-forms": [
+        "packages/pieces/community/cognito-forms/src/index.ts"
+      ],
+      "@united/piece-cometapi": [
+        "packages/pieces/community/cometapi/src/index.ts"
+      ],
+      "@united/piece-comfyicu": [
+        "packages/pieces/community/comfyicu/src/index.ts"
+      ],
+      "@united/piece-confluence": [
+        "packages/pieces/community/confluence/src/index.ts"
+      ],
+      "@united/piece-connections": [
+        "packages/pieces/core/connections/src/index.ts"
+      ],
+      "@united/piece-constant-contact": [
+        "packages/pieces/community/constant-contact/src/index.ts"
+      ],
+      "@united/piece-contentful": [
+        "packages/pieces/community/contentful/src/index.ts"
+      ],
+      "@united/piece-contiguity": [
+        "packages/pieces/community/contiguity/src/index.ts"
+      ],
+      "@united/piece-convertapi": [
+        "packages/pieces/community/convertapi/src/index.ts"
+      ],
+      "@united/piece-convertkit": [
+        "packages/pieces/community/convertkit/src/index.ts"
+      ],
+      "@united/piece-copper": [
+        "packages/pieces/community/copper/src/index.ts"
+      ],
+      "@united/piece-copy-ai": [
+        "packages/pieces/community/copy-ai/src/index.ts"
+      ],
+      "@united/piece-coupa": [
+        "packages/pieces/community/coupa/src/index.ts"
+      ],
+      "@united/piece-crisp": [
+        "packages/pieces/community/crisp/src/index.ts"
+      ],
+      "@united/piece-crypto": [
+        "packages/pieces/core/crypto/src/index.ts"
+      ],
+      "@united/piece-csv": ["packages/pieces/core/csv/src/index.ts"],
+      "@united/piece-dappier": [
+        "packages/pieces/community/dappier/src/index.ts"
+      ],
+      "@united/piece-data-mapper": [
+        "packages/pieces/core/data-mapper/src/index.ts"
+      ],
+      "@united/piece-data-summarizer": [
+        "packages/pieces/core/data-summarizer/src/index.ts"
+      ],
+      "@united/piece-databricks": [
+        "packages/pieces/community/databricks/src/index.ts"
+      ],
+      "@united/piece-datadog": [
+        "packages/pieces/community/datadog/src/index.ts"
+      ],
+      "@united/piece-dataforb2b": [
+        "packages/pieces/community/dataforb2b/src/index.ts"
+      ],
+      "@united/piece-date-helper": [
+        "packages/pieces/core/date-helper/src/index.ts"
+      ],
+      "@united/piece-datocms": [
+        "packages/pieces/community/datocms/src/index.ts"
+      ],
+      "@united/piece-deepgram": [
+        "packages/pieces/community/deepgram/src/index.ts"
+      ],
+      "@united/piece-deepl": [
+        "packages/pieces/community/deepl/src/index.ts"
+      ],
+      "@united/piece-deepseek": [
+        "packages/pieces/community/deepseek/src/index.ts"
+      ],
+      "@united/piece-deftform": [
+        "packages/pieces/community/deftform/src/index.ts"
+      ],
+      "@united/piece-delay": ["packages/pieces/core/delay/src/index.ts"],
+      "@united/piece-descript": [
+        "packages/pieces/community/descript/src/index.ts"
+      ],
+      "@united/piece-devin": [
+        "packages/pieces/community/devin/src/index.ts"
+      ],
+      "@united/piece-dimo": [
+        "packages/pieces/community/dimo/src/index.ts"
+      ],
+      "@united/piece-discord": [
+        "packages/pieces/community/discord/src/index.ts"
+      ],
+      "@united/piece-discourse": [
+        "packages/pieces/community/discourse/src/index.ts"
+      ],
+      "@united/piece-dittofeed": [
+        "packages/pieces/community/dittofeed/src/index.ts"
+      ],
+      "@united/piece-docsbot": [
+        "packages/pieces/community/docsbot/src/index.ts"
+      ],
+      "@united/piece-docusign": [
+        "packages/pieces/community/docusign/src/index.ts"
+      ],
+      "@united/piece-drip": [
+        "packages/pieces/community/drip/src/index.ts"
+      ],
+      "@united/piece-dropbox": [
+        "packages/pieces/community/dropbox/src/index.ts"
+      ],
+      "@united/piece-drupal": [
+        "packages/pieces/community/drupal/src/index.ts"
+      ],
+      "@united/piece-dub": ["packages/pieces/community/dub/src/index.ts"],
+      "@united/piece-dumpling-ai": [
+        "packages/pieces/community/dumpling-ai/src/index.ts"
+      ],
+      "@united/piece-eden-ai": [
+        "packages/pieces/community/eden-ai/src/index.ts"
+      ],
+      "@united/piece-editionguard": [
+        "packages/pieces/community/editionguard/src/index.ts"
+      ],
+      "@united/piece-elastic-email": [
+        "packages/pieces/community/elastic-email/src/index.ts"
+      ],
+      "@united/piece-elevenlabs": [
+        "packages/pieces/community/elevenlabs/src/index.ts"
+      ],
+      "@united/piece-emailoctopus": [
+        "packages/pieces/community/emailoctopus/src/index.ts"
+      ],
+      "@united/piece-eth-name-service": [
+        "packages/pieces/community/eth-name-service/src/index.ts"
+      ],
+      "@united/piece-exa": ["packages/pieces/community/exa/src/index.ts"],
+      "@united/piece-facebook-leads": [
+        "packages/pieces/community/facebook-leads/src/index.ts"
+      ],
+      "@united/piece-facebook-pages": [
+        "packages/pieces/community/facebook-pages/src/index.ts"
+      ],
+      "@united/piece-fathom-analytics": [
+        "packages/pieces/community/fathom-analytics/src/index.ts"
+      ],
+      "@united/piece-feedhive": [
+        "packages/pieces/community/feedhive/src/index.ts"
+      ],
+      "@united/piece-figma": [
+        "packages/pieces/community/figma/src/index.ts"
+      ],
+      "@united/piece-file-helper": [
+        "packages/pieces/core/file-helper/src/index.ts"
+      ],
+      "@united/piece-filetopdf": [
+        "packages/pieces/community/filetopdf/src/index.ts"
+      ],
+      "@united/piece-fillout-forms": [
+        "packages/pieces/community/fillout-forms/src/index.ts"
+      ],
+      "@united/piece-fireberry": [
+        "packages/pieces/community/fireberry/src/index.ts"
+      ],
+      "@united/piece-firecrawl": [
+        "packages/pieces/community/firecrawl/src/index.ts"
+      ],
+      "@united/piece-fireflies-ai": [
+        "packages/pieces/community/fireflies-ai/src/index.ts"
+      ],
+      "@united/piece-fliqr-ai": [
+        "packages/pieces/community/fliqr-ai/src/index.ts"
+      ],
+      "@united/piece-frill": [
+        "packages/pieces/community/frill/src/index.ts"
+      ],
+      "@united/piece-floqer": [
+        "packages/pieces/community/floqer/src/index.ts"
+      ],
+      "@united/piece-flow-helper": [
+        "packages/pieces/community/flow-helper/src/index.ts"
+      ],
+      "@united/piece-flowise": [
+        "packages/pieces/community/flowise/src/index.ts"
+      ],
+      "@united/piece-flowlu": [
+        "packages/pieces/community/flowlu/src/index.ts"
+      ],
+      "@united/piece-foreplay-co": [
+        "packages/pieces/community/foreplay-co/src/index.ts"
+      ],
+      "@united/piece-formbricks": [
+        "packages/pieces/community/formbricks/src/index.ts"
+      ],
+      "@united/piece-formio": [
+        "packages/pieces/community/formio/src/index.ts"
+      ],
+      "@united/piece-forms": ["packages/pieces/core/forms/src/index.ts"],
+      "@united/piece-formstack": [
+        "packages/pieces/community/formstack/src/index.ts"
+      ],
+      "@united/piece-frame": [
+        "packages/pieces/community/frame/src/index.ts"
+      ],
+      "@united/piece-freshdesk": [
+        "packages/pieces/community/freshdesk/src/index.ts"
+      ],
+      "@united/piece-freshservice": [
+        "packages/pieces/community/freshservice/src/index.ts"
+      ],
+      "@united/piece-freshsales": [
+        "packages/pieces/community/freshsales/src/index.ts"
+      ],
+      "@united/piece-front": [
+        "packages/pieces/community/front/src/index.ts"
+      ],
+      "@united/piece-gameball": [
+        "packages/pieces/community/gameball/src/index.ts"
+      ],
+      "@united/piece-gamma": [
+        "packages/pieces/community/gamma/src/index.ts"
+      ],
+      "@united/piece-gcloud-pubsub": [
+        "packages/pieces/community/gcloud-pubsub/src/index.ts"
+      ],
+      "@united/piece-generatebanners": [
+        "packages/pieces/community/generatebanners/src/index.ts"
+      ],
+      "@united/piece-getresponse": [
+        "packages/pieces/community/getresponse/src/index.ts"
+      ],
+      "@united/piece-ghostcms": [
+        "packages/pieces/community/ghostcms/src/index.ts"
+      ],
+      "@united/piece-github": [
+        "packages/pieces/community/github/src/index.ts"
+      ],
+      "@united/piece-gitlab": [
+        "packages/pieces/community/gitlab/src/index.ts"
+      ],
+      "@united/piece-gmail": [
+        "packages/pieces/community/gmail/src/index.ts"
+      ],
+      "@united/piece-google-bigquery": [
+        "packages/pieces/community/google-bigquery/src/index.ts"
+      ],
+      "@united/piece-google-calendar": [
+        "packages/pieces/community/google-calendar/src/index.ts"
+      ],
+      "@united/piece-google-contacts": [
+        "packages/pieces/community/google-contacts/src/index.ts"
+      ],
+      "@united/piece-google-docs": [
+        "packages/pieces/community/google-docs/src/index.ts"
+      ],
+      "@united/piece-google-drive": [
+        "packages/pieces/community/google-drive/src/index.ts"
+      ],
+      "@united/piece-google-forms": [
+        "packages/pieces/community/google-forms/src/index.ts"
+      ],
+      "@united/piece-google-gemini": [
+        "packages/pieces/community/google-gemini/src/index.ts"
+      ],
+      "@united/piece-google-my-business": [
+        "packages/pieces/community/google-my-business/src/index.ts"
+      ],
+      "@united/piece-google-search-console": [
+        "packages/pieces/community/google-search-console/src/index.ts"
+      ],
+      "@united/piece-google-sheets": [
+        "packages/pieces/community/google-sheets/src/index.ts"
+      ],
+      "@united/piece-google-slides": [
+        "packages/pieces/community/google-slides/src/index.ts"
+      ],
+      "@united/piece-google-tasks": [
+        "packages/pieces/community/google-tasks/src/index.ts"
+      ],
+      "@united/piece-googlechat": [
+        "packages/pieces/community/googlechat/src/index.ts"
+      ],
+      "@united/piece-gotify": [
+        "packages/pieces/community/gotify/src/index.ts"
+      ],
+      "@united/piece-gorgias": [
+        "packages/pieces/community/gorgias/src/index.ts"
+      ],
+      "@united/piece-granola": [
+        "packages/pieces/community/granola/src/index.ts"
+      ],
+      "@united/piece-graphql": [
+        "packages/pieces/core/graphql/src/index.ts"
+      ],
+      "@united/piece-gravityforms": [
+        "packages/pieces/community/gravityforms/src/index.ts"
+      ],
+      "@united/piece-greenhouse": [
+        "packages/pieces/community/greenhouse/src/index.ts"
+      ],
+      "@united/piece-grist": [
+        "packages/pieces/community/grist/src/index.ts"
+      ],
+      "@united/piece-grok-xai": [
+        "packages/pieces/community/grok-xai/src/index.ts"
+      ],
+      "@united/piece-groq": [
+        "packages/pieces/community/groq/src/index.ts"
+      ],
+      "@united/piece-hackernews": [
+        "packages/pieces/community/hackernews/src/index.ts"
+      ],
+      "@united/piece-harvest": [
+        "packages/pieces/community/harvest/src/index.ts"
+      ],
+      "@united/piece-heartbeat": [
+        "packages/pieces/community/heartbeat/src/index.ts"
+      ],
+      "@united/piece-hedy": [
+        "packages/pieces/community/hedy/src/index.ts"
+      ],
+      "@united/piece-help-scout": [
+        "packages/pieces/community/help-scout/src/index.ts"
+      ],
+      "@united/piece-heygen": [
+        "packages/pieces/community/heygen/src/index.ts"
+      ],
+      "@united/piece-hootsuite": [
+        "packages/pieces/community/hootsuite/src/index.ts"
+      ],
+      "@united/piece-http": ["packages/pieces/core/http/src/index.ts"],
+      "@united/piece-http-oauth2": [
+        "packages/pieces/community/http-oauth2/src/index.ts"
+      ],
+      "@united/piece-hubspot": [
+        "packages/pieces/community/hubspot/src/index.ts"
+      ],
+      "@united/piece-hugging-face": [
+        "packages/pieces/community/hugging-face/src/index.ts"
+      ],
+      "@united/piece-hunter": [
+        "packages/pieces/community/hunter/src/index.ts"
+      ],
+      "@united/piece-iloveapi": [
+        "packages/pieces/community/iloveapi/src/index.ts"
+      ],
+      "@united/piece-image-ai": [
+        "packages/pieces/community/image-ai/src/index.ts"
+      ],
+      "@united/piece-image-helper": [
+        "packages/pieces/core/image-helper/src/index.ts"
+      ],
+      "@united/piece-imap": [
+        "packages/pieces/community/imap/src/index.ts"
+      ],
+      "@united/piece-imeetify": [
+        "packages/pieces/community/imeetify/src/index.ts"
+      ],
+      "@united/piece-insighto-ai": [
+        "packages/pieces/community/insighto-ai/src/index.ts"
+      ],
+      "@united/piece-instagram-business": [
+        "packages/pieces/community/instagram-business/src/index.ts"
+      ],
+      "@united/piece-instasent": [
+        "packages/pieces/community/instasent/src/index.ts"
+      ],
+      "@united/piece-intercom": [
+        "packages/pieces/community/intercom/src/index.ts"
+      ],
+      "@united/piece-invoiceninja": [
+        "packages/pieces/community/invoiceninja/src/index.ts"
+      ],
+      "@united/piece-jina-ai": [
+        "packages/pieces/community/jina-ai/src/index.ts"
+      ],
+      "@united/piece-jungle-grid": [
+        "packages/pieces/community/jungle-grid/src/index.ts"
+      ],
+      "@united/piece-jira-cloud": [
+        "packages/pieces/community/jira-cloud/src/index.ts"
+      ],
+      "@united/piece-jira-data-center": [
+        "packages/pieces/community/jira-data-center/src/index.ts"
+      ],
+      "@united/piece-jotform": [
+        "packages/pieces/community/jotform/src/index.ts"
+      ],
+      "@united/piece-jsm-operations": [
+        "packages/pieces/community/jsm-operations/src/index.ts"
+      ],
+      "@united/piece-json": [
+        "packages/pieces/community/json/src/index.ts"
+      ],
+      "@united/piece-jumpcloud": [
+        "packages/pieces/community/jumpcloud/src/index.ts"
+      ],
+      "@united/piece-kallabot-ai": [
+        "packages/pieces/community/kallabot-ai/src/index.ts"
+      ],
+      "@united/piece-kimai": [
+        "packages/pieces/community/kimai/src/index.ts"
+      ],
+      "@united/piece-kizeo-forms": [
+        "packages/pieces/community/kizeo-forms/src/index.ts"
+      ],
+      "@united/piece-klaviyo": [
+        "packages/pieces/community/klaviyo/src/index.ts"
+      ],
+      "@united/piece-klipy": [
+        "packages/pieces/community/klipy/src/index.ts"
+      ],
+      "@united/piece-klenty": [
+        "packages/pieces/community/klenty/src/index.ts"
+      ],
+      "@united/piece-knack": [
+        "packages/pieces/community/knack/src/index.ts"
+      ],
+      "@united/piece-ko-fi": [
+        "packages/pieces/community/ko-fi/src/index.ts"
+      ],
+      "@united/piece-kustomer": [
+        "packages/pieces/community/kustomer/src/index.ts"
+      ],
+      "@united/piece-kommo": [
+        "packages/pieces/community/kommo/src/index.ts"
+      ],
+      "@united/piece-krisp-call": [
+        "packages/pieces/community/krisp-call/src/index.ts"
+      ],
+      "@united/piece-lead-connector": [
+        "packages/pieces/community/lead-connector/src/index.ts"
+      ],
+      "@united/piece-lemlist": [
+        "packages/pieces/community/lemlist/src/index.ts"
+      ],
+      "@united/piece-line": [
+        "packages/pieces/community/line/src/index.ts"
+      ],
+      "@united/piece-linear": [
+        "packages/pieces/community/linear/src/index.ts"
+      ],
+      "@united/piece-linka": [
+        "packages/pieces/community/linka/src/index.ts"
+      ],
+      "@united/piece-linkedin": [
+        "packages/pieces/community/linkedin/src/index.ts"
+      ],
+      "@united/piece-llmrails": [
+        "packages/pieces/community/llmrails/src/index.ts"
+      ],
+      "@united/piece-localai": [
+        "packages/pieces/community/localai/src/index.ts"
+      ],
+      "@united/piece-lusha": [
+        "packages/pieces/community/lusha/src/index.ts"
+      ],
+      "@united/piece-magical-api": [
+        "packages/pieces/community/magical-api/src/index.ts"
+      ],
+      "@united/piece-magicslides": [
+        "packages/pieces/community/magicslides/src/index.ts"
+      ],
+      "@united/piece-mailchain": [
+        "packages/pieces/community/mailchain/src/index.ts"
+      ],
+      "@united/piece-mailchimp": [
+        "packages/pieces/community/mailchimp/src/index.ts"
+      ],
+      "@united/piece-mailgun": [
+        "packages/pieces/community/mailgun/src/index.ts"
+      ],
+      "@united/piece-mailer-lite": [
+        "packages/pieces/community/mailer-lite/src/index.ts"
+      ],
+      "@united/piece-maileroo": [
+        "packages/pieces/community/maileroo/src/index.ts"
+      ],
+      "@united/piece-manychat": [
+        "packages/pieces/community/manychat/src/index.ts"
+      ],
+      "@united/piece-mastodon": [
+        "packages/pieces/community/mastodon/src/index.ts"
+      ],
+      "@united/piece-math-helper": [
+        "packages/pieces/core/math-helper/src/index.ts"
+      ],
+      "@united/piece-matomo": [
+        "packages/pieces/community/matomo/src/index.ts"
+      ],
+      "@united/piece-matrix": [
+        "packages/pieces/community/matrix/src/index.ts"
+      ],
+      "@united/piece-mattermost": [
+        "packages/pieces/community/mattermost/src/index.ts"
+      ],
+      "@united/piece-mautic": [
+        "packages/pieces/community/mautic/src/index.ts"
+      ],
+      "@united/piece-mcp": ["packages/pieces/community/mcp/src/index.ts"],
+      "@united/piece-mcp-client": ["packages/pieces/community/mcp-client/src/index.ts"],
+      "@united/piece-medullar": [
+        "packages/pieces/community/medullar/src/index.ts"
+      ],
+      "@united/piece-mem": ["packages/pieces/community/mem/src/index.ts"],
+      "@united/piece-mempool-space": [
+        "packages/pieces/community/mempool-space/src/index.ts"
+      ],
+      "@united/piece-messagebird": [
+        "packages/pieces/community/messagebird/src/index.ts"
+      ],
+      "@united/piece-microsoft-365-people": [
+        "packages/pieces/community/microsoft-365-people/src/index.ts"
+      ],
+      "@united/piece-microsoft-365-planner": [
+        "packages/pieces/community/microsoft-365-planner/src/index.ts"
+      ],
+      "@united/piece-microsoft-excel-365": [
+        "packages/pieces/community/microsoft-excel-365/src/index.ts"
+      ],
+      "@united/piece-microsoft-onedrive": [
+        "packages/pieces/community/microsoft-onedrive/src/index.ts"
+      ],
+      "@united/piece-microsoft-onenote": [
+        "packages/pieces/community/microsoft-onenote/src/index.ts"
+      ],
+      "@united/piece-microsoft-outlook": [
+        "packages/pieces/community/microsoft-outlook/src/index.ts"
+      ],
+      "@united/piece-microsoft-outlook-calendar": [
+        "packages/pieces/community/microsoft-outlook-calendar/src/index.ts"
+      ],
+      "@united/piece-microsoft-power-bi": [
+        "packages/pieces/community/microsoft-power-bi/src/index.ts"
+      ],
+      "@united/piece-microsoft-sql-server": [
+        "packages/pieces/community/microsoft-sql-server/src/index.ts"
+      ],
+      "@united/piece-microsoft-teams": [
+        "packages/pieces/community/microsoft-teams/src/index.ts"
+      ],
+      "@united/piece-microsoft-teams-bot": [
+        "packages/pieces/community/microsoft-teams-bot/src/index.ts"
+      ],
+      "@united/piece-microsoft-todo": [
+        "packages/pieces/community/microsoft-todo/src/index.ts"
+      ],
+      "@united/piece-mindee": [
+        "packages/pieces/community/mindee/src/index.ts"
+      ],
+      "@united/piece-missive": [
+        "packages/pieces/community/missive/src/index.ts"
+      ],
+      "@united/piece-mistral-ai": [
+        "packages/pieces/community/mistral-ai/src/index.ts"
+      ],
+      "@united/piece-mixmax": [
+        "packages/pieces/community/mixmax/src/index.ts"
+      ],
+      "@united/piece-mixpanel": [
+        "packages/pieces/community/mixpanel/src/index.ts"
+      ],
+      "@united/piece-mollie": [
+        "packages/pieces/community/mollie/src/index.ts"
+      ],
+      "@united/piece-monday": [
+        "packages/pieces/community/monday/src/index.ts"
+      ],
+      "@united/piece-mongodb": [
+        "packages/pieces/community/mongodb/src/index.ts"
+      ],
+      "@united/piece-motion": [
+        "packages/pieces/community/motion/src/index.ts"
+      ],
+      "@united/piece-moxie-crm": [
+        "packages/pieces/community/moxie-crm/src/index.ts"
+      ],
+      "@united/piece-muna-ai": [
+        "packages/pieces/community/muna-ai/src/index.ts"
+      ],
+      "@united/piece-murf-api": [
+        "packages/pieces/community/murf-api/src/index.ts"
+      ],
+      "@united/piece-mysendingbox": [
+        "packages/pieces/community/mysendingbox/src/index.ts"
+      ],
+      "@united/piece-mysql": [
+        "packages/pieces/community/mysql/src/index.ts"
+      ],
+      "@united/piece-netlify": [
+        "packages/pieces/community/netlify/src/index.ts"
+      ],
+      "@united/piece-netsuite": [
+        "packages/pieces/community/netsuite/src/index.ts"
+      ],
+      "@united/piece-nifty": [
+        "packages/pieces/community/nifty/src/index.ts"
+      ],
+      "@united/piece-ninety": [
+        "packages/pieces/community/ninety/src/index.ts"
+      ],
+      "@united/piece-ninjapipe": [
+        "packages/pieces/community/ninjapipe/src/index.ts"
+      ],
+      "@united/piece-ninox": [
+        "packages/pieces/community/ninox/src/index.ts"
+      ],
+      "@united/piece-nocodb": [
+        "packages/pieces/community/nocodb/src/index.ts"
+      ],
+      "@united/piece-notion": [
+        "packages/pieces/community/notion/src/index.ts"
+      ],
+      "@united/piece-ntfy": [
+        "packages/pieces/community/ntfy/src/index.ts"
+      ],
+      "@united/piece-nuelink": [
+        "packages/pieces/community/nuelink/src/index.ts"
+      ],
+      "@united/piece-odoo": [
+        "packages/pieces/community/odoo/src/index.ts"
+      ],
+      "@united/piece-okta": [
+        "packages/pieces/community/okta/src/index.ts"
+      ],
+      "@united/piece-omnisend": [
+        "packages/pieces/community/omnisend/src/index.ts"
+      ],
+      "@united/piece-onfleet": [
+        "packages/pieces/community/onfleet/src/index.ts"
+      ],
+      "@united/piece-outseta": [
+        "packages/pieces/community/outseta/src/index.ts"
+      ],
+      "@united/piece-open-phone": [
+        "packages/pieces/community/open-phone/src/index.ts"
+      ],
+      "@united/piece-open-router": [
+        "packages/pieces/community/open-router/src/index.ts"
+      ],
+      "@united/piece-openai": [
+        "packages/pieces/community/openai/src/index.ts"
+      ],
+      "@united/piece-oracle-fusion-cloud-erp": [
+        "packages/pieces/community/oracle-fusion-cloud-erp/src/index.ts"
+      ],
+      "@united/piece-paddle": [
+        "packages/pieces/community/paddle/src/index.ts"
+      ],
+      "@united/piece-pandadoc": [
+        "packages/pieces/community/pandadoc/src/index.ts"
+      ],
+      "@united/piece-paperform": [
+        "packages/pieces/community/paperform/src/index.ts"
+      ],
+      "@united/piece-pagerduty": [
+        "packages/pieces/community/pagerduty/src/index.ts"
+      ],
+      "@united/piece-parallel": [
+        "packages/pieces/community/parallel/src/index.ts"
+      ],
+      "@united/piece-parseur": [
+        "packages/pieces/community/parseur/src/index.ts"
+      ],
+      "@united/piece-pastebin": [
+        "packages/pieces/community/pastebin/src/index.ts"
+      ],
+      "@united/piece-pastefy": [
+        "packages/pieces/community/pastefy/src/index.ts"
+      ],
+      "@united/piece-pdf": ["packages/pieces/core/pdf/src/index.ts"],
+      "@united/piece-pdf-co": [
+        "packages/pieces/community/pdf-co/src/index.ts"
+      ],
+      "@united/piece-pdf4me": [
+        "packages/pieces/community/pdf4me/src/index.ts"
+      ],
+      "@united/piece-pdfmonkey": [
+        "packages/pieces/community/pdfmonkey/src/index.ts"
+      ],
+      "@united/piece-peekshot": [
+        "packages/pieces/community/peekshot/src/index.ts"
+      ],
+      "@united/piece-pendo": [
+        "packages/pieces/community/pendo/src/index.ts"
+      ],
+      "@united/piece-perplexity-ai": [
+        "packages/pieces/community/perplexity-ai/src/index.ts"
+      ],
+      "@united/piece-personal-ai": [
+        "packages/pieces/community/personal-ai/src/index.ts"
+      ],
+      "@united/piece-photoroom": [
+        "packages/pieces/community/photoroom/src/index.ts"
+      ],
+      "@united/piece-pinecone": [
+        "packages/pieces/community/pinecone/src/index.ts"
+      ],
+      "@united/piece-pinterest": [
+        "packages/pieces/community/pinterest/src/index.ts"
+      ],
+      "@united/piece-pipedrive": [
+        "packages/pieces/community/pipedrive/src/index.ts"
+      ],
+      "@united/piece-placid": [
+        "packages/pieces/community/placid/src/index.ts"
+      ],
+      "@united/piece-podio": [
+        "packages/pieces/community/podio/src/index.ts"
+      ],
+      "@united/piece-polydoc": [
+        "packages/pieces/community/polydoc/src/index.ts"
+      ],
+      "@united/piece-poper": [
+        "packages/pieces/community/poper/src/index.ts"
+      ],
+      "@united/piece-postgres": [
+        "packages/pieces/community/postgres/src/index.ts"
+      ],
+      "@united/piece-posthog": [
+        "packages/pieces/community/posthog/src/index.ts"
+      ],
+      "@united/piece-postiz": [
+        "packages/pieces/community/postiz/src/index.ts"
+      ],
+      "@united/piece-postmark": [
+        "packages/pieces/community/postmark/src/index.ts"
+      ],
+      "@united/piece-predict-leads": [
+        "packages/pieces/community/predict-leads/src/index.ts"
+      ],
+      "@united/piece-productboard": [
+        "packages/pieces/community/productboard/src/index.ts"
+      ],
+      "@united/piece-produktly": [
+        "packages/pieces/community/produktly/src/index.ts"
+      ],
+      "@united/piece-promotekit": [
+        "packages/pieces/community/promotekit/src/index.ts"
+      ],
+      "@united/piece-prompthub": [
+        "packages/pieces/community/prompthub/src/index.ts"
+      ],
+      "@united/piece-provenexpert": [
+        "packages/pieces/community/provenexpert/src/index.ts"
+      ],
+      "@united/piece-pubrio": [
+        "packages/pieces/community/pubrio/src/index.ts"
+      ],
+      "@united/piece-pushover": [
+        "packages/pieces/community/pushover/src/index.ts"
+      ],
+      "@united/piece-pylon": [
+        "packages/pieces/community/pylon/src/index.ts"
+      ],
+      "@united/piece-qawafel": [
+        "packages/pieces/community/qawafel/src/index.ts"
+      ],
+      "@united/piece-qdrant": [
+        "packages/pieces/community/qdrant/src/index.ts"
+      ],
+      "@united/piece-qrcode": [
+        "packages/pieces/core/qrcode/src/index.ts"
+      ],
+      "@united/piece-queue": [
+        "packages/pieces/community/queue/src/index.ts"
+      ],
+      "@united/piece-quickbooks": [
+        "packages/pieces/community/quickbooks/src/index.ts"
+      ],
+      "@united/piece-quickbooks-desktop-conductor": [
+        "packages/pieces/community/quickbooks-desktop-conductor/src/index.ts"
+      ],
+      "@united/piece-quickbooks-sandbox": [
+        "packages/pieces/community/quickbooks-sandbox/src/index.ts"
+      ],
+      "@united/piece-quickzu": [
+        "packages/pieces/community/quickzu/src/index.ts"
+      ],
+      "@united/piece-quizell": [
+        "packages/pieces/community/quizell/src/index.ts"
+      ],
+      "@united/piece-rabbitmq": [
+        "packages/pieces/community/rabbitmq/src/index.ts"
+      ],
+      "@united/piece-raindrop": [
+        "packages/pieces/community/raindrop/src/index.ts"
+      ],
+      "@united/piece-razorpay": [
+        "packages/pieces/community/razorpay/src/index.ts"
+      ],
+      "@united/piece-reachinbox": [
+        "packages/pieces/community/reachinbox/src/index.ts"
+      ],
+      "@united/piece-read-file": [
+        "packages/pieces/read-file/src/index.ts"
+      ],
+      "@united/piece-readwise": [
+        "packages/pieces/community/readwise/src/index.ts"
+      ],
+      "@united/piece-reddit": [
+        "packages/pieces/community/reddit/src/index.ts"
+      ],
+      "@united/piece-rendex": [
+        "packages/pieces/community/rendex/src/index.ts"
+      ],
+      "@united/piece-reoon-verifier": [
+        "packages/pieces/community/reoon-verifier/src/index.ts"
+      ],
+      "@united/piece-resend": [
+        "packages/pieces/community/resend/src/index.ts"
+      ],
+      "@united/piece-respaid": [
+        "packages/pieces/community/respaid/src/index.ts"
+      ],
+      "@united/piece-respond-io": [
+        "packages/pieces/community/respond-io/src/index.ts"
+      ],
+      "@united/piece-reply-io": [
+        "packages/pieces/community/reply-io/src/index.ts"
+      ],
+      "@united/piece-retable": [
+        "packages/pieces/community/retable/src/index.ts"
+      ],
+      "@united/piece-retell-ai": [
+        "packages/pieces/community/retell-ai/src/index.ts"
+      ],
+      "@united/piece-retune": [
+        "packages/pieces/community/retune/src/index.ts"
+      ],
+      "@united/piece-returning-ai": [
+        "packages/pieces/community/returning-ai/src/index.ts"
+      ],
+      "@united/piece-recurly": [
+        "packages/pieces/community/recurly/src/index.ts"
+      ],
+      "@united/piece-robolly": [
+        "packages/pieces/community/robolly/src/index.ts"
+      ],
+      "@united/piece-rss": ["packages/pieces/community/rss/src/index.ts"],
+      "@united/piece-runway": [
+        "packages/pieces/community/runway/src/index.ts"
+      ],
+      "@united/piece-saastic": [
+        "packages/pieces/community/saastic/src/index.ts"
+      ],
+      "@united/piece-sage-accounting": [
+        "packages/pieces/community/sage-accounting/src/index.ts"
+      ],
+      "@united/piece-saleor": [
+        "packages/pieces/community/saleor/src/index.ts"
+      ],
+      "@united/piece-salesforce": [
+        "packages/pieces/community/salesforce/src/index.ts"
+      ],
+      "@united/piece-salesloft": [
+        "packages/pieces/community/salesloft/src/index.ts"
+      ],
+      "@united/piece-savvycal": [
+        "packages/pieces/community/savvycal/src/index.ts"
+      ],
+      "@united/piece-scenario": [
+        "packages/pieces/community/scenario/src/index.ts"
+      ],
+      "@united/piece-schedule": [
+        "packages/pieces/core/schedule/src/index.ts"
+      ],
+      "@united/piece-scrapegrapghai": [
+        "packages/pieces/community/scrapegrapghai/src/index.ts"
+      ],
+      "@united/piece-scrapeless": [
+        "packages/pieces/community/scrapeless/src/index.ts"
+      ],
+      "@united/piece-segment": [
+        "packages/pieces/community/segment/src/index.ts"
+      ],
+      "@united/piece-sender": [
+        "packages/pieces/community/sender/src/index.ts"
+      ],
+      "@united/piece-sendr": [
+        "packages/pieces/community/sendr/src/index.ts"
+      ],
+      "@united/piece-sendfox": [
+        "packages/pieces/community/sendfox/src/index.ts"
+      ],
+      "@united/piece-sendgrid": [
+        "packages/pieces/community/sendgrid/src/index.ts"
+      ],
+      "@united/piece-sendinblue": [
+        "packages/pieces/community/sendinblue/src/index.ts"
+      ],
+      "@united/piece-sendpulse": [
+        "packages/pieces/community/sendpulse/src/index.ts"
+      ],
+      "@united/piece-sendy": [
+        "packages/pieces/community/sendy/src/index.ts"
+      ],
+      "@united/piece-senja": [
+        "packages/pieces/community/senja/src/index.ts"
+      ],
+      "@united/piece-serp-api": [
+        "packages/pieces/community/serp-api/src/index.ts"
+      ],
+      "@united/piece-serpstat": [
+        "packages/pieces/community/serpstat/src/index.ts"
+      ],
+      "@united/piece-sessions-us": [
+        "packages/pieces/community/sessions-us/src/index.ts"
+      ],
+      "@united/piece-seven": [
+        "packages/pieces/community/seven/src/index.ts"
+      ],
+      "@united/piece-service-now": [
+        "packages/pieces/community/service-now/src/index.ts"
+      ],
+      "@united/piece-sftp": ["packages/pieces/core/sftp/src/index.ts"],
+      "@united/piece-shopify": [
+        "packages/pieces/community/shopify/src/index.ts"
+      ],
+      "@united/piece-short-io": [
+        "packages/pieces/community/short-io/src/index.ts"
+      ],
+      "@united/piece-simplepdf": [
+        "packages/pieces/community/simplepdf/src/index.ts"
+      ],
+      "@united/piece-simpliroute": [
+        "packages/pieces/community/simpliroute/src/index.ts"
+      ],
+      "@united/piece-simplybookme": [
+        "packages/pieces/community/simplybookme/src/index.ts"
+      ],
+      "@united/piece-simplyprint": [
+        "packages/pieces/community/simplyprint/src/index.ts"
+      ],
+      "@united/piece-sitespeakai": [
+        "packages/pieces/community/sitespeakai/src/index.ts"
+      ],
+      "@united/piece-skyvern": [
+        "packages/pieces/community/skyvern/src/index.ts"
+      ],
+      "@united/piece-slack": [
+        "packages/pieces/community/slack/src/index.ts"
+      ],
+      "@united/piece-slashed": [
+        "packages/pieces/community/slashed/src/index.ts"
+      ],
+      "@united/piece-slidespeak": [
+        "packages/pieces/community/slidespeak/src/index.ts"
+      ],
+      "@united/piece-slite": [
+        "packages/pieces/community/slite/src/index.ts"
+      ],
+      "@united/piece-smaily": [
+        "packages/pieces/community/smaily/src/index.ts"
+      ],
+      "@united/piece-smartsheet": [
+        "packages/pieces/community/smartsheet/src/index.ts"
+      ],
+      "@united/piece-smartsuite": [
+        "packages/pieces/community/smartsuite/src/index.ts"
+      ],
+      "@united/piece-smoove": [
+        "packages/pieces/community/smoove/src/index.ts"
+      ],
+      "@united/piece-smtp": ["packages/pieces/core/smtp/src/index.ts"],
+      "@united/piece-soap": [
+        "packages/pieces/community/soap/src/index.ts"
+      ],
+      "@united/piece-socialkit": [
+        "packages/pieces/community/socialkit/src/index.ts"
+      ],
+      "@united/piece-softr": [
+        "packages/pieces/community/softr/src/index.ts"
+      ],
+      "@united/piece-sofya": [
+        "packages/pieces/community/sofya/src/index.ts"
+      ],
+      "@united/piece-sperse": [
+        "packages/pieces/community/sperse/src/index.ts"
+      ],
+      "@united/piece-spotify": [
+        "packages/pieces/community/spotify/src/index.ts"
+      ],
+      "@united/piece-square": [
+        "packages/pieces/community/square/src/index.ts"
+      ],
+      "@united/piece-stability-ai": [
+        "packages/pieces/community/stability-ai/src/index.ts"
+      ],
+      "@united/piece-modelslab": [
+        "packages/pieces/community/modelslab/src/index.ts"
+      ],
+      "@united/piece-stable-diffusion-webui": [
+        "packages/pieces/community/stable-diffusion-webui/src/index.ts"
+      ],
+      "@united/piece-store": ["packages/pieces/core/store/src/index.ts"],
+      "@united/piece-straico": [
+        "packages/pieces/community/straico/src/index.ts"
+      ],
+      "@united/piece-streak": [
+        "packages/pieces/community/streak/src/index.ts"
+      ],
+      "@united/piece-stripe": [
+        "packages/pieces/community/stripe/src/index.ts"
+      ],
+      "@united/piece-subflows": [
+        "packages/pieces/core/subflows/src/index.ts"
+      ],
+      "@united/piece-supabase": [
+        "packages/pieces/community/supabase/src/index.ts"
+      ],
+      "@united/piece-supadata": [
+        "packages/pieces/community/supadata/src/index.ts"
+      ],
+      "@united/piece-surrealdb": [
+        "packages/pieces/community/surrealdb/src/index.ts"
+      ],
+      "@united/piece-surveymonkey": [
+        "packages/pieces/community/surveymonkey/src/index.ts"
+      ],
+      "@united/piece-systeme-io": [
+        "packages/pieces/community/systeme-io/src/index.ts"
+      ],
+      "@united/piece-tables": [
+        "packages/pieces/core/tables/src/index.ts"
+      ],
+      "@united/piece-tags": ["packages/pieces/core/tags/src/index.ts"],
+      "@united/piece-talkable": [
+        "packages/pieces/community/talkable/src/index.ts"
+      ],
+      "@united/piece-tally": [
+        "packages/pieces/community/tally/src/index.ts"
+      ],
+      "@united/piece-tapfiliate": [
+        "packages/pieces/community/tapfiliate/src/index.ts"
+      ],
+      "@united/piece-tarvent": [
+        "packages/pieces/community/tarvent/src/index.ts"
+      ],
+      "@united/piece-taskade": [
+        "packages/pieces/community/taskade/src/index.ts"
+      ],
+      "@united/piece-tavily": [
+        "packages/pieces/community/tavily/src/index.ts"
+      ],
+      "@united/piece-teamhood": [
+        "packages/pieces/community/teamhood/src/index.ts"
+      ],
+      "@united/piece-teamleader": [
+        "packages/pieces/community/teamleader/src/index.ts"
+      ],
+      "@united/piece-teamwork": [
+        "packages/pieces/community/teamwork/src/index.ts"
+      ],
+      "@united/piece-telegram-bot": [
+        "packages/pieces/community/telegram-bot/src/index.ts"
+      ],
+      "@united/piece-telnyx": [
+        "packages/pieces/community/telnyx/src/index.ts"
+      ],
+      "@united/piece-text-ai": [
+        "packages/pieces/community/text-ai/src/index.ts"
+      ],
+      "@united/piece-text-helper": [
+        "packages/pieces/core/text-helper/src/index.ts"
+      ],
+      "@united/piece-textcortex-ai": [
+        "packages/pieces/community/textcortex-ai/src/index.ts"
+      ],
+      "@united/piece-thankster": [
+        "packages/pieces/community/thankster/src/index.ts"
+      ],
+      "@united/piece-ticktick": [
+        "packages/pieces/community/ticktick/src/index.ts"
+      ],
+      "@united/piece-tidycal": [
+        "packages/pieces/community/tidycal/src/index.ts"
+      ],
+      "@united/piece-timelines-ai": [
+        "packages/pieces/community/timelines-ai/src/index.ts"
+      ],
+      "@united/piece-todoist": [
+        "packages/pieces/community/todoist/src/index.ts"
+      ],
+      "@united/piece-toggl-track": [
+        "packages/pieces/community/toggl-track/src/index.ts"
+      ],
+      "@united/piece-totalcms": [
+        "packages/pieces/community/totalcms/src/index.ts"
+      ],
+      "@united/piece-trello": [
+        "packages/pieces/community/trello/src/index.ts"
+      ],
+      "@united/piece-truelayer": [
+        "packages/pieces/community/truelayer/src/index.ts"
+      ],
+      "@united/piece-trust": [
+        "packages/pieces/community/trust/src/index.ts"
+      ],
+      "@united/piece-twilio": [
+        "packages/pieces/community/twilio/src/index.ts"
+      ],
+      "@united/piece-typefully": [
+        "packages/pieces/community/typefully/src/index.ts"
+      ],
+      "@united/piece-twin-labs": [
+        "packages/pieces/community/twin-labs/src/index.ts"
+      ],
+      "@united/piece-twitter": [
+        "packages/pieces/community/twitter/src/index.ts"
+      ],
+      "@united/piece-twenty": [
+        "packages/pieces/community/twenty/src/index.ts"
+      ],
+      "@united/piece-typeform": [
+        "packages/pieces/community/typeform/src/index.ts"
+      ],
+      "@united/piece-umami": [
+        "packages/pieces/community/umami/src/index.ts"
+      ],
+      "@united/piece-upgradechat": [
+        "packages/pieces/community/upgradechat/src/index.ts"
+      ],
+      "@united/piece-uptimerobot": [
+        "packages/pieces/community/uptimerobot/src/index.ts"
+      ],
+      "@united/piece-useinbox": [
+        "packages/pieces/community/useinbox/src/index.ts"
+      ],
+      "@united/piece-utility-ai": [
+        "packages/pieces/community/utility-ai/src/index.ts"
+      ],
+      "@united/piece-uxsniff": [
+        "packages/pieces/community/uxsniff/src/index.ts"
+      ],
+      "@united/piece-vadoo-ai": [
+        "packages/pieces/community/vadoo-ai/src/index.ts"
+      ],
+      "@united/piece-vbout": [
+        "packages/pieces/community/vbout/src/index.ts"
+      ],
+      "@united/piece-video-ai": [
+        "packages/pieces/community/video-ai/src/index.ts"
+      ],
+      "@united/piece-village": [
+        "packages/pieces/community/village/src/index.ts"
+      ],
+      "@united/piece-vimeo": [
+        "packages/pieces/community/vimeo/src/index.ts"
+      ],
+      "@united/piece-vlm-run": [
+        "packages/pieces/community/vlm-run/src/index.ts"
+      ],
+      "@united/piece-vtex": [
+        "packages/pieces/community/vtex/src/index.ts"
+      ],
+      "@united/piece-vtiger": [
+        "packages/pieces/community/vtiger/src/index.ts"
+      ],
+      "@united/piece-wafeq": [
+        "packages/pieces/community/wafeq/src/index.ts"
+      ],
+      "@united/piece-wealthbox": [
+        "packages/pieces/community/wealthbox/src/index.ts"
+      ],
+      "@united/piece-webflow": [
+        "packages/pieces/community/webflow/src/index.ts"
+      ],
+      "@united/piece-webhook": [
+        "packages/pieces/core/webhook/src/index.ts"
+      ],
+      "@united/piece-webling": [
+        "packages/pieces/community/webling/src/index.ts"
+      ],
+      "@united/piece-webscraping-ai": [
+        "packages/pieces/community/webscraping-ai/src/index.ts"
+      ],
+      "@united/piece-wedof": [
+        "packages/pieces/community/wedof/src/index.ts"
+      ],
+      "@united/piece-weekdone": [
+        "packages/pieces/community/weekdone/src/index.ts"
+      ],
+      "@united/piece-what-converts": [
+        "packages/pieces/community/what-converts/src/index.ts"
+      ],
+      "@united/piece-whatsable": [
+        "packages/pieces/community/whatsable/src/index.ts"
+      ],
+      "@united/piece-whatsapp": [
+        "packages/pieces/community/whatsapp/src/index.ts"
+      ],
+      "@united/piece-whatsscale": [
+        "packages/pieces/community/whatsscale/src/index.ts"
+      ],
+      "@united/piece-wistia": [
+        "packages/pieces/community/wistia/src/index.ts"
+      ],
+      "@united/piece-wonderchat": [
+        "packages/pieces/community/wonderchat/src/index.ts"
+      ],
+      "@united/piece-woocommerce": [
+        "packages/pieces/community/woocommerce/src/index.ts"
+      ],
+      "@united/piece-wootric": [
+        "packages/pieces/community/wootric/src/index.ts"
+      ],
+      "@united/piece-word-documents": [
+        "packages/pieces/core/word-documents/src/index.ts"
+      ],
+      "@united/piece-wordpress": [
+        "packages/pieces/community/wordpress/src/index.ts"
+      ],
+      "@united/piece-workable": [
+        "packages/pieces/community/workable/src/index.ts"
+      ],
+      "@united/piece-workday": [
+        "packages/pieces/community/workday/src/index.ts"
+      ],
+      "@united/piece-wrike": [
+        "packages/pieces/community/wrike/src/index.ts"
+      ],
+      "@united/piece-wufoo": [
+        "packages/pieces/community/wufoo/src/index.ts"
+      ],
+      "@united/piece-xero": [
+        "packages/pieces/community/xero/src/index.ts"
+      ],
+      "@united/piece-xquik": [
+        "packages/pieces/community/xquik/src/index.ts"
+      ],
+      "@united/piece-xml": ["packages/pieces/core/xml/src/index.ts"],
+      "@united/piece-youtube": [
+        "packages/pieces/community/youtube/src/index.ts"
+      ],
+      "@united/piece-youtrack": [
+        "packages/pieces/community/youtrack/src/index.ts"
+      ],
+      "@united/piece-zagomail": [
+        "packages/pieces/community/zagomail/src/index.ts"
+      ],
+      "@united/piece-zendesk": [
+        "packages/pieces/community/zendesk/src/index.ts"
+      ],
+      "@united/piece-zerobounce": [
+        "packages/pieces/community/zerobounce/src/index.ts"
+      ],
+      "@united/piece-zoho-bookings": [
+        "packages/pieces/community/zoho-bookings/src/index.ts"
+      ],
+      "@united/piece-zoho-books": [
+        "packages/pieces/community/zoho-books/src/index.ts"
+      ],
+      "@united/piece-zoho-campaigns": [
+        "packages/pieces/community/zoho-campaigns/src/index.ts"
+      ],
+      "@united/piece-zoho-crm": [
+        "packages/pieces/community/zoho-crm/src/index.ts"
+      ],
+      "@united/piece-zoho-desk": [
+        "packages/pieces/community/zoho-desk/src/index.ts"
+      ],
+      "@united/piece-zoho-invoice": [
+        "packages/pieces/community/zoho-invoice/src/index.ts"
+      ],
+      "@united/piece-zoho-mail": [
+        "packages/pieces/community/zoho-mail/src/index.ts"
+      ],
+      "@united/piece-zoo": ["packages/pieces/community/zoo/src/index.ts"],
+      "@united/piece-zoom": [
+        "packages/pieces/community/zoom/src/index.ts"
+      ],
+      "@united/ai-providers": ["packages/core/ai-providers/src/index.ts"],
+      "@united/pieces-common": ["packages/pieces/common/src/index.ts"],
+      "@united/pieces-framework": [
+        "packages/pieces/framework/src/index.ts"
+      ],
+      "@united/piece-meistertask": [
+        "packages/pieces/community/meistertask/src/index.ts"
+      ],
+      "@united/server-utils": ["packages/server/utils/src/index.ts"],
+      "@united/sandbox": ["packages/server/sandbox/src/index.ts"],
+      "@united/shared": ["packages/core/shared/src/index.ts"],
+      "@ee/*": ["packages/ee/*"],
+      "Aminos": ["packages/pieces/community/Aminos/src/index.ts"],
+      "united/piece-microsoft-dynamics-365-business-central": [
+        "packages/pieces/community/microsoft-dynamics-365-business-central/src/index.ts"
+      ],
+      "united/piece-microsoft-dynamics-crm": [
+        "packages/pieces/community/microsoft-dynamics-crm/src/index.ts"
+      ],
+      "united/piece-microsoft-sharepoint": [
+        "packages/pieces/community/microsoft-sharepoint/src/index.ts"
+      ],
+      "united/piece-snowflake": [
+        "packages/pieces/community/snowflake/src/index.ts"
+      ],
+      "united/piece-zuora": [
+        "packages/pieces/community/zuora/src/index.ts"
+      ],
+      "united/piece-cashfree-payments": [
+        "packages/pieces/community/cashfree-payments/src/index.ts"
+      ],
+      "ee-embed-sdk": ["packages/ee/embed-sdk/src/index.ts"],
+      "ui-feature-forms": ["packages/ui/features-forms/src/index.ts"],
+      "@united/piece-kissflow": [
+        "packages/pieces/community/kissflow/src/index.ts"
+      ],
+      "@united/piece-housecall-pro": [
+        "packages/pieces/community/housecall-pro/src/index.ts"
+      ],
+      "@united/piece-chat-aid": [
+        "packages/pieces/community/chat-aid/src/index.ts"
+      ],
+      "@united/piece-videoask": [
+        "packages/pieces/community/videoask/src/index.ts"
+      ],
+      "@united/piece-presentation": [
+        "packages/pieces/community/presentation/src/index.ts"
+      ],
+      "@united/piece-formspark": [
+        "packages/pieces/community/formspark/src/index.ts"
+      ],
+      "@united/piece-webex": [
+        "packages/pieces/community/webex/src/index.ts"
+      ],
+      "@united/piece-tableau": [
+        "packages/pieces/community/tableau/src/index.ts"
+      ],
+      "@united/piece-fragment": [
+        "packages/pieces/community/fragment/src/index.ts"
+      ],
+      "@united/piece-fountain": [
+        "packages/pieces/community/fountain/src/index.ts"
+      ],
+      "@united/piece-omni-co": [
+        "packages/pieces/community/omni-co/src/index.ts"
+      ],
+      "@united/piece-instabase": [
+        "packages/pieces/community/instabase/src/index.ts"
+      ],
+      "@united/piece-gladia": [
+        "packages/pieces/community/gladia/src/index.ts"
+      ],
+      "@united/piece-glide": [
+        "packages/pieces/community/glide/src/index.ts"
+      ],
+      "@united/piece-manus": [
+        "packages/pieces/community/manus/src/index.ts"
+      ],
+      "@united/piece-recall-ai": [
+        "packages/pieces/community/recall-ai/src/index.ts"
+      ],
+      "@united/piece-contextual-ai": [
+        "packages/pieces/community/contextual-ai/src/index.ts"
+      ],
+      "@united/piece-hume-ai": [
+        "packages/pieces/community/hume-ai/src/index.ts"
+      ],
+      "@united/piece-chatsistant": [
+        "packages/pieces/community/chatsistant/src/index.ts"
+      ],
+      "@united/piece-rapidtext-ai": [
+        "packages/pieces/community/rapidtext-ai/src/index.ts"
+      ],
+      "@united/piece-opnform": [
+        "packages/pieces/community/opnform/src/index.ts"
+      ],
+      "@united/piece-opportify": [
+        "packages/pieces/community/opportify/src/index.ts"
+      ],
+      "@united/piece-promptmate": [
+        "packages/pieces/community/promptmate/src/index.ts"
+      ],
+      "@united/piece-guidelite": [
+        "packages/pieces/community/guidelite/src/index.ts"
+      ],
+      "@united/piece-bolna": [
+        "packages/pieces/community/bolna/src/index.ts"
+      ],
+      "@united/piece-appfollow": [
+        "packages/pieces/community/appfollow/src/index.ts"
+      ],
+      "@united/piece-griptape": [
+        "packages/pieces/community/griptape/src/index.ts"
+      ],
+      "@united/piece-bexio": [
+        "packages/pieces/community/bexio/src/index.ts"
+      ],
+      "@united/piece-pushbullet": [
+        "packages/pieces/community/pushbullet/src/index.ts"
+      ],
+      "@united/piece-denser-ai": [
+        "packages/pieces/community/denser-ai/src/index.ts"
+      ],
+      "@united/piece-ask-handle": [
+        "packages/pieces/community/ask-handle/src/index.ts"
+      ],
+      "@united/piece-phantombuster": [
+        "packages/pieces/community/phantombuster/src/index.ts"
+      ],
+      "@united/piece-openmic-ai": [
+        "packages/pieces/community/openmic-ai/src/index.ts"
+      ],
+      "@united/piece-datafuel": [
+        "packages/pieces/community/datafuel/src/index.ts"
+      ],
+      "@united/piece-doctly": [
+        "packages/pieces/community/doctly/src/index.ts"
+      ],
+      "@united/piece-chatnode": [
+        "packages/pieces/community/chatnode/src/index.ts"
+      ],
+      "@united/piece-greip": [
+        "packages/pieces/community/greip/src/index.ts"
+      ],
+      "@united/piece-chaindesk": [
+        "packages/pieces/community/chaindesk/src/index.ts"
+      ],
+      "@united/piece-orimon": [
+        "packages/pieces/community/orimon/src/index.ts"
+      ],
+      "@united/piece-linkup": [
+        "packages/pieces/community/linkup/src/index.ts"
+      ],
+      "@united/piece-linkupapi": [
+        "packages/pieces/community/linkupapi/src/index.ts"
+      ],
+      "@united/piece-youform": [
+        "packages/pieces/community/youform/src/index.ts"
+      ],
+      "@united/piece-flow-parser": [
+        "packages/pieces/community/flow-parser/src/index.ts"
+      ],
+      "@united/piece-writesonic-bulk": [
+        "packages/pieces/community/writesonic-bulk/src/index.ts"
+      ],
+      "@united/piece-documentpro": [
+        "packages/pieces/community/documentpro/src/index.ts"
+      ],
+      "@united/piece-image-router": [
+        "packages/pieces/community/image-router/src/index.ts"
+      ],
+      "@united/piece-pollybot-ai": [
+        "packages/pieces/community/pollybot-ai/src/index.ts"
+      ],
+      "@united/piece-documerge": [
+        "packages/pieces/community/documerge/src/index.ts"
+      ],
+      "@united/piece-letta": [
+        "packages/pieces/community/letta/src/index.ts"
+      ],
+      "@united/piece-logrocket": [
+        "packages/pieces/community/logrocket/src/index.ts"
+      ],
+      "@united/piece-logsnag": [
+        "packages/pieces/community/logsnag/src/index.ts"
+      ],
+      "@united/piece-couchbase": [
+        "packages/pieces/community/couchbase/src/index.ts"
+      ],
+      "@united/piece-cursor": [
+        "packages/pieces/community/cursor/src/index.ts"
+      ],
+      "@united/piece-gptzero-detect-ai": [
+        "packages/pieces/community/gptzero-detect-ai/src/index.ts"
+      ],
+      "@united/piece-bursty-ai": [
+        "packages/pieces/community/bursty-ai/src/index.ts"
+      ],
+      "@united/piece-tl-dv": [
+        "packages/pieces/community/tl-dv/src/index.ts"
+      ],
+      "@united/piece-parser-expert": [
+        "packages/pieces/community/parser-expert/src/index.ts"
+      ],
+      "@united/piece-vidlab7": [
+        "packages/pieces/community/vidlab7/src/index.ts"
+      ],
+      "@united/piece-bookedin": [
+        "packages/pieces/community/bookedin/src/index.ts"
+      ],
+      "@united/piece-ai": ["packages/pieces/community/ai/src/index.ts"],
+      "@united/piece-customgpt": [
+        "packages/pieces/community/customgpt/src/index.ts"
+      ],
+      "@united/piece-synthesia": [
+        "packages/pieces/community/synthesia/src/index.ts"
+      ],
+      "@united/piece-meetgeek-ai": [
+        "packages/pieces/community/meetgeek-ai/src/index.ts"
+      ],
+      "@united/piece-fellow": [
+        "packages/pieces/community/fellow/src/index.ts"
+      ],
+      "@united/piece-echowin": [
+        "packages/pieces/community/echowin/src/index.ts"
+      ],
+      "@united/piece-feathery": [
+        "packages/pieces/community/feathery/src/index.ts"
+      ],
+      "@united/piece-chatling": [
+        "packages/pieces/community/chatling/src/index.ts"
+      ],
+      "@united/piece-air-ops": [
+        "packages/pieces/community/air-ops/src/index.ts"
+      ],
+      "@united/piece-mind-studio": [
+        "packages/pieces/community/mind-studio/src/index.ts"
+      ],
+      "@united/piece-easy-peasy-ai": [
+        "packages/pieces/community/easy-peasy-ai/src/index.ts"
+      ],
+      "@united/piece-leexi": [
+        "packages/pieces/community/leexi/src/index.ts"
+      ],
+      "@united/piece-tiny-talk-ai": [
+        "packages/pieces/community/tiny-talk-ai/src/index.ts"
+      ],
+      "@united/piece-sap-ariba": [
+        "packages/pieces/community/sap-ariba/src/index.ts"
+      ],
+      "@united/piece-hastewire": [
+        "packages/pieces/community/hastewire/src/index.ts"
+      ],
+      "@united/piece-greenpt": [
+        "packages/pieces/community/greenpt/src/index.ts"
+      ],
+      "@united/piece-oncehub": [
+        "packages/pieces/community/oncehub/src/index.ts"
+      ],
+      "@united/piece-swarmnode": [
+        "packages/pieces/community/swarmnode/src/index.ts"
+      ],
+      "@united/piece-alt-text-ai": [
+        "packages/pieces/community/alt-text-ai/src/index.ts"
+      ],
+      "@united/piece-dashworks": [
+        "packages/pieces/community/dashworks/src/index.ts"
+      ],
+      "@united/piece-raia-ai": [
+        "packages/pieces/community/raia-ai/src/index.ts"
+      ],
+      "@united/piece-alttextify": [
+        "packages/pieces/community/alttextify/src/index.ts"
+      ],
+      "@united/piece-motiontools": [
+        "packages/pieces/community/motiontools/src/index.ts"
+      ],
+      "@united/piece-formsite": [
+        "packages/pieces/community/formsite/src/index.ts"
+      ],
+      "@united/piece-lofty": [
+        "packages/pieces/community/lofty/src/index.ts"
+      ],
+      "@united/piece-loops": [
+        "packages/pieces/community/loops/src/index.ts"
+      ],
+      "@united/piece-youcanbookme": [
+        "packages/pieces/community/youcanbookme/src/index.ts"
+      ],
+      "@united/piece-esignatures": [
+        "packages/pieces/community/esignatures/src/index.ts"
+      ],
+      "@united/piece-base44": [
+        "packages/pieces/community/base44/src/index.ts"
+      ],
+      "@united/piece-luxury-presence": [
+        "packages/pieces/community/luxury-presence/src/index.ts"
+      ],
+      "@united/piece-signrequest": [
+        "packages/pieces/community/signrequest/src/index.ts"
+      ],
+      "@united/piece-hystruct": [
+        "packages/pieces/community/hystruct/src/index.ts"
+      ],
+      "@united/piece-chatfly": [
+        "packages/pieces/community/chatfly/src/index.ts"
+      ],
+      "@united/piece-azure-blob-storage": [
+        "packages/pieces/community/azure-blob-storage/src/index.ts"
+      ],
+      "@united/piece-metatext": [
+        "packages/pieces/community/metatext/src/index.ts"
+      ],
+      "@united/piece-kudosity": [
+        "packages/pieces/community/kudosity/src/index.ts"
+      ],
+      "@united/piece-neverbounce": [
+        "packages/pieces/community/neverbounce/src/index.ts"
+      ],
+      "@united/piece-mailercheck": [
+        "packages/pieces/community/mailercheck/src/index.ts"
+      ],
+      "@united/piece-vero": [
+        "packages/pieces/community/vero/src/index.ts"
+      ],
+      "@united/piece-digital-pilot": [
+        "packages/pieces/community/digital-pilot/src/index.ts"
+      ],
+      "@united/piece-clearoutphone": [
+        "packages/pieces/community/clearoutphone/src/index.ts"
+      ],
+      "@united/piece-omnihr": [
+        "packages/pieces/community/omnihr/src/index.ts"
+      ],
+      "@united/piece-clicdata": [
+        "packages/pieces/community/clicdata/src/index.ts"
+      ],
+      "@united/piece-katana": [
+        "packages/pieces/community/katana/src/index.ts"
+      ],
+      "@united/piece-giftbit": [
+        "packages/pieces/community/giftbit/src/index.ts"
+      ],
+      "@united/piece-free-agent": [
+        "packages/pieces/community/free-agent/src/index.ts"
+      ],
+      "@united/piece-lemon-squeezy": [
+        "packages/pieces/community/lemon-squeezy/src/index.ts"
+      ],
+      "@united/piece-qwilr": [
+        "packages/pieces/community/qwilr/src/index.ts"
+      ],
+      "@united/piece-splitwise": [
+        "packages/pieces/community/splitwise/src/index.ts"
+      ],
+      "@united/piece-voipstudio": [
+        "packages/pieces/community/voipstudio/src/index.ts"
+      ],
+      "@united/piece-millionverifier": [
+        "packages/pieces/community/millionverifier/src/index.ts"
+      ],
+      "@united/piece-octopush-sms": [
+        "packages/pieces/community/octopush-sms/src/index.ts"
+      ],
+      "@united/piece-twitch": [
+        "packages/pieces/community/twitch/src/index.ts"
+      ],
+      "@united/piece-moonclerk": [
+        "packages/pieces/community/moonclerk/src/index.ts"
+      ],
+      "@united/piece-heymarket-sms": [
+        "packages/pieces/community/heymarket-sms/src/index.ts"
+      ],
+      "@united/piece-flipando": [
+        "packages/pieces/community/flipando/src/index.ts"
+      ],
+      "@united/piece-skyprep": [
+        "packages/pieces/community/skyprep/src/index.ts"
+      ],
+      "@united/piece-influencers-club": [
+        "packages/pieces/community/influencers-club/src/index.ts"
+      ],
+      "@united/piece-tenzo": [
+        "packages/pieces/community/tenzo/src/index.ts"
+      ],
+      "@united/piece-seek-table": [
+        "packages/pieces/community/seek-table/src/index.ts"
+      ],
+      "@united/piece-lucidya": [
+        "packages/pieces/community/lucidya/src/index.ts"
+      ],
+      "@united/piece-phone-validator": [
+        "packages/pieces/community/phone-validator/src/index.ts"
+      ],
+      "@united/piece-barcode-lookup": [
+        "packages/pieces/community/barcode-lookup/src/index.ts"
+      ],
+      "@united/piece-intruder": [
+        "packages/pieces/community/intruder/src/index.ts"
+      ],
+      "@united/piece-tidely": [
+        "packages/pieces/community/tidely/src/index.ts"
+      ],
+      "@united/piece-cryptolens": [
+        "packages/pieces/community/cryptolens/src/index.ts"
+      ],
+      "@united/piece-ampeco": [
+        "packages/pieces/community/ampeco/src/index.ts"
+      ],
+      "@united/piece-quaderno": [
+        "packages/pieces/community/quaderno/src/index.ts"
+      ],
+      "@united/piece-livesession": [
+        "packages/pieces/community/livesession/src/index.ts"
+      ],
+      "@united/piece-roe-ai": [
+        "packages/pieces/community/roe-ai/src/index.ts"
+      ],
+      "@united/piece-duckdb": [
+        "packages/pieces/community/duckdb/src/index.ts"
+      ],
+      "@united/piece-waitwhile": [
+        "packages/pieces/community/waitwhile/src/index.ts"
+      ],
+      "@united/piece-baremetrics": [
+        "packages/pieces/community/baremetrics/src/index.ts"
+      ],
+      "@united/piece-chartly": [
+        "packages/pieces/community/chartly/src/index.ts"
+      ],
+      "@united/piece-insta-charts": [
+        "packages/pieces/community/insta-charts/src/index.ts"
+      ],
+      "@united/piece-pinch-payments": [
+        "packages/pieces/community/pinch-payments/src/index.ts"
+      ],
+      "@united/piece-just-invoice": [
+        "packages/pieces/community/just-invoice/src/index.ts"
+      ],
+      "@united/piece-billplz": [
+        "packages/pieces/community/billplz/src/index.ts"
+      ],
+      "@united/piece-vouchery-io": [
+        "packages/pieces/community/vouchery-io/src/index.ts"
+      ],
+      "@united/piece-lokalise": [
+        "packages/pieces/community/lokalise/src/index.ts"
+      ],
+      "@united/piece-digital-ocean": [
+        "packages/pieces/community/digital-ocean/src/index.ts"
+      ],
+      "@united/piece-hashi-corp-vault": [
+        "packages/pieces/community/hashi-corp-vault/src/index.ts"
+      ],
+      "@united/piece-leap-ai": [
+        "packages/pieces/community/leap-ai/src/index.ts"
+      ],
+      "@united/piece-time-ops": [
+        "packages/pieces/community/time-ops/src/index.ts"
+      ],
+      "@united/piece-formitable": [
+        "packages/pieces/community/formitable/src/index.ts"
+      ],
+      "@united/piece-gender-api": [
+        "packages/pieces/community/gender-api/src/index.ts"
+      ],
+      "@united/piece-plausible": [
+        "packages/pieces/community/plausible/src/index.ts"
+      ],
+      "@united/piece-woodpecker": [
+        "packages/pieces/community/woodpecker/src/index.ts"
+      ],
+      "@united/piece-visible": [
+        "packages/pieces/community/visible/src/index.ts"
+      ],
+      "@united/piece-paywhirl": [
+        "packages/pieces/community/paywhirl/src/index.ts"
+      ],
+      "@united/piece-smsmode": [
+        "packages/pieces/community/smsmode/src/index.ts"
+      ],
+      "@united/piece-mooninvoice": [
+        "packages/pieces/community/mooninvoice/src/index.ts"
+      ],
+      "@united/piece-chain-aware": [
+        "packages/pieces/community/chain-aware/src/index.ts"
+      ],
+      "@united/piece-detecting-ai": [
+        "packages/pieces/community/detecting-ai/src/index.ts"
+      ],
+      "@united/piece-moveo-ai": [
+        "packages/pieces/community/moveo-ai/src/index.ts"
+      ],
+      "@united/piece-oneclickimpact": [
+        "packages/pieces/community/oneclickimpact/src/index.ts"
+      ],
+      "@united/piece-bokio": [
+        "packages/pieces/community/bokio/src/index.ts"
+      ],
+      "@united/piece-vidnoz": [
+        "packages/pieces/community/vidnoz/src/index.ts"
+      ],
+      "@united/piece-lets-calendar": [
+        "packages/pieces/community/lets-calendar/src/index.ts"
+      ],
+      "@united/piece-predis-ai": [
+        "packages/pieces/community/predis-ai/src/index.ts"
+      ],
+      "@united/piece-week-done": [
+        "packages/pieces/community/week-done/src/index.ts"
+      ],
+      "@united/piece-manual-trigger": [
+        "packages/pieces/core/manual-trigger/src/index.ts"
+      ],
+      "@united/piece-zeplin": [
+        "packages/pieces/community/zeplin/src/index.ts"
+      ],
+      "@united/piece-google-search": [
+        "packages/pieces/community/google-search/src/index.ts"
+      ],
+      "@united/piece-microsoft-copilot": [
+        "packages/pieces/community/microsoft-copilot/src/index.ts"
+      ],
+      "@united/piece-asknews": [
+        "packages/pieces/community/asknews/src/index.ts"
+      ],
+      "@united/piece-valyu": [
+        "packages/pieces/community/valyu/src/index.ts"
+      ],
+      "@united/piece-alai": [
+        "packages/pieces/community/alai/src/index.ts"
+      ],
+      "@united/piece-algolia": [
+        "packages/pieces/community/algolia/src/index.ts"
+      ],
+      "@united/piece-kapso": [
+        "packages/pieces/community/kapso/src/index.ts"
+      ],
+      "@united/piece-pdfcrowd": [
+        "packages/pieces/community/pdfcrowd/src/index.ts"
+      ],
+      "@united/piece-amazon-bedrock": [
+        "packages/pieces/community/amazon-bedrock/src/index.ts"
+      ],
+      "@united/piece-brave-search": [
+        "packages/pieces/community/brave-search/src/index.ts"
+      ],
+      "@united/piece-amazon-secrets-manager": [
+        "packages/pieces/community/amazon-secrets-manager/src/index.ts"
+      ],
+      "@united/piece-validatedmails": [
+        "packages/pieces/community/validatedmails/src/index.ts"
+      ],
+      "@united/piece-coralogix": [
+        "packages/pieces/community/coralogix/src/index.ts"
+      ],
+      "@united/piece-pocketbase": [
+        "packages/pieces/community/pocketbase/src/index.ts"
+      ],
+      "@united/piece-carbone": [
+        "packages/pieces/community/carbone/src/index.ts"
+      ],
+      "@united/piece-emailit": [
+        "packages/pieces/community/emailit/src/index.ts"
+      ],
+      "@united/piece-bland-ai": [
+        "packages/pieces/community/bland-ai/src/index.ts"
+      ],
+      "@united/piece-vapi": [
+        "packages/pieces/community/vapi/src/index.ts"
+      ],
+      "@united/piece-canny": [
+        "packages/pieces/community/canny/src/index.ts"
+      ],
+      "@united/piece-knock": [
+        "packages/pieces/community/knock/src/index.ts"
+      ],
+      "@united/piece-plunk": [
+        "packages/pieces/community/plunk/src/index.ts"
+      ],
+      "@united/piece-proxycurl": [
+        "packages/pieces/community/proxycurl/src/index.ts"
+      ],
+      "@united/piece-connectuc": [
+        "packages/pieces/community/connectuc/src/index.ts"
+      ]
+    },
+    "resolveJsonModule": true
+  },
+  "exclude": ["node_modules", "tmp"]
+}

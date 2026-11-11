@@ -1,0 +1,115 @@
+import { isNil } from '@united/core-utils';
+import { ApEdition, ApFlagId } from '@united/shared';
+import { t } from 'i18next';
+import { Check, Plus } from 'lucide-react';
+import * as React from 'react';
+import { useState } from 'react';
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { projectHooks } from '@/features/projects/stores/project-collection';
+import { flagsHooks } from '@/hooks/flags-hooks';
+import { authenticationSession } from '@/lib/authentication-session';
+import { cn } from '@/lib/utils';
+
+import { ScrollArea } from '../../../components/ui/scroll-area';
+import { platformHooks } from '../../../hooks/platform-hooks';
+
+import { CreatePlatformDialog } from './create-platform-dialog';
+
+export function PlatformSwitcher({ children }: { children: React.ReactNode }) {
+  const { data: allProjects } = projectHooks.useProjectsForPlatforms();
+  const { platform: currentPlatform } = platformHooks.useCurrentPlatform();
+  const { data: edition } = flagsHooks.useFlag<ApEdition>(ApFlagId.EDITION);
+  const [createDialogOpen, setCreateDialogOpen] = useState(false);
+  const isCloud = edition === ApEdition.CLOUD;
+  const canCreatePlatform =
+    isCloud &&
+    !isNil(allProjects) &&
+    !allProjects.some((platform) => platform.isOwner);
+
+  const platforms = React.useMemo(() => {
+    if (!allProjects) return [];
+    return allProjects.map((platform) => ({
+      name: platform.platformName,
+      id: platform.platformId,
+    }));
+  }, [allProjects]);
+
+  const handlePlatformSwitch = async (platformId: string) => {
+    await authenticationSession.switchToPlatform(platformId);
+  };
+
+  const dropdownContent = (
+    <DropdownMenuContent
+      data-testid="platform-switcher-menu"
+      className="w-56 rounded-xl z-60"
+      align="start"
+      side="right"
+      sideOffset={4}
+    >
+      <div className="px-2 py-1.5">
+        <p className="text-xs text-gray-11">{t('Platforms')}</p>
+      </div>
+      <ScrollArea viewPortClassName="max-h-[400px]">
+        {platforms.map((platform) => (
+          <DropdownMenuItem
+            key={platform.id}
+            data-testid="platform-switcher-item"
+            onClick={() => handlePlatformSwitch(platform.id)}
+            className="text-sm p-2 break-all cursor-pointer"
+          >
+            {platform.name}
+            <Check
+              className={cn(
+                'ml-auto h-4 w-4 shrink-0',
+                currentPlatform?.id === platform.id
+                  ? 'opacity-100'
+                  : 'opacity-0',
+              )}
+            />
+          </DropdownMenuItem>
+        ))}
+      </ScrollArea>
+      {canCreatePlatform && (
+        <>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem
+            data-testid="platform-switcher-create"
+            onClick={() => setCreateDialogOpen(true)}
+            className="text-sm p-2 cursor-pointer"
+          >
+            <Plus className="mr-2 h-4 w-4" />
+            {t('Create Platform')}
+          </DropdownMenuItem>
+        </>
+      )}
+    </DropdownMenuContent>
+  );
+
+  return (
+    <>
+      <DropdownMenu>
+        <DropdownMenuTrigger
+          asChild
+          className="w-full"
+          data-testid="platform-switcher-trigger"
+        >
+          {children}
+        </DropdownMenuTrigger>
+        {dropdownContent}
+      </DropdownMenu>
+      {canCreatePlatform && (
+        <CreatePlatformDialog
+          open={createDialogOpen}
+          onOpenChange={setCreateDialogOpen}
+        />
+      )}
+    </>
+  );
+}

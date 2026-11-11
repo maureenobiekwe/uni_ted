@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "united.fullname" . }}
+  labels:
+    {{- include "united.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+    - port: 3000
+      targetPort: 3000
+      protocol: TCP
+      name: api
+  selector:
+    {{- include "united.selectorLabels" . | nindent 4 }}
+{{- if ne (include "united.workloadType" .) "statefulset" }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "united.fullname" . }}-preview
+  labels:
+    {{- include "united.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+    - port: 3000
+      targetPort: 3000
+      protocol: TCP
+      name: api
+  selector:
+    {{- include "united.selectorLabels" . | nindent 4 }}
+{{- end }}

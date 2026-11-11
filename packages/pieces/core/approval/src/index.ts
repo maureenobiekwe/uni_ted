@@ -1,0 +1,16 @@
+import { PieceAuth, createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
+import { createApprovalLink } from './lib/actions/create-approval-link';
+import { waitForApprovalLink } from './lib/actions/wait-for-approval';
+
+export const approval = createPiece({
+  displayName: 'Approval (Legacy)',
+  description: 'Pause a flow until someone approves or disapproves',
+  auth: PieceAuth.None(),
+  minimumSupportedRelease: '0.82.0',
+  logoUrl: 'https://cdn.united.com/pieces/new-core/approvals.svg',
+  authors: ["kishanprmr","MoShizzle","khaledmashaly","abuaboud"],
+  categories: [PieceCategory.CORE, PieceCategory.FLOW_CONTROL],
+  actions: [waitForApprovalLink, createApprovalLink],
+  triggers: [],
+});

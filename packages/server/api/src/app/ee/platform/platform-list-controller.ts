@@ -1,0 +1,48 @@
+import { assertNotNullOrUndefined } from '@united/core-utils'
+import { PrincipalType, ProjectWithLimitsWithPlatform } from '@united/shared'
+import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
+import { StatusCodes } from 'http-status-codes'
+import { z } from 'zod'
+import { securityAccess } from '../../core/security/authorization/fastify-security'
+import Paginator from '../../helper/pagination/paginator'
+import { platformService } from '../../platform/platform.service'
+import { userService } from '../../user/user-service'
+import { platformProjectService } from '../projects/platform-project-service'
+
+export const platformListController: FastifyPluginAsyncZod = async (app) => {
+
+    app.get('/', ListProjectsForPlatforms, async (request) => {
+        const loggedInUser = await userService(request.log).getOneOrFail({ id: request.principal.id })
+        const platforms = await platformService(request.log).listPlatformsForIdentity({ identityId: loggedInUser.identityId })
+        const projects = await Promise.all(platforms.map(async (platform) => {
+            const platformUser = await userService(request.log).getOneByIdentityAndPlatform({ identityId: loggedInUser.identityId, platformId: platform.id })
+            assertNotNullOrUndefined(platformUser, `Platform user not found for platform ${platform.id}`)
+            const projects = await platformProjectService(request.log).getForPlatform({
+                platformId: platform.id,
+                userId: platformUser.id,
+                cursorRequest: null,
+                displayName: undefined,
+                limit: Paginator.NO_LIMIT,
+                isPrivileged: userService(request.log).isUserPrivileged(platformUser),
+            }).then((projects) => projects.data)
+            return {
+                platformId: platform.id,
+                platformName: platform.name,
+                isOwner: platform.ownerId === platformUser.id,
+                projects,
+            }
+        }))
+        return projects.flat()
+    })
+}
+
+const ListProjectsForPlatforms = {
+    config: {
+        security: securityAccess.publicPlatform([PrincipalType.USER]),
+    },
+    schema: {
+        response: {
+            [StatusCodes.OK]: z.array(ProjectWithLimitsWithPlatform),
+        },
+    },
+}

@@ -1,0 +1,405 @@
+import { AgentPieceProps, AgentPieceTool, AgentTool, AgentToolType } from '@united/core-piece-types'
+import { connectionTemplate, isNil, isObject, unique } from '@united/core-utils'
+import { unitedError, ErrorCode } from '@united/core-utils'
+import { BranchCondition, BranchedAction, BranchExecutionType, CodeAction, emptyCondition, FlowAction, FlowActionType, PieceAction } from '../actions/action'
+import { FlowVersion } from '../flow-version'
+import { FlowTrigger, FlowTriggerType } from '../triggers/trigger'
+
+
+export const AI_PIECE_NAME = '@united/piece-ai'
+
+export type Step = FlowAction | FlowTrigger
+type StepWithIndex = Step & {
+    dfsIndex: number
+}
+
+function isAction(type: FlowActionType | FlowTriggerType | undefined): type is FlowActionType {
+    return Object.entries(FlowActionType).some(([, value]) => value === type)
+}
+
+function isStepAction(step: Step): step is FlowAction {
+    return step.type === FlowActionType.CODE
+        || step.type === FlowActionType.PIECE
+        || step.type === FlowActionType.LOOP_ON_ITEMS
+        || step.type === FlowActionType.ROUTER
+        || step.type === FlowActionType.AI_ROUTER
+}
+
+function isBranchedAction(step: Step): step is BranchedAction {
+    return step.type === FlowActionType.ROUTER
+        || step.type === FlowActionType.AI_ROUTER
+}
+
+function isTrigger(type: FlowActionType | FlowTriggerType | undefined): type is FlowTriggerType {
+    return Object.entries(FlowTriggerType).some(([, value]) => value === type)
+}
+
+function getActionOrThrow(name: string, flowRoot: Step): FlowAction {
+    const step = getStepOrThrow(name, flowRoot)
+    if (!isAction(step.type)) {
+        throw new unitedError({
+            code: ErrorCode.ENTITY_NOT_FOUND,
+            params: {
+                entityType: 'step',
+                entityId: name,
+                message: 'Step is not an action',
+            },
+        })
+    }
+    return step as FlowAction
+}
+
+function getTriggerOrThrow(name: string, flowRoot: Step): FlowTrigger {
+    const step = getStepOrThrow(name, flowRoot)
+    if (!isTrigger(step.type)) {
+        throw new unitedError({
+            code: ErrorCode.ENTITY_NOT_FOUND,
+            params: {
+                entityType: 'step',
+                entityId: name,
+                message: 'Step is not a trigger',
+            },
+        })
+    }
+    return step as FlowTrigger
+}
+
+function getStep(name: string, flowRoot: Step): Step | undefined {
+    return getAllSteps(flowRoot).find((step) => step.name === name)
+}
+
+function getStepOrThrow(name: string, flowRoot: Step): Step {
+    const step = getStep(name, flowRoot)
+    if (isNil(step)) {
+        throw new unitedError({
+            code: ErrorCode.ENTITY_NOT_FOUND,
+            params: {
+                entityType: 'step',
+                entityId: name,
+                message: 'Step not found',
+            },
+        })
+    }
+    return step
+}
+
+function transferStep<T extends Step>(
+    step: Step,
+    transferFunction: (step: T) => T,
+): Step {
+    const updatedStep = transferFunction(step as T)
+    switch (updatedStep.type) {
+        case FlowActionType.LOOP_ON_ITEMS: {
+            const { firstLoopAction } = updatedStep
+            if (firstLoopAction) {
+                updatedStep.firstLoopAction = transferStep(
+                    firstLoopAction,
+                    transferFunction,
+                ) as FlowAction
+            }
+            break
+        }
+        case FlowActionType.ROUTER:
+        case FlowActionType.AI_ROUTER: {
+            const { children } = updatedStep
+            if (children) {
+                updatedStep.children = children.map((child) =>
+                    child ? (transferStep(child, transferFunction) as FlowAction) : null,
+                )
+            }
+            break
+        }
+        default:
+            break
+    }
+
+    if (updatedStep.type === FlowActionType.CODE || updatedStep.type === FlowActionType.PIECE) {
+        const branches = updatedStep.continueOnFailureBranches
+        if (branches?.onSuccess) {
+            const transferred = transferStep(branches.onSuccess, transferFunction)
+            if (isStepAction(transferred)) {
+                branches.onSuccess = transferred
+            }
+        }
+        if (branches?.onFailure) {
+            const transferred = transferStep(branches.onFailure, transferFunction)
+            if (isStepAction(transferred)) {
+                branches.onFailure = transferred
+            }
+        }
+    }
+
+    if (updatedStep.nextAction) {
+        updatedStep.nextAction = transferStep(
+            updatedStep.nextAction,
+            transferFunction,
+        ) as FlowAction
+    }
+
+    return updatedStep
+}
+
+
+function transferFlow<T extends Step>(
+    flowVersion: FlowVersion,
+    transferFunction: (step: T) => T,
+): FlowVersion {
+    const clonedFlow = JSON.parse(JSON.stringify(flowVersion))
+    clonedFlow.trigger = transferStep(
+        clonedFlow.trigger,
+        transferFunction,
+    ) as FlowTrigger
+    return clonedFlow
+}
+
+function getAllSteps(step: Step): Step[] {
+    const steps: Step[] = []
+    transferStep(step, (currentStep) => {
+        steps.push(currentStep)
+        return currentStep
+    })
+    return steps
+}
+
+function getStepNumber(trigger: FlowTrigger, stepName: string): number {
+    return getAllSteps(trigger).findIndex((s) => s.name === stepName) + 1
+}
+
+
+const createBranch = (branchName: string, conditions: BranchCondition[][] | undefined) => {
+    return {
+        conditions: conditions ?? [[emptyCondition]],
+        branchType: BranchExecutionType.CONDITION,
+        branchName,
+    }
+}
+
+function findPathToStep(trigger: FlowTrigger, targetStepName: string): StepWithIndex[] {
+    const steps = flowStructureUtil.getAllSteps(trigger).map((step, dfsIndex) => ({
+        ...step,
+        dfsIndex,
+    }))
+    return steps
+        .filter((step) => {
+            const steps = flowStructureUtil.getAllSteps(step)
+            return steps.some((s) => s.name === targetStepName)
+        })
+        .filter((step) => step.name !== targetStepName)
+}
+
+
+function getAllChildSteps(action: Step): Step[] {
+    return getAllSteps({
+        ...action,
+        nextAction: undefined,
+    })
+}
+
+function hasContinueOnFailureBranches(step: Step): step is CodeAction | PieceAction {
+    if (step.type !== FlowActionType.CODE && step.type !== FlowActionType.PIECE) {
+        return false
+    }
+    return step.settings.errorHandlingOptions?.continueOnFailure?.value ?? false
+}
+
+function getSkippedStepNames({ trigger }: { trigger: FlowTrigger }): Set<string> {
+    const skippedSteps = getAllSteps(trigger).filter((step) => isAction(step.type) && 'skip' in step && step.skip === true)
+    return new Set(skippedSteps.flatMap((step) => getAllChildSteps(step).map((child) => child.name)))
+}
+
+function isSkipped({ stepName, trigger }: { stepName: string, trigger: FlowTrigger }): boolean {
+    return getSkippedStepNames({ trigger }).has(stepName)
+}
+
+function isChildOf(parent: Step, childStepName: string): boolean {
+    return getAllChildSteps(parent).some((c) => c.name === childStepName && c.name !== parent.name)
+}
+
+const findUnusedNames = (source: FlowTrigger | string[], count = 1) => {
+    const names = Array.isArray(source) ? source : flowStructureUtil.getAllSteps(source).map((f) => f.name)
+    const unusedNames = []
+    for (let i = 1; i <= count; i++) {
+        const name = findUnusedName(names)
+        unusedNames.push(name)
+        names.push(name)
+    }
+    return unusedNames
+}
+
+const findUnusedName = (source: FlowTrigger | string[]) => {
+    const names = Array.isArray(source) ? source : flowStructureUtil.getAllSteps(source).map((f) => f.name)
+    let index = 1
+    let name = 'step_1'
+    while (names.includes(name)) {
+        index++
+        name = 'step_' + index
+    }
+    return name
+}
+
+
+function getAllNextActionsWithoutChildren(start: Step): Step[] {
+    const actions: Step[] = []
+    let currentAction = start.nextAction
+
+    while (!isNil(currentAction)) {
+        actions.push(currentAction)
+        currentAction = currentAction.nextAction
+    }
+
+    return actions
+}
+
+
+function extractConnectionIdsFromAuth(auth: string): string[] {
+    const match = auth.match(/{{connections\['([^']*(?:'\s*,\s*'[^']*)*)'\]}}/)
+    if (!match || !match[1]) {
+        return []
+    }
+    return match[1].split(/'\s*,\s*'/).map(id => id.trim())
+}
+
+function extractAgentIds(flowVersion: FlowVersion): string[] {
+    const getExternalAgentId = (action: Step) => {
+        if (isAgentPiece(action) && AgentPieceProps.AGENT_ID in action.settings.input) {
+            return action.settings.input[AgentPieceProps.AGENT_ID]
+        }
+        return null
+    }
+
+    const agentIds = flowStructureUtil.getAllSteps(flowVersion.trigger)
+        .map(step => getExternalAgentId(step))
+        .filter((agentId): agentId is string => !isNil(agentId) && agentId !== '')
+    return unique(agentIds)
+}
+
+function isAgentPiece(action: Step) {
+    return (
+        action.type === FlowActionType.PIECE && action.settings.pieceName === AI_PIECE_NAME
+    )
+}
+
+function extractFlowConnectionIds(flowVersion: FlowVersion): string[] {
+    return unique(getAllSteps(flowVersion.trigger).flatMap(extractStepConnectionIds))
+}
+
+function extractStepConnectionIds(step: Step): string[] {
+    const stepConnectionExternalIds = step.settings?.input?.auth ? extractConnectionIdsFromAuth(step.settings.input.auth) : []
+    const agentToolConnectionExternalIds = getAgentToolsInlinedInStep(step)
+        .map(getAgentToolConnectionId)
+        .filter((connectionExternalId): connectionExternalId is string => !isNil(connectionExternalId) && connectionExternalId !== '')
+    return unique([...stepConnectionExternalIds, ...agentToolConnectionExternalIds])
+}
+
+function getAgentToolConnectionId(tool: unknown): string | undefined {
+    const pieceTool = AgentPieceTool.safeParse(tool)
+    if (!pieceTool.success) {
+        return undefined
+    }
+    return connectionTemplate.unwrapExternalId(pieceTool.data.pieceMetadata.predefinedInput?.auth) ?? undefined
+}
+
+function extractAgentToolsConnectionIds(flowVersion: FlowVersion): string[] {
+    const connectionIds = getAllSteps(flowVersion.trigger).flatMap((step) => getAgentToolsInlinedInStep(step).map(getAgentToolConnectionId))
+    return unique(connectionIds.filter((connectionId): connectionId is string => !isNil(connectionId) && connectionId !== ''))
+}
+
+function getAgentToolsInlinedInStep(step: Step): unknown[] {
+    if (!isAgentPiece(step)) {
+        return []
+    }
+    const agentTools = step.settings.input[AgentPieceProps.AGENT_TOOLS]
+    return Array.isArray(agentTools) ? agentTools : []
+}
+
+function replaceConnection({ flowVersion, sourceExternalId, targetExternalId }: ReplaceConnectionParams): FlowVersion {
+    return transferFlow(flowVersion, (step) => {
+        const input = step.settings?.input
+        if (!isObject(input)) {
+            return step
+        }
+        const replacesAuth = input['auth'] === `{{connections['${sourceExternalId}']}}`
+        const agentTools = getAgentToolsInlinedInStep(step)
+        const replacesAgentTools = agentTools.some((tool) => getAgentToolConnectionId(tool) === sourceExternalId)
+        if (!replacesAuth && !replacesAgentTools) {
+            return step
+        }
+        return {
+            ...step,
+            settings: {
+                ...step.settings,
+                input: {
+                    ...input,
+                    ...(replacesAuth && { auth: `{{connections['${targetExternalId}']}}` }),
+                    ...(replacesAgentTools && { [AgentPieceProps.AGENT_TOOLS]: agentTools.map((tool) => replaceInlinedAgentToolConnection({ tool, sourceExternalId, targetExternalId })) }),
+                },
+            },
+        }
+    })
+}
+
+function replaceInlinedAgentToolConnection({ tool, sourceExternalId, targetExternalId }: { tool: unknown } & ReplaceToolConnectionParams): unknown {
+    const pieceTool = AgentPieceTool.safeParse(tool)
+    if (!pieceTool.success) {
+        return tool
+    }
+    const replacedTool = replaceAgentToolConnection({ tool: pieceTool.data, sourceExternalId, targetExternalId })
+    return replacedTool === pieceTool.data ? tool : replacedTool
+}
+
+function replaceAgentToolConnection({ tool, sourceExternalId, targetExternalId }: { tool: AgentTool } & ReplaceToolConnectionParams): AgentTool {
+    if (tool.type !== AgentToolType.PIECE) {
+        return tool
+    }
+    const predefinedInput = tool.pieceMetadata.predefinedInput
+    if (isNil(predefinedInput) || connectionTemplate.unwrapExternalId(predefinedInput.auth) !== sourceExternalId) {
+        return tool
+    }
+    return {
+        ...tool,
+        pieceMetadata: {
+            ...tool.pieceMetadata,
+            predefinedInput: { ...predefinedInput, auth: targetExternalId },
+        },
+    }
+}
+
+export const flowStructureUtil = {
+    isTrigger,
+    isAction,
+    getAllSteps,
+    getStepNumber,
+    transferStep,
+    transferFlow,
+    getStepOrThrow,
+    getActionOrThrow,
+    getTriggerOrThrow,
+    getStep,
+    createBranch,
+    findPathToStep,
+    isChildOf,
+    findUnusedName,
+    findUnusedNames,
+    getAllNextActionsWithoutChildren,
+    getAllChildSteps,
+    hasContinueOnFailureBranches,
+    getSkippedStepNames,
+    isSkipped,
+    extractFlowConnectionIds,
+    extractStepConnectionIds,
+    isAgentPiece,
+    isBranchedAction,
+    extractAgentIds,
+    getAgentToolConnectionId,
+    extractAgentToolsConnectionIds,
+    replaceAgentToolConnection,
+    replaceConnection,
+}
+
+type ReplaceConnectionParams = {
+    flowVersion: FlowVersion
+    sourceExternalId: string
+    targetExternalId: string
+}
+
+type ReplaceToolConnectionParams = Omit<ReplaceConnectionParams, 'flowVersion'>

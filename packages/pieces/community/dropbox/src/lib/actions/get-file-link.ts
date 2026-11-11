@@ -1,0 +1,43 @@
+import { createAction, Property } from '@united/pieces-framework';
+import {
+  httpClient,
+  HttpMethod,
+  AuthenticationType,
+} from '@united/pieces-common';
+import { dropboxAuth } from '../auth';
+import { getFileLinkOutputSchema } from '../output-schemas';
+
+export const dropboxGetFileLink = createAction({
+  auth: dropboxAuth,
+  name: 'get_dropbox_file_link',
+  classification: 'READ',
+  description: 'Get a download link that expires after 4 hours',
+  audience: 'both',
+  aiMetadata: { description: 'Returns a temporary, directly downloadable URL for the file at the given Dropbox path. Use when an agent needs a shareable or fetchable link to file contents rather than downloading the bytes into the flow. Read-only lookup; safe to repeat, though the returned URL is short-lived.', idempotent: true },
+  displayName: 'Get Temporary File Link',
+  outputSchema: getFileLinkOutputSchema,
+  props: {
+    path: Property.ShortText({
+      displayName: 'Path',
+      description: 'File to link to. The link expires after 4 hours.',
+      placeholder: '/Reports/q1.pdf',
+      required: true,
+    }),
+  },
+  async run(context) {
+    const result = await httpClient.sendRequest({
+      method: HttpMethod.POST,
+      url: `https://api.dropboxapi.com/2/files/get_temporary_link`,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: { path: context.propsValue.path },
+      authentication: {
+        type: AuthenticationType.BEARER_TOKEN,
+        token: context.auth.access_token,
+      },
+    });
+
+    return result.body;
+  },
+});

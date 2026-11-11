@@ -1,0 +1,30 @@
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
+import { blandAiAuth, BLAND_AI_BASE_URL } from './lib/auth';
+import { sendCall } from './lib/actions/send-call';
+import { getCallDetails } from './lib/actions/get-call-details';
+import { listCalls } from './lib/actions/list-calls';
+
+export const blandAi = createPiece({
+  displayName: 'Bland AI',
+  description: 'AI phone calling platform for outbound and conversational voice workflows.',
+  minimumSupportedRelease: '0.30.0',
+  logoUrl: 'https://cdn.united.com/pieces/bland-ai.png',
+  categories: [PieceCategory.COMMUNICATION],
+  auth: blandAiAuth,
+  authors: ['Harmatta'],
+  actions: [
+    sendCall,
+    getCallDetails,
+    listCalls,
+    createCustomApiCallAction({
+      auth: blandAiAuth,
+      baseUrl: () => BLAND_AI_BASE_URL,
+      authMapping: async (auth) => ({
+        authorization: auth.secret_text,
+      }),
+    }),
+  ],
+  triggers: [],
+});

@@ -1,0 +1,66 @@
+import {
+  DedupeStrategy,
+  Polling,
+  pollingHelper,
+} from '@united/pieces-common';
+import {
+  AppConnectionValueForAuthProperty,
+  createTrigger,
+  TriggerStrategy,
+} from '@united/pieces-framework';
+import dayjs from 'dayjs';
+import { zohoCampaignsAuth } from '../auth';
+import { zohoCampaignsApi } from '../common/api';
+import { zohoCampaignsNewCampaignOutputSchema } from '../output-schemas';
+
+const polling: Polling<
+  AppConnectionValueForAuthProperty<typeof zohoCampaignsAuth>,
+  Record<string, never>
+> = {
+  strategy: DedupeStrategy.TIMEBASED,
+  items: async ({ auth }) => {
+    const items = await zohoCampaignsApi.listCampaigns({ auth });
+    return items.map((item) => ({
+      epochMilliSeconds: dayjs(item.created_date_string).valueOf(),
+      data: item,
+    }));
+  },
+};
+
+export const newCampaignTrigger = createTrigger({
+  auth: zohoCampaignsAuth,
+  name: 'newCampaign',
+  outputSchema: zohoCampaignsNewCampaignOutputSchema,
+  classification: 'READ',
+  displayName: 'New Campaign',
+  description: 'Fires when a new campaign is created.',
+  aiMetadata: {
+    description:
+      'Fires when a new campaign is created in the Zoho Campaigns account, representing a newly added campaign (in any status, e.g. draft). Polls the account-wide recent campaigns list.',
+  },
+  props: {},
+  sampleData: {
+    campaign_key: 'f70c4878c4a47169407e63917ad24497',
+    campaign_name: 'Summer Newsletter 2024',
+    created_date_string: '19 Aug 2024, 11:26 AM',
+    campaign_status: 'Draft',
+    created_time: '1724065567000',
+    campaign_preview:
+      'https://campaigns.zoho.com/EmailDisplayAction.do?&campaignId=303000023454038',
+  },
+  type: TriggerStrategy.POLLING,
+  async test(context) {
+    return await pollingHelper.test(polling, context);
+  },
+  async onEnable(context) {
+    await pollingHelper.onEnable(polling, context);
+  },
+
+  async onDisable(context) {
+    await pollingHelper.onDisable(polling, context);
+  },
+
+  async run(context) {
+    return await pollingHelper.poll(polling, context);
+  },
+});

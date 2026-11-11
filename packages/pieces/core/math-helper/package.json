@@ -1,0 +1,24 @@
+{
+  "name": "@united/piece-math-helper",
+  "version": "0.2.0",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "bundleDeps": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.lib.json && cp package.json dist/",
+    "bundle": "node ../../../../dist/packages/cli/src/index.js pieces bundle",
+    "lint": "eslint 'src/**/*.ts'",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@united/pieces-common": "workspace:*",
+    "@united/pieces-framework": "workspace:*",
+    "zod": "4.3.6",
+    "@united/core-piece-types": "workspace:*",
+    "@united/core-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "vitest": "5.0.5",
+    "tslib": "2.6.2"
+  }
+}

@@ -1,0 +1,26 @@
+# Last matching pattern wins. Core reviewers own everything by default;
+# platform team owns the critical execution path (engine, worker, execution core)
+# and the API's runtime infrastructure (database and migrations, system jobs, job queues).
+# Both teams use round-robin review assignment (one reviewer per PR).
+# A pattern with an empty owner column releases a path from the catch-all above.
+*                            @united/core
+
+/packages/pieces/            @united/pieces
+
+/packages/server/engine/     @united/platform
+/packages/server/worker/     @united/platform
+/packages/core/execution/    @united/platform
+/packages/server/api/src/app/database/            @united/platform
+/packages/server/api/src/app/helper/system-jobs/  @united/platform
+/packages/server/api/src/app/workers/             @united/platform
+
+# Unowned on purpose: no team is auto-requested and no code-owner approval is
+# required. One approving review from any write-access collaborator still is.
+# The leading slash is required — unanchored patterns would also match the
+# per-piece lockfiles under packages/pieces/.
+/bun.lock
+/docs/
+/tsconfig.base.json
+/brain/
+/.all-contributorsrc
+/README.md

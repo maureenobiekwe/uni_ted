@@ -1,0 +1,200 @@
+import { InvitationType } from '@united/shared';
+import { t } from 'i18next';
+import { Globe, Mail, UserCheck } from 'lucide-react';
+import React, { useCallback, useRef, useState } from 'react';
+
+import { TagInput, TagMeta } from '@/components/custom/tag-input';
+import { Command, CommandGroup, CommandList } from '@/components/ui/command';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { formatUtils } from '@/lib/format-utils';
+
+import { SuggestedUserItem } from './suggested-user-item';
+import { ExistingEmailStatus } from './types';
+import { useUserSuggestions } from './use-user-suggestions';
+
+function UserSuggestionsPopover({
+  value,
+  onChange,
+  placeholder,
+  invitationType,
+  onOpenChange,
+  existingEmails,
+}: UserSuggestionsPopoverProps) {
+  const [inputValue, setInputValue] = useState('');
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [selectedValue, setSelectedValue] = useState('');
+  const [tagInputKey, setTagInputKey] = useState(0);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const isPlatformInvite = invitationType === InvitationType.PLATFORM;
+
+  const {
+    suggestedUsers,
+    emailStatus,
+    hasSuggestions,
+    selectableItems,
+    platformUserEmails,
+  } = useUserSuggestions({
+    inputValue,
+    currentEmails: Array.from(value),
+    isPlatformInvite,
+  });
+
+  const getTagMeta = useCallback(
+    (email: string): TagMeta | undefined => {
+      const trimmed = email.trim();
+      if (!formatUtils.emailRegex.test(trimmed)) {
+        return { tooltip: t('Invalid email') };
+      }
+      const existingStatus = existingEmails?.get(trimmed.toLowerCase());
+      if (existingStatus === 'on-platform') {
+        return {
+          className: SKIPPED_TAG_CLASS_NAME,
+          icon: <UserCheck className="size-3 shrink-0" />,
+          tooltip: t('Already on the platform'),
+        };
+      }
+      if (existingStatus === 'already-invited') {
+        return {
+          className: UPDATED_INVITE_TAG_CLASS_NAME,
+          icon: <Mail className="size-3 shrink-0" />,
+          tooltip: t('Updates their invite'),
+        };
+      }
+      if (platformUserEmails.has(trimmed.toLowerCase())) {
+        return {
+          className: 'text-accent-11 bg-accent-3 border-accent-7',
+          icon: <UserCheck className="size-3 shrink-0" />,
+          tooltip: t('Platform member'),
+        };
+      }
+      return {
+        className: 'text-accent-11 bg-accent-3 border-accent-7',
+        icon: <Globe className="size-3 shrink-0" />,
+        tooltip: isPlatformInvite ? t('New User') : t('New Member'),
+      };
+    },
+    [platformUserEmails, isPlatformInvite, existingEmails],
+  );
+
+  const handleSelectUser = (email: string) => {
+    onChange([...value, email]);
+    setInputValue('');
+    setSelectedValue('');
+    setTagInputKey((prev) => prev + 1);
+    requestAnimationFrame(() => inputRef.current?.focus());
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      if (isOpen) {
+        e.nativeEvent.stopImmediatePropagation();
+        setShowSuggestions(false);
+        setSelectedValue('');
+      }
+      onOpenChange?.(false);
+      return;
+    }
+    if (
+      e.key === 'Enter' &&
+      selectedValue &&
+      showSuggestions &&
+      hasSuggestions
+    ) {
+      e.preventDefault();
+      const email = selectableItems.find(
+        (item) => item.toLowerCase() === selectedValue,
+      );
+      if (email) handleSelectUser(email);
+    }
+  };
+
+  const handleInputChange = (v: string) => {
+    setInputValue(v);
+    setSelectedValue('');
+  };
+
+  const isOpen = showSuggestions && hasSuggestions;
+
+  return (
+    <Command
+      shouldFilter={false}
+      value={selectedValue}
+      onValueChange={setSelectedValue}
+      className="overflow-visible bg-transparent rounded-none h-auto"
+    >
+      <div className="relative">
+        <TagInput
+          key={tagInputKey}
+          ref={inputRef}
+          value={value}
+          onChange={onChange}
+          type="email"
+          showDescription={false}
+          getTagMeta={getTagMeta}
+          placeholder={placeholder}
+          onInputChange={handleInputChange}
+          onKeyDown={handleKeyDown}
+          onFocus={() => {
+            setShowSuggestions(true);
+            setSelectedValue('');
+            onOpenChange?.(true);
+          }}
+          onBlur={() => {
+            setShowSuggestions(false);
+            setSelectedValue('');
+            onOpenChange?.(false);
+          }}
+        />
+        {isOpen && (
+          <div
+            className="absolute top-full left-0 w-full z-50 rounded-md border bg-panel text-gray-12 shadow-md outline-hidden"
+            onMouseDown={(e) => e.preventDefault()}
+          >
+            <CommandList className="max-h-none overflow-y-hidden">
+              <ScrollArea viewPortClassName="max-h-[200px]">
+                <CommandGroup heading={t('Suggestions')}>
+                  {suggestedUsers.map((user) => (
+                    <SuggestedUserItem
+                      key={user.id}
+                      type="platform-user"
+                      user={user}
+                      onSelect={handleSelectUser}
+                    />
+                  ))}
+                  {emailStatus && (
+                    <SuggestedUserItem
+                      type="email-status"
+                      emailStatus={emailStatus}
+                      isPlatformInvite={isPlatformInvite}
+                      onSelect={handleSelectUser}
+                    />
+                  )}
+                </CommandGroup>
+              </ScrollArea>
+            </CommandList>
+          </div>
+        )}
+      </div>
+      <p className="text-xs text-gray-11 mt-2">
+        {t('Separate email addresses with a space or comma.')}
+      </p>
+    </Command>
+  );
+}
+
+const SKIPPED_TAG_CLASS_NAME =
+  'text-gray-11 bg-transparent border-dashed border-gray-7';
+
+const UPDATED_INVITE_TAG_CLASS_NAME =
+  'text-gray-12 bg-transparent border-dashed border-gray-8';
+
+type UserSuggestionsPopoverProps = {
+  value: ReadonlyArray<string>;
+  onChange: (emails: ReadonlyArray<string>) => void;
+  placeholder?: string;
+  invitationType: InvitationType;
+  onOpenChange?: (open: boolean) => void;
+  existingEmails?: Map<string, ExistingEmailStatus>;
+};
+
+export { UserSuggestionsPopover };

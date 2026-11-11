@@ -1,0 +1,58 @@
+import { Property, TriggerStrategy, createTrigger } from '@united/pieces-framework';
+import { iloveapiAuth } from '../common/auth';
+import { iloveSchemas } from '../common/schemas';
+import {
+  acceptDelivery,
+  matchesEvent,
+  matchesToolFilter,
+  toolFilterProperty,
+  webhookInstructions,
+  webhookSecretProperty,
+} from './common';
+import { taskFailedSample } from './sample-payloads';
+
+export const taskFailedTrigger = createTrigger({
+  auth: iloveapiAuth,
+  name: 'task_failed',
+  classification: 'READ',
+  displayName: 'Task Failed',
+  description:
+    'Fires when a processing task fails. Optionally filter by tool.',
+  aiMetadata: {
+    description:
+      'Fires when an iLoveAPI processing task ends in failure (the task.failed webhook event). The event payload represents the failed task, including its tool and error details. Optionally scoped to specific tools via the tools filter so only failures from those tools trigger the flow.',
+  },
+  type: TriggerStrategy.WEBHOOK,
+  props: {
+    instructions: Property.MarkDown({
+      value: webhookInstructions('Task Failed (task.failed)'),
+    }),
+    webhook_secret: webhookSecretProperty,
+    tools: toolFilterProperty,
+  },
+  outputSchema: iloveSchemas.taskEvent,
+  sampleData: taskFailedSample,
+  async onEnable() {
+    return;
+  },
+  async onDisable() {
+    return;
+  },
+  async run(context) {
+    const envelope = matchesEvent({
+      body: context.payload.body,
+      expectedEvent: 'task.failed',
+    });
+    if (!envelope) return [];
+
+    const tools = (context.propsValue.tools ?? []) as string[] | undefined;
+    if (!matchesToolFilter({ envelope, tools })) return [];
+
+    return acceptDelivery({
+      envelope,
+      store: context.store,
+      queryParams: context.payload.queryParams,
+      secret: context.propsValue.webhook_secret,
+    });
+  },
+});

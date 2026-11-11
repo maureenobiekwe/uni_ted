@@ -1,0 +1,81 @@
+import {
+  AppConnectionValueForAuthProperty,
+  PiecePropValueSchema,
+  Property,
+  createTrigger,
+} from '@united/pieces-framework';
+import { TriggerStrategy } from '@united/pieces-framework';
+import {
+  DedupeStrategy,
+  Polling,
+  pollingHelper,
+} from '@united/pieces-common';
+
+import { backBlazeS3Auth } from '../..';
+import { createBackBlazeS3 } from '../common';
+
+const polling: Polling<
+  AppConnectionValueForAuthProperty<typeof backBlazeS3Auth>,
+  { folderPath?: string }
+> = {
+  strategy: DedupeStrategy.LAST_ITEM,
+  items: async ({ auth, lastItemId, propsValue }) => {
+    const s3 = createBackBlazeS3(auth.props);
+    const params: any = {
+      Bucket: auth.props.bucket,
+      MaxKeys: 100,
+      StartAfter: lastItemId,
+    };
+    if (propsValue.folderPath)
+      params.Prefix = `${
+        propsValue.folderPath.endsWith('/')
+          ? propsValue.folderPath.slice(0, -1)
+          : propsValue.folderPath
+      }`;
+
+    const currentValues = (await s3.listObjectsV2(params)).Contents ?? [];
+    const items = (currentValues as any[]).map((item: { Key: string }) => ({
+      id: item.Key,
+      data: item,
+    }));
+    return items;
+  },
+};
+
+export const newBackBlazeFileTrigger = createTrigger({
+  auth: backBlazeS3Auth,
+  name: 'new_backblaze_file',
+  classification: 'READ',
+  displayName: 'New File',
+  description: 'Trigger when a new file is uploaded.',
+  aiMetadata: {
+    description: 'Fires when a new object appears in the configured Backblaze B2 (S3-compatible) bucket, discovered by polling the bucket listing. An optional folder path restricts watching to objects under that prefix. Each event represents one newly seen object.',
+  },
+  props: {
+    folderPath: Property.ShortText({
+      displayName: 'Folder Path',
+      required: false,
+    }),
+  },
+  type: TriggerStrategy.POLLING,
+  onEnable: async (context) => {
+    await pollingHelper.onEnable(polling, context);
+  },
+  onDisable: async (context) => {
+    await pollingHelper.onDisable(polling, context);
+  },
+  run: async (context) => {
+    return await pollingHelper.poll(polling, context);
+  },
+  test: async (context) => {
+    return await pollingHelper.test(polling, context);
+  },
+
+  sampleData: {
+    Key: 'myfolder/100-3.png',
+    LastModified: '2023-08-04T13:51:26.000Z',
+    ETag: '"e9f16cce12352322272525f5af65a2e"',
+    Size: 40239,
+    StorageClass: 'STANDARD',
+  },
+});

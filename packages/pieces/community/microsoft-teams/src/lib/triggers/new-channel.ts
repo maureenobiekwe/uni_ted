@@ -1,0 +1,92 @@
+import { microsoftTeamsAuth } from '../auth';
+import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import {
+	createTrigger,
+	AppConnectionValueForAuthProperty,
+	TriggerStrategy,
+} from '@activepieces/pieces-framework';
+import { microsoftTeamsProps } from '../common/props';
+import { microsoftTeamsClient } from '../common/client';
+import type { Channel, MicrosoftTeamsPage } from '../common/types';
+import dayjs from 'dayjs';
+
+import { isNil } from '@activepieces/pieces-framework';
+import { newChannelOutputSchema } from '../output-schemas';
+
+type Props = {
+	teamId: string;
+};
+
+export const newChannelTrigger = createTrigger({
+	auth: microsoftTeamsAuth,
+	name: 'new-channel',
+	outputSchema: newChannelOutputSchema,
+	classification: 'READ',
+	displayName: 'New Channel',
+	description: 'Triggers when a new channel is created in a team.',
+	aiMetadata: {
+		description: 'Fires when a new channel is created within the selected Microsoft Teams team. Each event represents the newly created channel and its metadata. Polls periodically by creation time, so events appear with a short delay rather than instantly.',
+	},
+	props: {
+		teamId: microsoftTeamsProps.teamId({ required: true }),
+	},
+	type: TriggerStrategy.POLLING,
+	async onEnable(context) {
+		await pollingHelper.onEnable(polling, context);
+	},
+	async onDisable(context) {
+		await pollingHelper.onDisable(polling, context);
+	},
+	async test(context) {
+		return await pollingHelper.test(polling, context);
+	},
+	async run(context) {
+		return await pollingHelper.poll(polling, context);
+	},
+	sampleData: {
+		id: '19:561fbdbbfca848a484f0a6f00ce9dbbd@thread.tacv2',
+		createdDateTime: '2025-05-21T12:40:13.175Z',
+		displayName: 'General',
+		description: 'Auto-generated channel',
+		membershipType: 'standard',
+		isArchived: false,
+	},
+});
+
+const polling: Polling<AppConnectionValueForAuthProperty<typeof microsoftTeamsAuth>, Props> = {
+	strategy: DedupeStrategy.TIMEBASED,
+	async items({ auth, propsValue, lastFetchEpochMS }) {
+		const { teamId } = propsValue;
+		const client = microsoftTeamsClient.create({ auth });
+		const lastFetchDate = dayjs(lastFetchEpochMS).toISOString();
+
+		const channels: Channel[] = [];
+		const filter = lastFetchEpochMS === 0 ? '' : `?$filter=createdDateTime gt ${lastFetchDate}`;
+
+		let response: MicrosoftTeamsPage<Channel> = await microsoftTeamsClient.withRetry(() =>
+			client.api(`/teams/${teamId}/channels${filter}`).get(),
+		);
+
+		while (response.value && response.value.length > 0) {
+			for (const channel of response.value) {
+				if (isNil(channel.createdDateTime)) {
+					continue;
+				}
+				channels.push(channel);
+			}
+			const nextLink = response['@odata.nextLink'];
+			if (lastFetchEpochMS !== 0 && nextLink) {
+				response = await microsoftTeamsClient.withRetry(() => client.api(nextLink).get());
+			} else {
+				break;
+			}
+		}
+
+		return channels.map((channel: Channel) => {
+			return {
+				epochMilliSeconds: dayjs(channel.createdDateTime!).valueOf(),
+				data: channel,
+			};
+		});
+	},
+};

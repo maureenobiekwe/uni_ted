@@ -1,0 +1,57 @@
+import {
+    DedupeStrategy,
+    Polling,
+    pollingHelper,
+} from '@activepieces/pieces-common';
+import {
+    createTrigger,
+    AppConnectionValueForAuthProperty,
+    TriggerStrategy,
+} from '@activepieces/pieces-framework';
+import dayjs from 'dayjs';
+import { timelinesAiAuth, timelinesAiCommon } from '../common';
+
+const polling: Polling<
+  AppConnectionValueForAuthProperty<typeof timelinesAiAuth>,
+  Record<string, never>
+> = {
+  strategy: DedupeStrategy.TIMEBASED,
+  items: async ({ auth: apiKey, propsValue, lastFetchEpochMS }) => {
+    const response = await timelinesAiCommon.listUploadedFiles({
+      apiKey,
+    });
+    const items = response.data;
+    return items.map((item) => ({
+      epochMilliSeconds: dayjs(item.uploaded_at).valueOf(),
+      data: item,
+    }));
+  },
+};
+
+export const newUploadedFile = createTrigger({
+  auth: timelinesAiAuth,
+  name: 'newUploadedFile',
+  classification: 'READ',
+  displayName: 'New Uploaded File',
+  description: 'Fires when a new file is uploaded in a chat.',
+  aiMetadata: {
+    description: 'Fires when a new file is uploaded to TimelinesAI. Polls the uploaded-files list and emits each newly added file as it appears.',
+  },
+  props: {},
+  sampleData: {},
+  type: TriggerStrategy.POLLING,
+  async test(context) {
+    return await pollingHelper.test(polling, context);
+  },
+  async onEnable(context) {
+    await pollingHelper.onEnable(polling, context);
+  },
+
+  async onDisable(context) {
+    await pollingHelper.onDisable(polling, context);
+  },
+
+  async run(context) {
+    return await pollingHelper.poll(polling, context);
+  },
+});

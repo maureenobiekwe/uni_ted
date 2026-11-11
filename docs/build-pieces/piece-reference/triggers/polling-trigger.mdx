@@ -1,0 +1,126 @@
+---
+title: "Polling Trigger"
+description: "Periodically call endpoints to check for changes"
+---
+
+
+
+The way polling triggers usually work is as follows:
+
+**On Enable:**
+Store the last timestamp or most recent item id using the context store property.
+
+**Run:**
+This method runs every **5 minutes**, fetches the endpoint between a certain timestamp or traverses until it finds the last item id, and returns the new items as an array.
+
+**Testing:**
+You can implement a test function which should return some of the most recent items. It's recommended to limit this to five.
+
+**Examples:**
+- [New Record Airtable](https://github.com/united/united/blob/main/packages/pieces/community/airtable/src/lib/trigger/new-record.trigger.ts)
+- [New Updated Item Salesforce](https://github.com/united/united/blob/main/packages/pieces/community/salesforce/src/lib/trigger/new-updated-record.ts)
+
+# Polling library
+
+There multiple strategy to implement polling triggers, and we have created a library to help you with that. 
+
+## Strategies
+
+**Timebased:**
+
+This strategy fetches new items using a timestamp. You need to implement the items method, which should return the most recent items. 
+The library will detect new items based on the timestamp.
+
+The polling object's generic type consists of the props value and the object type.
+
+```typescript
+const polling: Polling<AppConnectionValueForAuthProperty<typeof auth>, Record<string, never>> = {
+  strategy: DedupeStrategy.TIMEBASED,
+  items: async ({ propsValue, lastFetchEpochMS }) => {
+    // Todo implement the logic to fetch the items
+    const items = [ {id: 1, created_date: '2021-01-01T00:00:00Z'}, {id: 2, created_date: '2021-01-01T00:00:00Z'}];
+    return items.map((item) => ({
+      epochMilliSeconds: dayjs(item.created_date).valueOf(),
+      data: item,
+    }));
+  }
+}
+```
+
+**Last ID Strategy:**
+
+This strategy fetches new items based on the last item ID. To use this strategy, you need to implement the items method, which should return the most recent items.
+The library will detect new items after the last item ID.
+
+The polling object's generic type consists of the props value and the object type
+
+```typescript
+const polling: Polling<AppConnectionValueForAuthProperty<typeof auth>, Record<string,any>> = {
+    strategy: DedupeStrategy.LAST_ITEM,
+    items: async ({ propsValue }) => {
+        // Implement the logic to fetch the items
+        const items = [{ id: 1 }, { id: 2 }];
+        return items.map((item) => ({
+            id: item.id,
+            data: item,
+        }));
+    }
+}
+```
+
+## Trigger Implementation
+
+After implementing the polling object, you can use the polling helper to implement the trigger.
+
+```typescript
+export const newTicketInView = createTrigger({
+    name: 'new_ticket_in_view',
+    displayName: 'New ticket in view',
+    description: 'Triggers when a new ticket is created in a view',
+    type: TriggerStrategy.POLLING,
+    props: {
+        authentication: Property.SecretText({
+            displayName: 'Authentication',
+            description: markdownProperty,
+            required: true,
+        }),
+    },
+    sampleData: {},
+    onEnable: async (context) => {
+        await pollingHelper.onEnable(polling, context)
+    },
+    onDisable: async (context) => {
+        await pollingHelper.onDisable(polling, context)
+    },
+    run: async (context) => {
+        return await pollingHelper.poll(polling, context);
+    },
+    test: async (context) => {
+        return await pollingHelper.test(polling, context);
+    }
+});
+```
+
+## Republishing a running flow
+
+When an enabled flow is published again and its polling trigger is unchanged (same piece, same piece version, same trigger, same inputs), united leaves the trigger running exactly as it was: `onDisable` and `onEnable` are not called, the trigger's store is untouched, and polling continues on the same schedule. Events that arrive around the republish are picked up by the next poll as usual.
+
+In the other cases ([full table](/build-pieces/piece-reference/triggers/overview#when-the-hooks-run)):
+
+- **Upgrading the piece version** with the same inputs skips the old version's `onDisable` and runs the new version's `onEnable` with `context.isRepublish` set to `true`. Use it to keep your checkpoint when your stored state is still valid. `onDisable` still runs when the flow is turned off or deleted; on an upgrade, reuse anything `onEnable` created outside the store (keep its id in the store) instead of creating it again.
+- **Changing the trigger or its inputs** runs both hooks without `isRepublish`, so the trigger starts fresh.
+- **Turning the flow off and on** also starts fresh. This is how to reset a polling trigger whose stored state has gone bad, such as an expired sync token.
+
+If your trigger keeps its own state, return early on a republish when that state already exists, so `onEnable` doesn't overwrite it:
+
+```typescript
+onEnable: async (context) => {
+  if (context.isRepublish && !isNil(await context.store.get('_seenIds'))) {
+    return;
+  }
+  const items = await fetchCurrentItems(context.auth);
+  await context.store.put('_seenIds', items.map((item) => item.id));
+},
+```
+
+If the trigger also calls `pollingHelper.onEnable` and saves a snapshot built from the polled items, put this check before the helper call. On a republish the helper still fetches the items, so a snapshot saved after it would replace the one you meant to keep.

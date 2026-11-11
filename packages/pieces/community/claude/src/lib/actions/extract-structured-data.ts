@@ -1,0 +1,348 @@
+import { claudeAuth } from '../auth';
+import { createAction, MarkdownVariant, Property } from '@united/pieces-framework';
+import { isNil } from '@united/pieces-framework';
+import Anthropic from '@anthropic-ai/sdk';
+import { TextBlock, ToolUseBlock } from '@anthropic-ai/sdk/resources';
+import Ajv from 'ajv';
+import mime from 'mime-types';
+import {
+  ClaudeMessageParams,
+  lowEffortConfig,
+  modelDropdown,
+  resolveModelId,
+  supportsForcedToolChoice,
+} from '../common/common';
+import { extractStructuredDataActionOutputSchema } from '../output-schemas';
+
+function hasToolCall(message: Anthropic.Messages.Message): boolean {
+  return message.content.some((block) => block.type === 'tool_use');
+}
+
+const EXTRACTION_TOOL_NAME = 'extract_structured_data';
+const AUTO_TOOL_SYSTEM_PROMPT = `Always answer by calling the ${EXTRACTION_TOOL_NAME} tool exactly once.`;
+
+export const extractStructuredDataAction = createAction({
+  audience: 'both',
+  auth: claudeAuth,
+  name: 'extract-structured-data',
+  classification: 'READ',
+  displayName: 'Extract Structured Data',
+  description: 'Pull the fields you define out of text, an image or a PDF.',
+  aiMetadata: { description: 'Runs a Claude model over supplied text, an image, or a PDF and returns only the fields you defined by having the model call an extraction tool whose input is your schema. Most models are forced to call the tool; Claude Sonnet 5.5, Opus 5.5, Fable 5.1 and Mythos 5.1 do not accept a forced tool call, so they are instructed to call it and asked once more if they reply with text only; if they still do not call it, the step fails with a clear error that includes the reply text. The Field Definition prop switches between Simple mode (a list of named fields with types and required flags) and Advanced mode (a raw JSON Schema object); prefer the sibling Ask Claude action when you want free-form prose instead of typed fields. Requires a model, the field definitions, and at least one of Text, or an Image or PDF; not idempotent, since each call re-runs the model and extraction can vary.', idempotent: false },
+  propertyGroups: [
+    { key: 'settings', display: 'section', label: 'Settings', icon: 'sliders', props: ['model', 'maxTokens'] },
+    { key: 'source', display: 'section', label: 'Extract from', icon: 'file', props: ['sourceInfo', 'text', 'image'] },
+    { key: 'output', display: 'section', label: 'Data to extract', icon: 'tag', props: ['mode', 'schema'] },
+  ],
+  props: {
+    model: modelDropdown,
+    sourceInfo: Property.MarkDown({ value: 'Fill in Text, Image or PDF, or both.', variant: MarkdownVariant.INFO }),
+    text: Property.LongText({
+      displayName: 'Text',
+      description: 'Text to pull the fields from.',
+      required: false,
+    }),
+    image: Property.File({
+      displayName: 'Image or PDF',
+      description: 'An image or PDF to pull the fields from.',
+      required: false,
+    }),
+    mode: Property.StaticDropdown<'simple' | 'advanced'>({
+      displayName: 'Field Definition',
+      required: true,
+      defaultValue: 'simple',
+      display: 'cards',
+      options: {
+        disabled: false,
+        options: [
+          {
+            label: 'Simple',
+            value: 'simple',
+            description: 'List fields',
+            icon: 'type',
+          },
+          {
+            label: 'Advanced',
+            value: 'advanced',
+            description: 'JSON Schema',
+            icon: 'code',
+          },
+        ],
+      },
+    }),
+    schema: Property.DynamicProperties({
+      auth: claudeAuth,
+      displayName: 'Fields',
+      required: true,
+      refreshers: ['mode'],
+      props: async (propsValue) => {
+        const mode = propsValue['mode'] as unknown as 'simple' | 'advanced';
+        if (mode === 'advanced') {
+          return {
+            fields: Property.Json({
+              displayName: 'JSON Schema',
+              description:
+                'Describes the fields to return, in JSON Schema format.',
+              required: true,
+              defaultValue: {
+                type: 'object',
+                properties: {
+                  name: {
+                    type: 'string',
+                  },
+                  age: {
+                    type: 'number',
+                  },
+                },
+                required: ['name'],
+              },
+            }),
+          };
+        }
+        return {
+          fields: Property.Array({
+            displayName: 'Fields to Extract',
+            required: true,
+            properties: {
+              name: Property.ShortText({
+                displayName: 'Name',
+                description: 'A short, unique name for the value.',
+                placeholder: 'invoice_number',
+                required: true,
+              }),
+              description: Property.LongText({
+                displayName: 'Description',
+                description: 'What the value looks like, so Claude can find it.',
+                required: false,
+              }),
+              type: Property.StaticDropdown({
+                displayName: 'Data Type',
+                required: true,
+                defaultValue: 'string',
+                options: {
+                  disabled: false,
+                  options: [
+                    { label: 'Text', value: 'string' },
+                    { label: 'Number', value: 'number' },
+                    { label: 'Boolean', value: 'boolean' },
+                  ],
+                },
+              }),
+              isRequired: Property.Checkbox({
+                displayName: 'Always Return',
+                description: 'Claude must return this field every time.',
+                required: true,
+                defaultValue: false,
+              }),
+            },
+          }),
+        };
+      },
+    }),
+    maxTokens: Property.Number({
+      displayName: 'Maximum Tokens',
+      required: false,
+      description:
+        'Longest reply in tokens, about 4 characters each. Empty: 2,000.',
+    }),
+    prompt: Property.LongText({
+      displayName: 'Instructions',
+      description: 'Tells Claude what to extract. The default suits most cases.',
+      defaultValue: 'Extract the following data from the provided data.',
+      required: false,
+      advanced: true,
+    }),
+  },
+  outputSchema: extractStructuredDataActionOutputSchema,
+  async run(context) {
+    const { model, text, image, schema, prompt, maxTokens } =
+      context.propsValue;
+
+    if (!text && !image) {
+      throw new Error('Please provide text or image/PDF to extract data from.');
+    }
+
+    let params: AIFunctionArgumentDefinition;
+    if (context.propsValue.mode === 'advanced') {
+      const ajv = new Ajv();
+      const isValidSchema = ajv.validateSchema(schema);
+
+      if (!isValidSchema) {
+        throw new Error(
+          JSON.stringify({
+            message: 'Invalid JSON schema',
+            errors: ajv.errors,
+          })
+        );
+      }
+
+      params = schema['fields'] as AIFunctionArgumentDefinition;
+    } else {
+      params = {
+        type: 'object',
+        properties: (
+          schema['fields'] as Array<{
+            name: string;
+            description?: string;
+            type: string;
+            isRequired: boolean;
+          }>
+        ).reduce((acc, field) => {
+          acc[field.name] = {
+            type: field.type,
+            description: field.description,
+          };
+          return acc;
+        }, {} as Record<string, { type: string; description?: string }>),
+        required: (
+          schema['fields'] as Array<{
+            name: string;
+            description?: string;
+            type: string;
+            isRequired: boolean;
+          }>
+        )
+          .filter((field) => field.isRequired)
+          .map((field) => field.name),
+      };
+    }
+
+    const anthropic = new Anthropic({
+      apiKey: context.auth.secret_text,
+    });
+
+    const messages: Anthropic.Messages.MessageParam[] = [
+      {
+        role: 'user',
+        content:
+          prompt ??
+          'Use optical character recognition (OCR) to extract from provided data.',
+      },
+    ];
+
+    if (!isNil(text) && text !== '') {
+      messages.push({
+        role: 'user',
+        content: text,
+      });
+    }
+
+    if (image) {
+      const mediaType = image.extension
+        ? mime.lookup(image.extension)
+        : 'image/jpeg';
+      if (mediaType === 'application/pdf') {
+        messages.push({
+          role: 'user',
+          content: [
+            {
+              type: 'document',
+              source: {
+                type: 'base64',
+                media_type: 'application/pdf',
+                data: image.base64,
+              },
+            },
+          ],
+        });
+      } else {
+        messages.push({
+          role: 'user',
+          content: [
+            {
+              type: 'image',
+              source: {
+                type: 'base64',
+                media_type: mediaType as
+                  | 'image/jpeg'
+                  | 'image/png'
+                  | 'image/gif'
+                  | 'image/webp',
+                data: image.base64,
+              },
+            },
+          ],
+        });
+      }
+    }
+    const resolvedModel = resolveModelId(model);
+    const forceTool = supportsForcedToolChoice(resolvedModel);
+    const createExtraction = (
+      conversation: Anthropic.Messages.MessageParam[]
+    ): Promise<Anthropic.Messages.Message> => {
+      const request: ClaudeMessageParams = {
+        model: resolvedModel,
+        ...(forceTool ? {} : { system: AUTO_TOOL_SYSTEM_PROMPT }),
+        messages: conversation,
+        tools: [
+          {
+            name: EXTRACTION_TOOL_NAME,
+            description: 'Extract the following data from the provided data.',
+            input_schema: params,
+          },
+        ],
+        tool_choice: forceTool
+          ? { type: 'tool', name: EXTRACTION_TOOL_NAME }
+          : { type: 'auto' },
+        max_tokens: maxTokens ?? 2000,
+        ...lowEffortConfig(resolvedModel),
+      };
+      return anthropic.messages.create(request);
+    };
+
+    let response = await createExtraction(messages);
+    if (
+      !forceTool &&
+      !hasToolCall(response) &&
+      response.content.length > 0 &&
+      response.stop_reason !== 'max_tokens'
+    ) {
+      response = await createExtraction([
+        ...messages,
+        { role: 'assistant', content: response.content },
+        {
+          role: 'user',
+          content: `Answer by calling the ${EXTRACTION_TOOL_NAME} tool now, with no other text.`,
+        },
+      ]);
+    }
+
+    const toolCall = response.content.find(
+      (choice): choice is ToolUseBlock => choice.type === 'tool_use'
+    );
+
+    const choices = response.content
+      .filter((choice): choice is TextBlock => choice.type === 'text')
+      .map((choice: TextBlock) => ({
+        content: choice.text,
+        role: 'assistant',
+      }));
+
+    const args = toolCall?.input;
+    if (isNil(args) && response.stop_reason === 'max_tokens') {
+      throw new Error(
+        JSON.stringify({
+          message:
+            'Claude ran out of tokens before returning structured data. Raise Maximum Tokens and try again.',
+        })
+      );
+    }
+    if (isNil(args)) {
+      throw new Error(
+        JSON.stringify({
+          message: choices[0]?.content
+            ? `Claude did not return structured data (it replied with text instead of calling the extraction tool). Claude's reply: ${choices[0].content}`
+            : 'Failed to extract structured data from the input.',
+        })
+      );
+    }
+    return args;
+  },
+});
+
+type AIFunctionArgumentDefinition = {
+  type: 'object';
+  properties?: unknown | null;
+  required?: string[];
+  [k: string]: unknown;
+};

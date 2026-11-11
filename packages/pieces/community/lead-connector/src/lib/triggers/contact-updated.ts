@@ -1,0 +1,54 @@
+import { AppConnectionValueForAuthProperty, OAuth2PropertyValue, createTrigger } from '@united/pieces-framework';
+import { TriggerStrategy } from '@united/pieces-framework';
+import {
+  DedupeStrategy,
+  Polling,
+  pollingHelper,
+} from '@united/pieces-common';
+import { leadConnectorAuth } from '../..';
+import { getContacts } from '../common';
+
+const polling: Polling<AppConnectionValueForAuthProperty<typeof leadConnectorAuth>, unknown> = {
+  strategy: DedupeStrategy.TIMEBASED,
+  items: async ({ auth }) => {
+    const currentValues =
+      (await getContacts(auth, {
+        sortBy: 'date_updated',
+        sortOrder: 'asc',
+      })) ?? [];
+
+    return currentValues.map((contact) => {
+      return {
+        epochMilliSeconds: new Date(contact.dateUpdated).getTime(),
+        data: contact,
+      };
+    });
+  },
+};
+
+export const contactUpdated = createTrigger({
+  auth: leadConnectorAuth,
+  name: 'contact_updated',
+  classification: 'READ',
+  displayName: 'Contact Created or Updated',
+  description: 'Trigger when a contact is created or updated.',
+  aiMetadata: {
+    description: 'Fires when a contact in the GoHighLevel/LeadConnector location is created or has any field changed, polling by last-updated timestamp. Represents the latest state of the affected contact.',
+  },
+  props: {},
+  type: TriggerStrategy.POLLING,
+  sampleData: {},
+
+  onEnable: async (context) => {
+    await pollingHelper.onEnable(polling, context);
+  },
+  onDisable: async (context) => {
+    await pollingHelper.onDisable(polling, context);
+  },
+  run: async (context) => {
+    return await pollingHelper.poll(polling, context);
+  },
+  test: async (context) => {
+    return await pollingHelper.test(polling, context);
+  },
+});

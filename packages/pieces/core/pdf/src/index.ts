@@ -1,0 +1,43 @@
+import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
+import { extractText } from './lib/actions/extract-text';
+import { convertToImage } from './lib/actions/convert-to-image';
+import { textToPdf } from './lib/actions/text-to-pdf';
+import { imageToPdf } from './lib/actions/image-to-pdf';
+import { pdfPageCount } from './lib/actions/pdf-page-count';
+import { extractPdfPages } from './lib/actions/extract-pdf-pages';
+import { mergePdfs } from './lib/actions/merge-pdfs';
+import { addTextToPdf } from './lib/actions/add-text-to-pdf';
+import { addImageToPdf } from './lib/actions/add-image-to-pdf';
+import { fillPdfForm } from './lib/actions/fill-pdf-form';
+import { inspectPdfForm } from './lib/actions/inspect-pdf-form';
+
+export const PDF = createPiece({
+  displayName: 'PDF',
+  auth: PieceAuth.None(),
+  minimumSupportedRelease: '0.88.2',
+  logoUrl: 'https://cdn.united.com/pieces/pdf.svg',
+  authors: [
+    'nyamkamunhjin',
+    'abuaboud',
+    'AbdulTheunited',
+    'jmgb27',
+    'danielpoonwj',
+    'bertrandong',
+  ],
+  categories: [PieceCategory.CORE],
+  actions: [
+    extractText,
+    convertToImage,
+    textToPdf,
+    imageToPdf,
+    pdfPageCount,
+    extractPdfPages,
+    mergePdfs,
+    addTextToPdf,
+    addImageToPdf,
+    inspectPdfForm,
+    fillPdfForm,
+  ],
+  triggers: [],
+});

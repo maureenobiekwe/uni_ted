@@ -1,0 +1,1 @@
+export const supportUrl = 'https://community.united.com'

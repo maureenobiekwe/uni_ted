@@ -1,0 +1,78 @@
+import { AppConnectionValueForAuthProperty, Property, createTrigger } from '@united/pieces-framework';
+import { TriggerStrategy } from '@united/pieces-framework';
+import {
+  DedupeStrategy,
+  Polling,
+  pollingHelper,
+} from '@united/pieces-common';
+import { leadConnectorAuth } from '../..';
+import { getFormSubmissions, getForms } from '../common';
+
+const polling: Polling<AppConnectionValueForAuthProperty<typeof leadConnectorAuth>, { form: string }> = {
+  strategy: DedupeStrategy.LAST_ITEM,
+  items: async ({ auth, propsValue }) => {
+    const currentValues =
+      (await getFormSubmissions(auth, propsValue.form)) ?? [];
+
+    return currentValues.map((submission) => {
+      return {
+        id: submission.id,
+        data: submission,
+      };
+    });
+  },
+};
+
+export const newFormSubmission = createTrigger({
+  auth: leadConnectorAuth,
+  name: 'new_form_submission',
+  classification: 'READ',
+  displayName: 'New Form Submission',
+  description: 'Trigger when a form is submitted.',
+  aiMetadata: {
+    description: 'Fires when a new submission is received for a specific GoHighLevel/LeadConnector form (selected by form ID). Represents the submitted form entry with its field values.',
+  },
+  props: {
+    form: Property.Dropdown({
+      auth: leadConnectorAuth,
+      displayName: 'Form',
+      description: 'Runs for each new submission of this form.',
+      required: true,
+      refreshers: [],
+      options: async ({ auth }) => {
+        if (!auth)
+          return {
+            disabled: true,
+            options: [],
+            placeholder: 'Connect your account first',
+          };
+
+        const forms = await getForms(auth);
+
+        return {
+          options: forms.map((form) => {
+            return {
+              label: form.name,
+              value: form.id,
+            };
+          }),
+        };
+      },
+    }),
+  },
+  type: TriggerStrategy.POLLING,
+  sampleData: {},
+
+  onEnable: async (context) => {
+    await pollingHelper.onEnable(polling, context);
+  },
+  onDisable: async (context) => {
+    await pollingHelper.onDisable(polling, context);
+  },
+  run: async (context) => {
+    return await pollingHelper.poll(polling, context);
+  },
+  test: async (context) => {
+    return await pollingHelper.test(polling, context);
+  },
+});

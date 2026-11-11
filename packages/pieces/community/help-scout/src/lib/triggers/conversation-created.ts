@@ -1,0 +1,73 @@
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
+import { HttpMethod } from '@united/pieces-common';
+import { helpScoutApi, StoredWebhook } from '../common/api';
+import { helpScoutAuth } from '../common/auth';
+import { mailboxIdDropdown, userIdDropdown } from '../common/props';
+import { helpScoutOutputSchemas, helpScoutSampleConversation } from '../common/output-schemas';
+
+export const conversationCreated = createTrigger({
+  auth: helpScoutAuth,
+  name: 'conversation_created',
+  classification: 'READ',
+  displayName: 'Conversation Created',
+  description: 'Triggers when a new conversation is started in a mailbox.',
+  aiMetadata: {
+    description:
+      "Fires when a new conversation is created in the selected Help Scout mailbox (convo.created webhook event), representing a freshly opened support thread. Can optionally be narrowed to conversations assigned to a specific user.",
+  },
+  type: TriggerStrategy.WEBHOOK,
+  props: {
+    mailboxId: mailboxIdDropdown(true),
+    assignedTo: userIdDropdown('Assigned User'),
+  },
+  outputSchema: helpScoutOutputSchemas['conversationWebhook'],
+  sampleData: helpScoutSampleConversation,
+  async onEnable(context) {
+    const stored = await helpScoutApi.createWebhook({
+      auth: context.auth,
+      url: context.webhookUrl,
+      events: ['convo.created'],
+      mailboxId: context.propsValue.mailboxId,
+    });
+    await context.store.put<StoredWebhook>(WEBHOOK_KEY, stored);
+  },
+  async onDisable(context) {
+    const stored = await context.store.get<StoredWebhook>(WEBHOOK_KEY);
+    if (stored?.webhookId) {
+      await helpScoutApi.deleteWebhook({ auth: context.auth, webhookId: stored.webhookId });
+    }
+    await context.store.delete(WEBHOOK_KEY);
+  },
+  async run(context) {
+    const stored = await context.store.get<StoredWebhook>(WEBHOOK_KEY);
+    const body = helpScoutApi.verifiedWebhookBody({
+      stored,
+      headers: context.payload.headers,
+      rawBody: context.payload.rawBody,
+      body: context.payload.body,
+    });
+    if (!body) {
+      return [];
+    }
+    if (!helpScoutApi.matchesAssignee({ body, assignedTo: context.propsValue.assignedTo })) {
+      return [];
+    }
+    return [body];
+  },
+  async test(context) {
+    const queryParams: Record<string, string> = { embed: 'threads', status: 'all', sortField: 'modifiedAt', sortOrder: 'desc' };
+    if (context.propsValue.mailboxId) queryParams['mailbox'] = String(context.propsValue.mailboxId);
+    if (context.propsValue.assignedTo) queryParams['assigned_to'] = String(context.propsValue.assignedTo);
+    const response = await helpScoutApi.request({
+      method: HttpMethod.GET,
+      path: '/conversations',
+      auth: context.auth,
+      queryParams,
+    });
+    return helpScoutApi
+      .getEmbeddedList({ body: response.body, key: 'conversations' })
+      .slice(0, 5);
+  },
+});
+
+const WEBHOOK_KEY = 'helpscout_conversation_created';

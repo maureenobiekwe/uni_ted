@@ -1,0 +1,19 @@
+encryptionsalt: v1:icXg2cmIvSc=:v1:y8+4YhdMCPPDY26J:5cNYmimH353n8sjUDDc6srvcPgb+8Q==
+config:
+  united:environment: "prod"
+  united:apEncryptionKey:  
+  united:apJwtSecret: 
+  united:deployLocalBuild: "true"
+  united:repoName: "united-prod-repo"
+  united:containerCpu: "512"
+  united:containerMemory: "1024"
+  united:containerInstances: "1"
+  united:usePostgres: "true"
+  united:dbInstanceClass: "db.t3.small"
+  united:dbIsPublic: "false"
+  united:dbPassword:
+    secure: v1:MXNSOcqZCp10X2PX:mU2iTrcETjdisk8FkD5yHLJYUxRei/9l
+  united:dbUsername: "postgres"
+  united:useRedis: "true"
+  united:redisNodeType: "cache.t3.small"
+  aws:region: "us-east-1"

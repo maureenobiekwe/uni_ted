@@ -1,0 +1,53 @@
+{
+  "extends": [
+    "../../../../.eslintrc.json"
+  ],
+  "ignorePatterns": [
+    "!**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx"
+      ],
+      "rules": {},
+      "extends": [
+        "plugin:prettier/recommended"
+      ],
+      "plugins": [
+        "prettier"
+      ]
+    },
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              "lodash",
+              "lodash/*",
+              "@united/core-*",
+              "@united/server*",
+              "@united/engine",
+              "@united/shared"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.js",
+        "*.jsx"
+      ],
+      "rules": {}
+    }
+  ]
+}

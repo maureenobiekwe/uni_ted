@@ -1,0 +1,98 @@
+import {
+  DedupeStrategy,
+  Polling,
+  pollingHelper,
+} from '@united/pieces-common';
+import {
+  AppConnectionValueForAuthProperty,
+  createTrigger,
+  Property,
+  TriggerStrategy,
+} from '@united/pieces-framework';
+import dayjs from 'dayjs';
+import { zohoCampaignsAuth } from '../auth';
+import { zohoCampaignsApi } from '../common/api';
+import { zohoCampaignsProps } from '../common/props';
+import type { ZohoCampaignsContactStatus } from '../common/types';
+import { zohoCampaignsContactOutputSchema } from '../output-schemas';
+
+const polling: Polling<
+  AppConnectionValueForAuthProperty<typeof zohoCampaignsAuth>,
+  {
+    listkey: string | undefined;
+    status: ZohoCampaignsContactStatus | undefined;
+  }
+> = {
+  strategy: DedupeStrategy.TIMEBASED,
+  items: async ({ auth, propsValue }) => {
+    const { listkey, status = 'unsub' } = propsValue;
+
+    if (!listkey) {
+      throw new Error('Mailing list is required');
+    }
+
+    const items = await zohoCampaignsApi.listContacts({
+      auth,
+      listkey,
+      sort: 'desc',
+      status,
+    });
+    return items.map((item) => ({
+      epochMilliSeconds: dayjs(item.added_time).valueOf(),
+      data: item,
+    }));
+  },
+};
+
+export const unsubscribeTrigger = createTrigger({
+  auth: zohoCampaignsAuth,
+  name: 'unsubscribe',
+  outputSchema: zohoCampaignsContactOutputSchema,
+  classification: 'READ',
+  displayName: 'Unsubscribe',
+  description:
+    'Fires when a contact is removed from a mailing list or unsubscribed.',
+  aiMetadata: {
+    description:
+      'Fires when a contact in the selected mailing list reaches the unsubscribed status, representing a subscriber who has opted out or been removed. Polls the list for contacts with that status.',
+  },
+  props: {
+    listkey: zohoCampaignsProps.listKey({ required: true }),
+    status: Property.StaticDropdown<ZohoCampaignsContactStatus, false>({
+      displayName: 'Unsubscribe Type',
+      description:
+        'Type of contact removal to monitor (default: unsubscribed)',
+      required: false,
+      options: {
+        options: [
+          { label: 'Unsubscribed', value: 'unsub' },
+          { label: 'Bounced', value: 'bounce' },
+        ],
+      },
+    }),
+  },
+  sampleData: {
+    contact_email: 'unsubscribed@example.com',
+    firstname: 'John',
+    lastname: 'Doe',
+    phone: '+1-555-123-4567',
+    companyname: 'Acme Corp',
+    zuid: '12345678',
+    added_time: '1699123456789',
+  },
+  type: TriggerStrategy.POLLING,
+  async test(context) {
+    return await pollingHelper.test(polling, context);
+  },
+  async onEnable(context) {
+    await pollingHelper.onEnable(polling, context);
+  },
+
+  async onDisable(context) {
+    await pollingHelper.onDisable(polling, context);
+  },
+
+  async run(context) {
+    return await pollingHelper.poll(polling, context);
+  },
+});

@@ -1,0 +1,32 @@
+{
+  "name": "@united/piece-gmail",
+  "version": "0.18.6",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "dependencies": {
+    "@united/pieces-common": "workspace:*",
+    "@united/pieces-framework": "workspace:*",
+    "@googleapis/gmail": "17.0.0",
+    "@googleapis/oauth2": "5.0.1",
+    "dayjs": "1.11.9",
+    "google-auth-library": "10.5.0",
+    "mailparser": "3.9.26",
+    "mime-types": "2.1.35",
+    "nodemailer": "10.0.9",
+    "@united/core-piece-types": "workspace:*",
+    "@united/core-utils": "workspace:*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.lib.json && cp package.json dist/",
+    "bundle": "node ../../../../dist/packages/cli/src/index.js pieces bundle",
+    "lint": "eslint 'src/**/*.ts'",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/mime-types": "2.1.1",
+    "@types/mailparser": "3.4.6",
+    "@types/nodemailer": "7.0.11",
+    "tslib": "2.6.2",
+    "vitest": "5.0.5"
+  }
+}

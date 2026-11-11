@@ -1,0 +1,140 @@
+import { AppConnectionValueForAuthProperty, createTrigger, PiecePropValueSchema, Property } from '@united/pieces-framework';
+import { TriggerStrategy } from '@united/pieces-framework';
+import { googleCalendarCommon } from '../common';
+import { getEvents } from '../common/helper';
+import { GoogleCalendarEvent } from '../common/types';
+import { googleCalendarAuth } from '../common';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
+import { eventOutputSchema } from '../output-schemas';
+
+const polling: Polling<
+    AppConnectionValueForAuthProperty<typeof googleCalendarAuth>,
+	{ calendarId?: string; expandRecurringEvent?: boolean }
+> = {
+	strategy: DedupeStrategy.TIMEBASED,
+	items: async ({ auth, propsValue: { calendarId, expandRecurringEvent }, lastFetchEpochMS }) => {
+		let minUpdated = new Date(lastFetchEpochMS);
+		// Google Calendar API breaks if minUpdated is too far in the past
+		if (lastFetchEpochMS === 0) {
+			const now = new Date();
+			const yesterday = new Date();
+			yesterday.setDate(now.getDate() - 7);
+
+			minUpdated = yesterday;
+		}
+
+		const currentValues: GoogleCalendarEvent[] =
+			(await getEvents(calendarId!, expandRecurringEvent ?? false, auth, minUpdated)) ?? [];
+		const items = currentValues.map((item) => ({
+			epochMilliSeconds: new Date(item.updated).getTime(),
+			data: item,
+		}));
+		return items;
+	},
+};
+
+export const calendarEventChanged = createTrigger({
+	// docs: https://developers.google.com/calendar/api/guides/push
+	auth: googleCalendarAuth,
+	name: 'new_or_updated_event',
+	classification: 'READ',
+	displayName: 'New or Updated Event',
+	description: 'Triggers when an event is added or updated',
+	aiMetadata: {
+		description: 'Fires when any event in the selected calendar is created or modified, polling by last-updated time. Each fired item is the affected event; can optionally expand recurring events so every occurrence fires separately.',
+	},
+	propertyGroups: [
+		{
+			key: 'calendar',
+			display: 'section',
+			label: 'Calendar',
+			icon: 'calendar',
+			props: ['calendar_id', 'expandRecurringEvent'],
+		},
+	],
+	props: {
+		calendar_id: googleCalendarCommon.calendarDropdown(),
+		expandRecurringEvent: Property.Checkbox({
+			displayName: 'Expand Recurring Events',
+			description: 'Fires once per occurrence of a recurring event.',
+			required: false,
+			defaultValue: false,
+		}),
+	},
+	sampleData: {
+		kind: 'calendar#event',
+		etag: '3350849506974000',
+		id: '0nsfi5ttd2b17ac76ma2f37oi9',
+		htmlLink: 'https://www.google.com/calendar/event?eid=kgjb90uioj4klrgfmdsnjsjvlgkm',
+		summary: 'ap-event-test',
+		created: '2023-02-03T11:36:36.000Z',
+		updated: '2023-02-03T11:45:53.487Z',
+		description: 'Sample description',
+		status: 'canceled',
+		creator: {
+			email: 'test@test.com',
+			self: true,
+		},
+		organizer: {
+			email: 'test@test.com',
+			self: true,
+		},
+		start: {
+			dateTime: '2023-02-02T22:30:00+03:00',
+			timeZone: 'Asia/Amman',
+		},
+		end: {
+			dateTime: '2023-02-02T23:30:00+03:00',
+			timeZone: 'Asia/Amman',
+		},
+		transparency: 'transparent',
+		iCalUID: '0nsfi5ttd2b17ac76ma2f37oi9@google.com',
+		sequence: 1,
+		attendees: [
+			{
+				email: 'attende@test.com',
+				responseStatus: 'needsAction',
+			},
+			{
+				email: 'test@test.com',
+				organizer: true,
+				self: true,
+				responseStatus: 'accepted',
+			},
+		],
+		reminders: {
+			useDefault: true,
+		},
+		eventType: 'default',
+	},
+	outputSchema: eventOutputSchema,
+	type: TriggerStrategy.POLLING,
+	async test(context) {
+		const { propsValue } = context;
+		return await pollingHelper.test(polling, { ...context, propsValue: {
+				calendarId: propsValue.calendar_id,
+				expandRecurringEvent: propsValue.expandRecurringEvent,
+			} });
+	},
+	async onEnable(context) {
+		const { propsValue } = context;
+		await pollingHelper.onEnable(polling, { ...context, propsValue: {
+				calendarId: propsValue.calendar_id,
+				expandRecurringEvent: propsValue.expandRecurringEvent,
+			} });
+	},
+	async onDisable(context) {
+		const { propsValue } = context;
+		await pollingHelper.onDisable(polling, { ...context, propsValue: {
+				calendarId: propsValue.calendar_id,
+				expandRecurringEvent: propsValue.expandRecurringEvent,
+			} });
+	},
+	async run(context) {
+		const { propsValue } = context;
+		return await pollingHelper.poll(polling, { ...context, propsValue: {
+				calendarId: propsValue.calendar_id,
+				expandRecurringEvent: propsValue.expandRecurringEvent,
+			} });
+	},
+});

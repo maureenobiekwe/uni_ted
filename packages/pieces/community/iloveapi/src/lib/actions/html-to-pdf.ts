@@ -1,0 +1,46 @@
+import { Property, createAction } from '@united/pieces-framework';
+import { iloveapiAuth } from '../common/auth';
+import { iloveSchemas } from '../common/schemas';
+import { regionOf, sharedProps, webhookOf } from '../common/props';
+import { runAndStoreResult } from '../common/runner';
+
+export const htmlToPdfAction = createAction({
+  auth: iloveapiAuth,
+  name: 'html_to_pdf',
+  classification: 'READ',
+  displayName: 'HTML to PDF',
+  description: 'Convert a publicly accessible web page URL into a PDF.',
+  audience: 'both',
+  outputSchema: iloveSchemas.toolResult,
+  aiMetadata: {
+    description:
+      'Render a publicly reachable web page, given its http(s) URL, into a PDF. The URL must be publicly accessible (no auth-gated or private pages). Use Office to PDF or JPG to PDF instead when the source is a local file rather than a live web page. Each run produces a new output.',
+    idempotent: false,
+  },
+  props: {
+    url: Property.ShortText({
+      displayName: 'Page URL',
+      description: 'Public URL of the web page to render as PDF.',
+      required: true,
+    }),
+    ...sharedProps,
+  },
+  async run(context) {
+    const { url, output_filename, packaged_filename } = context.propsValue;
+
+    if (!url || !/^https?:\/\//i.test(url)) {
+      throw new Error('A valid http(s) URL is required.');
+    }
+
+    return await runAndStoreResult({
+      auth: context.auth.secret_text,
+      region: regionOf(context.propsValue.region),
+      webhook: webhookOf(context.propsValue.webhook_url),
+      files: context.files,
+      tool: 'htmlpdf',
+      uploads: [{ kind: 'url', url }],
+      output_filename,
+      packaged_filename,
+    });
+  },
+});

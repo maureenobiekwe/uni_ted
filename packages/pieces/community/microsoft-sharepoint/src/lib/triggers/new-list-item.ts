@@ -1,0 +1,110 @@
+import { microsoftSharePointAuth } from '../auth';
+import {
+	createTrigger,
+	TriggerStrategy,
+	PiecePropValueSchema,
+	AppConnectionValueForAuthProperty,
+} from '@activepieces/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { getGraphBaseUrl } from '../common/microsoft-cloud';
+import { microsoftSharePointCommon } from '../common';
+import { Client, PageCollection } from '@microsoft/microsoft-graph-client';
+import dayjs from 'dayjs';
+import { ListItem } from '@microsoft/microsoft-graph-types';
+import { newListItemOutputSchema } from '../output-schemas';
+
+type Props = {
+	siteId: string;
+	listId: string;
+};
+
+const polling: Polling<AppConnectionValueForAuthProperty<typeof microsoftSharePointAuth>, Props> = {
+	strategy: DedupeStrategy.TIMEBASED,
+	items: async ({ auth, propsValue, lastFetchEpochMS }) => {
+		const { siteId, listId } = propsValue;
+
+		const cloud = auth.props?.['cloud'] as string | undefined;
+		const client = Client.initWithMiddleware({
+			authProvider: {
+				getAccessToken: () => Promise.resolve(auth.access_token),
+			},
+			baseUrl: getGraphBaseUrl(cloud),
+		});
+
+		const items = [];
+
+		const filter =
+			lastFetchEpochMS === 0
+				? '$top=10'
+				: `$filter=fields/Created gt '${dayjs(lastFetchEpochMS).toISOString()}'`;
+
+		let response: PageCollection = await client
+			.api(`/sites/${siteId}/lists/${listId}/items?${filter}`)
+			.header('Prefer', 'HonorNonIndexedQueriesWarningMayFailRandomly')
+			.expand('fields')
+			.get();
+
+		if (lastFetchEpochMS === 0) {
+			for (const message of response.value as ListItem[]) {
+				items.push(message);
+			}
+		} else {
+			while (response.value.length > 0) {
+				for (const message of response.value as ListItem[]) {
+					items.push(message);
+				}
+
+				if (response['@odata.nextLink']) {
+					response = await client
+						.api(response['@odata.nextLink'])
+						.header('Prefer', 'HonorNonIndexedQueriesWarningMayFailRandomly')
+						.get();
+				} else {
+					break;
+				}
+			}
+		}
+
+		items.sort((a, b) => {
+			const aDate = dayjs(a.createdDateTime);
+			const bDate = dayjs(b.createdDateTime);
+			return bDate.diff(aDate);
+		});
+
+		return items.map((item) => ({
+			epochMilliSeconds: dayjs(item.createdDateTime).valueOf(),
+			data: item,
+		}));
+	},
+};
+
+export const newListItemTrigger = createTrigger({
+	auth: microsoftSharePointAuth,
+	name: 'new_list_item',
+	outputSchema: newListItemOutputSchema,
+	classification: 'READ',
+	displayName: 'New List Item',
+	description: 'Triggers when a new item is created in a SharePoint list.',
+	aiMetadata: {
+		description: 'Fires when a new item (row) is added to one specific SharePoint list on a given site, based on item creation time (polling). Each event represents one newly created list item with its fields; updates to existing items do not trigger it.',
+	},
+	props: {
+		siteId: microsoftSharePointCommon.siteId,
+		listId: microsoftSharePointCommon.listId,
+	},
+	type: TriggerStrategy.POLLING,
+
+	sampleData: undefined,
+	async onEnable(context) {
+		await pollingHelper.onEnable(polling, context);
+	},
+	async onDisable(context) {
+		await pollingHelper.onDisable(polling, context);
+	},
+	async test(context) {
+		return await pollingHelper.test(polling, context);
+	},
+	async run(context) {
+		return await pollingHelper.poll(polling, context);
+	},
+});

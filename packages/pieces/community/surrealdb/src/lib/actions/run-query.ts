@@ -1,0 +1,65 @@
+import { createAction, Property } from '@activepieces/pieces-framework';
+import { surrealdbAuth } from '../auth';
+import { surrealdbApi } from '../common/api';
+import { runQueryOutputSchema } from '../output-schemas';
+
+export const runQueryAction = createAction({
+  auth: surrealdbAuth,
+  name: 'run-query',
+  outputSchema: runQueryOutputSchema,
+  classification: 'WRITE',
+  displayName: 'Run Query',
+  description: 'Run a query in SurrealDB.',
+  audience: 'both',
+  aiMetadata: { description: 'Executes an arbitrary SurrealQL statement against a SurrealDB database, returning the result body. Use this for any read or write the dedicated actions do not cover (SELECT/CREATE/UPDATE/DELETE/relate/define). Pass parameters via the args object (reference them as $name in the query) rather than interpolating values, to avoid injection. Not idempotent in general: the effect depends entirely on the statement, so write/mutating queries change state on each call while plain SELECTs do not.', idempotent: false },
+  props: {
+    markdown: Property.MarkDown({
+      value: `
+        **NOTE:** Prevent SQL injection by using parameterized queries.
+      `,
+    }),
+    query: Property.ShortText({
+      displayName: 'Query',
+      description: 'Provide a SurrealDB query string to execute.',
+      required: true,
+    }),
+    queryMarkdown: Property.MarkDown({
+      value: `
+        **NOTE:** Query example: \`SELECT * FROM table_name WHERE name = $name\`. Then add the name parameter in the arguments.
+      `,
+    }),
+    args: Property.Object({
+      displayName: 'Arguments',
+      description: "Add all arguments as names here, don't add the $ sign.",
+      required: false,
+    }),
+    query_timeout: Property.Number({
+      displayName: 'Query Timeout (ms)',
+      description:
+        'The maximum time to wait for a query to complete before timing out.',
+      required: false,
+      defaultValue: 30000,
+    }),
+    application_name: Property.ShortText({
+      displayName: 'Application Name',
+      description:
+        'An identifier for the client application executing the query.',
+      required: false,
+    }),
+  },
+
+  async run(context) {
+    try {
+      const { query, args } = context.propsValue;
+      return await surrealdbApi.query({
+        auth: context.auth,
+        sql: query,
+        args: args
+          ? Object.fromEntries(Object.entries(args).map(([key, value]) => [key, String(value)]))
+          : undefined,
+      });
+    } catch (error) {
+      throw new Error(`Query execution failed: ${error instanceof Error ? error.message : undefined}`);
+    }
+  },
+});

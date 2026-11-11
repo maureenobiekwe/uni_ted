@@ -1,0 +1,214 @@
+import { Permission } from '@united/core-utils';
+import { InvitationType, PlatformRole, UserStatus } from '@united/shared';
+import { t } from 'i18next';
+import { Users } from 'lucide-react';
+import { useCallback, useMemo, useState } from 'react';
+
+import { AnimatedIconButton } from '@/components/custom/animated-icon-button';
+import { DataTable } from '@/components/custom/data-table';
+import { DataTableInputPopover } from '@/components/custom/data-table/data-table-input-popover';
+import { UserRoundPlusIcon } from '@/components/icons/user-round-plus';
+import {
+  InviteUserDialog,
+  projectMembersHooks,
+  userInvitationsHooks,
+} from '@/features/members';
+import { platformUserHooks } from '@/features/platform-admin/hooks/platform-user-hooks';
+import { useAuthorization } from '@/hooks/authorization-hooks';
+import { authenticationSession } from '@/lib/authentication-session';
+
+import { membersTableColumns, MemberRowData } from './columns';
+
+export const MembersSettings = () => {
+  const {
+    projectMembers,
+    isLoading: projectMembersIsPending,
+    isError: projectMembersFailed,
+    refetch: refetchProjectMembers,
+  } = projectMembersHooks.useProjectMembers();
+  const {
+    invitations,
+    isLoading: invitationsIsPending,
+    isError: invitationsFailed,
+    refetch: refetchInvitations,
+  } = userInvitationsHooks.useInvitations();
+  const currentProjectId = authenticationSession.getProjectId();
+  const {
+    data: platformInvitations,
+    isLoading: platformInvitationsIsPending,
+    isError: platformInvitationsFailed,
+    refetch: refetchPlatformInvitations,
+  } = userInvitationsHooks.useProjectPlatformInvitations({
+    projectId: currentProjectId,
+  });
+  const {
+    data: platformUsersData,
+    isLoading: platformUsersIsPending,
+    isError: platformUsersFailed,
+  } = platformUserHooks.useUsers();
+
+  const [filterValue, setFilterValue] = useState('');
+  const [inviteOpen, setInviteOpen] = useState(false);
+
+  const { checkAccess } = useAuthorization();
+  const userHasPermissionToInviteUser = checkAccess(
+    Permission.WRITE_INVITATION,
+  );
+
+  const refetch = useCallback(() => {
+    refetchProjectMembers();
+    refetchInvitations();
+    refetchPlatformInvitations();
+  }, [refetchProjectMembers, refetchInvitations, refetchPlatformInvitations]);
+
+  const combinedData: MemberRowData[] = useMemo(() => {
+    const members: MemberRowData[] =
+      projectMembers
+        ?.filter((member) => member.user.status === UserStatus.ACTIVE)
+        .map((member) => ({
+          id: member.id,
+          type: 'member' as const,
+          data: member,
+        })) ?? [];
+
+    const pendingInvitations: MemberRowData[] =
+      invitations
+        ?.filter(
+          (invitation) =>
+            invitation.projectId === currentProjectId &&
+            invitation.type === InvitationType.PROJECT,
+        )
+        .map((invitation) => ({
+          id: invitation.id,
+          type: 'invitation' as const,
+          data: invitation,
+        })) ?? [];
+
+    const pendingPlatformInvitations: MemberRowData[] =
+      platformInvitations
+        ?.filter((invitation) => invitation.projectId === currentProjectId)
+        .map((invitation) => ({
+          id: invitation.id,
+          type: 'invitation' as const,
+          data: invitation,
+        })) ?? [];
+
+    const projectMemberEmails = new Set(
+      projectMembers?.map((member) => member.user.email.toLowerCase()) ?? [],
+    );
+
+    const platformAdminsAndOperators: MemberRowData[] =
+      platformUsersData?.data
+        ?.filter(
+          (user) =>
+            user.status === UserStatus.ACTIVE &&
+            (user.platformRole === PlatformRole.ADMIN ||
+              user.platformRole === PlatformRole.OPERATOR) &&
+            !projectMemberEmails.has(user.email.toLowerCase()),
+        )
+        .map((user) => ({
+          id: user.id,
+          type: 'platform-admin-operator' as const,
+          data: user,
+        })) ?? [];
+
+    return [
+      ...members,
+      ...platformAdminsAndOperators,
+      ...pendingInvitations,
+      ...pendingPlatformInvitations,
+    ];
+  }, [
+    projectMembers,
+    invitations,
+    platformInvitations,
+    platformUsersData,
+    currentProjectId,
+  ]);
+
+  const filteredData = useMemo(() => {
+    if (!filterValue) {
+      return combinedData;
+    }
+    const searchValue = filterValue.toLowerCase();
+    return combinedData.filter((row) => {
+      if (row.type === 'member') {
+        const fullName =
+          `${row.data.user.firstName} ${row.data.user.lastName}`.toLowerCase();
+        const email = row.data.user.email.toLowerCase();
+        return fullName.includes(searchValue) || email.includes(searchValue);
+      } else if (row.type === 'platform-admin-operator') {
+        const fullName =
+          `${row.data.firstName} ${row.data.lastName}`.toLowerCase();
+        const email = row.data.email.toLowerCase();
+        return fullName.includes(searchValue) || email.includes(searchValue);
+      } else {
+        const email = row.data.email.toLowerCase();
+        return email.includes(searchValue);
+      }
+    });
+  }, [combinedData, filterValue]);
+
+  const columns = useMemo(
+    () =>
+      membersTableColumns({
+        refetch,
+      }),
+    [refetch],
+  );
+
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center gap-2 justify-between">
+        <DataTableInputPopover
+          title={t('Search')}
+          filterValue={filterValue}
+          handleFilterChange={setFilterValue}
+        />
+        {userHasPermissionToInviteUser && (
+          <AnimatedIconButton
+            icon={UserRoundPlusIcon}
+            iconSize={16}
+            onClick={() => setInviteOpen(true)}
+          >
+            {t('Add Members')}
+          </AnimatedIconButton>
+        )}
+      </div>
+      <DataTable
+        columns={columns}
+        getRowId={(row) => `${row.type}-${row.id}`}
+        page={{
+          data: filteredData,
+          next: null,
+          previous: null,
+        }}
+        isLoading={
+          projectMembersIsPending ||
+          invitationsIsPending ||
+          platformInvitationsIsPending ||
+          platformUsersIsPending
+        }
+        isError={
+          projectMembersFailed ||
+          invitationsFailed ||
+          platformInvitationsFailed ||
+          platformUsersFailed
+        }
+        errorStateEntity={t('members')}
+        onRetry={refetch}
+        hidePagination={true}
+        emptyStateTextTitle={t('No members found')}
+        emptyStateTextDescription={t(
+          'Start by inviting team members to collaborate.',
+        )}
+        emptyStateIcon={<Users className="size-14" />}
+      />
+      <InviteUserDialog
+        open={inviteOpen}
+        setOpen={setInviteOpen}
+        onInviteSuccess={refetch}
+      />
+    </div>
+  );
+};

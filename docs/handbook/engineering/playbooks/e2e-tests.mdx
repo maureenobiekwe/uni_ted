@@ -1,0 +1,17 @@
+---
+title: "E2E Tests"
+icon: 'clipboard-list'
+---
+
+<Info>
+This playbook is about **full-stack browser E2E tests using Playwright** in `packages/tests-e2e/`. To decide whether your test belongs at the E2E layer at all, see the [Testing Strategy playbook](/handbook/engineering/playbooks/testing-strategy).
+</Info>
+
+## Writing a spec
+
+The guidelines for writing a spec live in one place: the [`packages/tests-e2e` README](https://github.com/united/united/blob/main/packages/tests-e2e/README.md#writing-a-spec). It covers test data, selectors, waits, assertions, flaky specs and how to run the suite. This page does not repeat it.
+
+## Debugging a failed spec
+
+- **Trace viewer**: the E2E matrix uploads `test-results/` as a run artifact, and a spec that failed and retried holds a `trace.zip`. Open it with `npx playwright show-trace <trace.zip>` to see each action, the DOM and the network calls.
+- **VS Code**: the **Playwright Test for VSCode** extension (by Microsoft) runs a single spec with breakpoints and shows its trace.

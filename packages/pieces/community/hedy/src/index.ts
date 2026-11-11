@@ -1,0 +1,63 @@
+import { createPiece } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
+import { hedyAuth } from './lib/auth';
+import {
+  getSession,
+  listSessions,
+  getHighlight,
+  listHighlights,
+  listSessionHighlights,
+  getTodo,
+  listTodos,
+  listSessionTodos,
+  getTopic,
+  listTopics,
+  listTopicSessions,
+  createTopic,
+  updateTopic,
+  deleteTopic,
+  createContext,
+  getContext,
+  listContexts,
+  updateContext,
+  deleteContext,
+} from './lib/actions';
+import {
+  sessionCreated,
+  sessionEnded,
+  sessionExported,
+  highlightCreated,
+  todoExported,
+} from './lib/triggers';
+
+export const hedy = createPiece({
+  displayName: 'Hedy',
+  description: 'AI-powered meeting intelligence – be the brightest person in the room.',
+  auth: hedyAuth,
+  minimumSupportedRelease: '0.69.0',
+  logoUrl: 'https://cdn.united.com/pieces/hedy.png',
+  categories: [PieceCategory.PRODUCTIVITY, PieceCategory.ARTIFICIAL_INTELLIGENCE],
+  authors: ['HedyAI'],
+  actions: [
+    getSession,
+    listSessions,
+    getHighlight,
+    listHighlights,
+    listSessionHighlights,
+    getTodo,
+    listTodos,
+    listSessionTodos,
+    getTopic,
+    listTopics,
+    listTopicSessions,
+    createTopic,
+    updateTopic,
+    deleteTopic,
+    createContext,
+    getContext,
+    listContexts,
+    updateContext,
+    deleteContext,
+  ],
+  triggers: [sessionCreated, sessionEnded, sessionExported, highlightCreated, todoExported],
+});
