@@ -7,7 +7,7 @@ import { createCustomApiCallAction, httpClient, HttpMethod, HttpRequest } from '
 const nodeRequire = createRequire(__filename);
 
 function isFormDataLoaded(): boolean {
-  return Object.keys(nodeRequire.cache).some((path) => path.includes('/form-data/'));
+  return Object.keys(nodeRequire.cache).some((path) => /[\\/]form-data[\\/]/.test(path));
 }
 
 function buildAction() {

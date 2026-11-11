@@ -24,7 +24,7 @@ export default defineConfig({
     environment: 'node',
     testTimeout: 60000,
     hookTimeout: 60000,
-    include: [path.resolve(__dirname, 'test/**/*.test.ts')],
+    include: [path.resolve(__dirname, 'test/**/*.test.ts').replaceAll(path.sep, '/')],
   },
   resolve: {
     alias: {
