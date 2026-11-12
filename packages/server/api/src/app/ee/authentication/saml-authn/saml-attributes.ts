@@ -1,4 +1,4 @@
-import { unitedError, ErrorCode, isNil } from '@united/core-utils'
+import { ErrorCode, isNil, unitedError } from '@united/core-utils'
 import { SAMLAttributeMapping } from '@united/shared'
 
 export const resolveSamlAttributes = ({ rawAttributes, mapping }: ResolveArgs): SamlAttributes => {

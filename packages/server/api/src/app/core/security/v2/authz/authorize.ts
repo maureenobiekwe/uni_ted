@@ -1,4 +1,4 @@
-import { unitedError, ErrorCode, isNil, Permission } from '@united/core-utils'
+import { ErrorCode, isNil, Permission, unitedError } from '@united/core-utils'
 import { PlatformRole, Principal, PrincipalType, UserIdentityProvider } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { userIdentityService } from '../../../../authentication/user-identity/user-identity-service'

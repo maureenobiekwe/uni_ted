@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@united/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { PieceCategory } from '@united/pieces-framework';
 import { instaChartsGenerateChartImageAction } from "./lib/actions/generate-chart-image";
 import { instaChartsAuth } from './lib/auth';

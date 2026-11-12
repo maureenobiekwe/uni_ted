@@ -1,9 +1,5 @@
 import { createAction, Property } from '@united/pieces-framework';
-import {
-  httpClient,
-  HttpMethod,
-  HttpRequest,
-} from '@united/pieces-common';
+import { httpClient, HttpMethod, HttpRequest } from '@united/pieces-common';
 import { DUST_BASE_URL } from '../common';
 import { dustAuth } from '../..';
 

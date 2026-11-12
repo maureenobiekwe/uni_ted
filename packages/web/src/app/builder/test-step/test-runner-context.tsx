@@ -1,3 +1,4 @@
+import { useQueryClient } from '@tanstack/react-query';
 import {
   FlowAction,
   FlowActionType,
@@ -5,7 +6,6 @@ import {
   FlowTriggerType,
   PieceAudienceFilter,
 } from '@united/shared';
-import { useQueryClient } from '@tanstack/react-query';
 import React, {
   createContext,
   useCallback,
@@ -33,7 +33,7 @@ const ActionTestRunnerContext =
 
 const isReturnResponseAndWaitForWebhook = (step: FlowAction) =>
   step.type === FlowActionType.PIECE &&
-  step.settings.pieceName === '@united/piece-webhook' &&
+  step.settings.pieceName === '@activepieces/piece-webhook' &&
   step.settings.actionName === 'return_response_and_wait_for_next_webhook';
 
 const ActionTestRunnerProvider = ({

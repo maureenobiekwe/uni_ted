@@ -1,9 +1,6 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import {
-  AuthenticationType,
-  HttpMethod,
   createCustomApiCallAction,
-  httpClient,
 } from '@united/pieces-common';
 import { baseUrlv1 } from './lib/common/common';
 import { promptCompletion } from './lib/actions/prompt-completion';

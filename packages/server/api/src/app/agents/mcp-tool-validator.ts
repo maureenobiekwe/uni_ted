@@ -1,6 +1,6 @@
+import { Client } from '@modelcontextprotocol/sdk/client/index.js'
 import { mcpTransport } from '@united/server-utils'
 import { AgentMcpTool, ValidateAgentMcpToolResponse } from '@united/shared'
-import { Client } from '@modelcontextprotocol/sdk/client/index.js'
 
 export const mcpToolValidator = {
     async validateAgentMcpTool(tool: AgentMcpTool): Promise<ValidateAgentMcpToolResponse> {

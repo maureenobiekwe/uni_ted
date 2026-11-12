@@ -63,7 +63,7 @@ function agentStep({ name, agentId, nextAction }: { name: string, agentId?: stri
         displayName: 'Ask an agent',
         settings: {
             input: { agentId, prompt: 'clear my inbox' },
-            pieceName: '@united/piece-ai',
+            pieceName: '@activepieces/piece-ai',
             pieceVersion: '0.7.0',
             actionName: 'run_agent',
             propertySettings: {},
@@ -182,7 +182,7 @@ describe('a flow step that links a saved agent', () => {
 
         const response = await startRun(ctx, {
             agentId: agent.externalId,
-            tools: [{ type: 'PIECE', toolName: 'send_email', pieceMetadata: { pieceName: '@united/piece-gmail', pieceVersion: '0.1.0', actionName: 'send_email' } }],
+            tools: [{ type: 'PIECE', toolName: 'send_email', pieceMetadata: { pieceName: '@activepieces/piece-gmail', pieceVersion: '0.1.0', actionName: 'send_email' } }],
         })
 
         expect(response.statusCode).toBe(StatusCodes.CONFLICT)
@@ -195,7 +195,7 @@ describe('a flow step that links a saved agent', () => {
         const response = await startRun(ctx, {
             modelName: 'gpt-5',
             provider: AIProviderName.OPENAI,
-            tools: [{ type: 'PIECE', toolName: 'send_email', pieceMetadata: { pieceName: '@united/piece-gmail', pieceVersion: '0.1.0', actionName: 'send_email' } }],
+            tools: [{ type: 'PIECE', toolName: 'send_email', pieceMetadata: { pieceName: '@activepieces/piece-gmail', pieceVersion: '0.1.0', actionName: 'send_email' } }],
         })
 
         expect(response.statusCode).toBe(StatusCodes.OK)
@@ -218,7 +218,7 @@ describe('a flow step that links a saved agent', () => {
         const inlineRun = await startRun(ctx, {
             provider: AIProviderName.ANTHROPIC,
             modelName: 'claude-x',
-            tools: [{ type: 'PIECE', toolName: 'send_email', pieceMetadata: { pieceName: '@united/piece-gmail', pieceVersion: '0.1.0', actionName: 'send_email' } }],
+            tools: [{ type: 'PIECE', toolName: 'send_email', pieceMetadata: { pieceName: '@activepieces/piece-gmail', pieceVersion: '0.1.0', actionName: 'send_email' } }],
         })
 
         expect(linkedRun.statusCode).toBe(StatusCodes.OK)
@@ -408,7 +408,7 @@ describe('what the linked run actually sends to the worker', () => {
         const agent = await createAgent(ctx, {
             instructions: 'Sort the inbox.',
             maxSteps: 7,
-            tools: [{ type: AgentToolType.PIECE, toolName: 'read_inbox', pieceMetadata: { pieceName: '@united/piece-gmail', pieceVersion: '0.1.0', actionName: 'gmail_search_mail' } }],
+            tools: [{ type: AgentToolType.PIECE, toolName: 'read_inbox', pieceMetadata: { pieceName: '@activepieces/piece-gmail', pieceVersion: '0.1.0', actionName: 'gmail_search_mail' } }],
         })
         await ctx.post(`/v1/agents/${agent.id}/publish`)
 

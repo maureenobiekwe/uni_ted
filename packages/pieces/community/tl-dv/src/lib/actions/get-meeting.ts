@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { tldvAuth } from '../..';
 import { HttpMethod } from '@united/pieces-common';
 import { tldvCommon } from '../common/client';

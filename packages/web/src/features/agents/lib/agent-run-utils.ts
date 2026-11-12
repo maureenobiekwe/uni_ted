@@ -1,7 +1,4 @@
-import {
-  AgentConversationStatus,
-  AgentRunListItem,
-} from '@united/shared';
+import { AgentConversationStatus, AgentRunListItem } from '@united/shared';
 import { t } from 'i18next';
 import { CircleAlert, CircleCheck, LucideIcon, Play } from 'lucide-react';
 

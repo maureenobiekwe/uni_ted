@@ -1,9 +1,9 @@
-import { unitedError, apId, assertNotNullOrUndefined, ErrorCode, isNil } from '@united/core-utils'
-import { facebookLeads } from '@united/piece-facebook-leads'
-import { intercom } from '@united/piece-intercom'
-import { microsoftTeamsBot } from '@united/piece-microsoft-teams-bot'
-import { slack } from '@united/piece-slack'
-import { square } from '@united/piece-square'
+import { facebookLeads } from '@activepieces/piece-facebook-leads'
+import { intercom } from '@activepieces/piece-intercom'
+import { microsoftTeamsBot } from '@activepieces/piece-microsoft-teams-bot'
+import { slack } from '@activepieces/piece-slack'
+import { square } from '@activepieces/piece-square'
+import { apId, assertNotNullOrUndefined, ErrorCode, isNil, unitedError } from '@united/core-utils'
 import { Piece, PieceAuthProperty } from '@united/pieces-framework'
 import { FlowStatus, LATEST_JOB_DATA_SCHEMA_VERSION, RunEnvironment, WorkerJobType } from '@united/shared'
 import { FastifyRequest } from 'fastify'
@@ -28,11 +28,11 @@ const appWebhooks: Record<string, Piece<PieceAuthProperty | PieceAuthProperty[] 
     'microsoft-teams-bot': microsoftTeamsBot,
 }
 const pieceNames: Record<string, string> = {
-    slack: '@united/piece-slack',
-    square: '@united/piece-square',
-    'facebook-leads': '@united/piece-facebook-leads',
-    intercom: '@united/piece-intercom',
-    'microsoft-teams-bot': '@united/piece-microsoft-teams-bot',
+    slack: '@activepieces/piece-slack',
+    square: '@activepieces/piece-square',
+    'facebook-leads': '@activepieces/piece-facebook-leads',
+    intercom: '@activepieces/piece-intercom',
+    'microsoft-teams-bot': '@activepieces/piece-microsoft-teams-bot',
 }
 
 export const appEventRoutingModule: FastifyPluginAsyncZod = async (app) => {

@@ -686,8 +686,7 @@ export const mcpClientCatalog = {
 };
 
 const LISTED_BRAND_NAME = 'united';
-const CLAUDE_DIRECTORY_URL =
-  'https://claude.ai/directory/cloud-united-com';
+const CLAUDE_DIRECTORY_URL = 'https://claude.ai/directory/cloud-united-com';
 const CURSOR_DIRECTORY_URL =
   'https://cursor.directory/plugins/united-mcp-connector-for-cursor';
 const CHATGPT_APP_URL =

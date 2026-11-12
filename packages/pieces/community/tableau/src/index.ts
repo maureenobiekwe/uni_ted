@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from "@united/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { PieceCategory } from '@united/pieces-framework';
 import { downloadView } from './lib/actions/download-view';
 import { runExtractRefreshTask } from './lib/actions/run-extract-refresh-task';

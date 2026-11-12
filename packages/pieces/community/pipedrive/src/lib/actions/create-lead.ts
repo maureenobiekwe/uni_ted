@@ -4,7 +4,6 @@ import { leadCommonProps } from '../common/props';
 import {
     pipedriveApiCall,
     pipedrivePaginatedV1ApiCall,
-    pipedriveTransformCustomFields,
     pipedriveTransformV1CustomFields,
 } from '../common';
 import { HttpMethod } from '@united/pieces-common';

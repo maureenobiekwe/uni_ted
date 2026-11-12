@@ -4,7 +4,6 @@ import { Property, createAction } from '@united/pieces-framework';
 import Client from 'ssh2-sftp-client';
 import { Client as FTPClient, FTPError } from 'basic-ftp';
 import { getSftpError } from './common';
-import { unknown } from 'zod';
 import { listFolderContentsActionOutputSchema } from '../output-schemas';
 
 async function listSFTP(client: Client, directoryPath: string) {

@@ -2,7 +2,6 @@ import { meistertaskAuth } from '../auth';
 import { meisterTaskCommon, makeRequest } from '../common/common';
 import { createAction, Property } from '@united/pieces-framework';
 import { HttpMethod } from '@united/pieces-common';
-import { Project } from '@united/pieces-framework';
 
 export const updateTask = createAction({
   auth: meistertaskAuth,

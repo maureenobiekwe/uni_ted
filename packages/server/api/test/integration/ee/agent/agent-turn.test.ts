@@ -327,7 +327,7 @@ async function seedMcpToolFlow(ctx: TestContext): Promise<{ flow: Flow, flowVers
             valid: true,
             lastUpdatedDate: new Date().toISOString(),
             settings: {
-                pieceName: '@united/piece-mcp',
+                pieceName: '@activepieces/piece-mcp',
                 pieceVersion: '0.0.21',
                 triggerName: 'mcp_tool',
                 propertySettings: {},

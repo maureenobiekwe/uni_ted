@@ -72,7 +72,7 @@ describe('Authentication API', () => {
             expect(response?.statusCode).toBe(StatusCodes.OK)
 
             const platform = await databaseConnection().getRepository('platform').findOneBy({ id: response?.json()?.platformId })
-            expect(platform?.name).toBe('united')
+            expect(platform?.name).toBe('United')
 
             const platformCount = await databaseConnection().getRepository('platform').count()
             const projectCount = await databaseConnection().getRepository('project').count()

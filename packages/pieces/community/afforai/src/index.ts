@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { askChatbotAction } from './lib/actions/ask-chatbot';
 import { PieceCategory } from '@united/pieces-framework';
 import { afforaiAuth } from './lib/auth';

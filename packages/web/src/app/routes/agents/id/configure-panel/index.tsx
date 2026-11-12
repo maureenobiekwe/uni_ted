@@ -1,3 +1,4 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { isNil, Permission } from '@united/core-utils';
 import {
   Agent,
@@ -13,7 +14,6 @@ import {
   UpdateAgentRequest,
   formErrors,
 } from '@united/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { ChevronRight, Trash2, X } from 'lucide-react';
 import {

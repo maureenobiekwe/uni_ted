@@ -1,9 +1,7 @@
 import {
-  HttpMethod,
   createCustomApiCallAction,
-  httpClient,
 } from '@united/pieces-common';
-import { PieceAuth, createPiece } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { clarifaiAskLLM } from './lib/actions/ask-llm';
 import { audioToTextModelPredictAction } from './lib/actions/call-audio-model';

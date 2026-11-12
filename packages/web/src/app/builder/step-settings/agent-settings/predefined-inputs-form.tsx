@@ -1,7 +1,7 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { connectionTemplate, isNil } from '@united/core-utils';
 import { PieceProperty, PropertyType } from '@united/pieces-framework';
 import { FieldControlMode, PredefinedInputField } from '@united/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { useEffect, useMemo } from 'react';
 import { useForm } from 'react-hook-form';

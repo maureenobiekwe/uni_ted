@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@united/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { BumpupsAuth } from "./lib/common/auth";
 import { generateCreatorDescription } from "./lib/actions/generate-creator-description";
 import { generateCreatorHashtags } from "./lib/actions/generate-creator-hashtags";

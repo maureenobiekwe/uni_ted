@@ -1,5 +1,5 @@
 import { HttpMethod } from '@united/pieces-common';
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 
 import { mailerooAuth } from '../../auth';
 import { mailerooClient } from '../../common/client';

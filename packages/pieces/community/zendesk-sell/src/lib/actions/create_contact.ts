@@ -1,6 +1,6 @@
 import { Property, createAction } from '@united/pieces-framework';
 import { HttpMethod } from '@united/pieces-common';
-import { zendeskSellAuth, ZendeskSellAuth } from '../common/auth';
+import { zendeskSellAuth } from '../common/auth';
 import { callZendeskApi } from '../common/client';
 import { zendeskSellCommon } from '../common/props'; 
 

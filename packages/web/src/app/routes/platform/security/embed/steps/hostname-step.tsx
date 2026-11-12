@@ -1,8 +1,5 @@
-import {
-  EmbedSubdomain,
-  GenerateEmbedSubdomainRequest,
-} from '@united/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { EmbedSubdomain, GenerateEmbedSubdomainRequest } from '@united/shared';
 import { t } from 'i18next';
 import { Loader2 } from 'lucide-react';
 import { useState } from 'react';

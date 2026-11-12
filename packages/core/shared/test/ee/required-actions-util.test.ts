@@ -2,8 +2,8 @@ import { FlowAction, FlowActionType, FlowTriggerType, FlowVersion, FlowVersionSt
 import { RequiredActionsMode } from '../../src/lib/ee/piece-set'
 import { requiredActionsUtil } from '../../src/lib/ee/piece-set/required-actions-util'
 
-const CRM = '@united/piece-crm'
-const BILLING = '@united/piece-billing'
+const CRM = '@activepieces/piece-crm'
+const BILLING = '@activepieces/piece-billing'
 const actionExists = { [CRM]: { create_deal: true, update_contact: true, log_call: false }, [BILLING]: { create_invoice: true } }
 
 function pieceStep({ name, pieceName, actionName, skip, nextAction }: { name: string, pieceName: string, actionName: string, skip?: boolean, nextAction?: FlowAction }): PieceAction {

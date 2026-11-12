@@ -1,4 +1,4 @@
-import { unitedError, AIProviderName, ErrorCode, isNil, PlatformId, tryCatch } from '@united/core-utils'
+import { AIProviderName, ErrorCode, isNil, PlatformId, tryCatch, unitedError } from '@united/core-utils'
 import { modelCatalog, ModelTierSurface } from '@united/server-utils'
 import { AgentConversation, AgentModelCandidate } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'

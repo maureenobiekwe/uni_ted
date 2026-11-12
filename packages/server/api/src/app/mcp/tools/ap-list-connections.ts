@@ -13,7 +13,7 @@ const listConnectionsSchema = z.object({
         .string()
         .optional()
         .describe(
-            'Filter by piece name. Short names like "slack" or "google-drive" are auto-expanded to full format (e.g. "@united/piece-slack"). You can also pass the full name directly.',
+            'Filter by piece name. Short names like "slack" or "google-drive" are auto-expanded to full format (e.g. "@activepieces/piece-slack"). You can also pass the full name directly.',
         ),
     displayName: z
         .string()

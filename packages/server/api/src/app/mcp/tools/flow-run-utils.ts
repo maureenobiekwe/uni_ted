@@ -347,7 +347,7 @@ function mapCodeResult(run: { id: string, status: FlowRunStatus, output?: unknow
     }
 }
 
-const FORMS_PIECE_NAME = '@united/piece-forms'
+const FORMS_PIECE_NAME = '@activepieces/piece-forms'
 
 function buildTriggerShapeHint(trigger: Step): string {
     if (trigger.type !== FlowTriggerType.PIECE || trigger.settings.pieceName !== FORMS_PIECE_NAME) {

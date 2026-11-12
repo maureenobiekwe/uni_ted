@@ -1,4 +1,4 @@
-import { AppConnectionValueForAuthProperty, OAuth2PropertyValue, OAuth2Props, PieceAuth, PiecePropValueSchema, Property, ShortTextProperty, StaticPropsValue } from '@united/pieces-framework';
+import { AppConnectionValueForAuthProperty, PieceAuth, Property } from '@united/pieces-framework';
 import {
 	httpClient,
 	HttpMethod,

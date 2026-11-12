@@ -29,7 +29,7 @@ IMPORT_PAYLOAD=$(jq -n '{
     trigger: {
       name: "trigger", valid: true, displayName: "Catch Webhook", type: "PIECE_TRIGGER",
       settings: {
-        pieceName: "@united/piece-webhook", pieceVersion: "~0.1.36",
+        pieceName: "@activepieces/piece-webhook", pieceVersion: "~0.1.36",
         triggerName: "catch_webhook", input: { authType: "none", authFields: {} },
         propertySettings: {
           authType: { type: "MANUAL" }, authFields: { type: "MANUAL", schema: {} },
@@ -41,7 +41,7 @@ IMPORT_PAYLOAD=$(jq -n '{
         name: "step_1", skip: false, type: "PIECE", valid: true,
         settings: {
           input: { first_number: 21, second_number: 21 },
-          pieceName: "@united/piece-math-helper", actionName: "addition_math",
+          pieceName: "@activepieces/piece-math-helper", actionName: "addition_math",
           pieceVersion: "~0.0.24", sampleData: {},
           propertySettings: {
             first_number: { type: "MANUAL" }, second_number: { type: "MANUAL" }
@@ -53,7 +53,7 @@ IMPORT_PAYLOAD=$(jq -n '{
           name: "step_2", skip: false, type: "PIECE", valid: true,
           settings: {
             input: { fields: { body: { sum: "{{step_1}}" }, status: 200, headers: {} }, respond: "stop", responseType: "json" },
-            pieceName: "@united/piece-webhook", actionName: "return_response",
+            pieceName: "@activepieces/piece-webhook", actionName: "return_response",
             sampleData: {}, pieceVersion: "~0.1.36",
             propertySettings: {
               fields: { type: "MANUAL", schema: {

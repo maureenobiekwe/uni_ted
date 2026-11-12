@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-help-scout",
+  "name": "@activepieces/piece-help-scout",
   "version": "0.3.0",
   "type": "commonjs",
   "main": "./dist/src/index.js",

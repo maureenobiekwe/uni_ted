@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { getRunOutputAction } from './lib/actions/get-run-outputs';
 import { getRunStatusAction } from './lib/actions/get-run-status';

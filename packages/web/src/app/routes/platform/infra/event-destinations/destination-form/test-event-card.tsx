@@ -1,9 +1,5 @@
 import { isNil } from '@united/core-utils';
-import {
-  ApEdition,
-  ApFlagId,
-  ApplicationEventName,
-} from '@united/shared';
+import { ApEdition, ApFlagId, ApplicationEventName } from '@united/shared';
 import { t } from 'i18next';
 import { Send } from 'lucide-react';
 import { useState } from 'react';

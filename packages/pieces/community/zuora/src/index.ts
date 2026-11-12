@@ -1,7 +1,5 @@
 import {
   createPiece,
-  PieceAuth,
-  Property,
 } from '@united/pieces-framework';
 import { createInvoiceAction } from './lib/actions/create-invoice.action';
 import { PieceCategory } from '@united/pieces-framework';

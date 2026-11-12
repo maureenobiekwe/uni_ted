@@ -111,11 +111,11 @@
     "typeorm-pglite": "0.3.2",
     "unpdf": "1.4.0",
     "zod": "4.3.6",
-    "@united/piece-facebook-leads": "workspace:*",
-    "@united/piece-intercom": "workspace:*",
-    "@united/piece-microsoft-teams-bot": "workspace:*",
-    "@united/piece-slack": "workspace:*",
-    "@united/piece-square": "workspace:*"
+    "@activepieces/piece-facebook-leads": "workspace:*",
+    "@activepieces/piece-intercom": "workspace:*",
+    "@activepieces/piece-microsoft-teams-bot": "workspace:*",
+    "@activepieces/piece-slack": "workspace:*",
+    "@activepieces/piece-square": "workspace:*"
   },
   "devDependencies": {
     "deno": "2.9.3",

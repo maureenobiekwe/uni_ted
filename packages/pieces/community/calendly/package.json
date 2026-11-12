@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-calendly",
+  "name": "@activepieces/piece-calendly",
   "version": "0.7.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

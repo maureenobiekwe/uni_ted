@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-ntfy",
+  "name": "@activepieces/piece-ntfy",
   "version": "0.4.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

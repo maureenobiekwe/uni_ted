@@ -1,10 +1,8 @@
-import { createPiece, PieceAuth } from "@united/pieces-framework";
-import { httpClient, HttpMethod } from '@united/pieces-common';
+import { createPiece } from "@united/pieces-framework";
 import { deleteContact } from './lib/actions/delete-contact';
 import { addOrUpdateContact } from './lib/actions/add-or-update-contact';
 import { createEvent } from "./lib/actions/create-event";
 import { BASE_URL } from "./lib/common/constants";
-import { InstasentAuthType } from './lib/common/types';
 import { PieceCategory } from '@united/pieces-framework';
 import { instasentAuth } from './lib/auth';
 

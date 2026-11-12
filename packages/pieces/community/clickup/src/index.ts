@@ -1,7 +1,5 @@
 import { createCustomApiCallAction } from '@united/pieces-common';
 import {
-  OAuth2PropertyValue,
-  PieceAuth,
   createPiece,
 } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';

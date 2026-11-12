@@ -1,7 +1,5 @@
 import {
   createPiece,
-  PieceAuth,
-  Property,
 } from '@united/pieces-framework';
 import { listContainers } from './lib/actions/list-containers';
 import { listBlobs } from './lib/actions/list-blobs';
@@ -12,7 +10,6 @@ import { addTagsToBlob } from './lib/actions/add-tags-to-blob';
 import { findBlobs } from './lib/actions/find-blobs';
 import { createContainer } from './lib/actions/create-container';
 import { deleteContainer } from './lib/actions/delete-container';
-import { BlobServiceClient } from '@azure/storage-blob';
 import { azureBlobStorageAuth } from './lib/auth';
 
 export const azureBlobStorage = createPiece({

@@ -60,7 +60,7 @@ const AUTH = PieceAuth.OAuth2({
 });
 
 const PIECE = {
-  name: '@united/piece-gmail',
+  name: '@activepieces/piece-gmail',
   displayName: 'Gmail',
   logoUrl: 'https://cdn.united.com/pieces/gmail.png',
   description: '',

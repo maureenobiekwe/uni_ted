@@ -2,7 +2,6 @@ import { createAction, Property } from '@united/pieces-framework';
 
 import { kustomerAuth } from '../common/auth';
 import { kustomerClient } from '../common/client';
-import { KustomerJsonObject, KustomerJsonValue } from '../common/types';
 
 export const getCustomObjectsAction = createAction({
   auth: kustomerAuth,

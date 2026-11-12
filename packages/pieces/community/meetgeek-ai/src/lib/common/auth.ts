@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@united/pieces-framework';
+import { PieceAuth } from '@united/pieces-framework';
 
 export const meetgeekaiAuth = PieceAuth.SecretText({
   displayName: 'API Key',

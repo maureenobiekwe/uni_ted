@@ -1,3 +1,4 @@
+import { QueryClient } from '@tanstack/react-query';
 import { isNil, tryCatch, deepEquals, prune } from '@united/core-utils';
 import {
   FlowAction,
@@ -14,7 +15,6 @@ import {
   FlowTrigger,
   FlowTriggerType,
 } from '@united/shared';
-import { QueryClient } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 import { t } from 'i18next';
 import { toast } from 'sonner';

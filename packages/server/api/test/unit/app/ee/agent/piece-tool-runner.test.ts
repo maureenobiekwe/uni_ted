@@ -40,7 +40,7 @@ async function prepareAndRun(params: Record<string, unknown>) {
 
 async function run(overrides: Record<string, unknown> = {}) {
     return prepareAndRun({
-        piece: { pieceName: '@united/piece-slack', actionName: 'send_message' },
+        piece: { pieceName: '@activepieces/piece-slack', actionName: 'send_message' },
         instruction: 'say hello in general',
         model: {} as never,
         projectId: 'proj-1',
@@ -62,7 +62,7 @@ describe('pieceToolRunner: preparing then running a configured action', () => {
         await run()
 
         expect(mockExecutePieceActionRun).toHaveBeenCalledWith(expect.objectContaining({
-            pieceName: '@united/piece-slack',
+            pieceName: '@activepieces/piece-slack',
             actionName: 'send_message',
             input: { text: 'hello' },
         }))
@@ -79,7 +79,7 @@ describe('pieceToolRunner: preparing then running a configured action', () => {
         await run()
 
         expect(mockGetOrThrow).toHaveBeenCalledWith(expect.objectContaining({
-            name: '@united/piece-slack',
+            name: '@activepieces/piece-slack',
             version: undefined,
         }))
     })
@@ -139,7 +139,7 @@ describe('pieceToolRunner: a custom API call stays on the connection\'s own host
     async function callWithUrl(url: unknown) {
         mockCompleter.mockResolvedValue({ url })
         return prepareAndRun({
-            piece: { pieceName: '@united/piece-slack', actionName: 'custom_api_call' },
+            piece: { pieceName: '@activepieces/piece-slack', actionName: 'custom_api_call' },
             instruction: 'call the api',
             model: {} as never,
             projectId: 'proj-1',
@@ -178,7 +178,7 @@ describe('pieceToolRunner.resolveInput: which account fills the input and lists 
     async function resolve(overrides: Record<string, unknown>) {
         const { pieceToolRunner } = await import('../../../../../src/app/ee/agent/tools/piece-tool-runner')
         const { resolvedInput } = await pieceToolRunner.resolveInput({
-            piece: { pieceName: '@united/piece-slack', actionName: 'send_message' },
+            piece: { pieceName: '@activepieces/piece-slack', actionName: 'send_message' },
             instruction: 'say hello in general',
             model: {} as never,
             projectId: 'proj-1',

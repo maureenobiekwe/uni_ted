@@ -45,7 +45,7 @@ export const flowsUtils = {
           case TriggerSourceScheduleType.INTERVAL: {
             const minutes = Math.round(schedule.intervalMs / 60_000);
             return flow.triggerSource?.pieceName ===
-              '@united/piece-schedule' ? (
+              '@activepieces/piece-schedule' ? (
               t('Runs every {minutes, plural, =1 {minute} other {# minutes}}', {
                 minutes,
               })

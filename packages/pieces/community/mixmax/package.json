@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-mixmax",
+  "name": "@activepieces/piece-mixmax",
   "version": "0.1.1",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

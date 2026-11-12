@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@united/pieces-framework';
+import { OAuth2PropertyValue, createPiece } from '@united/pieces-framework';
 import { createCustomApiCallAction } from '@united/pieces-common';
 import { trueLayerCommon } from './lib/common';
 

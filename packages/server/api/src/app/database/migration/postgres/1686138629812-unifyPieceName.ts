@@ -106,11 +106,11 @@ async function updateTriggerEvent(
     for (const triggerEvent of triggerEvents) {
         if (triggerEvent.source) {
             if (revert) {
-                triggerEvent.source = `@united/piece-${triggerEvent.source}`
+                triggerEvent.source = `@activepieces/piece-${triggerEvent.source}`
             }
             else {
                 triggerEvent.source = triggerEvent.source.replace(
-                    '@united/piece-',
+                    '@activepieces/piece-',
                     '',
                 )
             }
@@ -226,7 +226,7 @@ const getPackageNameForPiece = (
         return pieceName
     }
     if (revert) {
-        return pieceName.replace('@united/piece-', '')
+        return pieceName.replace('@activepieces/piece-', '')
     }
-    return `@united/piece-${pieceName}`
+    return `@activepieces/piece-${pieceName}`
 }

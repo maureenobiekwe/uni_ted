@@ -3,10 +3,7 @@ import {
   httpClient,
   HttpMethod,
 } from '@united/pieces-common';
-import {
-  OAuth2AuthorizationMethod,
-  PieceAuth,
-} from '@united/pieces-framework';
+import { OAuth2AuthorizationMethod, PieceAuth } from '@united/pieces-framework';
 
 export const notionOAuth2Auth = PieceAuth.OAuth2({
   authUrl: 'https://api.notion.com/v1/oauth/authorize',

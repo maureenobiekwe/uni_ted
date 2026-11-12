@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-bigin-by-zoho",
+  "name": "@activepieces/piece-bigin-by-zoho",
   "version": "0.2.0",
   "type": "commonjs",
   "main": "./dist/src/index.js",

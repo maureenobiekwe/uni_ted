@@ -1,4 +1,4 @@
-import { unitedError, ErrorCode, isNil, UserId } from '@united/core-utils'
+import { ErrorCode, isNil, unitedError, UserId } from '@united/core-utils'
 import { ApplicationEvent, ApplicationEventName, OtpType, ResetPasswordRequestBody, UserIdentity, VerifyEmailRequestBody } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { otpService } from '../../../authentication/otp/otp-service'

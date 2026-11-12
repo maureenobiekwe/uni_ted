@@ -20,6 +20,7 @@ concurrency:
 
 jobs:
   build-image:
+    if: vars.STAGING_DEPLOY_ENABLED == 'true'
     runs-on: ubuntu-24.04
     outputs:
       image_tag: ${{ steps.set-tag.outputs.image_tag }}

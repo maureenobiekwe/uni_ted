@@ -1,6 +1,4 @@
 import { PieceAuth } from "@united/pieces-framework";
-import { makeRequest } from "./client";
-import { HttpMethod } from "@united/pieces-common";
 
 export const BumpupsAuth = PieceAuth.SecretText({
     displayName: 'Bumpups API Key',

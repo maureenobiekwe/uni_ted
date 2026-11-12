@@ -1160,7 +1160,7 @@ Nothing to configure or migrate. If you have a caller or reverse proxy that trea
 
 #### Piece builds fail when piece code uses `__dirname` without declaring `bundleForkedEntries`
 
-The piece bundler now emits files a piece loads by path at runtime (for example a `child_process.fork` target) beside the main bundle, when they are declared in a `bundleForkedEntries` array in the piece's `package.json`, and it keeps dependencies that only those files import in the published manifest. Because an undeclared `__dirname`-relative file access always breaks after publishing — this is exactly how `@united/piece-oracle-database` 0.1.11/0.1.12 shipped with every new connection failing — the build now fails loudly when a piece's source references `__dirname` and declares no forked entries. Previously such a piece built successfully and shipped broken.
+The piece bundler now emits files a piece loads by path at runtime (for example a `child_process.fork` target) beside the main bundle, when they are declared in a `bundleForkedEntries` array in the piece's `package.json`, and it keeps dependencies that only those files import in the published manifest. Because an undeclared `__dirname`-relative file access always breaks after publishing — this is exactly how `@activepieces/piece-oracle-database` 0.1.11/0.1.12 shipped with every new connection failing — the build now fails loudly when a piece's source references `__dirname` and declares no forked entries. Previously such a piece built successfully and shipped broken.
 
 #### What you need to do
 

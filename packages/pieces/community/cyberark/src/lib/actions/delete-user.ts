@@ -2,7 +2,7 @@ import { createAction, Property } from '@united/pieces-framework';
 import { cyberarkAuth } from '../auth';
 import { httpClient, HttpMethod } from '@united/pieces-common';
 import { userIdDropdown } from '../common/user-dropdown';
-import { getAuthToken, CyberArkAuth } from '../common/auth-helper';
+import { getAuthToken } from '../common/auth-helper';
 
 export const deleteUser = createAction({
   auth: cyberarkAuth,

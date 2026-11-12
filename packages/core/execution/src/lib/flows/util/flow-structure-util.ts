@@ -6,7 +6,7 @@ import { FlowVersion } from '../flow-version'
 import { FlowTrigger, FlowTriggerType } from '../triggers/trigger'
 
 
-export const AI_PIECE_NAME = '@united/piece-ai'
+export const AI_PIECE_NAME = '@activepieces/piece-ai'
 
 export type Step = FlowAction | FlowTrigger
 type StepWithIndex = Step & {

@@ -1,6 +1,5 @@
 import { HttpMethod, httpClient } from '@united/pieces-common';
 import { Property } from '@united/pieces-framework';
-import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { AuthenticationType } from '@united/pieces-common';
 import { meistertaskAuth } from '../auth';
 

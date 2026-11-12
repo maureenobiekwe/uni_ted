@@ -1,7 +1,6 @@
 import { Property } from '@united/pieces-framework';
 import { HttpMethod } from '@united/pieces-common';
 import { respondIoApiCall } from './client';
-import { PiecePropValueSchema } from '@united/pieces-framework';
 import { respondIoAuth } from './auth';
 
 // --- Interfaces for Contact Dropdown ---

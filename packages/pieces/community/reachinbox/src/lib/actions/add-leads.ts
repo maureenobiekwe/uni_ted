@@ -1,11 +1,9 @@
 import { createAction, Property } from '@united/pieces-framework';
 import {
   fetchCampaigns,
-  addLeadsToCampaign,
   reachinboxCommon,
 } from '../common/index';
 import { ReachinboxAuth } from '../..';
-import { reachinbox } from '../..';
 import { HttpMethod, httpClient } from '@united/pieces-common';
 
 // Define the structure for custom variables

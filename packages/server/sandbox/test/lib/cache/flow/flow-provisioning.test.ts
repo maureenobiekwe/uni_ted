@@ -41,14 +41,14 @@ function flowWithPiece(overrides: Partial<FlowVersion> = {}): FlowVersion {
             name: 'trigger', type: FlowTriggerType.EMPTY, displayName: 'Trigger', valid: true, settings: {},
             nextAction: {
                 name: 'step_1', type: FlowActionType.PIECE, displayName: 'HTTP', valid: true,
-                settings: { pieceName: '@united/piece-http', pieceVersion: '^1.0.0', actionName: 'send', input: {}, inputUiInfo: {} },
+                settings: { pieceName: '@activepieces/piece-http', pieceVersion: '^1.0.0', actionName: 'send', input: {}, inputUiInfo: {} },
             },
         },
         ...overrides,
     } as unknown as FlowVersion
 }
 
-const httpPiece = { packageType: PackageType.REGISTRY, name: '@united/piece-http', version: '1.0.5', pieceType: PieceType.OFFICIAL }
+const httpPiece = { packageType: PackageType.REGISTRY, name: '@activepieces/piece-http', version: '1.0.5', pieceType: PieceType.OFFICIAL }
 
 const flow = { id: 'flow1', versionId: 'fv1', projectId: 'p1' }
 
@@ -164,7 +164,7 @@ describe('flowProvisioning.resolve', () => {
         if (resolved.kind === 'disabled') {
             expect(resolved.failedStep?.name).toBe('step_1')
             expect(resolved.failedStep?.displayName).toBe('HTTP')
-            expect(resolved.failedStep?.message).toContain('@united/piece-http@^1.0.0')
+            expect(resolved.failedStep?.message).toContain('@activepieces/piece-http@^1.0.0')
             expect(resolved.failedStep?.message).toContain('turned off')
         }
     })

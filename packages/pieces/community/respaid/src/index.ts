@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from "@united/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { respaidActions } from "./lib/actions";
 import { respaidTriggers } from "./lib/triggers";
 import { respaidAuth } from './lib/auth';

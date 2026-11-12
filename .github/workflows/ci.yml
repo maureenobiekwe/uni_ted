@@ -18,7 +18,7 @@ env:
 jobs:
   changes:
     runs-on: ubuntu-latest
-    if: github.repository == 'united/united'
+    if: github.repository == 'maureenobiekwe/uni_ted'
     outputs:
       packages: ${{ steps.affected.outputs.packages }}
       all: ${{ steps.affected.outputs.all }}
@@ -49,7 +49,7 @@ jobs:
           else
             PACKAGES=$(jq -cn --argjson direct "$DIRECT" --argjson affected "$AFFECTED" '
               ($direct | any(. == "@united/pieces-framework" or . == "@united/pieces-common")) as $allPieces
-              | [$affected[] | select((startswith("@united/piece-") | not) or $allPieces or IN($direct[]))]')
+              | [$affected[] | select((startswith("@activepieces/piece-") | not) or $allPieces or IN($direct[]))]')
           fi
           echo "all=$ALL" >> "$GITHUB_OUTPUT"
           echo "packages=$PACKAGES" >> "$GITHUB_OUTPUT"

@@ -1,5 +1,5 @@
-import { McpOAuthGrant } from '@united/shared';
 import { ColumnDef } from '@tanstack/react-table';
+import { McpOAuthGrant } from '@united/shared';
 import { t } from 'i18next';
 import { Clock, FolderOpen, Plug, User } from 'lucide-react';
 

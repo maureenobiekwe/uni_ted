@@ -6,7 +6,7 @@ import {
 import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 
 import { klentyAuth } from '../auth';
-import { DEFAULT_PAGE_SIZE, KLENTY_API_BASE } from './constants';
+import { KLENTY_API_BASE } from './constants';
 
 export type KlentyAuthValue = AppConnectionValueForAuthProperty<typeof klentyAuth>;
 

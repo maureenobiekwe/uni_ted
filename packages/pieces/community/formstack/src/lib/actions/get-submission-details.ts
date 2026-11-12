@@ -1,6 +1,5 @@
 import {
   createAction,
-  OAuth2PropertyValue,
   Property,
 } from '@united/pieces-framework';
 import { formIdDropdown, submissionIdDropdown } from '../common/props';

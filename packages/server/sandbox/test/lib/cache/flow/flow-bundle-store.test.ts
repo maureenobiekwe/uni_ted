@@ -56,7 +56,7 @@ function buildFlowVersion(overrides: Partial<FlowVersion> = {}): FlowVersion {
     } as unknown as FlowVersion
 }
 
-const piece = { packageType: PackageType.REGISTRY, pieceType: PieceType.OFFICIAL, pieceName: '@united/piece-http', pieceVersion: '1.0.0' }
+const piece = { packageType: PackageType.REGISTRY, pieceType: PieceType.OFFICIAL, pieceName: '@activepieces/piece-http', pieceVersion: '1.0.0' }
 
 function inMemoryApiClient(): { apiClient: WorkerToApiContract, getFlowBundle: ReturnType<typeof vi.fn> } {
     let stored: Buffer | null = null

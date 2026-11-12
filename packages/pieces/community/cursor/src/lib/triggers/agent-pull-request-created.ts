@@ -1,4 +1,4 @@
-import { createTrigger, isNil, TriggerStrategy, PiecePropValueSchema, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
+import { createTrigger, isNil, TriggerStrategy, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@united/pieces-common';
 import { cursorAuth } from '../common/auth';
 import { makeCursorRequest } from '../common/client';

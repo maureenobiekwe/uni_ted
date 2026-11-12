@@ -1,7 +1,5 @@
 import {
   createPiece,
-  PieceAuth,
-  Property,
 } from '@united/pieces-framework';
 import { createEvent } from './lib/actions/create_event';
 import { newReportingEvent } from './lib/trigger/new-reporting-event';

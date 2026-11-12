@@ -8,7 +8,7 @@ import {
   AuthenticationType,
   HttpHeaders,
 } from '@united/pieces-common';
-import { AppConnectionValueForAuthProperty, PiecePropValueSchema } from '@united/pieces-framework';
+import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 
 const BUSINESS_CENTRAL_HOSTS: Record<string, string> = {
   'login.microsoftonline.com': 'api.businesscentral.dynamics.com',

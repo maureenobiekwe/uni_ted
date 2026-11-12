@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-asana",
+  "name": "@activepieces/piece-asana",
   "version": "0.8.1",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

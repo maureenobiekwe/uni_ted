@@ -218,7 +218,7 @@ export const createPieceCommand = new Command('create')
         name: 'packageName',
         message: 'Enter the package name:',
         default: (answers: Record<string, string>) =>
-          `@united/piece-${answers.pieceName}`,
+          `@activepieces/piece-${answers.pieceName}`,
         when: (answers: Record<string, string>) =>
           answers.pieceName !== undefined,
       },

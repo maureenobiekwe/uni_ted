@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { braveWebSearchAction } from './lib/actions/web-search';
 import { createCustomApiCallAction } from '@united/pieces-common';
 import { braveSearchAuth } from './lib/auth';

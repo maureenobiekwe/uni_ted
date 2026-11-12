@@ -1,5 +1,5 @@
 import { createCustomApiCallAction } from '@united/pieces-common';
-import { createPiece, OAuth2PropertyValue, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { completeTaskAction } from './lib/actions/complete-task';
 import { createTaskAction } from './lib/actions/create-task';
 import { deleteTaskAction } from './lib/actions/delete-task';

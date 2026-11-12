@@ -91,7 +91,7 @@ const buildMapper = ({ name, mapping, skip, nextAction }: {
         name,
         input: { mapping: mapping ?? {} },
         skip,
-        pieceName: '@united/piece-data-mapper',
+        pieceName: '@activepieces/piece-data-mapper',
         actionName: 'advanced_mapping',
     }),
     nextAction,

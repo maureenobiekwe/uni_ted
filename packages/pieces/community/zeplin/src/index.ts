@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { ziplinAuth } from './lib/common/auth';
 import { createNote } from './lib/actions/create-note';
 import { findProject } from './lib/actions/find-project';

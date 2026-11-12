@@ -51,7 +51,7 @@ describe('createToolName', () => {
 
 describe('createPieceToolName', () => {
     it('strips @scope/piece- prefix', () => {
-        expect(createPieceToolName('@united/piece-slack', 'send_message')).toBe('slack-send_message_pqyv3q_mcp')
+        expect(createPieceToolName('@activepieces/piece-slack', 'send_message')).toBe('slack-send_message_pqyv3q_mcp')
     })
 
     it('strips plain piece- prefix', () => {
@@ -63,7 +63,7 @@ describe('createPieceToolName', () => {
     })
 
     it('normalizes the combined name correctly', () => {
-        expect(createPieceToolName('@united/piece-google-sheets', 'insert_row')).toBe('google-sheets-insert_row_q388b6_mcp')
+        expect(createPieceToolName('@activepieces/piece-google-sheets', 'insert_row')).toBe('google-sheets-insert_row_q388b6_mcp')
     })
 })
 

@@ -81,7 +81,7 @@ describe('reads through the action, code and cross-project tools', () => {
     it.each([
         ['ap_run_code', { code: 'export const code = async () => 1' }],
         ['ap_list_across_projects', { resource: 'tables' }],
-        ['ap_execute_action', { pieceName: '@united/piece-gmail', actionName: 'gmail_get_email', input: {} }],
+        ['ap_execute_action', { pieceName: '@activepieces/piece-gmail', actionName: 'gmail_get_email', input: {} }],
     ])('taints the turn after %s, since what it returns can carry an injection', async (toolName, input) => {
         const taintState = { tainted: false }
 
@@ -98,7 +98,7 @@ describe('reads through the action, code and cross-project tools', () => {
             return waitForApproval()
         })
 
-        await tools.ap_execute_action.execute?.({ pieceName: '@united/piece-gmail', actionName: 'gmail_label_email', input: {}, needsConfirmation: false }, options)
+        await tools.ap_execute_action.execute?.({ pieceName: '@activepieces/piece-gmail', actionName: 'gmail_label_email', input: {}, needsConfirmation: false }, options)
 
         expect(asked).toBe(false)
     })
@@ -123,7 +123,7 @@ describe('ap_execute_action batch approval', () => {
         })
         return { tools, executed, wasAsked: () => asked }
     }
-    const decoyBatch = { pieceName: '@united/piece-http', actionName: 'custom_api_call', input: { method: 'GET', url: 'https://api.example.com/users' }, items: [{ method: 'DELETE', url: 'https://api.example.com/users/1' }] }
+    const decoyBatch = { pieceName: '@activepieces/piece-http', actionName: 'custom_api_call', input: { method: 'GET', url: 'https://api.example.com/users' }, items: [{ method: 'DELETE', url: 'https://api.example.com/users/1' }] }
 
     it.each([false, true])('asks before running batch items that write, even when the top-level input is a read (tainted turn: %s)', async (tainted) => {
         const { tools, executed, wasAsked } = batchTools({ tainted })
@@ -183,7 +183,7 @@ describe('ap_execute_action with a declared classification', () => {
         })
         return { tools, wasAsked: () => asked }
     }
-    const markAsRead = { pieceName: '@united/piece-gmail', actionName: 'mark_as_read', input: {}, needsConfirmation: false }
+    const markAsRead = { pieceName: '@activepieces/piece-gmail', actionName: 'mark_as_read', input: {}, needsConfirmation: false }
 
     it('asks before an action the piece declares as a write, even when its name reads like a read', async () => {
         const { tools, wasAsked } = declaredTools({ declaredReadOnly: false })
@@ -216,7 +216,7 @@ describe('ap_explore_data leaves the read-or-write call to the API', () => {
             taintState: { tainted: false },
         })
 
-        await tools.ap_explore_data.execute?.({ pieceName: '@united/piece-text-helper', actionName: 'split', input: {} }, options)
+        await tools.ap_explore_data.execute?.({ pieceName: '@activepieces/piece-text-helper', actionName: 'split', input: {} }, options)
 
         expect(sent).toEqual(['ap_explore_data'])
     })

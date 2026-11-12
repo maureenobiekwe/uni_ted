@@ -120,7 +120,7 @@ export function createConfiguredPieceTools({ tools, runPieceTool, taintState, ev
     return Object.fromEntries(tools.map((configured) => [
         configured.toolName,
         tool({
-            description: `Run the "${configured.pieceMetadata.actionName}" action of ${configured.pieceMetadata.pieceName.replace('@united/piece-', '')}. Describe what it should do, including any values it needs; the inputs are worked out from that. Fields the flow author pinned keep their value whatever you ask for. Returns the action's own output, or why it failed.`,
+            description: `Run the "${configured.pieceMetadata.actionName}" action of ${configured.pieceMetadata.pieceName.replace('@activepieces/piece-', '')}. Describe what it should do, including any values it needs; the inputs are worked out from that. Fields the flow author pinned keep their value whatever you ask for. Returns the action's own output, or why it failed.`,
             inputSchema: z.object({
                 instruction: z.string().describe('What this action should do, including any values it needs, in plain language'),
             }),

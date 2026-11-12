@@ -1,6 +1,6 @@
 import { meistertaskAuth } from '../auth';
 import {  makeRequest, meisterTaskCommon} from '../common/common';
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { HttpMethod } from '@united/pieces-common';
 
 export const createTaskLabel = createAction({

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { oktaAuth, makeOktaRequest, userIdDropdown } from '../common/common';
 import { HttpMethod } from '@united/pieces-common';
 

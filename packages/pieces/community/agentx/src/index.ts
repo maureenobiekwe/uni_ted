@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth } from "@united/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { createConversationWithSingleAgent } from "./lib/actions/create-conversation-with-single-agent";
 import { sendMessageToExistingConversation } from "./lib/actions/send-message-to-existing-conversation";
 import { findMessage } from "./lib/actions/find-message";

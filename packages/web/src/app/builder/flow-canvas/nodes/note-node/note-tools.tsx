@@ -1,5 +1,5 @@
-import { NoteColorVariant } from '@united/shared';
 import { Editor } from '@tiptap/core';
+import { NoteColorVariant } from '@united/shared';
 import { t } from 'i18next';
 import { TrashIcon } from 'lucide-react';
 import { forwardRef, useRef, useState } from 'react';

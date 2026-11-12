@@ -1,9 +1,5 @@
 import { SeekPage } from '@united/core-utils';
-import {
-  Alert,
-  CreateAlertParams,
-  ListAlertsParams,
-} from '@united/shared';
+import { Alert, CreateAlertParams, ListAlertsParams } from '@united/shared';
 
 import { api } from '@/lib/api';
 

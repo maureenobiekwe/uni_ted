@@ -1,6 +1,6 @@
 import { createHash, createPublicKey, generateKeyPair, JsonWebKey } from 'crypto'
 import { promisify } from 'util'
-import { unitedError, ErrorCode, isNil } from '@united/core-utils'
+import { ErrorCode, isNil, unitedError } from '@united/core-utils'
 import { Mutex } from 'async-mutex'
 import { FlagEntity } from '../../../flags/flag.entity'
 import { EncryptedObject, encryptUtils } from '../../../helper/encryption'

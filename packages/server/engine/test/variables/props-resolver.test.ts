@@ -5,6 +5,17 @@ import { FlowExecutorContext } from '../../src/lib/handler/context/flow-executio
 import { StepExecutionPath } from '../../src/lib/handler/context/step-execution-path'
 import { propsProcessor } from '../../src/lib/variables/props-processor'
 import { createPropsResolver } from '../../src/lib/variables/props-resolver'
+import { FakeHttpServer, fakeHttpServer } from '../fake-http-server'
+
+let server: FakeHttpServer
+
+beforeAll(async () => {
+    server = await fakeHttpServer.start()
+})
+
+afterAll(async () => {
+    await server.close()
+})
 
 const propsResolverService = createPropsResolver({
     projectId: 'PROJECT_ID',
@@ -643,7 +654,7 @@ describe('Props resolver', () => {
         const input = {
             documents: [
                 {
-                    file: 'https://cdn.united.com/brand/logo.svg?token=123',
+                    file: server.url('/brand/logo.svg?token=123'),
                 },
             ],
         }
@@ -704,7 +715,7 @@ describe('Props resolver', () => {
     })
     it('should return images for image url', async () => {
         const input = {
-            file: 'https://cdn.united.com/brand/logo.svg?token=123',
+            file: server.url('/brand/logo.svg?token=123'),
         }
         const props = {
             file: Property.File({

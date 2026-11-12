@@ -1,6 +1,5 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { createWootricSurvey } from './lib/actions/create-survey';
-import { OAuth2GrantType } from '@united/pieces-framework';
 import { wootricAuth } from './lib/auth';
 
 export const WOOTRIC_API_URL = 'https://api.wootric.com';

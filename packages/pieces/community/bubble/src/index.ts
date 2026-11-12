@@ -1,7 +1,6 @@
 import {
   createPiece,
   PieceAuth,
-  Property,
 } from '@united/pieces-framework';
 
 import { PieceCategory } from '@united/pieces-framework';
@@ -10,7 +9,6 @@ import { bubbleDeleteThingAction } from './lib/actions/delete-thing';
 import { bubbleGetThingAction } from './lib/actions/get-thing';
 import { bubbleListThingsAction } from './lib/actions/list-things';
 import { bubbleUpdateThingAction } from './lib/actions/update-thing';
-import { bubbleAuth } from './lib/auth';
 
 export const bubble = createPiece({
   displayName: 'Bubble',

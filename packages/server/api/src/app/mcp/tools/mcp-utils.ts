@@ -435,7 +435,7 @@ function normalizePieceName(pieceName: string | undefined): string | undefined {
     }
     const stripped = pieceName.startsWith('piece-') ? pieceName.slice('piece-'.length) : pieceName
     const normalized = stripped.replace(/_/g, '-')
-    return `@united/piece-${normalized}`
+    return `@activepieces/piece-${normalized}`
 }
 
 async function lookupPieceComponent({ pieceName, componentName, componentType, projectId, platformId, log }: LookupPieceComponentParams): Promise<LookupPieceComponentResult> {

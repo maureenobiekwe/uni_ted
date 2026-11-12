@@ -82,15 +82,15 @@ The condensed rules in this file (Quick Auth Reference, Quick Piece Definition T
 - [ ] Every hand-written action carries `audience`, `aiMetadata`, and `classification`; every trigger carries `aiMetadata` and `classification: 'READ'` (see `ai-metadata.md`)
 - [ ] Register in `tsconfig.base.json` at repo root (insert **alphabetically** — build fails without this):
     ```json
-    "@united/piece-<name>": ["packages/pieces/community/<name>/src/index.ts"]
+    "@activepieces/piece-<name>": ["packages/pieces/community/<name>/src/index.ts"]
     ```
 
 **Build and lint:**
 
 ```bash
 bun install   # new pieces only — creates workspace symlinks
-npx turbo run build --filter=@united/piece-<name>
-npx turbo run lint --filter=@united/piece-<name>
+npx turbo run build --filter=@activepieces/piece-<name>
+npx turbo run lint --filter=@activepieces/piece-<name>
 ```
 
 Both must pass. Lint failures (unused imports, `any` types, unused vars) block CI even when the build is green.

@@ -1,6 +1,5 @@
 import {
   createAction,
-  InputPropertyMap,
   Property,
 } from '@united/pieces-framework';
 import { CopperAuth, CopperAuthType } from '../common/constants';

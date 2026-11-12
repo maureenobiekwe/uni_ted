@@ -65,7 +65,7 @@ function buildPiece(): PieceMetadataModel {
   }).metadata();
   return {
     ...metadata,
-    name: '@united/piece-contacts',
+    name: '@activepieces/piece-contacts',
     version: '0.1.0',
     authors: [],
     projectUsage: 0,

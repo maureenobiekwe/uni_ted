@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-murf-api",
+  "name": "@activepieces/piece-murf-api",
   "version": "0.2.3",
   "type": "commonjs",
   "main": "./dist/src/index.js",

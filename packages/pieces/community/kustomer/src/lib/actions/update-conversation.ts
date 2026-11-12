@@ -2,8 +2,7 @@ import { createAction, Property } from '@united/pieces-framework';
 
 import { kustomerAuth } from '../common/auth';
 import { kustomerClient } from '../common/client';
-import { kustomerUtils } from '../common/utils';
-import { KustomerJsonObject, KustomerJsonValue } from '../common/types';
+import { KustomerJsonObject } from '../common/types';
 
 export const updateConversationAction = createAction({
   auth: kustomerAuth,

@@ -1,6 +1,5 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { Sku } from '../../common/SKU';
-import { Replace } from '../../common/types';
 import { vtexAuth } from '../../..';
 
 export const createSku = createAction({

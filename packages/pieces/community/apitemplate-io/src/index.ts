@@ -14,7 +14,7 @@ import { updateTemplate } from './lib/actions/update-template';
 import { mergePdfs } from './lib/actions/merge-pdfs';
 import { PieceCategory } from '@united/pieces-framework';
 import { createCustomApiCallAction } from '@united/pieces-common';
-import { ApitemplateAuthConfig, ApitemplateRegion, getRegionalBaseUrl } from './lib/common/client';
+import { ApitemplateRegion, getRegionalBaseUrl } from './lib/common/client';
 
 export const apitemplateIo = createPiece({
   displayName: 'APITemplate.io',

@@ -109,7 +109,7 @@ const Harness = () => {
       <DynamicProperties
         refreshers={['items']}
         propertyName="fields"
-        pieceName="@united/piece-test"
+        pieceName="@activepieces/piece-test"
         pieceVersion="0.0.1"
         actionOrTriggerName="test_action"
         disabled={false}

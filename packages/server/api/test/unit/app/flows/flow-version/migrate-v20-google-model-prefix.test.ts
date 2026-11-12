@@ -28,7 +28,7 @@ function makeFlowVersion(): FlowVersion {
                 displayName: 'Ask AI',
                 type: FlowActionType.PIECE,
                 settings: {
-                    pieceName: '@united/piece-ai',
+                    pieceName: '@activepieces/piece-ai',
                     pieceVersion: '0.1.0',
                     actionName: 'askAi',
                     input: {
@@ -43,7 +43,7 @@ function makeFlowVersion(): FlowVersion {
                     displayName: 'Run Agent',
                     type: FlowActionType.PIECE,
                     settings: {
-                        pieceName: '@united/piece-ai',
+                        pieceName: '@activepieces/piece-ai',
                         pieceVersion: '0.1.0',
                         actionName: 'run_agent',
                         input: {
@@ -60,7 +60,7 @@ function makeFlowVersion(): FlowVersion {
                         displayName: 'Run Agent Managed',
                         type: FlowActionType.PIECE,
                         settings: {
-                            pieceName: '@united/piece-ai',
+                            pieceName: '@activepieces/piece-ai',
                             pieceVersion: '0.1.0',
                             actionName: 'run_agent',
                             input: {

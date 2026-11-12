@@ -1,3 +1,4 @@
+import { useQueryClient } from '@tanstack/react-query';
 import { AIProviderName, tryCatch } from '@united/core-utils';
 import {
   AIProviderWithoutSensitiveData,
@@ -5,7 +6,6 @@ import {
   PlatformModelTier,
   Project,
 } from '@united/shared';
-import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import {
   ChevronRight,

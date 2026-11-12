@@ -1,5 +1,5 @@
 import { createAction, Property } from '@united/pieces-framework';
-import { generateRazorpayAuthHeader, RazorpayCredentials } from '../common/utils';
+import { generateRazorpayAuthHeader } from '../common/utils';
 import { httpClient, HttpMethod } from '@united/pieces-common';
 import { razorpayAuth } from '../..';
 

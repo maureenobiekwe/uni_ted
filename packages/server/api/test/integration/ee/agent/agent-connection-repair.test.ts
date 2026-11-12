@@ -11,8 +11,8 @@ import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/
 
 let app: FastifyInstance
 
-const GMAIL = '@united/piece-gmail'
-const SLACK = '@united/piece-slack'
+const GMAIL = '@activepieces/piece-gmail'
+const SLACK = '@activepieces/piece-slack'
 
 beforeAll(async () => {
     app = await setupTestEnvironment()

@@ -1,7 +1,7 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { HttpMethod } from '@united/pieces-common';
 import { postizAuth } from '../common/auth';
-import { postizApiCall, PostizAuth } from '../common';
+import { postizApiCall } from '../common';
 
 export const deletePost = createAction({
   auth: postizAuth,

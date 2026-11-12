@@ -1,9 +1,8 @@
 import {
-  PiecePropValueSchema,
   Property,
   createAction,
 } from '@united/pieces-framework';
-import { firstSeenAtFromField, firstSeenAtUntilField, lastSeenAtFromField, lastSeenAtUntilField, limitField, makeClient, pageField } from '../common';
+import { limitField, makeClient, pageField } from '../common';
 import { PredictLeadsAuth } from '../auth';
 import { prepareQuery } from '../common/client';
 

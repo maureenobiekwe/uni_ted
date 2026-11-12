@@ -2,7 +2,6 @@ import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { paperformAuth } from '../common/auth';
 import { paperformCommon } from '../common/client';
 import { paperformCommonProps } from '../common/props';
-import { PaperformSubmission } from '../common/types';
 
 const TRIGGER_KEY = 'new_form_submission';
 

@@ -2,7 +2,6 @@ import { zuoraAuth } from '../auth';
 import {
   AppConnectionValueForAuthProperty,
   DropdownOption,
-  PiecePropValueSchema,
   Property,
 } from '@united/pieces-framework';
 import {

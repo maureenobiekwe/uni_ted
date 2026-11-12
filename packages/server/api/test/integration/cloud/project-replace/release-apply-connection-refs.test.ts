@@ -43,7 +43,7 @@ function buildBaseFlow({ projectId, externalId }: { projectId: string, externalI
     flow.version.displayName = 'connection reference flow'
     flow.version.trigger.name = 'trigger'
     flow.version.trigger.nextAction = undefined
-    flow.version.trigger.settings.pieceName = '@united/piece-slack'
+    flow.version.trigger.settings.pieceName = '@activepieces/piece-slack'
     flow.version.trigger.settings.pieceVersion = '1.0.0'
     return flow as FlowState
 }
@@ -62,8 +62,8 @@ function replaceBody(overrides: Partial<ProjectReplaceRequest>): ProjectReplaceR
         tables: [],
         folders: [],
         connections: [
-            { externalId: OLD_CONN, pieceName: '@united/piece-slack', displayName: 'Old Conn' },
-            { externalId: NEW_CONN, pieceName: '@united/piece-slack', displayName: 'New Conn' },
+            { externalId: OLD_CONN, pieceName: '@activepieces/piece-slack', displayName: 'Old Conn' },
+            { externalId: NEW_CONN, pieceName: '@activepieces/piece-slack', displayName: 'New Conn' },
         ],
         requiredPieces: [],
         ...overrides,
@@ -182,12 +182,12 @@ describe('Release apply / project-replace applies changed connection references 
             apiKey,
             body: replaceBody({
                 flows: [cloneWith(base, (f) => {
-                    f.version.trigger.settings.pieceName = '@united/piece-discord'
+                    f.version.trigger.settings.pieceName = '@activepieces/piece-discord'
                     f.version.trigger.settings.input = { auth: connRef(DISCORD_CONN) }
                 })],
                 connections: [
-                    { externalId: OLD_CONN, pieceName: '@united/piece-slack', displayName: 'Old Conn' },
-                    { externalId: DISCORD_CONN, pieceName: '@united/piece-discord', displayName: 'Discord Conn' },
+                    { externalId: OLD_CONN, pieceName: '@activepieces/piece-slack', displayName: 'Old Conn' },
+                    { externalId: DISCORD_CONN, pieceName: '@activepieces/piece-discord', displayName: 'Discord Conn' },
                 ],
             }),
         })
@@ -195,7 +195,7 @@ describe('Release apply / project-replace applies changed connection references 
         expect(second.json().applied.flowsUpdated).toBe(1)
 
         const trigger = await persistedTrigger({ projectId, externalId: 'flow_piece_swap' })
-        expect(trigger.settings.pieceName).toBe('@united/piece-discord')
+        expect(trigger.settings.pieceName).toBe('@activepieces/piece-discord')
         expect(trigger.settings.input?.auth).toBe(connRef(DISCORD_CONN))
     })
 
@@ -209,11 +209,11 @@ describe('Release apply / project-replace applies changed connection references 
             apiKey,
             body: replaceBody({
                 flows: [cloneWith(base, (f) => {
-                    f.version.trigger.settings.pieceName = '@united/piece-discord'
+                    f.version.trigger.settings.pieceName = '@activepieces/piece-discord'
                     f.version.trigger.settings.input = {}
                 })],
                 connections: [
-                    { externalId: OLD_CONN, pieceName: '@united/piece-slack', displayName: 'Old Conn' },
+                    { externalId: OLD_CONN, pieceName: '@activepieces/piece-slack', displayName: 'Old Conn' },
                 ],
             }),
         })
@@ -221,7 +221,7 @@ describe('Release apply / project-replace applies changed connection references 
         expect(second.json().applied.flowsUpdated).toBe(1)
 
         const trigger = await persistedTrigger({ projectId, externalId: 'flow_piece_swap_blank' })
-        expect(trigger.settings.pieceName).toBe('@united/piece-discord')
+        expect(trigger.settings.pieceName).toBe('@activepieces/piece-discord')
         expect(trigger.settings.input?.auth).toBeUndefined()
     })
 

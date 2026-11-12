@@ -1,6 +1,6 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { addGreet, addProfile } from '../api';
-import { bonjoroAuth, BonjoroAuthType } from '../auth';
+import { bonjoroAuth } from '../auth';
 import {
   buildCampaignDropdown,
   buildTemplateDropdown,

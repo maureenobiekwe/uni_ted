@@ -1,9 +1,5 @@
 import { Permission } from '@united/core-utils';
-import {
-  Template,
-  TemplateType,
-  UncategorizedFolderId,
-} from '@united/shared';
+import { Template, TemplateType, UncategorizedFolderId } from '@united/shared';
 import { t } from 'i18next';
 import {
   Bot,

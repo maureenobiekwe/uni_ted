@@ -2,7 +2,7 @@ import { createAction, Property } from "@united/pieces-framework";
 import { makeRequest } from "../common/client";
 import { AgentXAuth } from "../common/auth";
 import { HttpMethod } from "@united/pieces-common";
-import { AgentIdDropdown, ConversationIdDropdown } from "../common/dropdown";
+import { AgentIdDropdown } from "../common/dropdown";
 
 export const findConversation = createAction({
   auth: AgentXAuth,

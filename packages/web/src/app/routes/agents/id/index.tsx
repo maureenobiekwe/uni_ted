@@ -36,7 +36,7 @@ import {
 import { AgentRuns } from './runs';
 
 const pieceDisplayName = (pieceName: string): string =>
-  pieceName.replace('@united/piece-', '');
+  pieceName.replace('@activepieces/piece-', '');
 
 const buildCapabilityNote = (agent: Agent): string => {
   const toolNames = unique(

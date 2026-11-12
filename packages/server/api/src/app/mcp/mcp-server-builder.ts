@@ -1,6 +1,6 @@
+import { McpServer, ResourceTemplate } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { isNil, Permission } from '@united/core-utils'
 import { FlowStatus, McpOAuthClientKey, McpProperty, McpServer as McpServerSchema, McpToolDefinition, mcpToolNameUtils, McpToolResult, McpTrigger, PopulatedFlow, PopulatedMcpServer, ProjectScopedMcpServer, TelemetryEventName } from '@united/shared'
-import { McpServer, ResourceTemplate } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { FastifyBaseLogger } from 'fastify'
 import { flowService } from '../flows/flow/flow.service'
 import { rejectedPromiseHandler } from '../helper/promise-handler'
@@ -14,7 +14,7 @@ import { ALLOW_ALL, deny, PermissionChecker, resolveMcpPermissionChecker, resolv
 import { mcpProjectSelection, ProjectSelectionScope } from './mcp-project-selection'
 import { mcpToolInput } from './mcp-tool-input'
 import { McpCallBilling, mcpUsageTracker, withCallBilling } from './mcp-usage-tracker'
-import { unitedTools, ALL_CONTROLLABLE_TOOL_NAMES, LOCKED_TOOL_NAMES, PLATFORM_LEVEL_TOOL_NAMES } from './tools'
+import { ALL_CONTROLLABLE_TOOL_NAMES, LOCKED_TOOL_NAMES, PLATFORM_LEVEL_TOOL_NAMES, unitedTools } from './tools'
 import { apSetProjectContextTool, SET_PROJECT_CONTEXT_TOOL_NAME } from './tools/ap-set-project-context'
 
 const PLATFORM_LEVEL_TOOL_SET = new Set<string>(PLATFORM_LEVEL_TOOL_NAMES)
@@ -33,7 +33,7 @@ const MCP_SERVER_INSTRUCTIONS = `## united MCP Server
 - **Auth**: ap_list_connections → get \`externalId\` → pass as \`auth\` param on ap_update_step/ap_update_trigger.
 - **Step refs**: \`{{stepName['output'].field}}\` — a step's data is nested under \`['output']\` (e.g. \`{{trigger['output'].body.email}}\`, \`{{step_1['output'].id}}\`). The trigger follows the same rule: use \`{{trigger['output'].field}}\`, never \`{{trigger.field}}\`. For a continue-on-failure step's error, use \`{{stepName['error'].message}}\`.
 - **Step names**: \`trigger\`, \`step_1\`, \`step_2\`, etc. Use ap_flow_structure to see all names.
-- **Piece names**: full format (e.g. "@united/piece-slack") for ap_add_step/ap_update_trigger. Short names work for lookup tools.
+- **Piece names**: full format (e.g. "@activepieces/piece-slack") for ap_add_step/ap_update_trigger. Short names work for lookup tools.
 - **Modifying steps**: use ap_update_step/ap_update_trigger. Never delete+recreate — loses sample data.
 - **CODE steps**: export a \`code\` fn; access inputs via \`inputs.key\`.
 - **Tables**: use field names, not IDs.`

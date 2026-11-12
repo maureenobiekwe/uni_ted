@@ -38,7 +38,7 @@ const buildPiece = (categories: PieceCategory[] = []): PieceMetadataModel => JSO
     ],
     triggers: [],
   }).metadata(),
-  name: '@united/piece-mailer',
+  name: '@activepieces/piece-mailer',
   version: '0.1.0',
   projectUsage: 0,
   pieceType: PieceType.OFFICIAL,

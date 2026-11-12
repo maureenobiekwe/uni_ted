@@ -1,8 +1,4 @@
-import {
-  ColorName,
-  PROJECT_COLOR_PALETTE,
-  ProjectType,
-} from '@united/shared';
+import { ColorName, PROJECT_COLOR_PALETTE, ProjectType } from '@united/shared';
 
 import { Avatar } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';

@@ -1,8 +1,4 @@
-import {
-  FriendlyPieceError,
-  isNil,
-  tryCatchSync,
-} from '@united/core-utils';
+import { FriendlyPieceError, isNil, tryCatchSync } from '@united/core-utils';
 
 const MAX_BODY_PAYLOAD_CHARS = 4000;
 const MAX_PROPERTY_VALUE_CHARS = 400;

@@ -10,7 +10,7 @@ export const migrateV15AgentProviderModel: Migration = {
     targetSchemaVersion: '15',
     migrate: async (flowVersion: FlowVersion): Promise<FlowVersion> => {
         const newVersion = flowStructureUtil.transferFlow(flowVersion, (step) => {
-            if (step.type !== FlowActionType.PIECE || step.settings.pieceName !== '@united/piece-ai') {
+            if (step.type !== FlowActionType.PIECE || step.settings.pieceName !== '@activepieces/piece-ai') {
                 return step
             }
 

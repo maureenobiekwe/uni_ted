@@ -1,7 +1,6 @@
 import {
   TriggerStrategy,
   createTrigger,
-  PiecePropValueSchema,
   AppConnectionValueForAuthProperty,
 } from '@united/pieces-framework';
 import { quickbooksAuth } from '../lib/auth';

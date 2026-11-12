@@ -1,6 +1,5 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { kudosityAuth } from '../common/auth';
-import { makeRequest } from '../common/client';
 import { httpClient, HttpMethod } from '@united/pieces-common';
 
 export const sendSms = createAction({

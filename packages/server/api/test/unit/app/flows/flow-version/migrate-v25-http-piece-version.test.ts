@@ -27,12 +27,12 @@ function makeHttpStep({ name, pieceName, pieceVersion, nextAction }: { name: str
 
 function makeFlowVersion(): FlowVersion {
     const steps = [
-        { name: 'http_first_broken', pieceName: '@united/piece-http', pieceVersion: '0.11.11' },
-        { name: 'http_last_broken', pieceName: '@united/piece-http', pieceVersion: '0.11.20' },
-        { name: 'http_mid_broken', pieceName: '@united/piece-http', pieceVersion: '0.11.16' },
-        { name: 'http_before_range', pieceName: '@united/piece-http', pieceVersion: '0.11.10' },
-        { name: 'http_fixed', pieceName: '@united/piece-http', pieceVersion: '0.11.21' },
-        { name: 'other_piece', pieceName: '@united/piece-slack', pieceVersion: '0.11.11' },
+        { name: 'http_first_broken', pieceName: '@activepieces/piece-http', pieceVersion: '0.11.11' },
+        { name: 'http_last_broken', pieceName: '@activepieces/piece-http', pieceVersion: '0.11.20' },
+        { name: 'http_mid_broken', pieceName: '@activepieces/piece-http', pieceVersion: '0.11.16' },
+        { name: 'http_before_range', pieceName: '@activepieces/piece-http', pieceVersion: '0.11.10' },
+        { name: 'http_fixed', pieceName: '@activepieces/piece-http', pieceVersion: '0.11.21' },
+        { name: 'other_piece', pieceName: '@activepieces/piece-slack', pieceVersion: '0.11.11' },
     ]
     const chain = steps.reduceRight<FlowAction | undefined>((nextAction, step) => makeHttpStep({ ...step, nextAction }), undefined)
     return {

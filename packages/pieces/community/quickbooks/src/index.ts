@@ -1,4 +1,4 @@
-import { createPiece, OAuth2PropertyValue, PieceAuth, PiecePropValueSchema, Property } from "@united/pieces-framework";
+import { createPiece, OAuth2PropertyValue, PiecePropValueSchema } from "@united/pieces-framework";
 import { findInvoiceAction } from "./actions/find-invoice";
 import { findCustomerAction } from "./actions/find-customer";
 import { findPaymentAction } from "./actions/find-payment";

@@ -1,6 +1,6 @@
+import { useQueryClient } from '@tanstack/react-query';
 import { isEmpty, isNil } from '@united/core-utils';
 import { ApEdition, ApFlagId } from '@united/shared';
-import { useQueryClient } from '@tanstack/react-query';
 import confetti from 'canvas-confetti';
 import { t } from 'i18next';
 import { Check, CircleX, TriangleAlert } from 'lucide-react';

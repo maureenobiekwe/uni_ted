@@ -3,7 +3,7 @@ import { getAccessTokenOrThrow } from '@united/pieces-common';
 import { mailchimpCommon } from '../common';
 import { mailchimpAuth } from '../..';
 import mailchimp from '@mailchimp/mailchimp_marketing';
-import { MailchimpClient, CampaignGetOptions } from '../common/types';
+import { MailchimpClient } from '../common/types';
 
 export const findCampaign = createAction({
   auth: mailchimpAuth,

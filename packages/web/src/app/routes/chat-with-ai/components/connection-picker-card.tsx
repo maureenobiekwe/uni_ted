@@ -1,10 +1,10 @@
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   AppConnectionScope,
   AppConnectionStatus,
   AppConnectionWithoutSensitiveData,
   pickDefaultConnectionExternalId,
 } from '@united/shared';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Check, Plus, RefreshCw } from 'lucide-react';
 import { motion } from 'motion/react';

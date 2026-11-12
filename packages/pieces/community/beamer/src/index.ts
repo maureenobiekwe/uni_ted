@@ -1,5 +1,5 @@
-import { createCustomApiCallAction, httpClient, HttpMethod } from '@united/pieces-common';
-import { PieceAuth, createPiece } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { createComment } from './lib/actions/create-comment';
 import { createNewFeatureRequest } from './lib/actions/create-feature-request';

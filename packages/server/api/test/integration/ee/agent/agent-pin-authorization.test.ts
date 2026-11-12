@@ -11,8 +11,8 @@ import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/
 
 let app: FastifyInstance
 
-const MAILER = '@united/piece-test-pinmail'
-const OTHER = '@united/piece-test-pinchat'
+const MAILER = '@activepieces/piece-test-pinmail'
+const OTHER = '@activepieces/piece-test-pinchat'
 
 const action = (name: string) => ({ name, displayName: name, description: name, requireAuth: true, props: {} })
 

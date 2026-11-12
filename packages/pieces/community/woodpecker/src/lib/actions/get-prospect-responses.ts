@@ -1,7 +1,7 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { httpClient, HttpMethod } from '@united/pieces-common';
 import { woodpeckerAuth } from '../..';
-import { campaignsDropdown, woodpeckerClient } from '../common';
+import { woodpeckerClient } from '../common';
 
 export const getProspectResponses = createAction({
   auth: woodpeckerAuth,

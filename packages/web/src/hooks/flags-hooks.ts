@@ -1,5 +1,5 @@
-import { ApFlagId, StatusColors } from '@united/shared';
 import { useSuspenseQuery } from '@tanstack/react-query';
+import { ApFlagId, StatusColors } from '@united/shared';
 
 import { flagsApi, FlagsMap } from '../api/flags-api';
 

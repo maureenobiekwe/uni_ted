@@ -1,8 +1,7 @@
 
 import { createCustomApiCallAction } from '@united/pieces-common';
-import { PieceAuth, createPiece, Property } from "@united/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { PieceCategory } from '@united/pieces-framework';
-import { HttpMethod, httpClient, AuthenticationType } from '@united/pieces-common';
 import { converseWithDocumentAction } from './lib/actions/converse-with-document';
 import { createConversationAction } from './lib/actions/create-conversation';
 import { newConversationTrigger } from './lib/triggers/new-conversation';

@@ -1,5 +1,5 @@
 
-import { createPiece, PieceAuth, Property } from "@united/pieces-framework";
+import { createPiece } from "@united/pieces-framework";
 import { fountainCreateApplicant } from './lib/actions/create-applicant';
 import { fountainDeleteApplicant } from './lib/actions/delete-applicant';
 import { fountainGetApplicantDetails } from './lib/actions/get-applicant-details';

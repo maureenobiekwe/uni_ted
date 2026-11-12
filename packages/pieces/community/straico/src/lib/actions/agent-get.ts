@@ -1,5 +1,5 @@
 import { straicoAuth } from '../auth';
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,

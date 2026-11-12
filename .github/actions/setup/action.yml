@@ -46,7 +46,7 @@ runs:
     - name: Turbo Cache
       uses: rharkor/caching-for-turbo@v2.4.2
       with:
-        provider: s3
+        provider: ${{ inputs.turbo-s3-bucket != '' && 's3' || 'github' }}
         s3-bucket: ${{ inputs.turbo-s3-bucket }}
         s3-region: auto
         s3-endpoint: ${{ inputs.turbo-s3-endpoint }}

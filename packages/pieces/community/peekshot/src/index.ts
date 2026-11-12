@@ -1,10 +1,8 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { captureScreenshot } from './lib/actions/capture-screenshot';
 import { PieceCategory } from '@united/pieces-framework';
 import {
   createCustomApiCallAction,
-  httpClient,
-  HttpMethod,
 } from '@united/pieces-common';
 import { peekshotAuth } from './lib/auth';
 

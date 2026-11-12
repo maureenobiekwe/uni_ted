@@ -6,7 +6,6 @@ import {
   cleanMultiOutputResponse,
   textToInput,
 } from '../common';
-import { Data } from 'clarifai-nodejs-grpc/proto/clarifai/api/resources_pb';
 
 export const textClassifierModelPredictAction = createAction({
   auth: clarifaiAuth,

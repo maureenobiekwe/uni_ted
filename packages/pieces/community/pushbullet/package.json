@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-pushbullet",
+  "name": "@activepieces/piece-pushbullet",
   "version": "0.3.0",
   "type": "commonjs",
   "main": "./dist/src/index.js",

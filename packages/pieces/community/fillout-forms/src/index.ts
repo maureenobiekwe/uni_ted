@@ -3,10 +3,8 @@ import { getFormResponses } from './lib/actions/get-form-responses';
 import { getSingleResponse } from './lib/actions/get-single-response';
 import { findFormByTitle } from './lib/actions/find-form-by-title';
 import { newFormResponse } from './lib/triggers/new-form-response';
-import { createCustomApiCallAction, HttpMethod } from '@united/pieces-common';
-import { PieceAuth } from '@united/pieces-framework';
+import { createCustomApiCallAction } from '@united/pieces-common';
 import { PieceCategory } from '@united/pieces-framework';
-import { makeRequest } from './lib/common';
 import { filloutFormsAuth } from './lib/auth';
 
 export const filloutForms = createPiece({

@@ -1,5 +1,4 @@
 import {
-  DynamicPropsValue,
   Property,
   createAction,
 } from '@united/pieces-framework';

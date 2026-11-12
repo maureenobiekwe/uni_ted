@@ -1,4 +1,4 @@
-import { unitedError, assertNotEqual, ErrorCode, isNil } from '@united/core-utils'
+import { assertNotEqual, ErrorCode, isNil, unitedError } from '@united/core-utils'
 import { FastifyBaseLogger } from 'fastify'
 import jwksClient from 'jwks-rsa'
 import { JwtSignAlgorithm, jwtUtils } from '../../../helper/jwt-utils'

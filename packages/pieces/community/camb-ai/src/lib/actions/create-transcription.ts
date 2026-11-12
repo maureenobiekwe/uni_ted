@@ -1,5 +1,5 @@
 import { createAction, Property, ApFile, DynamicPropsValue } from '@united/pieces-framework';
-import { HttpMethod, httpClient, HttpMessageBody, HttpHeaders } from '@united/pieces-common';
+import { HttpMethod, httpClient, HttpHeaders } from '@united/pieces-common';
 import { cambaiAuth } from '../auth';
 import { API_BASE_URL, listSourceLanguagesDropdown, POLLING_INTERVAL_MS, LONG_MAX_POLLING_ATTEMPTS } from '../common';
 import FormData from 'form-data';

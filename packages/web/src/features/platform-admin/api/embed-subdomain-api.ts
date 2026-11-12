@@ -1,7 +1,4 @@
-import {
-  EmbedSubdomain,
-  GenerateEmbedSubdomainRequest,
-} from '@united/shared';
+import { EmbedSubdomain, GenerateEmbedSubdomainRequest } from '@united/shared';
 
 import { api } from '@/lib/api';
 

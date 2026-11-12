@@ -1,4 +1,4 @@
-import { createAction, Property, DynamicPropsValue, PiecePropValueSchema } from '@united/pieces-framework';
+import { createAction, Property, DynamicPropsValue } from '@united/pieces-framework';
 import { teamworkAuth } from '../common/auth';
 import { teamworkRequest } from '../common/client';
 import { HttpMethod } from '@united/pieces-common';

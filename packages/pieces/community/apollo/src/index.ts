@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { matchPerson } from './lib/actions/match-person';
 import { enrichCompany } from './lib/actions/enrich-company';
 import { newsArticlesSearch } from './lib/actions/news-articles-search';

@@ -1,5 +1,5 @@
-import { PieceSelectorConfig } from '@united/shared';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { PieceSelectorConfig } from '@united/shared';
 import { t } from 'i18next';
 import { toast } from 'sonner';
 
@@ -62,9 +62,7 @@ export const platformPiecesMutations = {
       onSuccess: () => {
         pieceCacheUtils.invalidatePieceCaches(queryClient);
         toast.success(t('Pieces synced'), {
-          description: t(
-            'Pieces have been synced from the united cloud.',
-          ),
+          description: t('Pieces have been synced from the united cloud.'),
         });
       },
     });

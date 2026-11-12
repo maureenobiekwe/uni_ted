@@ -1,5 +1,5 @@
 import { HttpMethod } from '@united/pieces-common';
-import { createAction, Property, spreadIfDefined } from '@united/pieces-framework';
+import { createAction, spreadIfDefined } from '@united/pieces-framework';
 
 import { mailerooAuth } from '../../auth';
 import { mailerooClient } from '../../common/client';

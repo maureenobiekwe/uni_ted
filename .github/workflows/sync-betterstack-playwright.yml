@@ -7,6 +7,7 @@ on:
 
 jobs:
   sync:
+    if: vars.BETTERSTACK_SYNC_ENABLED == 'true'
     name: Update BetterStack Playwright monitor
     runs-on: ubuntu-latest
     steps:

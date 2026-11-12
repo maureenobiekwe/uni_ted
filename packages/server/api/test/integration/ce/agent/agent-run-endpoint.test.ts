@@ -49,7 +49,7 @@ describe('community edition: POST /v1/agents/runs', () => {
                 tools: [{
                     type: 'PIECE',
                     toolName: 'send_email',
-                    pieceMetadata: { pieceName: '@united/piece-gmail', pieceVersion: '0.1.0', actionName: 'send_email' },
+                    pieceMetadata: { pieceName: '@activepieces/piece-gmail', pieceVersion: '0.1.0', actionName: 'send_email' },
                 }],
             },
         })

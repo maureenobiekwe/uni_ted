@@ -1,7 +1,7 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { httpClient, HttpMethod } from '@united/pieces-common';
 import { tableauAuth } from '../auth';
-import { getAuthToken, buildTableauUrl, getTableauHeaders, queryViews } from '../common';
+import { getAuthToken, buildTableauUrl, queryViews } from '../common';
 
 export const downloadView = createAction({
   name: 'download_view',

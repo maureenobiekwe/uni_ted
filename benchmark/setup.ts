@@ -38,8 +38,8 @@ async function main(): Promise<void> {
     log(`Signed up. Project: ${auth.projectId}`)
 
     const versions = await resolvePieceVersions({ auth })
-    await verifyPieceAvailable({ auth, name: '@united/piece-webhook', version: versions.webhook })
-    await verifyPieceAvailable({ auth, name: '@united/piece-math-helper', version: versions.math })
+    await verifyPieceAvailable({ auth, name: '@activepieces/piece-webhook', version: versions.webhook })
+    await verifyPieceAvailable({ auth, name: '@activepieces/piece-math-helper', version: versions.math })
 
     await maybeCreateApiKey({ auth })
     const flowId = await createEmptyFlow({ auth })
@@ -98,8 +98,8 @@ async function resolvePieceVersions({ auth }: { auth: Auth }): Promise<PieceVers
     log('Resolving piece versions from registry (polling /pieces up to 600s)...')
     await retry({ attempts: 600, delayMs: 1000, name: 'resolve piece versions' }, async () => {
         const pieces = (await jsonGet<PieceMeta[]>({ path: '/pieces', auth })) ?? []
-        webhook = webhook ?? pieces.find((p) => p.name === '@united/piece-webhook')?.version
-        math = math ?? pieces.find((p) => p.name === '@united/piece-math-helper')?.version
+        webhook = webhook ?? pieces.find((p) => p.name === '@activepieces/piece-webhook')?.version
+        math = math ?? pieces.find((p) => p.name === '@activepieces/piece-math-helper')?.version
         return webhook && math ? true : undefined
     })
     log(`Resolved piece versions: webhook=${webhook} math-helper=${math}`)
@@ -248,7 +248,7 @@ function buildImportRequest({ versions, codeSrc, sumInput, responseBody }: Build
                 displayName: 'Catch Webhook',
                 type: 'PIECE_TRIGGER',
                 settings: {
-                    pieceName: '@united/piece-webhook',
+                    pieceName: '@activepieces/piece-webhook',
                     pieceVersion: versions.webhook,
                     triggerName: 'catch_webhook',
                     input: { authType: 'none', authFields: {} },
@@ -283,7 +283,7 @@ function buildMathStep({ mathVersion, nextAction }: { mathVersion: string; nextA
         displayName: 'Add',
         settings: {
             input: { first_number: 2, second_number: 3 },
-            pieceName: '@united/piece-math-helper',
+            pieceName: '@activepieces/piece-math-helper',
             actionName: 'addition_math',
             pieceVersion: mathVersion,
             sampleData: {},
@@ -327,7 +327,7 @@ function buildReturnResponseStep({ webhookVersion, responseBody }: { webhookVers
                 respond: 'stop',
                 responseType: 'json',
             },
-            pieceName: '@united/piece-webhook',
+            pieceName: '@activepieces/piece-webhook',
             actionName: 'return_response',
             sampleData: {},
             pieceVersion: webhookVersion,

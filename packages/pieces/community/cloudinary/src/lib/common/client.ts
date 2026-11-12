@@ -1,7 +1,6 @@
 import crypto from 'crypto';
 import { HttpMethod, httpClient } from '@united/pieces-common';
 import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
-import { BasicAuthConnectionValue, CustomAuthConnectionValue } from '@united/pieces-framework';
 import { cloudinaryAuth } from './auth';
 
 export const BASE_URL = 'https://api.cloudinary.com/v1_1';

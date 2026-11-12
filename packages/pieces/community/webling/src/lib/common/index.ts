@@ -1,4 +1,4 @@
-import { PiecePropValueSchema, Property } from '@united/pieces-framework';
+import { Property } from '@united/pieces-framework';
 import { getCalendars } from './helpers';
 import { weblingAuth } from '../auth';
 

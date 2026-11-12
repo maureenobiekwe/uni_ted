@@ -9,7 +9,7 @@ const RESOLVER_PARAMS = {
     contextVersion: ContextVersion.V1,
 }
 
-function makeConnection({ status = AppConnectionStatus.ACTIVE, type = AppConnectionType.SECRET_TEXT, value = { type: AppConnectionType.SECRET_TEXT, secret_text: 'my-secret' }, pieceName = '@united/piece-slack' }: {
+function makeConnection({ status = AppConnectionStatus.ACTIVE, type = AppConnectionType.SECRET_TEXT, value = { type: AppConnectionType.SECRET_TEXT, secret_text: 'my-secret' }, pieceName = '@activepieces/piece-slack' }: {
     status?: AppConnectionStatus
     type?: AppConnectionType
     value?: Record<string, unknown>
@@ -164,7 +164,7 @@ describe('connection-resolver service', () => {
     })
 
     describe('AP_ENFORCE_CONNECTION_PIECE_BINDING', () => {
-        const pieceName = '@united/piece-slack'
+        const pieceName = '@activepieces/piece-slack'
 
         afterEach(() => {
             delete process.env.AP_ENFORCE_CONNECTION_PIECE_BINDING
@@ -179,7 +179,7 @@ describe('connection-resolver service', () => {
 
         it('throws ConnectionPieceMismatchError for another piece when enabled', async () => {
             process.env.AP_ENFORCE_CONNECTION_PIECE_BINDING = 'true'
-            mockFetchReturning('@united/piece-google-sheets')
+            mockFetchReturning('@activepieces/piece-google-sheets')
 
             const resolver = createConnectionResolver({ ...RESOLVER_PARAMS, pieceName })
             await expect(resolver.obtain('my-connection')).rejects.toThrow(ConnectionPieceMismatchError)
@@ -197,7 +197,7 @@ describe('connection-resolver service', () => {
         })
 
         it('resolves a connection for another piece when disabled', async () => {
-            mockFetchReturning('@united/piece-google-sheets')
+            mockFetchReturning('@activepieces/piece-google-sheets')
 
             const resolver = createConnectionResolver({ ...RESOLVER_PARAMS, pieceName })
             await expect(resolver.obtain('my-connection')).resolves.toEqual({
@@ -208,14 +208,14 @@ describe('connection-resolver service', () => {
 
         it('throws ConnectionPieceMismatchError for a step with no piece of its own when enabled', async () => {
             process.env.AP_ENFORCE_CONNECTION_PIECE_BINDING = 'true'
-            mockFetchReturning('@united/piece-google-sheets')
+            mockFetchReturning('@activepieces/piece-google-sheets')
 
             const resolver = createConnectionResolver(RESOLVER_PARAMS)
             await expect(resolver.obtain('my-connection')).rejects.toThrow(ConnectionPieceMismatchError)
         })
 
         it('resolves for a step with no piece of its own when disabled', async () => {
-            mockFetchReturning('@united/piece-google-sheets')
+            mockFetchReturning('@activepieces/piece-google-sheets')
 
             const resolver = createConnectionResolver(RESOLVER_PARAMS)
             await expect(resolver.obtain('my-connection')).resolves.toEqual({

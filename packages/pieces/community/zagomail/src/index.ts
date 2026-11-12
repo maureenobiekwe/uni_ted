@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { addedSubscriber } from './lib/triggers/added-subscriber';
 import { unsubscribedSubscriber } from './lib/triggers/unsubscribed-subscriber';
@@ -9,7 +9,6 @@ import { updateSubscriber } from './lib/actions/update-subscriber';
 import { searchSubscriberByEmail } from './lib/actions/search-subscriber-by-email';
 import { getSubscriberDetails } from './lib/actions/get-subscriber-details';
 import { getCampaignDetails } from './lib/actions/get-campaign-details';
-import { zagoMailApiService } from './lib/common/request';
 import { zagomailAuth } from './lib/auth';
 
 export const zagomail = createPiece({

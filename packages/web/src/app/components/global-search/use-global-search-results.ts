@@ -1,9 +1,5 @@
-import {
-  ApEdition,
-  ApFlagId,
-  PROJECT_COLOR_PALETTE,
-} from '@united/shared';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
+import { ApEdition, ApFlagId, PROJECT_COLOR_PALETTE } from '@united/shared';
 import { t } from 'i18next';
 
 import { useEmbedding } from '@/components/providers/embed-provider';

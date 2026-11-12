@@ -1,8 +1,4 @@
-import {
-  isNil,
-  PlanName,
-  PlatformBillingInformation,
-} from '@united/shared';
+import { isNil, PlanName, PlatformBillingInformation } from '@united/shared';
 import { t } from 'i18next';
 import { Coins, Folder, LucideIcon, Sparkles, Users, Zap } from 'lucide-react';
 

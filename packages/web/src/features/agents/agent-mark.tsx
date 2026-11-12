@@ -1,8 +1,4 @@
-import {
-  AgentIcon,
-  ColorName,
-  PROJECT_COLOR_PALETTE,
-} from '@united/shared';
+import { AgentIcon, ColorName, PROJECT_COLOR_PALETTE } from '@united/shared';
 
 import { cn } from '@/lib/utils';
 

@@ -1,5 +1,5 @@
 import { HttpMethod } from '@united/pieces-common';
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { airtopAuth } from '../common/auth';
 import { airtopApiCall } from '../common/client';
 import { sessionId } from '../common/props';

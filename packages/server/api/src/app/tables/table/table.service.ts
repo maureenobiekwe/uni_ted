@@ -1,5 +1,5 @@
 import { Readable } from 'node:stream'
-import { unitedError, apId, ErrorCode, isNil, SeekPage, spreadIfDefined } from '@united/core-utils'
+import { apId, ErrorCode, isNil, SeekPage, spreadIfDefined, unitedError } from '@united/core-utils'
 import { CreateTableRequest, CreateTableWebhookRequest, ExportTableResponse, Field, FileCompression, FileType, PopulatedTable, SharedTemplate, Table, TableDataState, TableImportDataType, TableTemplate, TableWebhook, TableWebhookEventType, TemplateStatus, TemplateType, UncategorizedFolderId, UpdateTableRequest, UserWithMetaInformation } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { ArrayContains, ILike, In, IsNull } from 'typeorm'
@@ -24,7 +24,7 @@ export const tableRepo = repoFactory(TableEntity)
 export const recordRepo = repoFactory(RecordEntity)
 const cellRepo = repoFactory(CellEntity)
 const tableWebhookRepo = repoFactory(TableWebhookEntity)
-const tablePieceName = '@united/piece-tables'
+const tablePieceName = '@activepieces/piece-tables'
 
 export const tableService = {
     async create({

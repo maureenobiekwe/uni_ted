@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { sendSmsAction } from './action/sms-send';
 import { sendRcsAction } from './action/rcs-send';
 import { sendVoiceCallAction } from './action/send-voice-call';

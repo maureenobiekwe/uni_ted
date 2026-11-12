@@ -462,30 +462,30 @@ describe('Publishing a piece through the admin endpoint', () => {
     })
 
     it('keeps the deprecated flag the release pipeline sends', async () => {
-        const response = await publish({ name: '@united/piece-gone-vendor', deprecated: true })
+        const response = await publish({ name: '@activepieces/piece-gone-vendor', deprecated: true })
 
         expect(response.statusCode).toBe(StatusCodes.OK)
         expect(response.json().deprecated).toBe(true)
 
-        const saved = await databaseConnection().getRepository('piece_metadata').findOneByOrFail({ name: '@united/piece-gone-vendor' })
+        const saved = await databaseConnection().getRepository('piece_metadata').findOneByOrFail({ name: '@activepieces/piece-gone-vendor' })
         expect(saved.deprecated).toBe(true)
     })
 
     it('hides a deprecated piece from the selector, keeps a live one listed, and still resolves the deprecated one by name', async () => {
-        await publish({ name: '@united/piece-gone-vendor', deprecated: true })
-        await publish({ name: '@united/piece-live-vendor', displayName: 'Live Vendor' })
+        await publish({ name: '@activepieces/piece-gone-vendor', deprecated: true })
+        await publish({ name: '@activepieces/piece-live-vendor', displayName: 'Live Vendor' })
         const ctx = await createTestContext(app!, {})
         const namesIn = (response: Awaited<ReturnType<typeof ctx.get>>): string[] => response.json().map((piece: { name: string }) => piece.name)
 
         const listed = await ctx.get(`/v1/pieces?projectId=${ctx.project.id}`)
         expect(listed.statusCode).toBe(StatusCodes.OK)
-        expect(namesIn(listed)).toContain('@united/piece-live-vendor')
-        expect(namesIn(listed)).not.toContain('@united/piece-gone-vendor')
+        expect(namesIn(listed)).toContain('@activepieces/piece-live-vendor')
+        expect(namesIn(listed)).not.toContain('@activepieces/piece-gone-vendor')
 
         const includingHidden = await ctx.get(`/v1/pieces?projectId=${ctx.project.id}&includeHidden=true`)
-        expect(namesIn(includingHidden)).toContain('@united/piece-gone-vendor')
+        expect(namesIn(includingHidden)).toContain('@activepieces/piece-gone-vendor')
 
-        const byName = await ctx.get(`/v1/pieces/@united/piece-gone-vendor?projectId=${ctx.project.id}`)
+        const byName = await ctx.get(`/v1/pieces/@activepieces/piece-gone-vendor?projectId=${ctx.project.id}`)
         expect(byName.statusCode).toBe(StatusCodes.OK)
         expect(byName.json().deprecated).toBe(true)
     })

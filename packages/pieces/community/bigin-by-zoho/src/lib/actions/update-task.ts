@@ -3,7 +3,6 @@ import { biginOutputSchemas } from '../common/output-schemas';
 import { biginAuth } from '../auth';
 import { createAction, InputPropertyMap, Property } from '@united/pieces-framework';
 import { tagsDropdown, usersDropdown } from '../common/props';
-import { API_ENDPOINTS } from '../common/constants';
 import { getSafeLabel, handleDropdownError } from '../common/helpers';
 import { biginApiService } from '../common/request';
 

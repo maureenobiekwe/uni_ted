@@ -1,6 +1,5 @@
 import { httpClient, HttpMethod } from '@united/pieces-common';
 import * as fs from 'fs';
-import FormData from 'form-data';
 import {
   ServiceNowRecord,
   AttachmentMeta,

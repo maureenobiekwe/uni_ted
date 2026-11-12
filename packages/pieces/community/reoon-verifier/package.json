@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-reoon-verifier",
+  "name": "@activepieces/piece-reoon-verifier",
   "version": "0.2.1",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

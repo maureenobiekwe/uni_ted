@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-microsoft-excel-365",
+  "name": "@activepieces/piece-microsoft-excel-365",
   "version": "0.8.5",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

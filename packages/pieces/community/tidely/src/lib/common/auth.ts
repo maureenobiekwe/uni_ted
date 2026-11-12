@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@united/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { PieceAuth } from '@united/pieces-framework';
 import { makeRequest } from './client';
 

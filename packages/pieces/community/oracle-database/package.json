@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-oracle-database",
+  "name": "@activepieces/piece-oracle-database",
   "version": "0.1.16",
   "type": "commonjs",
   "main": "./dist/src/index.js",

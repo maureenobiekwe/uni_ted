@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { addContactAction } from './lib/actions/add-contact';
 import { addTagToContactAction } from './lib/actions/add-tag-to-contact';
@@ -10,7 +10,6 @@ import { getEmailListAction } from './lib/actions/get-email-list';
 import { removeTagFromContactAction } from './lib/actions/remove-tag-from-contact';
 import { unsubscribeContactAction } from './lib/actions/unsubscribe-contact';
 import { updateContactAction } from './lib/actions/update-contact';
-import { makeClient } from './lib/common';
 import { vboutAuth } from './lib/auth';
 
 const markdown = `

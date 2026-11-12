@@ -35,8 +35,7 @@ export const registered = [
         html_url: 'https://github.com/united/united/pull/2',
         diff_url: 'https://github.com/united/united/pull/2.diff',
         patch_url: 'https://github.com/united/united/pull/2.patch',
-        issue_url:
-          'https://api.github.com/repos/united/united/issues/2',
+        issue_url: 'https://api.github.com/repos/united/united/issues/2',
         number: 2,
         state: 'open',
         locked: false,
@@ -152,47 +151,37 @@ export const registered = [
         description: 'Automate!',
         fork: false,
         url: 'https://api.github.com/repos/united/united',
-        forks_url:
-          'https://api.github.com/repos/united/united/forks',
-        keys_url:
-          'https://api.github.com/repos/united/united/keys{/key_id}',
+        forks_url: 'https://api.github.com/repos/united/united/forks',
+        keys_url: 'https://api.github.com/repos/united/united/keys{/key_id}',
         collaborators_url:
           'https://api.github.com/repos/united/united/collaborators{/collaborator}',
-        teams_url:
-          'https://api.github.com/repos/united/united/teams',
-        hooks_url:
-          'https://api.github.com/repos/united/united/hooks',
+        teams_url: 'https://api.github.com/repos/united/united/teams',
+        hooks_url: 'https://api.github.com/repos/united/united/hooks',
         issue_events_url:
           'https://api.github.com/repos/united/united/issues/events{/number}',
-        events_url:
-          'https://api.github.com/repos/united/united/events',
+        events_url: 'https://api.github.com/repos/united/united/events',
         assignees_url:
           'https://api.github.com/repos/united/united/assignees{/user}',
         branches_url:
           'https://api.github.com/repos/united/united/branches{/branch}',
         tags_url: 'https://api.github.com/repos/united/united/tags',
-        blobs_url:
-          'https://api.github.com/repos/united/united/git/blobs{/sha}',
+        blobs_url: 'https://api.github.com/repos/united/united/git/blobs{/sha}',
         git_tags_url:
           'https://api.github.com/repos/united/united/git/tags{/sha}',
         git_refs_url:
           'https://api.github.com/repos/united/united/git/refs{/sha}',
-        trees_url:
-          'https://api.github.com/repos/united/united/git/trees{/sha}',
+        trees_url: 'https://api.github.com/repos/united/united/git/trees{/sha}',
         statuses_url:
           'https://api.github.com/repos/united/united/statuses/{sha}',
-        languages_url:
-          'https://api.github.com/repos/united/united/languages',
-        stargazers_url:
-          'https://api.github.com/repos/united/united/stargazers',
+        languages_url: 'https://api.github.com/repos/united/united/languages',
+        stargazers_url: 'https://api.github.com/repos/united/united/stargazers',
         contributors_url:
           'https://api.github.com/repos/united/united/contributors',
         subscribers_url:
           'https://api.github.com/repos/united/united/subscribers',
         subscription_url:
           'https://api.github.com/repos/united/united/subscription',
-        commits_url:
-          'https://api.github.com/repos/united/united/commits{/sha}',
+        commits_url: 'https://api.github.com/repos/united/united/commits{/sha}',
         git_commits_url:
           'https://api.github.com/repos/united/united/git/commits{/sha}',
         comments_url:
@@ -203,22 +192,18 @@ export const registered = [
           'https://api.github.com/repos/united/united/contents/{+path}',
         compare_url:
           'https://api.github.com/repos/united/united/compare/{base}...{head}',
-        merges_url:
-          'https://api.github.com/repos/united/united/merges',
+        merges_url: 'https://api.github.com/repos/united/united/merges',
         archive_url:
           'https://api.github.com/repos/united/united/{archive_format}{/ref}',
-        downloads_url:
-          'https://api.github.com/repos/united/united/downloads',
+        downloads_url: 'https://api.github.com/repos/united/united/downloads',
         issues_url:
           'https://api.github.com/repos/united/united/issues{/number}',
-        pulls_url:
-          'https://api.github.com/repos/united/united/pulls{/number}',
+        pulls_url: 'https://api.github.com/repos/united/united/pulls{/number}',
         milestones_url:
           'https://api.github.com/repos/united/united/milestones{/number}',
         notifications_url:
           'https://api.github.com/repos/united/united/notifications{?since,all,participating}',
-        labels_url:
-          'https://api.github.com/repos/united/united/labels{/name}',
+        labels_url: 'https://api.github.com/repos/united/united/labels{/name}',
         releases_url:
           'https://api.github.com/repos/united/united/releases{/id}',
         deployments_url:
@@ -271,12 +256,10 @@ export const registered = [
         gists_url: 'https://api.github.com/users/united/gists{/gist_id}',
         starred_url:
           'https://api.github.com/users/united/starred{/owner}{/repo}',
-        subscriptions_url:
-          'https://api.github.com/users/united/subscriptions',
+        subscriptions_url: 'https://api.github.com/users/united/subscriptions',
         organizations_url: 'https://api.github.com/users/united/orgs',
         repos_url: 'https://api.github.com/users/united/repos',
-        events_url:
-          'https://api.github.com/users/united/events{/privacy}',
+        events_url: 'https://api.github.com/users/united/events{/privacy}',
         received_events_url:
           'https://api.github.com/users/united/received_events',
         type: 'User',
@@ -310,16 +293,14 @@ export const registered = [
           followers_url: 'https://api.github.com/users/united/followers',
           following_url:
             'https://api.github.com/users/united/following{/other_user}',
-          gists_url:
-            'https://api.github.com/users/united/gists{/gist_id}',
+          gists_url: 'https://api.github.com/users/united/gists{/gist_id}',
           starred_url:
             'https://api.github.com/users/united/starred{/owner}{/repo}',
           subscriptions_url:
             'https://api.github.com/users/united/subscriptions',
           organizations_url: 'https://api.github.com/users/united/orgs',
           repos_url: 'https://api.github.com/users/united/repos',
-          events_url:
-            'https://api.github.com/users/united/events{/privacy}',
+          events_url: 'https://api.github.com/users/united/events{/privacy}',
           received_events_url:
             'https://api.github.com/users/united/received_events',
           type: 'User',
@@ -329,47 +310,37 @@ export const registered = [
         description: 'Automate',
         fork: false,
         url: 'https://api.github.com/repos/united/united',
-        forks_url:
-          'https://api.github.com/repos/united/united/forks',
-        keys_url:
-          'https://api.github.com/repos/united/united/keys{/key_id}',
+        forks_url: 'https://api.github.com/repos/united/united/forks',
+        keys_url: 'https://api.github.com/repos/united/united/keys{/key_id}',
         collaborators_url:
           'https://api.github.com/repos/united/united/collaborators{/collaborator}',
-        teams_url:
-          'https://api.github.com/repos/united/united/teams',
-        hooks_url:
-          'https://api.github.com/repos/united/united/hooks',
+        teams_url: 'https://api.github.com/repos/united/united/teams',
+        hooks_url: 'https://api.github.com/repos/united/united/hooks',
         issue_events_url:
           'https://api.github.com/repos/united/united/issues/events{/number}',
-        events_url:
-          'https://api.github.com/repos/united/united/events',
+        events_url: 'https://api.github.com/repos/united/united/events',
         assignees_url:
           'https://api.github.com/repos/united/united/assignees{/user}',
         branches_url:
           'https://api.github.com/repos/united/united/branches{/branch}',
         tags_url: 'https://api.github.com/repos/united/united/tags',
-        blobs_url:
-          'https://api.github.com/repos/united/united/git/blobs{/sha}',
+        blobs_url: 'https://api.github.com/repos/united/united/git/blobs{/sha}',
         git_tags_url:
           'https://api.github.com/repos/united/united/git/tags{/sha}',
         git_refs_url:
           'https://api.github.com/repos/united/united/git/refs{/sha}',
-        trees_url:
-          'https://api.github.com/repos/united/united/git/trees{/sha}',
+        trees_url: 'https://api.github.com/repos/united/united/git/trees{/sha}',
         statuses_url:
           'https://api.github.com/repos/united/united/statuses/{sha}',
-        languages_url:
-          'https://api.github.com/repos/united/united/languages',
-        stargazers_url:
-          'https://api.github.com/repos/united/united/stargazers',
+        languages_url: 'https://api.github.com/repos/united/united/languages',
+        stargazers_url: 'https://api.github.com/repos/united/united/stargazers',
         contributors_url:
           'https://api.github.com/repos/united/united/contributors',
         subscribers_url:
           'https://api.github.com/repos/united/united/subscribers',
         subscription_url:
           'https://api.github.com/repos/united/united/subscription',
-        commits_url:
-          'https://api.github.com/repos/united/united/commits{/sha}',
+        commits_url: 'https://api.github.com/repos/united/united/commits{/sha}',
         git_commits_url:
           'https://api.github.com/repos/united/united/git/commits{/sha}',
         comments_url:
@@ -380,22 +351,18 @@ export const registered = [
           'https://api.github.com/repos/united/united/contents/{+path}',
         compare_url:
           'https://api.github.com/repos/united/united/compare/{base}...{head}',
-        merges_url:
-          'https://api.github.com/repos/united/united/merges',
+        merges_url: 'https://api.github.com/repos/united/united/merges',
         archive_url:
           'https://api.github.com/repos/united/united/{archive_format}{/ref}',
-        downloads_url:
-          'https://api.github.com/repos/united/united/downloads',
+        downloads_url: 'https://api.github.com/repos/united/united/downloads',
         issues_url:
           'https://api.github.com/repos/united/united/issues{/number}',
-        pulls_url:
-          'https://api.github.com/repos/united/united/pulls{/number}',
+        pulls_url: 'https://api.github.com/repos/united/united/pulls{/number}',
         milestones_url:
           'https://api.github.com/repos/united/united/milestones{/number}',
         notifications_url:
           'https://api.github.com/repos/united/united/notifications{?since,all,participating}',
-        labels_url:
-          'https://api.github.com/repos/united/united/labels{/name}',
+        labels_url: 'https://api.github.com/repos/united/united/labels{/name}',
         releases_url:
           'https://api.github.com/repos/united/united/releases{/id}',
         deployments_url:
@@ -448,12 +415,10 @@ export const registered = [
         gists_url: 'https://api.github.com/users/united/gists{/gist_id}',
         starred_url:
           'https://api.github.com/users/united/starred{/owner}{/repo}',
-        subscriptions_url:
-          'https://api.github.com/users/united/subscriptions',
+        subscriptions_url: 'https://api.github.com/users/united/subscriptions',
         organizations_url: 'https://api.github.com/users/united/orgs',
         repos_url: 'https://api.github.com/users/united/repos',
-        events_url:
-          'https://api.github.com/users/united/events{/privacy}',
+        events_url: 'https://api.github.com/users/united/events{/privacy}',
         received_events_url:
           'https://api.github.com/users/united/received_events',
         type: 'User',
@@ -472,8 +437,7 @@ export const registered = [
       action: 'opened',
       issue: {
         url: 'https://api.github.com/repos/united/united/issues/1',
-        repository_url:
-          'https://api.github.com/repos/united/united',
+        repository_url: 'https://api.github.com/repos/united/united',
         labels_url:
           'https://api.github.com/repos/united/united/issues/1/labels{/name}',
         comments_url:
@@ -573,47 +537,37 @@ export const registered = [
         description: 'Automate!',
         fork: false,
         url: 'https://api.github.com/repos/united/united',
-        forks_url:
-          'https://api.github.com/repos/united/united/forks',
-        keys_url:
-          'https://api.github.com/repos/united/united/keys{/key_id}',
+        forks_url: 'https://api.github.com/repos/united/united/forks',
+        keys_url: 'https://api.github.com/repos/united/united/keys{/key_id}',
         collaborators_url:
           'https://api.github.com/repos/united/united/collaborators{/collaborator}',
-        teams_url:
-          'https://api.github.com/repos/united/united/teams',
-        hooks_url:
-          'https://api.github.com/repos/united/united/hooks',
+        teams_url: 'https://api.github.com/repos/united/united/teams',
+        hooks_url: 'https://api.github.com/repos/united/united/hooks',
         issue_events_url:
           'https://api.github.com/repos/united/united/issues/events{/number}',
-        events_url:
-          'https://api.github.com/repos/united/united/events',
+        events_url: 'https://api.github.com/repos/united/united/events',
         assignees_url:
           'https://api.github.com/repos/united/united/assignees{/user}',
         branches_url:
           'https://api.github.com/repos/united/united/branches{/branch}',
         tags_url: 'https://api.github.com/repos/united/united/tags',
-        blobs_url:
-          'https://api.github.com/repos/united/united/git/blobs{/sha}',
+        blobs_url: 'https://api.github.com/repos/united/united/git/blobs{/sha}',
         git_tags_url:
           'https://api.github.com/repos/united/united/git/tags{/sha}',
         git_refs_url:
           'https://api.github.com/repos/united/united/git/refs{/sha}',
-        trees_url:
-          'https://api.github.com/repos/united/united/git/trees{/sha}',
+        trees_url: 'https://api.github.com/repos/united/united/git/trees{/sha}',
         statuses_url:
           'https://api.github.com/repos/united/united/statuses/{sha}',
-        languages_url:
-          'https://api.github.com/repos/united/united/languages',
-        stargazers_url:
-          'https://api.github.com/repos/united/united/stargazers',
+        languages_url: 'https://api.github.com/repos/united/united/languages',
+        stargazers_url: 'https://api.github.com/repos/united/united/stargazers',
         contributors_url:
           'https://api.github.com/repos/united/united/contributors',
         subscribers_url:
           'https://api.github.com/repos/united/united/subscribers',
         subscription_url:
           'https://api.github.com/repos/united/united/subscription',
-        commits_url:
-          'https://api.github.com/repos/united/united/commits{/sha}',
+        commits_url: 'https://api.github.com/repos/united/united/commits{/sha}',
         git_commits_url:
           'https://api.github.com/repos/united/united/git/commits{/sha}',
         comments_url:
@@ -624,22 +578,18 @@ export const registered = [
           'https://api.github.com/repos/united/united/contents/{+path}',
         compare_url:
           'https://api.github.com/repos/united/united/compare/{base}...{head}',
-        merges_url:
-          'https://api.github.com/repos/united/united/merges',
+        merges_url: 'https://api.github.com/repos/united/united/merges',
         archive_url:
           'https://api.github.com/repos/united/united/{archive_format}{/ref}',
-        downloads_url:
-          'https://api.github.com/repos/united/united/downloads',
+        downloads_url: 'https://api.github.com/repos/united/united/downloads',
         issues_url:
           'https://api.github.com/repos/united/united/issues{/number}',
-        pulls_url:
-          'https://api.github.com/repos/united/united/pulls{/number}',
+        pulls_url: 'https://api.github.com/repos/united/united/pulls{/number}',
         milestones_url:
           'https://api.github.com/repos/united/united/milestones{/number}',
         notifications_url:
           'https://api.github.com/repos/united/united/notifications{?since,all,participating}',
-        labels_url:
-          'https://api.github.com/repos/united/united/labels{/name}',
+        labels_url: 'https://api.github.com/repos/united/united/labels{/name}',
         releases_url:
           'https://api.github.com/repos/united/united/releases{/id}',
         deployments_url:
@@ -692,12 +642,10 @@ export const registered = [
         gists_url: 'https://api.github.com/users/united/gists{/gist_id}',
         starred_url:
           'https://api.github.com/users/united/starred{/owner}{/repo}',
-        subscriptions_url:
-          'https://api.github.com/users/united/subscriptions',
+        subscriptions_url: 'https://api.github.com/users/united/subscriptions',
         organizations_url: 'https://api.github.com/users/united/orgs',
         repos_url: 'https://api.github.com/users/united/repos',
-        events_url:
-          'https://api.github.com/users/united/events{/privacy}',
+        events_url: 'https://api.github.com/users/united/events{/privacy}',
         received_events_url:
           'https://api.github.com/users/united/received_events',
         type: 'User',
@@ -786,47 +734,37 @@ export const registered = [
         description: 'Automate!',
         fork: false,
         url: 'https://api.github.com/repos/united/united',
-        forks_url:
-          'https://api.github.com/repos/united/united/forks',
-        keys_url:
-          'https://api.github.com/repos/united/united/keys{/key_id}',
+        forks_url: 'https://api.github.com/repos/united/united/forks',
+        keys_url: 'https://api.github.com/repos/united/united/keys{/key_id}',
         collaborators_url:
           'https://api.github.com/repos/united/united/collaborators{/collaborator}',
-        teams_url:
-          'https://api.github.com/repos/united/united/teams',
-        hooks_url:
-          'https://api.github.com/repos/united/united/hooks',
+        teams_url: 'https://api.github.com/repos/united/united/teams',
+        hooks_url: 'https://api.github.com/repos/united/united/hooks',
         issue_events_url:
           'https://api.github.com/repos/united/united/issues/events{/number}',
-        events_url:
-          'https://api.github.com/repos/united/united/events',
+        events_url: 'https://api.github.com/repos/united/united/events',
         assignees_url:
           'https://api.github.com/repos/united/united/assignees{/user}',
         branches_url:
           'https://api.github.com/repos/united/united/branches{/branch}',
         tags_url: 'https://api.github.com/repos/united/united/tags',
-        blobs_url:
-          'https://api.github.com/repos/united/united/git/blobs{/sha}',
+        blobs_url: 'https://api.github.com/repos/united/united/git/blobs{/sha}',
         git_tags_url:
           'https://api.github.com/repos/united/united/git/tags{/sha}',
         git_refs_url:
           'https://api.github.com/repos/united/united/git/refs{/sha}',
-        trees_url:
-          'https://api.github.com/repos/united/united/git/trees{/sha}',
+        trees_url: 'https://api.github.com/repos/united/united/git/trees{/sha}',
         statuses_url:
           'https://api.github.com/repos/united/united/statuses/{sha}',
-        languages_url:
-          'https://api.github.com/repos/united/united/languages',
-        stargazers_url:
-          'https://api.github.com/repos/united/united/stargazers',
+        languages_url: 'https://api.github.com/repos/united/united/languages',
+        stargazers_url: 'https://api.github.com/repos/united/united/stargazers',
         contributors_url:
           'https://api.github.com/repos/united/united/contributors',
         subscribers_url:
           'https://api.github.com/repos/united/united/subscribers',
         subscription_url:
           'https://api.github.com/repos/united/united/subscription',
-        commits_url:
-          'https://api.github.com/repos/united/united/commits{/sha}',
+        commits_url: 'https://api.github.com/repos/united/united/commits{/sha}',
         git_commits_url:
           'https://api.github.com/repos/united/united/git/commits{/sha}',
         comments_url:
@@ -837,22 +775,18 @@ export const registered = [
           'https://api.github.com/repos/united/united/contents/{+path}',
         compare_url:
           'https://api.github.com/repos/united/united/compare/{base}...{head}',
-        merges_url:
-          'https://api.github.com/repos/united/united/merges',
+        merges_url: 'https://api.github.com/repos/united/united/merges',
         archive_url:
           'https://api.github.com/repos/united/united/{archive_format}{/ref}',
-        downloads_url:
-          'https://api.github.com/repos/united/united/downloads',
+        downloads_url: 'https://api.github.com/repos/united/united/downloads',
         issues_url:
           'https://api.github.com/repos/united/united/issues{/number}',
-        pulls_url:
-          'https://api.github.com/repos/united/united/pulls{/number}',
+        pulls_url: 'https://api.github.com/repos/united/united/pulls{/number}',
         milestones_url:
           'https://api.github.com/repos/united/united/milestones{/number}',
         notifications_url:
           'https://api.github.com/repos/united/united/notifications{?since,all,participating}',
-        labels_url:
-          'https://api.github.com/repos/united/united/labels{/name}',
+        labels_url: 'https://api.github.com/repos/united/united/labels{/name}',
         releases_url:
           'https://api.github.com/repos/united/united/releases{/id}',
         deployments_url:
@@ -905,12 +839,10 @@ export const registered = [
         gists_url: 'https://api.github.com/users/united/gists{/gist_id}',
         starred_url:
           'https://api.github.com/users/united/starred{/owner}{/repo}',
-        subscriptions_url:
-          'https://api.github.com/users/united/subscriptions',
+        subscriptions_url: 'https://api.github.com/users/united/subscriptions',
         organizations_url: 'https://api.github.com/users/united/orgs',
         repos_url: 'https://api.github.com/users/united/repos',
-        events_url:
-          'https://api.github.com/users/united/events{/privacy}',
+        events_url: 'https://api.github.com/users/united/events{/privacy}',
         received_events_url:
           'https://api.github.com/users/united/received_events',
         type: 'User',

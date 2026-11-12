@@ -1,7 +1,7 @@
 import { createCustomApiCallAction } from '@united/pieces-common';
 import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
-import { digitalOceanAuth, DigitalOceanAuthValue } from './lib/common/auth';
+import { digitalOceanAuth } from './lib/common/auth';
 import {
   listDomains,
   createDomain,

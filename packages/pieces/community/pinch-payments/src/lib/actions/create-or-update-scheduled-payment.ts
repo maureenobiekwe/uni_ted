@@ -1,6 +1,6 @@
-import { httpClient, HttpMethod } from '@united/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { createAction, Property } from '@united/pieces-framework';
-import { pinchPaymentsAuth, getPinchPaymentsToken } from '../common/auth';
+import { pinchPaymentsAuth } from '../common/auth';
 import { listPayers, pinchPaymentsClient } from '../common/client';
 
 export const createOrUpdateScheduledPaymentAction = createAction({

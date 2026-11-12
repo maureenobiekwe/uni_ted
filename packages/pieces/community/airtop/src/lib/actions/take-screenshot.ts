@@ -1,5 +1,5 @@
 import { HttpMethod, propsValidation } from '@united/pieces-common';
-import { createAction, Property, DynamicPropsValue, InputPropertyMap, PropertyContext } from '@united/pieces-framework';
+import { createAction, Property, InputPropertyMap, PropertyContext } from '@united/pieces-framework';
 import { airtopAuth } from '../common/auth';
 import { airtopApiCall } from '../common/client';
 import { sessionId, windowId } from '../common/props';

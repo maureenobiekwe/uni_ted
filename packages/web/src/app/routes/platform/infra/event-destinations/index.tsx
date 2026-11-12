@@ -1,12 +1,7 @@
-import {
-  isNil,
-  tryCatch,
-  tryCatchSync,
-  unique,
-} from '@united/core-utils';
-import { ApFlagId, EventDestination } from '@united/shared';
 import { useQueries } from '@tanstack/react-query';
 import { ColumnDef } from '@tanstack/react-table';
+import { isNil, tryCatch, tryCatchSync, unique } from '@united/core-utils';
+import { ApFlagId, EventDestination } from '@united/shared';
 import { t } from 'i18next';
 import { Globe, ListChecks, Radio } from 'lucide-react';
 import { useCallback, useMemo } from 'react';

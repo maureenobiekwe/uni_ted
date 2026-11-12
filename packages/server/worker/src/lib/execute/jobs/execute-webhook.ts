@@ -15,7 +15,7 @@ function getAppWebhookDetails(flowVersion: FlowVersion, publicApiUrl: string, ap
     }
     const secrets = parseToJsonIfPossible(appWebhookSecretsJson) as Record<string, { webhookSecret: string | Record<string, string> }> | undefined
     const webhookSecret = secrets?.[pieceName]?.webhookSecret
-    const pieceUrlName = pieceName.replace('@united/piece-', '')
+    const pieceUrlName = pieceName.replace('@activepieces/piece-', '')
     return {
         appWebhookUrl: getAppWebhookUrl(publicApiUrl, pieceUrlName),
         webhookSecret,

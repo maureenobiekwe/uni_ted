@@ -98,15 +98,15 @@ const getPinnedPieces = (
 };
 
 const POPULAR_PIECES_NAMES = [
-  '@united/piece-google-sheets',
-  '@united/piece-slack',
-  '@united/piece-notion',
-  '@united/piece-gmail',
-  '@united/piece-hubspot',
-  '@united/piece-openai',
-  '@united/piece-google-forms',
-  '@united/piece-google-drive',
-  '@united/piece-google-docs',
+  '@activepieces/piece-google-sheets',
+  '@activepieces/piece-slack',
+  '@activepieces/piece-notion',
+  '@activepieces/piece-gmail',
+  '@activepieces/piece-hubspot',
+  '@activepieces/piece-openai',
+  '@activepieces/piece-google-forms',
+  '@activepieces/piece-google-drive',
+  '@activepieces/piece-google-docs',
 ];
 const getPopularPieces = (
   queryResult: StepMetadataWithSuggestions[],
@@ -160,21 +160,21 @@ const sortByPieceNameOrder = (
   });
 };
 const HIGHLIGHTED_PIECES_NAMES_FOR_TRIGGERS = [
-  '@united/piece-webhook',
-  '@united/piece-schedule',
-  '@united/piece-manual-trigger',
-  '@united/piece-forms',
-  '@united/piece-tables',
+  '@activepieces/piece-webhook',
+  '@activepieces/piece-schedule',
+  '@activepieces/piece-manual-trigger',
+  '@activepieces/piece-forms',
+  '@activepieces/piece-tables',
 ];
 
 const HIGHLIGHTED_PIECES_NAMES_FOR_ACTIONS = [
   AI_PIECE_NAME,
-  '@united/piece-http',
-  '@united/piece-tables',
-  '@united/piece-forms',
-  '@united/piece-webhook',
-  '@united/piece-text-helper',
-  '@united/piece-date-helper',
+  '@activepieces/piece-http',
+  '@activepieces/piece-tables',
+  '@activepieces/piece-forms',
+  '@activepieces/piece-webhook',
+  '@activepieces/piece-text-helper',
+  '@activepieces/piece-date-helper',
 ];
 
 export const pieceSearchUtils = {

@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-github",
+  "name": "@activepieces/piece-github",
   "version": "0.11.1",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

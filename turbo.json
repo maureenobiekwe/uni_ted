@@ -97,11 +97,11 @@
     "@united/engine#test": {
       "dependsOn": [
         "build",
-        "@united/piece-http#build",
-        "@united/piece-data-mapper#build",
-        "@united/piece-approval#build",
-        "@united/piece-webhook#build",
-        "@united/piece-delay#build"
+        "@activepieces/piece-http#build",
+        "@activepieces/piece-data-mapper#build",
+        "@activepieces/piece-approval#build",
+        "@activepieces/piece-webhook#build",
+        "@activepieces/piece-delay#build"
       ],
       "inputs": ["src/**", "test/**", "tsconfig*.json", "vitest.config.*"],
       "outputs": ["coverage/**"]

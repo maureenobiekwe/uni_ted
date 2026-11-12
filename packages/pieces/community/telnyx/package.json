@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-telnyx",
+  "name": "@activepieces/piece-telnyx",
   "version": "0.1.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

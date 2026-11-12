@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-serpstat",
+  "name": "@activepieces/piece-serpstat",
   "version": "0.2.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

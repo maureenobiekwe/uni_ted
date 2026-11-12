@@ -2,9 +2,8 @@ import {
   createAction,
   Property,
   DynamicPropsValue,
-  OAuth2PropertyValue,
 } from '@united/pieces-framework';
-import { capsuleCrmAuth, CapsuleCrmAuthType } from '../common/auth';
+import { capsuleCrmAuth } from '../common/auth';
 import { capsuleCrmClient } from '../common/client';
 import { CreatePartyParams } from '../common/types';
 

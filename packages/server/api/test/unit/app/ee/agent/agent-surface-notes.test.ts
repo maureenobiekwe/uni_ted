@@ -33,7 +33,7 @@ function notesFor(source: AgentRunSource): string {
         ...EVERYTHING_AVAILABLE,
         userEmail: 'owner@acme.com',
         userIdentity: IDENTITY,
-        connections: { connections: [{ displayName: 'Gmail', pieceName: '@united/piece-gmail', status: 'ACTIVE' }], truncated: true },
+        connections: { connections: [{ displayName: 'Gmail', pieceName: '@activepieces/piece-gmail', status: 'ACTIVE' }], truncated: true },
         memory: { instructions: 'Answer in Arabic', memories: ['Prefers TypeScript'] },
     })
 }

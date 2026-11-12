@@ -1,8 +1,4 @@
-import {
-  DedupeStrategy,
-  Polling,
-  pollingHelper,
-} from '@united/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import {
   createTrigger,
   TriggerStrategy,

@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-oneclickimpact",
+  "name": "@activepieces/piece-oneclickimpact",
   "version": "0.1.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

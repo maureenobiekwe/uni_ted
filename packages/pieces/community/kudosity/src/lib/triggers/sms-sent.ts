@@ -1,7 +1,6 @@
 import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { kudosityAuth } from '../common/auth';
 import { httpClient, HttpMethod } from '@united/pieces-common';
-import { stat } from 'fs';
 export const smsSent = createTrigger({
   auth: kudosityAuth,
   name: 'smsSent',

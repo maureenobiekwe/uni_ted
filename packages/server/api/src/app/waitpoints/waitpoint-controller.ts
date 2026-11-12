@@ -1,5 +1,5 @@
 import { isNil } from '@united/core-utils'
-import { unitedError, BarrierCreatedState, CreateWaitpointRequest, CreateWaitpointResponse, ErrorCode, MAX_INLINE_BARRIER_SIGNALS, PauseType } from '@united/shared'
+import { BarrierCreatedState, CreateWaitpointRequest, CreateWaitpointResponse, ErrorCode, MAX_INLINE_BARRIER_SIGNALS, PauseType, unitedError } from '@united/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { StatusCodes } from 'http-status-codes'
 import { securityAccess } from '../core/security/authorization/fastify-security'

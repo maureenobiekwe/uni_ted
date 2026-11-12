@@ -20,7 +20,7 @@ export const migrateV25HttpPieceVersion: Migration = {
     },
 }
 
-const HTTP_PIECE_NAME = '@united/piece-http'
+const HTTP_PIECE_NAME = '@activepieces/piece-http'
 const BROKEN_PIECE_VERSIONS = new Set([
     '0.11.11',
     '0.11.12',

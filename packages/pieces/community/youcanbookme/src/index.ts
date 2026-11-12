@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { newBooking } from './lib/triggers/new-booking';
 import { PieceCategory } from '@united/pieces-framework';
 import { createprofile } from './lib/actions/create-profile';

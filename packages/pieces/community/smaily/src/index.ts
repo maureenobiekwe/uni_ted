@@ -1,14 +1,8 @@
 import {
   createPiece,
-  PieceAuth,
-  PiecePropValueSchema,
-  Property,
 } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
-import {
-  AuthenticationType,
-  httpClient,
-  HttpMethod, createCustomApiCallAction 
+import { createCustomApiCallAction 
 
 } from '@united/pieces-common';
 import { createOrUpdateSubscriberAction } from './lib/actions/create-or-update-subscriber.action';

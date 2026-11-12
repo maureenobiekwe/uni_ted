@@ -1,7 +1,5 @@
 import {
   createPiece,
-  PieceAuth,
-  PiecePropValueSchema,
 } from '@united/pieces-framework';
 import { BASE_URL, CopperAuth } from './lib/common/constants';
 import { newPerson } from './lib/triggers/new-person';

@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-camb-ai",
+  "name": "@activepieces/piece-camb-ai",
   "version": "0.2.2",
   "type": "commonjs",
   "main": "./dist/src/index.js",

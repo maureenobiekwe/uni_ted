@@ -37,7 +37,7 @@ function makeRunOperation(): ResolvedExecuteTriggerOperation<TriggerHookType.RUN
                 valid: true,
                 displayName: 'App event',
                 settings: {
-                    pieceName: '@united/piece-under-test',
+                    pieceName: '@activepieces/piece-under-test',
                     pieceVersion: '1.0.0',
                     triggerName: 'new_event',
                     input: {},

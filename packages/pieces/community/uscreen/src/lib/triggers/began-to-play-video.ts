@@ -1,6 +1,5 @@
 import {
   createTrigger,
-  Property,
   TriggerStrategy,
 } from '@united/pieces-framework';
 import { uscreenAuth } from '../common/auth';

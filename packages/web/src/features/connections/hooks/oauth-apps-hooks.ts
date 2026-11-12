@@ -1,10 +1,10 @@
+import { useMutation, useQuery } from '@tanstack/react-query';
 import {
   UpsertOAuth2AppRequest,
   ApEdition,
   ApFlagId,
   AppConnectionType,
 } from '@united/shared';
-import { useMutation, useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { toast } from 'sonner';
 

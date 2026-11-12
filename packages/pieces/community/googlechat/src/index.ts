@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { googleChatApiAuth } from './lib/common/constants';
 import { newMessage } from './lib/triggers/new-message';
 import { newMention } from './lib/triggers/new-mention';

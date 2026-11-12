@@ -2,7 +2,6 @@ import { comfyIcuAuth } from '../auth';
 import {
   AppConnectionValueForAuthProperty,
   createTrigger,
-  PiecePropValueSchema,
   TriggerStrategy,
 } from '@united/pieces-framework';
 import { comfyIcuApiCall, commonProps } from '../common';

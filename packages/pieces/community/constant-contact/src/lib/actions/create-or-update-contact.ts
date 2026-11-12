@@ -1,5 +1,4 @@
 import {
-  OAuth2PropertyValue,
   Property,
   createAction,
 } from '@united/pieces-framework';

@@ -311,7 +311,7 @@ async function seedPublishableFlow({
     publishCurrentVersion,
 }: SeedPublishableFlowParams): Promise<{ flow: Flow, flowVersion: FlowVersion }> {
     const pieceMetadata = createMockPieceMetadata({
-        name: '@united/piece-schedule',
+        name: '@activepieces/piece-schedule',
         version: '0.1.5',
         triggers: {
             every_hour: {
@@ -373,7 +373,7 @@ function scheduleTrigger(): FlowTrigger {
     return {
         type: FlowTriggerType.PIECE,
         settings: {
-            pieceName: '@united/piece-schedule',
+            pieceName: '@activepieces/piece-schedule',
             pieceVersion: '0.1.5',
             input: { run_on_weekends: false },
             triggerName: 'every_hour',

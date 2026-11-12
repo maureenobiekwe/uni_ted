@@ -81,7 +81,7 @@ pre-existing console warnings the ghosted rows now expose on every plan: a bare 
 The populated states were verified separately against a 0.90.4 EE backend with seeded data (two pending platform
 invitations, six connections with one in `ERROR`): "Pending invitations" lists the emails, "Needs attention" lists the
 failing connection, "Most used pieces" ranks by count. One nit surfaced there: both connection overview sections label rows
-with the raw package name (`@united/piece-apollo`) instead of the piece display name. Seeding notes: the invitation
+with the raw package name (`@activepieces/piece-apollo`) instead of the piece display name. Seeding notes: the invitation
 endpoint enforces the seat quota (402 `QUOTA_EXCEEDED`) so `platform_plan.usersLimit` has to be lifted first; a personal
 project refuses project invitations ("Project must be a team project"); connections cannot be inserted by hand because the
 list endpoint decrypts every `value` (`ERR_CRYPTO_INVALID_IV` → 500), and a dev backend with `AP_PIECES_SOURCE` on files

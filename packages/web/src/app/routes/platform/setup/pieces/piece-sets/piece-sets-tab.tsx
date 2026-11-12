@@ -1,5 +1,5 @@
-import { PieceSelectionMode, PieceSet } from '@united/shared';
 import { ColumnDef } from '@tanstack/react-table';
+import { PieceSelectionMode, PieceSet } from '@united/shared';
 import { t } from 'i18next';
 import {
   CheckIcon,

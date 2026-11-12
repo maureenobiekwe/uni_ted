@@ -1,6 +1,5 @@
 import { Property } from '@united/pieces-framework';
 import {
-  ApitemplateAuthConfig,
   ApitemplateRegion,
   makeRequest,
 } from './client';

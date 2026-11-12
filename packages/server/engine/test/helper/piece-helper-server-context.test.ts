@@ -22,7 +22,7 @@ const ENGINE_TOKEN = 'engine-token-under-test'
 function makeOperation(): ExecuteValidateAuthOperation {
     return {
         piece: {
-            pieceName: '@united/piece-under-test',
+            pieceName: '@activepieces/piece-under-test',
             pieceVersion: '1.0.0',
         },
         auth: {

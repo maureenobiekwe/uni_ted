@@ -1,5 +1,5 @@
 import { randomBytes } from 'crypto'
-import { unitedError, apId, ErrorCode, isNil, sanitizeObjectForPostgresql, SeekPage, spreadIfDefined, tryCatch, unique } from '@united/core-utils'
+import { apId, ErrorCode, isNil, sanitizeObjectForPostgresql, SeekPage, spreadIfDefined, tryCatch, unique, unitedError } from '@united/core-utils'
 import { cryptoUtils } from '@united/server-utils'
 import { McpOAuthClientKey, McpOAuthGrant, McpOAuthToken } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'

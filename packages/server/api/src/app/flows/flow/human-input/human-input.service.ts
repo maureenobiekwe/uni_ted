@@ -1,4 +1,4 @@
-import { unitedError, ErrorCode, FlowId, isNil } from '@united/core-utils'
+import { ErrorCode, FlowId, isNil, unitedError } from '@united/core-utils'
 import { ChatUIResponse, FormInputType, FormResponse, PopulatedFlow } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { pieceMetadataService } from '../../../pieces/metadata/piece-metadata-service'
@@ -7,7 +7,7 @@ import { projectService } from '../../../project/project-service'
 import { flowVersionService } from '../../flow-version/flow-version.service'
 import { flowRepo } from '../flow.repo'
 
-const FORMS_PIECE_NAME = '@united/piece-forms'
+const FORMS_PIECE_NAME = '@activepieces/piece-forms'
 const FORM_TRIIGGER = 'form_submission'
 const FILE_TRIGGER = 'file_submission'
 const SIMPLE_FILE_PROPS = {

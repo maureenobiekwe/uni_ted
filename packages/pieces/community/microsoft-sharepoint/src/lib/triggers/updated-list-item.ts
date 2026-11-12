@@ -2,7 +2,6 @@ import { microsoftSharePointAuth } from '../auth';
 import {
   createTrigger,
   TriggerStrategy,
-  Property,
 } from '@united/pieces-framework';
 import { getGraphBaseUrl } from '../common/microsoft-cloud';
 import { microsoftSharePointCommon } from '../common';

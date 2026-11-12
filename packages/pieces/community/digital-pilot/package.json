@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-digital-pilot",
+  "name": "@activepieces/piece-digital-pilot",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

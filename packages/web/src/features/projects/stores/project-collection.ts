@@ -1,12 +1,3 @@
-import { isNil, omit, SeekPage } from '@united/core-utils';
-import {
-  CreatePlatformProjectRequest,
-  ListProjectRequestForPlatformQueryParams,
-  UpdateProjectPlatformRequest,
-  ProjectType,
-  ProjectWithLimits,
-  ProjectWithLimitsWithPlatform,
-} from '@united/shared';
 import { queryCollectionOptions } from '@tanstack/query-db-collection';
 import {
   and,
@@ -22,6 +13,15 @@ import {
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query';
+import { isNil, omit, SeekPage } from '@united/core-utils';
+import {
+  CreatePlatformProjectRequest,
+  ListProjectRequestForPlatformQueryParams,
+  UpdateProjectPlatformRequest,
+  ProjectType,
+  ProjectWithLimits,
+  ProjectWithLimitsWithPlatform,
+} from '@united/shared';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 

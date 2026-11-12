@@ -1,6 +1,6 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { httpClient, HttpMethod } from '@united/pieces-common';
-import { simplybookAuth, getAccessToken, SimplybookAuth } from '../common';
+import { simplybookAuth, getAccessToken } from '../common';
 
 export const createDetailedReport = createAction({
   auth: simplybookAuth,

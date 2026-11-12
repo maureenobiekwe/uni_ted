@@ -1,7 +1,6 @@
 import {
   httpClient,
   HttpMethod,
-  AuthenticationType,
 } from '@united/pieces-common';
 import { AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { openPhoneAuth } from '../auth';

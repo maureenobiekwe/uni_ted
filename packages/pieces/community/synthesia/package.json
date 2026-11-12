@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-synthesia",
+  "name": "@activepieces/piece-synthesia",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

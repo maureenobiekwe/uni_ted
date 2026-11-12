@@ -1,7 +1,7 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { instantlyAiAuth } from '../auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod, QueryParams } from '@united/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { campaignId, listId } from '../common/props';
 
 export const searchLeadsAction = createAction({

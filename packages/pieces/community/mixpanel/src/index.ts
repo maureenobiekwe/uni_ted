@@ -1,5 +1,5 @@
 import { createCustomApiCallAction } from '@united/pieces-common';
-import { PieceAuth, createPiece } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { trackEvent } from './lib/actions/track-event';
 import { mixpanelAuth } from './lib/auth';

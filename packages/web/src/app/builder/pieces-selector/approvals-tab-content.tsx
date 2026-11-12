@@ -16,33 +16,33 @@ import GenericActionOrTriggerItem from './generic-piece-selector-item';
 
 const APPROVAL_PIECES_CONFIG = [
   {
-    pieceName: '@united/piece-slack',
+    pieceName: '@activepieces/piece-slack',
     approvalActionNames: [
       'request_approval_message',
       'request_approval_direct_message',
     ],
   },
   {
-    pieceName: '@united/piece-discord',
+    pieceName: '@activepieces/piece-discord',
     approvalActionNames: ['request_approval_message'],
   },
   {
-    pieceName: '@united/piece-microsoft-teams',
+    pieceName: '@activepieces/piece-microsoft-teams',
     approvalActionNames: [
       'request_approval_direct_message',
       'request_approval_in_channel',
     ],
   },
   {
-    pieceName: '@united/piece-microsoft-outlook',
+    pieceName: '@activepieces/piece-microsoft-outlook',
     approvalActionNames: ['request_approval_in_mail'],
   },
   {
-    pieceName: '@united/piece-gmail',
+    pieceName: '@activepieces/piece-gmail',
     approvalActionNames: ['request_approval_in_mail'],
   },
   {
-    pieceName: '@united/piece-telegram-bot',
+    pieceName: '@activepieces/piece-telegram-bot',
     approvalActionNames: ['request_approval_message'],
   },
 ];

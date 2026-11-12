@@ -1,4 +1,4 @@
-import { unitedError, ErrorCode } from '@united/core-utils'
+import { ErrorCode, unitedError } from '@united/core-utils'
 
 export function assertSafePathSegment(value: string, field: string): void {
     const isUnsafe = value.length === 0

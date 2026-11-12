@@ -1,3 +1,6 @@
+import { queryCollectionOptions } from '@tanstack/query-db-collection';
+import { createCollection, useLiveQuery } from '@tanstack/react-db';
+import { QueryClient, QueryState, useMutation } from '@tanstack/react-query';
 import { isNil, SeekPage } from '@united/core-utils';
 import {
   ApplicationEvent,
@@ -15,9 +18,6 @@ import {
   TestPlatformEventDestinationResponse,
   UpdatePlatformEventDestinationRequestBody,
 } from '@united/shared';
-import { queryCollectionOptions } from '@tanstack/query-db-collection';
-import { createCollection, useLiveQuery } from '@tanstack/react-db';
-import { QueryClient, QueryState, useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useEffect, useState, useSyncExternalStore } from 'react';
 

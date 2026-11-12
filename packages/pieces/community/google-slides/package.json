@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-google-slides",
+  "name": "@activepieces/piece-google-slides",
   "version": "0.4.4",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

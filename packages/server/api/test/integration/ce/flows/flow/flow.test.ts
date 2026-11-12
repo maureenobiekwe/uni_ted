@@ -89,7 +89,7 @@ describe('Flow API', () => {
             const ctx = await createTestContext(app!)
 
             const mockPieceMetadata1 = createMockPieceMetadata({
-                name: '@united/piece-schedule',
+                name: '@activepieces/piece-schedule',
                 version: '0.1.5',
                 triggers: {
                     every_hour: {
@@ -120,7 +120,7 @@ describe('Flow API', () => {
                 trigger: {
                     type: FlowTriggerType.PIECE,
                     settings: {
-                        pieceName: '@united/piece-schedule',
+                        pieceName: '@activepieces/piece-schedule',
                         pieceVersion: '0.1.5',
                         input: { run_on_weekends: false },
                         triggerName: 'every_hour',
@@ -230,7 +230,7 @@ describe('Flow API', () => {
             const ctx = await createTestContext(app!)
 
             const mockPieceMetadata1 = createMockPieceMetadata({
-                name: '@united/piece-schedule',
+                name: '@activepieces/piece-schedule',
                 version: '0.1.5',
                 triggers: {
                     every_hour: {
@@ -264,7 +264,7 @@ describe('Flow API', () => {
                 trigger: {
                     type: FlowTriggerType.PIECE,
                     settings: {
-                        pieceName: '@united/piece-schedule',
+                        pieceName: '@activepieces/piece-schedule',
                         pieceVersion: '0.1.5',
                         input: { run_on_weekends: false },
                         triggerName: 'every_hour',
@@ -365,7 +365,7 @@ describe('Flow API', () => {
                 flowId: mockFlow.id,
                 flowVersionId: publishedVersion.id,
                 projectId: ctx.project.id,
-                pieceName: '@united/piece-schedule',
+                pieceName: '@activepieces/piece-schedule',
                 pieceVersion: '0.1.5',
                 triggerName: 'every_hour',
                 type: TriggerStrategy.POLLING,

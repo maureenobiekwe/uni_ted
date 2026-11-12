@@ -2,7 +2,7 @@ import { createPiece } from '@united/pieces-framework';
 
 import { createCustomApiCallAction } from '@united/pieces-common';
 import { PieceCategory } from '@united/pieces-framework';
-import { kissflowAuth, KissflowAuth } from './auth';
+import { kissflowAuth } from './auth';
 import { downloadAttachmentFromFormField } from './lib/actions/download-attachment-from-form-field';
 
 export const kissflow = createPiece({

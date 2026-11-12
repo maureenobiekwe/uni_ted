@@ -23,7 +23,7 @@ export const migrateV27OracleDatabasePieceVersion: Migration = {
     },
 }
 
-const ORACLE_DATABASE_PIECE_NAME = '@united/piece-oracle-database'
+const ORACLE_DATABASE_PIECE_NAME = '@activepieces/piece-oracle-database'
 const BROKEN_PIECE_VERSIONS = new Set([
     '0.1.11',
     '0.1.12',

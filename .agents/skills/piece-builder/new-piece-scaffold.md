@@ -6,7 +6,7 @@ Copy-ready templates for the four config files a new piece needs. Only "New piec
 
 ```json
 {
-    "name": "@united/piece-<name>",
+    "name": "@activepieces/piece-<name>",
     "version": "0.0.1",
     "main": "./dist/src/index.js",
     "types": "./dist/src/index.d.ts",

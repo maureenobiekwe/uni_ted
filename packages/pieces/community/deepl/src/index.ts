@@ -4,7 +4,6 @@ import {
   PieceAuth,
   Property,
 } from '@united/pieces-framework';
-import { PieceCategory } from '@united/pieces-framework';
 import { translateText } from './lib/actions/translate-text';
 
 const markdownDescription = `

@@ -1,10 +1,10 @@
-import { isNil } from '@united/core-utils';
-import { newMemberSettingsUtils, PlatformResponse } from '@united/shared';
 import {
   QueryClient,
   useMutation,
   useSuspenseQuery,
 } from '@tanstack/react-query';
+import { isNil } from '@united/core-utils';
+import { newMemberSettingsUtils, PlatformResponse } from '@united/shared';
 import { t } from 'i18next';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';

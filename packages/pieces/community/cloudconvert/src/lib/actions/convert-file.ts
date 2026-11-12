@@ -1,5 +1,5 @@
 import { createAction } from '@united/pieces-framework';
-import { propsValidation, httpClient, HttpMethod } from '@united/pieces-common';
+import { httpClient, HttpMethod } from '@united/pieces-common';
 import { cloudconvertAuth, CloudConvertClient, convertFileProps, convertFileSchema } from '../common';
 
 // Get the props function result

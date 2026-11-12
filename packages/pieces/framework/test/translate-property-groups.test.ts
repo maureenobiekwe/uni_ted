@@ -52,7 +52,7 @@ const translate = (i18n: Record<string, string>): PieceMetadataModel => {
   const piece: PieceMetadataModel = {
     ...metadata,
     authors: [],
-    name: '@united/piece-test',
+    name: '@activepieces/piece-test',
     version: '0.0.1',
     projectUsage: 0,
     pieceType: PieceType.OFFICIAL,

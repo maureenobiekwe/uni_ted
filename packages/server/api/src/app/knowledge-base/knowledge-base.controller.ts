@@ -1,4 +1,4 @@
-import { unitedError, ApMultipartFile, ErrorCode, isMultipartFile, Permission } from '@united/core-utils'
+import { ApMultipartFile, ErrorCode, isMultipartFile, Permission, unitedError } from '@united/core-utils'
 import { EMBEDDING_DIMENSIONS } from '@united/server-utils'
 import { KnowledgeBaseEmbeddingSource, PrincipalType, SERVICE_KEY_SECURITY_OPENAPI } from '@united/shared'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'

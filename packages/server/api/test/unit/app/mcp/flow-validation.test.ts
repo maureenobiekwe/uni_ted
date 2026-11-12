@@ -43,14 +43,14 @@ function flowWithInput(input: Record<string, unknown>): FlowTrigger {
         displayName: 'Catch Webhook',
         lastUpdatedDate: '2024-01-01T00:00:00Z',
         type: FlowTriggerType.PIECE,
-        settings: { pieceName: '@united/piece-webhook', pieceVersion: '~0.1.0', triggerName: 'catch_webhook', input: {}, propertySettings: {} },
+        settings: { pieceName: '@activepieces/piece-webhook', pieceVersion: '~0.1.0', triggerName: 'catch_webhook', input: {}, propertySettings: {} },
         nextAction: {
             name: 'step_1',
             valid: true,
             displayName: 'Send Email',
             lastUpdatedDate: '2024-01-01T00:00:00Z',
             type: FlowActionType.PIECE,
-            settings: { pieceName: '@united/piece-gmail', pieceVersion: '~0.1.0', actionName: 'send_email', input, propertySettings: {} },
+            settings: { pieceName: '@activepieces/piece-gmail', pieceVersion: '~0.1.0', actionName: 'send_email', input, propertySettings: {} },
         },
     }
 }

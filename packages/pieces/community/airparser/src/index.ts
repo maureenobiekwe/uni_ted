@@ -1,9 +1,7 @@
-import { HttpMethod } from '@united/pieces-common';
-import { PieceAuth, createPiece } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { extractDataFromDocumentAction } from './lib/actions/extract-data-from-document';
 import { uploadDocumentAction } from './lib/actions/upload-document-for-parsing';
-import { airparserApiCall } from './lib/common';
 import { documentParsedTrigger } from './lib/triggers/document-parsed';
 import { airparserAuth } from './lib/auth';
 

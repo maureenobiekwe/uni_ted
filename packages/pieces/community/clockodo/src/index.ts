@@ -1,6 +1,4 @@
 import {
-  PieceAuth,
-  Property,
   createPiece,
 } from '@united/pieces-framework';
 

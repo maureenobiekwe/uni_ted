@@ -16,7 +16,7 @@ function flowWith(input: Record<string, unknown>, pieceVersion = '0.5.0'): FlowV
                 type: FlowActionType.PIECE,
                 displayName: 'Run Agent',
                 valid: true,
-                settings: { pieceName: '@united/piece-ai', pieceVersion, actionName: 'run_agent', input },
+                settings: { pieceName: '@activepieces/piece-ai', pieceVersion, actionName: 'run_agent', input },
             },
         },
     } as unknown as FlowVersion
@@ -31,7 +31,7 @@ describe('migrateV22AgentStepToThinClient', () => {
     it('moves the pinned connection to an id and the step to the thin client together', async () => {
         const migrated = await migrateV22AgentStepToThinClient.migrate(flowWith({
             prompt: 'do a thing',
-            agentTools: [{ type: 'PIECE', toolName: 'send', pieceMetadata: { pieceName: '@united/piece-gmail', predefinedInput: { auth: '{{connections[\'my-gmail\']}}' } } }],
+            agentTools: [{ type: 'PIECE', toolName: 'send', pieceMetadata: { pieceName: '@activepieces/piece-gmail', predefinedInput: { auth: '{{connections[\'my-gmail\']}}' } } }],
         }))
 
         const settings = agentStep(migrated)
@@ -77,7 +77,7 @@ describe('migrateV22AgentStepToThinClient', () => {
     it('does not touch a step that is not the agent', async () => {
         const flow = flowWith({ prompt: 'x' })
         const notAgent = JSON.parse(JSON.stringify(flow))
-        notAgent.trigger.nextAction.settings.pieceName = '@united/piece-gmail'
+        notAgent.trigger.nextAction.settings.pieceName = '@activepieces/piece-gmail'
 
         const migrated = await migrateV22AgentStepToThinClient.migrate(notAgent)
 

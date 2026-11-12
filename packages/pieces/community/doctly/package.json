@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-doctly",
+  "name": "@activepieces/piece-doctly",
   "version": "0.3.0",
   "type": "commonjs",
   "main": "./dist/src/index.js",

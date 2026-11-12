@@ -1,6 +1,6 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { isNil } from '@united/core-utils';
 import { SeatsBillableFeature, formErrors } from '@united/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { Info, Minus, Plus } from 'lucide-react';
 import { useState } from 'react';

@@ -64,7 +64,7 @@ export function createCrossProjectTools({ executeTool, eventEmitter, waitForAppr
             description: 'Check what authentication a piece needs and find available connections. In chat you rarely need it: ap_show_connection_picker runs this check itself, so call the card directly. Use this only when you need the auth details without showing a card.',
             inputSchema: z.object({
                 ...cardTitleFields,
-                pieceName: z.string().describe('Piece name, e.g. "@united/piece-gmail"'),
+                pieceName: z.string().describe('Piece name, e.g. "@activepieces/piece-gmail"'),
             }),
             execute: async (input) => {
                 return executeWithTimeout('ap_discover_action_auth', input)
@@ -85,7 +85,7 @@ export function createCrossProjectTools({ executeTool, eventEmitter, waitForAppr
             description: 'Execute a piece action once or in batch. Before the FIRST call to an action you have not already inspected this conversation, call ap_get_piece_props to get the exact prop names, required fields, dropdown values, and dynamic sub-field shapes — never guess the input shape (guessing fails validation and wastes turns). Get the connection through ap_show_connection_picker, which also checks whether the piece needs one. The system manages connections automatically after the user selects one. If a call fails, fix the input from the returned error and retry ONCE; do not re-send a near-identical call repeatedly. For batch execution, provide an items array where each element is a complete input object for one invocation.',
             inputSchema: z.object({
                 ...cardTitleFields,
-                pieceName: z.string().describe('Piece name, e.g. "@united/piece-gmail"'),
+                pieceName: z.string().describe('Piece name, e.g. "@activepieces/piece-gmail"'),
                 actionName: z.string().describe('Action to run, e.g. "gmail_search_mail"'),
                 input: z.record(z.string(), z.unknown()).optional().describe('Input for the action (single-item mode)'),
                 items: z.array(z.record(z.string(), z.unknown())).max(MAX_BATCH_SIZE).optional().describe('Array of input objects for batch execution. Each element is a complete input for one invocation. Max 100 items.'),
@@ -213,7 +213,7 @@ export function createCrossProjectTools({ executeTool, eventEmitter, waitForAppr
             description: 'Read-only look at the user\'s real data during discovery — list/get/search/read a sheet\'s rows and columns, channels, records, etc. — to understand what they have and build something that fits. Only runs read actions (never writes). Needs a connection like ap_execute_action; ensure one is selected first AND that you pass auth + any resolved object/list id (via ap_get_piece_props with auth) — an empty read is usually an unset connection or an unresolved id, NOT absence of data, so fix that and retry before concluding there is nothing there. Keep samples small (~20 rows). This is for understanding, NOT for performing the task — use ap_execute_action to actually do things.',
             inputSchema: z.object({
                 ...cardTitleFields,
-                pieceName: z.string().describe('Piece name, e.g. "@united/piece-google-sheets"'),
+                pieceName: z.string().describe('Piece name, e.g. "@activepieces/piece-google-sheets"'),
                 actionName: z.string().describe('A read action, e.g. "get_rows", "list_channels"'),
                 input: z.record(z.string(), z.unknown()).optional().describe('Input for the read action (keep limits small)'),
             }),

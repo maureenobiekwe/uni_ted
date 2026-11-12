@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { paperformAuth } from '../common/auth';
 import { paperformCommon } from '../common/client';
 import { HttpMethod } from '@united/pieces-common';

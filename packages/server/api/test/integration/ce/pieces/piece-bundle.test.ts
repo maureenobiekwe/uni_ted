@@ -37,14 +37,14 @@ function bundleRequest(name: string, version: string, token: string) {
 
 describe('Piece Bundle Endpoint', () => {
     it('rejects an invalid engine token with 401', async () => {
-        const response = await app!.inject(bundleRequest('@united/piece-anything', '1.0.0', 'not-a-real-token'))
+        const response = await app!.inject(bundleRequest('@activepieces/piece-anything', '1.0.0', 'not-a-real-token'))
         expect(response.statusCode).toBe(StatusCodes.UNAUTHORIZED)
     })
 
     it('redirects a registry piece to the npm tarball, never to our own S3', async () => {
         const { mockPlatform, mockProject } = await mockAndSaveBasicSetup()
         await db.save('piece_metadata', createMockPieceMetadata({
-            name: '@united/piece-bundle-official',
+            name: '@activepieces/piece-bundle-official',
             version: '1.2.3',
             packageType: PackageType.REGISTRY,
             pieceType: PieceType.OFFICIAL,
@@ -52,7 +52,7 @@ describe('Piece Bundle Endpoint', () => {
         }))
         const token = await engineToken(mockProject.id, mockPlatform.id)
 
-        const response = await app!.inject(bundleRequest('@united/piece-bundle-official', '1.2.3', token))
+        const response = await app!.inject(bundleRequest('@activepieces/piece-bundle-official', '1.2.3', token))
 
         expect(response.statusCode).toBe(StatusCodes.TEMPORARY_REDIRECT)
         expect(response.headers.location).toContain('registry.npmjs.org')
@@ -72,7 +72,7 @@ describe('Piece Bundle Endpoint', () => {
     it('keeps 404 for a piece the platform knows but cannot resolve (release-window gated)', async () => {
         const { mockPlatform, mockProject } = await mockAndSaveBasicSetup()
         await db.save('piece_metadata', createMockPieceMetadata({
-            name: '@united/piece-bundle-gated',
+            name: '@activepieces/piece-bundle-gated',
             version: '1.0.0',
             packageType: PackageType.REGISTRY,
             pieceType: PieceType.OFFICIAL,
@@ -81,7 +81,7 @@ describe('Piece Bundle Endpoint', () => {
         }))
         const token = await engineToken(mockProject.id, mockPlatform.id)
 
-        const response = await app!.inject(bundleRequest('@united/piece-bundle-gated', '1.0.0', token))
+        const response = await app!.inject(bundleRequest('@activepieces/piece-bundle-gated', '1.0.0', token))
 
         expect(response.statusCode).toBe(StatusCodes.NOT_FOUND)
     })

@@ -12,8 +12,6 @@ import {
   createTemperatureProperty,
   createTokenProperty,
   makeXaiRequest,
-  validateResponse,
-  XaiResponse,
   AskGrokResult
 } from '../common/utils';
 import { askGrokActionOutputSchema } from '../output-schemas';

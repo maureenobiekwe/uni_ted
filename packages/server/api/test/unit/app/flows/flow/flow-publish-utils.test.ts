@@ -6,7 +6,7 @@ function pieceTrigger(overrides: { pieceName?: string, pieceVersion?: string, tr
     return {
         type: FlowTriggerType.PIECE,
         settings: {
-            pieceName: overrides.pieceName ?? '@united/piece-jira-cloud',
+            pieceName: overrides.pieceName ?? '@activepieces/piece-jira-cloud',
             pieceVersion: overrides.pieceVersion ?? '0.4.1',
             triggerName: overrides.triggerName ?? 'new_issue',
             input: overrides.input ?? { projectId: 'AP', maxResults: 50 },
@@ -54,8 +54,8 @@ describe('flowPublishUtils.isSameTrigger', () => {
 
     it('is false when the piece was swapped', () => {
         expect(flowPublishUtils.isSameTrigger({
-            published: pieceTrigger({ pieceName: '@united/piece-jira-cloud' }),
-            toPublish: pieceTrigger({ pieceName: '@united/piece-linear' }),
+            published: pieceTrigger({ pieceName: '@activepieces/piece-jira-cloud' }),
+            toPublish: pieceTrigger({ pieceName: '@activepieces/piece-linear' }),
         })).toBe(false)
     })
 

@@ -1,12 +1,5 @@
-import {
-  createPiece,
-  PieceAuth,
-  Property,
-} from '@united/pieces-framework';
-import {
-  createCustomApiCallAction,
-  HttpHeaders,
-} from '@united/pieces-common';
+import { createPiece, PieceAuth, Property } from '@united/pieces-framework';
+import { createCustomApiCallAction, HttpHeaders } from '@united/pieces-common';
 
 export const DATO_BASE_URL = 'https://site-api.datocms.com';
 

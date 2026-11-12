@@ -1,6 +1,5 @@
 
     import {
-      AuthenticationType,
       createCustomApiCallAction,
       httpClient,
       HttpMethod,

@@ -43,6 +43,7 @@ permissions:
 
 jobs:
   upgrade:
+    if: vars.UPGRADE_TEST_ENABLED == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     outputs:
@@ -118,15 +119,15 @@ jobs:
             -d '{"email":"bench@united.com","password":"BenchmarkPass1","firstName":"Bench","lastName":"Mark","trackEvents":false,"newsLetter":false}' | jq -er .token)
           REGISTRY=$(curl -sf --retry 5 "https://cloud.united.com/api/v1/pieces/registry?edition=ce&release=${FROM_TAG%%-*}")
           latest() {
-            echo "$REGISTRY" | jq -er --arg name "@united/piece-$1" --arg prefix "$2" \
+            echo "$REGISTRY" | jq -er --arg name "@activepieces/piece-$1" --arg prefix "$2" \
               '[.[] | select(.name == $name and (.version | startswith($prefix))) | .version] | max_by(split(".") | map(tonumber))'
           }
           install() {
             curl -s --fail-with-body "$API/pieces" \
               -H "Authorization: Bearer $TOKEN" \
               -H "Content-Type: application/json" \
-              -d "{\"packageType\":\"REGISTRY\",\"scope\":\"PLATFORM\",\"pieceName\":\"@united/piece-$1\",\"pieceVersion\":\"$2\"}" > /dev/null
-            echo "Installed @united/piece-$1@$2"
+              -d "{\"packageType\":\"REGISTRY\",\"scope\":\"PLATFORM\",\"pieceName\":\"@activepieces/piece-$1\",\"pieceVersion\":\"$2\"}" > /dev/null
+            echo "Installed @activepieces/piece-$1@$2"
           }
           WEBHOOK_VERSION=$(latest webhook 0.1.)
           MATH_VERSION=$(latest math-helper 0.0.)

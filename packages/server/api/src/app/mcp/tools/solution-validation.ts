@@ -294,8 +294,8 @@ export const solutionValidation = {
     validate,
 }
 
-const SUBFLOWS_PIECE_NAME = '@united/piece-subflows'
-const TABLES_PIECE_NAME = '@united/piece-tables'
+const SUBFLOWS_PIECE_NAME = '@activepieces/piece-subflows'
+const TABLES_PIECE_NAME = '@activepieces/piece-tables'
 const CALL_FLOW_ACTION = 'callFlow'
 const CALLABLE_FLOW_TRIGGER = 'callableFlow'
 const RETURN_RESPONSE_ACTION = 'returnResponse'

@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-parseur",
+  "name": "@activepieces/piece-parseur",
   "version": "0.3.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

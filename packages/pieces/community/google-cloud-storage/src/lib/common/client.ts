@@ -3,7 +3,6 @@ import {
   HttpMethod,
   AuthenticationType,
 } from '@united/pieces-common';
-import { OAuth2PropertyValue } from '@united/pieces-framework';
 
 export const gcsCommon = {
   gcsBaseUrl: 'https://www.googleapis.com/storage/v1',

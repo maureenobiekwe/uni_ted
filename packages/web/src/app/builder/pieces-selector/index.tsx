@@ -147,7 +147,7 @@ const PieceSelectorContent = ({
     isError: isAiPieceError,
     isSuccess: isAiPieceLoaded,
   } = piecesHooks.usePiece({
-    name: '@united/piece-ai',
+    name: '@activepieces/piece-ai',
     projectId: authenticationSession.getProjectId() ?? undefined,
   });
   const isAiPieceUnavailable =

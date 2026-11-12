@@ -36,7 +36,7 @@ export const apAddStepTool = ({ mcp, userId }: McpToolContext, log: FastifyBaseL
             branchIndex: z.number().optional().describe('Branch index (required when stepLocationRelativeToParent is INSIDE_BRANCH)'),
             stepType: z.enum([FlowActionType.CODE, FlowActionType.PIECE, FlowActionType.LOOP_ON_ITEMS, FlowActionType.ROUTER]).describe('The type of step to add. Prefer PIECE over CODE — only use CODE when no piece fits and the logic can\'t be done with an inline formula expression (in a free-text/value input) or a router condition.'),
             displayName: z.string().describe('Display name for the step'),
-            pieceName: z.string().optional().describe('For PIECE steps: the piece name (e.g. "@united/piece-gmail"). Use ap_research_pieces to get valid values.'),
+            pieceName: z.string().optional().describe('For PIECE steps: the piece name (e.g. "@activepieces/piece-gmail"). Use ap_research_pieces to get valid values.'),
             actionName: z.string().optional().describe('For PIECE steps: the action name within the piece. Use ap_research_pieces with includeActions=true to get valid values.'),
             input: z.record(z.string(), z.unknown()).optional().describe(`For PIECE/CODE steps: input config (key-value pairs). ${mcpUtils.STEP_REFERENCE_HINT}`),
             auth: z.string().optional().describe('Connection externalId from ap_list_connections. Pass the plain id, not a template.'),

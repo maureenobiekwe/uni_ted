@@ -1,12 +1,7 @@
-import {
-  httpClient,
-  HttpMethod,
-  HttpRequest,
-} from '@united/pieces-common';
+
+
 import {
   createPiece,
-  PieceAuth,
-  Property,
 } from '@united/pieces-framework';
 import { onEventChanged } from './lib/triggers/calendar-event';
 import { onChangedData } from './lib/triggers/on-changed-data';

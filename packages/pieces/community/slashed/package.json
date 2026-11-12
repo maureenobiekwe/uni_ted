@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-slashed",
+  "name": "@activepieces/piece-slashed",
   "version": "0.1.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

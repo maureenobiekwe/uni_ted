@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-just-invoice",
+  "name": "@activepieces/piece-just-invoice",
   "version": "0.0.8",
   "type": "commonjs",
   "main": "./dist/src/index.js",

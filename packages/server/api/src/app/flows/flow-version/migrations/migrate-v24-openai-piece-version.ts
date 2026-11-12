@@ -20,6 +20,6 @@ export const migrateV24OpenaiPieceVersion: Migration = {
     },
 }
 
-const OPENAI_PIECE_NAME = '@united/piece-openai'
+const OPENAI_PIECE_NAME = '@activepieces/piece-openai'
 const BROKEN_PIECE_VERSION = '0.10.0'
 const FIXED_PIECE_VERSION = '0.10.1'

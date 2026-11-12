@@ -5,7 +5,7 @@ import { Migration } from '.'
 export const migrateAgentPieceV4: Migration = {
     targetSchemaVersion: '4',
     migrate: async (flowVersion: FlowVersion): Promise<FlowVersion> => {
-        const newVersion = flowMigrationUtil.pinPieceToVersion(flowVersion, '@united/piece-agent', '0.2.4')
+        const newVersion = flowMigrationUtil.pinPieceToVersion(flowVersion, '@activepieces/piece-agent', '0.2.4')
         const agentIds = flowStructureUtil.extractAgentIds(newVersion)
         return {
             ...newVersion,

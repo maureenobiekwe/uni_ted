@@ -426,7 +426,7 @@ describe('agentRpcHandlers.executeAgentTool — the owner\'s own memory is not a
 })
 
 describe('agentRpcHandlers.executePieceTool — a configured action runs in its own project', () => {
-    const GMAIL_SEND = { pieceName: '@united/piece-gmail', actionName: 'send_email', pieceVersion: '0.1.0' }
+    const GMAIL_SEND = { pieceName: '@activepieces/piece-gmail', actionName: 'send_email', pieceVersion: '0.1.0' }
 
     async function runPieceTool(conversation: unknown) {
         mockRunResolved.mockClear()
@@ -795,7 +795,7 @@ describe('agentRpcHandlers.executePieceTool — which account a configured actio
             conversationId: 'conv-1',
             toolName: 'gmail-send_email',
             instruction: 'email the summary',
-            piece: { pieceName: '@united/piece-gmail', pieceVersion: '0.1.0', actionName: 'send_email', predefinedInput: { auth: pinnedAuth, fields: {} } },
+            piece: { pieceName: '@activepieces/piece-gmail', pieceVersion: '0.1.0', actionName: 'send_email', predefinedInput: { auth: pinnedAuth, fields: {} } },
         })
         return { call: mockResolveInput.mock.calls[0][0], response, lookup: mockGetOneWithoutValue.mock.calls[0]?.[0] }
     }

@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-rendex",
+  "name": "@activepieces/piece-rendex",
   "version": "0.2.0",
   "type": "commonjs",
   "main": "./dist/src/index.js",

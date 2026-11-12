@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-xero",
+  "name": "@activepieces/piece-xero",
   "version": "0.8.2",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@united/piece-pushover` to build the library.
+Run `turbo run build --filter=@activepieces/piece-pushover` to build the library.

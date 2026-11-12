@@ -1,7 +1,6 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { scheduledAppointmentEventCreated } from './lib/triggers/scheduled-appointment-event-created';
 import {
-  CLICKFUNNELS_APIKEY_AUTH,
   CLICKFUNNELS_BASE_URL,
   clickfunnelsAuth,
 } from './lib/common/constants';

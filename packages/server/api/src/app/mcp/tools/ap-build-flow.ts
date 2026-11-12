@@ -48,7 +48,7 @@ export const apBuildFlowTool = ({ mcp, userId }: McpToolContext, log: FastifyBas
         inputSchema: {
             flowName: z.string().describe('Name for the new flow'),
             trigger: z.object({
-                pieceName: z.string().describe('Trigger piece name (e.g. "@united/piece-webhook")'),
+                pieceName: z.string().describe('Trigger piece name (e.g. "@activepieces/piece-webhook")'),
                 triggerName: z.string().describe('Trigger name (e.g. "catch_webhook")'),
                 input: z.record(z.string(), z.unknown()).optional().describe('Trigger input config'),
                 auth: z.string().optional().describe('Connection externalId for trigger auth'),

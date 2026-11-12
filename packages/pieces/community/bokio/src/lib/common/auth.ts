@@ -1,6 +1,6 @@
 import { PieceAuth, Property } from '@united/pieces-framework';
 import { makeRequest } from './client';
-import { httpClient, HttpMethod } from '@united/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 
 export const bokioAuth = PieceAuth.CustomAuth({
   displayName: 'Bokio API Key',

@@ -52,7 +52,7 @@ const FLOW_VERSION = {
     flowId: 'flow-1',
     trigger: {
         settings: {
-            pieceName: '@united/piece-schedule',
+            pieceName: '@activepieces/piece-schedule',
             pieceVersion: '0.1.22',
         },
     },

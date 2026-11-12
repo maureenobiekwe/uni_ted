@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { bokioAuth } from './lib/common/auth';
 import { createCustomer } from './lib/actions/create-customer';
 import { createInvoice } from './lib/actions/create-invoice';

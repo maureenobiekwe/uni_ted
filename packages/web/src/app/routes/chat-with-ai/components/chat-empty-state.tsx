@@ -493,22 +493,22 @@ const GREETING_HEADLINES: GreetingHeadline[] = [
 ];
 
 const FEATURED_APP_NAMES = [
-  '@united/piece-gmail',
-  '@united/piece-slack',
-  '@united/piece-microsoft-outlook',
-  '@united/piece-notion',
-  '@united/piece-hubspot',
-  '@united/piece-salesforce',
-  '@united/piece-google-sheets',
-  '@united/piece-stripe',
-  '@united/piece-microsoft-teams',
-  '@united/piece-google-drive',
-  '@united/piece-shopify',
-  '@united/piece-zendesk',
-  '@united/piece-github',
-  '@united/piece-jira-cloud',
-  '@united/piece-airtable',
-  '@united/piece-openai',
+  '@activepieces/piece-gmail',
+  '@activepieces/piece-slack',
+  '@activepieces/piece-microsoft-outlook',
+  '@activepieces/piece-notion',
+  '@activepieces/piece-hubspot',
+  '@activepieces/piece-salesforce',
+  '@activepieces/piece-google-sheets',
+  '@activepieces/piece-stripe',
+  '@activepieces/piece-microsoft-teams',
+  '@activepieces/piece-google-drive',
+  '@activepieces/piece-shopify',
+  '@activepieces/piece-zendesk',
+  '@activepieces/piece-github',
+  '@activepieces/piece-jira-cloud',
+  '@activepieces/piece-airtable',
+  '@activepieces/piece-openai',
 ];
 
 type ResolvedApp = {

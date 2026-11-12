@@ -1,7 +1,6 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { vtexAuth } from '../../..';
 import { SkuFile } from '../../common/SKU-File';
-import { Replace } from '../../common/types';
 
 export const createSkuFile = createAction({
   auth: vtexAuth,

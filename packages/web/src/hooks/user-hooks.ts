@@ -1,11 +1,11 @@
-import { isNil } from '@united/core-utils';
-import { UserWithMetaInformation } from '@united/shared';
 import {
   QueryClient,
   useMutation,
   useQuery,
   useSuspenseQuery,
 } from '@tanstack/react-query';
+import { isNil } from '@united/core-utils';
+import { UserWithMetaInformation } from '@united/shared';
 
 import { userApi } from '@/api/user-api';
 import { authenticationSession } from '@/lib/authentication-session';

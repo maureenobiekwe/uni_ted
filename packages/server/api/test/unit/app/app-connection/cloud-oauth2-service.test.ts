@@ -4,7 +4,7 @@ import { FastifyBaseLogger } from 'fastify'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { cloudOAuth2Service } from '../../../../src/app/app-connection/app-connection-service/oauth2/services/cloud-oauth2-service'
 
-const PIECE_NAME = '@united/piece-gitlab'
+const PIECE_NAME = '@activepieces/piece-gitlab'
 
 const secretsService = vi.fn<(config: InternalAxiosRequestConfig) => Promise<AxiosResponse>>()
 axios.defaults.adapter = (config: InternalAxiosRequestConfig): Promise<AxiosResponse> => secretsService(config)

@@ -1,4 +1,4 @@
-import { unitedError, AIProviderName, apId, ErrorCode, isNil, partition, PlatformId, spreadIfDefined, spreadIfNotUndefined, tryCatch, unique } from '@united/core-utils'
+import { AIProviderName, apId, ErrorCode, isNil, partition, PlatformId, spreadIfDefined, spreadIfNotUndefined, tryCatch, unique, unitedError } from '@united/core-utils'
 import { AiProviderModelScope, CreatePlatformModelTierRequest, PlatformModelTier, PlatformModelTierEntry, PlatformModelTierSummary, UpdatePlatformModelTierRequest } from '@united/shared'
 import { EntityManager, In } from 'typeorm'
 import { repoFactory } from '../core/db/repo-factory'

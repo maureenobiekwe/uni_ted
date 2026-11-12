@@ -3,11 +3,7 @@ import {
   PieceProperty,
   PropertyType,
 } from '@united/pieces-framework';
-import {
-  FlowAction,
-  FlowTrigger,
-  PropertyExecutionType,
-} from '@united/shared';
+import { FlowAction, FlowTrigger, PropertyExecutionType } from '@united/shared';
 import { t } from 'i18next';
 import { Calendar, File } from 'lucide-react';
 import React from 'react';

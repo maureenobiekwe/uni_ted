@@ -37,7 +37,7 @@ async function conversation(ctx: TestContext): Promise<string> {
 async function openGate({ conversationId, gateId, actionName }: { conversationId: string, gateId: string, actionName: string }): Promise<void> {
     await agentApprovalGate.storePendingGate({
         conversationId,
-        gate: { gateId, toolName: `slack-${actionName}`, displayName: actionName, toolInput: { pieceName: '@united/piece-slack', actionName, input: { to: 'jane@customer.com' } } },
+        gate: { gateId, toolName: `slack-${actionName}`, displayName: actionName, toolInput: { pieceName: '@activepieces/piece-slack', actionName, input: { to: 'jane@customer.com' } } },
     })
 }
 

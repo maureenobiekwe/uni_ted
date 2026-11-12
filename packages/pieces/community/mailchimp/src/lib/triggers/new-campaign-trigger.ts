@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, Property } from '@united/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@united/pieces-framework';
 import { getAccessTokenOrThrow } from '@united/pieces-common';
 import { mailchimpCommon } from '../common';
 import { MailChimpCampaignWebhookRequest } from '../common/types';

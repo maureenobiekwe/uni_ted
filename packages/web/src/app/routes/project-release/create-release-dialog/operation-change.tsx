@@ -1,7 +1,4 @@
-import {
-  FlowProjectOperationType,
-  FlowProjectOperation,
-} from '@united/shared';
+import { FlowProjectOperationType, FlowProjectOperation } from '@united/shared';
 import { PencilIcon, Plus, TrashIcon } from 'lucide-react';
 import React from 'react';
 

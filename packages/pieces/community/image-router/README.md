@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@united/piece-image-router` to build the library.
+Run `turbo run build --filter=@activepieces/piece-image-router` to build the library.

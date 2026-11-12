@@ -25,7 +25,7 @@ function activity(
     member: null,
     projectId: 'p1',
     projectName: 'Marketing',
-    pieceName: '@united/piece-slack',
+    pieceName: '@activepieces/piece-slack',
     actionName: 'send_channel_message',
     connectionExternalId: 'conn-1',
     connectionDisplayName: null,

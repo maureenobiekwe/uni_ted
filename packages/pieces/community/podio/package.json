@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-podio",
+  "name": "@activepieces/piece-podio",
   "version": "0.3.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

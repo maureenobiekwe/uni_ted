@@ -515,7 +515,7 @@ describe('agent publish', () => {
                 type: 'PIECE',
                 toolName: 'create_issue',
                 pieceMetadata: {
-                    pieceName: '@united/piece-github',
+                    pieceName: '@activepieces/piece-github',
                     pieceVersion: '0.1.0',
                     actionName: 'create_issue',
                     predefinedInput: { fields: { title: { mode: 'choose-yourself', value: 'Bug' } } },
@@ -760,7 +760,7 @@ describe('agent list across projects', () => {
             type: 'PIECE',
             toolName: 'create_issue',
             pieceMetadata: {
-                pieceName: '@united/piece-github',
+                pieceName: '@activepieces/piece-github',
                 pieceVersion: '0.1.0',
                 actionName: 'create_issue',
                 predefinedInput: { auth, fields: {} },

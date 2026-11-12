@@ -27,7 +27,7 @@ function makeFlowVersion(): FlowVersion {
             lastUpdatedDate: '2024-01-01T00:00:00Z',
             type: FlowTriggerType.PIECE,
             settings: {
-                pieceName: '@united/piece-gmail',
+                pieceName: '@activepieces/piece-gmail',
                 pieceVersion: '~0.1.0',
                 triggerName: 'new_email',
                 input: {},
@@ -40,7 +40,7 @@ function makeFlowVersion(): FlowVersion {
                 lastUpdatedDate: '2024-01-01T00:00:00Z',
                 type: FlowActionType.PIECE,
                 settings: {
-                    pieceName: '@united/piece-slack',
+                    pieceName: '@activepieces/piece-slack',
                     pieceVersion: '~0.2.0',
                     actionName: 'send_message',
                     input: {},
@@ -204,7 +204,7 @@ describe('executeFlowJob', () => {
         })
 
         it('marks run as FAILED and completes the job (OK) when the flow is disabled', async () => {
-            const failedStep = { name: 'step_1', displayName: 'HTTP', message: 'The piece @united/piece-http@1.0.0 is not installed' }
+            const failedStep = { name: 'step_1', displayName: 'HTTP', message: 'The piece @activepieces/piece-http@1.0.0 is not installed' }
             const ctx = makeMockContext({ resolveResult: { kind: 'disabled', failedStep } })
             const data = makeResumeJobData({ executionType: ExecutionType.BEGIN })
 
@@ -253,7 +253,7 @@ describe('executeFlowJob', () => {
             const ctx = makeMockContext()
             ctx.runtime.execute = vi.fn().mockRejectedValue(new unitedError({
                 code: ErrorCode.PIECE_BUNDLE_NOT_AVAILABLE,
-                params: { pieceName: '@united/piece-slack', pieceVersion: '~0.2.0', status: 404 },
+                params: { pieceName: '@activepieces/piece-slack', pieceVersion: '~0.2.0', status: 404 },
             }))
 
             const result = await executeFlowJob.execute(ctx, syncJobData())
@@ -265,7 +265,7 @@ describe('executeFlowJob', () => {
                     failedStep: expect.objectContaining({
                         name: 'step_1',
                         displayName: 'Slack Action',
-                        message: expect.stringContaining('@united/piece-slack'),
+                        message: expect.stringContaining('@activepieces/piece-slack'),
                     }),
                     workerHandlerId: 'server-1',
                     httpRequestId: 'req-1',
@@ -397,7 +397,7 @@ describe('executeFlowJob', () => {
         })
 
         it('emits the failed step name when the worker fails the run on a specific step', async () => {
-            const failedStep = { name: 'step_1', displayName: 'HTTP', message: 'The piece @united/piece-http@1.0.0 is not installed' }
+            const failedStep = { name: 'step_1', displayName: 'HTTP', message: 'The piece @activepieces/piece-http@1.0.0 is not installed' }
             const ctx = makeMockContext({ resolveResult: { kind: 'disabled', failedStep } })
 
             const event = await runInsideJobEvent(ctx, makeResumeJobData({ executionType: ExecutionType.BEGIN }))

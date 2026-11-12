@@ -1,5 +1,5 @@
 
-    import { createPiece, PieceAuth } from "@united/pieces-framework";
+    import { createPiece } from "@united/pieces-framework";
 import { generateAltTextAction } from "./lib/actions/generate-alt-text";
 import { createCustomApiCallAction } from "@united/pieces-common";
 import { altTextAiAuth } from "./lib/common/auth";

@@ -1,4 +1,4 @@
-import { PieceAuth, createPiece } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { renderTemplate } from './lib/actions/renderTemplate.action';
 import { generatebannersAuth } from './lib/auth';

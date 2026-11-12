@@ -6,7 +6,6 @@ import {
 } from '@united/pieces-framework';
 import {
   DedupeStrategy,
-  httpClient,
   Polling,
   pollingHelper,
 } from '@united/pieces-common';

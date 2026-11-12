@@ -2,7 +2,6 @@ import {
   PieceAuth,
   createPiece,
   Property,
-  PiecePropValueSchema,
 } from '@united/pieces-framework';
 import { getVendor } from './lib/actions/get-vendor';
 import { getCustomer } from './lib/actions/get-customer';

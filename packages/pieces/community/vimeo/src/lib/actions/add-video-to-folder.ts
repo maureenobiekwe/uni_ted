@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { vimeoAuth } from '../auth';
 import { apiRequest, userFolderDropdown, userVideoDropdown } from '../common';
 import { HttpMethod } from '@united/pieces-common';

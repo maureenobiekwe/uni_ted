@@ -1,5 +1,5 @@
-import { UpdatePlatformRequestBody } from '@united/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { UpdatePlatformRequestBody } from '@united/shared';
 
 import { platformApi } from '@/api/platforms-api';
 import { platformHooks } from '@/hooks/platform-hooks';

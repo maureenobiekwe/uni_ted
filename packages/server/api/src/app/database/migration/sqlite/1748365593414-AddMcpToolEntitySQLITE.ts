@@ -79,7 +79,7 @@ function isNil(value: unknown): value is null | undefined {
 }
 
 function isMcpTriggerPiece(trigger: { type: TriggerType, settings: { pieceName: string } }): boolean {
-    return trigger.type === TriggerType.PIECE && trigger.settings.pieceName === '@united/piece-mcp'
+    return trigger.type === TriggerType.PIECE && trigger.settings.pieceName === '@activepieces/piece-mcp'
 }
 
 const log = system.globalLogger()

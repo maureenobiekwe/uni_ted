@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-respond-io",
+  "name": "@activepieces/piece-respond-io",
   "version": "0.2.1",
   "type": "commonjs",
   "main": "./dist/src/index.js",

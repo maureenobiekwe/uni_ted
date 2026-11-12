@@ -1,7 +1,5 @@
 import {
   createPiece,
-  PieceAuth,
-  Property,
 } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { httpClient, HttpMethod, createCustomApiCallAction } from '@united/pieces-common';

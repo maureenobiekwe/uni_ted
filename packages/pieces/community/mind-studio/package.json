@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-mind-studio",
+  "name": "@activepieces/piece-mind-studio",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

@@ -1,3 +1,4 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { isNil } from '@united/core-utils';
 import {
   FlowAction,
@@ -8,7 +9,6 @@ import {
   flowPieceUtil,
   flowStructureUtil,
 } from '@united/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import deepEqual from 'deep-equal';
 import { useEffect, useRef, useState } from 'react';
 import { useForm, Resolver } from 'react-hook-form';
@@ -158,7 +158,7 @@ const StepSettingsContainer = () => {
   const [isEditingStepOrBranchName, setIsEditingStepOrBranchName] =
     useState(false);
   const runAgentStep =
-    modifiedStep.settings.pieceName === '@united/piece-ai' &&
+    modifiedStep.settings.pieceName === '@activepieces/piece-ai' &&
     modifiedStep.settings.actionName === 'run_agent';
 
   const showActionErrorHandlingForm =

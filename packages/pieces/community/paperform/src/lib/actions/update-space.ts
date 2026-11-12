@@ -2,7 +2,7 @@ import { createAction, Property } from '@united/pieces-framework';
 import { paperformAuth } from '../common/auth';
 import { paperformCommon } from '../common/client';
 import { HttpMethod } from '@united/pieces-common';
-import { PaperformSpace, PaperformUpdateSpaceResponse } from '../common/types';
+import { PaperformUpdateSpaceResponse } from '../common/types';
 import { paperformCommonProps } from '../common/props';
 
 export const updateSpace = createAction({

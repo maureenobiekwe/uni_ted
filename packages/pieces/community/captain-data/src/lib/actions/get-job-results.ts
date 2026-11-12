@@ -2,7 +2,7 @@ import { createAction, Property } from '@united/pieces-framework';
 import { httpClient, HttpMethod } from '@united/pieces-common';
 
 import { captainDataAuth } from '../..';
-import { CAPTAIN_DATA_BASE_URL, CaptainDataAuthType } from '../..';
+import { CAPTAIN_DATA_BASE_URL } from '../..';
 import { workflowProp } from '../common';
 
 export const getJobResults = createAction({

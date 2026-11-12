@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-promotekit",
+  "name": "@activepieces/piece-promotekit",
   "version": "0.4.3",
   "type": "commonjs",
   "main": "./dist/src/index.js",

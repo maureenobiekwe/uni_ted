@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import { isNil } from '@united/core-utils';
 import {
   FlowAction,
@@ -6,7 +7,6 @@ import {
   FlowTrigger,
   flowStructureUtil,
 } from '@united/shared';
-import { useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { omniAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 import { HttpMethod } from '@united/pieces-common';

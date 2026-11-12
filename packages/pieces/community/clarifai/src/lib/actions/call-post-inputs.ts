@@ -1,12 +1,10 @@
 import { clarifaiAuth } from '../auth';
 import { Property, createAction } from '@united/pieces-framework';
 import {
-  CommonClarifaiProps,
   callPostInputs,
   cleanMultiInputResponse,
   fileToInput,
 } from '../common';
-import { Data } from 'clarifai-nodejs-grpc/proto/clarifai/api/resources_pb';
 
 export const postInputsAction = createAction({
   auth: clarifaiAuth,

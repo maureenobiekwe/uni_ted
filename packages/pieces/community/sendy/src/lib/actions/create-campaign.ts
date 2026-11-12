@@ -5,8 +5,6 @@ import {
 import { createCampaign } from '../api';
 import { buildListDropdown } from '../props';
 import { sendyAuth, SendyAuthType } from '../auth';
-import * as z from 'zod/mini'
-import { propsValidation } from '@united/pieces-common';
 
 export const createCampaignAction = createAction({
   name: 'create_campaign',

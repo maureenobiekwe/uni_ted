@@ -1,6 +1,5 @@
 import {
   createPiece,
-  OAuth2PropertyValue,
   PieceAuth,
 } from '@united/pieces-framework';
 

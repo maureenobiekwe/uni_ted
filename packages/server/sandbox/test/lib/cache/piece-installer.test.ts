@@ -118,8 +118,8 @@ afterEach(async () => {
 
 describe('pieceInstaller', () => {
     it('batch install succeeds — all pieces marked ready', async () => {
-        const piece1 = makePiece('@united/piece-a')
-        const piece2 = makePiece('@united/piece-b')
+        const piece1 = makePiece('@activepieces/piece-a')
+        const piece2 = makePiece('@activepieces/piece-b')
         const installer = pieceInstaller(fakeLog, testWorkspace, fakeGetSettings)
 
         mockInstall.mockResolvedValueOnce({ output: '' })
@@ -132,7 +132,7 @@ describe('pieceInstaller', () => {
     })
 
     it('cold install downloads every bundle from the internal API URL with the engine token', async () => {
-        const registryPiece = makePiece('@united/piece-cold')
+        const registryPiece = makePiece('@activepieces/piece-cold')
         const archivePiece = makeArchivePiece('@acme/piece-private')
         const installer = pieceInstaller(fakeLog, testWorkspace, fakeGetSettings)
 
@@ -142,13 +142,13 @@ describe('pieceInstaller', () => {
 
         const expectedInit = { headers: { Authorization: 'Bearer test-token' } }
         expect(vi.mocked(fetch)).toHaveBeenCalledTimes(2)
-        expect(vi.mocked(fetch)).toHaveBeenCalledWith('http://localhost:3000/api/v1/engine/pieces/bundle?name=%40united%2Fpiece-cold&version=1.0.0', expectedInit)
+        expect(vi.mocked(fetch)).toHaveBeenCalledWith('http://localhost:3000/api/v1/engine/pieces/bundle?name=%40activepieces%2Fpiece-cold&version=1.0.0', expectedInit)
         expect(vi.mocked(fetch)).toHaveBeenCalledWith(`http://localhost:3000/api/v1/engine/pieces/bundle?archiveId=${archivePiece.archiveId}`, expectedInit)
     })
 
     it('batch fails with good and bad piece — good piece marked ready, bad piece rolled back', async () => {
-        const good = makePiece('@united/piece-good')
-        const bad = makePiece('@united/piece-bad')
+        const good = makePiece('@activepieces/piece-good')
+        const bad = makePiece('@activepieces/piece-bad')
         const installer = pieceInstaller(fakeLog, testWorkspace, fakeGetSettings)
 
         mockInstall
@@ -159,8 +159,8 @@ describe('pieceInstaller', () => {
         const error = await installer.install({ pieces: [good, bad], includeFilters: false, ...bundleSource }).catch(e => e as Error)
 
         expect(error).toBeInstanceOf(Error)
-        expect(error.message).toContain('@united/piece-bad@1.0.0')
-        expect(error.message).not.toContain('@united/piece-good@1.0.0')
+        expect(error.message).toContain('@activepieces/piece-bad@1.0.0')
+        expect(error.message).not.toContain('@activepieces/piece-good@1.0.0')
         expect(mockInstall).toHaveBeenCalledTimes(3)
 
         expect(await pathExists(readyFilePath(good))).toBe(true)
@@ -168,8 +168,8 @@ describe('pieceInstaller', () => {
     })
 
     it('batch fails with both pieces bad — both rolled back, error names both', async () => {
-        const piece1 = makePiece('@united/piece-x')
-        const piece2 = makePiece('@united/piece-y')
+        const piece1 = makePiece('@activepieces/piece-x')
+        const piece2 = makePiece('@activepieces/piece-y')
         const installer = pieceInstaller(fakeLog, testWorkspace, fakeGetSettings)
 
         mockInstall
@@ -180,8 +180,8 @@ describe('pieceInstaller', () => {
         const error = await installer.install({ pieces: [piece1, piece2], includeFilters: false, ...bundleSource }).catch(e => e as Error)
 
         expect(error).toBeInstanceOf(Error)
-        expect(error.message).toContain('@united/piece-x@1.0.0')
-        expect(error.message).toContain('@united/piece-y@1.0.0')
+        expect(error.message).toContain('@activepieces/piece-x@1.0.0')
+        expect(error.message).toContain('@activepieces/piece-y@1.0.0')
         expect(mockInstall).toHaveBeenCalledTimes(3)
 
         expect(await pathExists(pieceDirPath(piece1))).toBe(false)
@@ -189,7 +189,7 @@ describe('pieceInstaller', () => {
     })
 
     it('single piece fails — rolled back immediately, no individual retry', async () => {
-        const piece = makePiece('@united/piece-solo')
+        const piece = makePiece('@activepieces/piece-solo')
         const installer = pieceInstaller(fakeLog, testWorkspace, fakeGetSettings)
 
         mockInstall.mockRejectedValueOnce(new Error('install failure'))
@@ -201,7 +201,7 @@ describe('pieceInstaller', () => {
     })
 
     it('piece already installed — bun install never called', async () => {
-        const piece = makePiece('@united/piece-cached')
+        const piece = makePiece('@activepieces/piece-cached')
 
         await writeInstalledPackage(piece)
         await writeFile(readyFilePath(piece), 'true')
@@ -213,7 +213,7 @@ describe('pieceInstaller', () => {
     })
 
     it('nested package directory that is empty is reinstalled — the engine has no entry file to load', async () => {
-        const piece = makePiece('@united/piece-hollow')
+        const piece = makePiece('@activepieces/piece-hollow')
 
         await mkdir(join(pieceDirPath(piece), 'node_modules', piece.pieceName), { recursive: true })
         await writeFile(readyFilePath(piece), 'true')
@@ -227,7 +227,7 @@ describe('pieceInstaller', () => {
     })
 
     it('nested package whose declared main is missing is reinstalled', async () => {
-        const piece = makePiece('@united/piece-no-entry')
+        const piece = makePiece('@activepieces/piece-no-entry')
         const packageDir = join(pieceDirPath(piece), 'node_modules', piece.pieceName)
 
         await mkdir(packageDir, { recursive: true })
@@ -243,7 +243,7 @@ describe('pieceInstaller', () => {
     })
 
     it('a broken declared main wins over a healthy conventional entry — the engine never falls back, so reinstall', async () => {
-        const piece = makePiece('@united/piece-shadowed-main')
+        const piece = makePiece('@activepieces/piece-shadowed-main')
         const packageDir = join(pieceDirPath(piece), 'node_modules', piece.pieceName)
 
         await mkdir(join(packageDir, 'src'), { recursive: true })
@@ -261,7 +261,7 @@ describe('pieceInstaller', () => {
     })
 
     it('a declared main pointing nowhere is accepted when the conventional entry is healthy — the engine does fall back', async () => {
-        const piece = makePiece('@united/piece-absent-main')
+        const piece = makePiece('@activepieces/piece-absent-main')
         const packageDir = join(pieceDirPath(piece), 'node_modules', piece.pieceName)
 
         await mkdir(join(packageDir, 'src'), { recursive: true })
@@ -276,7 +276,7 @@ describe('pieceInstaller', () => {
     })
 
     it('nested package whose main is a directory holding an index file is accepted', async () => {
-        const piece = makePiece('@united/piece-dir-main')
+        const piece = makePiece('@activepieces/piece-dir-main')
         const packageDir = join(pieceDirPath(piece), 'node_modules', piece.pieceName)
 
         await mkdir(join(packageDir, 'dist'), { recursive: true })
@@ -291,7 +291,7 @@ describe('pieceInstaller', () => {
     })
 
     it('nested package whose main is a directory with nothing loadable in it is reinstalled', async () => {
-        const piece = makePiece('@united/piece-dir-empty')
+        const piece = makePiece('@activepieces/piece-dir-empty')
         const packageDir = join(pieceDirPath(piece), 'node_modules', piece.pieceName)
 
         await mkdir(join(packageDir, 'dist'), { recursive: true })
@@ -307,7 +307,7 @@ describe('pieceInstaller', () => {
     })
 
     it('nested package whose entry path is a directory rather than a file is reinstalled', async () => {
-        const piece = makePiece('@united/piece-entry-is-dir')
+        const piece = makePiece('@activepieces/piece-entry-is-dir')
         const packageDir = join(pieceDirPath(piece), 'node_modules', piece.pieceName)
 
         await mkdir(join(packageDir, 'src', 'index.js'), { recursive: true })
@@ -322,7 +322,7 @@ describe('pieceInstaller', () => {
     })
 
     it('nested package whose entry is a non-conventional main is accepted', async () => {
-        const piece = makePiece('@united/piece-custom-main')
+        const piece = makePiece('@activepieces/piece-custom-main')
         const packageDir = join(pieceDirPath(piece), 'node_modules', piece.pieceName)
 
         await mkdir(join(packageDir, 'dist'), { recursive: true })
@@ -337,7 +337,7 @@ describe('pieceInstaller', () => {
     })
 
     it('nested package with no manifest but a conventional entry file is accepted', async () => {
-        const piece = makePiece('@united/piece-manifestless')
+        const piece = makePiece('@activepieces/piece-manifestless')
         const packageDir = join(pieceDirPath(piece), 'node_modules', piece.pieceName)
 
         await mkdir(join(packageDir, 'src'), { recursive: true })
@@ -351,7 +351,7 @@ describe('pieceInstaller', () => {
     })
 
     it('ready marker over a bare node_modules is reinstalled — the engine could not resolve that', async () => {
-        const piece = makePiece('@united/piece-bare')
+        const piece = makePiece('@activepieces/piece-bare')
         const pieceDir = pieceDirPath(piece)
 
         await mkdir(join(pieceDir, 'node_modules'), { recursive: true })
@@ -367,7 +367,7 @@ describe('pieceInstaller', () => {
     })
 
     it('ready marker over node_modules holding only unrelated packages is reinstalled', async () => {
-        const piece = makePiece('@united/piece-junk')
+        const piece = makePiece('@activepieces/piece-junk')
         const pieceDir = pieceDirPath(piece)
 
         await mkdir(join(pieceDir, 'node_modules', '@somethingelse', 'leftover'), { recursive: true })
@@ -382,7 +382,7 @@ describe('pieceInstaller', () => {
     })
 
     it('ready marker over a dangling nested symlink is reinstalled — find lists it, only access rejects it', async () => {
-        const piece = makePiece('@united/piece-dangling')
+        const piece = makePiece('@activepieces/piece-dangling')
         const pieceDir = pieceDirPath(piece)
         const nested = join(pieceDir, 'node_modules', piece.pieceName)
 
@@ -399,7 +399,7 @@ describe('pieceInstaller', () => {
     })
 
     it('a folder that goes bad after a good install is reinstalled, never served from an in-process cache', async () => {
-        const piece = makePiece('@united/piece-regressed')
+        const piece = makePiece('@activepieces/piece-regressed')
         const pieceDir = pieceDirPath(piece)
         const installer = pieceInstaller(fakeLog, testWorkspace, fakeGetSettings)
 
@@ -436,7 +436,7 @@ describe('pieceInstaller', () => {
     })
 
     it('pins bun to the isolated linker in the generated workspace', async () => {
-        const piece = makePiece('@united/piece-linked')
+        const piece = makePiece('@activepieces/piece-linked')
         const installer = pieceInstaller(fakeLog, testWorkspace, fakeGetSettings)
 
         mockInstall.mockResolvedValueOnce({ output: '' })
@@ -449,11 +449,11 @@ describe('pieceInstaller', () => {
     })
 
     it('skips pieces whose name is a relative path — they never reach the shared bun workspace', async () => {
-        const good = makePiece('@united/piece-good')
+        const good = makePiece('@activepieces/piece-good')
         // Stale `usedPieces` data from a since-reverted build can carry a relative path as the
         // pieceName. Writing it as a workspace member corrupts the shared bun.lock and breaks every
         // other piece (and cache pre-warm / deploy), so it must be dropped before any member is built.
-        const poison = makePiece('../../../common/pieces/@united/piece-algolia', '0.0.3')
+        const poison = makePiece('../../../common/pieces/@activepieces/piece-algolia', '0.0.3')
         const installer = pieceInstaller(fakeLog, testWorkspace, fakeGetSettings)
 
         mockInstall.mockResolvedValueOnce({ output: '' })
@@ -462,13 +462,13 @@ describe('pieceInstaller', () => {
 
         expect(mockInstall).toHaveBeenCalledOnce()
         expect(mockInstall.mock.calls[0]?.[0].filtersPath).toEqual([
-            expect.stringContaining('@united/piece-good-1.0.0'),
+            expect.stringContaining('@activepieces/piece-good-1.0.0'),
         ])
         expect(await pathExists(readyFilePath(good))).toBe(true)
     })
 
     it('install made up only of invalid-named pieces is a no-op — bun never runs', async () => {
-        const poison = makePiece('../../../common/pieces/@united/piece-algolia', '0.0.3')
+        const poison = makePiece('../../../common/pieces/@activepieces/piece-algolia', '0.0.3')
         const installer = pieceInstaller(fakeLog, testWorkspace, fakeGetSettings)
 
         await installer.install({ pieces: [poison], includeFilters: true, ...bundleSource })
@@ -477,10 +477,10 @@ describe('pieceInstaller', () => {
     })
 
     it('mixes valid and invalid pieces — only valid ones reach bun, both filters present for valid', async () => {
-        const goodA = makePiece('@united/piece-a')
+        const goodA = makePiece('@activepieces/piece-a')
         const goodB = makePiece('piece-b-unscoped')
-        const poison1 = makePiece('../../../common/pieces/@united/piece-x', '0.0.3')
-        const poison2 = makePiece('@united/piece-y/extra', '1.2.3')
+        const poison1 = makePiece('../../../common/pieces/@activepieces/piece-x', '0.0.3')
+        const poison2 = makePiece('@activepieces/piece-y/extra', '1.2.3')
         const installer = pieceInstaller(fakeLog, testWorkspace, fakeGetSettings)
 
         mockInstall.mockResolvedValueOnce({ output: '' })
@@ -490,15 +490,15 @@ describe('pieceInstaller', () => {
         expect(mockInstall).toHaveBeenCalledOnce()
         const filtersPath = mockInstall.mock.calls[0]?.[0].filtersPath as string[]
         expect(filtersPath).toHaveLength(2)
-        expect(filtersPath.some(f => f.includes('@united/piece-a-1.0.0'))).toBe(true)
+        expect(filtersPath.some(f => f.includes('@activepieces/piece-a-1.0.0'))).toBe(true)
         expect(filtersPath.some(f => f.includes('piece-b-unscoped-1.0.0'))).toBe(true)
         expect(filtersPath.some(f => f.includes('piece-x'))).toBe(false)
         expect(filtersPath.some(f => f.includes('piece-y'))).toBe(false)
     })
 
     it('individual fallback always passes --filter path regardless of includeFilters', async () => {
-        const piece1 = makePiece('@united/piece-filter-a')
-        const piece2 = makePiece('@united/piece-filter-b')
+        const piece1 = makePiece('@activepieces/piece-filter-a')
+        const piece2 = makePiece('@activepieces/piece-filter-b')
         const installer = pieceInstaller(fakeLog, testWorkspace, fakeGetSettings)
 
         mockInstall
@@ -526,11 +526,11 @@ describe('pieceInstaller', () => {
 
 describe('isValidPackageName', () => {
     it.each([
-        '@united/piece-algolia',
-        '@united/piece-add-event',
+        '@activepieces/piece-algolia',
+        '@activepieces/piece-add-event',
         '@acme/piece-sample',
         // the `<name>-<version>` workspace-member form is itself a single-slash scoped name
-        '@united/piece-algolia-0.0.3',
+        '@activepieces/piece-algolia-0.0.3',
         'tslib',
         'piece-b-unscoped',
         'lodash.merge',
@@ -542,15 +542,15 @@ describe('isValidPackageName', () => {
 
     it.each([
         // the production poison: a relative path masquerading as a piece name
-        '../../../common/pieces/@united/piece-algolia',
-        '../../../common/pieces/@united/piece-algolia-0.0.3',
+        '../../../common/pieces/@activepieces/piece-algolia',
+        '../../../common/pieces/@activepieces/piece-algolia-0.0.3',
         '..',
         '../foo',
         './foo',
         'foo/..',
         '@united/..',
         // more than one path segment (scoped names allow exactly one slash)
-        '@united/piece-y/extra',
+        '@activepieces/piece-y/extra',
         'a/b/c',
         'foo/bar',
         // malformed scopes

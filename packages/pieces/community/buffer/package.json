@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-buffer",
+  "name": "@activepieces/piece-buffer",
   "version": "0.1.5",
   "type": "commonjs",
   "main": "./dist/src/index.js",

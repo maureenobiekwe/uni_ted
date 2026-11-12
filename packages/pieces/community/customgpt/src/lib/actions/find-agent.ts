@@ -2,7 +2,6 @@ import { createAction, Property } from '@united/pieces-framework';
 import { customgptAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 import { HttpMethod } from '@united/pieces-common';
-import { tr } from 'zod/v4/locales';
 
 export const findAgent = createAction({
   auth: customgptAuth,

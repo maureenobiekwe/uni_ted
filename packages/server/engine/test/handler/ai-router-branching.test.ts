@@ -15,7 +15,7 @@ const AI_ROUTER_PATH = '/v1/engine/ai-router'
 function mapperStep(name: string): FlowAction {
     return buildPieceAction({
         name,
-        pieceName: '@united/piece-data-mapper',
+        pieceName: '@activepieces/piece-data-mapper',
         actionName: 'advanced_mapping',
         input: { mapping: { key: '{{ 1 + 2 }}' } },
     })
@@ -429,7 +429,7 @@ describe('ai router pauses the run while the worker decides', () => {
             children: [
                 buildPieceAction({
                     name: 'approval',
-                    pieceName: '@united/piece-approval',
+                    pieceName: '@activepieces/piece-approval',
                     actionName: 'wait_for_approval',
                     input: {},
                     nextAction: mapperStep('billing'),

@@ -113,6 +113,6 @@ function pieceVersionOf(trigger: FlowTrigger): string | undefined {
     return trigger.type === FlowTriggerType.PIECE ? trigger.settings.pieceVersion : undefined
 }
 
-const WEBHOOK_PIECE_NAME = '@united/piece-webhook'
+const WEBHOOK_PIECE_NAME = '@activepieces/piece-webhook'
 const OLD_WEBHOOK_VERSION = '0.1.33'
 const UPGRADED_WEBHOOK_VERSION = '0.1.36'

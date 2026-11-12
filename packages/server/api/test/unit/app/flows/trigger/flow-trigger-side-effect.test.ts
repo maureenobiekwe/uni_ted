@@ -62,7 +62,7 @@ const mockLog = {
 const BASE_PARAMS = {
     flowId: 'flow-1',
     flowVersionId: 'fv-1',
-    pieceName: '@united/piece-test',
+    pieceName: '@activepieces/piece-test',
     projectId: 'proj-1',
     simulate: false,
 }

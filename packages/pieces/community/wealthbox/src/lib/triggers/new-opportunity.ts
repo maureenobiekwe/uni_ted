@@ -13,7 +13,7 @@ import {
   Polling
 } from '@united/pieces-common';
 import dayjs from 'dayjs';
-import { fetchUsers, fetchContacts, fetchProjects, fetchOpportunities, fetchOpportunityStages, WEALTHBOX_API_BASE, handleApiError } from '../common';
+import { fetchUsers, fetchContacts, fetchProjects, fetchOpportunityStages, WEALTHBOX_API_BASE, handleApiError } from '../common';
 import { wealthboxAuth } from '../..';
 
 const polling: Polling<any, any> = {

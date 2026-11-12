@@ -39,7 +39,7 @@ async function setupFlowWithScheduleTrigger(ctx: TestContext) {
     await db.save('flow', mockFlow)
 
     const mockPieceMetadata = createMockPieceMetadata({
-        name: '@united/piece-schedule',
+        name: '@activepieces/piece-schedule',
         version: '0.1.5',
         triggers: {
             every_hour: {
@@ -65,7 +65,7 @@ async function setupFlowWithScheduleTrigger(ctx: TestContext) {
             type: FlowTriggerType.PIECE,
             name: 'trigger',
             settings: {
-                pieceName: '@united/piece-schedule',
+                pieceName: '@activepieces/piece-schedule',
                 pieceVersion: '0.1.5',
                 input: {},
                 propertySettings: {},

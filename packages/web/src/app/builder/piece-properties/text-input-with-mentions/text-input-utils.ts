@@ -1,8 +1,8 @@
+import { MentionNodeAttrs } from '@tiptap/extension-mention';
+import { JSONContent } from '@tiptap/react';
 import { AP_FUNCTIONS, formulaEvaluator } from '@united/core-formula';
 import { assertNotNullOrUndefined, isNil } from '@united/core-utils';
 import { FlowAction, FlowTrigger } from '@united/shared';
-import { MentionNodeAttrs } from '@tiptap/extension-mention';
-import { JSONContent } from '@tiptap/react';
 import { Variable as VariableIcon } from 'lucide-react';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';

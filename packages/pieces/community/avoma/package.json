@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-avoma",
+  "name": "@activepieces/piece-avoma",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

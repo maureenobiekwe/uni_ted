@@ -7,7 +7,6 @@ import {
 } from '@united/pieces-common';
 import {
   AppConnectionValueForAuthProperty,
-  PiecePropValueSchema,
   Property,
   StaticPropsValue,
   TriggerStrategy,

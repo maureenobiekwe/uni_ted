@@ -1,9 +1,9 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { cyberarkAuth } from '../auth';
 import { httpClient, HttpMethod } from '@united/pieces-common';
 import { groupIdDropdown } from '../common/group-dropdown';
 import { memberIdDropdown } from '../common/member-dropdown';
-import { getAuthToken, CyberArkAuth } from '../common/auth-helper';
+import { getAuthToken } from '../common/auth-helper';
 
 export const removeMemberFromGroup = createAction({
   auth: cyberarkAuth,

@@ -8,7 +8,7 @@ import { createMockConnection, createMockFlow, createMockFlowVersion, createMock
 import { createMemberContext, createTestContext, TestContext } from '../../../helpers/test-context'
 import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/test-setup'
 
-const CRM = '@united/piece-required-crm'
+const CRM = '@activepieces/piece-required-crm'
 
 let app: FastifyInstance | null = null
 

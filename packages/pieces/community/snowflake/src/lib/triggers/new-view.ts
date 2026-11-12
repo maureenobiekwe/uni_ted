@@ -3,11 +3,7 @@ import {
   TriggerStrategy,
   AppConnectionValueForAuthProperty,
 } from '@united/pieces-framework';
-import {
-  DedupeStrategy,
-  Polling,
-  pollingHelper,
-} from '@united/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import { snowflakeAuth } from '../auth';
 import { snowflakeCommonProps, toAuthValue, withSnowflake } from '../common';
 import { newViewOutputSchema } from '../common/output-schemas';

@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-clockodo",
+  "name": "@activepieces/piece-clockodo",
   "version": "0.2.10",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

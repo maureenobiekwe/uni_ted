@@ -1,5 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
-import { ScrapelessValidator } from './lib/utils/validator';
+import { createPiece } from '@united/pieces-framework';
 import { googleSearchApi } from './lib/actions/google-search-api';
 import { crawlScrapeApi } from './lib/actions/crawl-scrape';
 import { crawlCrawlApi } from './lib/actions/crawl-crawl';

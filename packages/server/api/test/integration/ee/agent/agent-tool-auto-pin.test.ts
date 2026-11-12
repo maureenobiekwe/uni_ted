@@ -11,8 +11,8 @@ import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/
 
 let app: FastifyInstance
 
-const AUTH_PIECE = '@united/piece-test-mailer'
-const OPEN_PIECE = '@united/piece-test-clock'
+const AUTH_PIECE = '@activepieces/piece-test-mailer'
+const OPEN_PIECE = '@activepieces/piece-test-clock'
 
 const action = (name: string) => ({ name, displayName: name, description: name, requireAuth: true, props: {} })
 

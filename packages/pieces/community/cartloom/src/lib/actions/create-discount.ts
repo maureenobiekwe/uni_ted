@@ -1,6 +1,6 @@
 import { Property, createAction } from '@united/pieces-framework';
 import { createDiscount } from '../api';
-import { CartloomAuthType, cartloomAuth } from '../auth';
+import { cartloomAuth } from '../auth';
 import { buildProductsDropdown } from '../props';
 
 export const createDiscountAction = createAction({

@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-google-ads",
+  "name": "@activepieces/piece-google-ads",
   "version": "0.0.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

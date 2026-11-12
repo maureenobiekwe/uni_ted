@@ -1,3 +1,5 @@
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useMutation } from '@tanstack/react-query';
 import {
   ApFlagId,
   formErrors,
@@ -5,8 +7,6 @@ import {
   SsoDomainVerificationStatus,
   UpdatePlatformRequestBody,
 } from '@united/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { TriangleAlert } from 'lucide-react';
 import { ReactNode, useState } from 'react';

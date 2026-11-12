@@ -1,6 +1,6 @@
+import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js'
 import { isNil, tryCatch } from '@united/core-utils'
 import { McpOAuthClientKey, McpServerType, PopulatedMcpServer, TelemetryEventName } from '@united/shared'
-import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js'
 import { FastifyBaseLogger, FastifyReply, FastifyRequest } from 'fastify'
 import { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { repoFactory } from '../../core/db/repo-factory'

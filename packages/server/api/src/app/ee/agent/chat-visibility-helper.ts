@@ -1,4 +1,4 @@
-import { unitedError, ErrorCode } from '@united/core-utils'
+import { ErrorCode, unitedError } from '@united/core-utils'
 import { chatVisibility, PlatformWithoutSensitiveData, PrincipalType } from '@united/shared'
 import { onRequestAsyncHookHandler } from 'fastify'
 import { system } from '../../helper/system/system'

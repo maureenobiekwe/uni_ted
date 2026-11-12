@@ -1,7 +1,6 @@
 import {
   DropdownOption,
   DynamicPropsValue,
-  PiecePropValueSchema,
   Property,
 } from '@united/pieces-framework';
 import { gristAuth } from '../auth';

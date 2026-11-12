@@ -1,7 +1,5 @@
 
-import { createPiece, PieceAuth } from "@united/pieces-framework";
-import { baseUrl, unauthorizedMessage } from "./lib/common/common";
-import OpenAI from 'openai';
+import { createPiece } from "@united/pieces-framework";
 import { askDeepseek } from "./lib/actions/ask-deepseek";
 import { PieceCategory } from '@united/pieces-framework';
 import { deepseekAuth } from './lib/auth';

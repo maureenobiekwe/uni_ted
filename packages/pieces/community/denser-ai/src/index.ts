@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { denserAiAuth } from './lib/common/auth';
 import { PieceCategory } from '@united/pieces-framework';
 import { processInputText } from './lib/actions/process-input-text';

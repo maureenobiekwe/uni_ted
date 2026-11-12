@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { scanFile } from './lib/actions/scan-file';
 import { scanText } from './lib/actions/scan-text';
 import { PieceCategory } from '@united/pieces-framework';

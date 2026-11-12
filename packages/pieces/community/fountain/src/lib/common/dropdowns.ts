@@ -1,4 +1,4 @@
-import { PiecePropValueSchema, DropdownOption, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
+import { DropdownOption, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { httpClient, HttpMethod } from '@united/pieces-common';
 import { fountainAuth } from '../auth';
 import { getAuthHeaders, getApiUrl } from './auth';

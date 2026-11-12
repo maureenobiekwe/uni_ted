@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-webhook",
+  "name": "@activepieces/piece-webhook",
   "version": "0.1.43",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

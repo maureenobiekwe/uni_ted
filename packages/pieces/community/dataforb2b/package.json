@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-dataforb2b",
+  "name": "@activepieces/piece-dataforb2b",
   "version": "0.1.4",
   "type": "commonjs",
   "main": "./dist/src/index.js",

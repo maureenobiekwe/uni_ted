@@ -1,3 +1,4 @@
+import { useMutation } from '@tanstack/react-query';
 import {
   AuthenticationResponse,
   CompleteSignUpRequest,
@@ -10,7 +11,6 @@ import {
   VerifyEmailRequestBody,
   VerifyEmailCodeRequest,
 } from '@united/shared';
-import { useMutation } from '@tanstack/react-query';
 
 import { authenticationApi } from '@/api/authentication-api';
 import { HttpError } from '@/lib/api';

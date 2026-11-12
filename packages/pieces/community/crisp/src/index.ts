@@ -1,4 +1,4 @@
-import { createPiece, PiecePropValueSchema } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { crispAuth } from './lib/common/auth';
 import { createConversationAction } from './lib/actions/create-conversation';
 import { createCustomApiCallAction } from '@united/pieces-common';

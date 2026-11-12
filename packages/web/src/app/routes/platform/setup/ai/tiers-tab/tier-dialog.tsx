@@ -1,3 +1,4 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import {
   AIProviderWithoutSensitiveData,
   CreatePlatformModelTierRequest,
@@ -5,7 +6,6 @@ import {
   PlatformModelTier,
   PlatformModelTierEntry,
 } from '@united/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from 'i18next';
 import { ChevronDown, Plus } from 'lucide-react';
 import { KeyboardEvent, useState } from 'react';

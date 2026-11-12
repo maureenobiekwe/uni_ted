@@ -1,7 +1,4 @@
-import {
-  AnalyticsTimePeriod,
-  PlatformAnalyticsReport,
-} from '@united/shared';
+import { AnalyticsTimePeriod, PlatformAnalyticsReport } from '@united/shared';
 
 import { api } from '@/lib/api';
 

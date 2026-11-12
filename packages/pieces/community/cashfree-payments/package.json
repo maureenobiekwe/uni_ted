@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-cashfree-payments",
+  "name": "@activepieces/piece-cashfree-payments",
   "version": "0.1.8",
   "type": "commonjs",
   "main": "./dist/src/index.js",

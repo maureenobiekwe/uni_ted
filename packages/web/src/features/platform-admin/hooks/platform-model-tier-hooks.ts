@@ -1,4 +1,11 @@
 import {
+  QueryClient,
+  useMutation,
+  useQueries,
+  useQuery,
+  useQueryClient,
+} from '@tanstack/react-query';
+import {
   AIProviderWithoutSensitiveData,
   CreatePlatformModelTierRequest,
   ModelChoice,
@@ -6,13 +13,6 @@ import {
   PlatformModelTier,
   UpdatePlatformModelTierRequest,
 } from '@united/shared';
-import {
-  QueryClient,
-  useMutation,
-  useQueries,
-  useQuery,
-  useQueryClient,
-} from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useCallback, useMemo } from 'react';
 import { toast } from 'sonner';

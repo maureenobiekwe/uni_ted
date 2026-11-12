@@ -1,6 +1,5 @@
 import {
   AppConnectionValueForAuthProperty,
-  PiecePropValueSchema,
   Property,
   createTrigger,
 } from '@united/pieces-framework';

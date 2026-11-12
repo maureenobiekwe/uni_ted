@@ -1,7 +1,4 @@
-import {
-  AgentMcpTool,
-  ValidateAgentMcpToolResponse,
-} from '@united/shared';
+import { AgentMcpTool, ValidateAgentMcpToolResponse } from '@united/shared';
 
 import { api } from '@/lib/api';
 

@@ -2,7 +2,6 @@ import {
   AppConnectionValueForAuthProperty,
   PieceAuth,
   Property,
-  StaticPropsValue,
 } from '@united/pieces-framework';
 import {
   httpClient,

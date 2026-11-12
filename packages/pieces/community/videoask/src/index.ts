@@ -2,8 +2,7 @@
 import { createPiece } from "@united/pieces-framework";
 import { createContact } from "./lib/actions/create-contact";
 import { videoaskAuth } from "./lib/common/auth";
-import { createCustomApiCallAction, HttpMethod } from "@united/pieces-common";
-import { makeRequest } from "./lib/common/client";
+import { createCustomApiCallAction } from "@united/pieces-common";
 import { PieceCategory } from '@united/pieces-framework';
 import { formContactMessage } from "./lib/triggers/form-contact-message";
 import { formTranscribed } from "./lib/triggers/form-transcribed";

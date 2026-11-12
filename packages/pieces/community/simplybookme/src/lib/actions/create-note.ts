@@ -1,6 +1,6 @@
 import { createAction, Property } from '@united/pieces-framework';
 import { httpClient, HttpMethod } from '@united/pieces-common';
-import { simplybookAuth, getAccessToken, SimplybookAuth, serviceDropdown, providerDropdown, noteTypeDropdown } from '../common';
+import { simplybookAuth, getAccessToken, serviceDropdown, providerDropdown, noteTypeDropdown } from '../common';
 
 export const createNote = createAction({
   auth: simplybookAuth,

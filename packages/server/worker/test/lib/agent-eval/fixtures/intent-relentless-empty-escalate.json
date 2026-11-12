@@ -12,8 +12,8 @@
             "toolName": "ap_list_across_projects",
             "output": {
                 "connections": [
-                    { "externalId": "conn_attio", "displayName": "Attio", "pieceName": "@united/piece-attio", "status": "ACTIVE", "scope": "PROJECT" },
-                    { "externalId": "conn_gmail", "displayName": "Gmail", "pieceName": "@united/piece-gmail", "status": "ACTIVE", "scope": "PROJECT" }
+                    { "externalId": "conn_attio", "displayName": "Attio", "pieceName": "@activepieces/piece-attio", "status": "ACTIVE", "scope": "PROJECT" },
+                    { "externalId": "conn_gmail", "displayName": "Gmail", "pieceName": "@activepieces/piece-gmail", "status": "ACTIVE", "scope": "PROJECT" }
                 ]
             }
         },

@@ -51,7 +51,7 @@ describe('POST /v1/pieces/options — engine failure propagation', () => {
                 name: 'trigger',
                 displayName: 'Catch Webhook',
                 settings: {
-                    pieceName: '@united/piece-webhook',
+                    pieceName: '@activepieces/piece-webhook',
                     pieceVersion: '~0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'basic' },
@@ -64,7 +64,7 @@ describe('POST /v1/pieces/options — engine failure propagation', () => {
         await db.save('flow_version', mockFlowVersion)
 
         const mockPiece = createMockPieceMetadata({
-            name: '@united/piece-webhook',
+            name: '@activepieces/piece-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
@@ -85,7 +85,7 @@ describe('POST /v1/pieces/options — engine failure propagation', () => {
         projectId: ids.projectId,
         flowId: ids.flowId,
         flowVersionId: ids.flowVersionId,
-        pieceName: '@united/piece-webhook',
+        pieceName: '@activepieces/piece-webhook',
         pieceVersion: '~0.1.29',
         actionOrTriggerName: 'catch_webhook',
         propertyName: 'authFields',
@@ -98,7 +98,7 @@ describe('POST /v1/pieces/options — engine failure propagation', () => {
         vi.spyOn(userInteractionWatcher, 'submitAndWaitForResponse').mockResolvedValue({
             status: EngineResponseStatus.INTERNAL_ERROR,
             response: undefined,
-            error: 'Failed to fetch piece bundle @united/piece-ai@0.4.0: 404 Not Found',
+            error: 'Failed to fetch piece bundle @activepieces/piece-ai@0.4.0: 404 Not Found',
         })
 
         const response = await app.inject({

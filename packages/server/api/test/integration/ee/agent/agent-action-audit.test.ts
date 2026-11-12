@@ -92,7 +92,7 @@ async function runConfiguredAction(conversationId: string, actionName: string) {
         toolName: `gmail-${actionName}`,
         instruction: 'do the thing',
         modelId: 'claude-sonnet-4-6',
-        piece: { pieceName: '@united/piece-gmail', pieceVersion: '0.9.0', actionName },
+        piece: { pieceName: '@activepieces/piece-gmail', pieceVersion: '0.9.0', actionName },
     })
 }
 
@@ -114,7 +114,7 @@ describe('an action an agent ran reaches the audit log', () => {
             agent: { id: agentId, displayName: 'Ops agent' },
             action: {
                 kind: AgentActionKind.PIECE,
-                pieceName: '@united/piece-gmail',
+                pieceName: '@activepieces/piece-gmail',
                 pieceDisplayName: 'Gmail',
                 actionName: 'send_email',
                 displayName: 'Send Email',
@@ -230,7 +230,7 @@ describe('an action an agent ran reaches the audit log', () => {
                 source: AgentRunSource.AGENT,
                 agent: { id: apId(), displayName: 'Ops agent' },
                 action: {
-                    pieceName: '@united/piece-gmail',
+                    pieceName: '@activepieces/piece-gmail',
                     pieceDisplayName: 'Gmail',
                     actionName: 'send_email',
                     displayName: 'Send Email',
@@ -247,7 +247,7 @@ describe('an action an agent ran reaches the audit log', () => {
         const { conversationId } = await conversationFor(ctx, { source: AgentRunSource.AGENT, withAgent: true })
         stubTheRun()
         vi.spyOn(pieceToolRunner, 'runResolved').mockResolvedValue({
-            result: { content: [{ type: 'text', text: '❌ Action "send_email" not found in "@united/piece-gmail".' }] },
+            result: { content: [{ type: 'text', text: '❌ Action "send_email" not found in "@activepieces/piece-gmail".' }] },
             resolvedInput: { to: RECIPIENT },
         } as never)
 
@@ -345,7 +345,7 @@ describe('an action an agent ran reaches the audit log', () => {
             toolName: 'gmail-send_email',
             instruction: 'do the thing',
             modelId: 'claude-sonnet-4-6',
-            piece: { pieceName: '@united/piece-gmail', pieceVersion: '0.9.0', actionName: 'send_email' },
+            piece: { pieceName: '@activepieces/piece-gmail', pieceVersion: '0.9.0', actionName: 'send_email' },
         })
 
         const [row] = await agentActionRows(ctx)
@@ -359,7 +359,7 @@ describe('an action an agent ran reaches the audit log', () => {
 
         await executeCrossProjectTool({
             toolName: 'ap_execute_action',
-            toolInput: { pieceName: '@united/piece-gmail', actionName: 'send_email', input: { to: RECIPIENT } },
+            toolInput: { pieceName: '@activepieces/piece-gmail', actionName: 'send_email', input: { to: RECIPIENT } },
             platformId: ctx.platform.id,
             userId: ctx.user.id,
             conversationId,
@@ -387,7 +387,7 @@ describe('a chat action the piece declares as a write', () => {
 
         const result = await executeCrossProjectTool({
             toolName: 'ap_explore_data',
-            toolInput: { pieceName: '@united/piece-gmail', actionName: 'mark_as_read', input: {} },
+            toolInput: { pieceName: '@activepieces/piece-gmail', actionName: 'mark_as_read', input: {} },
             platformId: ctx.platform.id,
             userId: ctx.user.id,
             conversationId,
@@ -406,7 +406,7 @@ describe('a chat action the piece declares as a write', () => {
 
         await executeCrossProjectTool({
             toolName: 'ap_explore_data',
-            toolInput: { pieceName: '@united/piece-gmail', actionName: 'mark_as_read', input: {} },
+            toolInput: { pieceName: '@activepieces/piece-gmail', actionName: 'mark_as_read', input: {} },
             platformId: ctx.platform.id,
             userId: ctx.user.id,
             conversationId,
@@ -421,7 +421,7 @@ describe('a chat action the piece declares as a write', () => {
         const { conversationId } = await conversationFor(ctx, { source: AgentRunSource.CHAT, withAgent: false })
         const connectionProject = createMockProject({ ownerId: ctx.user.id, platformId: ctx.platform.id })
         await db.save('project', connectionProject)
-        await agentApprovalGate.storeSelectedConnection({ conversationId, pieceName: '@united/piece-gmail', externalId: 'gmail-work', label: 'Work Gmail', projectId: connectionProject.id })
+        await agentApprovalGate.storeSelectedConnection({ conversationId, pieceName: '@activepieces/piece-gmail', externalId: 'gmail-work', label: 'Work Gmail', projectId: connectionProject.id })
         const lookedUpIn: (string | undefined)[] = []
         const metadata = { displayName: 'Gmail', actions: { mark_as_read: { displayName: 'Mark as read', classification: 'WRITE' } } }
         vi.spyOn(pieceMetadataModule, 'pieceMetadataService').mockReturnValue({ get: async ({ projectId }: { projectId?: string }) => {
@@ -431,8 +431,8 @@ describe('a chat action the piece declares as a write', () => {
         vi.spyOn(flowRunUtils, 'executePieceActionRun').mockResolvedValue({ content: [] } as never)
         const request = { platformId: ctx.platform.id, userId: ctx.user.id, conversationId, log: app.log }
 
-        const { result: lookup } = await agentRpcHandlers(app.log).executeAgentTool({ platformId: ctx.platform.id, userId: ctx.user.id, conversationId, source: AgentRunSource.CHAT, toolName: '__action_read_only', toolInput: { pieceName: '@united/piece-gmail', actionName: 'mark_as_read' } })
-        await executeCrossProjectTool({ ...request, toolName: 'ap_execute_action', toolInput: { pieceName: '@united/piece-gmail', actionName: 'mark_as_read', input: {} } })
+        const { result: lookup } = await agentRpcHandlers(app.log).executeAgentTool({ platformId: ctx.platform.id, userId: ctx.user.id, conversationId, source: AgentRunSource.CHAT, toolName: '__action_read_only', toolInput: { pieceName: '@activepieces/piece-gmail', actionName: 'mark_as_read' } })
+        await executeCrossProjectTool({ ...request, toolName: 'ap_execute_action', toolInput: { pieceName: '@activepieces/piece-gmail', actionName: 'mark_as_read', input: {} } })
 
         expect(lookup).toBe(false)
         expect(new Set(lookedUpIn)).toEqual(new Set([connectionProject.id]))
@@ -445,7 +445,7 @@ describe('a chat action the piece declares as a write', () => {
 
         const { result } = await agentRpcHandlers(app.log).executeAgentTool({
             toolName: '__action_read_only',
-            toolInput: { pieceName: '@united/piece-gmail', actionName: 'mark_as_read' },
+            toolInput: { pieceName: '@activepieces/piece-gmail', actionName: 'mark_as_read' },
             platformId: ctx.platform.id,
             userId: ctx.user.id,
             source: AgentRunSource.CHAT,

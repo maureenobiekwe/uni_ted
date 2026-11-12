@@ -1,5 +1,5 @@
-import { isNil } from '@united/core-utils';
 import { QueryMeta, useQuery } from '@tanstack/react-query';
+import { isNil } from '@united/core-utils';
 
 import { platformConfigurationApi } from '@/api/platform-configuration-api';
 import { userHooks } from '@/hooks/user-hooks';

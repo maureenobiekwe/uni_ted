@@ -1,4 +1,4 @@
-import { unitedError, apId, deleteProps, ErrorCode, isNil, SeekPage } from '@united/core-utils'
+import { apId, deleteProps, ErrorCode, isNil, SeekPage, unitedError } from '@united/core-utils'
 import { ListOAuth2AppRequest, OAuthApp, UpsertOAuth2AppRequest } from '@united/shared'
 import { repoFactory } from '../../core/db/repo-factory'
 import { encryptUtils } from '../../helper/encryption'

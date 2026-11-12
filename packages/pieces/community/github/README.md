@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@united/piece-github` to build the library.
+Run `turbo run build --filter=@activepieces/piece-github` to build the library.

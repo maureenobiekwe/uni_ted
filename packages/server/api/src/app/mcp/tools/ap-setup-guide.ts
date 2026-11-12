@@ -10,7 +10,7 @@ import { mcpUtils } from './mcp-utils'
 
 const setupGuideInput = z.object({
     topic: z.enum(['connection', 'ai_provider']).describe('What to get setup instructions for'),
-    pieceName: z.string().optional().describe('For connections: the piece that needs auth (e.g., "@united/piece-gmail"). Omit for general instructions.'),
+    pieceName: z.string().optional().describe('For connections: the piece that needs auth (e.g., "@activepieces/piece-gmail"). Omit for general instructions.'),
 })
 
 export const apSetupGuideTool = (mcp: ProjectScopedMcpServer, log: FastifyBaseLogger): McpToolDefinition => {
@@ -53,7 +53,7 @@ async function connectionGuide(mcp: ProjectScopedMcpServer, log: FastifyBaseLogg
                     '',
                     'Then use ap_list_connections to find the connection\'s externalId for use in flow steps.',
                     '',
-                    'Tip: Pass pieceName to this tool for specific instructions (e.g., pieceName: "@united/piece-gmail").',
+                    'Tip: Pass pieceName to this tool for specific instructions (e.g., pieceName: "@activepieces/piece-gmail").',
                 ].join('\n'),
             }],
         }

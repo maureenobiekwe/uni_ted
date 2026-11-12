@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, PiecePropValueSchema, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
+import { createTrigger, TriggerStrategy, AppConnectionValueForAuthProperty } from '@united/pieces-framework';
 import { DedupeStrategy, Polling, pollingHelper } from '@united/pieces-common';
 import { HumeClient } from 'hume';
 import { humeAiAuth } from '../common/auth';

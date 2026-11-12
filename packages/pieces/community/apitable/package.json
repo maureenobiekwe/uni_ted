@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-apitable",
+  "name": "@activepieces/piece-apitable",
   "version": "0.5.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

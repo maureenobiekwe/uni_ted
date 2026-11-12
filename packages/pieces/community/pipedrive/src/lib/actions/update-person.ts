@@ -1,6 +1,6 @@
 import { pipedriveAuth } from '../auth';
 import { createAction, Property } from '@united/pieces-framework';
-import { personCommonProps, personIdProp, customFieldsProp } from '../common/props';
+import { personCommonProps, personIdProp } from '../common/props';
 import {
 	pipedriveApiCall,
 	pipedrivePaginatedV1ApiCall,

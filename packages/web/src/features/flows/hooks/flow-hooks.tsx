@@ -1,4 +1,10 @@
 import {
+  QueryClient,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from '@tanstack/react-query';
+import {
   ApErrorParams,
   isNil,
   ErrorCode,
@@ -21,12 +27,6 @@ import {
   UncategorizedFolderId,
   UpdateRunProgressRequest,
 } from '@united/shared';
-import {
-  QueryClient,
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
@@ -291,7 +291,7 @@ export const flowHooks = {
           displayName: t('Untitled'),
         });
         const mcpPiece = await piecesApi.get({
-          name: '@united/piece-mcp',
+          name: '@activepieces/piece-mcp',
         });
         const trigger = mcpPiece.triggers['mcp_tool'];
         if (!trigger) {

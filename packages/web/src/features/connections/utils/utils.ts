@@ -1,8 +1,4 @@
-import {
-  assertNotNullOrUndefined,
-  isNil,
-  apId,
-} from '@united/core-utils';
+import { assertNotNullOrUndefined, isNil, apId } from '@united/core-utils';
 import {
   CustomAuthProps,
   OIDCAuthProps,

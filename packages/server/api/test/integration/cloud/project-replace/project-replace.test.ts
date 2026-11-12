@@ -126,7 +126,7 @@ describe('Project Replace API', () => {
                 body: {
                     ...emptyReplaceRequest(),
                     requiredPieces: [{
-                        name: '@united/piece-definitely-does-not-exist-on-npm',
+                        name: '@activepieces/piece-definitely-does-not-exist-on-npm',
                         version: '1.2.3',
                         pieceType: PieceType.OFFICIAL,
                     }],
@@ -137,7 +137,7 @@ describe('Project Replace API', () => {
             const body = response.json()
             expect(body.failures).toHaveLength(1)
             expect(body.failures[0]).toMatchObject({
-                pieceName: '@united/piece-definitely-does-not-exist-on-npm',
+                pieceName: '@activepieces/piece-definitely-does-not-exist-on-npm',
                 version: '1.2.3',
                 pieceType: PieceType.OFFICIAL,
             })
@@ -154,7 +154,7 @@ describe('Project Replace API', () => {
                     ...emptyReplaceRequest(),
                     connections: [{
                         externalId: 'slack_main',
-                        pieceName: '@united/piece-slack',
+                        pieceName: '@activepieces/piece-slack',
                         displayName: 'Slack Main',
                     }],
                 },
@@ -166,7 +166,7 @@ describe('Project Replace API', () => {
             expect(body.connectionsAwaitingAuthorization).toEqual([
                 expect.objectContaining({
                     externalId: 'slack_main',
-                    pieceName: '@united/piece-slack',
+                    pieceName: '@activepieces/piece-slack',
                     displayName: 'Slack Main',
                 }),
             ])
@@ -179,7 +179,7 @@ describe('Project Replace API', () => {
                 platformId: platform.id,
                 projectIds: [project.id],
                 externalId: 'shared_conn',
-                pieceName: '@united/piece-discord',
+                pieceName: '@activepieces/piece-discord',
             }, ownerId)
             await db.save('app_connection', connection)
 
@@ -190,7 +190,7 @@ describe('Project Replace API', () => {
                     ...emptyReplaceRequest(),
                     connections: [{
                         externalId: 'shared_conn',
-                        pieceName: '@united/piece-slack',
+                        pieceName: '@activepieces/piece-slack',
                         displayName: 'Slack Main',
                     }],
                 },
@@ -202,8 +202,8 @@ describe('Project Replace API', () => {
             expect(mismatch).toMatchObject({
                 kind: ProjectReplaceErrorKind.CONNECTION_PIECE_MISMATCH,
                 externalId: 'shared_conn',
-                expectedPieceName: '@united/piece-slack',
-                foundPieceName: '@united/piece-discord',
+                expectedPieceName: '@activepieces/piece-slack',
+                foundPieceName: '@activepieces/piece-discord',
             })
         })
 

@@ -27,7 +27,7 @@ export async function listFlowsWithSubflowTrigger({
         (flow) =>
             flow.version.trigger.type === FlowTriggerType.PIECE &&
             flow.version.trigger.settings.pieceName ==
-            '@united/piece-subflows'
+            '@activepieces/piece-subflows'
     );
     return flows;
 }

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { oracleDbAuth } from './lib/common/auth';
 import { insertRowAction } from './lib/actions/insert-row';

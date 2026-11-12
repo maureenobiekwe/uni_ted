@@ -70,7 +70,7 @@ A full snapshot of a ~950 MB heap kills the process mid-serialization (the cgrou
 const cache = process.mainModule.constructor._cache
 const keys = Object.keys(cache)
 // → totalModules, count matching @united/shared, pieces-framework,
-//   distinct @united/piece-* packages, and process.memoryUsage()
+//   distinct @activepieces/piece-* packages, and process.memoryUsage()
 ```
 
 Run it against the `sandbox-<id>` pid while a flow holds the sandbox open. To *get* that window, end the probe flow with a CODE step that sleeps — a `delay` piece step over 10 s creates a waitpoint and **pauses the run**, releasing the sandbox, so the process you wanted is gone before you arrive.

@@ -69,7 +69,7 @@ describe('Piece Options E2E', () => {
                 name: 'trigger',
                 displayName: 'Catch Webhook',
                 settings: {
-                    pieceName: '@united/piece-webhook',
+                    pieceName: '@activepieces/piece-webhook',
                     pieceVersion: '~0.1.29',
                     triggerName: 'catch_webhook',
                     input: { authType: 'basic' },
@@ -82,7 +82,7 @@ describe('Piece Options E2E', () => {
         await db.save('flow_version', mockFlowVersion)
 
         const mockPiece = createMockPieceMetadata({
-            name: '@united/piece-webhook',
+            name: '@activepieces/piece-webhook',
             version: '0.1.29',
             platformId: undefined,
             packageType: PackageType.REGISTRY,
@@ -106,7 +106,7 @@ describe('Piece Options E2E', () => {
                 projectId: mockProject.id,
                 flowId: mockFlow.id,
                 flowVersionId: mockFlowVersion.id,
-                pieceName: '@united/piece-webhook',
+                pieceName: '@activepieces/piece-webhook',
                 pieceVersion: '~0.1.29',
                 actionOrTriggerName: 'catch_webhook',
                 propertyName: 'authFields',

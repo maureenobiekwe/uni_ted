@@ -391,14 +391,14 @@ describe('Templates', () => {
                     authorization: `Bearer ${testToken}`,
                 },
                 body: {
-                    flows: [flowUsing('@united/piece-slack'), flowUsing('@united/piece-gmail')],
+                    flows: [flowUsing('@activepieces/piece-slack'), flowUsing('@activepieces/piece-gmail')],
                 },
             })
 
             // assert
             expect(response?.statusCode).toBe(StatusCodes.OK)
             expect(response?.json().flows).toHaveLength(2)
-            expect(response?.json().pieces).toEqual(expect.arrayContaining(['@united/piece-slack', '@united/piece-gmail']))
+            expect(response?.json().pieces).toEqual(expect.arrayContaining(['@activepieces/piece-slack', '@activepieces/piece-gmail']))
         })
     })
 })

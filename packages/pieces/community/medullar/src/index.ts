@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { createSpace } from './lib/actions/create-space';
 import { listSpaces } from './lib/actions/list-spaces';
 import { addSpaceRecord } from './lib/actions/add-space-record';

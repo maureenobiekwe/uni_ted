@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, PiecePropValueSchema } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { leadStatusChangedTrigger, newContactAddedTrigger, newLeadCreatedTrigger, newTaskCreatedTrigger } from "./lib/triggers";
 import { findLeadAction, updateContactAction, createLeadAction, createContactAction, findContactAction, findCompanyAction, updateLeadAction } from "./lib/actions";

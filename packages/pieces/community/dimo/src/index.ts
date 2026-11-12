@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from '@united/pieces-framework';
+import { createPiece } from '@united/pieces-framework';
 import {
 	attestationApiActions,
 	deviceDefinitionApiActions,

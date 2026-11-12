@@ -2,12 +2,12 @@ import { MAX_TOOL_RESULT_BYTES } from '@united/server-utils'
 import { describe, expect, it } from 'vitest'
 import { fitBulkLookup, fitEnrichedResponse, FoundPiece } from '../../../../src/app/mcp/tools/ap-research-pieces'
 
-const SLIM_PIECE = { name: '@united/piece-webhook', displayName: 'Webhook', description: 'Receive HTTP requests.' }
+const SLIM_PIECE = { name: '@activepieces/piece-webhook', displayName: 'Webhook', description: 'Receive HTTP requests.' }
 
 function piece({ index, actionCount, detailLength, aiLength }: { index: number, actionCount: number, detailLength: number, aiLength: number }) {
     return {
         ...SLIM_PIECE,
-        name: `@united/piece-${index}`,
+        name: `@activepieces/piece-${index}`,
         actions: Array.from({ length: actionCount }, (_, action) => ({
             name: `an_action_name_long_enough_to_count_${action}_of_piece_${index}`,
             displayName: `Action ${action}`,
@@ -66,7 +66,7 @@ describe('what ap_research_pieces is allowed to return', () => {
     it('says so rather than emitting a payload no client can read, when even names do not fit', () => {
         const result = fit(Array.from({ length: 3_000 }, (_, index) => ({
             ...SLIM_PIECE,
-            name: `@united/piece-with-a-fairly-long-name-${index}`,
+            name: `@activepieces/piece-with-a-fairly-long-name-${index}`,
         })))
 
         expect(result.content[0].text).toContain('too many to name here')

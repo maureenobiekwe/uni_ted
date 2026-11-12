@@ -1,4 +1,4 @@
-import { createAction, Property } from '@united/pieces-framework';
+import { createAction } from '@united/pieces-framework';
 import { httpClient, HttpMethod } from '@united/pieces-common';
 
 export const getAddresses = createAction({

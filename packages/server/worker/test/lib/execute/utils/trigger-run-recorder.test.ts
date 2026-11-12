@@ -41,24 +41,24 @@ describe('recordTriggerRun', () => {
         const recordTriggerRunRpc = vi.fn(async () => undefined)
         const apiClient = { recordTriggerRun: recordTriggerRunRpc } as unknown as WorkerToApiContract
 
-        await recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@united/piece-slack'), platformId: 'p1', status: EngineResponseStatus.OK })
+        await recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@activepieces/piece-slack'), platformId: 'p1', status: EngineResponseStatus.OK })
 
-        expect(recordTriggerRunRpc).toHaveBeenCalledWith({ platformId: 'p1', pieceName: '@united/piece-slack', status: TriggerRunStatus.COMPLETED })
+        expect(recordTriggerRunRpc).toHaveBeenCalledWith({ platformId: 'p1', pieceName: '@activepieces/piece-slack', status: TriggerRunStatus.COMPLETED })
     })
 
     it('maps non-OK statuses to FAILED', async () => {
         const recordTriggerRunRpc = vi.fn(async () => undefined)
         const apiClient = { recordTriggerRun: recordTriggerRunRpc } as unknown as WorkerToApiContract
 
-        await recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@united/piece-slack'), platformId: 'p1', status: EngineResponseStatus.INTERNAL_ERROR })
+        await recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@activepieces/piece-slack'), platformId: 'p1', status: EngineResponseStatus.INTERNAL_ERROR })
 
-        expect(recordTriggerRunRpc).toHaveBeenCalledWith({ platformId: 'p1', pieceName: '@united/piece-slack', status: TriggerRunStatus.FAILED })
+        expect(recordTriggerRunRpc).toHaveBeenCalledWith({ platformId: 'p1', pieceName: '@activepieces/piece-slack', status: TriggerRunStatus.FAILED })
     })
 
     it('skips non-piece triggers', async () => {
         const recordTriggerRunRpc = vi.fn(async () => undefined)
         const apiClient = { recordTriggerRun: recordTriggerRunRpc } as unknown as WorkerToApiContract
-        const emptyTriggerFlowVersion = { ...buildPieceFlowVersion('@united/piece-slack'), trigger: { type: FlowTriggerType.EMPTY, settings: {} } } as unknown as FlowVersion
+        const emptyTriggerFlowVersion = { ...buildPieceFlowVersion('@activepieces/piece-slack'), trigger: { type: FlowTriggerType.EMPTY, settings: {} } } as unknown as FlowVersion
 
         await recordTriggerRun({ apiClient, log, flowVersion: emptyTriggerFlowVersion, platformId: 'p1', status: EngineResponseStatus.OK })
 
@@ -71,14 +71,14 @@ describe('recordTriggerRun', () => {
         })
         const apiClient = { recordTriggerRun: recordTriggerRunRpc } as unknown as WorkerToApiContract
 
-        await expect(recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@united/piece-slack'), platformId: 'p1', status: EngineResponseStatus.OK })).resolves.toBeUndefined()
+        await expect(recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@activepieces/piece-slack'), platformId: 'p1', status: EngineResponseStatus.OK })).resolves.toBeUndefined()
     })
 
     it('logs only the failure message with the flow id, never the raw error', async () => {
         const apiClient = { recordTriggerRun: vi.fn(async () => undefined) } as unknown as WorkerToApiContract
         const engineError = JSON.stringify(formatPieceError(new Error('Webhook authentication failed'), { raw: 'headers: { Authorization: Bearer SECRET123 }' }))
 
-        await recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@united/piece-webhook'), platformId: 'p1', status: EngineResponseStatus.USER_FAILURE, error: engineError })
+        await recordTriggerRun({ apiClient, log, flowVersion: buildPieceFlowVersion('@activepieces/piece-webhook'), platformId: 'p1', status: EngineResponseStatus.USER_FAILURE, error: engineError })
 
         expect(log.warn).toHaveBeenCalledWith(expect.objectContaining({ error: 'Webhook authentication failed', flow: { id: 'flow1' }, status: EngineResponseStatus.USER_FAILURE }), 'Trigger run did not complete successfully')
         expect(JSON.stringify(vi.mocked(log.warn).mock.calls)).not.toContain('SECRET123')

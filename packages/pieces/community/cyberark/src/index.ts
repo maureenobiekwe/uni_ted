@@ -1,7 +1,5 @@
 import {
-  createPiece,
-  PieceAuth,
-  Property
+  createPiece
 } from '@united/pieces-framework';
 import { PieceCategory } from '@united/pieces-framework';
 import { createUser } from './lib/actions/create-user';

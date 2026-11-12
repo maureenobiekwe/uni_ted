@@ -52,7 +52,7 @@ const buildAgentActionEvent = ({ platformId, projectId, flow }: { platformId: st
         source: AgentRunSource.FLOW_STEP,
         ...(flow ? { flow } : {}),
         action: {
-            pieceName: '@united/piece-gmail',
+            pieceName: '@activepieces/piece-gmail',
             pieceDisplayName: 'Gmail',
             actionName: 'send_email',
             displayName: 'Send Email',

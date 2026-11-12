@@ -204,7 +204,7 @@ describe('chatUtils — tool pill active/done labels', () => {
   it('names a configured piece tool by its app and action, not its generated id', () => {
     const part = toolPart(
       mcpToolNameUtils.createPieceToolName(
-        '@united/piece-google-calendar',
+        '@activepieces/piece-google-calendar',
         'google_calendar_get_events',
       ),
       { instruction: 'this week' },
@@ -221,7 +221,7 @@ describe('chatUtils — tool pill active/done labels', () => {
   it('keeps an action that does not repeat its app', () => {
     const part = toolPart(
       mcpToolNameUtils.createPieceToolName(
-        '@united/piece-slack',
+        '@activepieces/piece-slack',
         'send_channel_message',
       ),
       {},

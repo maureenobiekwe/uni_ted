@@ -1,5 +1,5 @@
 import { createAction, Property } from '@united/pieces-framework';
-import { httpClient, HttpMethod } from '@united/pieces-common';
+import { HttpMethod } from '@united/pieces-common';
 import { chatsistantAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 

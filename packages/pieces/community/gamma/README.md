@@ -2,4 +2,4 @@
 
 ## Building
 
-Run `turbo run build --filter=@united/piece-gamma` to build the library.
+Run `turbo run build --filter=@activepieces/piece-gamma` to build the library.

@@ -1,4 +1,4 @@
-import { unitedError, AIProviderName, apId, ErrorCode, isNil, PlatformId, spreadIfDefined } from '@united/core-utils'
+import { AIProviderName, apId, ErrorCode, isNil, PlatformId, spreadIfDefined, unitedError } from '@united/core-utils'
 import { aiUtils } from '@united/server-utils'
 import { AI_PROVIDER_CAPABILITIES, AIProviderModelType, AiProviderToolChoices, AiProviderToolConfig, AiToolAuthConfig, AiToolCapability, AiToolConfigWithoutSensitiveData, AiToolProvider, AiToolProviderConfig, CreateAiToolConfigRequest, GetEnabledAiToolsResponse, ResolvedAiTool, UpdateAiToolConfigRequest } from '@united/shared'
 import { FastifyBaseLogger } from 'fastify'

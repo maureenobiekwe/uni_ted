@@ -1,5 +1,5 @@
 import { createHash, randomBytes } from 'crypto'
-import { unitedError, assertNotNullOrUndefined, deleteProps, ErrorCode, isNil, PlatformId, unique } from '@united/core-utils'
+import { assertNotNullOrUndefined, deleteProps, ErrorCode, isNil, PlatformId, unique, unitedError } from '@united/core-utils'
 import { OAuth2Property, OAuth2Props, PropertyType } from '@united/pieces-framework'
 import { AppConnection, AppConnectionType, BaseOAuth2ConnectionValue, GetOAuth2AuthorizationUrlResponse, OAuth2GrantType, resolveValueFromProps } from '@united/shared'
 import { isAxiosError } from 'axios'

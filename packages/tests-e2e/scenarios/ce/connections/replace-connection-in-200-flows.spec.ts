@@ -227,8 +227,8 @@ function logTiming(label: string, startedAt: number): void {
 const FLOW_COUNT = 200;
 const STEPS_PER_FLOW = 10;
 const SEED_CONCURRENCY = 10;
-const WEBHOOK_PIECE = '@united/piece-webhook';
-const HUGGING_FACE_PIECE = '@united/piece-hugging-face';
+const WEBHOOK_PIECE = '@activepieces/piece-webhook';
+const HUGGING_FACE_PIECE = '@activepieces/piece-hugging-face';
 const LOAD_TEST_TIMEOUT_MS = 60 * 60 * 1000;
 const ACTION_TIMEOUT_MS = 30 * 1000;
 const REVIEW_STEP_TIMEOUT_MS = 5 * 60 * 1000;

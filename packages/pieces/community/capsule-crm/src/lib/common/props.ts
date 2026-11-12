@@ -1,5 +1,5 @@
 import { Property } from '@united/pieces-framework';
-import { capsuleCrmAuth, CapsuleCrmAuthType } from './auth';
+import { capsuleCrmAuth } from './auth';
 import { capsuleCrmClient } from './client';
 
 export const capsuleCrmProps = {

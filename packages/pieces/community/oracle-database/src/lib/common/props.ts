@@ -1,7 +1,6 @@
 import { Property } from '@united/pieces-framework';
 import { OracleDbClient } from './client';
-  import { OracleDbAuth } from './types';
-import { oracleDbAuth } from './auth';
+  import { oracleDbAuth } from './auth';
 
 export const oracleDbProps = {
   tableName: () =>

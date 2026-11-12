@@ -11,7 +11,7 @@ const config: AgentConfig = {
     tools: [{
         type: AgentToolType.PIECE,
         toolName: 'gmail_search',
-        pieceMetadata: { pieceName: '@united/piece-gmail', pieceVersion: '0.12.10', actionName: 'gmail_search_mail' },
+        pieceMetadata: { pieceName: '@activepieces/piece-gmail', pieceVersion: '0.12.10', actionName: 'gmail_search_mail' },
     }],
     structuredOutput: [{ displayName: 'Subject', type: AgentOutputFieldType.TEXT }],
 }

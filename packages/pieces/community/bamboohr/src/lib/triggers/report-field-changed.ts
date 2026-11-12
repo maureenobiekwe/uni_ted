@@ -1,8 +1,4 @@
-import {
-  HttpMethod,
-  HttpRequest,
-  httpClient,
-} from '@united/pieces-common';
+import { HttpMethod, HttpRequest, httpClient } from '@united/pieces-common';
 import {
   TriggerStrategy,
   createTrigger,

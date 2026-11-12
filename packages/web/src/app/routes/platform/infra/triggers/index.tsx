@@ -1,5 +1,5 @@
-import { TriggerStatusReport } from '@united/shared';
 import { ColumnDef } from '@tanstack/react-table';
+import { TriggerStatusReport } from '@united/shared';
 import dayjs from 'dayjs';
 import { t } from 'i18next';
 import {

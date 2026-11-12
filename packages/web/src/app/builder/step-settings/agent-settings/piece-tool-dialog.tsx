@@ -39,12 +39,12 @@ type AgentToolsDialogProps = {
 };
 
 const excludedPieces = [
-  '@united/piece-ai',
-  '@united/piece-mcp',
-  '@united/piece-openai',
-  '@united/piece-claude',
-  '@united/piece-google-gemini',
-  '@united/piece-grok-xai',
+  '@activepieces/piece-ai',
+  '@activepieces/piece-mcp',
+  '@activepieces/piece-openai',
+  '@activepieces/piece-claude',
+  '@activepieces/piece-google-gemini',
+  '@activepieces/piece-grok-xai',
 ];
 
 export function AgentPieceDialog({

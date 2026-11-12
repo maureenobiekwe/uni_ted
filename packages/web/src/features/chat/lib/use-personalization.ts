@@ -1,3 +1,4 @@
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   ChatPersonalizationProgressEvent,
   ChatPersonalizationScope,
@@ -5,7 +6,6 @@ import {
   ChatPersonalizationView,
   WebsocketClientEvent,
 } from '@united/shared';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useEffect, useRef } from 'react';
 
 import { useSocket } from '@/components/providers/socket-provider';

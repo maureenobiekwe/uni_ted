@@ -24,8 +24,8 @@ afterAll(async () => {
     await teardownTestEnvironment()
 })
 
-const PIECE_NAME = '@united/piece-slack'
-const MISSING_PIECE_NAME = '@united/piece-does-not-exist'
+const PIECE_NAME = '@activepieces/piece-slack'
+const MISSING_PIECE_NAME = '@activepieces/piece-does-not-exist'
 
 describe('POST /v1/app-connections/replace', () => {
     it('rejects replacing a connection with itself', async () => {

@@ -16,7 +16,7 @@ import {
 } from '@united/shared';
 
 const SCHEMA_VERSION = '20';
-const WEBHOOK_PIECE_NAME = '@united/piece-webhook';
+const WEBHOOK_PIECE_NAME = '@activepieces/piece-webhook';
 const WEBHOOK_PIECE_VERSION = '0.1.33';
 const WEBHOOK_TRIGGER_NAME = 'catch_webhook';
 const EVENT_FIELD_PATH = "{{trigger['body']['action']}}";

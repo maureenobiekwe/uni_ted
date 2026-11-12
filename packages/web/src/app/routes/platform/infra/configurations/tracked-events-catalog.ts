@@ -1,7 +1,4 @@
-import {
-  isCloudOnlyTelemetryEvent,
-  TelemetryEventName,
-} from '@united/shared';
+import { isCloudOnlyTelemetryEvent, TelemetryEventName } from '@united/shared';
 import { t } from 'i18next';
 import {
   CreditCard,

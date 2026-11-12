@@ -30,7 +30,7 @@ const auditEventRepo = repoFactory(AuditEventEntity)
 const flowVersionRepo = repoFactory(FlowVersionEntity)
 
 const CUSTOM_API_CALL_ACTION_NAME = 'custom_api_call'
-const HTTP_PIECE_NAME = '@united/piece-http'
+const HTTP_PIECE_NAME = '@activepieces/piece-http'
 const HTTP_SEND_REQUEST_ACTION_NAME = 'send_request'
 
 function sendsGetRequestWithBody(step: FlowAction | FlowTrigger): boolean {

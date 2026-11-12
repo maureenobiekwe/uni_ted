@@ -1,12 +1,9 @@
 import {
   createPiece,
-  PieceAuth,
-  PiecePropValueSchema,
 } from '@united/pieces-framework';
-import { AppConnectionType, PieceCategory } from '@united/pieces-framework';
+import { PieceCategory } from '@united/pieces-framework';
 import { findCompaniesAction, findCompanyByDomainAction } from './lib/actions/companies';
 import { findJobOpeningsAction, getAJobOpeningByIdAction, getCompanyJobOpeningsActions } from './lib/actions/jobs';
-import { makeClient } from './lib/common';
 import { findTechnologiesByCompanyAction, findCompaniesByTechnologyIdAction } from './lib/actions/technology';
 import { findNewsEventByIdAction, findNewsEventsByDomainAction } from './lib/actions/news-events';
 import { findConnectionsAction, findConnectionsByDomainAction } from './lib/actions/connections';

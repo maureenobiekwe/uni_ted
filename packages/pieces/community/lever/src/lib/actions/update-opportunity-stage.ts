@@ -4,7 +4,7 @@ import {
   httpClient,
   HttpMethod,
 } from '@united/pieces-common';
-import { LeverAuth, leverAuth } from '../..';
+import { leverAuth } from '../..';
 import { LEVER_BASE_URL } from '../..';
 
 export const updateOpportunityStage = createAction({

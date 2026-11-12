@@ -1,5 +1,5 @@
 import { createAction, Property } from '@united/pieces-framework';
-import { simplybookAuth, makeJsonRpcCall, SimplybookAuth, clientDropdown, serviceDropdown, providerDropdown } from '../common';
+import { simplybookAuth, makeJsonRpcCall, clientDropdown, serviceDropdown, providerDropdown } from '../common';
 
 export const findBooking = createAction({
   auth: simplybookAuth,

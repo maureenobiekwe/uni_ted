@@ -18,7 +18,7 @@ const AITabContent = ({ operation }: { operation: PieceSelectorOperation }) => {
   const { t } = useTranslation();
   const { selectedTab } = usePieceSelectorTabs();
   const { pieceModel, isLoading, isError } = piecesHooks.usePiece({
-    name: '@united/piece-ai',
+    name: '@activepieces/piece-ai',
     projectId: authenticationSession.getProjectId() ?? undefined,
   });
 

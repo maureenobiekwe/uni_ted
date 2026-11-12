@@ -1,10 +1,5 @@
-import {
-  createPiece,
-  PieceAuth,
-  Property,
-} from '@united/pieces-framework';
+import { createPiece, PieceAuth, Property } from '@united/pieces-framework';
 import { createCustomApiCallAction } from '@united/pieces-common';
-import { BasicAuthConnectionValue } from '@united/pieces-framework';
 
 export const scenarioAuth = PieceAuth.BasicAuth({
   description:

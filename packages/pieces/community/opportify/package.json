@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-opportify",
+  "name": "@activepieces/piece-opportify",
   "version": "0.1.7",
   "type": "commonjs",
   "main": "./dist/src/index.js",

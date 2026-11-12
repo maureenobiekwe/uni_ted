@@ -58,7 +58,7 @@ const pieceAuth = PieceAuth.SecretText({ displayName: 'API Key', required: true 
 
 function piece(name: string, version: string, description: string): ReturnType<typeof createMockPieceMetadata> {
     return createMockPieceMetadata({
-        name: `@united/piece-${name}`,
+        name: `@activepieces/piece-${name}`,
         displayName: name,
         version,
         auth: pieceAuth,
@@ -86,7 +86,7 @@ async function publish(name: string, version: string, description: string): Prom
 async function retrievalDocFor(name: string): Promise<string | undefined> {
     const rows = await databaseConnection().query(
         'SELECT "retrievalDoc", "embedding" IS NULL AS "unembedded" FROM "tool_search_index" WHERE "pieceName" = $1',
-        [`@united/piece-${name}`],
+        [`@activepieces/piece-${name}`],
     )
     return rows[0]?.retrievalDoc
 }

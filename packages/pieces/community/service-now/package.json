@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-service-now",
+  "name": "@activepieces/piece-service-now",
   "version": "0.3.3",
   "type": "commonjs",
   "main": "./dist/src/index.js",

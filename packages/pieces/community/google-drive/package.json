@@ -1,5 +1,5 @@
 {
-  "name": "@united/piece-google-drive",
+  "name": "@activepieces/piece-google-drive",
   "version": "0.13.3",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",

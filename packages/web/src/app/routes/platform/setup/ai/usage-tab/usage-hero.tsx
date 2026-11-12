@@ -1,9 +1,5 @@
 import { isNil } from '@united/core-utils';
-import {
-  AiUsageHistory,
-  AiUsagePeriod,
-  AiUsageRanges,
-} from '@united/shared';
+import { AiUsageHistory, AiUsagePeriod, AiUsageRanges } from '@united/shared';
 import { t } from 'i18next';
 import { ChartColumn, ChartLine, Info } from 'lucide-react';
 import { ReactNode, useId, useState } from 'react';

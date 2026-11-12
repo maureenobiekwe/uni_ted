@@ -1,5 +1,4 @@
 import { createAction, Property } from '@united/pieces-framework';
-import { HttpMethod } from '@united/pieces-common';
 import { documergeAuth } from '../common/auth';
 import { DocuMergeClient } from '../common/client';
 

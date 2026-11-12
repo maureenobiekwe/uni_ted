@@ -52,7 +52,7 @@ function isNil(value: unknown): value is null | undefined {
 
 function isMcpTriggerPiece(flowVersion: FlowVersion): boolean {
     return flowVersion.trigger.type === TriggerType.PIECE && 
-           flowVersion.trigger.settings.pieceName === '@united/piece-mcp'
+           flowVersion.trigger.settings.pieceName === '@activepieces/piece-mcp'
 }
 
 const log = system.globalLogger()
