@@ -1,6 +1,7 @@
 import { FlowAction, FlowRunStatus, StepOutputStatus, StreamStepProgress, UpdateRunProgressRequest } from '@united/shared'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
+import { flowExecutor } from '../../src/lib/handler/flow-executor'
 import { buildPieceAction, generateMockEngineConstants } from './test-helper'
 
 const { updateRunProgressMock } = vi.hoisted(() => ({
@@ -15,8 +16,6 @@ vi.mock('../../src/lib/api/engine-run-api', () => ({
         sendFlowResponse: vi.fn(),
     },
 }))
-
-import { flowExecutor } from '../../src/lib/handler/flow-executor'
 
 describe('flowExecutor — progress events with skipped neighbours', () => {
     beforeEach(() => {

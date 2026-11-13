@@ -12,7 +12,7 @@ function fakeStore(initial: Record<string, unknown> = {}): Store {
             return (data[key] as T) ?? null
         },
         async delete(key: string): Promise<void> {
-            delete data[key]
+            Reflect.deleteProperty(data, key)
         },
     }
 }

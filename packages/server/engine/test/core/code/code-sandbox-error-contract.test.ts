@@ -18,7 +18,7 @@ const CHILD_PROCESS_SANDBOXES = SANDBOXES.filter((entry) => entry.name !== 'v8Is
 
 const THROWING_BODIES: ThrowingBody[] = [
     { label: 'a plain Error', body: 'throw new Error("Card declined")', message: 'Card declined' },
-    { label: 'a subclassed Error', body: 'null.x', message: "Cannot read properties of null (reading 'x')", errorName: 'TypeError' },
+    { label: 'a subclassed Error', body: 'null.x', message: 'Cannot read properties of null (reading \'x\')', errorName: 'TypeError' },
     { label: 'an Error carrying own properties', body: 'const e = new Error("Card declined"); e.code = "X"; throw e', message: 'Card declined' },
     { label: 'an Error whose message is JSON', body: 'throw new Error(JSON.stringify({ code: 42 }))', message: '{"code":42}' },
     { label: 'a thrown string', body: 'throw "boom"', message: 'boom' },
