@@ -162,45 +162,45 @@ describe('createSandboxForJob', () => {
             const env = createSandboxMock.mock.calls[0][2].env
             expect(env).toMatchObject({
                 HOME: '/tmp/',
-                AP_EXECUTION_MODE: ExecutionMode.SANDBOX_PROCESS,
-                AP_MAX_FLOW_RUN_LOG_SIZE_MB: '25',
-                AP_MAX_FILE_SIZE_MB: '50',
+                UNI_EXECUTION_MODE: ExecutionMode.SANDBOX_PROCESS,
+                UNI_MAX_FLOW_RUN_LOG_SIZE_MB: '25',
+                UNI_MAX_FILE_SIZE_MB: '50',
                 NODE_PATH: '/usr/src/node_modules',
-                AP_NETWORK_MODE: NetworkMode.STRICT,
+                UNI_NETWORK_MODE: NetworkMode.STRICT,
             })
-            expect('AP_EGRESS_PROXY_URL' in env).toBe(false)
+            expect('UNI_EGRESS_PROXY_URL' in env).toBe(false)
         })
 
         it('forwards the run-log threshold vars only when the API sent them', () => {
             const missing = buildSettings()
             createSandboxForJob({ log, boxId: 1, reusable: false, basePath: '/tmp', getSettings: () => missing })
-            expect('AP_FLOW_RUN_LOG_INPUT_TRUNCATE_THRESHOLD_KB' in createSandboxMock.mock.calls[0][2].env).toBe(false)
-            expect('AP_FLOW_RUN_LOG_SLICE_THRESHOLD_KB' in createSandboxMock.mock.calls[0][2].env).toBe(false)
+            expect('UNI_FLOW_RUN_LOG_INPUT_TRUNCATE_THRESHOLD_KB' in createSandboxMock.mock.calls[0][2].env).toBe(false)
+            expect('UNI_FLOW_RUN_LOG_SLICE_THRESHOLD_KB' in createSandboxMock.mock.calls[0][2].env).toBe(false)
 
             const present = buildSettings({ FLOW_RUN_LOG_INPUT_TRUNCATE_THRESHOLD_KB: 50, FLOW_RUN_LOG_SLICE_THRESHOLD_KB: 64 })
             createSandboxForJob({ log, boxId: 1, reusable: false, basePath: '/tmp', getSettings: () => present })
             expect(createSandboxMock.mock.calls[1][2].env).toMatchObject({
-                AP_FLOW_RUN_LOG_INPUT_TRUNCATE_THRESHOLD_KB: '50',
-                AP_FLOW_RUN_LOG_SLICE_THRESHOLD_KB: '64',
+                UNI_FLOW_RUN_LOG_INPUT_TRUNCATE_THRESHOLD_KB: '50',
+                UNI_FLOW_RUN_LOG_SLICE_THRESHOLD_KB: '64',
             })
         })
 
-        it('forwards AP_ENFORCE_CONNECTION_PIECE_BINDING only when enabled', () => {
+        it('forwards UNI_ENFORCE_CONNECTION_PIECE_BINDING only when enabled', () => {
             const disabled = buildSettings({ ENFORCE_CONNECTION_PIECE_BINDING: false })
             createSandboxForJob({ log, boxId: 1, reusable: false, basePath: '/tmp', getSettings: () => disabled })
-            expect('AP_ENFORCE_CONNECTION_PIECE_BINDING' in createSandboxMock.mock.calls[0][2].env).toBe(false)
+            expect('UNI_ENFORCE_CONNECTION_PIECE_BINDING' in createSandboxMock.mock.calls[0][2].env).toBe(false)
 
             const enabled = buildSettings({ ENFORCE_CONNECTION_PIECE_BINDING: true })
             createSandboxForJob({ log, boxId: 1, reusable: false, basePath: '/tmp', getSettings: () => enabled })
-            expect(createSandboxMock.mock.calls[1][2].env.AP_ENFORCE_CONNECTION_PIECE_BINDING).toBe('true')
+            expect(createSandboxMock.mock.calls[1][2].env.UNI_ENFORCE_CONNECTION_PIECE_BINDING).toBe('true')
         })
 
-        it('omits AP_DEV_PIECES when DEV_PIECES is empty', () => {
+        it('omits UNI_DEV_PIECES when DEV_PIECES is empty', () => {
             const settings = buildSettings({ DEV_PIECES: [] })
             createSandboxForJob({ log, boxId: 1, reusable: false, basePath: '/tmp', getSettings: () => settings })
 
             const env = createSandboxMock.mock.calls[0][2].env
-            expect(env.AP_DEV_PIECES).toBeUndefined()
+            expect(env.UNI_DEV_PIECES).toBeUndefined()
         })
 
         it('joins DEV_PIECES with comma', () => {
@@ -208,19 +208,19 @@ describe('createSandboxForJob', () => {
             createSandboxForJob({ log, boxId: 1, reusable: false, basePath: '/tmp', getSettings: () => settings })
 
             const env = createSandboxMock.mock.calls[0][2].env
-            expect(env.AP_DEV_PIECES).toBe('a,b,c')
+            expect(env.UNI_DEV_PIECES).toBe('a,b,c')
         })
 
-        it('forwards AP_DENO_PATH from process.env without needing SANDBOX_PROPAGATED_ENV_VARS', () => {
+        it('forwards UNI_DENO_PATH from process.env without needing SANDBOX_PROPAGATED_ENV_VARS', () => {
             const originalProcessEnv = { ...process.env }
             try {
-                process.env.AP_DENO_PATH = '/usr/local/bin/deno'
+                process.env.UNI_DENO_PATH = '/usr/local/bin/deno'
                 createSandboxForJob({ log, boxId: 1, reusable: false, basePath: '/tmp', getSettings: () => buildSettings({}) })
-                expect(createSandboxMock.mock.calls[0][2].env.AP_DENO_PATH).toBe('/usr/local/bin/deno')
+                expect(createSandboxMock.mock.calls[0][2].env.UNI_DENO_PATH).toBe('/usr/local/bin/deno')
 
-                delete process.env.AP_DENO_PATH
+                delete process.env.UNI_DENO_PATH
                 createSandboxForJob({ log, boxId: 1, reusable: false, basePath: '/tmp', getSettings: () => buildSettings({}) })
-                expect('AP_DENO_PATH' in createSandboxMock.mock.calls[1][2].env).toBe(false)
+                expect('UNI_DENO_PATH' in createSandboxMock.mock.calls[1][2].env).toBe(false)
             }
             finally {
                 process.env = originalProcessEnv
@@ -240,7 +240,7 @@ describe('createSandboxForJob', () => {
                 const env = createSandboxMock.mock.calls[0][2].env
                 expect(env.PROPAGATED_YES).toBe('forwarded')
                 expect('PROPAGATED_NO' in env).toBe(false)
-                expect(env.AP_SANDBOX_PROPAGATED_ENV_VARS).toBe('PROPAGATED_YES,PROPAGATED_NO')
+                expect(env.UNI_SANDBOX_PROPAGATED_ENV_VARS).toBe('PROPAGATED_YES,PROPAGATED_NO')
             }
             finally {
                 process.env = originalProcessEnv
@@ -271,9 +271,9 @@ describe('createSandboxForJob', () => {
         expect(createSandboxMock.mock.calls[0][2].reusable).toBe(true)
     })
 
-    // AP_NETWORK_MODE in the sandbox env now mirrors the live workerSettings.NETWORK_MODE
+    // UNI_NETWORK_MODE in the sandbox env now mirrors the live workerSettings.NETWORK_MODE
     // directly. There is no egress proxy or kernel firewall to drift against, so the
-    // proxyPort axis (and AP_EGRESS_PROXY_URL) is gone — STRICT only toggles the engine's
+    // proxyPort axis (and UNI_EGRESS_PROXY_URL) is gone — STRICT only toggles the engine's
     // best-effort in-process ssrfGuard.
     describe('sandbox network mode mirrors settings', () => {
         it('NETWORK_MODE=STRICT in settings → engine sees STRICT, no proxy URL', () => {
@@ -281,8 +281,8 @@ describe('createSandboxForJob', () => {
             createSandboxForJob({ log, boxId: 1, reusable: false, basePath: '/tmp', getSettings: () => settings })
 
             const env = createSandboxMock.mock.calls[0][2].env
-            expect(env.AP_NETWORK_MODE).toBe(NetworkMode.STRICT)
-            expect('AP_EGRESS_PROXY_URL' in env).toBe(false)
+            expect(env.UNI_NETWORK_MODE).toBe(NetworkMode.STRICT)
+            expect('UNI_EGRESS_PROXY_URL' in env).toBe(false)
         })
 
         it('NETWORK_MODE=UNRESTRICTED in settings → engine sees UNRESTRICTED', () => {
@@ -290,7 +290,7 @@ describe('createSandboxForJob', () => {
             createSandboxForJob({ log, boxId: 1, reusable: false, basePath: '/tmp', getSettings: () => settings })
 
             const env = createSandboxMock.mock.calls[0][2].env
-            expect(env.AP_NETWORK_MODE).toBe(NetworkMode.UNRESTRICTED)
+            expect(env.UNI_NETWORK_MODE).toBe(NetworkMode.UNRESTRICTED)
         })
     })
 })

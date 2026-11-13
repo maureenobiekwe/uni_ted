@@ -12,8 +12,8 @@ import { db } from '../../../helpers/db'
 import { createMockProject, createMockSigningKey, createMockUserInvitation, mockAndSaveBasicSetup, mockBasicUser } from '../../../helpers/mocks'
 import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/test-setup'
 
-process.env.AP_TURNSTILE_SITE_KEY = 'test-site-key'
-process.env.AP_TURNSTILE_SECRET_KEY = 'test-secret-key'
+process.env.UNI_TURNSTILE_SITE_KEY = 'test-site-key'
+process.env.UNI_TURNSTILE_SECRET_KEY = 'test-secret-key'
 
 const googleAccount = vi.hoisted(() => ({
     email: '',
@@ -34,13 +34,13 @@ let callers = 0
 beforeAll(async () => {
     vi.spyOn(turnstile, 'assertSolved').mockResolvedValue(undefined)
     app = await setupTestEnvironment()
-    process.env.AP_GOOGLE_CLIENT_ID = 'test-google-client-id'
-    process.env.AP_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
+    process.env.UNI_GOOGLE_CLIENT_ID = 'test-google-client-id'
+    process.env.UNI_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
 })
 
 afterAll(async () => {
-    delete process.env.AP_GOOGLE_CLIENT_ID
-    delete process.env.AP_GOOGLE_CLIENT_SECRET
+    delete process.env.UNI_GOOGLE_CLIENT_ID
+    delete process.env.UNI_GOOGLE_CLIENT_SECRET
     await teardownTestEnvironment()
 })
 

@@ -334,10 +334,10 @@ async function spawnDeno({ entry, dataFile, permissions, cwd, memoryLimitMb, all
 }
 
 function resolveDenoPath(): string {
-    if (process.env['AP_DENO_PATH'] === undefined) {
-        throw new Error('AP_DENO_PATH is not set: point it at the deno binary to run the code sandbox')
+    if (process.env['UNI_DENO_PATH'] === undefined) {
+        throw new Error('UNI_DENO_PATH is not set: point it at the deno binary to run the code sandbox')
     }
-    return process.env['AP_DENO_PATH']
+    return process.env['UNI_DENO_PATH']
 }
 
 function toPermissionFlags({ permissions, tmpDir }: { permissions: DenoPermission[], tmpDir: string }): string[] {

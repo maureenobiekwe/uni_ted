@@ -296,7 +296,7 @@ async function waitFor(condition: () => Promise<boolean>): Promise<void> {
     throw new Error('Timed out waiting for the barrier to settle')
 }
 
-const PAUSE_TIMEOUT_DAYS = Number(process.env.AP_PAUSED_FLOW_TIMEOUT_DAYS ?? '30')
+const PAUSE_TIMEOUT_DAYS = Number(process.env.UNI_PAUSED_FLOW_TIMEOUT_DAYS ?? '30')
 
 async function readStatus(barrierId: string): Promise<WaitpointStatus> {
     const barrier = await db.findOneByOrFail<{ status: WaitpointStatus }>('waitpoint', { id: barrierId })
@@ -1769,8 +1769,8 @@ describe('fan-out dispatch', () => {
 
     it('clamps the batch size so a wide source cannot exceed the signal cap', async () => {
         const { flowRun } = await createFanOutParentRun()
-        const previous = process.env.AP_MAX_BARRIER_SIGNALS
-        process.env.AP_MAX_BARRIER_SIGNALS = '3'
+        const previous = process.env.UNI_MAX_BARRIER_SIGNALS
+        process.env.UNI_MAX_BARRIER_SIGNALS = '3'
         try {
             const created = await createFanOutBarrier({ flowRunId: flowRun.id, items: Array.from({ length: 12 }, (_, index) => index), batchSize: 1 })
             expect(created.signalCount).toBe(3)
@@ -1778,10 +1778,10 @@ describe('fan-out dispatch', () => {
         }
         finally {
             if (previous === undefined) {
-                delete process.env.AP_MAX_BARRIER_SIGNALS
+                delete process.env.UNI_MAX_BARRIER_SIGNALS
             }
             else {
-                process.env.AP_MAX_BARRIER_SIGNALS = previous
+                process.env.UNI_MAX_BARRIER_SIGNALS = previous
             }
         }
     })

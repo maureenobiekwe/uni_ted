@@ -6,7 +6,7 @@ import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 
 // Resolve the deno binary shipped by the `deno` npm devDependency so the test
 // does not depend on a system-wide install / PATH.
-process.env.AP_DENO_PATH = path.join(path.dirname(require.resolve('deno/bin.cjs')), 'deno')
+process.env.UNI_DENO_PATH = path.join(path.dirname(require.resolve('deno/bin.cjs')), 'deno')
 
 let flowDir: string
 let stepDir: string
@@ -18,7 +18,7 @@ let denoCodeSandbox: any
 let coreDeno: any
 
 beforeAll(async () => {
-    // Dynamic import so AP_DENO_PATH is set before the module reads it.
+    // Dynamic import so UNI_DENO_PATH is set before the module reads it.
     denoModule = await import('../../../src/lib/core/code/deno-code-sandbox')
     coreDeno = (await import('@united/core-utils')).deno
     // The boundary suite asserts the locked profile (the code-only modes) — an
@@ -94,7 +94,7 @@ describe('denoCodeSandbox permission boundary', () => {
 
         it('reuses one warm DENO_DIR next to the step dir across runs and keeps it afterwards, in SANDBOX_CODE_ONLY and UNSANDBOXED modes', async () => {
             for (const mode of ['SANDBOX_CODE_ONLY', 'UNSANDBOXED']) {
-                await withEnv({ AP_EXECUTION_MODE: mode, AP_DENO_CACHE_MOUNTED: undefined }, async () => {
+                await withEnv({ UNI_EXECUTION_MODE: mode, UNI_DENO_CACHE_MOUNTED: undefined }, async () => {
                     const envSandbox = denoModule.denoCodeSandbox({ permissions: [denoModule.DenoPermission.ENV], codeStepMemoryLimitMb: 128 })
                     const codeFilePath = path.join(stepDir, 'index.ts')
                     await writeFile(codeFilePath, 'export const code = async () => Deno.env.get(\'DENO_DIR\')')
@@ -109,9 +109,9 @@ describe('denoCodeSandbox permission boundary', () => {
             }
         })
 
-        it('reuses the same warm DENO_DIR in SANDBOX_PROCESS and SANDBOX_CODE_AND_PROCESS only once the sandbox layer confirms the cache mount is writable (AP_DENO_CACHE_MOUNTED)', async () => {
+        it('reuses the same warm DENO_DIR in SANDBOX_PROCESS and SANDBOX_CODE_AND_PROCESS only once the sandbox layer confirms the cache mount is writable (UNI_DENO_CACHE_MOUNTED)', async () => {
             for (const mode of ['SANDBOX_PROCESS', 'SANDBOX_CODE_AND_PROCESS']) {
-                await withEnv({ AP_EXECUTION_MODE: mode, AP_DENO_CACHE_MOUNTED: 'true' }, async () => {
+                await withEnv({ UNI_EXECUTION_MODE: mode, UNI_DENO_CACHE_MOUNTED: 'true' }, async () => {
                     const envSandbox = denoModule.denoCodeSandbox({ permissions: [denoModule.DenoPermission.ENV], codeStepMemoryLimitMb: 128 })
                     const codeFilePath = path.join(stepDir, 'index.ts')
                     await writeFile(codeFilePath, 'export const code = async () => Deno.env.get(\'DENO_DIR\')')
@@ -133,7 +133,7 @@ describe('denoCodeSandbox permission boundary', () => {
                 const freshStepDir = path.join(freshFlowDir, 'step')
                 await mkdir(freshStepDir)
                 try {
-                    await withEnv({ AP_EXECUTION_MODE: 'SANDBOX_PROCESS', AP_DENO_CACHE_MOUNTED: 'true' }, async () => {
+                    await withEnv({ UNI_EXECUTION_MODE: 'SANDBOX_PROCESS', UNI_DENO_CACHE_MOUNTED: 'true' }, async () => {
                         const envSandbox = denoModule.denoCodeSandbox({ permissions: [denoModule.DenoPermission.ENV], codeStepMemoryLimitMb: 128 })
                         const codeFilePath = path.join(freshStepDir, 'index.ts')
                         await writeFile(codeFilePath, 'export const code = async () => Deno.env.get(\'DENO_DIR\')')
@@ -154,7 +154,7 @@ describe('denoCodeSandbox permission boundary', () => {
 
         it('falls back to a fresh, removed-after-run DENO_DIR in SANDBOX_PROCESS, SANDBOX_CODE_AND_PROCESS and no mode set, when the sandbox layer has not mounted a writable cache (reusable sandbox)', async () => {
             for (const mode of ['SANDBOX_PROCESS', 'SANDBOX_CODE_AND_PROCESS', undefined]) {
-                await withEnv({ AP_EXECUTION_MODE: mode, AP_DENO_CACHE_MOUNTED: undefined }, async () => {
+                await withEnv({ UNI_EXECUTION_MODE: mode, UNI_DENO_CACHE_MOUNTED: undefined }, async () => {
                     const envSandbox = denoModule.denoCodeSandbox({ permissions: [denoModule.DenoPermission.ENV], codeStepMemoryLimitMb: 128 })
                     const codeFilePath = path.join(stepDir, 'index.ts')
                     await writeFile(codeFilePath, 'export const code = async () => Deno.env.get(\'DENO_DIR\')')
@@ -173,15 +173,15 @@ describe('denoCodeSandbox permission boundary', () => {
         it('with the ENV permission exposes only PATH, never the engine env', async () => {
             const envSandbox = denoModule.denoCodeSandbox({ permissions: [denoModule.DenoPermission.ENV], codeStepMemoryLimitMb: 128 })
             const codeFilePath = path.join(stepDir, 'index.ts')
-            await writeFile(codeFilePath, `export const code = async () => ({ keys: Object.keys(Deno.env.toObject()).sort(), missing: process.env.AP_EXECUTION_MODE ?? null })`)
+            await writeFile(codeFilePath, `export const code = async () => ({ keys: Object.keys(Deno.env.toObject()).sort(), missing: process.env.UNI_EXECUTION_MODE ?? null })`)
             const result = await envSandbox.runCodeModule({ codeFilePath, inputs: {} })
             expect(result).toEqual({ keys: ['DENO_DIR', 'PATH'], missing: null })
         })
 
-        it('forwards exactly the vars listed in AP_SANDBOX_PROPAGATED_ENV_VARS when ENV is granted, and none without it', async () => {
+        it('forwards exactly the vars listed in UNI_SANDBOX_PROPAGATED_ENV_VARS when ENV is granted, and none without it', async () => {
             const originalEnv = { ...process.env }
             try {
-                process.env.AP_SANDBOX_PROPAGATED_ENV_VARS = 'MY_PROPAGATED_SECRET,MY_MISSING_VAR'
+                process.env.UNI_SANDBOX_PROPAGATED_ENV_VARS = 'MY_PROPAGATED_SECRET,MY_MISSING_VAR'
                 process.env.MY_PROPAGATED_SECRET = 'propagated-value'
                 process.env.MY_UNLISTED_SECRET = 'must-not-leak'
                 const codeFilePath = path.join(stepDir, 'index.ts')
@@ -271,8 +271,8 @@ describe('denoCodeSandbox permission boundary', () => {
     describe('cleans up the inputs file', () => {
         it('removes it when deno cannot be spawned', async () => {
             const isolatedTmp = await mkdtemp(path.join(tmpdir(), 'ap-deno-leak-'))
-            await withEnv({ TMPDIR: isolatedTmp, AP_DENO_PATH: undefined }, async () => {
-                await expectRejection(coreDeno.run({ body: 'const result = 1;', data: { a: 1 }, permissions: [] }), /AP_DENO_PATH is not set/)
+            await withEnv({ TMPDIR: isolatedTmp, UNI_DENO_PATH: undefined }, async () => {
+                await expectRejection(coreDeno.run({ body: 'const result = 1;', data: { a: 1 }, permissions: [] }), /UNI_DENO_PATH is not set/)
             })
             expect(await readdir(isolatedTmp)).toEqual([])
             await rm(isolatedTmp, { recursive: true, force: true })

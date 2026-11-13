@@ -105,7 +105,7 @@ export const AllowedDomainsStep = ({
             <div className="mt-2 flex flex-col gap-1.5">
               <p className="text-xs text-gray-11">
                 {t(
-                  'These origins are also allowed automatically (configured via AP_ALLOWED_EMBED_ORIGINS):',
+                  'These origins are also allowed automatically (configured via UNI_ALLOWED_EMBED_ORIGINS):',
                 )}
               </p>
               <div className="flex flex-wrap gap-1.5">

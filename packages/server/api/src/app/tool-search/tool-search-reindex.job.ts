@@ -41,7 +41,7 @@ export function reindexLockKey(_scope: ReindexScope): string {
 /**
  * Whether to skip a reconcile because there is no legitimate embedding funder.
  *
- * On CLOUD the shared catalog must be funded explicitly by `AP_OPENAI_API_KEY` — we never fall back
+ * On CLOUD the shared catalog must be funded explicitly by `UNI_OPENAI_API_KEY` — we never fall back
  * to the oldest platform's key (that platform is united' own host tenant, not a valid funder
  * for every tenant's catalog). So on cloud without the env key we skip the reconcile and let the
  * keyword floor serve, rather than silently billing the host. Self-hosted editions keep the
@@ -67,10 +67,10 @@ export const toolSearchReindexJob = (log: FastifyBaseLogger) => ({
                 timeoutInSeconds: REINDEX_LOCK_TIMEOUT_SECONDS,
                 fn: async () => {
                     if (shouldSkipReindexOnCloud()) {
-                        log.warn('[toolSearchReindexJob] Cloud edition without AP_OPENAI_API_KEY — a reconcile was requested but cannot run; set AP_OPENAI_API_KEY to fund embedding (keyword floor serves meanwhile).')
+                        log.warn('[toolSearchReindexJob] Cloud edition without UNI_OPENAI_API_KEY — a reconcile was requested but cannot run; set UNI_OPENAI_API_KEY to fund embedding (keyword floor serves meanwhile).')
                         return
                     }
-                    // Embedding is funded by AP_OPENAI_API_KEY when set; otherwise (self-host only) by
+                    // Embedding is funded by UNI_OPENAI_API_KEY when set; otherwise (self-host only) by
                     // the platform that holds the AI key (the oldest platform — same one embed-security
                     // / chat use). Scope only bounds which rows reconcile, never whose key pays.
                     const platform = await platformService(log).getOldestPlatform()
@@ -122,7 +122,7 @@ export const toolSearchReindexJob = (log: FastifyBaseLogger) => ({
     /**
      * Boot reconcile: (re)build the index when it is empty OR only partially embedded. The steady-state
      * hook (piece-sync) only fires on a catalog delta, so without this a deployment whose piece_metadata
-     * is already populated would leave the index unbuilt after AP_TOOL_SEARCH_ENABLED is flipped on — and
+     * is already populated would leave the index unbuilt after UNI_TOOL_SEARCH_ENABLED is flipped on — and
      * a build that failed midway (embedder rate-limited, leaving rows with NULL embeddings) would never
      * retry until the next piece add/delete. Covers fresh-deploy, already-populated-deploy, and
      * partial-build recovery.
@@ -136,7 +136,7 @@ export const toolSearchReindexJob = (log: FastifyBaseLogger) => ({
             return
         }
         if (shouldSkipReindexOnCloud()) {
-            log.warn('[toolSearchReindexJob#backfillIfNeeded] Cloud edition without AP_OPENAI_API_KEY — tool-search is enabled but cannot build its index; set AP_OPENAI_API_KEY to fund embedding (keyword floor serves meanwhile).')
+            log.warn('[toolSearchReindexJob#backfillIfNeeded] Cloud edition without UNI_OPENAI_API_KEY — tool-search is enabled but cannot build its index; set UNI_OPENAI_API_KEY to fund embedding (keyword floor serves meanwhile).')
             return
         }
         if (!await toolSearchTableExists()) {

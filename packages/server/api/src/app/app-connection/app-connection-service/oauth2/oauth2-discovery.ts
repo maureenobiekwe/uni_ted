@@ -75,7 +75,7 @@ async function fetchAuthorizationServerMetadata(authorizationServer: string): Pr
     ]
     const metadata = await fetchFirst<AuthorizationServerMetadata>(candidates)
     if (isNil(metadata) || isNil(metadata.authorization_endpoint) || isNil(metadata.token_endpoint)) {
-        throw invalidConnection(`Could not discover OAuth2 endpoints for ${authorizationServer}. Tried ${candidates.join(' and ')}. If this server is on a private network, add its host to AP_SSRF_ALLOW_LIST.`)
+        throw invalidConnection(`Could not discover OAuth2 endpoints for ${authorizationServer}. Tried ${candidates.join(' and ')}. If this server is on a private network, add its host to UNI_SSRF_ALLOW_LIST.`)
     }
     return metadata
 }

@@ -1,7 +1,7 @@
 FROM node:24.22.1-bookworm-slim AS base
 
 # C.UTF-8 ships with Debian, so no locale generation is needed.
-# REDISMS_VERSION pins the Redis that redis-memory-server (AP_REDIS_TYPE=MEMORY)
+# REDISMS_VERSION pins the Redis that redis-memory-server (UNI_REDIS_TYPE=MEMORY)
 # compiles at image build and looks up at runtime — the default "stable" drifted
 # to Redis 8, whose in-tree modules need cmake/pkg-config and break the build;
 # Redis 7.x compiles with gcc/make alone. Keep this pin in the base stage so the
@@ -47,7 +47,7 @@ RUN export ARCH=$(uname -m) && \
     bun --version
 
 # Download deno (the code-sandbox runtime) — pinned to match the `deno` npm dep.
-# The forked engine resolves it via AP_DENO_PATH, so no PATH lookup is needed.
+# The forked engine resolves it via UNI_DENO_PATH, so no PATH lookup is needed.
 RUN export ARCH=$(uname -m) && \
     if [ "$ARCH" = "x86_64" ]; then \
       curl -fSL https://github.com/denoland/deno/releases/download/v2.9.3/deno-x86_64-unknown-linux-gnu.zip -o deno.zip; \
@@ -58,7 +58,7 @@ RUN export ARCH=$(uname -m) && \
     chmod +x /usr/local/bin/deno && \
     rm -f deno.zip && \
     deno --version
-ENV AP_DENO_PATH=/usr/local/bin/deno
+ENV UNI_DENO_PATH=/usr/local/bin/deno
 
 # Install global npm packages in a single layer
 RUN --mount=type=cache,target=/root/.npm \
@@ -90,11 +90,11 @@ COPY . .
 # Build frontend, engine, server API, and worker
 RUN NODE_OPTIONS=--max-old-space-size=4096 npx turbo run build --filter=web --filter=@united/engine --filter=api --filter=worker
 
-# Source maps are off unless AP_BUILD_SOURCEMAP=true: there is no upload step yet, so
+# Source maps are off unless UNI_BUILD_SOURCEMAP=true: there is no upload step yet, so
 # they'd be ~21MB of output that this layer deletes anyway. Turning them on adds about
 # 0.6GB of peak memory and a second or two. A build that opts in must upload them BEFORE
 # this line; the delete stays so source is never served from the shipped image.
-# TODO(cloud-ci): set AP_BUILD_SOURCEMAP=true and upload with sentry-cli when SENTRY_AUTH_TOKEN is set.
+# TODO(cloud-ci): set UNI_BUILD_SOURCEMAP=true and upload with sentry-cli when SENTRY_AUTH_TOKEN is set.
 RUN find dist/packages/web -name '*.map' -delete
 
 # Generate migration manifest (ordered list of migration names) for image-tag-based rollback
@@ -157,7 +157,7 @@ LABEL service=united
 
 # WORKER containers have no HTTP server; treat them as healthy (probe only the app).
 HEALTHCHECK --interval=10s --timeout=5s --start-period=60s --retries=5 \
-    CMD [ "$AP_CONTAINER_TYPE" = "WORKER" ] && exit 0 || curl -fsS "http://localhost:${AP_PORT:-80}/api/v1/health" || exit 1
+    CMD [ "$UNI_CONTAINER_TYPE" = "WORKER" ] && exit 0 || curl -fsS "http://localhost:${UNI_PORT:-80}/api/v1/health" || exit 1
 
 ENTRYPOINT ["tini", "--", "./docker-entrypoint.sh"]
 EXPOSE 80

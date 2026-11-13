@@ -6,7 +6,7 @@ import { atomicProps } from './common';
 import { atomicSchemas } from './output-schemas';
 
 function maxFileSizeMb(): number {
-  const configured = Number(process.env['AP_MAX_FILE_SIZE_MB']);
+  const configured = Number(process.env['UNI_MAX_FILE_SIZE_MB']);
   return Number.isFinite(configured) && configured > 0 ? configured : DEFAULT_MAX_FILE_SIZE_MB;
 }
 
@@ -19,7 +19,7 @@ export const odooDownloadAttachment = createAction({
   audience: 'ai',
   aiMetadata: {
     description:
-      'Downloads one Odoo attachment (ir.attachment) by ID and returns it as a file reference usable by later steps; link-type attachments return their URL and no file. Files larger than the instance file limit (AP_MAX_FILE_SIZE_MB, default 25 MB) are refused before download. Get IDs from odoo_list_record_attachments. Read-only and idempotent.',
+      'Downloads one Odoo attachment (ir.attachment) by ID and returns it as a file reference usable by later steps; link-type attachments return their URL and no file. Files larger than the instance file limit (UNI_MAX_FILE_SIZE_MB, default 25 MB) are refused before download. Get IDs from odoo_list_record_attachments. Read-only and idempotent.',
     idempotent: true,
   },
   outputSchema: atomicSchemas.download,

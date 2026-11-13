@@ -64,7 +64,7 @@ async function fetchCatalog(): Promise<PublishedCatalog> {
 }
 
 function catalogUrl(): string {
-    return process.env['AP_MODEL_CATALOG_URL'] ?? DEFAULT_CATALOG_URL
+    return process.env['UNI_MODEL_CATALOG_URL'] ?? DEFAULT_CATALOG_URL
 }
 
 function normalizeModelId({ provider, modelId }: { provider: AIProviderName, modelId: string }): string {
@@ -78,7 +78,7 @@ let cached: { value: PublishedCatalog, fetchedAt: number } | undefined
 let inFlight: Promise<PublishedCatalog> | undefined
 let lastFailureAt: number | undefined
 
-const DEFAULT_CATALOG_URL = 'https://cdn.united.com/ai/model-catalog.json'
+const DEFAULT_CATALOG_URL = 'https://cdn.example.com/ai/model-catalog.json'
 const CATALOG_TTL_MS = 24 * 60 * 60 * 1000
 const FAILURE_BACKOFF_MS = 5 * 60 * 1000
 const REQUEST_TIMEOUT_MS = 10_000

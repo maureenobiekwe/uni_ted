@@ -53,7 +53,7 @@ export const mcpOAuthAuthorizeController: FastifyPluginAsyncZod = async (app) =>
         })
 
         if (domainHelper.hasMcpUrl() && domainHelper.isUnconfiguredHostRequest({ req })) {
-            req.log.warn({ requestHost: networkUtils.getRequestHost(req) }, '[mcpOAuthAuthorizeController] Request host matches neither AP_MCP_URL nor AP_FRONTEND_URL; the proxy must forward the public hostname in X-Forwarded-Host or keep the Host header')
+            req.log.warn({ requestHost: networkUtils.getRequestHost(req) }, '[mcpOAuthAuthorizeController] Request host matches neither UNI_MCP_URL nor UNI_FRONTEND_URL; the proxy must forward the public hostname in X-Forwarded-Host or keep the Host header')
         }
         const consentPageUrl = domainHelper.isMcpHostRequest({ req })
             ? domainHelper.getBrowserLandingUrl({ path: '/mcp-authorize' })

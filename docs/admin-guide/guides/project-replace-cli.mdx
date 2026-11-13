@@ -31,13 +31,13 @@ The `@united/cli` `project replace` command mirrors a project's flows, table sch
 
 ```bash
 # API keys via env vars (recommended for CI — keeps secrets out of process args and shell history)
-export AP_SOURCE_API_KEY="$STAGING_API_KEY"
-export AP_DEST_API_KEY="$PROD_API_KEY"
+export UNI_SOURCE_API_KEY="$STAGING_API_KEY"
+export UNI_DEST_API_KEY="$PROD_API_KEY"
 
 npx @united/cli project replace \
-  --source-url    https://staging.united.com \
+  --source-url    https://staging.example.com \
   --source-project "$STAGING_PROJECT_ID" \
-  --dest-url      https://prod.united.com \
+  --dest-url      https://prod.example.com \
   --dest-project  "$PROD_PROJECT_ID" \
   [--json]
 ```
@@ -47,15 +47,15 @@ npx @united/cli project replace \
 | Flag | Required | Purpose |
 | --- | --- | --- |
 | `--source-url` | yes | Base URL of the source instance (no trailing slash needed). |
-| `--source-api-key` | flag *or* env | Platform API key for the source. Falls back to `AP_SOURCE_API_KEY`. |
+| `--source-api-key` | flag *or* env | Platform API key for the source. Falls back to `UNI_SOURCE_API_KEY`. |
 | `--source-project` | yes | Project id on the source instance. |
 | `--dest-url` | yes | Base URL of the destination instance. |
-| `--dest-api-key` | flag *or* env | Platform API key for the destination. Falls back to `AP_DEST_API_KEY`. |
+| `--dest-api-key` | flag *or* env | Platform API key for the destination. Falls back to `UNI_DEST_API_KEY`. |
 | `--dest-project` | yes | Project id on the destination instance. |
 | `--json` | no | Emit machine-readable JSON instead of a human summary. |
 
 <Warning>
-**Don't pass API keys via `--source-api-key` / `--dest-api-key` flags in CI or production scripts.** Process arguments are visible to other users on the host (`ps aux`), get captured in CI log output, and persist in shell history. Use `AP_SOURCE_API_KEY` / `AP_DEST_API_KEY` environment variables instead — they don't show up in any of those places.
+**Don't pass API keys via `--source-api-key` / `--dest-api-key` flags in CI or production scripts.** Process arguments are visible to other users on the host (`ps aux`), get captured in CI log output, and persist in shell history. Use `UNI_SOURCE_API_KEY` / `UNI_DEST_API_KEY` environment variables instead — they don't show up in any of those places.
 </Warning>
 
 ## Exit codes
@@ -198,8 +198,8 @@ jobs:
             --dest-project "${{ vars.PROD_PROJECT_ID }}" \
             --json
         env:
-          AP_SOURCE_API_KEY: ${{ secrets.STAGING_API_KEY }}
-          AP_DEST_API_KEY: ${{ secrets.PROD_API_KEY }}
+          UNI_SOURCE_API_KEY: ${{ secrets.STAGING_API_KEY }}
+          UNI_DEST_API_KEY: ${{ secrets.PROD_API_KEY }}
 ```
 
 A non-zero exit code fails the job — preflight errors, server errors, or transport errors all surface naturally to GitHub Actions without extra wiring.

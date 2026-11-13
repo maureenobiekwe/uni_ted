@@ -202,11 +202,11 @@ export function createSandbox(
                 mounts: allMounts,
                 env: {
                     ...options.env,
-                    AP_SANDBOX_WS_PORT: String(port),
-                    AP_SANDBOX_WS_TOKEN: wsRpcToken,
-                    ...(denoCacheMount ? { AP_DENO_CACHE_MOUNTED: 'true' } : {}),
+                    UNI_SANDBOX_WS_PORT: String(port),
+                    UNI_SANDBOX_WS_TOKEN: wsRpcToken,
+                    ...(denoCacheMount ? { UNI_DENO_CACHE_MOUNTED: 'true' } : {}),
                     ...(customPieceMounts.length > 0
-                        ? { AP_CUSTOM_PIECES_PATHS: '/root/custom_pieces' }
+                        ? { UNI_CUSTOM_PIECES_PATHS: '/root/custom_pieces' }
                         : {}),
                 },
                 resourceLimits: {

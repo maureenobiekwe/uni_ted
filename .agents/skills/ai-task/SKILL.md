@@ -1,6 +1,6 @@
 ---
 name: ai-task
-description: The AI team's one command for doing a task the team way, from ticket to merged PR. Use when an engineer on the AI team (chat, agents, MCP, AI providers) starts a task ("/ai-task AI-123", "start AI-123", "work on this bug"), turns a request or customer report into a ticket ("/ai-task customer says chat won't save"), triages or answers a bug or support question ("/ai-task triage ENG-456"), or is about to open or update a PR ("/ai-task ship"). Owns the merge queue: when a PR is approved it moves the ticket to Ready to merge and ranks it so the top merges first ("/ai-task queue", "what do I merge next", "my PR got approved"). Sets up new members ("set me up", "onboard me"): Linear MCP, personal Linear API key, repo. Also lets support, admins and anyone outside the team report an AI bug or request ("/ai-task report ..."). Grills the user one question at a time ("/ai-task grill AI-123") until a ticket is solvable without asking anyone. Runs the Sun/Tue/Thu chat quality review ("/ai-task quality", "review real chats"): samples real chats from PostHog for blind labeling and drafts tickets for confirmed problems. Runs the team check-up ("/ai-task check", "check the AI roadmap", "how is activation", "weekly AI update"): activation and cost from production plus late, blocked or waiting work in Linear. It does the Linear, brain and PR paperwork so the user only answers what it can't work out.
+description: The AI team's one command for doing a task the team way, from ticket to merged PR. Use when an engineer on the AI team (chat, agents, MCP, AI providers) starts a task ("/ai-task AI-123", "start AI-123", "work on this bug"), turns a request or customer report into a ticket ("/ai-task customer says chat won't save"), triages or answers a bug or support question ("/ai-task triage ENG-456"), or is about to open or update a PR ("/ai-task ship"). Owns the merge queue: when a PR is approved it moves the ticket to Ready to merge and ranks it so the top merges first ("/ai-task queue", "what do I merge next", "my PR got approved"). Sets up new members ("set me up", "onboard me"): the issue-tracker MCP, personal tracker API key, repo. Also lets support, admins and anyone outside the team report an AI bug or request ("/ai-task report ..."). Grills the user one question at a time ("/ai-task grill AI-123") until a ticket is solvable without asking anyone. Runs the Sun/Tue/Thu chat quality review ("/ai-task quality", "review real chats"): samples real chats from PostHog for blind labeling and drafts tickets for confirmed problems. Runs the team check-up ("/ai-task check", "check the AI roadmap", "how is activation", "weekly AI update"): activation and cost from production plus late, blocked or waiting work in the tracker. It does the tracker, brain and PR paperwork so the user only answers what it can't work out.
 ---
 
 # AI task
@@ -9,14 +9,16 @@ One command, eight moments: **start**, **triage**, **ship**, **queue**, **check*
 
 Whenever a ticket is being created or is too thin to solve, run a **grill** (below) inside that moment.
 
+**The issue tracker is a pluggable integration, not a hard dependency.** The team currently tracks work in Linear, reached through the Linear MCP plus `linear.mjs` for queue ordering, so the steps below name Linear concretely. If the team moves to another tracker, swap the MCP tool names and the `linear.mjs` helper for the equivalent; the moments (start, triage, ship, queue, check) and the preview-before-every-write rule stay the same. Nothing in this skill assumes Linear beyond those integration points.
+
 ## Requirements (check first, every run)
 
 Run these checks before anything else, silently when they pass. If one fails, show only the card for that failure and stop.
 
-1. **Linear connected.** Call the Linear MCP for the current user (`get_user` with `me`). If the tool is missing or the call fails with an auth error, stop:
+1. **Tracker connected.** Call the team's issue-tracker MCP for the current user (currently Linear: `get_user` with `me`). If the tool is missing or the call fails with an auth error, stop:
 
-   > **Linear isn't connected yet.**
-   > Type `/mcp`, pick Linear and sign in. Then run `/ai-task` again and we're good.
+   > **The issue tracker isn't connected yet.**
+   > Type `/mcp`, pick the tracker (Linear) and sign in. Then run `/ai-task` again and we're good.
 
 2. **Who you are.** The same `get_user` call returns the user's `teams`. They're a member if team key `AI` is in the list.
    - **Member:** every moment is open.

@@ -251,8 +251,8 @@ describe('Waitpoint service', () => {
             expect(scheduled[0].jobId).not.toBe(scheduled[1].jobId)
         })
 
-        it('should reject a resumeDateTime past flowRun.created + AP_PAUSED_FLOW_TIMEOUT_DAYS (cumulative check)', async () => {
-            const pauseTimeoutDays = Number(process.env.AP_PAUSED_FLOW_TIMEOUT_DAYS ?? '30')
+        it('should reject a resumeDateTime past flowRun.created + UNI_PAUSED_FLOW_TIMEOUT_DAYS (cumulative check)', async () => {
+            const pauseTimeoutDays = Number(process.env.UNI_PAUSED_FLOW_TIMEOUT_DAYS ?? '30')
             const { flow, flowVersion } = await createFlowRun()
             const oldFlowRun = createMockFlowRun({
                 projectId: ctx.project.id,

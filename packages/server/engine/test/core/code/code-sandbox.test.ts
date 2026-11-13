@@ -1,11 +1,11 @@
 import path from 'node:path'
 import { describe, expect, it, vi } from 'vitest'
 
-process.env.AP_DENO_PATH = path.join(path.dirname(require.resolve('deno/bin.cjs')), 'deno')
+process.env.UNI_DENO_PATH = path.join(path.dirname(require.resolve('deno/bin.cjs')), 'deno')
 
 async function loadSandboxModule(executionMode: string) {
     vi.resetModules()
-    process.env.AP_EXECUTION_MODE = executionMode
+    process.env.UNI_EXECUTION_MODE = executionMode
     return import('../../../src/lib/core/code/code-sandbox')
 }
 

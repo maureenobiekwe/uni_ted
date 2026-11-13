@@ -20,7 +20,7 @@ afterAll(async () => {
 })
 
 describe('platform configuration', () => {
-    it('creates the row on first read, taking its default from AP_TELEMETRY_ENABLED so an opted-out operator stays opted out', async () => {
+    it('creates the row on first read, taking its default from UNI_TELEMETRY_ENABLED so an opted-out operator stays opted out', async () => {
         const envDefault = system.getBoolean(AppSystemProp.TELEMETRY_ENABLED) ?? true
         expect(envDefault).toBe(false)
 
@@ -34,7 +34,7 @@ describe('platform configuration', () => {
         expect(configuration.isProductTelemetryEnabled).toBe(envDefault)
     })
 
-    it('defaults infra setup telemetry on, independently of AP_TELEMETRY_ENABLED', async () => {
+    it('defaults infra setup telemetry on, independently of UNI_TELEMETRY_ENABLED', async () => {
         const ctx = await createTestContext(app!)
 
         const configuration = (await ctx.get('/v1/platform-configurations'))!.json()
@@ -42,7 +42,7 @@ describe('platform configuration', () => {
         expect(configuration.isInfraSetupTelemetryEnabled).toBe(true)
     })
 
-    it('creates the barrier signal cap from AP_MAX_BARRIER_SIGNALS', async () => {
+    it('creates the barrier signal cap from UNI_MAX_BARRIER_SIGNALS', async () => {
         const ctx = await createTestContext(app!)
 
         const configuration = (await ctx.get('/v1/platform-configurations'))!.json()

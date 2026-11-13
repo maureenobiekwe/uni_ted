@@ -23,10 +23,10 @@ const log = { warn: vi.fn(), info: vi.fn(), error: vi.fn() } as unknown as Fasti
 
 function configure(apiKey?: string): void {
     if (apiKey === undefined) {
-        delete process.env.AP_ZEROBOUNCE_API_KEY
+        delete process.env.UNI_ZEROBOUNCE_API_KEY
     }
     else {
-        process.env.AP_ZEROBOUNCE_API_KEY = apiKey
+        process.env.UNI_ZEROBOUNCE_API_KEY = apiKey
     }
 }
 

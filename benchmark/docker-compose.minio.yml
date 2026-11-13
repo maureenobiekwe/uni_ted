@@ -1,7 +1,7 @@
 # Overlay that adds a local MinIO (S3-compatible) object store to the benchmark
 # stack so the smoke test can exercise the S3 file-storage path end to end.
 #
-# Usage (the smoke workflow sets AP_FILE_STORAGE_LOCATION=S3 and the AP_S3_* vars):
+# Usage (the smoke workflow sets UNI_FILE_STORAGE_LOCATION=S3 and the UNI_S3_* vars):
 #   docker compose -f benchmark/docker-compose.yml -f benchmark/docker-compose.minio.yml up -d
 #
 # The app validates its S3 configuration on boot (system-validator), so the
@@ -18,7 +18,7 @@ services:
     networks:
       bench:
         # Static IP so the SANDBOX_PROCESS engine, which resolves names through public DNS,
-        # can reach the S3 signed URLs when AP_S3_ENDPOINT uses this address.
+        # can reach the S3 signed URLs when UNI_S3_ENDPOINT uses this address.
         ipv4_address: 172.30.0.11
 
   minio-ready:

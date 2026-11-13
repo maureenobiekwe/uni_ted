@@ -103,8 +103,8 @@ jobs:
         ports:
           - 6379:6379
     env:
-      AP_REDIS_HOST: localhost
-      AP_REDIS_PORT: "6379"
+      UNI_REDIS_HOST: localhost
+      UNI_REDIS_PORT: "6379"
     steps:
       - uses: actions/checkout@v5
         with:
@@ -168,10 +168,10 @@ jobs:
         ports:
           - 6379:6379
     env:
-      # .env.tests pins AP_REDIS_HOST=redis, the alias inside the job's docker network, which a
+      # .env.tests pins UNI_REDIS_HOST=redis, the alias inside the job's docker network, which a
       # non-container job is not on. dotenv does not override values already in the environment.
-      AP_REDIS_HOST: localhost
-      AP_REDIS_PORT: "6379"
+      UNI_REDIS_HOST: localhost
+      UNI_REDIS_PORT: "6379"
     steps:
       - uses: actions/checkout@v5
 
@@ -206,13 +206,13 @@ jobs:
         ports:
           - 5432:5432
     env:
-      AP_DB_TYPE: POSTGRES
-      AP_POSTGRES_HOST: localhost
-      AP_POSTGRES_PORT: "5432"
-      AP_POSTGRES_DATABASE: united
-      AP_POSTGRES_USERNAME: postgres
-      AP_POSTGRES_PASSWORD: postgres
-      AP_POSTGRES_USE_SSL: "false"
+      UNI_DB_TYPE: POSTGRES
+      UNI_POSTGRES_HOST: localhost
+      UNI_POSTGRES_PORT: "5432"
+      UNI_POSTGRES_DATABASE: united
+      UNI_POSTGRES_USERNAME: postgres
+      UNI_POSTGRES_PASSWORD: postgres
+      UNI_POSTGRES_USE_SSL: "false"
     steps:
       - uses: actions/checkout@v5
 

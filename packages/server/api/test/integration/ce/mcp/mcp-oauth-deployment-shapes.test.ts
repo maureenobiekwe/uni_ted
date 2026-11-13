@@ -206,7 +206,7 @@ describe('MCP OAuth deployment shapes', () => {
         })
     })
 
-    describe('with an http AP_FRONTEND_URL behind a TLS-terminating proxy', () => {
+    describe('with an http UNI_FRONTEND_URL behind a TLS-terminating proxy', () => {
         const HTTP_FRONTEND_URL = 'http://apps.customer.example.com'
 
         beforeAll(() => {
@@ -225,7 +225,7 @@ describe('MCP OAuth deployment shapes', () => {
             vi.spyOn(system, 'getOrThrow').mockImplementation((prop) => prop === AppSystemProp.FRONTEND_URL ? HTTP_FRONTEND_URL : realGetOrThrow(prop))
         })
 
-        it('keeps the forwarded https scheme, as it did before AP_MCP_URL existed', async () => {
+        it('keeps the forwarded https scheme, as it did before UNI_MCP_URL existed', async () => {
             const metadata = await discovery({ 'x-forwarded-proto': 'https', 'x-forwarded-host': 'apps.customer.example.com' })
 
             expect(metadata.issuer).toBe('https://apps.customer.example.com')

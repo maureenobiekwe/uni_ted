@@ -1,3 +1,3 @@
 ﻿# Getting Started
 
-See instruction on https://www.united.com/docs/install/options/aws
+See instruction on https://docs.example.com/install/options/aws

@@ -102,11 +102,11 @@ is cheap here.
   treating the pre-login window as a per-platform question. It only exists for **Cloud's own auth
   funnel** (`autocapture.url_allowlist` is exactly the sign-in/sign-up routes and is already `false`
   off-Cloud), so the browser initialises pre-login when `isNil(currentUser) && edition === CLOUD &&
-  hostname === cloud.united.com` — a constant, needing no lookup — and everywhere else waits for
+  hostname === cloud.example.com` — a constant, needing no lookup — and everywhere else waits for
   login and then reads the row. That avoided inventing a second public endpoint to answer what `/v1/flags`
   already answers. `GET /v1/platform-configurations` is widened to `publicPlatform` so any member can
   read it; `POST` stays admin-only.
-- **The pre-login window is given up everywhere except `cloud.united.com`, and that costs eight
+- **The pre-login window is given up everywhere except `cloud.example.com`, and that costs eight
   named events, not just page views.** Because the configuration query is `enabled: !isNil(currentUser)`,
   nothing pre-login can read it, so `posthog.init` never runs pre-login on self-hosted or on a Cloud
   custom domain. That drops `capture_pageview: 'history_change'` **and** every `capture()` from
@@ -120,7 +120,7 @@ is cheap here.
   `POST /v1/platform-configurations` carries no edition guard, so a Cloud platform admin can still write
   `false` even though the page is hidden on Cloud. Making the invariant real means rejecting `update`
   (or forcing the response) on the Cloud edition — in the **server**, on the value. The first cut instead
-  hard-wired the browser on for the whole session on `cloud.united.com`, which produced a
+  hard-wired the browser on for the whole session on `cloud.example.com`, which produced a
   split-brain: server events stopped while `identify` (which sends email and names via
   `pickTelemetryPii` on Cloud), `group`, `capture`, autocapture, dead clicks, heatmaps and session
   recording all kept running — telling a customer we stopped and not stopping. It also made two Cloud
@@ -129,7 +129,7 @@ is cheap here.
 - **The pre-login override is gated on `isNil(currentUser)`, not on the hostname alone.** The only thing
   the browser genuinely cannot answer pre-login is "may I capture before a session exists", so that is
   all the constant decides:
-  `isNil(currentUser) && edition === CLOUD && hostname === 'cloud.united.com'`. The moment a user
+  `isNil(currentUser) && edition === CLOUD && hostname === 'cloud.example.com'`. The moment a user
   exists the row governs `init`, `identify` and `capture` for every tenant, main domain included. Written
   as a hostname test alone it reads like a narrow funnel exception and is actually a session-wide bypass
   that makes the row dead code on the main domain. Cost: a short window right after login where

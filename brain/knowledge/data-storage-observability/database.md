@@ -321,4 +321,4 @@ A background migration that fails every retry stops the app from booting. The gu
 ## Related pages
 
 - [Tables](tables.md), [File Storage](file-storage.md), [Key-Value Store](key-value-store.md), [Audit Logs](audit-logs.md) — domain-specific storage.
-- External: [Database Migrations Playbook](https://www.united.com/docs/handbook/engineering/playbooks/database-migration) — general TypeORM mechanics.
+- External: [Database Migrations Playbook](https://docs.example.com/handbook/engineering/playbooks/database-migration) — general TypeORM mechanics.

@@ -4,9 +4,9 @@ import { StatusCodes } from 'http-status-codes';
 import { HttpHeader } from '../../../packages/pieces/common/src';
 import { AP_CLOUD_API_BASE, findNewPieces, pieceMetadataExists } from '../utils/piece-script-utils';
 import { chunk } from '@united/core-utils';
-assert(process.env['AP_CLOUD_API_KEY'], 'API Key is not defined');
+assert(process.env['UNI_CLOUD_API_KEY'], 'API Key is not defined');
 
-const { AP_CLOUD_API_KEY } = process.env;
+const { UNI_CLOUD_API_KEY } = process.env;
 
 const insertPieceMetadata = async (
   pieceMetadata: PieceMetadata
@@ -14,7 +14,7 @@ const insertPieceMetadata = async (
   const body = JSON.stringify(pieceMetadata);
 
   const headers = {
-    ['api-key']: AP_CLOUD_API_KEY,
+    ['api-key']: UNI_CLOUD_API_KEY,
     [HttpHeader.CONTENT_TYPE]: 'application/json'
   };
 

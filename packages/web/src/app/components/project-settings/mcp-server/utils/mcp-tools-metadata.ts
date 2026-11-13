@@ -8,7 +8,7 @@ export type ToolCategory = {
 // NOTE: Keep this list in sync with ALL_CONTROLLABLE_TOOL_NAMES and LOCKED_TOOL_NAMES in
 // packages/server/api/src/app/mcp/tools/index.ts
 // Any tool added to the backend index must also be added here so it appears in the UI settings panel.
-// The tool-search pair only registers server-side when AP_TOOL_SEARCH_ENABLED is on, so the panel
+// The tool-search pair only registers server-side when UNI_TOOL_SEARCH_ENABLED is on, so the panel
 // renders it only when the TOOL_SEARCH_ENABLED flag is true — use getToolCategories, not the raw list.
 const TOOL_CATEGORIES: ToolCategory[] = [
   {

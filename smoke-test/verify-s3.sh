@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Exercises the S3 file-storage path end to end against a stack started with
-# AP_FILE_STORAGE_LOCATION=S3 (and optionally AP_S3_USE_SIGNED_URLS=true).
+# UNI_FILE_STORAGE_LOCATION=S3 (and optionally UNI_S3_USE_SIGNED_URLS=true).
 #
 # It runs the webhook flow (which writes the run log to S3 — the WRITE path),
 # then fetches the populated flow run, which forces the app to read that run

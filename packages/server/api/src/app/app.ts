@@ -510,10 +510,10 @@ export async function appPostBoot(app: FastifyInstance): Promise<void> {
  / ____ \\  | |____     | |     _| |_     \\  /    | |____  | |       _| |_  | |____  | |____  | |____   ____) |
 /_/    \\_\\  \\_____|    |_|    |_____|     \\/     |______| |_|      |_____| |______|  \\_____| |______| |_____/
 
-The application started on ${await domainHelper.getPublicApiUrl({ path: '' })}, as specified by the AP_FRONTEND_URL variables.`)
+The application started on ${await domainHelper.getPublicApiUrl({ path: '' })}, as specified by the UNI_FRONTEND_URL variables.`)
 
     const environment = system.get(AppSystemProp.ENVIRONMENT)
-    const pieces = process.env.AP_DEV_PIECES
+    const pieces = process.env.UNI_DEV_PIECES
 
     assertReleaseReadable(app.log)
     aiObservability.init({ enabled: system.getEdition() === ApEdition.CLOUD })
@@ -534,7 +534,7 @@ The application started on ${await domainHelper.getPublicApiUrl({ path: '' })}, 
             `[WARNING]: The application is running in ${environment} mode.`,
         )
         app.log.warn(
-            `[WARNING]: This is only shows pieces specified in AP_DEV_PIECES ${pieces} environment variable.`,
+            `[WARNING]: This is only shows pieces specified in UNI_DEV_PIECES ${pieces} environment variable.`,
         )
     }
     void startDevPieceWatcher(app)

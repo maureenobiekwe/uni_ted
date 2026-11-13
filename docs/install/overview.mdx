@@ -10,11 +10,11 @@ description: "Introduction to the different ways to install united"
 Run this where you want united to live. When it finishes, follow [Self host (Docker)](./options/docker-compose) for the next steps: opening united, activating a license key, upgrading, and fixing problems.
 
 ```bash
-curl -fsSL https://get.united.com | sh
+curl -fsSL https://get.example.com | sh
 ```
 
 <Prompt description="Install united with an AI assistant" icon="sparkles" actions={["copy", "cursor"]}>
-Install united on this machine by running `curl -fsSL https://get.united.com | sh` from a folder I choose. It needs Docker Compose v2, so check `docker compose version` first and tell me if it is missing. If port 8080 is already in use, re-run with `--port` and a free port. When it finishes, confirm the stack is healthy with `docker compose -p united ps` and `curl http://localhost:8080/api/v1/health`, then tell me the URL to open and remind me to back up the generated `.env` file.
+Install united on this machine by running `curl -fsSL https://get.example.com | sh` from a folder I choose. It needs Docker Compose v2, so check `docker compose version` first and tell me if it is missing. If port 8080 is already in use, re-run with `--port` and a free port. When it finishes, confirm the stack is healthy with `docker compose -p united ps` and `curl http://localhost:8080/api/v1/health`, then tell me the URL to open and remind me to back up the generated `.env` file.
 </Prompt>
 
 ---
@@ -33,7 +33,7 @@ Install united on this machine by running `curl -fsSL https://get.united.com | s
 </CardGroup>
 
 <CardGroup cols={2}>
-  <Card title="united Cloud" icon="cloud" color="#5155D7" href="https://cloud.united.com/">
+  <Card title="united Cloud" icon="cloud" color="#5155D7" href="https://cloud.example.com/">
     **Fastest.** Start free. We host and manage it for you.
   </Card>
 </CardGroup>

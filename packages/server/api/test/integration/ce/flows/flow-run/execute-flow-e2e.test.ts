@@ -10,7 +10,7 @@
  * Prerequisites:
  *   - Engine must be built (cache/v7/common/main.js)
  *   - bun must be available for piece installation
- *   - Redis (in-memory via AP_REDIS_TYPE=MEMORY) is started automatically
+ *   - Redis (in-memory via UNI_REDIS_TYPE=MEMORY) is started automatically
  */
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -615,7 +615,7 @@ async function setupSyncWebhookFlow({ code, withReturnResponse }: { code: string
     return flow
 }
 
-const WEBHOOK_TIMEOUT_MS = Number(process.env.AP_WEBHOOK_TIMEOUT_SECONDS ?? 30) * 1000
+const WEBHOOK_TIMEOUT_MS = Number(process.env.UNI_WEBHOOK_TIMEOUT_SECONDS ?? 30) * 1000
 const FAILING_CODE = 'export const code = async () => { throw new Error(\'deliberate step failure\') }'
 const WORKING_CODE = 'export const code = async (inputs) => ({ echo: inputs.message })'
 

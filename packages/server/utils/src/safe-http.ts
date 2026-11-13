@@ -7,7 +7,7 @@ import axiosRetry from 'axios-retry'
 import { RequestFilteringHttpAgent, RequestFilteringHttpsAgent } from 'request-filtering-agent'
 
 function parseAllowListFromEnv(): string[] {
-    const raw = process.env['AP_SSRF_ALLOW_LIST']
+    const raw = process.env['UNI_SSRF_ALLOW_LIST']
     if (!raw) return []
     return raw.split(',').map((s) => s.trim()).filter(Boolean)
 }
@@ -136,7 +136,7 @@ let lazyDefaultAxios: AxiosInstance | undefined
 let lazyRetryingAxios: AxiosInstance | undefined
 
 const SSRF_FILTER_MESSAGE_REGEX = /(DNS lookup .* not allowed|IP .* is not allowed)/i
-const SSRF_REMEDIATION_HINT = 'the target is blocked by the SSRF filter. If it is a trusted internal host (e.g. a self-hosted Vault, Conjur, or OAuth2 provider), add its IP or CIDR to the AP_SSRF_ALLOW_LIST environment variable (comma-separated) and restart the server.'
+const SSRF_REMEDIATION_HINT = 'the target is blocked by the SSRF filter. If it is a trusted internal host (e.g. a self-hosted Vault, Conjur, or OAuth2 provider), add its IP or CIDR to the UNI_SSRF_ALLOW_LIST environment variable (comma-separated) and restart the server.'
 const MAX_DRAINED_RESPONSE_BYTES = 16 * 1024
 const TIMEOUT_ERROR_CODES = ['ETIMEDOUT', 'ECONNABORTED']
 const TLS_ERROR_CODE_REGEX = /^(ERR_TLS_|ERR_SSL_|CERT_|UNABLE_TO_|DEPTH_ZERO_SELF_SIGNED_CERT$|SELF_SIGNED_CERT_IN_CHAIN$|EPROTO$)/

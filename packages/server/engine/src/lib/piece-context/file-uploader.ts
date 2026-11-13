@@ -41,12 +41,12 @@ async function drainToBuffer({ stream, maxBytes }: { stream: Readable, maxBytes:
 }
 
 function resolveMaxFileSizeBytes(): number {
-    const raw = process.env.AP_MAX_FILE_SIZE_MB
+    const raw = process.env.UNI_MAX_FILE_SIZE_MB
     const parsed = Number(raw)
     if (!Number.isFinite(parsed) || parsed <= 0) {
         throw new EngineGenericError(
             'FileUploaderMisconfiguredError',
-            `AP_MAX_FILE_SIZE_MB must be a positive number, received "${raw ?? ''}"`,
+            `UNI_MAX_FILE_SIZE_MB must be a positive number, received "${raw ?? ''}"`,
         )
     }
     return parsed * BYTES_PER_MB

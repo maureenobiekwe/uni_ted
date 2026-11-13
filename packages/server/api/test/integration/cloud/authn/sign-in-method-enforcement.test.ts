@@ -11,8 +11,8 @@ import { createMockUser, createMockUserInvitation, mockAndSaveBasicSetup, mockBa
 import { createMockSignInRequest, createMockSignUpRequest } from '../../../helpers/mocks/authn'
 import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/test-setup'
 
-process.env.AP_TURNSTILE_SITE_KEY = 'test-site-key'
-process.env.AP_TURNSTILE_SECRET_KEY = 'test-secret-key'
+process.env.UNI_TURNSTILE_SITE_KEY = 'test-site-key'
+process.env.UNI_TURNSTILE_SECRET_KEY = 'test-secret-key'
 
 const PASSWORD = 'correct-horse-battery'
 
@@ -43,13 +43,13 @@ afterAll(async () => {
 })
 
 beforeEach(() => {
-    process.env.AP_GOOGLE_CLIENT_ID = 'test-google-client-id'
-    process.env.AP_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
+    process.env.UNI_GOOGLE_CLIENT_ID = 'test-google-client-id'
+    process.env.UNI_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
 })
 
 afterEach(() => {
-    delete process.env.AP_GOOGLE_CLIENT_ID
-    delete process.env.AP_GOOGLE_CLIENT_SECRET
+    delete process.env.UNI_GOOGLE_CLIENT_ID
+    delete process.env.UNI_GOOGLE_CLIENT_SECRET
 })
 
 describe('Sign-in method enforcement for governed people', () => {

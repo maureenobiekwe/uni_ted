@@ -24,7 +24,7 @@ function repeatingStream({ chunk, count }: { chunk: Buffer, count: number }): { 
 describe('file-uploader service', () => {
 
     beforeEach(() => {
-        process.env.AP_MAX_FILE_SIZE_MB = '10'
+        process.env.UNI_MAX_FILE_SIZE_MB = '10'
         vi.restoreAllMocks()
     })
 
@@ -49,16 +49,16 @@ describe('file-uploader service', () => {
         ).rejects.toThrow('Expected file data to be a Buffer or Readable stream, but received undefined')
     })
 
-    it('throws when AP_MAX_FILE_SIZE_MB is missing', async () => {
-        delete process.env.AP_MAX_FILE_SIZE_MB
+    it('throws when UNI_MAX_FILE_SIZE_MB is missing', async () => {
+        delete process.env.UNI_MAX_FILE_SIZE_MB
         const files = createFileUploader(SERVICE_PARAMS)
         await expect(
             files.write({ fileName: 'test.txt', data: Buffer.from('hello') }),
         ).rejects.toThrow(EngineGenericError)
     })
 
-    it('throws when AP_MAX_FILE_SIZE_MB is not a positive number', async () => {
-        process.env.AP_MAX_FILE_SIZE_MB = 'not-a-number'
+    it('throws when UNI_MAX_FILE_SIZE_MB is not a positive number', async () => {
+        process.env.UNI_MAX_FILE_SIZE_MB = 'not-a-number'
         const files = createFileUploader(SERVICE_PARAMS)
         await expect(
             files.write({ fileName: 'test.txt', data: Buffer.from('hello') }),
@@ -110,7 +110,7 @@ describe('file-uploader service', () => {
     })
 
     it('stops draining, destroys the source and uploads nothing once a stream crosses the cap', async () => {
-        process.env.AP_MAX_FILE_SIZE_MB = '1'
+        process.env.UNI_MAX_FILE_SIZE_MB = '1'
         const fetchSpy = vi.spyOn(global, 'fetch')
         const { stream, reads } = repeatingStream({ chunk: Buffer.alloc(MEGABYTE), count: 100 })
 
@@ -141,7 +141,7 @@ describe('file-uploader service', () => {
     })
 
     it('throws when a Buffer exceeds the size limit', async () => {
-        process.env.AP_MAX_FILE_SIZE_MB = '1'
+        process.env.UNI_MAX_FILE_SIZE_MB = '1'
         const files = createFileUploader(SERVICE_PARAMS)
         const oversizedBuffer = Buffer.alloc(MEGABYTE + 1)
         await expect(

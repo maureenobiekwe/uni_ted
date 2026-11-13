@@ -181,7 +181,7 @@ describe('GET /v1/ai-providers/model-options', () => {
     })
 
     it('shows credits when the managed provider is visible and prefers them over the first option', async () => {
-        process.env.AP_OPENROUTER_PROVISION_KEY = 'test-provision-key'
+        process.env.UNI_OPENROUTER_PROVISION_KEY = 'test-provision-key'
         try {
             const managed = await mockAndSaveAIProvider({ platformId: ctx.platform.id, provider: AIProviderName.united, displayName: 'united' })
             await seedKey({ name: 'Key', models: ['first'] })
@@ -193,7 +193,7 @@ describe('GET /v1/ai-providers/model-options', () => {
             expect(options.defaultChoice).toEqual({ type: 'model', provider: AIProviderName.united, providerConfigId: managed.id, modelId: options.credits?.defaultTierId })
         }
         finally {
-            delete process.env.AP_OPENROUTER_PROVISION_KEY
+            delete process.env.UNI_OPENROUTER_PROVISION_KEY
         }
     })
 })

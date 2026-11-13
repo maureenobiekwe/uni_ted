@@ -181,6 +181,6 @@ describe('oauth2Discovery.discoverAndRegister', () => {
         serve({})
 
         await expect(oauth2Discovery.discoverAndRegister({ serverUrl: SERVER_URL, redirectUrl: REDIRECT_URL }))
-            .rejects.toMatchObject({ error: { params: { error: expect.stringContaining('AP_SSRF_ALLOW_LIST') } } })
+            .rejects.toMatchObject({ error: { params: { error: expect.stringContaining('UNI_SSRF_ALLOW_LIST') } } })
     })
 })

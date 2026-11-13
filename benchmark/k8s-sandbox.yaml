@@ -7,40 +7,40 @@ apiVersion: v1
 kind: ConfigMap
 metadata: { name: ap-config }
 data:
-  AP_POSTGRES_DATABASE: united
-  AP_POSTGRES_USERNAME: postgres
-  AP_POSTGRES_PASSWORD: password
-  AP_POSTGRES_HOST: postgres
-  AP_POSTGRES_PORT: "5432"
-  AP_REDIS_HOST: redis
-  AP_REDIS_PORT: "6379"
+  UNI_POSTGRES_DATABASE: united
+  UNI_POSTGRES_USERNAME: postgres
+  UNI_POSTGRES_PASSWORD: password
+  UNI_POSTGRES_HOST: postgres
+  UNI_POSTGRES_PORT: "5432"
+  UNI_REDIS_HOST: redis
+  UNI_REDIS_PORT: "6379"
   # Substituted by run-gke.sh (defaults to a random per-run secret); kept in sync with the signed worker token.
-  AP_JWT_SECRET: __AP_JWT_SECRET__
-  AP_ENCRYPTION_KEY: 11020ebf480a9b1648ceec6400beaf26
-  AP_ENVIRONMENT: prod
-  AP_TELEMETRY_ENABLED: "false"
-  AP_LOG_LEVEL: error
-  AP_FRONTEND_URL: http://app:80
-  AP_EXECUTION_MODE: SANDBOX_CODE_ONLY
-  AP_DEFAULT_CONCURRENT_JOBS_LIMIT: "1000"
-  AP_PROJECT_RATE_LIMITER_ENABLED: "false"
-  AP_FILE_STORAGE_LOCATION: S3
+  UNI_JWT_SECRET: __AP_JWT_SECRET__
+  UNI_ENCRYPTION_KEY: 11020ebf480a9b1648ceec6400beaf26
+  UNI_ENVIRONMENT: prod
+  UNI_TELEMETRY_ENABLED: "false"
+  UNI_LOG_LEVEL: error
+  UNI_FRONTEND_URL: http://app:80
+  UNI_EXECUTION_MODE: SANDBOX_CODE_ONLY
+  UNI_DEFAULT_CONCURRENT_JOBS_LIMIT: "1000"
+  UNI_PROJECT_RATE_LIMITER_ENABLED: "false"
+  UNI_FILE_STORAGE_LOCATION: S3
   # Real same-region object store: a GCS bucket in europe-west1 reached over the S3-interop endpoint
   # with HMAC keys. The app generates SigV4 presigned URLs (forcePathStyle on, since endpoint is set);
   # the engine fetches flow bundle + piece archives directly from GCS via those links.
-  AP_S3_BUCKET: ap-bench-eu-b3803
+  UNI_S3_BUCKET: ap-bench-eu-b3803
   # HMAC access key + secret are NOT here — they live in the `ap-s3-secret` Kubernetes Secret,
   # created out-of-band (kubectl create secret) and injected via secretRef on app + worker, so the
   # live credential never sits in this plaintext manifest.
-  AP_S3_ENDPOINT: https://storage.googleapis.com
-  AP_S3_REGION: europe-west1
-  AP_S3_USE_SIGNED_URLS: "true"
+  UNI_S3_ENDPOINT: https://storage.googleapis.com
+  UNI_S3_REGION: europe-west1
+  UNI_S3_USE_SIGNED_URLS: "true"
   # AWS SDK >=3.729 defaults to CRC32 checksums + aws-chunked payloads on PutObject; GCS's
   # S3-interop endpoint rejects those with SignatureDoesNotMatch. WHEN_REQUIRED restores the old behavior.
   AWS_REQUEST_CHECKSUM_CALCULATION: WHEN_REQUIRED
   AWS_RESPONSE_CHECKSUM_VALIDATION: WHEN_REQUIRED
   # Official piece tarballs are pulled from the united CDN (cdn.united.com) instead of npm.
-  AP_USE_CDN_FOR_BUNDLES: "true"
+  UNI_USE_CDN_FOR_BUNDLES: "true"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -141,8 +141,8 @@ spec:
           image: __APP_IMAGE__
           envFrom: [{ configMapRef: { name: ap-config } }, { secretRef: { name: ap-s3-secret } }]
           env:
-            - { name: AP_CONTAINER_TYPE, value: APP }
-            - { name: AP_PORT, value: "80" }
+            - { name: UNI_CONTAINER_TYPE, value: APP }
+            - { name: UNI_PORT, value: "80" }
           ports: [{ containerPort: 80 }]
           resources: { requests: { cpu: "__APP_CPU__", memory: 1Gi } }
           readinessProbe:
@@ -179,18 +179,18 @@ spec:
           imagePullPolicy: Always
           envFrom: [{ configMapRef: { name: ap-config } }, { secretRef: { name: ap-s3-secret } }]
           env:
-            - { name: AP_CONTAINER_TYPE, value: WORKER }
+            - { name: UNI_CONTAINER_TYPE, value: WORKER }
             # Workers log at info so the per-run `job.execute` wide event (the provision/boot/run split
             # this benchmark reports) is emitted; the app stays at the configmap's `error` so webhook
             # logging never shows up as app CPU in the app-vs-worker ratio.
-            - { name: AP_LOG_LEVEL, value: info }
+            - { name: UNI_LOG_LEVEL, value: info }
             # ...and as JSON, not the pretty renderer — the breakdown is parsed with `jq` from the pod logs.
-            - { name: AP_LOG_PRETTY, value: "false" }
-            - { name: AP_WORKER_CONCURRENCY, value: "1" }
-            - { name: AP_REUSE_SANDBOX, value: "__REUSE_SANDBOX__" }
-            - { name: AP_CACHE_BASE_PATH, value: /tmp/cache }
+            - { name: UNI_LOG_PRETTY, value: "false" }
+            - { name: UNI_WORKER_CONCURRENCY, value: "1" }
+            - { name: UNI_REUSE_SANDBOX, value: "__REUSE_SANDBOX__" }
+            - { name: UNI_CACHE_BASE_PATH, value: /tmp/cache }
             # Minimal image has no entrypoint to mint the worker token; injected by run-gke.sh.
-            - { name: AP_WORKER_TOKEN, value: __AP_WORKER_TOKEN__ }
+            - { name: UNI_WORKER_TOKEN, value: __AP_WORKER_TOKEN__ }
           # The hard CPU / 1 GB cap per the model — requests == limits for a guaranteed slice.
           # __WORKER_CPU__ is substituted by run-gke.sh (e.g. 500m or "1").
           resources:

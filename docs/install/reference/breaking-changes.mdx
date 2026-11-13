@@ -1279,11 +1279,11 @@ Nothing on upgrade. Re-check any flow or API integration that filters a Date col
 
 #### Official piece bundles are served from npm again by default
 
-`AP_USE_CDN_FOR_BUNDLES` goes back to defaulting to `false`, reversing the change in 0.87.0. Official piece bundles are downloaded from `registry.npmjs.org` instead of `cdn.united.com`. When the flag is switched on, the CDN serves the repackaged, self-contained tarballs from `https://cdn.united.com/pieces/bundled/`. The same release stops mirroring bundles into your own S3 bucket: a bundle that was copied there is no longer served from it, and every download goes to npm or the CDN.
+`AP_USE_CDN_FOR_BUNDLES` goes back to defaulting to `false`, reversing the change in 0.87.0. Official piece bundles are downloaded from `registry.npmjs.org` instead of `cdn.example.com`. When the flag is switched on, the CDN serves the repackaged, self-contained tarballs from `https://cdn.example.com/pieces/bundled/`. The same release stops mirroring bundles into your own S3 bucket: a bundle that was copied there is no longer served from it, and every download goes to npm or the CDN.
 
 #### What you need to do
 
-If your network policy restricts outbound traffic, allow `registry.npmjs.org`: it is the default source, and it stays the fallback for any bundle the CDN does not have even when `AP_USE_CDN_FOR_BUNDLES=true`. Set the flag to `true` to prefer the CDN, and allow `cdn.united.com` as well in that case. Otherwise nothing.
+If your network policy restricts outbound traffic, allow `registry.npmjs.org`: it is the default source, and it stays the fallback for any bundle the CDN does not have even when `AP_USE_CDN_FOR_BUNDLES=true`. Set the flag to `true` to prefer the CDN, and allow `cdn.example.com` as well in that case. Otherwise nothing.
 
 #### MCP OAuth: revoking a token requires a client identity, and registration issues a usable secret
 
@@ -1400,10 +1400,10 @@ In the AI piece, picking the united-provided AI now lists only the named tiers (
 - No database action is required. The migration only adds columns and leaves the existing ones in place.
 
 #### Official piece bundles are served from the united CDN by default
-`AP_USE_CDN_FOR_BUNDLES` now defaults to `true`. When an official piece bundle is not already cached in your own S3 bucket, the engine is redirected to `cdn.united.com` for the tarball instead of `registry.npmjs.org`. If the CDN does not have that piece version, the download falls back to npm automatically, so installs keep working either way. Custom pieces and pieces from a private registry never use the CDN and are unaffected.
+`AP_USE_CDN_FOR_BUNDLES` now defaults to `true`. When an official piece bundle is not already cached in your own S3 bucket, the engine is redirected to `cdn.example.com` for the tarball instead of `registry.npmjs.org`. If the CDN does not have that piece version, the download falls back to npm automatically, so installs keep working either way. Custom pieces and pieces from a private registry never use the CDN and are unaffected.
 
 ### Do you need to take action?
-- Only if your network policy restricts outbound traffic. Allow `cdn.united.com`, or set `AP_USE_CDN_FOR_BUNDLES=false` to keep serving official bundles from npm.
+- Only if your network policy restricts outbound traffic. Allow `cdn.example.com`, or set `AP_USE_CDN_FOR_BUNDLES=false` to keep serving official bundles from npm.
 
 <Note>
 Reverted in 0.88.2: `AP_USE_CDN_FOR_BUNDLES` defaults to `false` again, so official bundles are served from npm by default. Set it to `true` to opt back into the CDN. The S3 cache mentioned above was removed in the same release.
@@ -1560,7 +1560,7 @@ When creating a project now, the platform owner email doesn't automatically get 
 ### Do you need to take action?
 
 - If you are on the embed plan, update your implementation to redirect users to the `/templates` page.
-- Review the new endpoints documentation: [Templates API Schema](https://www.united.com/docs/endpoints/templates/schema).
+- Review the new endpoints documentation: [Templates API Schema](https://docs.example.com/endpoints/templates/schema).
 - If you use a custom value for `AP_MAX_FILE_SIZE_MB`, be sure to also set `AP_MAX_FLOW_RUN_LOG_SIZE_MB` accordingly.
 
 ## 0.75.0
@@ -1590,8 +1590,8 @@ When creating a project now, the platform owner email doesn't automatically get 
 ## 0.73.0
 
 ### What has changed?
-- Major change to MCP: [Read the announcement.](https://community.united.com/t/mcp-update-easier-faster-and-more-secure/11177)
-- If you have SMTP configured in the platform admin, it's no longer supported—you need to use AP_SMTP_ [environment variables.](https://www.united.com/docs/install/reference/environment-variables#email-smtp)
+- Major change to MCP: [Read the announcement.](https://community.example.com/t/mcp-update-easier-faster-and-more-secure/11177)
+- If you have SMTP configured in the platform admin, it's no longer supported—you need to use AP_SMTP_ [environment variables.](https://docs.example.com/install/reference/environment-variables#email-smtp)
 
 ### Do you need to take action?
 - If you are currently using MCP, review the linked announcement for important migration details and upgrade guidance.
@@ -1666,7 +1666,7 @@ When creating a project now, the platform owner email doesn't automatically get 
 - No action is required for this change.
 - Your published flows will continue to work without interruption.
 - When editing existing flows that use the "Dynamic Value" toggle on "Array of Properties" inputs (such as the "files" parameter in the "Extract Structured Data" action of the "Utility AI" piece), the end user will need to remap the values again.
-- For details on the new UI implementation, refer to this [announcement](https://community.united.com/t/inline-items/8964).
+- For details on the new UI implementation, refer to this [announcement](https://community.example.com/t/inline-items/8964).
 
 ## 0.38.6
 
@@ -1676,7 +1676,7 @@ When creating a project now, the platform owner email doesn't automatically get 
 
 ### When is action necessary?
 
-- If `AP_CONTAINER_TYPE` is set to `WORKER` on the worker machine, and `AP_SCHEDULED_WORKER_CONCURRENCY` or `AP_FLOW_WORKER_CONCURRENCY` are set to zero on the app server, workers will stop processing the queues. To fix this, check the [Separate Worker from App](https://www.united.com/docs/install/configure-operate/separate-workers) documentation and set the `AP_CONTAINER_TYPE` to fetch the necessary values from the app server. If no container type is set on the worker machine, this is not a breaking change.
+- If `AP_CONTAINER_TYPE` is set to `WORKER` on the worker machine, and `AP_SCHEDULED_WORKER_CONCURRENCY` or `AP_FLOW_WORKER_CONCURRENCY` are set to zero on the app server, workers will stop processing the queues. To fix this, check the [Separate Worker from App](https://docs.example.com/install/configure-operate/separate-workers) documentation and set the `AP_CONTAINER_TYPE` to fetch the necessary values from the app server. If no container type is set on the worker machine, this is not a breaking change.
 
 ## 0.35.1
 

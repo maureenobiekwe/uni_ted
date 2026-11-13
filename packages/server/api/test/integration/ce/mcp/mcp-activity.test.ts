@@ -355,8 +355,8 @@ describe('MCP activity', () => {
         })
 
         it('honours a projects shorter retention window', async () => {
-            const previousPausedFlowTimeout = process.env.AP_PAUSED_FLOW_TIMEOUT_DAYS
-            process.env.AP_PAUSED_FLOW_TIMEOUT_DAYS = '2'
+            const previousPausedFlowTimeout = process.env.UNI_PAUSED_FLOW_TIMEOUT_DAYS
+            process.env.UNI_PAUSED_FLOW_TIMEOUT_DAYS = '2'
             try {
                 await db.update('project', ctx.project.id, { executionDataRetentionDays: 3 })
                 const stale = await insertActivityRow({ userId: ctx.user.id, projectId: ctx.project.id, created: daysAgo(5) })
@@ -371,15 +371,15 @@ describe('MCP activity', () => {
             }
             finally {
                 if (previousPausedFlowTimeout === undefined) {
-                    delete process.env.AP_PAUSED_FLOW_TIMEOUT_DAYS
+                    delete process.env.UNI_PAUSED_FLOW_TIMEOUT_DAYS
                 }
                 else {
-                    process.env.AP_PAUSED_FLOW_TIMEOUT_DAYS = previousPausedFlowTimeout
+                    process.env.UNI_PAUSED_FLOW_TIMEOUT_DAYS = previousPausedFlowTimeout
                 }
             }
         })
 
-        // getEffectiveExecutionDataRetentionDays floors a project's window at AP_PAUSED_FLOW_TIMEOUT_DAYS,
+        // getEffectiveExecutionDataRetentionDays floors a project's window at UNI_PAUSED_FLOW_TIMEOUT_DAYS,
         // so with both defaults at 30 a shorter per-project setting deletes nothing earlier.
         it('floors a projects window at the paused-flow timeout', async () => {
             await db.update('project', ctx.project.id, { executionDataRetentionDays: 3 })

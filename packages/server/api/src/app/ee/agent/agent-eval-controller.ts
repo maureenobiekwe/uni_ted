@@ -21,7 +21,7 @@ const SIMULATION_TIMEOUT_STATUS = 'TIMEOUT'
 
 type SimulationStatus = AgentConversationStatus | typeof SIMULATION_TIMEOUT_STATUS
 
-// Same guard as admin-platform.controller: a single global AP_API_KEY, not a per-platform key.
+// Same guard as admin-platform.controller: a single global UNI_API_KEY, not a per-platform key.
 async function checkApiKeyPreHandler(req: FastifyRequest, res: FastifyReply): Promise<void> {
     const key = req.headers[API_KEY_HEADER] as string | undefined
     if (isNil(API_KEY) || key !== API_KEY) {

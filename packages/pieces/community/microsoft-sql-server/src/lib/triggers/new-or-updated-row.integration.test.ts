@@ -6,8 +6,8 @@ import { CURSOR_LAYOUT } from '../common/cursor';
 import { newOrUpdatedRowTrigger } from './new-or-updated-row';
 
 
-const connectionString = process.env['AP_MSSQL_TEST_CONNECTION_STRING'];
-const host = process.env['AP_MSSQL_TEST_HOST'];
+const connectionString = process.env['UNI_MSSQL_TEST_CONNECTION_STRING'];
+const host = process.env['UNI_MSSQL_TEST_HOST'];
 const enabled = Boolean(connectionString ?? host);
 
 
@@ -19,10 +19,10 @@ const auth = {
     ? { connection_string: connectionString }
     : {
         host,
-        port: Number(process.env['AP_MSSQL_TEST_PORT'] ?? 1433),
-        database: process.env['AP_MSSQL_TEST_DATABASE'] ?? 'ap_trigger_test',
-        user: process.env['AP_MSSQL_TEST_USER'] ?? 'sa',
-        password: process.env['AP_MSSQL_TEST_PASSWORD'],
+        port: Number(process.env['UNI_MSSQL_TEST_PORT'] ?? 1433),
+        database: process.env['UNI_MSSQL_TEST_DATABASE'] ?? 'ap_trigger_test',
+        user: process.env['UNI_MSSQL_TEST_USER'] ?? 'sa',
+        password: process.env['UNI_MSSQL_TEST_PASSWORD'],
         encrypt: true,
         trust_server_certificate: true,
       },

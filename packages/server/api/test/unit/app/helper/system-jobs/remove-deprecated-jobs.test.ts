@@ -5,8 +5,8 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { SystemJobName } from '../../../../../src/app/helper/system-jobs/common'
 
 const SYSTEM_JOB_QUEUE = 'system-job-queue'
-const REDIS_HOST = process.env.AP_REDIS_HOST ?? 'localhost'
-const REDIS_PORT = Number(process.env.AP_REDIS_PORT ?? '6379')
+const REDIS_HOST = process.env.UNI_REDIS_HOST ?? 'localhost'
+const REDIS_PORT = Number(process.env.UNI_REDIS_PORT ?? '6379')
 const REDIS_DB = 9
 
 const loggedErrors: unknown[] = []
@@ -24,11 +24,11 @@ let systemJobsSchedule: typeof import('../../../../../src/app/helper/system-jobs
 
 describe('removeDeprecatedJobs', () => {
     beforeAll(async () => {
-        process.env.AP_REDIS_TYPE = 'default'
-        process.env.AP_REDIS_HOST = REDIS_HOST
-        process.env.AP_REDIS_PORT = String(REDIS_PORT)
-        process.env.AP_REDIS_DB = String(REDIS_DB)
-        delete process.env.AP_REDIS_URL
+        process.env.UNI_REDIS_TYPE = 'default'
+        process.env.UNI_REDIS_HOST = REDIS_HOST
+        process.env.UNI_REDIS_PORT = String(REDIS_PORT)
+        process.env.UNI_REDIS_DB = String(REDIS_DB)
+        delete process.env.UNI_REDIS_URL
         systemJobsSchedule = (await import('../../../../../src/app/helper/system-jobs/system-job')).systemJobsSchedule
 
         seedQueue = new Queue(SYSTEM_JOB_QUEUE, {

@@ -10,7 +10,7 @@ describe('safeHttp.postForStatus', () => {
     const servers: TestServer[] = []
 
     beforeAll(() => {
-        vi.stubEnv('AP_SSRF_ALLOW_LIST', '127.0.0.1')
+        vi.stubEnv('UNI_SSRF_ALLOW_LIST', '127.0.0.1')
     })
 
     afterEach(async () => {

@@ -58,9 +58,9 @@ afterAll(async () => {
 })
 
 beforeEach(async () => {
-    process.env.AP_GOOGLE_CLIENT_ID = 'test-google-client-id'
-    process.env.AP_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
-    process.env.AP_ZEROBOUNCE_API_KEY = 'test-api-key'
+    process.env.UNI_GOOGLE_CLIENT_ID = 'test-google-client-id'
+    process.env.UNI_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
+    process.env.UNI_ZEROBOUNCE_API_KEY = 'test-api-key'
     googleAccount.email = FRESH_TENANT_EMAIL
     const redis = await redisConnections.useExisting()
     await redis.del(DISPOSABLE_DOMAIN_CACHE_KEY)
@@ -68,9 +68,9 @@ beforeEach(async () => {
 })
 
 afterEach(() => {
-    delete process.env.AP_GOOGLE_CLIENT_ID
-    delete process.env.AP_GOOGLE_CLIENT_SECRET
-    delete process.env.AP_ZEROBOUNCE_API_KEY
+    delete process.env.UNI_GOOGLE_CLIENT_ID
+    delete process.env.UNI_GOOGLE_CLIENT_SECRET
+    delete process.env.UNI_ZEROBOUNCE_API_KEY
     vi.restoreAllMocks()
 })
 

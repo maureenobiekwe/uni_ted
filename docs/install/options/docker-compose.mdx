@@ -12,13 +12,13 @@ One line writes the config, generates your secrets, and starts everything.
 Run it in the folder where you want united to live:
 
 ```bash
-curl -fsSL https://get.united.com | sh
+curl -fsSL https://get.example.com | sh
 ```
 
 Or hand it to your AI assistant:
 
 <Prompt description="Install united with an AI assistant" icon="sparkles" actions={["copy", "cursor"]}>
-Install united on this machine by running `curl -fsSL https://get.united.com | sh` from a folder I choose. It needs Docker Compose v2, so check `docker compose version` first and tell me if it is missing. If port 8080 is already in use, re-run with `--port` and a free port. When it finishes, confirm the stack is healthy with `docker compose -p united ps` and `curl http://localhost:8080/api/v1/health`, then tell me the URL to open and remind me to back up the generated `.env` file.
+Install united on this machine by running `curl -fsSL https://get.example.com | sh` from a folder I choose. It needs Docker Compose v2, so check `docker compose version` first and tell me if it is missing. If port 8080 is already in use, re-run with `--port` and a free port. When it finishes, confirm the stack is healthy with `docker compose -p united ps` and `curl http://localhost:8080/api/v1/health`, then tell me the URL to open and remind me to back up the generated `.env` file.
 </Prompt>
 
 <Info>
@@ -29,7 +29,7 @@ Install united on this machine by running `curl -fsSL https://get.united.com | s
 </Info>
 
 <Tip>
-Use `--port <port>` if 8080 is taken, and `--dir <path>` to install somewhere other than `./united`. Want to read it before running it? `curl -fsSL https://get.united.com` prints the script.
+Use `--port <port>` if 8080 is taken, and `--dir <path>` to install somewhere other than `./united`. Want to read it before running it? `curl -fsSL https://get.example.com` prints the script.
 </Tip>
 
 ## Alternative: run Docker Compose yourself
@@ -55,7 +55,7 @@ sh tools/deploy.sh
 This copies `.env.example` to `.env` and fills in the passwords and keys. It needs `openssl`. If `openssl` is missing it will still report success while leaving the values blank, so check before you continue:
 
 ```bash
-grep -E '^(AP_ENCRYPTION_KEY|AP_JWT_SECRET|AP_POSTGRES_PASSWORD)=' .env
+grep -E '^(UNI_ENCRYPTION_KEY|UNI_JWT_SECRET|UNI_POSTGRES_PASSWORD)=' .env
 ```
 
 Every one of those must have a value. If any is empty, install `openssl` and run `sh tools/deploy.sh` again.
@@ -65,24 +65,24 @@ Every one of those must have a value. If any is empty, install `openssl` and run
 Add this to `.env`. Without it you get the Community edition, and you will not be able to activate a license key later.
 
 ```bash
-AP_EDITION=ee
-AP_EXECUTION_MODE=SANDBOX_CODE_ONLY
+UNI_EDITION=ee
+UNI_EXECUTION_MODE=SANDBOX_CODE_ONLY
 ```
 
-`.env.example` ships `AP_EXECUTION_MODE=UNSANDBOXED`, which the server rejects at startup on `ee`.
+`.env.example` ships `UNI_EXECUTION_MODE=UNSANDBOXED`, which the server rejects at startup on `ee`.
 
 **4. Point the worker at the app**
 
-In `docker-compose.yml`, give the `worker` service its own `AP_FRONTEND_URL`:
+In `docker-compose.yml`, give the `worker` service its own `UNI_FRONTEND_URL`:
 
 ```yaml
 worker:
   environment:
-    - AP_CONTAINER_TYPE=WORKER
-    - AP_FRONTEND_URL=http://app
+    - UNI_CONTAINER_TYPE=WORKER
+    - UNI_FRONTEND_URL=http://app
 ```
 
-Both services share `.env`, where `AP_FRONTEND_URL` is your public URL. That address means "the app" to a browser but "myself" to the worker container, so without this override the worker cannot open its socket and the Workers page stays empty.
+Both services share `.env`, where `UNI_FRONTEND_URL` is your public URL. That address means "the app" to a browser but "myself" to the worker container, so without this override the worker cannot open its socket and the Workers page stays empty.
 
 **5. Start it**
 
@@ -105,7 +105,7 @@ The first account you create becomes the platform administrator. There is no def
 <Warning>
 Your secrets are written to `united/.env`. Back that file up.
 
-Without `AP_ENCRYPTION_KEY`, stored connections cannot be decrypted, even from a full database backup.
+Without `UNI_ENCRYPTION_KEY`, stored connections cannot be decrypted, even from a full database backup.
 </Warning>
 
 ## Check it's working
@@ -148,14 +148,14 @@ Webhooks and app triggers need an address that third parties can reach. On a per
 ngrok http 8080
 ```
 
-Then set `AP_FRONTEND_URL` in `.env` to the ngrok URL and restart.
+Then set `UNI_FRONTEND_URL` in `.env` to the ngrok URL and restart.
 
 <Frame>
   <img src="/resources/screenshots/docker-ngrok.png" alt="Copying the public URL from ngrok" />
 </Frame>
 
 <Note>
-ngrok is fine for testing but not suitable for production. In production, point `AP_FRONTEND_URL` at your real domain.
+ngrok is fine for testing but not suitable for production. In production, point `UNI_FRONTEND_URL` at your real domain.
 </Note>
 
 ## Upgrade
@@ -169,7 +169,7 @@ docker compose -p united exec postgres pg_dump -U postgres united > backup.sql
 Then upgrade:
 
 ```bash
-curl -fsSL https://get.united.com | sh -s -- --upgrade
+curl -fsSL https://get.example.com | sh -s -- --upgrade
 ```
 
 Your `.env`, your data, and any edits to `docker-compose.yml` are left alone.
@@ -179,7 +179,7 @@ Review [breaking changes](/install/reference/breaking-changes) before upgrading.
 </Warning>
 
 <Tip>
-The version is pinned in `AP_VERSION` inside `.env`. Set it yourself and re-run the upgrade to move to a specific release.
+The version is pinned in `UNI_VERSION` inside `.env`. Set it yourself and re-run the upgrade to move to a specific release.
 </Tip>
 
 ## Uninstall
@@ -187,13 +187,13 @@ The version is pinned in `AP_VERSION` inside `.env`. Set it yourself and re-run 
 Stop united and keep your data:
 
 ```bash
-curl -fsSL https://get.united.com | sh -s -- --uninstall
+curl -fsSL https://get.example.com | sh -s -- --uninstall
 ```
 
 Stop it and delete everything, including the database:
 
 ```bash
-curl -fsSL https://get.united.com | sh -s -- --uninstall --purge
+curl -fsSL https://get.example.com | sh -s -- --uninstall --purge
 ```
 
 ## Troubleshooting
@@ -216,27 +216,27 @@ Your worker cannot reach the app. Check its logs:
 docker compose -p united logs worker | grep -i socket
 ```
 
-Repeated `Socket.IO connection error` means `AP_FRONTEND_URL` on the **worker** points at an address that does not resolve from inside the container. `localhost` refers to the worker itself, not the app. It must be the app's service name on the Docker network:
+Repeated `Socket.IO connection error` means `UNI_FRONTEND_URL` on the **worker** points at an address that does not resolve from inside the container. `localhost` refers to the worker itself, not the app. It must be the app's service name on the Docker network:
 
 ```yaml
 worker:
   environment:
-    - AP_FRONTEND_URL=http://app
+    - UNI_FRONTEND_URL=http://app
 ```
 
-The app's own `AP_FRONTEND_URL` should stay as your public URL. See [Websocket Issues](/install/troubleshooting/websocket-issues).
+The app's own `UNI_FRONTEND_URL` should stay as your public URL. See [Websocket Issues](/install/troubleshooting/websocket-issues).
 </Accordion>
 
 <Accordion title="Port 8080 is already in use">
 Install on another port:
 
 ```bash
-curl -fsSL https://get.united.com | sh -s -- --port 8090
+curl -fsSL https://get.example.com | sh -s -- --port 8090
 ```
 
-On an existing install, change `AP_HOST_PORT` in `.env` and run `docker compose -p united up -d`.
+On an existing install, change `UNI_HOST_PORT` in `.env` and run `docker compose -p united up -d`.
 
-Do not set `AP_PORT`. That is the app's own listen port inside the container, and changing it breaks the port mapping.
+Do not set `UNI_PORT`. That is the app's own listen port inside the container, and changing it breaks the port mapping.
 </Accordion>
 
 <Accordion title="The app keeps restarting">
@@ -246,7 +246,7 @@ Read the startup error:
 docker compose -p united logs app | grep -i "failed to start"
 ```
 
-A common cause is `AP_EXECUTION_MODE=UNSANDBOXED` with `AP_EDITION=ee`, which is rejected at startup. Use `SANDBOX_CODE_ONLY` instead. See [Sandboxing Mode](/install/configure-operate/sandboxing).
+A common cause is `UNI_EXECUTION_MODE=UNSANDBOXED` with `UNI_EDITION=ee`, which is rejected at startup. Use `SANDBOX_CODE_ONLY` instead. See [Sandboxing Mode](/install/configure-operate/sandboxing).
 </Accordion>
 
 <Accordion title="Reading the logs">

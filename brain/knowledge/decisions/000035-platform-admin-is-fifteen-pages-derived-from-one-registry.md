@@ -325,7 +325,7 @@ that already exist, so the diff is reviewable as pure refactor with identical sc
 derivation is proven against the IA everyone knows before the data changes under it.
 
 **The quiet Community treatment was reversed in review: `RequestTrial` stays.** Retiring it would have
-closed the only in-product path from a self-hosted install to sales, feeding `united.com/sales` from
+closed the only in-product path from a self-hosted install to sales, feeding `example.com/sales` from
 26 feature keys, and doing that inside a design refactor made it a growth decision smuggled in as one. Both
 locked surfaces render it again on Community, gated by `showContactSales`, which only the billing shell
 sets to `false` exactly as before. Each registry teaser therefore carries the `featureKey` the sales page

@@ -29,14 +29,14 @@ describe('shouldSkipReindexOnCloud — cloud never falls back to the oldest plat
         vi.restoreAllMocks()
     })
 
-    it('skips on cloud when AP_OPENAI_API_KEY is unset (no oldest-platform fallback)', () => {
+    it('skips on cloud when UNI_OPENAI_API_KEY is unset (no oldest-platform fallback)', () => {
         vi.spyOn(system, 'getEdition').mockReturnValue(ApEdition.CLOUD)
         vi.spyOn(system, 'get').mockReturnValue(undefined)
 
         expect(shouldSkipReindexOnCloud()).toBe(true)
     })
 
-    it('does not skip on cloud when AP_OPENAI_API_KEY is set (env funds it)', () => {
+    it('does not skip on cloud when UNI_OPENAI_API_KEY is set (env funds it)', () => {
         vi.spyOn(system, 'getEdition').mockReturnValue(ApEdition.CLOUD)
         vi.spyOn(system, 'get').mockImplementation((prop) =>
             (prop === AppSystemProp.OPENAI_API_KEY ? 'sk-env-key' : undefined),

@@ -162,9 +162,9 @@ export function denoCodeSandbox({ permissions, codeStepMemoryLimitMb }: DenoCode
 }
 
 function resolveWarmDenoDir(stepDir: string): string | undefined {
-    const mode = process.env['AP_EXECUTION_MODE']
+    const mode = process.env['UNI_EXECUTION_MODE']
     const stepDirIsWritable = mode === ExecutionMode.SANDBOX_CODE_ONLY || mode === ExecutionMode.UNSANDBOXED
-    const cacheIsMounted = process.env['AP_DENO_CACHE_MOUNTED'] === 'true'
+    const cacheIsMounted = process.env['UNI_DENO_CACHE_MOUNTED'] === 'true'
     if (cacheIsMounted) {
         // See brain/knowledge/decisions/000049-every-isolate-box-can-write-the-shared-deno-cache-because-the-engine-clears-its-umask.md
         process.umask(0)
@@ -178,7 +178,7 @@ function buildPropagatedEnv(permissions: DenoPermission[]): Record<string, strin
     if (!envAllowed) {
         return {}
     }
-    const propagatedNames = (process.env['AP_SANDBOX_PROPAGATED_ENV_VARS'] ?? '').split(',').map((name) => name.trim()).filter((name) => name.length > 0)
+    const propagatedNames = (process.env['UNI_SANDBOX_PROPAGATED_ENV_VARS'] ?? '').split(',').map((name) => name.trim()).filter((name) => name.length > 0)
     const env: Record<string, string> = {}
     for (const name of propagatedNames) {
         const value = process.env[name]

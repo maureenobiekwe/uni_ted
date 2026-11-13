@@ -93,7 +93,7 @@ export const system = {
                         prop,
                     },
                 },
-                `System property AP_${prop} is not defined, please check the documentation`,
+                `System property UNI_${prop} is not defined, please check the documentation`,
             )
         }
         return value
@@ -111,7 +111,7 @@ export const system = {
                         prop,
                     },
                 },
-                `System property AP_${prop} is not a finite number, please check the documentation`,
+                `System property UNI_${prop} is not a finite number, please check the documentation`,
             )
         }
         return parsedNumber
@@ -151,7 +151,7 @@ export const system = {
                         prop,
                     },
                 },
-                `System property AP_${prop} is not defined, please check the documentation`,
+                `System property UNI_${prop} is not defined, please check the documentation`,
             )
         }
         return value
@@ -175,7 +175,7 @@ export const system = {
                         prop,
                     },
                 },
-                `System property AP_${prop} is not defined, please check the documentation`,
+                `System property UNI_${prop} is not defined, please check the documentation`,
             )
         }
 

@@ -9,7 +9,7 @@ import { evalStore, RunResult } from './store'
 
 async function runFresh(options: RunOptions): Promise<RunResult> {
     if (!agentEvalRunner.hasProviderKey()) {
-        console.error(chalk.red('  No OpenRouter key found. Set AP_OPENROUTER_PROVISION_KEY or OPENROUTER_API_KEY.'))
+        console.error(chalk.red('  No OpenRouter key found. Set UNI_OPENROUTER_PROVISION_KEY or OPENROUTER_API_KEY.'))
         console.error(chalk.dim('  (npm run agent-evals loads these from .env.dev automatically.)'))
         process.exit(2)
     }

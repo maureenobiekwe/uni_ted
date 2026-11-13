@@ -10,13 +10,13 @@ let app: FastifyInstance | null = null
 
 beforeAll(async () => {
     app = await setupTestEnvironment()
-    process.env.AP_GOOGLE_CLIENT_ID = 'test-google-client-id'
-    process.env.AP_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
+    process.env.UNI_GOOGLE_CLIENT_ID = 'test-google-client-id'
+    process.env.UNI_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
 })
 
 afterAll(async () => {
-    delete process.env.AP_GOOGLE_CLIENT_ID
-    delete process.env.AP_GOOGLE_CLIENT_SECRET
+    delete process.env.UNI_GOOGLE_CLIENT_ID
+    delete process.env.UNI_GOOGLE_CLIENT_SECRET
     await teardownTestEnvironment()
 })
 

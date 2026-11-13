@@ -47,7 +47,7 @@ describe('modelCatalog.lookup', () => {
 
     afterEach(() => {
         vi.useRealTimers()
-        delete process.env['AP_MODEL_CATALOG_URL']
+        delete process.env['UNI_MODEL_CATALOG_URL']
     })
 
     it('returns metadata for a native model id', async () => {
@@ -101,8 +101,8 @@ describe('modelCatalog.lookup', () => {
         expect(get).toHaveBeenCalledTimes(1)
     })
 
-    it('reads AP_MODEL_CATALOG_URL when set', async () => {
-        process.env['AP_MODEL_CATALOG_URL'] = 'https://mirror.internal/model-catalog.json'
+    it('reads UNI_MODEL_CATALOG_URL when set', async () => {
+        process.env['UNI_MODEL_CATALOG_URL'] = 'https://mirror.internal/model-catalog.json'
         const modelCatalog = await freshCatalog()
         await modelCatalog.load()
         expect(get).toHaveBeenCalledWith('https://mirror.internal/model-catalog.json', expect.anything())

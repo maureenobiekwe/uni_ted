@@ -25,7 +25,7 @@ extra "chunk" steps in your flow; a streaming action looks and behaves like any 
 **Reading a *stored* file as a stream requires S3 file storage.** Moving bytes from one
 third-party service to another — the common case — never touches united storage and
 works on any backend. But when the file being read already lives in united storage,
-only S3 (`AP_FILE_STORAGE_LOCATION=S3`) serves it incrementally: with the default database
+only S3 (`UNI_FILE_STORAGE_LOCATION=S3`) serves it incrementally: with the default database
 (`DB`) storage the bytes cannot be read out of a column a chunk at a time, so the server
 loads the whole row into memory before sending it to your action, which defeats the memory
 savings. Self-hosted installs default to `DB`; set S3 to get the benefit. See
@@ -97,7 +97,7 @@ input file as a stream, and write an output file as a stream.
 
 `ctx.files.write` accepts a `Buffer` **or** a `Readable`. Pass a `Readable`, such as an S3
 object body or a streaming HTTP response, and the engine drains it for you, counting the
-bytes against `AP_MAX_FILE_SIZE_MB` as they arrive. Your action never builds a `Buffer`
+bytes against `UNI_MAX_FILE_SIZE_MB` as they arrive. Your action never builds a `Buffer`
 itself, though the write is not streamed end-to-end: that cap sits far below the sandbox's
 memory budget, so the upload declares a real `Content-Length` — which is what makes it
 retryable. It returns a file reference string you return from the action, exactly like the
@@ -209,11 +209,11 @@ advertised length. Don't require it: prefer pattern 1 or 2, which never need it.
 ## Limits & storage
 
 - **Writing into storage is capped, and buffered by the engine.** A stream passed to
-  `ctx.files.write` is counted against `AP_MAX_FILE_SIZE_MB` (Cloud: 10&nbsp;MB, self-hosted
+  `ctx.files.write` is counted against `UNI_MAX_FILE_SIZE_MB` (Cloud: 10&nbsp;MB, self-hosted
   default: 25&nbsp;MB) *while* the bytes flow; crossing it aborts the transfer and fails the
   step before anything is uploaded. See [Limits](/install/reference/limits).
 - **Reading a streamed input is not capped.** A `streaming: true` file input has no
-  `AP_MAX_FILE_SIZE_MB` ceiling; that is deliberate, since the point of the feature is to move
+  `UNI_MAX_FILE_SIZE_MB` ceiling; that is deliberate, since the point of the feature is to move
   files larger than the cap out to an external service.
 - **Storage backend.** Streaming a file *out of* united storage requires S3; see the
   callout at the top of this page. Writes are capped and engine-buffered on every backend.

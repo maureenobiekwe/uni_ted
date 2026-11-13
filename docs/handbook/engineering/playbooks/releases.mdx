@@ -7,7 +7,7 @@ All changes flow through a staging environment before reaching production. There
 
 ## How It Works
 
-1. **Merge to `main`** — `continuous-delivery-stg.yml` builds a `version.sha.beta` image, deploys it to **staging** (`stg.united.com`), and runs the E2E suite against staging (`e2e-staging`).
+1. **Merge to `main`** — `continuous-delivery-stg.yml` builds a `version.sha.beta` image, deploys it to **staging** (`stg.example.com`), and runs the E2E suite against staging (`e2e-staging`).
 2. **By hand** — `continuous-delivery-cloud.yml` (the Cloud gate) picks the newest `main` commit whose `e2e-staging` passed, runs the E2E matrix and the upgrade test on the image staging built from it, and waits for one approval.
 3. **On approval** — the gate deploys that same image to the canary, then to the whole production fleet.
 4. **Self-hosted** — `release-self-hosted.yml`, by hand. The weekly `continuous-delivery-release.yml` is disabled.
@@ -16,10 +16,10 @@ All changes flow through a staging environment before reaching production. There
 
 | Environment | URL | Purpose |
 |---|---|---|
-| Preview | `branch-name.united.com` | Per-PR ephemeral environment for review. *Requires the `preview` label on the PR.* |
-| Staging | `stg.united.com` | Internal testing |
-| Canary | `canary.united.com` | Gets each Cloud deploy a few minutes before the rest of production |
-| Production | `cloud.united.com` | Live customers |
+| Preview | `branch-name.example.com` | Per-PR ephemeral environment for review. *Requires the `preview` label on the PR.* |
+| Staging | `stg.example.com` | Internal testing |
+| Canary | `canary.example.com` | Gets each Cloud deploy a few minutes before the rest of production |
+| Production | `cloud.example.com` | Live customers |
 
 ## Hotfix Workflow
 
@@ -82,7 +82,7 @@ Because the bump commit for an off-cycle release lives on its release branch, `m
 
 ### `publish-embed-sdk.yml`
 
-Publishes the embed SDK bundle (`packages/ee/embed-sdk`) to `https://cdn.united.com/sdk/embed/<version>.js`. Runs on pushes to `main` that change `packages/ee/embed-sdk/package.json`, on a daily schedule, and on manual dispatch (`main` only). The check job compares the package version against the CDN and publishes only when that version is missing: a 200 skips, a 404 publishes, anything else fails the run. Bumping `version` in `packages/ee/embed-sdk/package.json` is the entire release procedure for the SDK; the daily schedule retries failed publishes, and already-published versions are never overwritten. Failures notify the on-call Discord channel. Requires the `CDN_S3_ENDPOINT`, `CDN_S3_BUCKET`, `CDN_S3_ACCESS_KEY_ID`, `CDN_S3_SECRET_ACCESS_KEY`, and `DISCORD_ON_CALL_WEBHOOK` secrets.
+Publishes the embed SDK bundle (`packages/ee/embed-sdk`) to `https://cdn.example.com/sdk/embed/<version>.js`. Runs on pushes to `main` that change `packages/ee/embed-sdk/package.json`, on a daily schedule, and on manual dispatch (`main` only). The check job compares the package version against the CDN and publishes only when that version is missing: a 200 skips, a 404 publishes, anything else fails the run. Bumping `version` in `packages/ee/embed-sdk/package.json` is the entire release procedure for the SDK; the daily schedule retries failed publishes, and already-published versions are never overwritten. Failures notify the on-call Discord channel. Requires the `CDN_S3_ENDPOINT`, `CDN_S3_BUCKET`, `CDN_S3_ACCESS_KEY_ID`, `CDN_S3_SECRET_ACCESS_KEY`, and `DISCORD_ON_CALL_WEBHOOK` secrets.
 
 ## Changelog
 

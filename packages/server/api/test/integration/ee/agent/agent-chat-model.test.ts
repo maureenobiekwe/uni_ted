@@ -398,7 +398,7 @@ describe('knowledge base embeddings', () => {
     })
 
     it('indexes with Credits when the Default AI key cannot embed', async () => {
-        process.env.AP_OPENROUTER_PROVISION_KEY = 'test-provision-key'
+        process.env.UNI_OPENROUTER_PROVISION_KEY = 'test-provision-key'
         try {
             const ctx = await context()
             await mockAndSaveAIProvider({ platformId: ctx.platform.id, provider: AIProviderName.ANTHROPIC, enabledForChat: true })
@@ -409,7 +409,7 @@ describe('knowledge base embeddings', () => {
             expect(response.json()).toMatchObject({ provider: AIProviderName.united })
         }
         finally {
-            delete process.env.AP_OPENROUTER_PROVISION_KEY
+            delete process.env.UNI_OPENROUTER_PROVISION_KEY
         }
     })
 

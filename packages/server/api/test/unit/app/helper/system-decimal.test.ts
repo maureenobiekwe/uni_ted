@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it } from 'vitest'
 import { system } from '../../../../src/app/helper/system/system'
 import { AppSystemProp } from '../../../../src/app/helper/system/system-props'
 
-const ENV_KEY = `AP_${AppSystemProp.AI_CREDIT_USD_VALUE}`
+const ENV_KEY = `UNI_${AppSystemProp.AI_CREDIT_USD_VALUE}`
 
 afterEach(() => {
     delete process.env[ENV_KEY]

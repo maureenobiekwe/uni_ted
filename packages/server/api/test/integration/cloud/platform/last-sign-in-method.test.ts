@@ -12,8 +12,8 @@ beforeAll(async () => {
 })
 
 afterEach(() => {
-    delete process.env.AP_GOOGLE_CLIENT_ID
-    delete process.env.AP_GOOGLE_CLIENT_SECRET
+    delete process.env.UNI_GOOGLE_CLIENT_ID
+    delete process.env.UNI_GOOGLE_CLIENT_SECRET
 })
 
 afterAll(async () => {
@@ -105,8 +105,8 @@ describe('Last sign-in method guard on Cloud', () => {
 
 function setGoogleKeys({ configured }: { configured: boolean }): void {
     if (configured) {
-        process.env.AP_GOOGLE_CLIENT_ID = 'test-google-client-id'
-        process.env.AP_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
+        process.env.UNI_GOOGLE_CLIENT_ID = 'test-google-client-id'
+        process.env.UNI_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
     }
 }
 

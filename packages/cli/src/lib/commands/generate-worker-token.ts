@@ -15,7 +15,7 @@ export const generateWorkerTokenCommand = new Command('token')
             {
                 type: 'input',
                 name: 'jwtSecret',
-                message: 'Enter your JWT secret (should be the same as AP_JWT_SECRET used for the app server):',
+                message: 'Enter your JWT secret (should be the same as UNI_JWT_SECRET used for the app server):',
                 validate: (input) => {
                     if (!input) {
                         return 'JWT secret is required';
@@ -40,7 +40,7 @@ export const generateWorkerTokenCommand = new Command('token')
                 algorithm: ALGORITHM,
                 issuer: ISSUER,
             });
-            console.log(chalk.green('\nGenerated Worker Token, Please use it in AP_WORKER_TOKEN environment variable:'));
+            console.log(chalk.green('\nGenerated Worker Token, Please use it in UNI_WORKER_TOKEN environment variable:'));
             console.log(chalk.yellow(token));
            
         } catch (error) {

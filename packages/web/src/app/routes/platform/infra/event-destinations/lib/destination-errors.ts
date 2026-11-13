@@ -42,7 +42,7 @@ function describeTestError({
             'This URL points to a private or internal address, so the test was not sent.',
           )
         : t(
-            'This URL points to a private or internal address, so the test was not sent. To allow it, add the address to AP_SSRF_ALLOW_LIST on the server and restart the server.',
+            'This URL points to a private or internal address, so the test was not sent. To allow it, add the address to UNI_SSRF_ALLOW_LIST on the server and restart the server.',
           );
     case EventDestinationTestError.TIMEOUT:
       return t('The destination did not answer in time.');

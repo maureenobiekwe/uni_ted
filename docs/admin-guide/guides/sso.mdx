@@ -77,7 +77,7 @@ On the cloud sign-in page, **Sign in with SAML** asks for the organization's dom
 
 Turn **Continue with Google** and **Email and password** on or off under **Sign-in methods**. Each change asks you to confirm. You can't turn off the last sign-in method that works: turn on another one first. On a self-hosted server, Google only counts once it's set up.
 
-On self-hosted instances, the Google button only appears once `AP_GOOGLE_CLIENT_ID` and `AP_GOOGLE_CLIENT_SECRET` are set. See [Google sign-in on self-hosted](#google).
+On self-hosted instances, the Google button only appears once `UNI_GOOGLE_CLIENT_ID` and `UNI_GOOGLE_CLIENT_SECRET` are set. See [Google sign-in on self-hosted](#google).
 
 ## Allowed domains
 
@@ -108,10 +108,10 @@ On Cloud, Continue with Google works without setup. On self-hosted instances, cr
     Navigate to **APIs & Services** → **Credentials** → **Create Credentials** → **OAuth client ID**, and select **Web application**.
   </Step>
   <Step title="Configure Redirect URI">
-    Add `<your united URL>/redirect` to the **Authorized redirect URIs**. If you set `AP_INTERNAL_URL`, use that URL instead.
+    Add `<your united URL>/redirect` to the **Authorized redirect URIs**. If you set `UNI_INTERNAL_URL`, use that URL instead.
   </Step>
   <Step title="Set the environment variables">
-    Set `AP_GOOGLE_CLIENT_ID` and `AP_GOOGLE_CLIENT_SECRET` to the client's ID and secret, then restart united. See [environment variables](/install/reference/environment-variables).
+    Set `UNI_GOOGLE_CLIENT_ID` and `UNI_GOOGLE_CLIENT_SECRET` to the client's ID and secret, then restart united. See [environment variables](/install/reference/environment-variables).
   </Step>
 </Steps>
 
@@ -291,4 +291,4 @@ On Cloud, Continue with Google works without setup. On self-hosted instances, cr
 
 ## Need Help?
 
-If you encounter issues during SSO setup, please contact our enterprise support or [sales team](https://www.united.com/sales).
+If you encounter issues during SSO setup, please contact our enterprise support or [sales team](https://www.example.com/sales).

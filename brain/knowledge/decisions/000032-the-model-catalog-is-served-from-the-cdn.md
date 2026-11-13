@@ -7,7 +7,7 @@ status: accepted
 
 ## Decision
 
-Per-model metadata is published to `https://cdn.united.com/ai/model-catalog.json` by a weekly
+Per-model metadata is published to `https://cdn.example.com/ai/model-catalog.json` by a weekly
 workflow and fetched at runtime by `modelCatalog.lookup()`. Nothing is committed to the repo and no
 process imports it. The source is [models.dev](https://models.dev) and only models.dev.
 
@@ -35,7 +35,7 @@ single-source design.
 
 ## Consequences
 
-**An install with no egress to `cdn.united.com` gets no model metadata, ever** — air-gapped
+**An install with no egress to `cdn.example.com` gets no model metadata, ever** — air-gapped
 deployments, networks with an outbound allowlist, or a CDN outage. It degrades to the plain
 `{ id, name }` row rather than breaking, because every metadata field is optional, but there is no
 message explaining the absence. `AP_MODEL_CATALOG_URL` is the escape hatch: point it at a self-hosted

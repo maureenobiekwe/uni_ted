@@ -20,7 +20,7 @@ function stubUrls({ mcpUrl }: { mcpUrl: string | undefined }): void {
     })
 }
 
-describe('validateEnvPropsOnStartup with AP_MCP_URL', () => {
+describe('validateEnvPropsOnStartup with UNI_MCP_URL', () => {
     afterEach(() => {
         vi.restoreAllMocks()
     })
@@ -29,17 +29,17 @@ describe('validateEnvPropsOnStartup with AP_MCP_URL', () => {
         ['the frontend host root', 'https://example.com'],
         ['another path on the frontend host', 'https://example.com/mcp'],
         ['the frontend host in another case', 'https://EXAMPLE.com'],
-    ])('refuses to start when AP_MCP_URL shares the frontend hostname at %s', async (_name, mcpUrl) => {
+    ])('refuses to start when UNI_MCP_URL shares the frontend hostname at %s', async (_name, mcpUrl) => {
         stubUrls({ mcpUrl })
 
-        await expect(validateEnvPropsOnStartup(log)).rejects.toThrow('AP_MCP_URL and AP_FRONTEND_URL share a hostname')
+        await expect(validateEnvPropsOnStartup(log)).rejects.toThrow('UNI_MCP_URL and UNI_FRONTEND_URL share a hostname')
     })
 
     it.each([
         ['its own hostname', 'https://mcp.example.com'],
-        ['the same value as AP_FRONTEND_URL', `${FRONTEND_URL}/`],
+        ['the same value as UNI_FRONTEND_URL', `${FRONTEND_URL}/`],
         ['nothing', undefined],
-    ])('starts when AP_MCP_URL is set to %s', async (_name, mcpUrl) => {
+    ])('starts when UNI_MCP_URL is set to %s', async (_name, mcpUrl) => {
         stubUrls({ mcpUrl })
 
         await expect(validateEnvPropsOnStartup(log)).resolves.toBeUndefined()

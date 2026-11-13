@@ -12,7 +12,7 @@ Deliberately out of scope: the `+` to space corruption in `redirect.tsx`, the ab
 
 ## Context
 
-Two redirect pages are live and they disagree. `redirect.tsx` decodes once through `URLSearchParams`; `secrets.united.com/redirect`, which every `CLOUD_OAUTH2` connect uses and which is not in this repo, posts the raw query value. `getCode` then applied one unconditional decode to both. `CLOUD_OAUTH2` therefore landed on exactly one decode and was correct, while `OAUTH2` and `PLATFORM_OAUTH2` double-decoded and corrupted any code containing a literal `%`. The split is by connection type, not by deployment: both kinds occur on Cloud and on self-hosted instances alike. Reproduced end to end on 2026-09-08 with a stub provider: issued `k1%2Fk2`, the token endpoint received `k1/k2`.
+Two redirect pages are live and they disagree. `redirect.tsx` decodes once through `URLSearchParams`; `secrets.example.com/redirect`, which every `CLOUD_OAUTH2` connect uses and which is not in this repo, posts the raw query value. `getCode` then applied one unconditional decode to both. `CLOUD_OAUTH2` therefore landed on exactly one decode and was correct, while `OAUTH2` and `PLATFORM_OAUTH2` double-decoded and corrupted any code containing a literal `%`. The split is by connection type, not by deployment: both kinds occur on Cloud and on self-hosted instances alike. Reproduced end to end on 2026-09-08 with a stub provider: issued `k1%2Fk2`, the token endpoint received `k1/k2`.
 
 ## Why
 
@@ -22,7 +22,7 @@ The mirror risk is accepted: a provider that double encodes its redirect is curr
 
 ## Consequences
 
-- The browser permanently owns code normalisation. Nobody should plan a fix that depends on `secrets.united.com` changing behaviour.
+- The browser permanently owns code normalisation. Nobody should plan a fix that depends on `secrets.example.com` changing behaviour.
 - Tests must model **both** sender contracts, with the cloud rows asserted green before and after any change. #14879 shipped three tests that CI really ran, and they still missed the regression because all three modelled `redirect.tsx` only.
 - The cloud contract is pinned as a fixture dated 2026-09-08, not a live network check, so CI does not depend on an external service. The verification method is recorded on *Testing OAuth2 Connects Locally*.
 - Left open and still real: `+` becomes a space on `redirect.tsx` and on the `qs` parser behind `/api/redirect`; `getCode` never rejects or times out when a popup is abandoned; `/api/redirect` is unreferenced but may have external callers.

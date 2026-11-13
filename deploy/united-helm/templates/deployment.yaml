@@ -66,7 +66,7 @@ spec:
               value: {{ $value | quote }}
             {{- end }}
             {{- $fullname := include "united.fullname" . }}
-            {{- $legacyKeys := dict "AP_ENCRYPTION_KEY" (list (printf "%s-secrets" $fullname) "encryption-key") "AP_JWT_SECRET" (list (printf "%s-jwt-secret" $fullname) "jwt-secret") }}
+            {{- $legacyKeys := dict "UNI_ENCRYPTION_KEY" (list (printf "%s-secrets" $fullname) "encryption-key") "UNI_JWT_SECRET" (list (printf "%s-jwt-secret" $fullname) "jwt-secret") }}
             {{- range $secretName, $vars := .Values.unitedEnvVariables }}
             {{- range $vars }}
             {{- $ref := list $secretName . true }}

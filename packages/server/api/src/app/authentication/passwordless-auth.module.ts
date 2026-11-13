@@ -4,7 +4,7 @@ import { passwordlessAuthController } from './passwordless-auth.controller'
 
 export const passwordlessAuthModule: FastifyPluginAsyncZod = async (app) => {
     if (!turnstile.isConfigured()) {
-        app.log.error('[passwordlessAuthModule] signing in with an emailed code stays off: it needs a captcha, so set AP_TURNSTILE_SITE_KEY and AP_TURNSTILE_SECRET_KEY to switch it on')
+        app.log.error('[passwordlessAuthModule] signing in with an emailed code stays off: it needs a captcha, so set UNI_TURNSTILE_SITE_KEY and UNI_TURNSTILE_SECRET_KEY to switch it on')
         return
     }
     await app.register(passwordlessAuthController, {

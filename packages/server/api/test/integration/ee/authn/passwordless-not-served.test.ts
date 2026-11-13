@@ -6,8 +6,8 @@ import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/
 let app: FastifyInstance | null = null
 
 beforeAll(async () => {
-    process.env.AP_TURNSTILE_SITE_KEY = 'test-site-key'
-    process.env.AP_TURNSTILE_SECRET_KEY = 'test-secret-key'
+    process.env.UNI_TURNSTILE_SITE_KEY = 'test-site-key'
+    process.env.UNI_TURNSTILE_SECRET_KEY = 'test-secret-key'
     app = await setupTestEnvironment()
 })
 

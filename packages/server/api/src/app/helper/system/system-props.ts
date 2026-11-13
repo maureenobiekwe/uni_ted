@@ -171,7 +171,7 @@ export const environmentVariables = {
         return value ? value === 'true' : undefined
     },
     getEnvironment: (prop: AppSystemProp): string | undefined => {
-        return environmentMigrations.migrate('AP_' + prop)
+        return environmentMigrations.migrate('UNI_' + prop)
     },
     getEnvironmentOrThrow: (prop: AppSystemProp): string => {
         const value = environmentVariables.getEnvironment(prop)

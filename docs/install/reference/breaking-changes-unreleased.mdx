@@ -7,3 +7,11 @@ hidden: true
 Entries here move to [Breaking Changes](/install/reference/breaking-changes) automatically when the release that contains them is tagged. Add new entries at the top, right under the heading below.
 
 ## What has changed?
+
+### Environment variable prefix renamed from `AP_` to `UNI_`
+
+Every environment variable that used the `AP_` prefix now uses the `UNI_` prefix. The variable names are otherwise unchanged (for example `AP_FRONTEND_URL` becomes `UNI_FRONTEND_URL`, `AP_JWT_SECRET` becomes `UNI_JWT_SECRET`, `AP_DB_TYPE` becomes `UNI_DB_TYPE`). The server no longer reads the old `AP_`-prefixed names.
+
+#### What you need to do
+
+Rename every `AP_*` variable in your environment to `UNI_*` before upgrading. This applies to your `.env` files, Docker/Compose environment, Kubernetes secrets and Helm values, and any CI or process manager that sets these variables. The values stay the same; only the prefix changes. A variable left under the old `AP_` name will be ignored and the server will fall back to its default or fail to start if the variable was required.

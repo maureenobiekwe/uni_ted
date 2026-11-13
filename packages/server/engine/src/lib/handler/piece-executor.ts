@@ -15,7 +15,7 @@ import { propsProcessor } from '../variables/props-processor'
 import { ActionHandler, BaseExecutor, failStep } from './base-executor'
 import { EngineConstants } from './context/engine-constants'
 
-const AP_PAUSED_FLOW_TIMEOUT_DAYS = Number(process.env.AP_PAUSED_FLOW_TIMEOUT_DAYS)
+const UNI_PAUSED_FLOW_TIMEOUT_DAYS = Number(process.env.UNI_PAUSED_FLOW_TIMEOUT_DAYS)
 
 export const pieceExecutor: BaseExecutor<PieceAction> = {
     async handle({
@@ -324,7 +324,7 @@ function assertDelayWithinTimeout(resumeDateTime?: string): void {
         return
     }
     const diffInDays = dayjs(resumeDateTime).diff(dayjs(), 'days')
-    if (diffInDays > AP_PAUSED_FLOW_TIMEOUT_DAYS) {
-        throw new PausedFlowTimeoutError(undefined, AP_PAUSED_FLOW_TIMEOUT_DAYS)
+    if (diffInDays > UNI_PAUSED_FLOW_TIMEOUT_DAYS) {
+        throw new PausedFlowTimeoutError(undefined, UNI_PAUSED_FLOW_TIMEOUT_DAYS)
     }
 }

@@ -507,21 +507,21 @@ describe('find and download guards', () => {
     expect(reads).toEqual([['name', 'mimetype', 'file_size', 'type', 'url']]);
   });
 
-  it('download_attachment uses AP_MAX_FILE_SIZE_MB when it is a valid number', async () => {
+  it('download_attachment uses UNI_MAX_FILE_SIZE_MB when it is a valid number', async () => {
     route({ key: 'ir.attachment.read', handler: (call) => {
       const fields = call.kwargs['fields'];
       if (Array.isArray(fields) && fields.includes('datas')) return [{ id: 5, datas: Buffer.from('PDF').toString('base64') }];
       return [{ id: 5, name: 'big.pdf', mimetype: 'application/pdf', file_size: 30 * 1024 * 1024, type: 'binary', url: false }];
     } });
-    const previous = process.env['AP_MAX_FILE_SIZE_MB'];
+    const previous = process.env['UNI_MAX_FILE_SIZE_MB'];
     try {
-      process.env['AP_MAX_FILE_SIZE_MB'] = '50';
+      process.env['UNI_MAX_FILE_SIZE_MB'] = '50';
       await expect(odooDownloadAttachment.run(actionCtx({ propsValue: { attachment_id: 5 } }))).resolves.toMatchObject({ id: 5, name: 'big.pdf', file: 'test-file-url' });
-      process.env['AP_MAX_FILE_SIZE_MB'] = 'lots';
+      process.env['UNI_MAX_FILE_SIZE_MB'] = 'lots';
       await expect(odooDownloadAttachment.run(actionCtx({ propsValue: { attachment_id: 5 } }))).rejects.toThrow(/25 MB file limit/);
     } finally {
-      if (previous === undefined) delete process.env['AP_MAX_FILE_SIZE_MB'];
-      else process.env['AP_MAX_FILE_SIZE_MB'] = previous;
+      if (previous === undefined) delete process.env['UNI_MAX_FILE_SIZE_MB'];
+      else process.env['UNI_MAX_FILE_SIZE_MB'] = previous;
     }
   });
 });
