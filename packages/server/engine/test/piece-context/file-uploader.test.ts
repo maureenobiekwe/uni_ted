@@ -31,21 +31,21 @@ describe('file-uploader service', () => {
     it('throws when data is a plain Object', async () => {
         const files = createFileUploader(SERVICE_PARAMS)
         await expect(
-            files.write({ fileName: 'test.txt', data: {} as any }),
+            files.write({ fileName: 'test.txt', data: {} as unknown as Buffer }),
         ).rejects.toThrow('Expected file data to be a Buffer or Readable stream, but received [object Object]')
     })
 
     it('throws when data is a string', async () => {
         const files = createFileUploader(SERVICE_PARAMS)
         await expect(
-            files.write({ fileName: 'test.txt', data: 'hello' as any }),
+            files.write({ fileName: 'test.txt', data: 'hello' as unknown as Buffer }),
         ).rejects.toThrow('Expected file data to be a Buffer or Readable stream, but received string')
     })
 
     it('throws when data is undefined', async () => {
         const files = createFileUploader(SERVICE_PARAMS)
         await expect(
-            files.write({ fileName: 'test.txt', data: undefined as any }),
+            files.write({ fileName: 'test.txt', data: undefined as unknown as Buffer }),
         ).rejects.toThrow('Expected file data to be a Buffer or Readable stream, but received undefined')
     })
 

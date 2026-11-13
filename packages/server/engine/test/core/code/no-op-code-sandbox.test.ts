@@ -34,7 +34,7 @@ describe('noOpCodeSandbox', () => {
         it('still sends inputs over IPC when the channel exists', async () => {
             const child = Object.assign(new EventEmitter(), {
                 send: vi.fn((message: unknown) => {
-                    ;(child as EventEmitter).emit('message', { success: true, result: message })
+                    (child as EventEmitter).emit('message', { success: true, result: message })
                 }),
             })
             spawnMock.mockImplementation(() => child)

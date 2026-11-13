@@ -1,6 +1,7 @@
 import { FlowActionType, FlowRunStatus, GenericStepOutput, StepOutputStatus, StreamStepProgress, UpdateRunProgressRequest, UploadRunLogsRequest } from '@united/shared'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
+import { flowRunProgressReporter } from '../../src/lib/helper/flow-run-progress-reporter'
 import { generateMockEngineConstants } from '../handler/test-helper'
 
 const { uploadRunLogMock, updateRunProgressMock, updateStepProgressMock } = vi.hoisted(() => ({
@@ -23,8 +24,6 @@ vi.mock('fetch-retry', () => ({
         headers: { 'Content-Type': 'application/json' },
     }),
 }))
-
-import { flowRunProgressReporter } from '../../src/lib/helper/flow-run-progress-reporter'
 
 const buildUpdateParams = ({ status }: { status: FlowRunStatus }) => {
     const engineConstants = generateMockEngineConstants({
