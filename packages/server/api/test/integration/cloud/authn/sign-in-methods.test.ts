@@ -11,8 +11,8 @@ beforeAll(async () => {
 })
 
 afterEach(() => {
-    delete process.env.AP_GOOGLE_CLIENT_ID
-    delete process.env.AP_GOOGLE_CLIENT_SECRET
+    delete process.env.UNI_GOOGLE_CLIENT_ID
+    delete process.env.UNI_GOOGLE_CLIENT_SECRET
 })
 
 afterAll(async () => {
@@ -36,21 +36,21 @@ describe('Sign-in methods of a platform', () => {
     })
 
     it('reports Google only when the server has it set up', () => {
-        process.env.AP_GOOGLE_CLIENT_ID = 'test-google-client-id'
-        process.env.AP_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
+        process.env.UNI_GOOGLE_CLIENT_ID = 'test-google-client-id'
+        process.env.UNI_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
         const methods = authenticationUtils(mockLog).getSignInMethods({ platform: platformWith({ samlConfigured: false }) })
         expect(methods).toEqual({ email: true, google: true, sso: false })
     })
 
     it('does not report Google when the platform turned it off', () => {
-        process.env.AP_GOOGLE_CLIENT_ID = 'test-google-client-id'
-        process.env.AP_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
+        process.env.UNI_GOOGLE_CLIENT_ID = 'test-google-client-id'
+        process.env.UNI_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
         const methods = authenticationUtils(mockLog).getSignInMethods({ platform: platformWith({ samlConfigured: false, googleAuthEnabled: false }) })
         expect(methods).toEqual({ email: true, google: false, sso: false })
     })
 
     it('does not report Google when only the client id is set', () => {
-        process.env.AP_GOOGLE_CLIENT_ID = 'test-google-client-id'
+        process.env.UNI_GOOGLE_CLIENT_ID = 'test-google-client-id'
         const methods = authenticationUtils(mockLog).getSignInMethods({ platform: platformWith({ samlConfigured: false }) })
         expect(methods).toEqual({ email: true, google: false, sso: false })
     })

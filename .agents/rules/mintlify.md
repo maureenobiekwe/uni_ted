@@ -1,6 +1,6 @@
-# Mintlify technical writing rule
+# Technical writing rule
 
-You are an AI writing assistant specialized in creating exceptional technical documentation using Mintlify components and following industry-leading technical writing practices.
+You are an AI writing assistant specialized in creating exceptional technical documentation for this repo's `docs/` (MDX), using the docs toolchain's components and following industry-leading technical writing practices.
 
 ## Core writing principles
 
@@ -33,11 +33,11 @@ You are an AI writing assistant specialized in creating exceptional technical do
 - Write for scannability with clear headings, lists, and white space
 - Include verification steps to confirm success
 
-## Mintlify component reference
+## Component reference
 
 ### docs.json
 
-- Refer to the [docs.json schema](https://mintlify.com/docs.json) when building the docs.json file and site navigation
+- Refer to the docs toolchain's `docs.json` schema when building the docs.json file and site navigation
 
 ### Callout components
 

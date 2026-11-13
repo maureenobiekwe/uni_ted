@@ -29,8 +29,8 @@ jobs:
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 35
     env:
-      AP_EXECUTION_MODE: ${{ matrix.executionMode }}
-      AP_WORKER_CONCURRENCY: 1
+      UNI_EXECUTION_MODE: ${{ matrix.executionMode }}
+      UNI_WORKER_CONCURRENCY: 1
 
     steps:
       - name: Checkout
@@ -104,14 +104,14 @@ jobs:
         if: matrix.executionMode == 'SANDBOX_CODE_ONLY'
         run: |
           docker compose -f benchmark/docker-compose.yml -f benchmark/docker-compose.minio.yml down -v
-          AP_EXECUTION_MODE=SANDBOX_CODE_ONLY \
-          AP_FILE_STORAGE_LOCATION=S3 \
-          AP_S3_BUCKET=united \
-          AP_S3_ACCESS_KEY_ID=minioadmin \
-          AP_S3_SECRET_ACCESS_KEY=minioadmin \
-          AP_S3_ENDPOINT=http://minio:9000 \
-          AP_S3_REGION=us-east-1 \
-          AP_S3_USE_SIGNED_URLS=false \
+          UNI_EXECUTION_MODE=SANDBOX_CODE_ONLY \
+          UNI_FILE_STORAGE_LOCATION=S3 \
+          UNI_S3_BUCKET=united \
+          UNI_S3_ACCESS_KEY_ID=minioadmin \
+          UNI_S3_SECRET_ACCESS_KEY=minioadmin \
+          UNI_S3_ENDPOINT=http://minio:9000 \
+          UNI_S3_REGION=us-east-1 \
+          UNI_S3_USE_SIGNED_URLS=false \
           APP_REPLICAS=1 \
           WORKER_REPLICAS=1 \
             docker compose -f benchmark/docker-compose.yml -f benchmark/docker-compose.minio.yml up -d
@@ -139,14 +139,14 @@ jobs:
         if: matrix.executionMode == 'SANDBOX_CODE_ONLY'
         run: |
           docker compose -f benchmark/docker-compose.yml -f benchmark/docker-compose.minio.yml down -v
-          AP_EXECUTION_MODE=SANDBOX_CODE_ONLY \
-          AP_FILE_STORAGE_LOCATION=S3 \
-          AP_S3_BUCKET=united \
-          AP_S3_ACCESS_KEY_ID=minioadmin \
-          AP_S3_SECRET_ACCESS_KEY=minioadmin \
-          AP_S3_ENDPOINT=http://minio:9000 \
-          AP_S3_REGION=us-east-1 \
-          AP_S3_USE_SIGNED_URLS=true \
+          UNI_EXECUTION_MODE=SANDBOX_CODE_ONLY \
+          UNI_FILE_STORAGE_LOCATION=S3 \
+          UNI_S3_BUCKET=united \
+          UNI_S3_ACCESS_KEY_ID=minioadmin \
+          UNI_S3_SECRET_ACCESS_KEY=minioadmin \
+          UNI_S3_ENDPOINT=http://minio:9000 \
+          UNI_S3_REGION=us-east-1 \
+          UNI_S3_USE_SIGNED_URLS=true \
           APP_REPLICAS=1 \
           WORKER_REPLICAS=1 \
             docker compose -f benchmark/docker-compose.yml -f benchmark/docker-compose.minio.yml up -d

@@ -54,7 +54,7 @@ function assertVendorCanReach(fileUrl: string): void {
     return;
   }
   throw new Error(
-    `WhatsScale downloads the file from a URL this instance hands it, and that URL points at "${hostname}", which is not reachable from the internet. Media sends need AP_FRONTEND_URL set to a publicly reachable address (a tunnel works). Without it WhatsScale answers "Invalid or blocked media URL".`
+    `WhatsScale downloads the file from a URL this instance hands it, and that URL points at "${hostname}", which is not reachable from the internet. Media sends need UNI_FRONTEND_URL set to a publicly reachable address (a tunnel works). Without it WhatsScale answers "Invalid or blocked media URL".`
   );
 }
 

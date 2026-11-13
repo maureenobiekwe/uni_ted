@@ -52,7 +52,7 @@ describe('action run budget', () => {
         expect(await runAndReadBudgetMs()).toBeGreaterThanOrEqual(600_000)
     })
 
-    it('follows AP_FLOW_TIMEOUT_SECONDS when a self-hoster raises it, which is what unblocks a tool that runs longer than the old fixed 120s', async () => {
+    it('follows UNI_FLOW_TIMEOUT_SECONDS when a self-hoster raises it, which is what unblocks a tool that runs longer than the old fixed 120s', async () => {
         vi.spyOn(system, 'getNumberOrThrow').mockImplementation(prop => prop === AppSystemProp.FLOW_TIMEOUT_SECONDS ? 1_800 : 0)
 
         expect(await runAndReadBudgetMs()).toBeGreaterThanOrEqual(1_800_000)

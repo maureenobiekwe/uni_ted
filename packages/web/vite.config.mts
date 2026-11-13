@@ -8,10 +8,10 @@ import customHtmlPlugin from './vite-plugins/html-plugin';
 
 export default defineConfig(({ command, mode }) => {
   const isDev = command === 'serve' || mode === 'development';
-  const emitSourcemap = process.env.AP_BUILD_SOURCEMAP === 'true';
+  const emitSourcemap = process.env.UNI_BUILD_SOURCEMAP === 'true';
 
   const AP_TITLE = 'united';
-  const AP_FAVICON = 'https://united.com/favicon.ico';
+  const AP_FAVICON = '/favicon.ico';
 
   return {
     server: {

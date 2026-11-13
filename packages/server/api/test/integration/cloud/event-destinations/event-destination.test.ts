@@ -462,7 +462,7 @@ describe('Event Destinations API', () => {
             expect(response?.statusCode).toBe(StatusCodes.OK)
             expect(response?.json().errorCode).toBe(EventDestinationTestError.BLOCKED)
             expect(response?.body).not.toContain('not allowed')
-            expect(response?.body).not.toContain('AP_SSRF_ALLOW_LIST')
+            expect(response?.body).not.toContain('UNI_SSRF_ALLOW_LIST')
         })
 
         it('should limit how often one admin can send a test delivery', async () => {

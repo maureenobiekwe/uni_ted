@@ -62,7 +62,7 @@ describe('domainHelper.getPublicUrlFromRequest', () => {
         expect(url).toBe('https://apps.example.com/united/token')
     })
 
-    it('gives the MCP host its own path prefix when AP_MCP_URL carries one', () => {
+    it('gives the MCP host its own path prefix when UNI_MCP_URL carries one', () => {
         stubSystemProps({ mcpUrl: 'https://mcp.example.com/gateway' })
 
         const url = domainHelper.getPublicUrlFromRequest({ req: request({ host: 'mcp.example.com' }), path: '/authorize' })
@@ -94,7 +94,7 @@ describe('domainHelper.getPublicUrlFromRequest', () => {
         expect(url).toBe('https://custom.customer.com/united/token')
     })
 
-    it('behaves exactly as before when AP_MCP_URL is unset', () => {
+    it('behaves exactly as before when UNI_MCP_URL is unset', () => {
         stubSystemProps({ mcpUrl: undefined })
 
         expect(domainHelper.getPublicUrlFromRequest({ req: request({ host: 'mcp.example.com' }), path: '/token' }))
@@ -103,14 +103,14 @@ describe('domainHelper.getPublicUrlFromRequest', () => {
             .toBe('https://apps.example.com/united/token')
     })
 
-    it('keeps the forwarded scheme on the frontend host when AP_FRONTEND_URL says http', () => {
+    it('keeps the forwarded scheme on the frontend host when UNI_FRONTEND_URL says http', () => {
         stubSystemProps({ mcpUrl: undefined, frontendUrl: 'http://apps.example.com/united' })
 
         expect(domainHelper.getPublicUrlFromRequest({ req: request({ host: 'apps.example.com', forwardedProto: 'https' }), path: '/token' }))
             .toBe('https://apps.example.com/united/token')
     })
 
-    it('keeps the forwarded scheme on the frontend host when AP_MCP_URL is set', () => {
+    it('keeps the forwarded scheme on the frontend host when UNI_MCP_URL is set', () => {
         stubSystemProps({ mcpUrl: MCP_URL, frontendUrl: 'http://apps.example.com/united' })
 
         expect(domainHelper.getPublicUrlFromRequest({ req: request({ host: 'apps.example.com', forwardedProto: 'https' }), path: '/token' }))
@@ -131,7 +131,7 @@ describe('domainHelper.isMcpHostRequest', () => {
         expect(domainHelper.isMcpHostRequest({ req: request({ host: 'custom.customer.com' }) })).toBe(false)
     })
 
-    it('is false everywhere when AP_MCP_URL is unset', () => {
+    it('is false everywhere when UNI_MCP_URL is unset', () => {
         stubSystemProps({ mcpUrl: undefined })
 
         expect(domainHelper.isMcpHostRequest({ req: request({ host: 'mcp.example.com' }) })).toBe(false)
@@ -144,19 +144,19 @@ describe('domainHelper.getMcpUrl', () => {
         vi.restoreAllMocks()
     })
 
-    it('uses AP_MCP_URL when set', () => {
+    it('uses UNI_MCP_URL when set', () => {
         stubSystemProps({ mcpUrl: MCP_URL })
 
         expect(domainHelper.getMcpUrl({ path: '/mcp' })).toBe('https://mcp.example.com/mcp')
     })
 
-    it('falls back to AP_FRONTEND_URL, prefix included, when unset', () => {
+    it('falls back to UNI_FRONTEND_URL, prefix included, when unset', () => {
         stubSystemProps({ mcpUrl: undefined })
 
         expect(domainHelper.getMcpUrl({ path: '/mcp' })).toBe('https://apps.example.com/united/mcp')
     })
 
-    it('does not double the slash when AP_FRONTEND_URL ends in one', () => {
+    it('does not double the slash when UNI_FRONTEND_URL ends in one', () => {
         stubSystemProps({ mcpUrl: undefined, frontendUrl: 'https://apps.example.com/' })
 
         expect(domainHelper.getMcpUrl({ path: '/mcp' })).toBe('https://apps.example.com/mcp')

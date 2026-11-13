@@ -3,7 +3,7 @@ import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 
-process.env.AP_DENO_PATH = path.join(path.dirname(require.resolve('deno/bin.cjs')), 'deno')
+process.env.UNI_DENO_PATH = path.join(path.dirname(require.resolve('deno/bin.cjs')), 'deno')
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 let denoStepTranspiler: any

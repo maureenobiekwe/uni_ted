@@ -65,10 +65,10 @@ RUN npm install --prefix / --no-fund --no-audit --no-save esbuild@0.25.0 && npm 
 WORKDIR /app
 
 ENV NODE_ENV=production
-ENV AP_CONTAINER_TYPE=WORKER
-ENV AP_CACHE_BASE_PATH=/tmp/cache
+ENV UNI_CONTAINER_TYPE=WORKER
+ENV UNI_CACHE_BASE_PATH=/tmp/cache
 # The forked engine spawns the code sandbox from this exact path (no PATH lookup).
-ENV AP_DENO_PATH=/usr/local/bin/deno
+ENV UNI_DENO_PATH=/usr/local/bin/deno
 
 COPY --from=build /usr/local/bin/bun /usr/local/bin/bun
 COPY --from=build /usr/local/bin/deno /usr/local/bin/deno

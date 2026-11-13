@@ -6,8 +6,8 @@ import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/
 let app: FastifyInstance | null = null
 
 beforeAll(async () => {
-    delete process.env.AP_TURNSTILE_SITE_KEY
-    delete process.env.AP_TURNSTILE_SECRET_KEY
+    delete process.env.UNI_TURNSTILE_SITE_KEY
+    delete process.env.UNI_TURNSTILE_SECRET_KEY
     app = await setupTestEnvironment()
 })
 

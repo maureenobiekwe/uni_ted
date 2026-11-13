@@ -8,7 +8,7 @@ How united stores credentials and authenticates users, across CE/EE/Cloud. Multi
 
 ### App Connections
 
-Encrypted credential records (AES-256) that flow steps use to call external services. Types: `OAUTH2`, `CLOUD_OAUTH2` (token exchange via secrets.united.com), `PLATFORM_OAUTH2`, `SECRET_TEXT`, `BASIC_AUTH`, `CUSTOM_AUTH`, `NO_AUTH`, `OIDC`.
+Encrypted credential records (AES-256) that flow steps use to call external services. Types: `OAUTH2`, `CLOUD_OAUTH2` (token exchange via secrets.example.com), `PLATFORM_OAUTH2`, `SECRET_TEXT`, `BASIC_AUTH`, `CUSTOM_AUTH`, `NO_AUTH`, `OIDC`.
 
 - **Entity/isolation**: `AppConnection` has `projectIds[]` (multi-project) + `scope` (PROJECT/PLATFORM). PROJECT connections queried with `ArrayContains([projectId])`; flows reference by stable `externalId` (survives rename).
 - **OAuth refresh**: auto on retrieval; distributed Redis lock keyed `${platformId}_${externalId}` (project-invariant so shared connections serialize). Refresh_token/client_secret always stripped from API responses. CUSTOM_AUTH pieces can opt into refresh via a `refresh` callback (worker `EXECUTE_TOKEN_REFRESH` job).

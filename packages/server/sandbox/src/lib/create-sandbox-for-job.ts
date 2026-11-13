@@ -80,25 +80,25 @@ function buildSandboxEnv({ settings }: {
 function baseEnv({ settings, networkMode }: { settings: SandboxSettings, networkMode: NetworkMode }): Record<string, string> {
     return {
         HOME: '/tmp/',
-        ...spreadIfDefined('AP_DENO_PATH', process.env['AP_DENO_PATH']),
-        AP_EXECUTION_MODE: settings.EXECUTION_MODE,
-        AP_MAX_FLOW_RUN_LOG_SIZE_MB: String(settings.MAX_FLOW_RUN_LOG_SIZE_MB),
-        ...spreadIfDefined('AP_FLOW_RUN_LOG_INPUT_TRUNCATE_THRESHOLD_KB', settings.FLOW_RUN_LOG_INPUT_TRUNCATE_THRESHOLD_KB?.toString()),
-        ...spreadIfDefined('AP_FLOW_RUN_LOG_SLICE_THRESHOLD_KB', settings.FLOW_RUN_LOG_SLICE_THRESHOLD_KB?.toString()),
-        AP_MAX_FILE_SIZE_MB: String(settings.MAX_FILE_SIZE_MB),
+        ...spreadIfDefined('UNI_DENO_PATH', process.env['UNI_DENO_PATH']),
+        UNI_EXECUTION_MODE: settings.EXECUTION_MODE,
+        UNI_MAX_FLOW_RUN_LOG_SIZE_MB: String(settings.MAX_FLOW_RUN_LOG_SIZE_MB),
+        ...spreadIfDefined('UNI_FLOW_RUN_LOG_INPUT_TRUNCATE_THRESHOLD_KB', settings.FLOW_RUN_LOG_INPUT_TRUNCATE_THRESHOLD_KB?.toString()),
+        ...spreadIfDefined('UNI_FLOW_RUN_LOG_SLICE_THRESHOLD_KB', settings.FLOW_RUN_LOG_SLICE_THRESHOLD_KB?.toString()),
+        UNI_MAX_FILE_SIZE_MB: String(settings.MAX_FILE_SIZE_MB),
         NODE_PATH: '/usr/src/node_modules',
-        AP_NETWORK_MODE: networkMode,
-        ...(settings.ENFORCE_CONNECTION_PIECE_BINDING ? { AP_ENFORCE_CONNECTION_PIECE_BINDING: 'true' } : {}),
+        UNI_NETWORK_MODE: networkMode,
+        ...(settings.ENFORCE_CONNECTION_PIECE_BINDING ? { UNI_ENFORCE_CONNECTION_PIECE_BINDING: 'true' } : {}),
     }
 }
 
 function ssrfEnv(settings: SandboxSettings): Record<string, string> {
     const env: Record<string, string> = {}
     if (settings.DEV_PIECES.length > 0) {
-        env['AP_DEV_PIECES'] = settings.DEV_PIECES.join(',')
+        env['UNI_DEV_PIECES'] = settings.DEV_PIECES.join(',')
     }
     if (settings.SSRF_ALLOW_LIST.length > 0) {
-        env['AP_SSRF_ALLOW_LIST'] = settings.SSRF_ALLOW_LIST.join(',')
+        env['UNI_SSRF_ALLOW_LIST'] = settings.SSRF_ALLOW_LIST.join(',')
     }
     return env
 }
@@ -106,7 +106,7 @@ function ssrfEnv(settings: SandboxSettings): Record<string, string> {
 function propagatedEnv(settings: SandboxSettings): Record<string, string> {
     const env: Record<string, string> = {}
     if (settings.SANDBOX_PROPAGATED_ENV_VARS.length > 0) {
-        env['AP_SANDBOX_PROPAGATED_ENV_VARS'] = settings.SANDBOX_PROPAGATED_ENV_VARS.join(',')
+        env['UNI_SANDBOX_PROPAGATED_ENV_VARS'] = settings.SANDBOX_PROPAGATED_ENV_VARS.join(',')
     }
     for (const key of settings.SANDBOX_PROPAGATED_ENV_VARS) {
         if (process.env[key]) {

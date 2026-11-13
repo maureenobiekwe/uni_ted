@@ -5,7 +5,7 @@ import { tryCatch } from '../../packages/core/utils/src/lib/try-catch'
 
 const MODELS_DEV_API_URL = 'https://models.dev/api.json'
 
-const PUBLISHED_CATALOG_URL = process.env['AP_MODEL_CATALOG_URL'] ?? 'https://cdn.united.com/ai/model-catalog.json'
+const PUBLISHED_CATALOG_URL = process.env['UNI_MODEL_CATALOG_URL'] ?? 'https://cdn.united.com/ai/model-catalog.json'
 
 const NOTICE = 'Model data from models.dev, MIT licensed — https://github.com/anomalyco/models.dev'
 

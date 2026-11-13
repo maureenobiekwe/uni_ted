@@ -52,8 +52,8 @@ function createTestProcessMaker() {
 
     const maker: SandboxProcessMaker = {
         create: vi.fn(async (params) => {
-            const port = params.env.AP_SANDBOX_WS_PORT
-            const token = params.env.AP_SANDBOX_WS_TOKEN ?? null
+            const port = params.env.UNI_SANDBOX_WS_PORT
+            const token = params.env.UNI_SANDBOX_WS_TOKEN ?? null
             child = new EventEmitter() as ChildProcess & EventEmitter
             ;(child as ChildProcess).pid = 12345
             ;(child as ChildProcess).exitCode = null
@@ -148,8 +148,8 @@ describe('createSandbox', () => {
                     ]),
                     env: expect.objectContaining({
                         MY_VAR: 'value',
-                        AP_SANDBOX_WS_PORT: expect.any(String),
-                        AP_CUSTOM_PIECES_PATHS: '/root/custom_pieces',
+                        UNI_SANDBOX_WS_PORT: expect.any(String),
+                        UNI_CUSTOM_PIECES_PATHS: '/root/custom_pieces',
                     }),
                     resourceLimits: {
                         memoryLimitMb: 256,
@@ -170,7 +170,7 @@ describe('createSandbox', () => {
             const createCall = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[0][0]
             const customPieceMount = createCall.mounts.find((m: { sandboxPath: string }) => m.sandboxPath === '/root/custom_pieces')
             expect(customPieceMount).toBeUndefined()
-            expect(createCall.env.AP_CUSTOM_PIECES_PATHS).toBeUndefined()
+            expect(createCall.env.UNI_CUSTOM_PIECES_PATHS).toBeUndefined()
         })
 
         it('scopes code mount to flowVersionId when non-reusable', async () => {
@@ -363,7 +363,7 @@ describe('createSandbox', () => {
             })
             expect(mkdirMock).toHaveBeenCalledWith('/tmp/test-cache/codes/fv-1/.deno-cache', { recursive: true })
             expect(chmodMock).toHaveBeenCalledWith('/tmp/test-cache/codes/fv-1/.deno-cache', 0o777)
-            expect(createCall.env.AP_DENO_CACHE_MOUNTED).toBe('true')
+            expect(createCall.env.UNI_DENO_CACHE_MOUNTED).toBe('true')
         })
 
         it('omits the deno-cache mount and env flag when reusable, even with a flowVersionId', async () => {
@@ -376,7 +376,7 @@ describe('createSandbox', () => {
             const createCall = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[0][0]
             const denoCacheMount = createCall.mounts.find((m: SandboxMount) => m.sandboxPath.endsWith('.deno-cache'))
             expect(denoCacheMount).toBeUndefined()
-            expect(createCall.env.AP_DENO_CACHE_MOUNTED).toBeUndefined()
+            expect(createCall.env.UNI_DENO_CACHE_MOUNTED).toBeUndefined()
         })
 
         it('omits the deno-cache mount when non-reusable without a flowVersionId', async () => {
@@ -389,7 +389,7 @@ describe('createSandbox', () => {
             const createCall = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[0][0]
             const denoCacheMount = createCall.mounts.find((m: SandboxMount) => m.sandboxPath.endsWith('.deno-cache'))
             expect(denoCacheMount).toBeUndefined()
-            expect(createCall.env.AP_DENO_CACHE_MOUNTED).toBeUndefined()
+            expect(createCall.env.UNI_DENO_CACHE_MOUNTED).toBeUndefined()
         })
 
         it('never exposes host /etc, /root, or / as a sandbox mount', async () => {
@@ -408,7 +408,7 @@ describe('createSandbox', () => {
             }
         })
 
-        it('does not inject AP_CUSTOM_PIECES_PATHS when platformId is undefined', async () => {
+        it('does not inject UNI_CUSTOM_PIECES_PATHS when platformId is undefined', async () => {
             const log = createMockLogger()
             testPM = createTestProcessMaker()
             sandbox = createSandbox(log, 'sb-no-plat-env', defaultOptions, testPM.maker)
@@ -416,7 +416,7 @@ describe('createSandbox', () => {
             await sandbox.start({ flowVersionId: 'fv-1', platformId: '', mounts: [] })
 
             const createCall = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[0][0]
-            expect(createCall.env.AP_CUSTOM_PIECES_PATHS).toBeUndefined()
+            expect(createCall.env.UNI_CUSTOM_PIECES_PATHS).toBeUndefined()
         })
 
         it('isolate mode starts on an ephemeral port while 52001, the old fixed port for box 1, is held by another socket', async () => {
@@ -433,7 +433,7 @@ describe('createSandbox', () => {
                 await sandbox.start(startOptions)
 
                 const createCall = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[0][0]
-                expect(Number(createCall.env.AP_SANDBOX_WS_PORT)).not.toBe(52001)
+                expect(Number(createCall.env.UNI_SANDBOX_WS_PORT)).not.toBe(52001)
                 expect(sandbox.isReady()).toBe(true)
             }
             finally {
@@ -494,7 +494,7 @@ describe('createSandbox', () => {
             expect(testPM.maker.create).toHaveBeenCalledTimes(1)
         })
 
-        it('passes a per-start AP_SANDBOX_WS_TOKEN to the child', async () => {
+        it('passes a per-start UNI_SANDBOX_WS_TOKEN to the child', async () => {
             const log = createMockLogger()
             testPM = createTestProcessMaker()
             sandbox = createSandbox(log, 'sb-token', defaultOptions, testPM.maker)
@@ -502,20 +502,20 @@ describe('createSandbox', () => {
             await sandbox.start(startOptions)
 
             const createCall = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[0][0]
-            expect(createCall.env.AP_SANDBOX_WS_TOKEN).toMatch(/^[a-f0-9]{64}$/)
+            expect(createCall.env.UNI_SANDBOX_WS_TOKEN).toMatch(/^[a-f0-9]{64}$/)
         })
 
-        it('rotates AP_SANDBOX_WS_TOKEN between successive start() calls on a reusable sandbox', async () => {
+        it('rotates UNI_SANDBOX_WS_TOKEN between successive start() calls on a reusable sandbox', async () => {
             const log = createMockLogger()
             const reusableOptions = { ...defaultOptions, reusable: true }
             testPM = createTestProcessMaker()
             sandbox = createSandbox(log, 'sb-rotate', reusableOptions, testPM.maker)
 
             await sandbox.start(startOptions)
-            const firstToken = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[0][0].env.AP_SANDBOX_WS_TOKEN
+            const firstToken = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[0][0].env.UNI_SANDBOX_WS_TOKEN
             await sandbox.shutdown()
             await sandbox.start(startOptions)
-            const secondToken = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[1][0].env.AP_SANDBOX_WS_TOKEN
+            const secondToken = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[1][0].env.UNI_SANDBOX_WS_TOKEN
 
             expect(firstToken).toBeTruthy()
             expect(secondToken).toBeTruthy()
@@ -528,7 +528,7 @@ describe('createSandbox', () => {
             sandbox = createSandbox(log, 'sb-rej-noauth', defaultOptions, testPM.maker)
 
             await sandbox.start(startOptions)
-            const port = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[0][0].env.AP_SANDBOX_WS_PORT
+            const port = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[0][0].env.UNI_SANDBOX_WS_PORT
 
             const attacker = ioClient(`http://127.0.0.1:${port}`, {
                 path: '/worker/ws',
@@ -552,7 +552,7 @@ describe('createSandbox', () => {
             sandbox = createSandbox(log, 'sb-rej-wrong', defaultOptions, testPM.maker)
 
             await sandbox.start(startOptions)
-            const port = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[0][0].env.AP_SANDBOX_WS_PORT
+            const port = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[0][0].env.UNI_SANDBOX_WS_PORT
 
             const attacker = ioClient(`http://127.0.0.1:${port}`, {
                 path: '/worker/ws',
@@ -578,8 +578,8 @@ describe('createSandbox', () => {
 
             await sandbox.start(startOptions)
             const createCall = (testPM.maker.create as ReturnType<typeof vi.fn>).mock.calls[0][0]
-            const port = createCall.env.AP_SANDBOX_WS_PORT
-            const token = createCall.env.AP_SANDBOX_WS_TOKEN
+            const port = createCall.env.UNI_SANDBOX_WS_PORT
+            const token = createCall.env.UNI_SANDBOX_WS_TOKEN
 
             const second = ioClient(`http://127.0.0.1:${port}`, {
                 path: '/worker/ws',

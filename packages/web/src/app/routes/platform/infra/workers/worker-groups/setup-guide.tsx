@@ -70,14 +70,14 @@ function SetupSteps() {
     <ol className="flex list-decimal flex-col gap-1.5 pl-5 text-sm text-gray-11">
       <li>
         {t('Start one or more workers with')}{' '}
-        <Code>AP_WORKER_GROUP_ID=finance_eu</Code>
+        <Code>UNI_WORKER_GROUP_ID=finance_eu</Code>
         {t(', using your own group name.')}
       </li>
       <li>
         {t(
           'For a group that runs single flows instead of whole projects, also set',
         )}{' '}
-        <Code>AP_WORKER_GROUP_SCOPE=flow</Code>.
+        <Code>UNI_WORKER_GROUP_SCOPE=flow</Code>.
       </li>
       <li>
         {t(

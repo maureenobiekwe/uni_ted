@@ -5,8 +5,8 @@
 #
 # With SMTP set, the app mails the invitation link instead of showing it in the invite dialog,
 # so the CE configs run without this overlay and keep testing the setup most self-hosters have.
-# The SMTP variables live here, not in docker-compose.yml: the app reads an empty AP_SMTP_HOST
-# as set, so a `${AP_SMTP_HOST:-}` default there would make every send fail.
+# The SMTP variables live here, not in docker-compose.yml: the app reads an empty UNI_SMTP_HOST
+# as set, so a `${UNI_SMTP_HOST:-}` default there would make every send fail.
 services:
   mailpit:
     image: axllent/mailpit:v1.32.0@sha256:0790692be935ea4420d085694f7985b1f692ca6a8771ab0e0bd8ba75ac180498
@@ -19,9 +19,9 @@ services:
 
   app:
     environment:
-      AP_SMTP_HOST: mailpit
-      AP_SMTP_PORT: 1025
-      AP_SMTP_USERNAME: e2e
-      AP_SMTP_PASSWORD: e2e
-      AP_SMTP_SENDER_EMAIL: e2e@example.com
-      AP_SMTP_SENDER_NAME: E2E
+      UNI_SMTP_HOST: mailpit
+      UNI_SMTP_PORT: 1025
+      UNI_SMTP_USERNAME: e2e
+      UNI_SMTP_PASSWORD: e2e
+      UNI_SMTP_SENDER_EMAIL: e2e@example.com
+      UNI_SMTP_SENDER_NAME: E2E

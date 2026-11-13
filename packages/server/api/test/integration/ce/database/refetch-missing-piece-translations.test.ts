@@ -48,7 +48,7 @@ afterAll(async () => {
 })
 
 beforeEach(async () => {
-    process.env.AP_PIECES_SYNC_MODE = PieceSyncMode.OFFICIAL_AUTO
+    process.env.UNI_PIECES_SYNC_MODE = PieceSyncMode.OFFICIAL_AUTO
     await databaseConnection().getRepository('piece_metadata').createQueryBuilder().delete().execute()
     await databaseConnection().query('DELETE FROM "background_migrations" WHERE "name" = $1', [new RefetchMissingPieceTranslations1879000000000().name])
     await seed({ pieces: seeded })
@@ -56,7 +56,7 @@ beforeEach(async () => {
 })
 
 afterEach(() => {
-    process.env.AP_PIECES_SYNC_MODE = PieceSyncMode.NONE
+    process.env.UNI_PIECES_SYNC_MODE = PieceSyncMode.NONE
     getMock.mockReset()
 })
 
@@ -319,13 +319,13 @@ describe('RefetchMissingPieceTranslations', () => {
     })
 
     it('does nothing on cloud, which is the registry itself', async () => {
-        const edition = process.env.AP_EDITION
-        process.env.AP_EDITION = ApEdition.CLOUD
+        const edition = process.env.UNI_EDITION
+        process.env.UNI_EDITION = ApEdition.CLOUD
         try {
             await runThroughRunner()
         }
         finally {
-            process.env.AP_EDITION = edition
+            process.env.UNI_EDITION = edition
         }
 
         expect(getMock).not.toHaveBeenCalled()
@@ -333,7 +333,7 @@ describe('RefetchMissingPieceTranslations', () => {
     })
 
     it('does nothing when piece sync is off', async () => {
-        process.env.AP_PIECES_SYNC_MODE = PieceSyncMode.NONE
+        process.env.UNI_PIECES_SYNC_MODE = PieceSyncMode.NONE
 
         await runThroughRunner()
 

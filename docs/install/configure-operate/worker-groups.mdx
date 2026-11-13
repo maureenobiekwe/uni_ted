@@ -19,42 +19,42 @@ Use both together to guarantee capacity for busy projects and cap the rest.
 
 ## How it works
 
-A worker joins a group by setting its group ID at startup. `AP_WORKER_GROUP_SCOPE` selects the group's scope:
+A worker joins a group by setting its group ID at startup. `UNI_WORKER_GROUP_SCOPE` selects the group's scope:
 
-- **Project** group — `AP_WORKER_GROUP_SCOPE=project` (the default). Assign individual projects to it from **Platform Admin → Operations → Workers → Worker groups**.
-- **Flow** group — `AP_WORKER_GROUP_SCOPE=flow`. Pins individual flows to it, regardless of which group (if any) their project is in. See [Assigning flows to a group](#assigning-flows-to-a-group).
-- **Platform** group — `AP_WORKER_GROUP_SCOPE=platform` (or the legacy `AP_PROJECT_WORKER=false`). Serves the whole platform's runs; used for dedicated/canary fleets.
+- **Project** group — `UNI_WORKER_GROUP_SCOPE=project` (the default). Assign individual projects to it from **Platform Admin → Operations → Workers → Worker groups**.
+- **Flow** group — `UNI_WORKER_GROUP_SCOPE=flow`. Pins individual flows to it, regardless of which group (if any) their project is in. See [Assigning flows to a group](#assigning-flows-to-a-group).
+- **Platform** group — `UNI_WORKER_GROUP_SCOPE=platform` (or the legacy `UNI_PROJECT_WORKER=false`). Serves the whole platform's runs; used for dedicated/canary fleets.
 
-A group's scope is fixed by whichever scope its workers connect with — a label can't take both project and flow assignments at once, so give project and flow pools distinct `AP_WORKER_GROUP_ID` values.
+A group's scope is fixed by whichever scope its workers connect with — a label can't take both project and flow assignments at once, so give project and flow pools distinct `UNI_WORKER_GROUP_ID` values.
 
 ```bash
-# Project group, e.g. 1cpu_machine (AP_WORKER_GROUP_SCOPE defaults to project)
-AP_WORKER_GROUP_ID=1cpu_machine
+# Project group, e.g. 1cpu_machine (UNI_WORKER_GROUP_SCOPE defaults to project)
+UNI_WORKER_GROUP_ID=1cpu_machine
 
 # Flow group, e.g. gpu_flows
-AP_WORKER_GROUP_ID=gpu_flows
-AP_WORKER_GROUP_SCOPE=flow
+UNI_WORKER_GROUP_ID=gpu_flows
+UNI_WORKER_GROUP_SCOPE=flow
 
 # Platform group
-AP_WORKER_GROUP_ID=canary
-AP_WORKER_GROUP_SCOPE=platform
+UNI_WORKER_GROUP_ID=canary
+UNI_WORKER_GROUP_SCOPE=platform
 ```
 
 <Note>
-`AP_PROJECT_WORKER` (`true`/`false`) still works as the legacy project-vs-platform toggle, but `AP_WORKER_GROUP_SCOPE` is the current setting and the only way to request the flow scope.
+`UNI_PROJECT_WORKER` (`true`/`false`) still works as the legacy project-vs-platform toggle, but `UNI_WORKER_GROUP_SCOPE` is the current setting and the only way to request the flow scope.
 </Note>
 
 Grouped workers must set:
 
 ```bash
-AP_REUSE_SANDBOX=true               # or false, must be set explicitly
+UNI_REUSE_SANDBOX=true               # or false, must be set explicitly
 ```
 
 <Warning>
-Routing runs to worker group queues is done by the project rate limiter, so the app server must run with `AP_PROJECT_RATE_LIMITER_ENABLED=true`. Without it, assigned projects keep using the shared queue and grouped workers stay idle.
+Routing runs to worker group queues is done by the project rate limiter, so the app server must run with `UNI_PROJECT_RATE_LIMITER_ENABLED=true`. Without it, assigned projects keep using the shared queue and grouped workers stay idle.
 </Warning>
 
-Once a project is assigned to a group, its flow and webhook runs are routed to that group's dedicated queue (`project-<group-name>-jobs`) and picked up only by workers carrying the matching `AP_WORKER_GROUP_ID` with scope `project`. If no worker in the group is online, runs wait in the group queue until one connects — they are never executed by shared workers. Changing a project's assignment — to a group, between groups, or back to shared — also moves its waiting runs to the new queue. Projects without a group keep drawing from the shared queue.
+Once a project is assigned to a group, its flow and webhook runs are routed to that group's dedicated queue (`project-<group-name>-jobs`) and picked up only by workers carrying the matching `UNI_WORKER_GROUP_ID` with scope `project`. If no worker in the group is online, runs wait in the group queue until one connects — they are never executed by shared workers. Changing a project's assignment — to a group, between groups, or back to shared — also moves its waiting runs to the new queue. Projects without a group keep drawing from the shared queue.
 
 A flow pinned to a group works the same way, but on its own queue (`flow-<group-name>-jobs`), picked up only by workers with scope `flow`. **A flow's own pin always wins over its project's group** — pin a flow to send just that flow's runs elsewhere without moving the rest of the project.
 
@@ -63,7 +63,7 @@ A flow pinned to a group works the same way, but on its own queue (`flow-<group-
 You can assign a project to a project group in two ways:
 
 - **UI** — go to **Platform admin → Operations → Workers → Worker groups** (`/platform/workers/groups`) and pick the group for each project.
-- **API** — set `workerGroupId` on the project via the projects API. Use the bare group name (the same value as the group's `AP_WORKER_GROUP_ID`); pass `null` to unassign and return the project to the shared queue.
+- **API** — set `workerGroupId` on the project via the projects API. Use the bare group name (the same value as the group's `UNI_WORKER_GROUP_ID`); pass `null` to unassign and return the project to the shared queue.
 
 The same request also sets `maxConcurrentJobs` — the project's **concurrency limit** (the soft-cap ceiling). It's the maximum number of flow runs the project executes at once:
 

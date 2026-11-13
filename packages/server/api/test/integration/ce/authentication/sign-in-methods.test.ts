@@ -10,8 +10,8 @@ beforeAll(async () => {
 })
 
 afterEach(() => {
-    delete process.env.AP_GOOGLE_CLIENT_ID
-    delete process.env.AP_GOOGLE_CLIENT_SECRET
+    delete process.env.UNI_GOOGLE_CLIENT_ID
+    delete process.env.UNI_GOOGLE_CLIENT_SECRET
 })
 
 afterAll(async () => {
@@ -20,8 +20,8 @@ afterAll(async () => {
 
 describe('Sign-in methods of a platform', () => {
     it('reports password only on CE', () => {
-        process.env.AP_GOOGLE_CLIENT_ID = 'test-google-client-id'
-        process.env.AP_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
+        process.env.UNI_GOOGLE_CLIENT_ID = 'test-google-client-id'
+        process.env.UNI_GOOGLE_CLIENT_SECRET = 'test-google-client-secret'
         const methods = authenticationUtils(mockLog).getSignInMethods({
             platform: { emailAuthEnabled: false, googleAuthEnabled: true, federatedAuthProviders: { saml: {} }, ssoDomainVerification: null },
         })

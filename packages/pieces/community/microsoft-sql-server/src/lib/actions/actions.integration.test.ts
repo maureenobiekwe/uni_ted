@@ -9,22 +9,22 @@ import { insertRowAction } from './insert-row';
 import { runQueryAction } from './run-query';
 import { updateRowsAction } from './update-rows';
 
-const connectionString = process.env['AP_MSSQL_TEST_CONNECTION_STRING'];
-const host = process.env['AP_MSSQL_TEST_HOST'];
+const connectionString = process.env['UNI_MSSQL_TEST_CONNECTION_STRING'];
+const host = process.env['UNI_MSSQL_TEST_HOST'];
 const enabled = Boolean(connectionString ?? host);
 
 const TABLE_PREFIX = 'ap_action_test_';
-const DATABASE = process.env['AP_MSSQL_TEST_DATABASE'] ?? 'ap_action_test';
+const DATABASE = process.env['UNI_MSSQL_TEST_DATABASE'] ?? 'ap_action_test';
 
 const auth = {
   type: AppConnectionType.CUSTOM_AUTH as const,
   props: {
     connection_string: connectionString,
     host,
-    port: Number(process.env['AP_MSSQL_TEST_PORT'] ?? 1433),
+    port: Number(process.env['UNI_MSSQL_TEST_PORT'] ?? 1433),
     database: DATABASE,
-    user: process.env['AP_MSSQL_TEST_USER'] ?? 'sa',
-    password: process.env['AP_MSSQL_TEST_PASSWORD'],
+    user: process.env['UNI_MSSQL_TEST_USER'] ?? 'sa',
+    password: process.env['UNI_MSSQL_TEST_PASSWORD'],
     encrypt: true,
     trust_server_certificate: true,
     certificate: undefined,

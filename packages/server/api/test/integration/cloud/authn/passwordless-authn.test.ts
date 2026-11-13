@@ -13,8 +13,8 @@ import { db } from '../../../helpers/db'
 import { createMockProjectRole, createMockUserInvitation, mockAndSaveBasicSetup } from '../../../helpers/mocks'
 import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/test-setup'
 
-process.env.AP_TURNSTILE_SITE_KEY = 'test-site-key'
-process.env.AP_TURNSTILE_SECRET_KEY = 'test-secret-key'
+process.env.UNI_TURNSTILE_SITE_KEY = 'test-site-key'
+process.env.UNI_TURNSTILE_SECRET_KEY = 'test-secret-key'
 
 let app: FastifyInstance | null = null
 
@@ -52,12 +52,12 @@ async function completeSignUp({ token, fullName }: { token: string, fullName: st
 
 async function withZerobounceVerdict<T>({ status, subStatus, run }: WithZerobounceVerdictParams<T>): Promise<T> {
     const answer = vi.spyOn(safeHttp.axios, 'get').mockResolvedValue({ data: { status, sub_status: subStatus } })
-    process.env.AP_ZEROBOUNCE_API_KEY = 'test-api-key'
+    process.env.UNI_ZEROBOUNCE_API_KEY = 'test-api-key'
     try {
         return await run()
     }
     finally {
-        delete process.env.AP_ZEROBOUNCE_API_KEY
+        delete process.env.UNI_ZEROBOUNCE_API_KEY
         answer.mockRestore()
     }
 }

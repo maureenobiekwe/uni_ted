@@ -112,7 +112,7 @@ export function GroupPage({
             <p className="text-xs text-gray-10">
               {t('Workers join this group with')}{' '}
               <code className="rounded bg-gray-3 px-1 py-0.5 font-mono text-gray-12">
-                AP_WORKER_GROUP_ID={label}
+                UNI_WORKER_GROUP_ID={label}
               </code>
             </p>
           )}

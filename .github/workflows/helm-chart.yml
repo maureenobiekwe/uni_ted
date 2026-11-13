@@ -47,9 +47,9 @@ jobs:
 
       - name: Create connection secrets
         run: |
-          kubectl create secret generic united-config-secrets --from-literal=AP_FRONTEND_URL=http://ap-united.default.svc.cluster.local
-          kubectl create secret generic united-db-secrets --from-literal=AP_POSTGRES_HOST=ap-postgresql --from-literal=AP_POSTGRES_PORT=5432 --from-literal=AP_POSTGRES_DATABASE=postgres --from-literal=AP_POSTGRES_USERNAME=postgres --from-literal=AP_POSTGRES_PASSWORD=ci-password
-          kubectl create secret generic united-redis-secrets --from-literal=AP_REDIS_HOST=ap-redis-master --from-literal=AP_REDIS_PORT=6379 --from-literal=AP_REDIS_PASSWORD=ci-password
+          kubectl create secret generic united-config-secrets --from-literal=UNI_FRONTEND_URL=http://ap-united.default.svc.cluster.local
+          kubectl create secret generic united-db-secrets --from-literal=UNI_POSTGRES_HOST=ap-postgresql --from-literal=UNI_POSTGRES_PORT=5432 --from-literal=UNI_POSTGRES_DATABASE=postgres --from-literal=UNI_POSTGRES_USERNAME=postgres --from-literal=UNI_POSTGRES_PASSWORD=ci-password
+          kubectl create secret generic united-redis-secrets --from-literal=UNI_REDIS_HOST=ap-redis-master --from-literal=UNI_REDIS_PORT=6379 --from-literal=UNI_REDIS_PASSWORD=ci-password
 
       - name: Install
         run: |

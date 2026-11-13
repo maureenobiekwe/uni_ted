@@ -52,7 +52,7 @@ export const getIcecreamFlavor = createAction({
   async run(context) {
     const res = await httpClient.sendRequest<string[]>({
       method: HttpMethod.GET,
-      url: 'https://cloud.united.com/api/v1/webhooks/RGjv57ex3RAHOgs0YK6Ja/sync',
+      url: 'https://cloud.example.com/api/v1/webhooks/RGjv57ex3RAHOgs0YK6Ja/sync',
       headers: {
         Authorization: context.auth.secret_text, // Pass API key in headers
       },
@@ -87,7 +87,7 @@ import { getIcecreamFlavor } from './lib/actions/get-icecream-flavor';
 
 export const gelato = createPiece({
   displayName: 'Gelato',
-  logoUrl: 'https://cdn.united.com/pieces/gelato.png',
+  logoUrl: 'https://cdn.example.com/pieces/gelato.png',
   authors: [],
   auth: gelatoAuth,
   // Add the action here.
@@ -98,7 +98,7 @@ export const gelato = createPiece({
 
 # Testing
 
-By default, the development setup only builds specific components. Open the file `.env.dev` and include "gelato" in the `AP_DEV_PIECES`.
+By default, the development setup only builds specific components. Open the file `.env.dev` and include "gelato" in the `UNI_DEV_PIECES`.
 
 For more details, check out the [Piece Development](/build-pieces/building-pieces/development-setup#pieces-development) section.
 

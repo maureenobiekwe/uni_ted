@@ -19,7 +19,7 @@ Eleven of the thirteen already could not fire on a self-hosted instance: the
 passwordless module is registered only in the Cloud arm of `app.ts`,
 `EMAIL_CODE_AUTH_ENABLED` is `edition === CLOUD && turnstile.isConfigured()`, CE and
 EE auto-verify so no verification link is ever generated, and the pre-login funnel is
-fenced to `cloud.united.com`. But `signed.up` and `signed.in` did fire on CE and
+fenced to `cloud.example.com`. But `signed.up` and `signed.in` did fire on CE and
 EE, and the in-app dialog listed all thirteen as things a self-hoster sends. That
 dialog is self-hosted-only — Cloud redirects away from the page — so it was disclosing
 a funnel its only readers could never produce.

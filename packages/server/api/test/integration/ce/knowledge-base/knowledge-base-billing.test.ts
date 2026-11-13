@@ -18,7 +18,7 @@ afterAll(async () => {
 })
 
 beforeEach(() => {
-    vi.stubEnv('AP_OPENROUTER_PROVISION_KEY', 'test-provision-key')
+    vi.stubEnv('UNI_OPENROUTER_PROVISION_KEY', 'test-provision-key')
 })
 
 afterEach(() => {

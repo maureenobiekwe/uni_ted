@@ -59,7 +59,7 @@ async function fetchTiers(): Promise<PublishedTiers> {
 }
 
 function tiersUrl(): string {
-    return process.env['AP_MODEL_TIERS_URL'] ?? DEFAULT_TIERS_URL
+    return process.env['UNI_MODEL_TIERS_URL'] ?? DEFAULT_TIERS_URL
 }
 
 function buildReaders(published: PublishedTiers): Record<ModelTierSurface, ModelTierReader> {
@@ -123,7 +123,7 @@ let bundled: Record<ModelTierSurface, ModelTierReader> | undefined
 let inFlight: Promise<void> | undefined
 let lastFailureAt: number | undefined
 
-const DEFAULT_TIERS_URL = 'https://cdn.united.com/ai/pricing.json'
+const DEFAULT_TIERS_URL = 'https://cdn.example.com/ai/pricing.json'
 const DEFAULT_FAST_TIER_ID = 'fast'
 const TIERS_TTL_MS = 15 * 60 * 1000
 const FAILURE_BACKOFF_MS = 5 * 60 * 1000

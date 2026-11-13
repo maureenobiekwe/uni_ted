@@ -9,12 +9,12 @@ import { liveScenarios } from './scenarios'
 import { liveTagger, ScenarioScore } from './tagger'
 
 const RESULTS_DIR = path.join(__dirname, 'results')
-const MODEL_ID = process.env.AP_EVAL_MODEL_ID ?? '(platform default)'
+const MODEL_ID = process.env.UNI_EVAL_MODEL_ID ?? '(platform default)'
 
 async function main(): Promise<void> {
-    const apiKey = process.env.AP_API_KEY
+    const apiKey = process.env.UNI_API_KEY
     if (!apiKey) {
-        fail('AP_API_KEY is not set. Run via `npm run agent-evals:live` (it sources .env.dev), and ensure the dev backend is running.')
+        fail('UNI_API_KEY is not set. Run via `npm run agent-evals:live` (it sources .env.dev), and ensure the dev backend is running.')
     }
 
     const args = parseArgs(process.argv.slice(2))

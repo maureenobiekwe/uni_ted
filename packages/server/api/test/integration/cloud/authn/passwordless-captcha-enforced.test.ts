@@ -5,8 +5,8 @@ import { StatusCodes } from 'http-status-codes'
 import { databaseConnection } from '../../../../src/app/database/database-connection'
 import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/test-setup'
 
-process.env.AP_TURNSTILE_SITE_KEY = 'test-site-key'
-process.env.AP_TURNSTILE_SECRET_KEY = 'test-secret-key'
+process.env.UNI_TURNSTILE_SITE_KEY = 'test-site-key'
+process.env.UNI_TURNSTILE_SECRET_KEY = 'test-secret-key'
 
 const SITE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
 

@@ -57,7 +57,7 @@ export class AddMyColumn1234567890 implements Migration {
 
 **`breaking` is the rollback-safety flag, and CI only auto-detects the DDL half of it.** It means "reverting this loses data", so `rollback-migrations.ts` refuses to revert it without `--force`; `check-migration-rollback.ts` sets it for you only when `scanMigrations` spots destructive **DDL** (`DROP TABLE`, `DROP COLUMN`, `ADD ... NOT NULL` with no default). A data-only migration that destroys values — an `UPDATE` that nulls or overwrites a column — is DML, so the scanner sees nothing and happily passes `breaking = false` next to a `down()` that reverses nothing. Set it by hand there. Nothing ever checks that `down()` actually reverses `up()`; with `breaking = true` the checker stops requiring `down()` at all, though `MigrationInterface` still needs the method, so leave it empty rather than faking a reversal. This is separate from the `⛓️‍💥 breaking-change` PR label — see [cloud deployment paths](cloud-deployment-paths.md).
 
-Full procedure: the [Database Migrations Playbook](https://www.united.com/docs/handbook/engineering/playbooks/database-migration).
+Full procedure: the [Database Migrations Playbook](https://docs.example.com/handbook/engineering/playbooks/database-migration).
 
 ## Repository
 

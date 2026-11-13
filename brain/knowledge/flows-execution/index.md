@@ -63,7 +63,7 @@ A **waitpoint** is a row recording something a run waits on — `DELAY` / `WEBHO
 - **Signal** — one `waitpoint_signal` row per awaited thing on a barrier, created up front. Deleted on release, so a returning approver sees only "already responded".
 - **Server-side fan-out** — one `POST /v1/waitpoints` hands a barrier its items, and a `fan-out-dispatch` job on the barrier queue creates one child run per signal. See [Server-side fan-out](server-side-fan-out.md).
 - Gotcha: a run can hold a COMPLETED leftover *and* an open PENDING pause at once, so any per-run waitpoint lookup must say which it wants — `findUndeliveredCompletedWaitpoint` declines only while a PENDING **barrier** is held, since delivering a resume never leaves a row at COMPLETED. An earlier form declined while *anything* was pending and hung every run holding a second waitpoint.
-- See [decision 000015](../decisions/000015-fan-in-is-an-event-driven-waitpoint-barrier.md), [decision 000033](../decisions/000033-a-released-barrier-leaves-a-tombstone-until-the-run-ends.md) and the public [Waitpoints](https://www.united.com/docs/install/architecture/waitpoints) page.
+- See [decision 000015](../decisions/000015-fan-in-is-an-event-driven-waitpoint-barrier.md), [decision 000033](../decisions/000033-a-released-barrier-leaves-a-tombstone-until-the-run-ends.md) and the public [Waitpoints](https://docs.example.com/install/architecture/waitpoints) page.
 
 ### Folders
 Lightweight per-project grouping for flows and tables. Name unique case-insensitively per project.
@@ -72,7 +72,7 @@ Lightweight per-project grouping for flows and tables. Name unique case-insensit
 
 ### Templates
 Reusable flow/table blueprints. Types: OFFICIAL (united-curated, platformId null), CUSTOM (platform-owned, needs `manageTemplatesEnabled` flag), SHARED (ad-hoc, not listable).
-- Self-hosted CE/EE proxy OFFICIAL templates from `cloud.united.com/api/v1/templates`; Cloud stores them in DB. `pieces[]` and `categories[]` are denormalized + indexed for fast filtering.
+- Self-hosted CE/EE proxy OFFICIAL templates from `cloud.example.com/api/v1/templates`; Cloud stores them in DB. `pieces[]` and `categories[]` are denormalized + indexed for fast filtering.
 - Only platform owners manage CUSTOM templates; OFFICIAL/SHARED can't be edited/deleted. Flow validation + piece extraction run before save.
 
 ## Pages

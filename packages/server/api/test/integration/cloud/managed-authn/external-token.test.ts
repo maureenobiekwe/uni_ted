@@ -94,7 +94,7 @@ describe('Managed Authentication API', () => {
                 platformId: mockPlatform.id,
                 signingKeyId: mockSigningKey.id,
             })
-            process.env.AP_ZEROBOUNCE_API_KEY = 'test-api-key'
+            process.env.UNI_ZEROBOUNCE_API_KEY = 'test-api-key'
             const answer = vi.spyOn(safeHttp.axios, 'get')
 
             try {
@@ -111,7 +111,7 @@ describe('Managed Authentication API', () => {
                 expect(answer).not.toHaveBeenCalled()
             }
             finally {
-                delete process.env.AP_ZEROBOUNCE_API_KEY
+                delete process.env.UNI_ZEROBOUNCE_API_KEY
                 answer.mockRestore()
             }
         })

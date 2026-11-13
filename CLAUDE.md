@@ -89,7 +89,7 @@ npx turbo run lint --filter=<package>           # Lint a single package, e.g. --
 npx turbo run serve --filter=web -- --mode=cloud # Run local frontend against the cloud backend
 ```
 
-When running in `--mode=cloud`, do not use OAuth2 connections — the OAuth provider will redirect back to `cloud.united.com` after sign-in instead of your local frontend, breaking the flow. Use API-key / basic-auth connections, or test OAuth2 against a fully local backend.
+When running in `--mode=cloud`, do not use OAuth2 connections — the OAuth provider will redirect back to `cloud.example.com` after sign-in instead of your local frontend, breaking the flow. Use API-key / basic-auth connections, or test OAuth2 against a fully local backend.
 
 ## Pull Requests
 
@@ -114,7 +114,7 @@ When running in `--mode=cloud`, do not use OAuth2 connections — the OAuth prov
 
 ## Database Migrations
 
-- Before creating or modifying a database migration, **always read `brain/knowledge/data-storage-observability/database.md`** first. It covers the two-track model (blocking + background), constraint recipes, the CIC helper, and cross-track dependency guards. The external [Database Migrations Playbook](https://www.united.com/docs/handbook/engineering/playbooks/database-migration#database-migrations) covers general TypeORM mechanics.
+- Before creating or modifying a database migration, **always read `brain/knowledge/data-storage-observability/database.md`** first. It covers the two-track model (blocking + background), constraint recipes, the CIC helper, and cross-track dependency guards. The external [Database Migrations Playbook](https://docs.example.com/handbook/engineering/playbooks/database-migration#database-migrations) covers general TypeORM mechanics.
 
 ## Verification
 
@@ -134,7 +134,7 @@ When running in `--mode=cloud`, do not use OAuth2 connections — the OAuth prov
 
 ## Useful Links
 
-- [Database Migrations Playbook](https://www.united.com/docs/handbook/engineering/playbooks/database-migration)
+- [Database Migrations Playbook](https://docs.example.com/handbook/engineering/playbooks/database-migration)
 - [TypeORM Migrations Docs](https://orkhan.gitbook.io/typeorm/docs/migrations)
 
 <!-- craftspace:start -->

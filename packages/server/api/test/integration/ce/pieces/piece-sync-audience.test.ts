@@ -11,8 +11,8 @@ import { createTestContext } from '../../../helpers/test-context'
 import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/test-setup'
 
 const originalSyncMode = vi.hoisted(() => {
-    const previous = process.env.AP_PIECES_SYNC_MODE
-    process.env.AP_PIECES_SYNC_MODE = 'OFFICIAL_AUTO'
+    const previous = process.env.UNI_PIECES_SYNC_MODE
+    process.env.UNI_PIECES_SYNC_MODE = 'OFFICIAL_AUTO'
     return previous
 })
 
@@ -107,10 +107,10 @@ beforeAll(async () => {
 afterAll(async () => {
     vi.unstubAllGlobals()
     if (originalSyncMode === undefined) {
-        delete process.env.AP_PIECES_SYNC_MODE
+        delete process.env.UNI_PIECES_SYNC_MODE
     }
     else {
-        process.env.AP_PIECES_SYNC_MODE = originalSyncMode
+        process.env.UNI_PIECES_SYNC_MODE = originalSyncMode
     }
     await teardownTestEnvironment()
 })

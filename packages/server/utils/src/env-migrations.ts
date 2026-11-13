@@ -3,10 +3,10 @@ import { DatabaseType } from './database-type'
 import { RedisType } from './redis-type'
 
 const ENV_VAR_NAMES = {
-    EXECUTION_MODE: 'AP_EXECUTION_MODE',
-    REDIS_TYPE: 'AP_REDIS_TYPE',
-    DB_TYPE: 'AP_DB_TYPE',
-    QUEUE_MODE: 'AP_QUEUE_MODE',
+    EXECUTION_MODE: 'UNI_EXECUTION_MODE',
+    REDIS_TYPE: 'UNI_REDIS_TYPE',
+    DB_TYPE: 'UNI_DB_TYPE',
+    QUEUE_MODE: 'UNI_QUEUE_MODE',
 }
 
 export const environmentMigrations = {

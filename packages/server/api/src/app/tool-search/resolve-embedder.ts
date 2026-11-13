@@ -9,7 +9,7 @@ import { selectEmbedder, ToolSearchEmbedder } from './embedder'
  * Resolves the embedder used for both indexing (backfill + reindex) and query-time search.
  *
  * Resolution order:
- *  1. `AP_OPENAI_API_KEY` (env) — when set it funds ALL tool-search embedding (backfill, reindex, and
+ *  1. `UNI_OPENAI_API_KEY` (env) — when set it funds ALL tool-search embedding (backfill, reindex, and
  *     queries), so no per-platform provider config is required. This is the simplest path for
  *     self-host / single-tenant deployments and keeps every embedding moment on one key.
  *  2. The platform's OpenAI provider key in the `ai_provider` table (the same lookup copilot/chat use)

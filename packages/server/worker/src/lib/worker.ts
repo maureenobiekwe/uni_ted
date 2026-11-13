@@ -164,7 +164,7 @@ async function startPollingWorkers(apiClient: WorkerToApiContract): Promise<void
     const generation = connectionGeneration
 
     // The destination is one box per worker (concurrency 1), scaling out with replicas (ADR 0003).
-    // Transitional compatibility mode (ADR 0004): honor AP_WORKER_CONCURRENCY=N by running N poll
+    // Transitional compatibility mode (ADR 0004): honor UNI_WORKER_CONCURRENCY=N by running N poll
     // loops over N in-process boxes, each routed by its workerIndex. The default (5, main's historical
     // value) is registered in configs.ts to preserve old behavior, so system.get always returns it; the
     // '1' below is an unreachable belt-and-suspenders fallback. At N>1 an OOM takes down all N in-flight
@@ -172,7 +172,7 @@ async function startPollingWorkers(apiClient: WorkerToApiContract): Promise<void
     const rawConcurrency = Number(system.get(WorkerSystemProp.WORKER_CONCURRENCY) ?? '1')
     const concurrency = Number.isInteger(rawConcurrency) && rawConcurrency > 0 ? rawConcurrency : 1
     if (!Number.isInteger(rawConcurrency) || rawConcurrency < 1) {
-        logger.warn({ rawConcurrency }, 'Invalid AP_WORKER_CONCURRENCY value, falling back to 1')
+        logger.warn({ rawConcurrency }, 'Invalid UNI_WORKER_CONCURRENCY value, falling back to 1')
     }
     // Bring up a fresh runtime on every (re)connect — a prior connection's in-flight job is killed
     // along with its box (usually already done by the disconnect handler), so it fails fast and is
@@ -189,7 +189,7 @@ async function startPollingWorkers(apiClient: WorkerToApiContract): Promise<void
     })
     runtime = createdRuntime
 
-    // Opt-in via AP_PREWARM_CACHE_ON_STARTUP: the warm-up resolves and compiles every enabled flow,
+    // Opt-in via UNI_PREWARM_CACHE_ON_STARTUP: the warm-up resolves and compiles every enabled flow,
     // so its startup memory/CPU spike grows with flow count and can OOM small workers on large instances.
     // When enabled it is awaited so the health server only comes up once the cache is warm and
     // orchestrators don't route/keep traffic on a cold worker; when disabled it is skipped entirely.
@@ -433,7 +433,7 @@ async function fetchAndStoreSettings(sock: Socket): Promise<void> {
             const localSandboxMemoryLimit = system.get(WorkerSystemProp.SANDBOX_MEMORY_LIMIT)
             if (!isNil(localSandboxMemoryLimit) && localSandboxMemoryLimit !== '') {
                 if (!/^[1-9]\d*$/.test(localSandboxMemoryLimit)) {
-                    throw new Error(`AP_SANDBOX_MEMORY_LIMIT must be a positive integer in KB. Got: ${localSandboxMemoryLimit}`)
+                    throw new Error(`UNI_SANDBOX_MEMORY_LIMIT must be a positive integer in KB. Got: ${localSandboxMemoryLimit}`)
                 }
                 response.SANDBOX_MEMORY_LIMIT = localSandboxMemoryLimit
             }
@@ -442,12 +442,12 @@ async function fetchAndStoreSettings(sock: Socket): Promise<void> {
                 if (response.EDITION === ApEdition.CLOUD) {
                     const processSandboxedModes: string[] = [ExecutionMode.SANDBOX_PROCESS, ExecutionMode.SANDBOX_CODE_AND_PROCESS]
                     if (!processSandboxedModes.includes(response.EXECUTION_MODE)) {
-                        throw new Error(`Worker group "${workerGroupId}" requires AP_EXECUTION_MODE to be one of: ${processSandboxedModes.join(', ')}. Got: ${response.EXECUTION_MODE}`)
+                        throw new Error(`Worker group "${workerGroupId}" requires UNI_EXECUTION_MODE to be one of: ${processSandboxedModes.join(', ')}. Got: ${response.EXECUTION_MODE}`)
                     }
                 }
                 const reuseSandbox = system.get(WorkerSystemProp.REUSE_SANDBOX)
                 if (isNil(reuseSandbox)) {
-                    throw new Error(`Worker group "${workerGroupId}" requires AP_REUSE_SANDBOX to be set (true or false)`)
+                    throw new Error(`Worker group "${workerGroupId}" requires UNI_REUSE_SANDBOX to be set (true or false)`)
                 }
             }
             workerSettings.set(response)

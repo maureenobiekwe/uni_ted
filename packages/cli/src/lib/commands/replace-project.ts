@@ -26,10 +26,10 @@ const EXIT_TRANSPORT = 4;
 export const replaceProjectCommand = new Command('replace')
     .description(REPLACE_DOC)
     .requiredOption('--source-url <url>', 'Source united base URL')
-    .option('--source-api-key <key>', 'Source platform API key (or set AP_SOURCE_API_KEY env var; env recommended for CI)')
+    .option('--source-api-key <key>', 'Source platform API key (or set UNI_SOURCE_API_KEY env var; env recommended for CI)')
     .requiredOption('--source-project <projectId>', 'Source project id')
     .requiredOption('--dest-url <url>', 'Destination united base URL')
-    .option('--dest-api-key <key>', 'Destination platform API key (or set AP_DEST_API_KEY env var; env recommended for CI)')
+    .option('--dest-api-key <key>', 'Destination platform API key (or set UNI_DEST_API_KEY env var; env recommended for CI)')
     .requiredOption('--dest-project <projectId>', 'Destination project id')
     .option('--json', 'Emit machine-readable JSON output')
     .action(async (opts) => {
@@ -56,10 +56,10 @@ export const replaceProjectCommand = new Command('replace')
 function normalizeOptions(opts: Record<string, string | boolean | undefined>): ReplaceConfig {
     return {
         sourceUrl: stripTrailingSlash(stringOpt(opts.sourceUrl, 'source-url')),
-        sourceApiKey: apiKeyOpt(opts.sourceApiKey, 'AP_SOURCE_API_KEY', 'source-api-key'),
+        sourceApiKey: apiKeyOpt(opts.sourceApiKey, 'UNI_SOURCE_API_KEY', 'source-api-key'),
         sourceProjectId: stringOpt(opts.sourceProject, 'source-project'),
         destUrl: stripTrailingSlash(stringOpt(opts.destUrl, 'dest-url')),
-        destApiKey: apiKeyOpt(opts.destApiKey, 'AP_DEST_API_KEY', 'dest-api-key'),
+        destApiKey: apiKeyOpt(opts.destApiKey, 'UNI_DEST_API_KEY', 'dest-api-key'),
         destProjectId: stringOpt(opts.destProject, 'dest-project'),
         json: opts.json === true,
     };

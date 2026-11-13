@@ -9,7 +9,7 @@ const TIMEOUT_STATUS = 'TIMEOUT'
 // (executeTools:true → tools run against the owner's real connections) and polls the
 // conversation row until the turn settles, returning the persisted uiMessages.
 function create({ baseUrl, apiKey }: { baseUrl?: string, apiKey: string }): EvalClient {
-    const base = (baseUrl ?? process.env.AP_EVAL_BASE_URL ?? DEFAULT_BASE_URL).replace(/\/$/, '')
+    const base = (baseUrl ?? process.env.UNI_EVAL_BASE_URL ?? DEFAULT_BASE_URL).replace(/\/$/, '')
     const headers = { 'api-key': apiKey, 'Content-Type': 'application/json' }
 
     async function getSandboxPlatformId(): Promise<string> {

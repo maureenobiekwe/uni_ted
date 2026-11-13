@@ -9,7 +9,7 @@ if (!process.env.CI) {
   dotenv.config({ path: path.resolve(__dirname, '.env.e2e') });
 }
 
-const AP_EDITION = process.env.AP_EDITION || 'ce';
+const UNI_EDITION = process.env.UNI_EDITION || 'ce';
 const LOCAL_URL = 'http://localhost:4200';
 const E2E_INSTANCE_URL = process.env.E2E_INSTANCE_URL || undefined;
 
@@ -25,7 +25,7 @@ const editionConfigs = {
   },
 };
 
-const editionConfig = editionConfigs[AP_EDITION as keyof typeof editionConfigs];
+const editionConfig = editionConfigs[UNI_EDITION as keyof typeof editionConfigs];
 
 const QUARANTINE = /@quarantine/;
 
@@ -63,7 +63,7 @@ const config: PlaywrightTestConfig = {
   /* Configure projects for major browsers */
   projects: [
     {
-      name: `@united/${AP_EDITION}`,
+      name: `@united/${UNI_EDITION}`,
       use: {
         ...devices['Desktop Chrome'],
         headless: true,

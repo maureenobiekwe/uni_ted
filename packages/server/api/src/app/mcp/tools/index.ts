@@ -50,7 +50,7 @@ import { apValidateFlowTool } from './ap-validate-flow'
 import { apValidateStepConfigTool } from './ap-validate-step-config'
 
 // The tool-search tools (ap_search_actions / ap_search_triggers) only register when
-// AP_TOOL_SEARCH_ENABLED=true — the flag stays the master switch and the rollback path. Once
+// UNI_TOOL_SEARCH_ENABLED=true — the flag stays the master switch and the rollback path. Once
 // registered they are locked like the other read-only discovery tools; the locked entries are
 // inert while the flag is off (a tool that never registers can't be force-on).
 export const LOCKED_TOOL_NAMES: string[] = [
@@ -130,7 +130,7 @@ export const unitedTools = (mcp: ProjectScopedMcpServer, userId: string | undefi
     apReadStepSettingsTool(mcp, log),
     apValidateFlowTool({ mcp, userId }, log),
     apResearchPiecesTool(mcp, log),
-    // Tool-search engine — gated behind the AP_TOOL_SEARCH_ENABLED rollout flag (default off).
+    // Tool-search engine — gated behind the UNI_TOOL_SEARCH_ENABLED rollout flag (default off).
     ...(isToolSearchEnabled() ? [apSearchActionsTool(mcp, log), apSearchTriggersTool(mcp, log)] : []),
     apGetPiecePropsTool(mcp, log),
     apResolvePropertyOptionsTool(mcp, log),

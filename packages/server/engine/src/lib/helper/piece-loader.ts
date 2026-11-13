@@ -209,7 +209,7 @@ async function findDistPackageJsonFiles(dirPath: string): Promise<string[]> {
 
 async function traverseAllParentFoldersToFindPiece(packageName: string): Promise<string | null> {
     const trimmedName = trimVersionFromAlias(packageName)
-    const customPaths = (process.env.AP_CUSTOM_PIECES_PATHS ?? '').split(':').filter(Boolean)
+    const customPaths = (process.env.UNI_CUSTOM_PIECES_PATHS ?? '').split(':').filter(Boolean)
     for (const customPath of customPaths) {
         const entry = await resolveInstalledPieceEntry(path.resolve(customPath, 'pieces', packageName), trimmedName)
         if (!isNil(entry)) {

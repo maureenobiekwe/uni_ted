@@ -12,7 +12,7 @@ export const benchmarkCommand = new Command('benchmark')
     .option('--url <url>', 'united base URL (dev env API port)', 'http://localhost:3000')
     .option('--requests <n>', 'Total requests to fire (default: 40 x concurrency)')
     .option('--concurrency <c>', 'Concurrent connections (default: auto = sum of worker execution slots)')
-    .option('--api-key <key>', 'Platform API key (Bearer). Or set AP_API_KEY.')
+    .option('--api-key <key>', 'Platform API key (Bearer). Or set UNI_API_KEY.')
     .option('--project-id <id>', 'Reuse an existing project ID (skip throwaway provision + teardown). Useful in CI where the platform plan does not allow team-project creation.')
     .option('--flow-id <id>', 'Reuse an existing sync-webhook flow ID (skip flow creation). Requires --project-id.')
     .option('--body <json>', 'JSON request body sent to the webhook', '{"test":true}')
@@ -464,9 +464,9 @@ async function waitForReady(client: AxiosInstance): Promise<void> {
 }
 
 function authenticate({ config }: { config: BenchmarkConfig }): AuthResult {
-    const apiKey = config.apiKey ?? process.env.AP_API_KEY;
+    const apiKey = config.apiKey ?? process.env.UNI_API_KEY;
     if (!apiKey) {
-        throw new Error('Provide a platform API key via --api-key or the AP_API_KEY env var.');
+        throw new Error('Provide a platform API key via --api-key or the UNI_API_KEY env var.');
     }
     return { token: apiKey };
 }

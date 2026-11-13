@@ -25,7 +25,7 @@ afterAll(async () => {
 })
 
 afterEach(async () => {
-    delete process.env.AP_TOOL_SEARCH_ENABLED
+    delete process.env.UNI_TOOL_SEARCH_ENABLED
     for (const scheduler of await reindexSchedulers()) {
         await systemJobsQueue.removeJobScheduler(scheduler.id ?? scheduler.key)
     }
@@ -38,7 +38,7 @@ describe('Tool Search reindex job (Phase 3 — async wiring)', () => {
     })
 
     it('the registered handler runs end-to-end (acquires the lock, resolves the platform, invokes reindex) and no-ops cleanly with no AI key', async () => {
-        process.env.AP_TOOL_SEARCH_ENABLED = 'true'
+        process.env.UNI_TOOL_SEARCH_ENABLED = 'true'
         const handler = systemJobHandlers.getJobHandler(SystemJobName.TOOL_SEARCH_REINDEX)
         // Real RedLock + getOldestPlatform + reindex. No OpenAI key is configured in tests, so the
         // reconcile resolves no embedder and no-ops — but the lock/platform/reindex glue all execute.
@@ -46,7 +46,7 @@ describe('Tool Search reindex job (Phase 3 — async wiring)', () => {
     })
 
     it('the handler no-ops when the flag is off, so a schedule that outlived the flip does no work', async () => {
-        delete process.env.AP_TOOL_SEARCH_ENABLED
+        delete process.env.UNI_TOOL_SEARCH_ENABLED
         const handler = systemJobHandlers.getJobHandler(SystemJobName.TOOL_SEARCH_REINDEX)
         await expect(handler({ scope: { type: 'all' } })).resolves.toBeUndefined()
     })
@@ -60,7 +60,7 @@ describe('Tool Search reindex job (Phase 3 — async wiring)', () => {
 
 describe('Tool Search recurring reconcile (safety net)', () => {
     it('registers one repeated reconcile when the flag is on', async () => {
-        process.env.AP_TOOL_SEARCH_ENABLED = 'true'
+        process.env.UNI_TOOL_SEARCH_ENABLED = 'true'
 
         await toolSearchReindexJob(app.log).scheduleRecurringReconcile()
 
@@ -70,7 +70,7 @@ describe('Tool Search recurring reconcile (safety net)', () => {
     })
 
     it('is idempotent across replica boots — a second call does not add a second schedule', async () => {
-        process.env.AP_TOOL_SEARCH_ENABLED = 'true'
+        process.env.UNI_TOOL_SEARCH_ENABLED = 'true'
 
         await toolSearchReindexJob(app.log).scheduleRecurringReconcile()
         await toolSearchReindexJob(app.log).scheduleRecurringReconcile()
@@ -79,7 +79,7 @@ describe('Tool Search recurring reconcile (safety net)', () => {
     })
 
     it('registers nothing when the flag is off', async () => {
-        delete process.env.AP_TOOL_SEARCH_ENABLED
+        delete process.env.UNI_TOOL_SEARCH_ENABLED
 
         await toolSearchReindexJob(app.log).scheduleRecurringReconcile()
 

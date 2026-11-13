@@ -19,7 +19,7 @@ export const auditLogRetention = (log: FastifyBaseLogger) => ({
     }: SweepParams = {}): Promise<SweepSummary> {
         const startedAt = Date.now()
         if (system.getBoolean(AppSystemProp.AUDIT_LOG_RETENTION_PAUSED) === true) {
-            log.info('[auditLogRetention#sweep] Paused by AP_AUDIT_LOG_RETENTION_PAUSED')
+            log.info('[auditLogRetention#sweep] Paused by UNI_AUDIT_LOG_RETENTION_PAUSED')
             return summarize({ progress: [], deletedCount: 0, maxRowsPerRun, startedAt, paused: true })
         }
         const deadline = startedAt + runBudgetMs

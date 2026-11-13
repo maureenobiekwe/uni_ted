@@ -42,7 +42,7 @@ try {
   }
 }
 
-// The engine spawns AP_DENO_PATH directly with a minimal env, so it must be the
+// The engine spawns UNI_DENO_PATH directly with a minimal env, so it must be the
 // real deno binary — an npm .bin shim (#!/usr/bin/env node) dies with
 // "env: node: No such file or directory" (exit 127). The global npm `deno`
 // package downloads the real binary into <npm root -g>/deno on install.
@@ -92,19 +92,19 @@ const envDevPath = path.resolve('.env.dev');
 let envDev = fs.existsSync(envDevPath) ? fs.readFileSync(envDevPath, 'utf-8') : '';
 const originalEnvDev = envDev;
 
-const existingDenoLine = envDev.match(/^AP_DENO_PATH=(.*)$/m);
+const existingDenoLine = envDev.match(/^UNI_DENO_PATH=(.*)$/m);
 const existingDenoPath = existingDenoLine ? existingDenoLine[1].trim() : null;
 const isRepoLocalPath = existingDenoPath !== null && existingDenoPath.startsWith(path.resolve('.'));
 if (!existingDenoLine) {
-  envDev += `${envDev.endsWith('\n') || envDev === '' ? '' : '\n'}AP_DENO_PATH=${denoPath}\n`;
+  envDev += `${envDev.endsWith('\n') || envDev === '' ? '' : '\n'}UNI_DENO_PATH=${denoPath}\n`;
 } else if (isNodeShimScript(existingDenoPath) || isRepoLocalPath) {
-  envDev = envDev.replace(existingDenoLine[0], `AP_DENO_PATH=${denoPath}`);
-  console.log(`⚙️ Updated AP_DENO_PATH to the global deno binary at ${denoPath}.`);
+  envDev = envDev.replace(existingDenoLine[0], `UNI_DENO_PATH=${denoPath}`);
+  console.log(`⚙️ Updated UNI_DENO_PATH to the global deno binary at ${denoPath}.`);
 }
 
 if (envDev !== originalEnvDev) {
   fs.writeFileSync(envDevPath, envDev);
-  console.log('✅ Updated .env.dev with AP_DENO_PATH.');
+  console.log('✅ Updated .env.dev with UNI_DENO_PATH.');
 }
 
 execSync('bun install', { stdio: 'inherit' });
@@ -133,7 +133,7 @@ try {
   envConfig = dotenv.parse(fs.readFileSync('.env.dev', 'utf-8'));
 } catch { }
 
-const devPieces = process.env.AP_DEV_PIECES || envConfig.AP_DEV_PIECES;
+const devPieces = process.env.UNI_DEV_PIECES || envConfig.UNI_DEV_PIECES;
 
 if (devPieces) {
   const pieceNames = [...new Set(devPieces.split(',').map(n => n.trim()))];

@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Verifies that a code step that exhausts its memory limit fails the step and leaves the engine
 # alive. Expects a flow created by benchmark/setup.ts with CODE_BODY_FILE=benchmark/oom-code.js
-# on a stack running AP_EXECUTION_MODE=SANDBOX_CODE_ONLY. Code steps run in a Deno process capped
+# on a stack running UNI_EXECUTION_MODE=SANDBOX_CODE_ONLY. Code steps run in a Deno process capped
 # at 128MB of heap; the step fills it, V8 aborts that Deno process with "Fatal JavaScript out of
 # memory", and the engine reports the run as FAILED with that message on the code step.
 

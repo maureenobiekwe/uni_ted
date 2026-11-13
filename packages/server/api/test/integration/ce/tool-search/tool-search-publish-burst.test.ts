@@ -120,8 +120,8 @@ async function waitForReconcileToSettle(timeoutMs = 60_000): Promise<void> {
 
 beforeAll(async () => {
     await startEmbeddingStub()
-    process.env.AP_TOOL_SEARCH_ENABLED = 'true'
-    process.env.AP_OPENAI_API_KEY = 'sk-local-stub'
+    process.env.UNI_TOOL_SEARCH_ENABLED = 'true'
+    process.env.UNI_OPENAI_API_KEY = 'sk-local-stub'
     process.env.OPENAI_BASE_URL = `http://127.0.0.1:${stubPort}`
     app = await setupTestEnvironment()
     await mockAndSaveBasicSetup()
@@ -134,8 +134,8 @@ afterAll(async () => {
             await systemJobsQueue.removeJobScheduler(scheduler.id ?? scheduler.key)
         }
     }
-    delete process.env.AP_TOOL_SEARCH_ENABLED
-    delete process.env.AP_OPENAI_API_KEY
+    delete process.env.UNI_TOOL_SEARCH_ENABLED
+    delete process.env.UNI_OPENAI_API_KEY
     delete process.env.OPENAI_BASE_URL
     await new Promise((resolve) => stub.close(resolve))
     await teardownTestEnvironment()

@@ -15,13 +15,13 @@
          },
          {
             "label": "Pieces",
-            "href": "https://www.united.com/pieces"
+            "href": "https://www.example.com/pieces"
          }
       ],
       "primary": {
          "type": "button",
          "label": "Sign Up",
-         "href": "https://cloud.united.com/sign-up"
+         "href": "https://cloud.example.com/sign-up"
       }
    },
    "redirects": [
@@ -833,7 +833,7 @@
    "logo": {
       "light": "./resources/logo/light.svg",
       "dark": "./resources/logo/dark.svg",
-      "href": "https://www.united.com"
+      "href": "https://www.example.com"
    },
    "api": {
       "openapi": [

@@ -5,16 +5,16 @@ import { setupTestEnvironment, teardownTestEnvironment } from '../../../helpers/
 let app: FastifyInstance | null = null
 
 beforeAll(async () => {
-    process.env.AP_QUEUE_UI_ENABLED = 'true'
-    process.env.AP_QUEUE_UI_USERNAME = 'testuser'
-    process.env.AP_QUEUE_UI_PASSWORD = 'testpass'
+    process.env.UNI_QUEUE_UI_ENABLED = 'true'
+    process.env.UNI_QUEUE_UI_USERNAME = 'testuser'
+    process.env.UNI_QUEUE_UI_PASSWORD = 'testpass'
     app = await setupTestEnvironment({ fresh: true })
 })
 
 afterAll(async () => {
-    delete process.env.AP_QUEUE_UI_ENABLED
-    delete process.env.AP_QUEUE_UI_USERNAME
-    delete process.env.AP_QUEUE_UI_PASSWORD
+    delete process.env.UNI_QUEUE_UI_ENABLED
+    delete process.env.UNI_QUEUE_UI_USERNAME
+    delete process.env.UNI_QUEUE_UI_PASSWORD
     await teardownTestEnvironment()
 })
 

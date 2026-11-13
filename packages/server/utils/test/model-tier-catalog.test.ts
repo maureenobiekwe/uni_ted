@@ -52,12 +52,12 @@ function ids(tiers: { id: string }[]): string[] {
 describe('modelTierCatalog', () => {
     beforeEach(() => {
         get.mockReset()
-        process.env['AP_MODEL_TIERS_URL'] = 'https://tiers.test/pricing.json'
+        process.env['UNI_MODEL_TIERS_URL'] = 'https://tiers.test/pricing.json'
     })
 
     afterEach(() => {
         vi.useRealTimers()
-        delete process.env['AP_MODEL_TIERS_URL']
+        delete process.env['UNI_MODEL_TIERS_URL']
     })
 
     it('serves the flow list and the chat list from one file, each with its own default', async () => {

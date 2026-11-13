@@ -27,13 +27,13 @@ const PENDING = ['ReshapeFlowRunListIndexesForBarrierChildren1871000000000', 'Ba
 
 describe('systemJobFailurePager.pageOnFinalFailure', () => {
     beforeEach(() => {
-        process.env.AP_PAGE_ONCALL_WEBHOOK = WEBHOOK_URL
+        process.env.UNI_PAGE_ONCALL_WEBHOOK = WEBHOOK_URL
         pageMock.mockResolvedValue(undefined)
         listPendingMock.mockResolvedValue(PENDING)
     })
 
     afterEach(() => {
-        delete process.env.AP_PAGE_ONCALL_WEBHOOK
+        delete process.env.UNI_PAGE_ONCALL_WEBHOOK
         vi.clearAllMocks()
     })
 

@@ -539,7 +539,7 @@ describe('AI Providers API', () => {
         })
 
         it('serves chat from the managed united key when no key is enabled for chat', async () => {
-            process.env.AP_OPENROUTER_PROVISION_KEY = 'test-provision-key'
+            process.env.UNI_OPENROUTER_PROVISION_KEY = 'test-provision-key'
             try {
                 await mockAndSaveAIProvider({
                     platformId: ctx.platform.id,
@@ -567,7 +567,7 @@ describe('AI Providers API', () => {
                 expect(served?.provider).toBe(AIProviderName.united)
             }
             finally {
-                delete process.env.AP_OPENROUTER_PROVISION_KEY
+                delete process.env.UNI_OPENROUTER_PROVISION_KEY
             }
         })
 

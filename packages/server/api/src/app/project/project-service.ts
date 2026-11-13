@@ -301,7 +301,7 @@ function assertRetentionDaysWithinInstanceBounds(executionDataRetentionDays: num
         throw new unitedError({
             code: ErrorCode.VALIDATION,
             params: {
-                message: `executionDataRetentionDays must be between AP_PAUSED_FLOW_TIMEOUT_DAYS (${pausedFlowTimeoutDays}) and AP_EXECUTION_DATA_RETENTION_DAYS (${instanceRetentionDays})`,
+                message: `executionDataRetentionDays must be between UNI_PAUSED_FLOW_TIMEOUT_DAYS (${pausedFlowTimeoutDays}) and UNI_EXECUTION_DATA_RETENTION_DAYS (${instanceRetentionDays})`,
             },
         })
     }

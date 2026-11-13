@@ -72,7 +72,7 @@ describe('Authentication API', () => {
             const email = mockSignUpRequest.email.toLocaleLowerCase().trim()
             const answer = vi.spyOn(safeHttp.axios, 'get')
                 .mockResolvedValue({ data: { status: 'do_not_mail', sub_status: 'disposable' } })
-            process.env.AP_ZEROBOUNCE_API_KEY = 'test-api-key'
+            process.env.UNI_ZEROBOUNCE_API_KEY = 'test-api-key'
 
             try {
                 const response = await app?.inject({
@@ -90,7 +90,7 @@ describe('Authentication API', () => {
                 expect(identity).toBeNull()
             }
             finally {
-                delete process.env.AP_ZEROBOUNCE_API_KEY
+                delete process.env.UNI_ZEROBOUNCE_API_KEY
                 answer.mockRestore()
             }
         })

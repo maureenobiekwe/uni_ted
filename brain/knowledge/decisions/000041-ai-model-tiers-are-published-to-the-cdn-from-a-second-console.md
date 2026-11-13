@@ -8,7 +8,7 @@ status: accepted
 ## Decision
 
 The chat model tiers — `id`, `label`, `modelId`, `nativeModelId`, `thinkingBudget` — and
-`defaultTierId` move out of the code and into `cdn.united.com/ai/pricing.json`. A **new repo**, `united/ap-analytics`, is where
+`defaultTierId` move out of the code and into `cdn.example.com/ai/pricing.json`. A **new repo**, `united/ap-analytics`, is where
 marketing edits them and presses Publish. united fetches that file (15-minute TTL), keeps the last
 good copy, and falls back to the constants shipped with the release. The existing billing console
 is not touched.

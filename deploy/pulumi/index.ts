@@ -215,34 +215,34 @@ if (usePostgres) {
 
     containerEnvironmentVars.push(
         {
-            name: "AP_POSTGRES_DATABASE",
+            name: "UNI_POSTGRES_DATABASE",
             value: db.dbName
         },
         {
-            name: "AP_POSTGRES_HOST",
+            name: "UNI_POSTGRES_HOST",
             value: db.address
         },
         {
-            name: "AP_POSTGRES_PORT",
+            name: "UNI_POSTGRES_PORT",
             value: pulumi.interpolate`${db.port}`
         },
         {
-            name: "AP_POSTGRES_USERNAME",
+            name: "UNI_POSTGRES_USERNAME",
             value: db.username
         },
         {
-            name: "AP_POSTGRES_PASSWORD",
+            name: "UNI_POSTGRES_PASSWORD",
             value: config.requireSecret("dbPassword")
         },
         {
-            name: "AP_POSTGRES_USE_SSL",
+            name: "UNI_POSTGRES_USE_SSL",
             value: "false"
         });
 
 } else {
     containerEnvironmentVars.push(
         {
-            name: "AP_DB_TYPE",
+            name: "UNI_DB_TYPE",
             value: "SQLITE3"
         });
 }
@@ -284,14 +284,14 @@ if (useRedis) {
     const redisUrl = pulumi.interpolate`${redisCluster.cacheNodes[0].address}:${redisCluster.cacheNodes[0].port}`;
     containerEnvironmentVars.push(
         {
-            name: "AP_REDIS_URL",
+            name: "UNI_REDIS_URL",
             value: redisUrl
         });
 
 } else {
     containerEnvironmentVars.push(
         {
-            name: "AP_QUEUE_MODE",
+            name: "UNI_QUEUE_MODE",
             value: "MEMORY"
         });
 }
@@ -387,47 +387,47 @@ if (subDomain && domain) {
 const environmentVariables = [
     ...containerEnvironmentVars,
     {
-        name: "AP_ENGINE_EXECUTABLE_PATH",
+        name: "UNI_ENGINE_EXECUTABLE_PATH",
         value: "dist/packages/engine/main.js"
     },
     {
-        name: "AP_ENCRYPTION_KEY",
+        name: "UNI_ENCRYPTION_KEY",
         value: apEncryptionKey
     },
     {
-        name: "AP_JWT_SECRET",
+        name: "UNI_JWT_SECRET",
         value: apJwtSecret
     },
     {
-        name: "AP_ENVIRONMENT",
+        name: "UNI_ENVIRONMENT",
         value: "prod"
     },
     {
-        name: "AP_FRONTEND_URL",
+        name: "UNI_FRONTEND_URL",
         value: frontendUrl
     },
     {
-        name: "AP_TRIGGER_DEFAULT_POLL_INTERVAL",
+        name: "UNI_TRIGGER_DEFAULT_POLL_INTERVAL",
         value: "5"
     },
     {
-        name: "AP_EXECUTION_MODE",
+        name: "UNI_EXECUTION_MODE",
         value: "UNSANDBOXED"
     },
     {
-        name: "AP_REDIS_USE_SSL",
+        name: "UNI_REDIS_USE_SSL",
         value: "false"
     },
     {
-        name: "AP_SANDBOX_RUN_TIME_SECONDS",
+        name: "UNI_SANDBOX_RUN_TIME_SECONDS",
         value: "600"
     },
     {
-        name: "AP_TELEMETRY_ENABLED",
+        name: "UNI_TELEMETRY_ENABLED",
         value: "true"
     },
     {
-        name: "AP_TEMPLATES_SOURCE_URL",
+        name: "UNI_TEMPLATES_SOURCE_URL",
         value: "https://cloud.united.com/api/v1/templates"
     }
 ];

@@ -17,16 +17,16 @@ Run this anywhere:
 ```bash
 docker run -d --name united -p 8080:80 \
   -v ~/.united:/root/.united \
-  -e AP_DB_TYPE=PGLITE \
-  -e AP_REDIS_TYPE=MEMORY \
-  -e AP_FRONTEND_URL="http://localhost:8080" \
+  -e UNI_DB_TYPE=PGLITE \
+  -e UNI_REDIS_TYPE=MEMORY \
+  -e UNI_FRONTEND_URL="http://localhost:8080" \
   united/united:latest
 ```
 
 Or hand it to your AI assistant:
 
 <Prompt description="Install united with an AI assistant" icon="sparkles" actions={["copy", "cursor"]}>
-Install united on this machine for personal use with a single Docker container. Run `docker run -d --name united -p 8080:80 -v ~/.united:/root/.united -e AP_DB_TYPE=PGLITE -e AP_REDIS_TYPE=MEMORY -e AP_FRONTEND_URL="http://localhost:8080" united/united:latest`. If port 8080 is already in use, pick a free port and change both the `-p` mapping and `AP_FRONTEND_URL` to match. When it finishes, wait until `curl http://localhost:8080/api/v1/health` responds, then tell me the URL to open.
+Install united on this machine for personal use with a single Docker container. Run `docker run -d --name united -p 8080:80 -v ~/.united:/root/.united -e UNI_DB_TYPE=PGLITE -e UNI_REDIS_TYPE=MEMORY -e UNI_FRONTEND_URL="http://localhost:8080" united/united:latest`. If port 8080 is already in use, pick a free port and change both the `-p` mapping and `UNI_FRONTEND_URL` to match. When it finishes, wait until `curl http://localhost:8080/api/v1/health` responds, then tell me the URL to open.
 </Prompt>
 
 <Info>
@@ -52,14 +52,14 @@ Webhooks and app triggers need an address that third parties can reach. On a per
 ngrok http 8080
 ```
 
-Then set `AP_FRONTEND_URL` to the ngrok URL and run the container again.
+Then set `UNI_FRONTEND_URL` to the ngrok URL and run the container again.
 
 <Frame>
   <img src="/resources/screenshots/docker-ngrok.png" alt="Copying the public URL from ngrok" />
 </Frame>
 
 <Note>
-ngrok is fine for testing but not suitable for production. In production, point `AP_FRONTEND_URL` at your real domain.
+ngrok is fine for testing but not suitable for production. In production, point `UNI_FRONTEND_URL` at your real domain.
 </Note>
 
 ## Upgrade

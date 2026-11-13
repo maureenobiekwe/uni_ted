@@ -26,7 +26,7 @@ describe('resolveEmbedder', () => {
         vi.restoreAllMocks()
     })
 
-    it('prefers the AP_OPENAI_API_KEY env var and skips the platform lookup', async () => {
+    it('prefers the UNI_OPENAI_API_KEY env var and skips the platform lookup', async () => {
         vi.mocked(system.get).mockImplementation((prop) =>
             (prop === AppSystemProp.OPENAI_API_KEY ? 'sk-env-key' : undefined),
         )
@@ -38,7 +38,7 @@ describe('resolveEmbedder', () => {
         expect(mockGetConfigOrThrow).not.toHaveBeenCalled()
     })
 
-    it('falls back to the platform key when AP_OPENAI_API_KEY is an empty string', async () => {
+    it('falls back to the platform key when UNI_OPENAI_API_KEY is an empty string', async () => {
         vi.mocked(system.get).mockImplementation((prop) =>
             (prop === AppSystemProp.OPENAI_API_KEY ? '' : undefined),
         )

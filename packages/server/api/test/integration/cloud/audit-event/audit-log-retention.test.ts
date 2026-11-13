@@ -21,8 +21,8 @@ beforeAll(async () => {
 })
 
 afterEach(async () => {
-    delete process.env.AP_AUDIT_LOG_RETENTION_DAYS
-    delete process.env.AP_AUDIT_LOG_RETENTION_PAUSED
+    delete process.env.UNI_AUDIT_LOG_RETENTION_DAYS
+    delete process.env.UNI_AUDIT_LOG_RETENTION_PAUSED
     await databaseConnection().query('DROP TRIGGER IF EXISTS audit_event_test_trigger ON "audit_event"')
     await databaseConnection().query('DROP FUNCTION IF EXISTS audit_event_test_trigger()')
 })
@@ -102,7 +102,7 @@ describe('auditLogRetention.sweep', () => {
     })
 
     it('applies the instance ceiling to platforms without a value and to platforms with a longer value', async () => {
-        process.env.AP_AUDIT_LOG_RETENTION_DAYS = '60'
+        process.env.UNI_AUDIT_LOG_RETENTION_DAYS = '60'
         const inherits = await createPlatform({ auditLogRetentionDays: null })
         const longer = await createPlatform({ auditLogRetentionDays: 90 })
         const inheritsExpired = await saveEvents({ platformId: inherits.platform.id, ages: [61] })
@@ -126,7 +126,7 @@ describe('auditLogRetention.sweep', () => {
     })
 
     it('applies only the instance ceiling to a platform whose plan has no audit logs', async () => {
-        process.env.AP_AUDIT_LOG_RETENTION_DAYS = '60'
+        process.env.UNI_AUDIT_LOG_RETENTION_DAYS = '60'
         const ctx = await createPlatform({ auditLogRetentionDays: 30, auditLogEnabled: false })
         const [fresh, expired] = await saveEvents({ platformId: ctx.platform.id, ages: [45, 400] })
 
@@ -136,7 +136,7 @@ describe('auditLogRetention.sweep', () => {
     })
 
     it('applies only the instance ceiling to a platform without a plan row', async () => {
-        process.env.AP_AUDIT_LOG_RETENTION_DAYS = '60'
+        process.env.UNI_AUDIT_LOG_RETENTION_DAYS = '60'
         const ctx = await createPlatform({ auditLogRetentionDays: 30 })
         await databaseConnection().query('DELETE FROM "platform_plan" WHERE "platformId" = $1', [ctx.platform.id])
         const [fresh, expired] = await saveEvents({ platformId: ctx.platform.id, ages: [45, 400] })
@@ -147,7 +147,7 @@ describe('auditLogRetention.sweep', () => {
     })
 
     it.each(['0', '7'])('ignores the malformed or too short ceiling %j instead of deleting everything', async (ceiling) => {
-        process.env.AP_AUDIT_LOG_RETENTION_DAYS = ceiling
+        process.env.UNI_AUDIT_LOG_RETENTION_DAYS = ceiling
         const ctx = await createPlatform({ auditLogRetentionDays: null })
         const ids = await saveEvents({ platformId: ctx.platform.id, ages: [1, 100] })
 
@@ -212,8 +212,8 @@ describe('auditLogRetention.sweep', () => {
         expect(await remainingIds(ids)).toStrictEqual([...ids].sort())
     })
 
-    it('deletes nothing while AP_AUDIT_LOG_RETENTION_PAUSED is true', async () => {
-        process.env.AP_AUDIT_LOG_RETENTION_PAUSED = 'true'
+    it('deletes nothing while UNI_AUDIT_LOG_RETENTION_PAUSED is true', async () => {
+        process.env.UNI_AUDIT_LOG_RETENTION_PAUSED = 'true'
         const ctx = await createPlatform({ auditLogRetentionDays: 30 })
         const ids = await saveEvents({ platformId: ctx.platform.id, ages: [40, 50] })
 
@@ -329,7 +329,7 @@ describe('Update platform audit log retention', () => {
     })
 
     it('rejects a value above the instance ceiling', async () => {
-        process.env.AP_AUDIT_LOG_RETENTION_DAYS = '365'
+        process.env.UNI_AUDIT_LOG_RETENTION_DAYS = '365'
         const ctx = await createPlatform({ auditLogRetentionDays: null })
 
         const response = await ctx.post(`/v1/platforms/${ctx.platform.id}`, { auditLogRetentionDays: 366 })
@@ -338,7 +338,7 @@ describe('Update platform audit log retention', () => {
     })
 
     it('accepts the minimum when the instance ceiling is under it, because that ceiling is ignored', async () => {
-        process.env.AP_AUDIT_LOG_RETENTION_DAYS = '7'
+        process.env.UNI_AUDIT_LOG_RETENTION_DAYS = '7'
         const ctx = await createPlatform({ auditLogRetentionDays: null })
 
         const response = await ctx.post(`/v1/platforms/${ctx.platform.id}`, { auditLogRetentionDays: 30 })
@@ -357,7 +357,7 @@ describe('Update platform audit log retention', () => {
     })
 
     it('exposes the instance ceiling as a flag', async () => {
-        process.env.AP_AUDIT_LOG_RETENTION_DAYS = '365'
+        process.env.UNI_AUDIT_LOG_RETENTION_DAYS = '365'
         const ctx = await createPlatform({ auditLogRetentionDays: null })
 
         const response = await ctx.get('/v1/flags')
@@ -367,7 +367,7 @@ describe('Update platform audit log retention', () => {
     })
 
     it('exposes the paused cleanup as a flag', async () => {
-        process.env.AP_AUDIT_LOG_RETENTION_PAUSED = 'true'
+        process.env.UNI_AUDIT_LOG_RETENTION_PAUSED = 'true'
         const ctx = await createPlatform({ auditLogRetentionDays: null })
 
         const response = await ctx.get('/v1/flags')
@@ -383,7 +383,7 @@ describe('Audit log retention change event', () => {
     })
 
     it('records who changed the retention, with the previous and new values and the instance limit', async () => {
-        process.env.AP_AUDIT_LOG_RETENTION_DAYS = '365'
+        process.env.UNI_AUDIT_LOG_RETENTION_DAYS = '365'
         const ctx = await createPlatform({ auditLogRetentionDays: null })
 
         await ctx.inject({

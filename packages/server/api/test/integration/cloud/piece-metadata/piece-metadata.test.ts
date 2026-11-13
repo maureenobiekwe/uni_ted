@@ -445,7 +445,7 @@ describe('Publishing a piece through the admin endpoint', () => {
     const publish = async (piece: Record<string, unknown>) => app!.inject({
         method: 'POST',
         url: '/api/v1/admin/pieces',
-        headers: { 'api-key': process.env['AP_API_KEY'] ?? '' },
+        headers: { 'api-key': process.env['UNI_API_KEY'] ?? '' },
         body: {
             displayName: 'Gone Vendor',
             logoUrl: 'https://cdn.united.com/pieces/gone-vendor.png',

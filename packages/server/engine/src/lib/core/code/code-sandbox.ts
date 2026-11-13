@@ -3,7 +3,7 @@ import { EngineGenericError, ExecutionMode } from '@united/shared'
 import { CodeSandbox } from '../../core/code/code-sandbox-common'
 import { DenoPermission } from './deno-code-sandbox'
 
-export const EXECUTION_MODE = process.env.AP_EXECUTION_MODE as ExecutionMode | undefined
+export const EXECUTION_MODE = process.env.UNI_EXECUTION_MODE as ExecutionMode | undefined
 
 const loadNoOpCodeSandbox = async (): Promise<CodeSandbox> => {
     const noOpCodeSandboxModule = await import('./no-op-code-sandbox')
@@ -56,13 +56,13 @@ const loadCodeSandbox = async ({ useDeno }: { useDeno: boolean }): Promise<CodeS
     }
 
     if (isNil(EXECUTION_MODE)) {
-        throw new EngineGenericError('ExecutionModeNotSetError', 'AP_EXECUTION_MODE environment variable is not set')
+        throw new EngineGenericError('ExecutionModeNotSetError', 'UNI_EXECUTION_MODE environment variable is not set')
     }
 
     const loaders = useDeno ? denoLoaders : legacyLoaders
     const loader = loaders[EXECUTION_MODE]
     if (isNil(loader)) {
-        throw new EngineGenericError('InvalidExecutionModeError', `Invalid AP_EXECUTION_MODE: ${EXECUTION_MODE}`)
+        throw new EngineGenericError('InvalidExecutionModeError', `Invalid UNI_EXECUTION_MODE: ${EXECUTION_MODE}`)
     }
     return loader()
 }

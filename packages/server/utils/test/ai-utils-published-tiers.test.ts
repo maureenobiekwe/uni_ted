@@ -25,7 +25,7 @@ const PUBLISHED = {
 describe('aiUtils.createModel on the managed key with a published tier file', () => {
     beforeEach(() => {
         get.mockReset()
-        process.env['AP_MODEL_TIERS_URL'] = 'https://tiers.test/pricing.json'
+        process.env['UNI_MODEL_TIERS_URL'] = 'https://tiers.test/pricing.json'
         vi.resetModules()
     })
 

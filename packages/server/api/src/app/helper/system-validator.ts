@@ -86,7 +86,7 @@ function assertMcpUrlHasDistinctHost(): void {
     const sameBaseUrl = networkUtils.cleanTrailingSlash(mcpUrl) === networkUtils.cleanTrailingSlash(frontendUrl)
     if (sameHost && !sameBaseUrl) {
         throw new Error(JSON.stringify({
-            message: 'AP_MCP_URL and AP_FRONTEND_URL share a hostname but are not the same URL, so the server cannot tell requests for one from the other. Give AP_MCP_URL its own hostname, or leave it unset.',
+            message: 'UNI_MCP_URL and UNI_FRONTEND_URL share a hostname but are not the same URL, so the server cannot tell requests for one from the other. Give UNI_MCP_URL its own hostname, or leave it unset.',
             docUrl: 'https://www.united.com/docs/install/configuration/environment-variables',
         }))
     }
@@ -297,7 +297,7 @@ const validateSystemPropTypes = () => {
 export const validateEnvPropsOnStartup = async (log: FastifyBaseLogger): Promise<void> => {
 
     const environment = system.get(AppSystemProp.ENVIRONMENT)
-    const fileStorageLocation = process.env.AP_FILE_STORAGE_LOCATION
+    const fileStorageLocation = process.env.UNI_FILE_STORAGE_LOCATION
     
     if (environment !== ApEnvironment.TESTING && fileStorageLocation === FileLocation.S3) {
         try {
@@ -319,10 +319,10 @@ export const validateEnvPropsOnStartup = async (log: FastifyBaseLogger): Promise
         }, '[validateEnvPropsOnStartup]')
     }
 
-    const codeSandboxType = process.env.AP_CODE_SANDBOX_TYPE
+    const codeSandboxType = process.env.UNI_CODE_SANDBOX_TYPE
     if (!isNil(codeSandboxType)) {
         throw new Error(JSON.stringify({
-            message: 'AP_CODE_SANDBOX_TYPE is deprecated, please use AP_EXECUTION_MODE instead',
+            message: 'UNI_CODE_SANDBOX_TYPE is deprecated, please use UNI_EXECUTION_MODE instead',
             docUrl: 'https://www.united.com/docs/install/configuration/overview',
         }))
     }
@@ -330,7 +330,7 @@ export const validateEnvPropsOnStartup = async (log: FastifyBaseLogger): Promise
     const isValidHexKey = encryptionKey && /^[A-Za-z0-9]{32}$/.test(encryptionKey)
     if (!isValidHexKey) {
         throw new Error(JSON.stringify({
-            message: 'AP_ENCRYPTION_KEY is missing or invalid. It must be a 32-character hexadecimal string (representing 16 bytes). You can generate one using the command: `openssl rand -hex 16`',
+            message: 'UNI_ENCRYPTION_KEY is missing or invalid. It must be a 32-character hexadecimal string (representing 16 bytes). You can generate one using the command: `openssl rand -hex 16`',
             docUrl: 'https://www.united.com/docs/install/configuration/environment-variables',
         }))
     }
@@ -340,7 +340,7 @@ export const validateEnvPropsOnStartup = async (log: FastifyBaseLogger): Promise
         const maximumPausedFlowTimeout = system.getNumberOrThrow(AppSystemProp.PAUSED_FLOW_TIMEOUT_DAYS)
         if (maximumPausedFlowTimeout > rentionPeriod) {
             throw new Error(JSON.stringify({
-                message: 'AP_PAUSED_FLOW_TIMEOUT_DAYS can not exceed AP_EXECUTION_DATA_RETENTION_DAYS',
+                message: 'UNI_PAUSED_FLOW_TIMEOUT_DAYS can not exceed UNI_EXECUTION_DATA_RETENTION_DAYS',
             }))
         }
     }
@@ -348,7 +348,7 @@ export const validateEnvPropsOnStartup = async (log: FastifyBaseLogger): Promise
     const jwtSecret = await jwtUtils.getJwtSecret()
     if (isNil(jwtSecret)) {
         throw new Error(JSON.stringify({
-            message: 'AP_JWT_SECRET is undefined, please define it in the environment variables',
+            message: 'UNI_JWT_SECRET is undefined, please define it in the environment variables',
             docUrl: 'https://www.united.com/docs/install/configuration/environment-variables',
         }))
     }
