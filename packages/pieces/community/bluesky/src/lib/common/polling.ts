@@ -136,7 +136,7 @@ async function poll<T>({
       ? { cursor: unfinishedCursor, stopBefore: cutoff, stopKeys: stored.seen.slice(0, RESUME_STOP_KEYS) }
       : undefined;
   const nextState: PollState = {
-    seen: keepSeen({ emitted: fresh.map((item) => item.key), previous: stored.seen, seenCap }),
+    seen: keepSeen({ emitted: fresh.map((item) => item.key), previous: stored.seen, seenCap, catchingUp: nextResume !== undefined, anchor: 'emitted' }),
     lastTime: newestTime !== undefined && newestTime > stored.lastTime ? newestTime : stored.lastTime,
     ...(nextResume ? { resume: nextResume } : {}),
   };
@@ -171,7 +171,7 @@ async function drain<T>({
   });
   const fresh = freshItems({ items, seen: new Set([...stored.seen, ...resume.stopKeys]), stopBefore: resume.stopBefore });
   const nextState: PollState = {
-    seen: [...stored.seen.slice(0, seenCap), ...fresh.map((item) => item.key)],
+    seen: keepSeen({ emitted: fresh.map((item) => item.key), previous: stored.seen, seenCap, catchingUp: true, anchor: 'previous' }),
     lastTime: stored.lastTime,
     ...(unfinishedCursor !== undefined ? { resume: { ...resume, cursor: unfinishedCursor } } : {}),
   };
@@ -179,8 +179,14 @@ async function drain<T>({
   return fresh.map((item) => item.data);
 }
 
-function keepSeen({ emitted, previous, seenCap }: { emitted: string[]; previous: string[]; seenCap: number }): string[] {
-  return [...emitted, ...previous].slice(0, Math.max(seenCap, emitted.length));
+function keepSeen({ emitted, previous, seenCap, catchingUp, anchor }: { emitted: string[]; previous: string[]; seenCap: number; catchingUp: boolean; anchor: 'emitted' | 'previous' }): string[] {
+  const ordered = anchor === 'emitted' ? [...emitted, ...previous] : [...previous, ...emitted];
+  const retained = uniqueKeys(ordered);
+  return catchingUp ? retained : retained.slice(0, Math.max(seenCap, emitted.length));
+}
+
+function uniqueKeys(keys: string[]): string[] {
+  return [...new Set(keys)];
 }
 
 function freshItems<T>({ items, seen, stopBefore }: { items: PollItem<T>[]; seen: Set<string>; stopBefore: number }): PollItem<T>[] {
