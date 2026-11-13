@@ -105,7 +105,7 @@ describe('polling catch-up', () => {
     expect(fourth).toEqual([]);
   });
 
-  it.skip('QUARANTINE(flake): catches up an untimed list (followers) even when the seen list was trimmed - over-emission when seenCap < burst, fix tracked separately', async () => {
+  it('catches up an untimed list (followers) even when the seen list was trimmed', async () => {
     const old = feedOf({ count: 20, startTime: 0, prefix: 'old' });
     let entries = old;
     const store = memoryStore();
